@@ -1468,7 +1468,7 @@ Tu trabajo, como el de un probador profesional:
 2. **Escribe el plan de pruebas:** la tabla de casos de prueba completa, con la salida esperada calculada **a partir de las normas**, no del algoritmo.
 3. **Prueba el algoritmo a mano** con todos los casos y marca cuáles pasan.
 4. **Explica los errores** que hayas encontrado y escribe el algoritmo corregido.
-5. **Elige las tres pruebas automáticas** que pondrías primero si solo pudieras escribir tres, y explica por qué.
+5. **Elige las tres pruebas automáticas** que pondrías primero si solo pudieras escribir tres, y explica por qué. Escríbelas en pseudocódigo (`PRUEBA` y `COMPROBAR`). Como el algoritmo lee los datos con `LEER`, imagina que existe un subalgoritmo `PrecioReserva(mes, noches)` que recibe el mes y las noches y devuelve el precio o el mensaje de error, como en el ejercicio 7.
 
 <details>
 <summary>Pista 1</summary>
@@ -1520,7 +1520,7 @@ Hay dos errores. Uno lo encuentran las pruebas del descuento. El otro, las prueb
 | 8 | Límite: una noche en agosto | 8 | 1 | Error: mínimo 2 noches |
 | 9 | Límite: dos noches en agosto | 8 | 2 | 220 |
 | 10 | Límite: 6 noches, sin descuento | 3 | 6 | 480 |
-| 11 | Límite: 7 noches, primer día con descuento | 3 | 7 | 560 × 0,9 = 504 |
+| 11 | Límite: 7 noches, la estancia más corta con descuento | 3 | 7 | 560 × 0,9 = 504 |
 | 12 | Descuento en temporada alta | 7 | 7 | 770 × 0,9 = 693 |
 | 13 | Límite: máximo de noches | 3 | 14 | 1.120 × 0,9 = 1.008 |
 | 14 | No válido: noches por encima del máximo | 3 | 15 | Error: entre 1 y 14 noches |
@@ -1580,7 +1580,7 @@ FIN
 
 Con esta versión se vuelven a pasar **los 19 casos**, no solo los cuatro que fallaban: todos en verde.
 
-**5. Las tres primeras pruebas automáticas**, si solo pudieras escribir tres:
+**5. Las tres primeras pruebas automáticas**, si solo pudieras escribir tres. Usan el subalgoritmo imaginado `PrecioReserva(mes, noches)` del enunciado, que hace lo mismo que el algoritmo pero recibe los datos en lugar de leerlos:
 
 ```text
 PRUEBA "Siete noches justas tienen descuento"

@@ -112,14 +112,15 @@ En pseudocódigo no hay una forma estándar de escribir objetos. En este módulo
 
 ```text
 OBJETO Pedido
-    DATOS: codigo, importe, aIslas
+    DATOS: codigo, importe, aIslas                // importe en céntimos
+    CONSTANTE MINIMO_GRATIS ← 5000                // 50 € en céntimos
     SUBALGORITMO TieneEnvioGratis()
-        DEVOLVER NO aIslas Y importe ≥ 5000
+        DEVOLVER NO aIslas Y importe ≥ MINIMO_GRATIS
     FIN SUBALGORITMO
 FIN OBJETO
 ```
 
-Se lee así: «cada pedido tiene un código, un importe y si va a las islas, y sabe decir si tiene envío gratis». Para usarlo, **se le pregunta al pedido**:
+Se lee así: «cada pedido tiene un código, un importe (en céntimos, para no arrastrar decimales) y si va a las islas, y sabe decir si tiene envío gratis: cuando no va a las islas y el importe llega a 50 €». Para usarlo, **se le pregunta al pedido**:
 
 ```text
 SI pedido.TieneEnvioGratis() ENTONCES
@@ -127,7 +128,7 @@ SI pedido.TieneEnvioGratis() ENTONCES
 FIN SI
 ```
 
-La regla del envío gratis queda **en un único sitio**, junto a los datos a los que se refiere. Si mañana el límite pasa de 50 € a 60 €, se cambia solo ahí.
+La regla del envío gratis queda **en un único sitio**, junto a los datos a los que se refiere. Si mañana el límite pasa de 50 € a 60 €, se cambia solo la constante `MINIMO_GRATIS`.
 
 **Ventajas:** organiza muy bien los programas grandes; cada parte tiene una responsabilidad clara; se parece a cómo describimos el mundo real (clientes, pedidos, facturas, socios, préstamos).
 
