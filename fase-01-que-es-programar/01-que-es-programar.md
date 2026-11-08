@@ -575,7 +575,7 @@ Recuerda que un algoritmo es una secuencia **ordenada**, **finita** y **precisa*
 2. Para saber si un número entero es par: divídelo entre 2; si el resto es 0, es par; si no, es impar.
 3. Para contar: escribe el número 1 y, a partir de ahí, escribe siempre el número anterior más 1.
 4. Para poner una lavadora: mete la ropa, pulsa el botón de inicio, elige el programa de 40 °C y cierra la puerta.
-5. Para llegar a la estación desde la plaza: sigue recto hasta la segunda calle, gira a la derecha y camina 200 metros; la estación está a tu izquierda.
+5. Para llegar a la estación desde la plaza: sigue recto y gira por la segunda calle a la derecha; camina 200 metros por ella; la estación está a tu izquierda.
 
 <details>
 <summary>Pista 1</summary>
@@ -602,7 +602,7 @@ En el caso 4, los pasos están en un orden concreto… pero ¿es el orden correc
 | 2 | Sí | Ordenado, finito (son dos pasos) y preciso: el resto de dividir entre 2 solo puede ser 0 o 1, y cada caso tiene su respuesta |
 | 3 | No | **No es finito.** Nunca dice cuándo parar: escribiría números para siempre. Bastaría con añadir «hasta llegar a 100» |
 | 4 | No (está mal) | Es preciso y finito, pero **el orden es incorrecto**: pulsa «inicio» antes de elegir el programa y de cerrar la puerta. Muchas lavadoras no arrancarían, o lo harían con el programa anterior. El orden correcto: meter la ropa, cerrar la puerta, elegir el programa y pulsar inicio |
-| 5 | Sí | Ordenado, finito y preciso: cada paso se puede seguir sin dudas. (Podría matizarse «la segunda calle» si hay dudas sobre cuál cuenta, pero en general se entiende sin ambigüedad) |
+| 5 | Sí | Ordenado, finito y preciso: cada paso se puede seguir sin dudas (qué calle, hacia qué lado, cuánto caminar y dónde está la estación) |
 
 **Lo importante:** que unas instrucciones parezcan claras no basta. El caso 4 es especialmente traicionero: tiene todo el aspecto de un algoritmo correcto, y precisamente por eso los errores de orden son tan difíciles de ver.
 
@@ -752,7 +752,7 @@ En Java, cada instrucción termina con un punto y coma (`;`). Mira qué hay just
 2. **Falta un punto y coma.** `';' expected` significa «se esperaba `;`». En Java, como en muchos lenguajes, cada instrucción termina con `;`, igual que en castellano las frases terminan con punto.
 3. **Justo después del `220`.** La marca `^` señala el sitio donde el compilador esperaba encontrar el `;`. Lo que viene detrás (`// en céntimos`) es un comentario, que el compilador ignora.
 4. **Es un error de escritura**, detectado por el compilador. Por eso **no se ha ejecutado nada**: el compilador no genera el programa mientras haya errores (es lo que viste en el [apartado 2.2](#22-la-misma-errata-en-un-lenguaje-compilado-y-en-uno-interpretado)).
-5. **Que añada `;` después del `220`**: `int precioTostada = 220;`. Con ese cambio, el programa compila y muestra `Total: 370 céntimos` (150 + 220).
+5. **Que añada `;` después del `220`**: `int precioTostada = 220;`. Con ese cambio, el programa compila y se puede ejecutar.
 
 **Lo importante:** no has necesitado saber Java para entender el error. El mensaje dice **dónde** (fichero y línea), **qué** (falta un `;`) y lo **señala** con la marca. Leer el mensaje entero, con calma, resuelve la mayoría de los errores de escritura.
 
