@@ -27,6 +27,7 @@ Se trabaja a la vez que `../kit-cursos/`. **Lee su `ESTADO.md` (solo leer) al em
 | `formato_academia.py` | Comprobar y **cerrar la fase 1** (se puede escribir antes; no se da por cerrada sin pasar la comprobación) | **Hecho** (8 de noviembre de 2026): el curso da 0 errores |
 | `generar_indice.py` | Generar `00-indice.md` desde `curso.json` | **Hecho** (8 de noviembre de 2026) |
 | `reemplazar.py` en las herramientas comunes (cambios en varios ficheros, todos o ninguno) | Que quede en Git y la usen todos los proyectos | **Hecho** (9 de noviembre de 2026, commit `f839009` del kit) |
+| Terminal del kit en español (`language-pack-es-base`) y `command -v git` en `/usr/bin/git` | Las sesiones del 02.03 | **Hecho** (9 de noviembre de 2026, commit `80e803a` del kit); `verificar_codigo.py --versiones` enseña lo instalado |
 | `generar_chuleta_global.py` y `comprobar_mermaid.py` | Chuleta global y diagramas | **Hecho** (8 de noviembre de 2026); los 23 diagramas de la fase 1 se dibujan bien |
 | Plantillas (`curso.json`, módulo, retos) | No bloquea: se sigue `FORMATO.md` | **Hechas** en `../kit-cursos/plantillas/` (8 de noviembre de 2026); se usan como referencia |
 | Comprobadores de los formatos (JSON, YAML, XML, CSV, Markdown…) | Verificar ejemplos, ejercicios y retos de la fase 4 | **Hecho** (8 de noviembre de 2026); falta la comparación CSV ↔ JSON, que el kit hará con el reto de la fase 4 |
