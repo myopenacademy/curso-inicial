@@ -94,7 +94,7 @@ Así lo ofrecen las dos herramientas de este módulo (a 8 de noviembre de 2026):
 | Herramienta | Windows | macOS | Linux |
 |---|---|---|---|
 | Git | Git for Windows: instalador (*Setup*) **x64** o **ARM64**, y versiones *Portable* que no se instalan | Viene con las herramientas de desarrollo de Apple, o con Homebrew | Con el gestor de paquetes de tu distribución |
-| Visual Studio Code | Instalador de usuario (*User Installer*, el recomendado), instalador de sistema (*System Installer*) o un `.zip`, cada uno en x64 o Arm64 | Versión **Universal** (vale para cualquier Mac), **Apple silicon** o **Intel chip** | `.deb`, `.rpm`, Snap o un `.tar.gz` |
+| Visual Studio Code | Instalador de usuario (*User Installer*, el recomendado), instalador de sistema (*System Installer*) o un `.zip`, cada uno en x64 o Arm64 | Versión **Universal** (vale para cualquier Mac), **Apple silicon** o **Intel** | `.deb`, `.rpm`, Snap o un `.tar.gz` |
 
 Fíjate en dos cosas de la tabla:
 

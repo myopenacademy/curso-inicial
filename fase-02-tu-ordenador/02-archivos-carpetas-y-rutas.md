@@ -141,7 +141,7 @@ El programa con el que ves y ordenas tus carpetas es el **explorador de archivos
 |---|---|
 | Windows | **Explorador de archivos** (el icono de la carpeta amarilla de la barra de tareas) |
 | macOS | **Finder** (la cara sonriente del Dock) |
-| Linux | Depende del escritorio: **Ficheros** en GNOME (el de Ubuntu), **Dolphin** en KDE… |
+| Linux | Depende del escritorio: **Archivos** en GNOME (el de Ubuntu), **Dolphin** en KDE… |
 
 Con él ya sabes hacer muchas cosas: entrar en una carpeta con doble clic, volver atrás, crear carpetas, cambiar nombres, mover ficheros arrastrándolos. Lo que quizá no has mirado nunca es **dónde está** exactamente lo que ves. Cada explorador lo enseña a su manera (Windows 11, macOS y GNOME a 8 de noviembre de 2026; los nombres pueden cambiar un poco entre versiones):
 

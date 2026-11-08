@@ -712,7 +712,7 @@ Fíjate en qué cifra está cerca del máximo y en cuál está lejos. ¿Qué hac
 
 ```text
 Windows:  User Installer x64 · User Installer Arm64 · System Installer x64 · System Installer Arm64
-macOS:    .dmg Universal · .dmg Intel Chip · .dmg Apple Silicon
+macOS:    .dmg Universal · .dmg Apple silicon · .dmg Intel
 Linux:    .deb x64 · .deb Arm64 · .rpm x64 · .rpm Arm64
 ```
 
@@ -749,7 +749,7 @@ No te preocupes por «User» o «System»: es si se instala solo para tu cuenta 
 | Ana | Windows | x64 (x86-64) | **User Installer x64** |
 | Bruno | macOS | ARM (Apple Silicon, M2) | **.dmg Apple Silicon** (o el Universal) |
 | Carmen | Windows | ARM (Snapdragon) | **User Installer Arm64** |
-| David | macOS | x86-64 (Intel) | **.dmg Intel Chip** (o el Universal) |
+| David | macOS | x86-64 (Intel) | **.dmg Intel** (o el Universal) |
 
 **El que sirve para dos:** el **.dmg Universal** vale para Bruno y para David, porque lleva dentro las dos versiones de macOS. Ocupa más, pero no hay forma de equivocarse.
 
