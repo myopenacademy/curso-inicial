@@ -34,7 +34,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 | 01.02 | [Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md) | Básico · Núcleo | 3 h | ✅ Disponible |
 | 01.03 | [¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md) | Básico · Núcleo | 2 h | ✅ Disponible |
 | 01.04 | [Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md) | Básico · Ampliación | 1,5 h | ✅ Disponible |
-| | Retos de la fase | | | Pendiente |
+| | [Retos de la fase](fase-01-que-es-programar/retos.md) | | | ✅ Disponible |
 
 ---
 

@@ -14,7 +14,6 @@
       "carpeta": "fase-01-que-es-programar",
       "titulo": "Qué es programar",
       "retos": "fase-01-que-es-programar/retos.md",
-      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.que-es-programar",

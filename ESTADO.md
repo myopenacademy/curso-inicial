@@ -4,13 +4,18 @@
 
 ## Dónde estamos
 
-**8 de noviembre de 2026:** decisiones del curso aprobadas por el autor (nombre «Fundamentos para programar», bash para todos con Git Bash, normas sobre la IA, Núcleo/Ampliación por módulo, retos de la fase 1 sin código verificable) y **temario cerrado** con carpetas, ficheros, identificadores, horas y nivel (`PLAN-CURSO.md`, apartados 2, 4, 6 y 7). Versiones de las fases 1 a 3 verificadas y fechadas. **`curso.json` escrito** con los 31 módulos como `"disponible": false` con su fichero previsto, y los retos de cada fase previstos con `"retos_disponibles": false` (`FORMATO.md` ya lo admite). **Lista para el kit** (qué se verifica de cada ejercicio y retos de cada fase) aprobada y anotada abajo; la fase 8 no tiene retos. Ningún módulo escrito.
+**8 de noviembre de 2026: fase 1 escrita, revisada en conjunto y cerrada a falta de la revisión del autor.** Cuatro módulos (01.01 a 01.04) y `retos.md` con tres retos, todos disponibles en `curso.json` con sus 36 ejercicios. Glosario con los términos de la fase, índice y chuleta global generados con el kit. `formato_academia.py`: 0 errores (los 6 avisos son los retos de las fases 2 a 7, aún sin escribir). `comprobar_mermaid.py` con Mermaid 12.2.0 y 10.9.1: los 20 diagramas se dibujan bien. Los 20 fragmentos de ilustración en lenguajes reales se han ejecutado y coinciden con sus ficheros en `.verificacion/fase-01/`.
 
-**En paralelo:** una sesión en `../kit-cursos/` prepara las plantillas y `formato_academia.py`. Hasta que estén, se escribe siguiendo `../kit-cursos/FORMATO.md`.
+Cómo se escribió: cuatro autores en paralelo con el mismo encargo y después **una revisión de conjunto** que unificó tono y estilo, dejó cada término definido una sola vez (en el primer módulo donde aparece), quitó solapes (SQL de 01 frente a 04, tipos de error de 01 frente a 03), hizo que 03 use los algoritmos de 02 (bisiesto, DNI), unificó la notación del pseudocódigo (`lista[posición]` desde 0, nombres sin tildes ni eñes) y aligeró 01.04 (de 1.763 a unas 1.400 líneas).
 
 ## Siguiente paso
 
-Revisión del autor del plan entero (`PLAN-CURSO.md`) y, con su visto bueno, escribir la fase 1 (módulos 01 a 04 y `retos.md`) y parar para que la revise.
+**Revisión del autor de la fase 1.** Pendiente de su decisión:
+
+1. **Tiempos estimados.** Tras la revisión, la propuesta es: 01.01, 2 h (igual); **01.02, 4 h** (ahora 3); **01.03, 3 h** (ahora 2); **01.04, 2 h** (ahora 1,5); retos, 3 h. Si se aprueban, se cambian las cabeceras, `PLAN-CURSO.md` y se regenera el índice.
+2. **Decisiones de la revisión:** notación `lista[posición]` con la primera posición en la 0 y nombres sin tildes ni eñes (`anio`), en las convenciones de 02; ejercicio 7 de 03 reescrito (error de `DIV` en lugar de `/`) y ejercicio 8 de 03 sobre el NIE («Rojo, verde y refactorizar con la letra del NIE»), para no repetir ejercicios de 02; ejemplos y ejercicios quitados en 04 (eventos, aspectos, «tres estilos», diagrama de Gantt) y en 02 (horario con SEGÚN, sintaxis de Mermaid).
+
+Después: prueba de importación de la fase 1 en una copia de la academia (desde su proyecto) y la fase 2.
 
 ## Dependencias con el kit
 
@@ -45,6 +50,7 @@ Si algo bloquea, dilo al autor: él pasa la información de una sesión a otra.
 | 2026-11-08 | Módulo 01.02 Algoritmos y pseudocódigo escrito, revisado con la fase y disponible en `curso.json`, con sus ejercicios y sus términos en el glosario. |
 | 2026-11-08 | Módulo 01.03 ¿Cómo sé que funciona? Probar un programa escrito, revisado con la fase y disponible en `curso.json`, con sus ejercicios y sus términos en el glosario. |
 | 2026-11-08 | Módulo 01.04 Paradigmas de programación escrito, revisado con la fase y disponible en `curso.json`, con sus ejercicios y sus términos en el glosario. |
+| 2026-11-08 | Retos de la fase 1 (tres) y revisión de conjunto de la fase. Comprobaciones de cierre: formato 0 errores, Mermaid 12.2.0 y 10.9.1 sin fallos, fragmentos verificados. |
 
 ## Convenciones de verificación para las fases 2 en adelante
 
