@@ -13,27 +13,33 @@
       "id": "inicial.fase.que-es-programar",
       "carpeta": "fase-01-que-es-programar",
       "titulo": "Qué es programar",
+      "retos": "fase-01-que-es-programar/retos.md",
+      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.que-es-programar",
+          "fichero": "fase-01-que-es-programar/01-que-es-programar.md",
           "titulo": "Qué es programar",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.algoritmos-y-pseudocodigo",
+          "fichero": "fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md",
           "titulo": "Algoritmos y pseudocódigo",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.probar-un-programa",
+          "fichero": "fase-01-que-es-programar/03-probar-un-programa.md",
           "titulo": "¿Cómo sé que funciona? Probar un programa",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.paradigmas-de-programacion",
+          "fichero": "fase-01-que-es-programar/04-paradigmas-de-programacion.md",
           "titulo": "Paradigmas de programación",
           "disponible": false,
           "ejercicios": []
@@ -44,21 +50,26 @@
       "id": "inicial.fase.tu-ordenador",
       "carpeta": "fase-02-tu-ordenador",
       "titulo": "Tu ordenador por dentro",
+      "retos": "fase-02-tu-ordenador/retos.md",
+      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.como-funciona-un-ordenador",
+          "fichero": "fase-02-tu-ordenador/01-como-funciona-un-ordenador.md",
           "titulo": "Cómo funciona un ordenador",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.archivos-carpetas-y-rutas",
+          "fichero": "fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md",
           "titulo": "Archivos, carpetas y rutas",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.instalar-programas-y-path",
+          "fichero": "fase-02-tu-ordenador/03-instalar-programas-y-path.md",
           "titulo": "Instalar programas, variables de entorno y PATH",
           "disponible": false,
           "ejercicios": []
@@ -69,27 +80,33 @@
       "id": "inicial.fase.herramientas",
       "carpeta": "fase-03-herramientas",
       "titulo": "Herramientas del programador",
+      "retos": "fase-03-herramientas/retos.md",
+      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.terminal-lo-basico",
+          "fichero": "fase-03-herramientas/01-terminal-lo-basico.md",
           "titulo": "La terminal: lo básico",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.terminal-sacarle-partido",
+          "fichero": "fase-03-herramientas/02-terminal-sacarle-partido.md",
           "titulo": "La terminal: sacarle partido",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.editor-de-codigo",
+          "fichero": "fase-03-herramientas/03-editor-de-codigo.md",
           "titulo": "El editor de código",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.errores-y-depuracion",
+          "fichero": "fase-03-herramientas/04-errores-y-depuracion.md",
           "titulo": "Errores y depuración",
           "disponible": false,
           "ejercicios": []
@@ -100,33 +117,40 @@
       "id": "inicial.fase.formatos-y-diagramas",
       "carpeta": "fase-04-formatos-y-diagramas",
       "titulo": "Formatos y diagramas",
+      "retos": "fase-04-formatos-y-diagramas/retos.md",
+      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.texto-binario-y-codificacion",
+          "fichero": "fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md",
           "titulo": "Texto, binario y codificación",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.markdown",
+          "fichero": "fase-04-formatos-y-diagramas/02-markdown.md",
           "titulo": "Markdown",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.json-y-yaml",
+          "fichero": "fase-04-formatos-y-diagramas/03-json-y-yaml.md",
           "titulo": "JSON y YAML",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.xml-csv-y-otros",
+          "fichero": "fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md",
           "titulo": "XML, CSV y otros",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.diagramas-y-mermaid",
+          "fichero": "fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md",
           "titulo": "Diagramas y Mermaid",
           "disponible": false,
           "ejercicios": []
@@ -137,21 +161,26 @@
       "id": "inicial.fase.git-y-github",
       "carpeta": "fase-05-git-y-github",
       "titulo": "Git y GitHub",
+      "retos": "fase-05-git-y-github/retos.md",
+      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.git-fundamentos",
+          "fichero": "fase-05-git-y-github/01-git-fundamentos.md",
           "titulo": "Git: fundamentos",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.ramas-y-conflictos",
+          "fichero": "fase-05-git-y-github/02-ramas-y-conflictos.md",
           "titulo": "Ramas y conflictos",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.github",
+          "fichero": "fase-05-git-y-github/03-github.md",
           "titulo": "GitHub",
           "disponible": false,
           "ejercicios": []
@@ -162,39 +191,47 @@
       "id": "inicial.fase.internet-y-aplicaciones",
       "carpeta": "fase-06-internet-y-aplicaciones",
       "titulo": "Internet y aplicaciones",
+      "retos": "fase-06-internet-y-aplicaciones/retos.md",
+      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.redes",
+          "fichero": "fase-06-internet-y-aplicaciones/01-redes.md",
           "titulo": "Redes: IP, router, DNS y cortafuegos",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.puertos-y-localhost",
+          "fichero": "fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md",
           "titulo": "Puertos y localhost: tu ordenador como servidor",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.la-web-http-y-apis",
+          "fichero": "fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md",
           "titulo": "La web: HTTP, peticiones, respuestas y APIs",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.que-es-una-base-de-datos",
+          "fichero": "fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md",
           "titulo": "Qué es una base de datos",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.piezas-de-una-aplicacion",
+          "fichero": "fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md",
           "titulo": "Las piezas de una aplicación",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.que-es-la-ia",
+          "fichero": "fase-06-internet-y-aplicaciones/06-que-es-la-ia.md",
           "titulo": "Qué es la IA y cómo funciona por dentro",
           "disponible": false,
           "ejercicios": []
@@ -205,33 +242,40 @@
       "id": "inicial.fase.aprender-a-aprender",
       "carpeta": "fase-07-aprender-a-aprender",
       "titulo": "Aprender a aprender",
+      "retos": "fase-07-aprender-a-aprender/retos.md",
+      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.como-estudiar",
+          "fichero": "fase-07-aprender-a-aprender/01-como-estudiar.md",
           "titulo": "Cómo estudiar con estos cursos",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.organizar-tu-trabajo",
+          "fichero": "fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md",
           "titulo": "Organizar tu trabajo",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.buscar-ayuda",
+          "fichero": "fase-07-aprender-a-aprender/03-buscar-ayuda.md",
           "titulo": "Buscar ayuda",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.programar-con-asistentes-de-ia",
+          "fichero": "fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md",
           "titulo": "Programar con asistentes de IA",
           "disponible": false,
           "ejercicios": []
         },
         {
           "id": "inicial.seguridad-basica",
+          "fichero": "fase-07-aprender-a-aprender/05-seguridad-basica.md",
           "titulo": "Seguridad básica",
           "disponible": false,
           "ejercicios": []
@@ -242,9 +286,12 @@
       "id": "inicial.fase.proyecto-final",
       "carpeta": "fase-08-proyecto-final",
       "titulo": "Proyecto final",
+      "retos": "fase-08-proyecto-final/retos.md",
+      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.primer-repositorio",
+          "fichero": "fase-08-proyecto-final/01-primer-repositorio.md",
           "titulo": "Tu primer repositorio",
           "disponible": false,
           "ejercicios": []

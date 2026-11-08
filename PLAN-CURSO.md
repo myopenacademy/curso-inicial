@@ -26,12 +26,12 @@ Aprobadas por el autor el 8 de noviembre de 2026:
 - **Normas sobre el uso de la IA** (apartado 6). Son de toda la academia, no solo de este curso: se anotan también en el plan general.
 - **Núcleo o Ampliación se marca por módulo, no por fase**: el proyecto final usa módulos de fases «recomendadas» (Markdown, JSON, Mermaid, tableros, secretos), y varios módulos de la fase 6 los necesitan casi todos los cursos.
 - **Retos de la fase 1 sin código verificable:** el pseudocódigo no se ejecuta, así que llevan una solución razonada y una tabla de prueba (lo que enseña el módulo «Probar un programa»).
+- **Títulos en texto plano** (regla de `FORMATO.md` 3.2): sin negrita, cursiva, comillas invertidas, enlaces ni HTML, en `curso.json` y en los encabezados; los nombres de órdenes y ficheros se escriben sin más («Lee la salida de git status»). Vale también para los títulos de ejercicios y retos.
 - **Versiones** de las herramientas: se verifican en la documentación oficial y se fechan en el texto; las de las fases 1 a 3, ya (apartado 7); el resto, al escribir cada fase.
 
 ## 3. Decisiones pendientes
 
 1. **Qué se verifica de cada ejercicio de herramientas y cómo** (se decide con el autor y se pasa a la sesión del kit).
-2. **Fichero previsto de los módulos sin escribir en `curso.json`:** pedido al kit (ver `ESTADO.md`, «Avisos para el kit»). Mientras, los nombres cerrados están en el apartado 4.
 
 ## 4. Temario: 8 fases y 31 módulos
 
