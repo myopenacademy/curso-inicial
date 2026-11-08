@@ -18,7 +18,8 @@ Se trabaja a la vez que `../kit-cursos/`. **Lee su `ESTADO.md` (solo leer) al em
 
 | El curso espera del kit | Para | Estado |
 |---|---|---|
-| `formato_academia.py` | Comprobar y **cerrar la fase 1** (se puede escribir antes; no se da por cerrada sin pasar la comprobación) | Pendiente |
+| `formato_academia.py` | Comprobar y **cerrar la fase 1** (se puede escribir antes; no se da por cerrada sin pasar la comprobación) | **Hecho** (8 de noviembre de 2026): el curso da 0 errores |
+| `generar_indice.py` | Generar `00-indice.md` desde `curso.json` | **Hecho** (8 de noviembre de 2026) |
 | Plantillas (`curso.json`, módulo, retos) | No bloquea: se sigue `FORMATO.md` | **Hechas** en `../kit-cursos/plantillas/` (8 de noviembre de 2026); se usan como referencia |
 | Comprobadores de los formatos (JSON, YAML, XML, CSV, Markdown…) | Verificar ejemplos, ejercicios y retos | Pendiente |
 | Que un módulo con `"disponible": false` pueda llevar su `fichero` previsto (aviso 1) | Que `curso.json` guarde los nombres cerrados y el índice muestre el temario completo | Hecho en `FORMATO.md` (versión 1) el 8 de noviembre de 2026; aplicado en `curso.json` |
@@ -82,7 +83,7 @@ Aprobada por el autor el 8 de noviembre de 2026. Qué ejercicios y retos de herr
 Lo escrito antes de que exista `formato_academia.py`, para comprobarlo cuando esté:
 
 - `curso.json`: forma, identificadores y que no falta ningún módulo del temario.
-- `00-indice.md` y `99-chuleta-global.md` se escriben a mano mientras no existan las herramientas del kit (`generar_indice.py`, tarea 3, y el generador de la chuleta global). `FORMATO.md` dice que se generan desde `curso.json` y los módulos: **en cuanto existan, se regeneran con el kit** y no se vuelven a editar a mano, para no mantener dos versiones.
+- **`00-indice.md` se genera con el kit** (`python3 ../kit-cursos/herramientas/nucleo/generar_indice.py`, desde el 8 de noviembre de 2026): no se edita a mano; se regenera cada vez que cambia `curso.json` o la cabecera de un módulo (`--comprobar` dice si está al día). `99-chuleta-global.md` se escribe a mano mientras el kit no tenga su generador; en cuanto exista, se regenera con él y no se vuelve a editar a mano.
 
 ## Avisos para el kit
 
