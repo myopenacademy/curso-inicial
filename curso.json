@@ -196,8 +196,44 @@
           "id": "inicial.como-funciona-un-ordenador",
           "fichero": "fase-02-tu-ordenador/01-como-funciona-un-ordenador.md",
           "titulo": "Cómo funciona un ordenador",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.como-funciona-un-ordenador.cada-cosa-en-su-pieza",
+              "titulo": "Cada cosa en su pieza"
+            },
+            {
+              "id": "inicial.como-funciona-un-ordenador.bits-bytes-y-sus-multiplos",
+              "titulo": "Bits, bytes y sus múltiplos"
+            },
+            {
+              "id": "inicial.como-funciona-un-ordenador.se-va-la-luz",
+              "titulo": "Se va la luz"
+            },
+            {
+              "id": "inicial.como-funciona-un-ordenador.cuantas-fotos-caben-en-el-movil",
+              "titulo": "Cuántas fotos caben en el móvil"
+            },
+            {
+              "id": "inicial.como-funciona-un-ordenador.el-disco-de-1-tb-que-marca-931-gb",
+              "titulo": "El disco de 1 TB que marca 931 GB"
+            },
+            {
+              "id": "inicial.como-funciona-un-ordenador.el-ordenador-va-lento",
+              "titulo": "El ordenador va lento"
+            },
+            {
+              "id": "inicial.como-funciona-un-ordenador.que-instalador-descargar",
+              "titulo": "Qué instalador descargar"
+            },
+            {
+              "id": "inicial.como-funciona-un-ordenador.el-limite-de-los-32-bits",
+              "titulo": "El límite de los 32 bits"
+            },
+            {
+              "id": "inicial.como-funciona-un-ordenador.comparar-dos-portatiles",
+              "titulo": "Comparar dos portátiles"
+            }
+          ]
         },
         {
           "id": "inicial.archivos-carpetas-y-rutas",

@@ -7,9 +7,21 @@
 
 ## A
 
+### Administrador
+
+Cuenta de usuario que puede cambiar lo que afecta a todo el sistema, como instalar programas para todos; el sistema le pide confirmación antes. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#17-el-sistema-operativo).
+
 ### Algoritmo
 
 Secuencia ordenada, finita y precisa de pasos que resuelve un problema; no depende de ningún lenguaje. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#13-qué-es-un-algoritmo).
+
+### Almacenamiento
+
+Pieza que guarda los datos de forma permanente (SSD o disco duro); se conserva al apagar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#16-el-almacenamiento-ssd-y-disco-duro).
+
+### Arquitectura
+
+Familia del procesador (x86-64 o ARM), que decide qué código máquina entiende y qué instalador hay que descargar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#110-32-y-64-bits-x86-64-y-arm).
 
 ### Aserción
 
@@ -28,6 +40,10 @@ Estructura que repite un bloque de instrucciones varias veces (MIENTRAS, REPETIR
 ### Bucle infinito
 
 Bucle cuya condición de salida nunca llega a cumplirse, de modo que se repite para siempre. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#19-repetición).
+
+### Byte
+
+Grupo de 8 bits; la unidad con la que se miden ficheros, memoria y discos. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#12-bits-y-bytes-todo-son-números).
 
 ## C
 
@@ -147,6 +163,16 @@ Dato que guarda varios valores en orden; cada uno se coge por su posición, empe
 
 Programa que ejecuta un código intermedio ya compilado, traduciéndolo sobre la marcha (así funcionan Java y C#). Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#17-lenguajes-compilados-e-interpretados).
 
+### Memoria RAM
+
+Pieza que guarda lo que se está usando ahora mismo; es muy rápida y se borra al apagar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#15-la-memoria-ram-rápida-y-olvidadiza).
+
+## N
+
+### Nube
+
+Ordenadores de otra empresa, en un centro de datos, a los que se accede por internet. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#111-la-nube-el-ordenador-de-otro).
+
 ## O
 
 ### Operador
@@ -170,6 +196,14 @@ Ejecutar varias tareas literalmente al mismo tiempo, en varios núcleos del proc
 ### Parámetro
 
 Dato que recibe un subalgoritmo al llamarlo, en el mismo orden en que se pasa entre paréntesis. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#111-subalgoritmos).
+
+### Procesador
+
+Pieza que ejecuta las instrucciones de los programas (CPU). Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#14-el-procesador-velocidad-y-núcleos).
+
+### Proceso
+
+Un programa en ejecución: cargado en memoria y usando el procesador. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#18-programas-y-procesos).
 
 ### Programa
 
@@ -226,6 +260,10 @@ Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.0
 Error en algo que antes funcionaba y que se ha estropeado al cambiar otra cosa. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
 
 ## S
+
+### Sistema operativo
+
+Programa que administra el ordenador y hace de intermediario entre el hardware y los demás programas: Windows, macOS, Linux. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#17-el-sistema-operativo).
 
 ### Subalgoritmo
 

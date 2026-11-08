@@ -12,6 +12,8 @@
   - [01.02 Algoritmos y pseudocódigo](#0102-algoritmos-y-pseudocódigo)
   - [01.03 ¿Cómo sé que funciona? Probar un programa](#0103-cómo-sé-que-funciona-probar-un-programa)
   - [01.04 Paradigmas de programación](#0104-paradigmas-de-programación)
+- **Fase 02 — Tu ordenador por dentro**
+  - [02.01 Cómo funciona un ordenador](#0201-cómo-funciona-un-ordenador)
 
 ---
 
@@ -370,6 +372,81 @@ resultado ← lista                      // funcional
 - ¿Varias partes reaccionan a un hecho? → **Eventos**.
 - ¿Datos que llegan sin parar a muchos usuarios? → **Reactivo**.
 - ¿Algo que se repite en todas las operaciones? → **Aspectos**.
+
+---
+
+## Fase 02 — Tu ordenador por dentro
+
+---
+
+### 02.01 Cómo funciona un ordenador
+
+📖 Módulo completo: [fase-02-tu-ordenador/01-como-funciona-un-ordenador.md](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md)
+
+#### Las piezas y lo que hacen
+
+| Pieza | Qué hace | Se mide en | Al apagar |
+|---|---|---|---|
+| **Procesador (CPU)** | Ejecuta las instrucciones | Núcleos y GHz | — |
+| **Memoria RAM** | Guarda lo que se usa ahora | GB (8, 16, 32…) | Se borra |
+| **Almacenamiento** (SSD o disco duro) | Guarda ficheros y programas | GB o TB | Se conserva |
+| **Tarjeta gráfica (GPU)** | Dibuja la pantalla; cálculos en paralelo | — | — |
+| **Sistema operativo** | Administra todo lo anterior | — | — |
+
+#### Unidades
+
+| Unidad | Qué es |
+|---|---|
+| 1 bit | Un 0 o un 1 |
+| 1 byte (B) | 8 bits: 256 combinaciones |
+| KB, MB, GB, TB | Cada uno, 1000 veces el anterior |
+| KiB, MiB, GiB, TiB | Cada uno, 1024 veces el anterior (Windows los muestra como «KB», «MB», «GB», «TB») |
+| Mb/s (b minúscula) | Megabits por segundo: velocidad de internet. Entre 8 → MB/s |
+| 1 TB del fabricante | Unos 931 GB en Windows |
+
+#### Qué hace el sistema operativo
+
+Programas (los pone en marcha y reparte el procesador) · memoria (y la memoria virtual si se llena) · ficheros y carpetas · dispositivos (con controladores) · usuarios y permisos.
+
+#### Programa y proceso
+
+| Programa | Proceso |
+|---|---|
+| Ficheros en el disco | Un programa en marcha |
+| Ocupa almacenamiento | Ocupa RAM y procesador |
+| Uno | Puede haber varios del mismo programa |
+
+**Ver los procesos:** Administrador de tareas (Windows, <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>Esc</kbd>) · Monitor de Actividad (macOS) · Recursos o Monitor del sistema (Linux). **Solo para mirar.**
+
+#### Abrir, guardar y apagar
+
+1. Abrir: del disco a la RAM.
+2. Trabajar: los cambios están solo en la RAM.
+3. Guardar: de la RAM al disco.
+4. Apagar o cortar la corriente: se borra la RAM. Suspender: la RAM se conserva. Hibernar: la RAM se copia al disco.
+
+#### Qué instalador descargar
+
+| Si tu ordenador dice… | Arquitectura | Busca |
+|---|---|---|
+| x64, x86_64, amd64, Intel, AMD | x86-64 | `x64` |
+| ARM, arm64, aarch64, Snapdragon | ARM | `arm64` |
+| Mac con «Chip: Apple M…» | ARM (Apple Silicon) | `Apple Silicon` o `Universal` |
+| Mac con «Procesador: Intel…» | x86-64 | `Intel` o `Universal` |
+
+Siempre de 64 bits si hay elección, y siempre desde la página oficial.
+
+#### Dónde mirar tus datos
+
+- **Windows 11:** Configuración → Sistema → Información → Tipo de sistema.
+- **macOS:** menú Apple → Acerca de este Mac → Chip o Procesador.
+- **Linux (Ubuntu):** Configuración → Sistema.
+
+#### Para elegir un ordenador para programar
+
+1. **RAM** suficiente (16 GB va holgado, a 8 de noviembre de 2026), mejor si es ampliable.
+2. **SSD**, no disco duro.
+3. Procesador: cualquiera actual sirve para empezar.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)
