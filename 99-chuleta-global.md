@@ -10,6 +10,7 @@
 - **Fase 01 — Qué es programar**
   - [01.01 Qué es programar](#0101-qué-es-programar)
   - [01.02 Algoritmos y pseudocódigo](#0102-algoritmos-y-pseudocódigo)
+  - [01.03 ¿Cómo sé que funciona? Probar un programa](#0103-cómo-sé-que-funciona-probar-un-programa)
 
 ---
 
@@ -217,6 +218,96 @@ Mínimo: la **primera** vuelta, la **última** y algún caso en la **frontera**.
 | `>` en lugar de `≥` | Falla justo en el límite | Probar el valor exacto del límite |
 | División entre cero | Error con listas vacías | Comprobar el divisor antes |
 | Confundir `←` y `=` | Condiciones u órdenes sin sentido | `←` guarda; `=` pregunta |
+
+---
+
+### 01.03 ¿Cómo sé que funciona? Probar un programa
+
+📖 Módulo completo: [fase-01-que-es-programar/03-probar-un-programa.md](fase-01-que-es-programar/03-probar-un-programa.md)
+
+#### El caso de prueba
+
+| Parte | Qué es | Cuándo se sabe |
+|---|---|---|
+| Entrada | Los datos que se dan | Antes |
+| Salida esperada | Lo que **debería** salir, según el enunciado | **Antes** de ejecutar |
+| Salida obtenida (real) | Lo que **ha salido** de verdad | Después |
+| Veredicto | Pasa ✅ si son iguales; falla ❌ si no | Después |
+
+#### Tabla de casos de prueba
+
+| Nº | Qué se prueba | Entrada | Salida esperada | Salida obtenida | ¿Pasa? |
+|---|---|---|---|---|---|
+
+Las cuatro primeras columnas, **antes** de ejecutar; las dos últimas, después.
+
+#### Qué casos elegir
+
+| Tipo | Qué es | Ejemplo (piscina: gratis hasta 3 años, 2,50 € de 4 a 17…) |
+|---|---|---|
+| Normales | Uno de cada grupo | 2, 10, 30, 80 años |
+| Límite | Los dos lados de cada frontera | 3 y 4, 17 y 18, 64 y 65 |
+| No válidos | Lo que debe rechazarse | −1, 121 |
+
+**Prueba siempre:** el cero, el uno y el ninguno · el primero y el último · los muy grandes · los vacíos · un tipo inesperado (texto en lugar de número).
+
+#### Probar a mano
+
+1. Tabla de casos de prueba (mejor antes del algoritmo).
+2. Una traza por caso: valor de cada variable en cada paso; en las condiciones, el cálculo **y** el resultado.
+3. Compara obtenida con esperada.
+4. Si falla, la traza te dice en qué paso se tuerce.
+5. Tras corregir, vuelve a pasar **todos** los casos.
+
+#### Qué errores encuentran las pruebas
+
+| Tipo | Quién lo encuentra |
+|---|---|
+| Escritura (sintaxis) | El lenguaje, antes de que el programa haga nada |
+| Ejecución | Las pruebas de casos límite, vacíos y no válidos (o el cliente, si no las hay) |
+| Lógica | **Solo las pruebas** |
+
+#### Pruebas automáticas
+
+| Concepto | Qué es |
+|---|---|
+| Prueba automática | Un programa que prueba otro: entrada, esperado, obtenido, ¿coinciden? |
+| Prueba unitaria | Prueba una pieza sola. Rápida y precisa |
+| Prueba de integración | Prueba varias piezas juntas. Encuentra los errores en las uniones |
+| Aserción | La comprobación: «esto debe ser igual a esto» |
+| Regresión | Algo que funcionaba y se ha estropeado al cambiar otra cosa |
+| Integración continua (CI) | Un servidor ejecuta todas las pruebas con cada cambio |
+
+```text
+PRUEBA "Nombre que dice qué se prueba"
+    resultado ← Subalgoritmo(entrada)      // preparar y ejecutar
+    COMPROBAR resultado = esperado         // comprobar
+FIN PRUEBA
+```
+
+#### TDD
+
+1. 🔴 **Rojo:** escribe una prueba que falle.
+2. 🟢 **Verde:** escribe lo mínimo para que pase (y que sigan pasando todas).
+3. 🔵 **Refactorizar:** mejora el código sin cambiar lo que hace; las pruebas siguen en verde.
+
+#### Leer un corrector automático
+
+| Busca | Python (`unittest`) | JavaScript (`node:test`) |
+|---|---|---|
+| Cuántas fallan | `FAILED (failures=1)` | `fail 1` |
+| Cuál | `FAIL: test_…` | `✖ nombre de la prueba` |
+| Dónde | `File "…", line 10` | `fichero.test.js:10:10` |
+| Obtenido y esperado | `obtenido != esperado` (mira la línea de la aserción) | `actual: …` y `expected: …` |
+
+Pasos: cuántas fallan → cuál → dónde → esperado y obtenido (¡cuál es cuál!) → compáralos → traza con esa entrada.
+
+#### Recuerda
+
+- Funcionar con un ejemplo **no** es funcionar.
+- La salida esperada sale del **enunciado**, nunca del programa.
+- Probar demuestra que **hay** errores, nunca que **no** los hay.
+- No cambies una prueba para que pase: averigua primero quién tiene razón.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

@@ -110,8 +110,44 @@
           "id": "inicial.probar-un-programa",
           "fichero": "fase-01-que-es-programar/03-probar-un-programa.md",
           "titulo": "¿Cómo sé que funciona? Probar un programa",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.probar-un-programa.esperado-obtenido-y-veredicto",
+              "titulo": "Esperado, obtenido y veredicto"
+            },
+            {
+              "id": "inicial.probar-un-programa.normal-limite-o-no-valido",
+              "titulo": "Normal, límite o no válido"
+            },
+            {
+              "id": "inicial.probar-un-programa.lee-los-mensajes-de-dos-correctores",
+              "titulo": "Lee los mensajes de dos correctores"
+            },
+            {
+              "id": "inicial.probar-un-programa.los-casos-de-prueba-de-la-piscina-municipal",
+              "titulo": "Los casos de prueba de la piscina municipal"
+            },
+            {
+              "id": "inicial.probar-un-programa.la-traza-que-descubre-el-error-del-ano-bisiesto",
+              "titulo": "La traza que descubre el error del año bisiesto"
+            },
+            {
+              "id": "inicial.probar-un-programa.error-de-escritura-o-error-de-logica",
+              "titulo": "¿Error de escritura o error de lógica?"
+            },
+            {
+              "id": "inicial.probar-un-programa.la-media-de-valoraciones-de-un-restaurante",
+              "titulo": "La media de valoraciones de un restaurante"
+            },
+            {
+              "id": "inicial.probar-un-programa.rojo-verde-y-refactorizar-con-la-letra-del-nie",
+              "titulo": "Rojo, verde y refactorizar con la letra del NIE"
+            },
+            {
+              "id": "inicial.probar-un-programa.el-plan-de-pruebas-de-las-reservas-de-un-hotel-rural",
+              "titulo": "El plan de pruebas de las reservas de un hotel rural"
+            }
+          ]
         },
         {
           "id": "inicial.paradigmas-de-programacion",

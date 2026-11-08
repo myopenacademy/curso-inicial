@@ -19,6 +19,10 @@ Secuencia ordenada, finita y precisa de pasos que resuelve un problema; no depen
 
 Estrategia que en cada paso coge la opción más grande posible (por ejemplo, el billete de más valor); no siempre da la mejor solución. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#ejercicio-7--un-algoritmo-preciso-para-devolver-el-cambio).
 
+### Aserción
+
+Instrucción de una prueba automática que afirma que algo debe ser cierto (por ejemplo, que lo obtenido es igual a lo esperado); si no lo es, la prueba falla. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#111-cómo-es-una-prueba-automática-por-dentro).
+
 ### Asignar
 
 Guardar un valor en una variable; en pseudocódigo se escribe con la flecha ←. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#variables).
@@ -42,6 +46,26 @@ Bucle cuya condición de salida nunca llega a cumplirse, de modo que se repite p
 ### camelCase
 
 Forma de escribir nombres de varias palabras juntas, con mayúscula desde la segunda: horaEntrada. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#cómo-se-nombran).
+
+### Caso de prueba
+
+Ejemplo concreto que dice qué datos se dan (entrada) y qué debe salir (salida esperada), decidido antes de ejecutar. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#13-el-caso-de-prueba).
+
+### Caso feliz
+
+El ejemplo de manual, el que todo el mundo prueba primero y donde casi nunca están los errores. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#31-probar-solo-el-caso-feliz).
+
+### Caso límite
+
+Caso de prueba con un valor justo en la frontera entre dos grupos de datos, o al lado de ella. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos).
+
+### Caso no válido
+
+Caso de prueba con datos que el programa debe rechazar (vacíos, negativos, fuera de rango). Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos).
+
+### Clase de equivalencia
+
+Grupo de datos de entrada con los que un programa se comporta igual; basta con probar uno de cada grupo y sus bordes. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos).
 
 ### Codificación de caracteres
 
@@ -75,11 +99,19 @@ Dato con nombre cuyo valor no cambia durante todo el algoritmo. Lo explica [01.0
 
 Variable que cuenta cuántas veces ocurre algo; empieza en 0 y suma 1 cada vez. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#contador).
 
+### Corrector automático
+
+Programa que comprueba una solución ejecutando pruebas automáticas preparadas por otra persona. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#113-leer-el-mensaje-de-un-corrector-automático).
+
 ## D
 
 ### Dato con partes
 
 Dato que agrupa varios datos sobre una misma cosa; a cada parte se llega con un punto: pedido.libros. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#listas-y-datos-con-partes).
+
+### Depurar
+
+Encontrar dónde está un error y corregirlo, después de que una prueba haya descubierto que existe. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#12-qué-es-probar-un-programa).
 
 ### Descomposición
 
@@ -137,6 +169,10 @@ Combinación de valores, variables y operadores que produce un resultado. Lo exp
 
 Dar a una variable su primer valor antes de usarla. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#variables).
 
+### Integración continua
+
+Práctica en la que un servidor ejecuta todas las pruebas automáticamente cada vez que alguien sube un cambio. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
+
 ### Intérprete
 
 Programa que lee el código fuente y lo ejecuta instrucción a instrucción, cada vez que se pone en marcha. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#17-lenguajes-compilados-e-interpretados).
@@ -187,6 +223,10 @@ Y, O y NO: combinan condiciones; su resultado se resume en la tabla de verdad. L
 
 Dato que recibe un subalgoritmo al llamarlo, en el mismo orden en que se pasa entre paréntesis. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#111-subalgoritmos).
 
+### Probar
+
+Ejecutar un programa o algoritmo con datos elegidos a propósito y comparar lo que hace con lo que debería hacer. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#12-qué-es-probar-un-programa).
+
 ### Programa
 
 Un algoritmo escrito en un lenguaje de programación para que un ordenador lo pueda ejecutar. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#14-qué-es-un-programa).
@@ -199,17 +239,49 @@ Forma de programar que usa solo tres estructuras: secuencia, selección y repeti
 
 Escribir instrucciones precisas para que un ordenador resuelva un problema. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#12-qué-es-programar).
 
+### Prueba automática
+
+Pequeño programa que prueba otro: lo ejecuta con una entrada, compara lo obtenido con lo esperado y dice si pasa o falla. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
+
+### Prueba de extremo a extremo
+
+Prueba que usa el programa completo como lo haría una persona (end-to-end). Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#110-pruebas-unitarias-y-pruebas-de-integración).
+
+### Prueba de integración
+
+Prueba que comprueba que varias piezas funcionan bien juntas. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#110-pruebas-unitarias-y-pruebas-de-integración).
+
+### Prueba unitaria
+
+Prueba que comprueba una pieza pequeña sola, como un subalgoritmo. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#110-pruebas-unitarias-y-pruebas-de-integración).
+
 ### Pseudocódigo
 
 Forma de escribir algoritmos a medio camino entre el lenguaje natural y un lenguaje de programación, con palabras normales y una estructura fija. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#15-pseudocódigo).
 
 ## R
 
+### Refactorizar
+
+Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-tdd-primero-la-prueba).
+
+### Regresión
+
+Error en algo que antes funcionaba y que se ha estropeado al cambiar otra cosa. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
+
 ### Repetición
 
 Estructura de control que repite instrucciones mientras se cumpla una condición; cada ejecución del bloque es una vuelta o iteración. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#19-repetición).
 
 ## S
+
+### Salida esperada
+
+El resultado correcto de un caso de prueba, decidido a partir del enunciado antes de ejecutar. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#13-el-caso-de-prueba).
+
+### Salida obtenida
+
+El resultado que da de verdad el programa al ejecutarlo con la entrada de un caso de prueba (también, salida real). Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#13-el-caso-de-prueba).
 
 ### Secuencia
 
@@ -225,9 +297,17 @@ Algoritmo con nombre propio que recibe parámetros, hace su trabajo y puede devo
 
 ## T
 
+### Tabla de casos de prueba
+
+Tabla con los casos de prueba de un programa: qué se prueba, entrada, salida esperada, salida obtenida y si pasa. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#13-el-caso-de-prueba).
+
 ### Tabla de verdad
 
 Tabla con el resultado de Y, O y NO para todas las combinaciones de VERDADERO y FALSO. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#operadores-lógicos).
+
+### TDD
+
+Desarrollo guiado por pruebas: avanzar en ciclos de rojo (una prueba que falla), verde (lo mínimo para que pase) y refactorizar. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-tdd-primero-la-prueba).
 
 ### Tipo de dato
 

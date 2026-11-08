@@ -1,7 +1,7 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 2 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** 3 de 31 módulos (los demás aparecen como «Pendiente»)
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
@@ -11,7 +11,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Contenido
 
-- [Fase 01 — Qué es programar](#fase-01--qué-es-programar) · 4 módulos · ~5 h
+- [Fase 01 — Qué es programar](#fase-01--qué-es-programar) · 4 módulos · ~7 h
 - [Fase 02 — Tu ordenador por dentro](#fase-02--tu-ordenador-por-dentro) · 3 módulos
 - [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos
 - [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos
@@ -20,19 +20,19 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
-**Tiempo de los módulos disponibles:** ~5 horas.
+**Tiempo de los módulos disponibles:** ~7 horas.
 
 ---
 
 ## Fase 01 — Qué es programar
 
-**Carpeta:** [`fase-01-que-es-programar/`](fase-01-que-es-programar/) · **Tiempo:** ~5 h
+**Carpeta:** [`fase-01-que-es-programar/`](fase-01-que-es-programar/) · **Tiempo:** ~7 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
 | 01.01 | [Qué es programar](fase-01-que-es-programar/01-que-es-programar.md) | Básico · Núcleo | 2 h | ✅ Disponible |
 | 01.02 | [Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md) | Básico · Núcleo | 3 h | ✅ Disponible |
-| 01.03 | ¿Cómo sé que funciona? Probar un programa | — | — | Pendiente |
+| 01.03 | [¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md) | Básico · Núcleo | 2 h | ✅ Disponible |
 | 01.04 | Paradigmas de programación | — | — | Pendiente |
 | | Retos de la fase | | | Pendiente |
 
