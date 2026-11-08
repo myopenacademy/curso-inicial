@@ -1,0 +1,11 @@
+# Ficheros locales de cada máquina
+.env
+.env.*
+!.env.example
+.verificacion/
+
+# Editores y sistema
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
