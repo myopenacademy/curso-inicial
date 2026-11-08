@@ -42,6 +42,7 @@ Si algo bloquea, dilo al autor: él pasa la información de una sesión a otra.
 | 2026-11-08 | Decisiones del curso aprobadas, temario cerrado con identificadores, versiones de las fases 1 a 3 verificadas y `curso.json` escrito. |
 | 2026-11-08 | Ficheros y retos previstos en `curso.json`; títulos en texto plano. Lista para el kit aprobada (macOS y bash 3.2, salidas en español, rama `main`, fase 8 sin retos). |
 | 2026-11-08 | Módulo 01.01 Qué es programar escrito, revisado con la fase y disponible en `curso.json`, con sus ejercicios y sus términos en el glosario. |
+| 2026-11-08 | Módulo 01.02 Algoritmos y pseudocódigo escrito, revisado con la fase y disponible en `curso.json`, con sus ejercicios y sus términos en el glosario. |
 
 ## Convenciones de verificación para las fases 2 en adelante
 

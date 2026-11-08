@@ -63,8 +63,48 @@
           "id": "inicial.algoritmos-y-pseudocodigo",
           "fichero": "fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md",
           "titulo": "Algoritmos y pseudocódigo",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.identifica-las-estructuras",
+              "titulo": "Identifica las estructuras"
+            },
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.secuencia-la-nota-final-de-un-curso",
+              "titulo": "Secuencia: la nota final de un curso"
+            },
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.seleccion-descuento-por-volumen",
+              "titulo": "Selección: descuento por volumen"
+            },
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.haz-la-traza-de-un-bucle",
+              "titulo": "Haz la traza de un bucle"
+            },
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.validar-la-letra-del-dni",
+              "titulo": "Validar la letra del DNI"
+            },
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.diagrama-de-flujo-retirar-dinero-en-un-cajero",
+              "titulo": "Diagrama de flujo: retirar dinero en un cajero"
+            },
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.es-bisiesto",
+              "titulo": "¿Es bisiesto?"
+            },
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.encuentra-y-corrige-los-errores",
+              "titulo": "Encuentra y corrige los errores"
+            },
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.reservas-que-se-solapan",
+              "titulo": "Reservas que se solapan"
+            },
+            {
+              "id": "inicial.algoritmos-y-pseudocodigo.informe-diario-del-almacen",
+              "titulo": "Informe diario del almacén"
+            }
+          ]
         },
         {
           "id": "inicial.probar-un-programa",

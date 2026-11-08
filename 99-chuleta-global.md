@@ -9,6 +9,7 @@
 
 - **Fase 01 — Qué es programar**
   - [01.01 Qué es programar](#0101-qué-es-programar)
+  - [01.02 Algoritmos y pseudocódigo](#0102-algoritmos-y-pseudocódigo)
 
 ---
 
@@ -79,6 +80,143 @@ Mixtos: Java y C# compilan a un código intermedio que ejecuta una máquina virt
 | División entera | 53 entre 12 = 4 | Cuántas veces cabe algo: cajas llenas, mesas completas |
 | Resto | 53 entre 12, sobran 5 | Cuánto sobra: libros sueltos, personas sin mesa |
 | Repartir redondeando hacia arriba | 4 llenas, y una más si sobra algo | Cajas, mesas, autobuses, páginas |
+
+---
+
+### 01.02 Algoritmos y pseudocódigo
+
+📖 Módulo completo: [fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md)
+
+#### Convenciones de pseudocódigo del curso
+
+```text
+ALGORITMO Nombre
+    ENTRADA: ...
+    SALIDA: ...
+
+    CONSTANTE NOMBRE ← valor
+
+INICIO
+    LEER x
+    x ← expresión
+    ESCRIBIR "texto", x
+FIN
+```
+
+| Elemento | Significado |
+|---|---|
+| `ALGORITMO`, `INICIO`, `FIN` | Nombre, principio y final del algoritmo |
+| `ENTRADA` / `SALIDA` | Qué recibe y qué produce (y sus suposiciones) |
+| `CONSTANTE NOMBRE ← valor` | Constante, antes de `INICIO`, en MAYÚSCULAS con guiones bajos |
+| `LEER x` | Obtiene un dato del exterior y lo guarda en `x` |
+| `ESCRIBIR "texto", x` | Muestra un resultado: el texto entre comillas tal cual y `x` por su valor |
+| `x ← expresión` | Asignación: `x` toma el valor de la expresión |
+| `=` | Comparación («¿es igual a?»), nunca asignación |
+| `//` | Comentario |
+| `VERDADERO`, `FALSO` | Los dos valores lógicos |
+| `[1250, 980, 1430]`, `[]` | Una lista con sus valores; una lista vacía |
+| `ventas[0]`, `LETRAS[i]` | El elemento de una lista (o de un texto) en una posición; **la primera es la 0** |
+| `pedido.libros` | Una parte de un dato con partes («los libros del pedido») |
+| `4.95` | Los decimales, con punto |
+| Sangría | Lo que va dentro de otra instrucción, más a la derecha |
+| Nombres | Variables en *camelCase* (`horaEntrada`); algoritmos con mayúscula inicial en cada palabra (`CalcularCajas`); sin tildes ni eñes (`anio`) |
+
+#### Estructuras de control
+
+| Estructura | Pseudocódigo |
+|---|---|
+| Selección simple | `SI c ENTONCES ... FIN SI` |
+| Selección doble | `SI c ENTONCES ... SI NO ... FIN SI` |
+| Selección encadenada | `SI c1 ENTONCES ... SI NO SI c2 ENTONCES ... SI NO ... FIN SI` |
+| Por casos | `SEGÚN x HACER` / `1, 2: ...` / `DE OTRO MODO: ...` / `FIN SEGÚN` |
+| Mientras | `MIENTRAS c HACER ... FIN MIENTRAS` |
+| Repetir hasta | `REPETIR ... HASTA QUE c` |
+| Para | `PARA i DESDE 1 HASTA n HACER ... FIN PARA` |
+| Para cada | `PARA cada elemento DE lista HACER ... FIN PARA` |
+| Subalgoritmo | `SUBALGORITMO F(p1, p2) ... DEVOLVER r ... FIN SUBALGORITMO` |
+| Llamada | `r ← F(a, b)` o `F()` si no tiene parámetros |
+
+> **⚠️ Cuidado:** `REPETIR ... HASTA QUE c` repite **hasta que** `c` sea verdadera. El `do ... while` de algunos lenguajes repite **mientras** su condición sea verdadera: al traducir, la condición se niega.
+
+#### ¿Qué bucle uso?
+
+| ¿Sé cuántas vueltas? | ¿Al menos una seguro? | Bucle |
+|---|---|---|
+| Sí (o recorro una lista entera) | — | `PARA` / `PARA cada` |
+| No | No (pueden ser cero) | `MIENTRAS` |
+| No | Sí | `REPETIR ... HASTA QUE` |
+
+#### Operadores
+
+| Tipo | Operadores |
+|---|---|
+| Aritméticos | `+` `-` `*` `/` `DIV` (división entera) `MOD` (resto) |
+| Comparación | `=` `≠` `<` `>` `≤` `≥` |
+| Lógicos | `Y` (las dos), `O` (al menos una), `NO` (invierte) |
+| Asignación | `←` |
+
+**Orden de evaluación:** paréntesis → `*` `/` `DIV` `MOD` → `+` `-` → comparaciones → `NO` → `Y` → `O`. Ante la duda, paréntesis.
+
+#### Tipos de datos
+
+| Tipo | Ejemplos |
+|---|---|
+| Entero | `53`, `0`, `-7` |
+| Real | `4.95`, `-0.5` |
+| Texto | `"Calle Mayor 5"`, `"Z"` |
+| Lógico | `VERDADERO`, `FALSO` |
+
+#### Patrones
+
+| Patrón | Inicialización (antes del bucle) | En cada vuelta |
+|---|---|---|
+| Contador | `n ← 0` | `SI condición ENTONCES n ← n + 1` |
+| Acumulador | `total ← 0` (suma) o `1` (producto) | `total ← total + valor` |
+| Máximo | `max ← primer valor` | `SI valor > max ENTONCES max ← valor` |
+| Mínimo | `min ← primer valor` | `SI valor < min ENTONCES min ← valor` |
+| Bandera | `encontrado ← FALSO` | `SI ocurre ENTONCES encontrado ← VERDADERO` |
+| Validación | — | `REPETIR LEER x HASTA QUE x es válido` |
+
+#### Trucos con DIV y MOD
+
+| Para... | Expresión |
+|---|---|
+| Saber si `n` es par | `n MOD 2 = 0` |
+| Saber si `a` es divisible entre `b` | `a MOD b = 0` |
+| Pasar minutos a horas y minutos | `m DIV 60` h y `m MOD 60` min |
+| Repartir `n` cosas en grupos de `g` (redondeando hacia arriba) | `n DIV g`, más 1 si `n MOD g > 0` |
+| Obtener la última cifra de un número | `n MOD 10` |
+
+#### Símbolos de los diagramas de flujo
+
+| Símbolo | Forma | Uso |
+|---|---|---|
+| Terminal | Óvalo | Inicio y fin |
+| Proceso | Rectángulo | Asignación o cálculo |
+| Decisión | Rombo | Condición con salidas «Sí» y «No» |
+| Entrada / salida | Paralelogramo | Leer o escribir |
+| Subproceso | Rectángulo con dobles líneas laterales | Llamada a un subalgoritmo |
+
+#### La traza, paso a paso
+
+1. Elige unos datos de entrada concretos.
+2. Una columna por variable (y por condición); una fila por paso o por vuelta.
+3. Sigue el algoritmo línea a línea, sin saltarte nada, y apunta cada cambio.
+4. Compara el resultado con el esperado.
+
+Mínimo: la **primera** vuelta, la **última** y algún caso en la **frontera**.
+
+#### Errores típicos
+
+| Error | Síntoma | Remedio |
+|---|---|---|
+| Bucle infinito | No termina | Algo debe avanzar en cada vuelta |
+| Una vuelta de más o de menos | Falta o sobra un elemento | Traza de la primera y la última vuelta |
+| Acumulador sin inicializar | Resultados absurdos | Inicializar **antes** del bucle |
+| Condiciones mal ordenadas | Casos en el bloque equivocado | De la más restrictiva a la más general |
+| `>` en lugar de `≥` | Falla justo en el límite | Probar el valor exacto del límite |
+| División entre cero | Error con listas vacías | Comprobar el divisor antes |
+| Confundir `←` y `=` | Condiciones u órdenes sin sentido | `←` guarda; `=` pregunta |
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)
