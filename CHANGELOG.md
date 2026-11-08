@@ -9,4 +9,4 @@ Qué cambia en cada versión del curso, de la más nueva a la más antigua. Cada
 ## Sin publicar
 
 - Decisiones, temario cerrado con identificadores y `curso.json` (8 de noviembre de 2026).
-- Fase 1, «Qué es programar»: cuatro módulos, retos y glosario de sus términos (8 de noviembre de 2026; pendiente de la revisión del autor).
+- Fase 1, «Qué es programar»: cuatro módulos, retos y glosario de sus términos (8 de noviembre de 2026; aprobada por el autor).

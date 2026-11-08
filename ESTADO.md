@@ -4,17 +4,15 @@
 
 ## Dónde estamos
 
-**8 de noviembre de 2026: fase 1 escrita, revisada en conjunto y cerrada a falta de la revisión del autor.** Cuatro módulos (01.01 a 01.04) y `retos.md` con tres retos, todos disponibles en `curso.json` con sus 36 ejercicios. Glosario con los términos de la fase, índice y chuleta global generados con el kit. `formato_academia.py`: 0 errores (los 6 avisos son los retos de las fases 2 a 7, aún sin escribir). `comprobar_mermaid.py` con Mermaid 12.2.0 y 10.9.1: los 20 diagramas se dibujan bien. Los 20 fragmentos de ilustración en lenguajes reales se han ejecutado y coinciden con sus ficheros en `.verificacion/fase-01/`.
+**8 de noviembre de 2026: fase 1 aprobada por el autor tal como está, sin cambios, con los tiempos como definitivos** (01.01, 2 h; 01.02, 4 h; 01.03, 3 h; 01.04, 1,5 h; retos, 3 h). Fija el estilo, la profundidad y el formato de los 31 módulos: las fases siguientes se escriben igual.
 
-Cómo se escribió: cuatro autores en paralelo con el mismo encargo y después **una revisión de conjunto** que unificó tono y estilo, dejó cada término definido una sola vez (en el primer módulo donde aparece), quitó solapes (SQL de 01 frente a 04, tipos de error de 01 frente a 03), hizo que 03 use los algoritmos de 02 (bisiesto, DNI), unificó la notación del pseudocódigo (`lista[posición]` desde 0, nombres sin tildes ni eñes) y aligeró 01.04 (de 1.763 a unas 1.400 líneas).
+Cómo se hizo (para repetirlo): cuatro autores en paralelo con el mismo encargo; una revisión de conjunto por un solo editor (tono, cada término definido una vez, sin solapes, notación unificada, dosis de principiante); comprobaciones propias (formato del kit, Mermaid 12.2.0, fragmentos y salidas en `.verificacion/`); segunda opinión de la sesión de la raíz y correcciones; un commit por módulo. Criterio de dosis: «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Glosario: solo términos de varios cursos o que se consultarán después.
 
 ## Siguiente paso
 
-**Revisión del autor de la fase 1.** Ya aprobado (8 de noviembre de 2026): el tiempo nuevo de 01.02 (4 h), las convenciones `lista[posición]` desde 0 y nombres sin tildes ni eñes, los ejercicios reescritos de 01.03 y lo quitado en 01.02 y 01.04, y el **criterio del glosario** (solo términos que se usan en varios cursos o que se consultarán después: 55 de 96). Tras la segunda opinión de la sesión de la raíz, **recortada la dosis** de 01.03 (prueba automática con un solo ejemplo en Python; unitarias, integración y TDD en «Ideas que verás en tu curso»; ejercicio 8 sobre casos de prueba del NIE; 2 h) y de 01.04 (los cuatro grandes paradigmas con su ejemplo; el resto en la tabla «Otros estilos que oirás nombrar»; 1,5 h), con retos y preguntas de repaso revisados para que nada dependa de lo quitado. Tiempo de 01.03 subido a 3 h (por lo que piden sus ejercicios). **Los tiempos de la fase 1 son provisionales** hasta que el autor la lea como alumno. **Segunda opinión de la fase entera** (sesión de la raíz, solo leyendo): ocho precisiones aplicadas en 01.01 (ejercicios 2 y 5), 01.02 (resta de horas, ejercicio 8, patrón del máximo), 01.03 (subalgoritmo imaginado y caso 11 del hotel) y 01.04 (constante `MINIMO_GRATIS` y céntimos en el objeto `Pedido`). **Opción abierta, solo si la lectura del autor lo pide:** partir el 01.02 (4 h, el más denso) en dos módulos, «Datos y operaciones» y «Estructuras de control»; sin nada publicado, se puede hacer sin equivalencias. **Pendiente:** que el autor lea entero el 01.02, hojee los demás, intente un reto (por ejemplo, el del taxi) y diga qué cambia.
+**Fase 2, «Tu ordenador por dentro».** Antes de escribirla, cerrar con el autor el orden de terminal y Git Bash (ver la respuesta del 8 de noviembre de 2026). Con el aviso único sobre las salidas de terminal (`PLAN-CURSO.md`, apartado 2), incluidos los identificadores y las fechas de los commits.
 
-**Para la fase 2:** el aviso único sobre las salidas de terminal (`PLAN-CURSO.md`, apartado 2) va en el primer módulo que muestre salidas.
-
-Después: prueba de importación de la fase 1 en una copia de la academia (desde su proyecto) y la fase 2.
+Después: prueba de importación de la fase 1 en una copia de la academia (desde su proyecto).
 
 ## Dependencias con el kit
 

@@ -78,7 +78,7 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | | `05-seguridad-basica.md` | Seguridad básica | 1,5 | N |
 | `fase-08-proyecto-final` → `inicial.fase.proyecto-final` | `01-primer-repositorio.md` | Tu primer repositorio | 6 | N |
 
-Total: unas **69 horas**, más los retos (los de la fase 1, 3 horas). Los tiempos de la fase 1 son **provisionales**: se estimaron contando líneas y lo que piden los ejercicios, y se darán por definitivos cuando el autor lea la fase como alumno, ajustándolos con lo que tarde de verdad. La fase 1 quedó en 10,5 horas el 8 de noviembre de 2026, tras **ajustar la dosis** a un principiante: 01.03 y 01.04 se quedan con las ideas y dejan el detalle a cada curso. **Criterio para las fases siguientes:** «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Vigilar la extensión: el curso estaba ya en el límite.
+Total: unas **69 horas**, más los retos (los de la fase 1, 3 horas). **La fase 1 está aprobada por el autor (8 de noviembre de 2026) y sus tiempos son definitivos.** La fase 1 quedó en 10,5 horas el 8 de noviembre de 2026, tras **ajustar la dosis** a un principiante: 01.03 y 01.04 se quedan con las ideas y dejan el detalle a cada curso. **Criterio para las fases siguientes:** «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Vigilar la extensión: el curso estaba ya en el límite.
 
 ### 4.1. Origen de cada módulo
 
@@ -124,7 +124,7 @@ Unos **19 se adaptan** y unos **12 son nuevos**. Qué lleva cada módulo nuevo o
 
 1. ~~Cerrar con el autor las decisiones y el temario: carpetas, ficheros, identificadores, tiempos y nivel. Escribir `curso.json`.~~ Hecho el 8 de noviembre de 2026, junto con los retos de cada fase y qué se verifica de cada ejercicio (apartado 8).
 2. ~~Revisión del autor del plan entero antes de escribir nada.~~ Aprobado el 8 de noviembre de 2026, con los ajustes de glosario, ficheros obligatorios y retos (apartados 8 a 10).
-3. Fase 1 y **parar** para que el autor revise estilo, profundidad y formato.
+3. ~~Fase 1 y **parar** para que el autor revise estilo, profundidad y formato.~~ Aprobada el 8 de noviembre de 2026, tal como está.
 4. Prueba de importación de la fase 1 en una copia de la academia (desde su propio proyecto).
 5. El resto, fase a fase, con las reglas de `../CLAUDE.md`.
 6. Etiquetar la versión 1.0.0 y publicarlo con la academia (pack base 1.0).
