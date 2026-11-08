@@ -14,6 +14,10 @@ Cómo se hizo (para repetirlo): cuatro autores en paralelo con el mismo encargo;
 
 Después: prueba de importación de la fase 1 en una copia de la academia (desde su proyecto).
 
+## Cómo se cambian los documentos
+
+Los cambios en varios ficheros a la vez (plan, estado, módulos) se hacen con `python3 .verificacion/herramientas/reemplazar.py cambios.json`, que aplica **todas las sustituciones o ninguna** y comprueba después que el texto nuevo está en su sitio; el commit va encadenado con `&&`, así que solo se hace si todo ha ido bien. Motivo (8 de noviembre de 2026): dos veces, un script escribió unos ficheros, falló en otro y el commit se hizo igual con el cambio a medias.
+
 ## Dependencias con el kit
 
 Se trabaja a la vez que `../kit-cursos/`. **Lee su `ESTADO.md` (solo leer) al empezar cada sesión y antes de cerrar cada fase**, y actualiza esta tabla.
