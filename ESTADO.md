@@ -12,6 +12,8 @@ Cómo se escribió: cuatro autores en paralelo con el mismo encargo y después *
 
 **Revisión del autor de la fase 1.** Ya aprobado (8 de noviembre de 2026): el tiempo nuevo de 01.02 (4 h), las convenciones `lista[posición]` desde 0 y nombres sin tildes ni eñes, los ejercicios reescritos de 01.03 y lo quitado en 01.02 y 01.04, y el **criterio del glosario** (solo términos que se usan en varios cursos o que se consultarán después: 55 de 96). Tras la segunda opinión de la sesión de la raíz, **recortada la dosis** de 01.03 (prueba automática con un solo ejemplo en Python; unitarias, integración y TDD en «Ideas que verás en tu curso»; ejercicio 8 sobre casos de prueba del NIE; 2 h) y de 01.04 (los cuatro grandes paradigmas con su ejemplo; el resto en la tabla «Otros estilos que oirás nombrar»; 1,5 h), con retos y preguntas de repaso revisados para que nada dependa de lo quitado. **Pendiente:** que el autor lea entero el 01.02, hojee los demás, intente un reto (por ejemplo, el del taxi) y diga qué cambia.
 
+**Para la fase 2:** el aviso único sobre las salidas de terminal (`PLAN-CURSO.md`, apartado 2) va en el primer módulo que muestre salidas.
+
 Después: prueba de importación de la fase 1 en una copia de la academia (desde su proyecto) y la fase 2.
 
 ## Dependencias con el kit
