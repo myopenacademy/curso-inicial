@@ -20,8 +20,9 @@ Se trabaja a la vez que `../kit-cursos/`. **Lee su `ESTADO.md` (solo leer) al em
 |---|---|---|
 | `formato_academia.py` | Comprobar y **cerrar la fase 1** (se puede escribir antes; no se da por cerrada sin pasar la comprobación) | **Hecho** (8 de noviembre de 2026): el curso da 0 errores |
 | `generar_indice.py` | Generar `00-indice.md` desde `curso.json` | **Hecho** (8 de noviembre de 2026) |
+| `generar_chuleta_global.py` y `comprobar_mermaid.py` | Chuleta global y diagramas | **Hecho** (8 de noviembre de 2026); los 23 diagramas de la fase 1 se dibujan bien |
 | Plantillas (`curso.json`, módulo, retos) | No bloquea: se sigue `FORMATO.md` | **Hechas** en `../kit-cursos/plantillas/` (8 de noviembre de 2026); se usan como referencia |
-| Comprobadores de los formatos (JSON, YAML, XML, CSV, Markdown…) | Verificar ejemplos, ejercicios y retos | Pendiente |
+| Comprobadores de los formatos (JSON, YAML, XML, CSV, Markdown…) | Verificar ejemplos, ejercicios y retos (no hacen falta en la fase 1) | Pendiente: lo siguiente en el kit |
 | Que un módulo con `"disponible": false` pueda llevar su `fichero` previsto (aviso 1) | Que `curso.json` guarde los nombres cerrados y el índice muestre el temario completo | Hecho en `FORMATO.md` (versión 1) el 8 de noviembre de 2026; aplicado en `curso.json` |
 | Verificar con idioma español (`LC_ALL`), rama `main` y Git con autor y fechas fijos; servidor HTTP local; comprobar la compatibilidad con bash 3.2 | Los ejercicios y retos de las fases 2 a 8 | Recibido por el kit: tarea 4 de su `PLAN.md` |
 | No avisar de la falta de retos en una fase que solo contiene el proyecto final (aviso 3) | La fase 8 | **Hecho** en `FORMATO.md` 6 (versión 1) |
@@ -40,6 +41,11 @@ Si algo bloquea, dilo al autor: él pasa la información de una sesión a otra.
 | 2026-11-08 | Repositorio creado con el plan del curso. |
 | 2026-11-08 | Decisiones del curso aprobadas, temario cerrado con identificadores, versiones de las fases 1 a 3 verificadas y `curso.json` escrito. |
 | 2026-11-08 | Ficheros y retos previstos en `curso.json`; títulos en texto plano. Lista para el kit aprobada (macOS y bash 3.2, salidas en español, rama `main`, fase 8 sin retos). |
+| 2026-11-08 | Módulo 01.01 Qué es programar escrito, revisado con la fase y disponible en `curso.json`, con sus ejercicios y sus términos en el glosario. |
+
+## Convenciones de verificación para las fases 2 en adelante
+
+Desde el 8 de noviembre de 2026, `FORMATO.md` 7.1 fija los ficheros de verificación de cada ejemplo o solución con carpeta en `codigo/` (`entrada.txt`, `args.txt`, `termina-con-error.txt`, `salida-variable.txt`, `sesion.txt`, `debe-fallar.txt`, `separador.txt`) y las líneas exactas del texto tras el «📁 Código» (`**Salida:**`, `**Salida de error:**`, ``**En tu terminal** (`sesion.txt`):``), cada una con su bloque `text`. **Lo de bash de las fases 2 y 3 se escribe ya así.** El verificador del kit va en este orden: bash y sesiones de terminal; después formatos, Git y `curl`.
 
 ## Lista para el kit
 
@@ -83,7 +89,7 @@ Aprobada por el autor el 8 de noviembre de 2026. Qué ejercicios y retos de herr
 Lo escrito antes de que exista `formato_academia.py`, para comprobarlo cuando esté:
 
 - `curso.json`: forma, identificadores y que no falta ningún módulo del temario.
-- **`00-indice.md` se genera con el kit** (`python3 ../kit-cursos/herramientas/nucleo/generar_indice.py`, desde el 8 de noviembre de 2026): no se edita a mano; se regenera cada vez que cambia `curso.json` o la cabecera de un módulo (`--comprobar` dice si está al día). `99-chuleta-global.md` se escribe a mano mientras el kit no tenga su generador; en cuanto exista, se regenera con él y no se vuelve a editar a mano.
+- **`00-indice.md` se genera con el kit** (`python3 ../kit-cursos/herramientas/nucleo/generar_indice.py`, desde el 8 de noviembre de 2026): no se edita a mano; se regenera cada vez que cambia `curso.json` o la cabecera de un módulo (`--comprobar` dice si está al día). `99-chuleta-global.md` **no se escribe a mano**: se genera con `python3 ../kit-cursos/herramientas/nucleo/generar_chuleta_global.py` (solo incluye los módulos disponibles). Los diagramas se comprueban con `python3 ../kit-cursos/herramientas/nucleo/comprobar_mermaid.py` (necesita Node y Chrome). El glosario sí se escribe a mano (es contenido).
 
 ## Avisos para el kit
 

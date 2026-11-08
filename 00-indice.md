@@ -1,17 +1,17 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 0 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** 1 de 31 módulos (los demás aparecen como «Pendiente»)
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
 Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación** (para profundizar más adelante) y un tiempo estimado de estudio, incluidos los ejercicios. Los **retos** del final de cada fase son opcionales.
 
-🏠 [Portada](README.md) · 🗺️ [Ruta de aprendizaje](ROADMAP.md)
+🏠 [Portada](README.md) · 🗺️ [Ruta de aprendizaje](ROADMAP.md) · 📋 [Chuleta global](99-chuleta-global.md)
 
 ## Contenido
 
-- [Fase 01 — Qué es programar](#fase-01--qué-es-programar) · 4 módulos
+- [Fase 01 — Qué es programar](#fase-01--qué-es-programar) · 4 módulos · ~2 h
 - [Fase 02 — Tu ordenador por dentro](#fase-02--tu-ordenador-por-dentro) · 3 módulos
 - [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos
 - [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos
@@ -20,15 +20,17 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
+**Tiempo de los módulos disponibles:** ~2 horas.
+
 ---
 
 ## Fase 01 — Qué es programar
 
-**Carpeta:** [`fase-01-que-es-programar/`](fase-01-que-es-programar/)
+**Carpeta:** [`fase-01-que-es-programar/`](fase-01-que-es-programar/) · **Tiempo:** ~2 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
-| 01.01 | Qué es programar | — | — | Pendiente |
+| 01.01 | [Qué es programar](fase-01-que-es-programar/01-que-es-programar.md) | Básico · Núcleo | 2 h | ✅ Disponible |
 | 01.02 | Algoritmos y pseudocódigo | — | — | Pendiente |
 | 01.03 | ¿Cómo sé que funciona? Probar un programa | — | — | Pendiente |
 | 01.04 | Paradigmas de programación | — | — | Pendiente |
@@ -133,4 +135,4 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 🎯 El proyecto final del curso, para tu portfolio.
 
 ---
-🏠 [Portada](README.md)
+🏠 [Portada](README.md) · ➡️ [Primer módulo](fase-01-que-es-programar/01-que-es-programar.md)

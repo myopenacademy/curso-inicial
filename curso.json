@@ -20,8 +20,44 @@
           "id": "inicial.que-es-programar",
           "fichero": "fase-01-que-es-programar/01-que-es-programar.md",
           "titulo": "Qué es programar",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.que-es-programar.entrada-proceso-y-salida",
+              "titulo": "Entrada, proceso y salida"
+            },
+            {
+              "id": "inicial.que-es-programar.es-un-algoritmo",
+              "titulo": "¿Es un algoritmo?"
+            },
+            {
+              "id": "inicial.que-es-programar.compilado-o-interpretado",
+              "titulo": "¿Compilado o interpretado?"
+            },
+            {
+              "id": "inicial.que-es-programar.sigue-un-algoritmo-a-mano",
+              "titulo": "Sigue un algoritmo a mano"
+            },
+            {
+              "id": "inicial.que-es-programar.lee-un-mensaje-de-error",
+              "titulo": "Lee un mensaje de error"
+            },
+            {
+              "id": "inicial.que-es-programar.el-error-que-el-compilador-no-ve",
+              "titulo": "El error que el compilador no ve"
+            },
+            {
+              "id": "inicial.que-es-programar.un-algoritmo-preciso-para-devolver-el-cambio",
+              "titulo": "Un algoritmo preciso para devolver el cambio"
+            },
+            {
+              "id": "inicial.que-es-programar.instrucciones-ambiguas-de-un-gimnasio",
+              "titulo": "Instrucciones ambiguas de un gimnasio"
+            },
+            {
+              "id": "inicial.que-es-programar.gastos-de-envio-de-una-tienda-online",
+              "titulo": "Gastos de envío de una tienda online"
+            }
+          ]
         },
         {
           "id": "inicial.algoritmos-y-pseudocodigo",
