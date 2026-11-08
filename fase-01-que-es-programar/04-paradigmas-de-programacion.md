@@ -519,7 +519,7 @@ FROM pedidos
 WHERE destino = 'peninsula' AND importe >= 5000;
 ```
 
-**Resultado:**
+**El resultado, presentado como tabla** (no es la salida literal de ningún programa: cada herramienta de bases de datos lo muestra a su manera, pero los valores son estos):
 
 | pedidos_gratis | total |
 |---|---|
