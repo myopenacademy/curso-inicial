@@ -57,6 +57,12 @@ Desde el 8 de noviembre de 2026, `FORMATO.md` 7.1 fija los ficheros de verificac
 
 `python3 ../kit-cursos/herramientas/nucleo/verificar_codigo.py` (o con una fase o un módulo detrás). Scripts: bloque `bash` + «📁 Código» igual al `.sh`, ejecutado con `bash fichero.sh` (`args.txt`, `entrada.txt`) y comparado con «**Salida:**». Sesiones: «En tu terminal (`sesion.txt`):» con la pantalla (`$ `), terminal de 100 columnas, ficheros copiados con fecha 15 de enero de 2026, 10:00. **Entorno con Docker** (para cerrar una fase, siempre con Docker): Ubuntu 26.04.1 en español, hora de Madrid, Git 2.56.0, usuario `alumno`, máquina `ordenador`, sin red, identidad de Git «Ana García <ana@example.com>» y rama `main`: **las salidas esperadas se escriben con eso**. Los scripts se ejecutan también con bash 3.2.57 y deben hacer lo mismo; las diferencias de `sed`, `date` o `ls` entre macOS y Linux se avisan en el texto.
 
+### Sesiones de Git (fase 5, desde el 8 de noviembre de 2026)
+
+En la terminal del kit: fechas de commit fijas que avanzan (el primero, 15 de enero de 2026 a las 10:00; cada uno, un minuto después; un commit que falla no cuenta; otras fechas con `GIT_AUTHOR_DATE` y `GIT_COMMITTER_DATE` en la propia orden), identidad «Ana García <ana@example.com>» y rama `main` salvo `git config` en la sesión. Git no traduce las fechas («Date: Thu Jan 15 10:00:00 2026 +0100») ni el resumen («1 file changed, 1 insertion(+)»): se muestran tal cual. Sin paginador en el kit; en el equipo del alumno una salida larga se abre en `less` (se sale con `q`): decirlo en el texto.
+
+**Fase 6 (`curl`):** al decidir sus ejercicios, decir al kit qué API necesitan (rutas, respuestas, códigos de estado) para su servidor local.
+
 ### Comprobadores de formatos (fase 4, desde el 8 de noviembre de 2026)
 
 En el verificador del kit. Cada fichero de datos de una carpeta enlazada con «📁 Código» debe ser válido: JSON y YAML que se leen; XML bien formado; CSV con el separador de `separador.txt` (si no hay, la coma) y las mismas columnas en cada fila; Markdown de `codigo/` con enlaces, anclas, tablas y bloques bien escritos. **Con `debe-fallar.txt`, todos los ficheros de datos de la carpeta tienen que fallar: cada ejemplo roto, en su propia carpeta.** Un `.json` y un `.yaml` con el mismo nombre en la misma carpeta deben tener los mismos datos (para las conversiones). **Pendiente:** la comparación de un CSV con su JSON, para el reto de la fase 4; el kit la añade cuando se escriba ese reto: avisarle de cómo queda.
