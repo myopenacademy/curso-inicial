@@ -19,11 +19,11 @@ Se trabaja a la vez que `../kit-cursos/`. **Lee su `ESTADO.md` (solo leer) al em
 | El curso espera del kit | Para | Estado |
 |---|---|---|
 | `formato_academia.py` | Comprobar y **cerrar la fase 1** (se puede escribir antes; no se da por cerrada sin pasar la comprobación) | Pendiente |
-| Plantillas (`curso.json`, módulo, retos) | No bloquea: se sigue `FORMATO.md` | Pendiente |
+| Plantillas (`curso.json`, módulo, retos) | No bloquea: se sigue `FORMATO.md` | **Hechas** en `../kit-cursos/plantillas/` (8 de noviembre de 2026); se usan como referencia |
 | Comprobadores de los formatos (JSON, YAML, XML, CSV, Markdown…) | Verificar ejemplos, ejercicios y retos | Pendiente |
 | Que un módulo con `"disponible": false` pueda llevar su `fichero` previsto (aviso 1) | Que `curso.json` guarde los nombres cerrados y el índice muestre el temario completo | Hecho en `FORMATO.md` (versión 1) el 8 de noviembre de 2026; aplicado en `curso.json` |
-| Verificar con idioma español (`LC_ALL`), rama `main` y Git con autor y fechas fijos; servidor HTTP local; comprobar la compatibilidad con bash 3.2 | Los ejercicios y retos de las fases 2 a 8 | Pedido el 8 de noviembre de 2026 |
-| No avisar de la falta de retos en una fase que solo contiene el proyecto final (aviso 3) | La fase 8 | Pedido el 8 de noviembre de 2026 |
+| Verificar con idioma español (`LC_ALL`), rama `main` y Git con autor y fechas fijos; servidor HTTP local; comprobar la compatibilidad con bash 3.2 | Los ejercicios y retos de las fases 2 a 8 | Recibido por el kit: tarea 4 de su `PLAN.md` |
+| No avisar de la falta de retos en una fase que solo contiene el proyecto final (aviso 3) | La fase 8 | **Hecho** en `FORMATO.md` 6 (versión 1) |
 
 | El kit espera del curso | Para | Estado |
 |---|---|---|
@@ -89,4 +89,4 @@ Lo que no encaje con `FORMATO.md` (el autor lo lleva a la sesión del kit):
 
 1. ✅ **Resuelto** (`FORMATO.md` 3.2, campos `fichero` y `retos_disponibles`). **Fichero previsto en módulos sin escribir** (8 de noviembre de 2026, aprobado por el autor). `FORMATO.md` 3.2 dice que un módulo con `"disponible": false` «no tiene fichero», así que `curso.json` no puede guardar los nombres de fichero ya cerrados. Se pide que pueda llevar su `fichero` previsto (sin exigir que exista mientras `disponible` sea `false`), como hace Code Academy con las lecciones pendientes; así el índice muestra el temario completo desde el principio. Como el formato no se ha publicado, el autor propone ajustarlo dentro de la versión 1. Lo mismo convendría para el `retos` de una fase todavía sin retos escritos. Los nombres previstos están en `PLAN-CURSO.md`, apartado 4.
 2. ✅ **Resuelto** (`FORMATO.md` 3.2; el kit lo trata como error). **Títulos en texto plano** (8 de noviembre de 2026, regla del autor). Los títulos de curso, fase, módulo, ejercicio y reto son texto plano, sin formato Markdown (nada de `` ` ``, `**` ni `*`), tanto en `curso.json` como en el encabezado del módulo. `FORMATO.md` no lo dice; convendría añadirlo y que `formato_academia.py` lo compruebe.
-3. **Fase que solo contiene el proyecto final, sin retos** (8 de noviembre de 2026, aprobado por el autor). `FORMATO.md` dice que conviene que toda fase tenga retos y que el kit avisa si faltan. La fase 8 del curso inicial solo tiene el proyecto final (`"proyecto": {"tipo": "modulo"}`), que ya es el reto, así que el aviso saldría siempre. Se pide que el kit no avise cuando la fase solo contiene el módulo del proyecto final.
+3. ✅ **Resuelto** (`FORMATO.md` 6). **Fase que solo contiene el proyecto final, sin retos** (8 de noviembre de 2026, aprobado por el autor). `FORMATO.md` dice que conviene que toda fase tenga retos y que el kit avisa si faltan. La fase 8 del curso inicial solo tiene el proyecto final (`"proyecto": {"tipo": "modulo"}`), que ya es el reto, así que el aviso saldría siempre. Se pide que el kit no avise cuando la fase solo contiene el módulo del proyecto final.
