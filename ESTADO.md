@@ -10,7 +10,7 @@ Cómo se hizo (para repetirlo): cuatro autores en paralelo con el mismo encargo;
 
 ## Siguiente paso
 
-**Fase 2, «Tu ordenador por dentro».** Antes de escribirla, cerrar con el autor el orden de terminal y Git Bash (ver la respuesta del 8 de noviembre de 2026). Con el aviso único sobre las salidas de terminal (`PLAN-CURSO.md`, apartado 2), incluidos los identificadores y las fechas de los commits.
+**Fase 2, «Tu ordenador por dentro».** Orden de la terminal aprobado (`PLAN-CURSO.md`, apartado 8): la fase 2 no tiene bash; empieza en la fase 3. Con el aviso único sobre las salidas de terminal (`PLAN-CURSO.md`, apartado 2), incluidos los identificadores y las fechas de los commits.
 
 Después: prueba de importación de la fase 1 en una copia de la academia (desde su proyecto).
 
@@ -90,8 +90,8 @@ Aprobada por el autor el 8 de noviembre de 2026. Qué ejercicios y retos de herr
 | Fase | Ejercicios con herramientas | Reto de la fase |
 |---|---|---|
 | 1. Qué es programar | Ninguno: pseudocódigo y tablas de prueba | Algoritmo con tabla de prueba (no se verifica) |
-| 2. Tu ordenador | bash: rutas relativas y absolutas en un árbol de carpetas; añadir una carpeta al PATH y ejecutar un script | Ordenar una carpeta de «Descargas» por tipo de fichero: se comprueba el árbol final |
-| 3. Herramientas | bash: comandos básicos, redirecciones, tuberías, permisos, un script; leer errores de scripts que fallan a propósito | Script que analiza un log (`grep`, `sort`, `wc`): se comprueba su salida |
+| 2. Tu ordenador | **Ninguno de bash** (cambio del 8 de noviembre de 2026: la terminal se enseña en la fase 3). Rutas razonadas sobre un árbol; en 02.03, primer contacto con `git --version`, `echo $PATH` y `command -v git`, presentado como ejemplo | Diagnosticar un «command not found» razonando (no se verifica) |
+| 3. Herramientas | bash: rutas relativas y absolutas en un árbol de carpetas; comandos básicos, redirecciones, tuberías, permisos, un script; añadir una carpeta al PATH y ejecutar un script; leer errores de scripts que fallan a propósito | Ordenar una carpeta de «Descargas» por tipo de fichero (se comprueba el árbol final) y, el más completo, un script que analiza un log (`grep`, `sort`, `wc`): se comprueba su salida |
 | 4. Formatos | Markdown, JSON, YAML, XML y CSV, válidos y rotos a propósito; codificación (`file`, `iconv`); Mermaid | CSV de pedidos a JSON y YAML, documentado en Markdown con un diagrama: cada fichero y que los datos coinciden |
 | 5. Git | Commits, historial, ramas, conflicto resuelto, `.gitignore` | Historial con una rama y un conflicto resuelto: log y estado final |
 | 6. Internet | `curl` contra el servidor local (códigos de estado, cabeceras, JSON de respuesta); «puerto en uso» | Consultar una API local y guardar los resultados en JSON: se comprueba el fichero |
