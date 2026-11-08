@@ -75,7 +75,7 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | | `05-seguridad-basica.md` | Seguridad básica | 1,5 | N |
 | `fase-08-proyecto-final` → `inicial.fase.proyecto-final` | `01-primer-repositorio.md` | Tu primer repositorio | 6 | N |
 
-Total: unas **67 horas**, más los retos. Cada fase termina con su `retos.md`. El proyecto para el portfolio es `inicial.primer-repositorio`.
+Total: unas **67 horas**, más los retos. Las fases 1 a 7 terminan con su `retos.md`; la 8 no tiene retos (el proyecto es el reto). El proyecto para el portfolio es `inicial.primer-repositorio`.
 
 ### 4.1. Origen de cada módulo
 
@@ -115,12 +115,12 @@ Total: unas **67 horas**, más los retos. Cada fase termina con su `retos.md`. E
 | 30 | | Seguridad básica | ♻️ partes generales de 14.01 y 14.06 `fase-14-seguridad/01-criptografia-conceptos-y-hash.md`, `06-tokens-y-secretos.md` |
 | 31 | **8. Proyecto final** | Tu primer repositorio | 🆕 (ideas de 20.06 `fase-20-profesional/06-portfolio.md`) |
 
-Unos **19 se adaptan** y unos **12 son nuevos**. Qué lleva cada módulo nuevo o ampliado: `../../PLAN.md`, apartado 5.3. Cada fase termina con su `retos.md`.
+Unos **19 se adaptan** y unos **12 son nuevos**. Qué lleva cada módulo nuevo o ampliado: `../../PLAN.md`, apartado 5.3. Retos de cada fase: apartado 8.
 
 ## 5. Cómo se trabaja
 
-1. ~~Cerrar con el autor las decisiones y el temario: carpetas, ficheros, identificadores, tiempos y nivel. Escribir `curso.json`.~~ Hecho el 8 de noviembre de 2026. Falta decidir los retos de cada fase y qué se verifica de cada ejercicio (apartado 3).
-2. Revisión del autor del plan entero antes de escribir nada.
+1. ~~Cerrar con el autor las decisiones y el temario: carpetas, ficheros, identificadores, tiempos y nivel. Escribir `curso.json`.~~ Hecho el 8 de noviembre de 2026, junto con los retos de cada fase y qué se verifica de cada ejercicio (apartado 8).
+2. ~~Revisión del autor del plan entero antes de escribir nada.~~ Aprobado el 8 de noviembre de 2026, con los ajustes de glosario, ficheros obligatorios y retos (apartados 8 a 10).
 3. Fase 1 y **parar** para que el autor revise estilo, profundidad y formato.
 4. Prueba de importación de la fase 1 en una copia de la academia (desde su propio proyecto).
 5. El resto, fase a fase, con las reglas de `../CLAUDE.md`.
@@ -153,7 +153,9 @@ VS Code saca versión cada mes: en el texto se dice «la versión de noviembre d
 
 Aprobado por el autor el 8 de noviembre de 2026 y pasado a la sesión del kit (lista detallada en `ESTADO.md`, «Lista para el kit»). Todo lo verificable se comprueba **sin internet**; lo que no se puede verificar va con salida de ejemplo y una nota que lo dice.
 
-| Fase | Reto de la fase |
+**Dos o tres retos por fase** (aprobado el 8 de noviembre de 2026), de menor a mayor dificultad, como los ejercicios. El de esta tabla es **el más completo** de cada fase, el último; los demás se deciden al escribir la fase y mezclan lo de varios módulos.
+
+| Fase | Reto más completo |
 |---|---|
 | 1. Qué es programar | Algoritmo en pseudocódigo con su tabla de prueba (no se verifica) |
 | 2. Tu ordenador | Ordenar una carpeta de «Descargas» por tipo de fichero |
@@ -163,3 +165,17 @@ Aprobado por el autor el 8 de noviembre de 2026 y pasado a la sesión del kit (l
 | 6. Internet | Consultar una API local pequeña y guardar los resultados en JSON |
 | 7. Aprender | Repositorio con `.gitignore`, `.env.example` y plantilla de *issue* |
 | 8. Proyecto | Sin retos: el proyecto es el reto |
+
+## 9. El glosario
+
+Este curso tiene el **`glosario.md` común** que enlazan todos los cursos (`../kit-cursos/FORMATO.md`, apartado 9). **Crece con cada módulo**: cada término nuevo que se explica en un módulo entra en el glosario en el mismo commit, con una definición corta y un enlace al apartado del módulo donde se explica. Un `## Letra` por letra y un `### Término` por término, en orden alfabético.
+
+## 10. Cuándo se crean los ficheros obligatorios
+
+| Fichero | Cuándo |
+|---|---|
+| `00-indice.md` | Con la fase 1, y al día con cada módulo (lo generará el kit desde `curso.json`; mientras, a mano y con el mismo formato) |
+| `ROADMAP.md` | Con la fase 1 |
+| `glosario.md` | Con el primer módulo, y crece con cada uno (apartado 9) |
+| `99-chuleta-global.md` | Con el primer módulo, y crece a medida que se escriben (lo generará el kit) |
+| `LICENSE`, `CONTRIBUTING.md`, `CHANGELOG.md` | Antes de publicar (paso 6 del apartado 5) |
