@@ -82,6 +82,7 @@ Aprobada por el autor el 8 de noviembre de 2026. Qué ejercicios y retos de herr
 Lo escrito antes de que exista `formato_academia.py`, para comprobarlo cuando esté:
 
 - `curso.json`: forma, identificadores y que no falta ningún módulo del temario.
+- `00-indice.md` y `99-chuleta-global.md` se escriben a mano mientras no existan las herramientas del kit (`generar_indice.py`, tarea 3, y el generador de la chuleta global). `FORMATO.md` dice que se generan desde `curso.json` y los módulos: **en cuanto existan, se regeneran con el kit** y no se vuelven a editar a mano, para no mantener dos versiones.
 
 ## Avisos para el kit
 
