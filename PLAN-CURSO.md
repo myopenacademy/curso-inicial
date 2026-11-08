@@ -154,6 +154,8 @@ VS Code saca versión cada mes: en el texto se dice «la versión de noviembre d
 
 ## 8. Qué se verifica y retos de cada fase
 
+**Orden de la terminal** (aprobado el 8 de noviembre de 2026): la terminal se enseña en la fase 3, y en Windows no hay bash hasta que el módulo 02.03 instala Git for Windows. Por eso la fase 2 **no tiene ejercicios de bash**: 02.02 trabaja las rutas con el explorador de archivos y razonando sobre un árbol de carpetas (cómo se escribe una ruta en Windows, macOS, Linux y Git Bash, sin teclear órdenes); 02.03 instala Git for Windows y VS Code, explica las variables de entorno y el PATH y da un **primer contacto mínimo con la terminal** solo para comprobar lo instalado (`git --version`, `echo $PATH`, `command -v git`), con el **aviso único sobre las salidas**; esas salidas cambian mucho entre sistemas, así que se presentan como ejemplo, diciendo en qué tiene que fijarse el alumno en cada una (que sale una versión, que Git está en el PATH…). Los ejercicios de bash empiezan en la fase 3: «Descargas» pasa a sus retos y «añadir una carpeta al PATH y ejecutar un script», a «La terminal: sacarle partido».
+
 Aprobado por el autor el 8 de noviembre de 2026 y pasado a la sesión del kit (lista detallada en `ESTADO.md`, «Lista para el kit»). Todo lo verificable se comprueba **sin internet**; lo que no se puede verificar va con salida de ejemplo y una nota que lo dice.
 
 **Dos o tres retos por fase** (aprobado el 8 de noviembre de 2026), de menor a mayor dificultad, como los ejercicios. El de esta tabla es **el más completo** de cada fase, el último; los demás se deciden al escribir la fase y mezclan lo de varios módulos.
@@ -161,8 +163,8 @@ Aprobado por el autor el 8 de noviembre de 2026 y pasado a la sesión del kit (l
 | Fase | Reto más completo |
 |---|---|
 | 1. Qué es programar | Algoritmo en pseudocódigo con su tabla de prueba (no se verifica) |
-| 2. Tu ordenador | Ordenar una carpeta de «Descargas» por tipo de fichero |
-| 3. Herramientas | Script que analiza un log (`grep`, `sort`, `wc`) |
+| 2. Tu ordenador | Diagnosticar un «command not found»: por qué un programa instalado no se encuentra (PATH), razonando sin ejecutar |
+| 3. Herramientas | Script que analiza un log (`grep`, `sort`, `wc`); antes, ordenar una carpeta de «Descargas» por tipo de fichero (`mkdir`, `mv`) |
 | 4. Formatos | Pasar un CSV de pedidos a JSON y YAML y documentarlo en Markdown con un diagrama |
 | 5. Git | Historial con una rama y un conflicto resuelto |
 | 6. Internet | Consultar una API local pequeña y guardar los resultados en JSON |
