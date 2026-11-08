@@ -2,7 +2,7 @@
 
 > **Versiones:** Los fragmentos de ejemplo se han comprobado con Python 3.14 y Node.js 24 (8 de noviembre de 2026)
 > **Conviene saber antes:** [01.01 Qué es programar](01-que-es-programar.md) · [01.02 Algoritmos y pseudocódigo](02-algoritmos-y-pseudocodigo.md)
-> **Tiempo estimado:** 2 horas
+> **Tiempo estimado:** 3 horas
 > **Nivel:** Básico · Núcleo
 
 ## Qué aprenderás

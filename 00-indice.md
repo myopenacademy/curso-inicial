@@ -11,7 +11,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Contenido
 
-- [Fase 01 — Qué es programar](#fase-01--qué-es-programar) · 4 módulos · ~9,5 h
+- [Fase 01 — Qué es programar](#fase-01--qué-es-programar) · 4 módulos · ~10,5 h
 - [Fase 02 — Tu ordenador por dentro](#fase-02--tu-ordenador-por-dentro) · 3 módulos
 - [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos
 - [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos
@@ -20,19 +20,19 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
-**Tiempo de los módulos disponibles:** ~9,5 horas.
+**Tiempo de los módulos disponibles:** ~10,5 horas.
 
 ---
 
 ## Fase 01 — Qué es programar
 
-**Carpeta:** [`fase-01-que-es-programar/`](fase-01-que-es-programar/) · **Tiempo:** ~9,5 h
+**Carpeta:** [`fase-01-que-es-programar/`](fase-01-que-es-programar/) · **Tiempo:** ~10,5 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
 | 01.01 | [Qué es programar](fase-01-que-es-programar/01-que-es-programar.md) | Básico · Núcleo | 2 h | ✅ Disponible |
 | 01.02 | [Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md) | Básico · Núcleo | 4 h | ✅ Disponible |
-| 01.03 | [¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md) | Básico · Núcleo | 2 h | ✅ Disponible |
+| 01.03 | [¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md) | Básico · Núcleo | 3 h | ✅ Disponible |
 | 01.04 | [Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md) | Básico · Ampliación | 1,5 h | ✅ Disponible |
 | | [Retos de la fase](fase-01-que-es-programar/retos.md) | | | ✅ Disponible |
 
