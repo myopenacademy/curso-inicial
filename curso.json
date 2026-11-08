@@ -286,8 +286,6 @@
       "id": "inicial.fase.proyecto-final",
       "carpeta": "fase-08-proyecto-final",
       "titulo": "Proyecto final",
-      "retos": "fase-08-proyecto-final/retos.md",
-      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.primer-repositorio",

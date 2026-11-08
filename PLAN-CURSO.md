@@ -23,6 +23,10 @@ Aprobadas por el autor el 8 de noviembre de 2026:
 
 - **Nombre público: «Fundamentos para programar».** Dice qué es sin sonar a curso menor. («Kit» queda solo para las herramientas.)
 - **Terminal: bash para todos.** En Windows, con **Git Bash**, que se instala con Git for Windows (hace falta igualmente para la fase 5); WSL se menciona como alternativa para cursos posteriores (DevOps). Por qué: un solo juego de comandos, el mismo que en servidores, Docker y CI, y verificable por el kit en Linux. El curso de Java original pone PowerShell y bash lado a lado (módulo 01.04), lo que duplica contenido y verificación. Consecuencias: Git for Windows se instala en el módulo «Instalar programas» (fase 2); «La terminal: lo básico» lleva solo una tabla pequeña de equivalencias con PowerShell, para reconocerlos; y **afecta al curso de Java**, que hoy da PowerShell por supuesto (se anota en el plan general).
+- **macOS** (8 de noviembre de 2026): su terminal usa zsh por defecto y su bash es el 3.2. Por eso **los ejemplos y scripts del curso usan solo lo que funciona en bash 3.2** (nada de arrays asociativos, `mapfile`, `${var,,}` ni otras novedades de bash 4 y 5), y cuando un comando se comporta distinto en macOS y en Linux (`sed -i`, `date`, algunas opciones de `ls`…), **el módulo lo avisa**. Afecta también a la decisión 9 del plan general.
+- **Salidas en español** (8 de noviembre de 2026): las salidas de Git y de los comandos se muestran en español, que es lo que verá el alumno; el kit fija el idioma al verificar (`LC_ALL`).
+- **Rama principal `main`** (8 de noviembre de 2026): el curso dice `main` y explica cómo configurarlo (`init.defaultBranch`); el kit lo fija al verificar.
+- **La fase 8 no tiene retos**: el proyecto final ya es el reto.
 - **Normas sobre el uso de la IA** (apartado 6). Son de toda la academia, no solo de este curso: se anotan también en el plan general.
 - **Núcleo o Ampliación se marca por módulo, no por fase**: el proyecto final usa módulos de fases «recomendadas» (Markdown, JSON, Mermaid, tableros, secretos), y varios módulos de la fase 6 los necesitan casi todos los cursos.
 - **Retos de la fase 1 sin código verificable:** el pseudocódigo no se ejecuta, así que llevan una solución razonada y una tabla de prueba (lo que enseña el módulo «Probar un programa»).
@@ -31,7 +35,7 @@ Aprobadas por el autor el 8 de noviembre de 2026:
 
 ## 3. Decisiones pendientes
 
-1. **Qué se verifica de cada ejercicio de herramientas y cómo** (se decide con el autor y se pasa a la sesión del kit).
+Ninguna. Qué se verifica de cada ejercicio y los retos de cada fase se aprobaron el 8 de noviembre de 2026 (apartado 8).
 
 ## 4. Temario: 8 fases y 31 módulos
 
@@ -144,3 +148,18 @@ Verificadas en la documentación oficial el 8 de noviembre de 2026. En el texto 
 | Bash | 5.3 (5 de julio de 2025) | ftp.gnu.org/gnu/bash |
 
 VS Code saca versión cada mes: en el texto se dice «la versión de noviembre de 2026 (1.145)» y se explica que se actualiza solo. Las del resto de fases (Mermaid, `curl`, etc.) se verifican al escribir cada fase.
+
+## 8. Qué se verifica y retos de cada fase
+
+Aprobado por el autor el 8 de noviembre de 2026 y pasado a la sesión del kit (lista detallada en `ESTADO.md`, «Lista para el kit»). Todo lo verificable se comprueba **sin internet**; lo que no se puede verificar va con salida de ejemplo y una nota que lo dice.
+
+| Fase | Reto de la fase |
+|---|---|
+| 1. Qué es programar | Algoritmo en pseudocódigo con su tabla de prueba (no se verifica) |
+| 2. Tu ordenador | Ordenar una carpeta de «Descargas» por tipo de fichero |
+| 3. Herramientas | Script que analiza un log (`grep`, `sort`, `wc`) |
+| 4. Formatos | Pasar un CSV de pedidos a JSON y YAML y documentarlo en Markdown con un diagrama |
+| 5. Git | Historial con una rama y un conflicto resuelto |
+| 6. Internet | Consultar una API local pequeña y guardar los resultados en JSON |
+| 7. Aprender | Repositorio con `.gitignore`, `.env.example` y plantilla de *issue* |
+| 8. Proyecto | Sin retos: el proyecto es el reto |
