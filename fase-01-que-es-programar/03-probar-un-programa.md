@@ -2,7 +2,7 @@
 
 > **Versiones:** Los fragmentos de ejemplo se han comprobado con Python 3.14 y Node.js 24 (8 de noviembre de 2026)
 > **Conviene saber antes:** [01.01 Qué es programar](01-que-es-programar.md) · [01.02 Algoritmos y pseudocódigo](02-algoritmos-y-pseudocodigo.md)
-> **Tiempo estimado:** 3 horas
+> **Tiempo estimado:** 2 horas
 > **Nivel:** Básico · Núcleo
 
 ## Qué aprenderás
@@ -14,8 +14,8 @@
 - A **probar a mano** un algoritmo con una **traza** y una **tabla de casos de prueba**.
 - **Qué tipos de errores encuentran las pruebas** y cuáles te señala el propio lenguaje.
 - Por qué **probar no demuestra que no haya errores**, y aun así es imprescindible.
-- Qué son las **pruebas automáticas**, las **unitarias** y las **de integración**, y por qué se ejecutan solas y a menudo.
-- La idea del **TDD**: rojo, verde, refactorizar.
+- Qué son las **pruebas automáticas** y por qué se ejecutan solas y a menudo.
+- Qué quieren decir **prueba unitaria**, **prueba de integración** y **TDD**, para que te suenen cuando las veas en tu curso.
 - A **leer el mensaje de un corrector automático**: qué se esperaba y qué se obtuvo.
 
 ## 1. Teoría
@@ -242,29 +242,9 @@ En palabras: cada vez que cambias el programa, se ejecutan todas las pruebas; si
 
 En los equipos profesionales esto va un paso más allá: cada vez que alguien sube un cambio al repositorio común, un servidor ejecuta **todas** las pruebas automáticamente y avisa si alguna falla. Se llama **integración continua** (en inglés, *continuous integration* o CI). GitHub, que conocerás en la fase 5, lo ofrece con una herramienta llamada GitHub Actions.
 
-> **📌 Nota:** cada lenguaje tiene sus propias herramientas para escribir pruebas automáticas: `unittest` o `pytest` en Python, JUnit en Java, el ejecutor de pruebas que trae Node.js para JavaScript… Cambia cómo se escriben, pero **la idea es siempre la misma**: entrada, salida esperada, salida obtenida, ¿coinciden? Las aprenderás en el curso de tu lenguaje. Aquí verás dos ejemplos cortos para que reconozcas la idea.
+> **📌 Nota:** cada lenguaje tiene sus propias herramientas para escribir pruebas automáticas: `unittest` o `pytest` en Python, JUnit en Java, el ejecutor de pruebas que trae Node.js para JavaScript… Cambia cómo se escriben, pero **la idea es siempre la misma**: entrada, salida esperada, salida obtenida, ¿coinciden? Las aprenderás en el curso de tu lenguaje. Aquí verás un ejemplo corto, en Python, para que reconozcas la idea.
 
-### 1.10. Pruebas unitarias y pruebas de integración
-
-Las pruebas automáticas se clasifican según **cuánto programa prueban de una vez**. Las dos más importantes:
-
-**Pruebas unitarias.** Prueban **una pieza pequeña, sola**: un subalgoritmo, como `CalcularCajas` o `EsBisiesto`. Son las más numerosas, porque son **rápidas** (cada una tarda milésimas de segundo) y **precisas**: si una falla, sabes exactamente qué pieza está mal.
-
-**Pruebas de integración.** Prueban que **varias piezas funcionan bien juntas**. Por ejemplo, que el cálculo de cajas, el de los gastos de envío y el de la factura encajan y el pedido completo sale bien. Son más lentas y, cuando fallan, cuesta más saber dónde está el error, pero encuentran algo que las unitarias no pueden ver: **los errores en las uniones**.
-
-Un caso real famoso lo muestra bien. En 1999, la NASA perdió la sonda **Mars Climate Orbiter** al llegar a Marte. Una parte del software, hecha por un equipo, calculaba la fuerza de los motores en unidades del sistema anglosajón (libras-fuerza por segundo); otra parte, hecha por otro equipo, esperaba esos datos en unidades del sistema internacional (newtons por segundo). Cada pieza, por separado, hacía bien su cuenta. El error estaba **en la unión**: nadie comprobó que las dos piezas se entendieran. Es exactamente lo que busca una prueba de integración.
-
-| | Unitaria | De integración |
-|---|---|---|
-| Qué prueba | Una pieza sola | Varias piezas juntas |
-| Ejemplo | `CalcularCajas(48, 12)` devuelve 4 | Un pedido de 48 libros sale con 4 cajas, envío gratis y la factura correcta |
-| Velocidad | Muy rápida | Más lenta |
-| Si falla… | Sabes qué pieza está mal | Sabes que algo falla en el conjunto; hay que buscar dónde |
-| Cuántas se escriben | Muchas | Menos |
-
-> **📌 Nota:** existen más tipos, como las **pruebas de extremo a extremo** (*end-to-end*), que usan el programa completo como lo haría una persona (abren la página web, pulsan los botones, rellenan los formularios). Las verás, si las necesitas, en el curso de tu lenguaje o de tu especialidad. Para empezar, basta con las dos de este apartado.
-
-### 1.11. Cómo es una prueba automática por dentro
+### 1.10. Cómo es una prueba automática por dentro
 
 Casi todas las pruebas automáticas, en cualquier lenguaje, tienen las mismas **tres partes**:
 
@@ -298,40 +278,9 @@ FIN PRUEBA
 
 Fíjate en que cada `PRUEBA` es **exactamente una fila de la tabla de casos de prueba**, escrita de forma que la pueda ejecutar una máquina. Si ya sabes hacer tablas de casos de prueba, ya sabes qué pruebas automáticas hay que escribir.
 
-> **📌 Nota:** `PRUEBA` y `COMPROBAR` amplían las [convenciones de pseudocódigo del curso](02-algoritmos-y-pseudocodigo.md#15-pseudocódigo) para escribir pruebas. En los lenguajes reales se escriben de otra forma (en el [apartado 2.5](#25-una-prueba-automática-en-python) y el [2.6](#26-la-misma-prueba-en-javascript) verás dos), pero tienen las mismas partes.
+> **📌 Nota:** `PRUEBA` y `COMPROBAR` amplían las [convenciones de pseudocódigo del curso](02-algoritmos-y-pseudocodigo.md#15-pseudocódigo) para escribir pruebas. En los lenguajes reales se escriben de otra forma (en el [apartado 2.4](#24-una-prueba-automática-en-python) verás una en Python), pero tienen las mismas partes.
 
-### 1.12. TDD: primero la prueba
-
-Si escribir los casos de prueba antes del algoritmo es tan buena idea ([apartado 1.5](#15-piensa-los-casos-antes-de-programar)), ¿por qué no llevarlo al extremo? Eso es el **TDD** (*Test-Driven Development*, «desarrollo guiado por pruebas»), una forma de programar que popularizó Kent Beck a principios de los años 2000 y que hoy usan muchos equipos.
-
-En TDD se avanza en ciclos muy cortos de **tres pasos**, que se conocen por los colores de las herramientas de pruebas:
-
-```mermaid
-flowchart LR
-    R["1. Rojo<br/>escribe una prueba<br/>que falla"] --> V["2. Verde<br/>escribe lo mínimo<br/>para que pase"]
-    V --> F["3. Refactorizar<br/>mejora el código<br/>sin cambiar lo que hace"]
-    F --> R
-```
-
-1. **Rojo.** Escribes **una** prueba para algo que el programa todavía no hace. La ejecutas y **falla** (sale en rojo). Tiene que fallar: si pasara, o la prueba está mal o eso ya estaba hecho.
-2. **Verde.** Escribes **lo mínimo** necesario para que esa prueba pase, sin adornos. Ejecutas **todas** las pruebas y deben pasar todas (verde).
-3. **Refactorizar.** Con todo en verde, **mejoras el código** sin cambiar lo que hace: le pones nombres más claros, quitas repeticiones, lo ordenas. Después vuelves a ejecutar las pruebas: si siguen en verde, no has roto nada.
-
-Y vuelta a empezar con la siguiente prueba, hasta que el programa hace todo lo que tiene que hacer.
-
-**Refactorizar** es una palabra que oirás mucho: significa **cambiar cómo está escrito el código sin cambiar lo que hace**. Gracias a las pruebas, se puede hacer sin miedo: si al reorganizar algo lo estropeas, una prueba se pone en rojo al momento.
-
-¿Por qué funciona tan bien?
-
-- Nunca escribes código que nadie ha pedido: cada línea existe para que pase una prueba.
-- Al terminar, **tienes todas las pruebas hechas**, en vez de dejarlas «para luego» (y luego nunca llega).
-- Avanzas a pasos pequeños: si algo se rompe, sabes que ha sido en el último paso, de hace dos minutos.
-
-Lo verás paso a paso, con un caso real, en el [apartado 2.4](#24-tdd-paso-a-paso-los-gastos-de-envío).
-
-> **📌 Nota:** TDD es una **técnica**, no una obligación. Hay equipos que la siguen al pie de la letra y otros que escriben las pruebas justo después del código. Lo que **no** cambia es la idea de fondo, que sí es obligatoria: **pensar los casos de prueba antes de dar algo por terminado**.
-
-### 1.13. Leer el mensaje de un corrector automático
+### 1.11. Leer el mensaje de un corrector automático
 
 Tarde o temprano usarás un **corrector automático**: un programa que comprueba tu solución a un ejercicio ejecutando unas pruebas automáticas que ha preparado otra persona. Lo usan las plataformas de ejercicios de programación, muchos cursos y las pruebas técnicas de las empresas. Y las propias herramientas de pruebas de cada lenguaje hacen exactamente lo mismo con tus pruebas.
 
@@ -356,9 +305,20 @@ Para leerlo sin agobiarte, sigue siempre estos pasos:
 
 > **💡 Consejo:** nunca «arregles» una prueba que falla cambiando el valor esperado para que coincida con el obtenido, salvo que estés **seguro** de que el esperado estaba mal. Si lo haces sin pensar, convertirás un error del programa en un error escondido en las pruebas.
 
+### 1.12. Ideas que verás en tu curso
+
+Cuando empieces a programar en un lenguaje concreto, oirás hablar de estas ideas. Aquí basta con que te suenen; el curso de tu lenguaje las explica con calma.
+
+- **Prueba unitaria:** prueba **una pieza pequeña, sola**, como un subalgoritmo: «`CalcularCajas(48, 12)` devuelve 4». Son rápidas y, si una falla, sabes exactamente qué pieza está mal. Son las más numerosas.
+- **Prueba de integración:** prueba que **varias piezas funcionan bien juntas**, por ejemplo, que el cálculo de cajas, el de los gastos de envío y la factura encajan en un pedido completo. Encuentra los errores **en las uniones**, que las unitarias no ven. El caso más famoso: en 1999, la NASA perdió la sonda Mars Climate Orbiter porque una pieza del software calculaba en unidades anglosajonas y otra esperaba los datos en unidades del sistema internacional. Cada una hacía bien su cuenta; nadie comprobó que se entendieran.
+- **Prueba de extremo a extremo** (*end-to-end*): usa el programa completo como lo haría una persona: abre la página web, pulsa los botones, rellena los formularios.
+- **TDD** (*Test-Driven Development*, «desarrollo guiado por pruebas»): llevar al extremo la idea del [apartado 1.5](#15-piensa-los-casos-antes-de-programar) y escribir cada prueba **antes** que el código. Se avanza en ciclos de tres pasos: **rojo** (escribes una prueba de algo que el programa aún no hace, y falla), **verde** (escribes lo mínimo para que pase) y **refactorizar** (mejoras cómo está escrito el código sin cambiar lo que hace, y compruebas que las pruebas siguen en verde).
+
+**Refactorizar**, esa última palabra, la oirás mucho: es **cambiar cómo está escrito el código sin cambiar lo que hace**. Gracias a las pruebas se puede hacer sin miedo: si al reorganizar algo lo estropeas, una prueba falla al momento.
+
 ## 2. Ejemplos de código
 
-> **📌 Nota:** en este módulo, los «programas» que pruebas son algoritmos en pseudocódigo, y las pruebas, tablas y trazas hechas a mano. Al final verás **dos pruebas automáticas reales**, en Python y en JavaScript, solo para que reconozcas cómo es por dentro una herramienta de pruebas y qué mensajes da. No tienes que ejecutarlas ni aprender esos lenguajes ahora.
+> **📌 Nota:** en este módulo, los «programas» que pruebas son algoritmos en pseudocódigo, y las pruebas, tablas y trazas hechas a mano. Al final verás **una prueba automática real**, en Python, solo para que reconozcas cómo es por dentro una herramienta de pruebas y qué mensajes da. No tienes que ejecutarla ni aprender Python ahora.
 
 ### 2.1. Una tabla de casos de prueba completa: las cajas de un pedido
 
@@ -547,106 +507,7 @@ Vuelve a pasar **los nueve casos**: ahora todos dan ✅. Fíjate en lo que ha pa
 
 > **💡 Consejo:** cuando fallan varias pruebas, no las arregles una por una a base de parches. Mira primero **qué tienen en común** las que fallan y **qué tienen en común** las que pasan. Muchas veces, como aquí, dos o tres fallos tienen solo una o dos causas.
 
-### 2.4. TDD paso a paso: los gastos de envío
-
-**Situación real:** la misma tienda cobra **4,95 € de gastos de envío**, salvo en los pedidos de **50 € o más**, que tienen el **envío gratis**. Un importe de 0 € o negativo es un error. Vamos a escribir el subalgoritmo `GastosEnvio(importe)` siguiendo TDD: **una prueba cada vez, y solo el código necesario para que pase**.
-
-**Ciclo 1. 🔴 Rojo.** Empezamos por el caso más sencillo, un pedido pequeño:
-
-```text
-PRUEBA "Un pedido de 20 € paga 4,95 € de envío"
-    COMPROBAR GastosEnvio(20) = 4.95
-FIN PRUEBA
-```
-
-Todavía no existe `GastosEnvio`, así que la prueba falla (no hay nada que ejecutar). Rojo, como debe ser.
-
-**Ciclo 1. 🟢 Verde.** Lo **mínimo** para que pase:
-
-```text
-SUBALGORITMO GastosEnvio(importe)
-    DEVOLVER 4.95
-FIN SUBALGORITMO
-```
-
-Parece una trampa, y lo es a propósito: con lo que sabemos por ahora (una sola prueba), es suficiente. La prueba pasa. Verde. No hay nada que refactorizar todavía.
-
-**Ciclo 2. 🔴 Rojo.** Una prueba nueva que obligue a avanzar: el envío gratis.
-
-```text
-PRUEBA "Un pedido de 120 € tiene el envío gratis"
-    COMPROBAR GastosEnvio(120) = 0
-FIN PRUEBA
-```
-
-Con el código actual, `GastosEnvio(120)` devuelve 4,95. Esperado: 0; obtenido: 4,95. Rojo.
-
-**Ciclo 2. 🟢 Verde.**
-
-```text
-SUBALGORITMO GastosEnvio(importe)
-    SI importe > 50 ENTONCES
-        DEVOLVER 0
-    FIN SI
-    DEVOLVER 4.95
-FIN SUBALGORITMO
-```
-
-Se ejecutan **las dos** pruebas: 20 → 4,95 ✅ y 120 → 0 ✅. Verde.
-
-**Ciclo 3. 🔴 Rojo.** Ahora, el límite. El enunciado dice «50 € **o más**»:
-
-```text
-PRUEBA "Un pedido de 50 € justos tiene el envío gratis"
-    COMPROBAR GastosEnvio(50) = 0
-FIN PRUEBA
-```
-
-`¿50 > 50?` No, así que devuelve 4,95. Esperado: 0; obtenido: 4,95. ¡Rojo! La prueba del límite ha encontrado el `>` que debería ser `≥`. Y lo ha encontrado **en el momento de escribirlo**, no meses después.
-
-**Ciclo 3. 🟢 Verde.** Se cambia `>` por `≥`. Las tres pruebas pasan.
-
-**Ciclo 4. 🔴 Rojo y 🟢 verde.** El otro lado del límite y los datos no válidos:
-
-```text
-PRUEBA "Un pedido de 49,99 € paga envío"
-    COMPROBAR GastosEnvio(49.99) = 4.95
-FIN PRUEBA
-
-PRUEBA "Un importe de 0 € es un error"
-    COMPROBAR GastosEnvio(0) = "Error: importe no válido"
-FIN PRUEBA
-
-PRUEBA "Un importe negativo es un error"
-    COMPROBAR GastosEnvio(-5) = "Error: importe no válido"
-FIN PRUEBA
-```
-
-La primera ya pasa (es un caso que el código resuelve bien); las dos de error fallan, porque el subalgoritmo devuelve 4,95. Se añade la comprobación y todo pasa a verde.
-
-**Ciclo 4. 🔵 Refactorizar.** Con todo en verde, mejoramos la escritura sin cambiar lo que hace: los números sueltos `50` y `4.95` pasan a ser **constantes** con nombre, y se ordena el `SI` para que se lea de arriba abajo:
-
-```text
-CONSTANTE MINIMO_ENVIO_GRATIS ← 50
-CONSTANTE PRECIO_ENVIO ← 4.95
-
-SUBALGORITMO GastosEnvio(importe)
-    SI importe ≤ 0 ENTONCES
-        gastos ← "Error: importe no válido"
-    SI NO SI importe ≥ MINIMO_ENVIO_GRATIS ENTONCES
-        gastos ← 0
-    SI NO
-        gastos ← PRECIO_ENVIO
-    FIN SI
-    DEVOLVER gastos
-FIN SUBALGORITMO
-```
-
-Se pasan **las seis pruebas** otra vez: todas en verde. La refactorización no ha roto nada, y lo sabemos con certeza.
-
-Al terminar, tenemos dos cosas: el subalgoritmo **y** seis pruebas que lo protegen. Si el mes que viene la tienda sube el mínimo a 60 €, se cambia la constante, se ajustan las pruebas del límite y en segundos se sabe si todo sigue bien.
-
-### 2.5. Una prueba automática en Python
+### 2.4. Una prueba automática en Python
 
 Vamos a ver cómo es una prueba automática **de verdad**. Este es el subalgoritmo `CalcularCajas`, escrito en **Python**, y tres pruebas automáticas con `unittest`, la herramienta de pruebas que viene incluida en Python. **No hace falta que entiendas cada línea: fíjate en que cada prueba es una fila de la tabla de casos de prueba**, con su entrada y su salida esperada.
 
@@ -737,7 +598,7 @@ FAILED (failures=1)
 
 (La ruta del fichero, `/home/ana/pruebas/`, depende del ordenador; el tiempo, `0.000s`, cambia un poco en cada ejecución.)
 
-**Cómo leerla**, con los pasos del [apartado 1.13](#113-leer-el-mensaje-de-un-corrector-automático):
+**Cómo leerla**, con los pasos del [apartado 1.11](#111-leer-el-mensaje-de-un-corrector-automático):
 
 1. **Cuántas fallan:** al final, `FAILED (failures=1)`: una prueba ha fallado. Arriba ves que las otras dos siguen en `ok`.
 2. **Cuál:** `FAIL: test_cajas_justas`. Es la prueba de las cajas justas. Ya sospechas algo de cuando no sobran libros.
@@ -749,134 +610,21 @@ Fíjate también en lo que **no** ha detectado nada: el pedido normal y el de un
 
 > **📌 Nota:** `unittest` no obliga a poner primero el obtenido y después el esperado: es lo habitual, pero hay quien lo escribe al revés. Por eso, ante un `5 != 4`, **mira siempre la línea de la aserción** para saber cuál es cuál.
 
-### 2.6. La misma prueba en JavaScript
+### 2.5. Del corrector a la tabla: esperado frente a obtenido
 
-Ahora lo mismo en **JavaScript**, el lenguaje de las páginas web, con el ejecutor de pruebas que trae incluido **Node.js** (`node:test`) y su módulo de aserciones (`node:assert`). **No hace falta que entiendas cada línea: fíjate en que las tres pruebas son las mismas que en Python**, con otras palabras.
+El mensaje del apartado anterior, y el de casi cualquier corrector automático, se puede «traducir» a la tabla de casos de prueba que ya sabes hacer. Si lo haces, deja de dar miedo:
 
-El programa, en `cajas.js`:
-
-```javascript
-function calcularCajas(libros, capacidad) {
-  let cajas = Math.floor(libros / capacidad);   // cajas llenas
-  if (libros % capacidad > 0) {                 // si sobran libros...
-    cajas = cajas + 1;                          // ...hace falta una caja más
-  }
-  return cajas;
-}
-
-module.exports = { calcularCajas };
-```
-
-Las pruebas, en `cajas.test.js`:
-
-```javascript
-const test = require('node:test');
-const assert = require('node:assert');
-const { calcularCajas } = require('./cajas.js');
-
-test('pedido normal: 53 libros en cajas de 12', () => {
-  assert.strictEqual(calcularCajas(53, 12), 5);
-});
-
-test('cajas justas: 40 libros en cajas de 10', () => {
-  assert.strictEqual(calcularCajas(40, 10), 4);
-});
-
-test('un solo libro', () => {
-  assert.strictEqual(calcularCajas(1, 12), 1);
-});
-```
-
-Aquí cada prueba es un `test('nombre', …)`, y la aserción es `assert.strictEqual(obtenido, esperado)`: «comprueba que son estrictamente iguales». En este caso, la documentación de Node.js **sí** fija el orden: el primer valor es el obtenido (`actual`) y el segundo, el esperado (`expected`).
-
-Se ejecutan todas con:
-
-```text
-node --test
-```
-
-**Cuando todas pasan:**
-
-```text
-✔ pedido normal: 53 libros en cajas de 12 (1.127386ms)
-✔ cajas justas: 40 libros en cajas de 10 (0.112461ms)
-✔ un solo libro (0.099938ms)
-ℹ tests 3
-ℹ suites 0
-ℹ pass 3
-ℹ fail 0
-ℹ cancelled 0
-ℹ skipped 0
-ℹ todo 0
-ℹ duration_ms 58.896956
-```
-
-Una marca ✔ por prueba y un resumen: `tests 3`, `pass 3` (pasan 3), `fail 0` (fallan 0).
-
-**Con la versión con prisa** (`return Math.floor(libros / capacidad) + 1;`) y las mismas pruebas:
-
-```text
-✔ pedido normal: 53 libros en cajas de 12 (0.650571ms)
-✖ cajas justas: 40 libros en cajas de 10 (0.644019ms)
-✔ un solo libro (0.102612ms)
-ℹ tests 3
-ℹ suites 0
-ℹ pass 2
-ℹ fail 1
-ℹ cancelled 0
-ℹ skipped 0
-ℹ todo 0
-ℹ duration_ms 52.718395
-
-✖ failing tests:
-
-test at cajas.test.js:9:1
-✖ cajas justas: 40 libros en cajas de 10 (0.644019ms)
-  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
-  
-  5 !== 4
-  
-      at TestContext.<anonymous> (/home/ana/pruebas/cajas.test.js:10:10)
-      at Test.runInAsyncScope (node:async_hooks:227:14)
-      at Test.run (node:internal/test_runner/test:1402:25)
-      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
-      at Test.postRun (node:internal/test_runner/test:1542:19)
-      at Test.run (node:internal/test_runner/test:1467:12)
-      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
-    generatedMessage: true,
-    code: 'ERR_ASSERTION',
-    actual: 5,
-    expected: 4,
-    operator: 'strictEqual',
-    diff: 'simple'
-  }
-```
-
-(Otra vez, la ruta `/home/ana/pruebas/` depende del ordenador y los tiempos cambian en cada ejecución.)
-
-Parece mucho más largo que el de Python, pero dice **lo mismo**. Cómo leerlo:
-
-1. **Cuántas fallan:** `pass 2`, `fail 1`.
-2. **Cuál:** la marcada con ✖, `cajas justas: 40 libros en cajas de 10`, que aparece otra vez debajo de `failing tests` (pruebas que fallan).
-3. **Dónde:** `test at cajas.test.js:9:1` (la prueba empieza en la línea 9) y `cajas.test.js:10:10` (la aserción que falló está en la línea 10).
-4. **Esperado y obtenido:** aquí está más claro que en Python, porque lo dice con todas las letras: **`actual: 5`** (el obtenido) y **`expected: 4`** (el esperado). La línea `5 !== 4` significa «5 no es estrictamente igual a 4».
-5. **El resto** son las líneas que empiezan por `at …`: dicen por qué partes internas de Node.js pasó la ejecución. Para entender una prueba que falla **casi nunca hace falta leerlas**; con la primera, la que apunta a tu fichero, basta.
-
-> **💡 Consejo:** en los mensajes de error largos, busca primero **las palabras clave** (`expected`, `actual`, `!=`, `FAIL`, el nombre de tu fichero) y deja el resto para después. La información útil suele ocupar tres o cuatro líneas de veinte.
-
-### 2.7. Del corrector a la tabla: esperado frente a obtenido
-
-Las dos herramientas anteriores, y casi cualquier corrector automático, se pueden «traducir» a la tabla de casos de prueba que ya sabes hacer. Si lo haces, el mensaje deja de dar miedo:
-
-| Columna de la tabla | En Python (`unittest`) | En JavaScript (`node:test`) |
-|---|---|---|
-| Qué se prueba | `FAIL: test_cajas_justas` | `✖ cajas justas: 40 libros en cajas de 10` |
-| Entrada | La línea de la aserción: `calcular_cajas(40, 10)` | La línea 10 de `cajas.test.js`: `calcularCajas(40, 10)` |
-| Salida esperada | El segundo número de `5 != 4`: **4** | `expected: 4` |
-| Salida obtenida | El primer número de `5 != 4`: **5** | `actual: 5` |
-| ¿Pasa? | `FAIL` | `✖` |
+| Columna de la tabla | En el mensaje de `unittest` |
+|---|---|
+| Qué se prueba | `FAIL: test_cajas_justas` |
+| Entrada | La línea de la aserción: `calcular_cajas(40, 10)` |
+| Salida esperada | El segundo número de `5 != 4`: **4** |
+| Salida obtenida | El primer número de `5 != 4`: **5** |
+| ¿Pasa? | `FAIL` |
 
 Con la fila hecha, el siguiente paso es el de siempre: una **traza** del algoritmo con esa entrada (40 libros, cajas de 10) para ver en qué paso sale 5 en vez de 4.
+
+Otras herramientas dicen lo mismo con otras palabras; muchas lo escriben en claro, con `expected` (esperado) y `actual` (obtenido):
 
 | Herramienta o plataforma | Cómo suele llamar al esperado | Cómo suele llamar al obtenido |
 |---|---|---|
@@ -1099,7 +847,7 @@ Es decir, de menor a mayor: no válida (menos de 0), no se admite (0 a 13), tari
 
 #### Ejercicio 3 · Lee los mensajes de dos correctores
 
-Estas son dos salidas reales de herramientas de pruebas. No hace falta que sepas Python ni JavaScript: solo tienes que leerlas como en los [apartados 2.5 y 2.6](#25-una-prueba-automática-en-python).
+Estas son dos salidas reales de herramientas de pruebas. No hace falta que sepas Python ni JavaScript: solo tienes que leerlas con los pasos del [apartado 1.11](#111-leer-el-mensaje-de-un-corrector-automático), como hiciste en el [2.4](#24-una-prueba-automática-en-python). La segunda es de otra herramienta, pero dice lo mismo con otras palabras: busca los nombres de la tabla del [apartado 2.5](#25-del-corrector-a-la-tabla-esperado-frente-a-obtenido).
 
 **Salida A**, en Python. Prueba un subalgoritmo que calcula la **letra del DNI** a partir de su número:
 
@@ -1194,6 +942,8 @@ Qué le pasa al programa: devuelve una letra equivocada. Con el algoritmo `Letra
 | Qué se prueba | Entrada | Esperada | Obtenida | ¿Pasa? |
 |---|---|---|---|---|
 | 1900 no fue bisiesto | 1900 | FALSO (`expected: false`) | VERDADERO (`actual: true`) | ❌ |
+
+La entrada sale del nombre de la prueba («1900 no fue bisiesto»), y el esperado y el obtenido, de `expected` y `actual`: aquí no hay que mirar el orden, porque los dice con su nombre.
 
 Qué le pasa al programa: dice que 1900 fue bisiesto, y no lo fue (es divisible entre 100 y no entre 400). Es el síntoma típico de la **versión ingenua** del apartado 2.2, que solo mira si el año es divisible entre 4. Para confirmarlo harías una traza del algoritmo con 1900, y añadirías las pruebas de 2000 (debe ser VERDADERO) y 2100 (debe ser FALSO).
 
@@ -1547,109 +1297,15 @@ FIN PRUEBA
 
 </details>
 
-#### Ejercicio 8 · Rojo, verde y refactorizar con la letra del NIE
+#### Ejercicio 8 · Los casos de prueba de la letra del NIE
 
 **Situación real:** el formulario de alta de clientes ya calcula la letra del DNI con el subalgoritmo `LetraDni(numero)` del [ejercicio 5 del módulo anterior](02-algoritmos-y-pseudocodigo.md#ejercicio-5--validar-la-letra-del-dni), que está probado. Ahora tiene que aceptar también el **NIE** de los extranjeros residentes en España: una letra inicial (X, Y o Z), 7 cifras y una letra de control, que se calcula así:
 
 - Se sustituye la letra inicial por una cifra: X por 0, Y por 1 y Z por 2.
 - Esa cifra, seguida de las 7 cifras, forma un número de 8 cifras, y la letra de control es la que da `LetraDni` para ese número. Por ejemplo, para X1234567 el número es 01234567 (es decir, 1234567) y la letra es la **L**.
+- Una inicial que no sea X, Y ni Z, o un número fuera de 0 a 9999999, es un error: «Error: NIE no válido».
 
-Escribe el subalgoritmo `LetraNie(inicial, numero)`, que recibe la letra inicial (un texto: `"X"`, `"Y"` o `"Z"`) y las 7 cifras (un número de 0 a 9999999), **siguiendo TDD**, como en el [apartado 2.4](#24-tdd-paso-a-paso-los-gastos-de-envío):
-
-1. Piensa primero la lista de pruebas que vas a necesitar (normales, límite y no válidos).
-2. Ve escribiéndolas **de una en una**, y para cada una di si está en rojo o en verde y qué código mínimo añades.
-3. Termina con un paso de refactorización.
-
-<details>
-<summary>Pista 1</summary>
-
-Poner una cifra delante de un número de 7 cifras es sumarle esa cifra multiplicada por 10.000.000: para Y1234567, 1 × 10000000 + 1234567 = 11234567. No hace falta volver a calcular el resto ni la tabla de letras: eso ya lo hace `LetraDni`.
-
-</details>
-
-<details>
-<summary>Pista 2</summary>
-
-Los límites del número son 0 y 9999999. Los no válidos: una inicial que no es X, Y ni Z (por ejemplo, `"W"`), un número negativo y uno de más de 7 cifras (10000000).
-
-</details>
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:** `LetraNie` no tiene que volver a hacer lo que ya hace `LetraDni`: solo tiene que convertir el NIE en un número de 8 cifras y **llamarlo**. Las pruebas se piensan antes, por grupos (una por cada inicial), límites (el número más bajo y el más alto) y no válidos; y después se avanza de una en una.
-
-**1. La lista de pruebas**, pensada antes de nada (las letras esperadas se calculan a mano con la regla: el resto de dividir entre 23 y la posición en la tabla del DNI):
-
-| Nº | Qué se prueba | Entrada | Esperada |
-|---|---|---|---|
-| 1 | Normal: inicial X | X, 1234567 | L |
-| 2 | Normal: inicial Y | Y, 1234567 | X |
-| 3 | Normal: inicial Z | Z, 1234567 | R |
-| 4 | Límite: número más bajo | X, 0 | T |
-| 5 | Límite: número más alto | Z, 9999999 | H |
-| 6 | No válido: otra inicial | W, 1234567 | Error |
-| 7 | No válido: negativo | X, −1 | Error |
-| 8 | No válido: más de 7 cifras | X, 10000000 | Error |
-
-(Comprobaciones: 11234567 MOD 23 = 10, y en la posición 10 está la X; 21234567 MOD 23 = 1 → R; 29999999 MOD 23 = 18 → H.)
-
-**2. Los ciclos.**
-
-**🔴 Prueba 1** (X, 1234567 → L). `LetraNie` no existe: rojo.
-
-**🟢 Código mínimo:**
-
-```text
-SUBALGORITMO LetraNie(inicial, numero)
-    DEVOLVER "L"
-FIN SUBALGORITMO
-```
-
-Verde. Sí, es una trampa: con una sola prueba no hay forma de saber más.
-
-**🔴 Prueba 2** (Y, 1234567 → X). Devuelve L: rojo. Esta prueba **obliga** a hacer el cálculo de verdad.
-
-**🟢 Código mínimo:**
-
-```text
-SUBALGORITMO LetraNie(inicial, numero)
-    SEGÚN inicial HACER
-        "X": cifra ← 0
-        "Y": cifra ← 1
-    FIN SEGÚN
-    DEVOLVER LetraDni(cifra * 10000000 + numero)
-FIN SUBALGORITMO
-```
-
-Pruebas 1 y 2: verde (1234567 → L; 11234567 → X).
-
-**🔴 Prueba 3** (Z, 1234567 → R). Con `"Z"` no se da valor a `cifra`: rojo. **🟢** Se añade la línea `"Z": cifra ← 2`, y las tres pasan.
-
-**Pruebas 4 y 5** (X, 0 → T; Z, 9999999 → H). Se escriben y **ya pasan** con el código actual. Que una prueba de límite pase a la primera es normal: confirma que el código funciona en los bordes, y a partir de ahora los vigila.
-
-**🔴 Pruebas 6, 7 y 8** (los no válidos). Con `"W"`, `cifra` se queda sin valor; con −1 y con 10000000, calcula una letra que no significa nada: rojo.
-
-**🟢 Código mínimo:**
-
-```text
-SUBALGORITMO LetraNie(inicial, numero)
-    SI numero < 0 O numero > 9999999 ENTONCES
-        DEVOLVER "Error: NIE no válido"
-    FIN SI
-    SEGÚN inicial HACER
-        "X": cifra ← 0
-        "Y": cifra ← 1
-        "Z": cifra ← 2
-        DE OTRO MODO: DEVOLVER "Error: NIE no válido"
-    FIN SEGÚN
-    DEVOLVER LetraDni(cifra * 10000000 + numero)
-FIN SUBALGORITMO
-```
-
-Las ocho pruebas: verde.
-
-**3. 🔵 Refactorizar.** Con todo en verde, se mejora la escritura sin cambiar lo que hace: los dos números sueltos pasan a ser constantes con nombre, que explican qué son.
+Una compañera ha escrito el subalgoritmo `LetraNie(inicial, numero)`, que recibe la letra inicial (un texto: `"X"`, `"Y"` o `"Z"`) y las 7 cifras:
 
 ```text
 CONSTANTE MAXIMO_NIE ← 9999999        // 7 cifras
@@ -1669,9 +1325,53 @@ SUBALGORITMO LetraNie(inicial, numero)
 FIN SUBALGORITMO
 ```
 
-Se vuelven a pasar las ocho pruebas: todas en verde. La refactorización no ha cambiado el comportamiento.
+1. Escribe la tabla de casos de prueba de `LetraNie`: casos normales, límite y no válidos, con la salida esperada calculada **a partir de la regla**, no del subalgoritmo.
+2. Haz la traza de uno de los casos normales que no sea con X.
+3. Escribe las pruebas automáticas en pseudocódigo (`PRUEBA` y `COMPROBAR`) para tu tabla.
 
-**Las pruebas, escritas en pseudocódigo** (se quedan para siempre junto al subalgoritmo):
+<details>
+<summary>Pista 1</summary>
+
+Los grupos salen de la inicial: un caso normal por cada una (X, Y y Z). Para calcular a mano la letra esperada, pon la cifra delante (Y1234567 → 11234567), haz el resto de dividir entre 23 y busca esa posición en la tabla de letras del ejercicio 5 de 02.
+
+</details>
+
+<details>
+<summary>Pista 2</summary>
+
+Los límites del número son 0 y 9999999. Los no válidos: una inicial que no es X, Y ni Z (por ejemplo, `"W"`), un número negativo y uno de más de 7 cifras (10000000).
+
+</details>
+
+<details>
+<summary>Ver solución</summary>
+
+**Razonamiento:** se piensa en grupos (una inicial de cada tipo), en límites (el número más bajo y el más alto) y en datos no válidos (una inicial y un número de cada lado). Las letras esperadas se calculan a mano con la regla: poner la cifra delante, el resto de dividir entre 23 y la posición en la tabla del DNI.
+
+**1. La tabla de casos de prueba:**
+
+| Nº | Qué se prueba | Entrada | Cuenta | Esperada |
+|---|---|---|---|---|
+| 1 | Normal: inicial X | X, 1234567 | 1234567 MOD 23 = 19 | L |
+| 2 | Normal: inicial Y | Y, 1234567 | 11234567 MOD 23 = 10 | X |
+| 3 | Normal: inicial Z | Z, 1234567 | 21234567 MOD 23 = 1 | R |
+| 4 | Límite: número más bajo | X, 0 | 0 MOD 23 = 0 | T |
+| 5 | Límite: número más alto | Z, 9999999 | 29999999 MOD 23 = 18 | H |
+| 6 | No válido: otra inicial | W, 1234567 | — | Error: NIE no válido |
+| 7 | No válido: negativo | X, −1 | — | Error: NIE no válido |
+| 8 | No válido: más de 7 cifras | X, 10000000 | — | Error: NIE no válido |
+
+**2. La traza del caso 2** (Y, 1234567):
+
+| Paso | Instrucción | Condición o cálculo | `cifra` | Devuelve |
+|---|---|---|---|---|
+| 1 | `SI numero < 0 O numero > MAXIMO_NIE` | ¿1234567 < 0? No; ¿1234567 > 9999999? No → FALSO | — | — |
+| 2 | `SEGÚN inicial` | La inicial es `"Y"` | 1 | — |
+| 3 | `DEVOLVER LetraDni(cifra * DESPLAZAMIENTO + numero)` | 1 × 10000000 + 1234567 = 11234567; 11234567 MOD 23 = 10; `LETRAS[10]` es la X | 1 | **X** |
+
+Salida obtenida: X. Esperada: X ✅. Con el resto de la tabla pasa lo mismo: los ocho casos dan la salida esperada.
+
+**3. Las pruebas automáticas:**
 
 ```text
 PRUEBA "NIE con X"
@@ -1707,14 +1407,13 @@ PRUEBA "Más de 7 cifras no es válido"
 FIN PRUEBA
 ```
 
-Fíjate en que estas pruebas comprueban `LetraNie` **junto con** `LetraDni`: si `LetraDni` contara las posiciones desde 1 (el error de la salida A del [ejercicio 3](#ejercicio-3--lee-los-mensajes-de-dos-correctores)), fallarían todas las normales. Por eso conviene que la pieza que reutilizas tenga también sus propias pruebas unitarias: si falla, sabrás en cuál de las dos está el error.
+Fíjate en que estas pruebas comprueban `LetraNie` **junto con** `LetraDni`: si `LetraDni` contara las posiciones desde 1 (el error de la salida A del [ejercicio 3](#ejercicio-3--lee-los-mensajes-de-dos-correctores)), fallarían todas las normales. Por eso conviene que la pieza que reutilizas tenga también sus propias pruebas: si algo falla, sabrás en cuál de las dos está el error.
 
 **Errores frecuentes al resolverlo:**
 
-- Volver a escribir dentro de `LetraNie` el cálculo del resto y la tabla de letras en lugar de llamar a `LetraDni`. Funciona, pero duplica código que ya estaba probado.
-- Olvidar el `DE OTRO MODO`: con `"W"`, `cifra` se quedaría sin valor.
-- Escribir todo el subalgoritmo de golpe y después todas las pruebas. Funciona, pero no es TDD: lo que se practica aquí es avanzar en pasos pequeños y ver **cada** prueba en rojo antes de ponerla en verde.
-- Saltarse la refactorización porque «ya funciona». Es el paso que deja el código claro para la próxima persona que lo lea (que muchas veces serás tú).
+- Probar solo con X: es el caso del ejemplo del enunciado, y con él no se comprueba que la Y y la Z ponen bien su cifra delante.
+- Calcular la letra esperada siguiendo el subalgoritmo en lugar de la regla: si el subalgoritmo tuviera un error, lo copiarías en la tabla.
+- Olvidar los no válidos, sobre todo la inicial: un `"W"` o una minúscula son errores de escritura muy habituales en un formulario.
 
 </details>
 
@@ -1963,6 +1662,8 @@ Las cuatro primeras columnas, **antes** de ejecutar; las dos últimas, después.
 | Aserción | La comprobación: «esto debe ser igual a esto» |
 | Regresión | Algo que funcionaba y se ha estropeado al cambiar otra cosa |
 | Integración continua (CI) | Un servidor ejecuta todas las pruebas con cada cambio |
+| TDD | Escribir cada prueba antes que el código: rojo, verde, refactorizar |
+| Refactorizar | Cambiar cómo está escrito el código sin cambiar lo que hace |
 
 ```text
 PRUEBA "Nombre que dice qué se prueba"
@@ -1971,20 +1672,14 @@ PRUEBA "Nombre que dice qué se prueba"
 FIN PRUEBA
 ```
 
-### TDD
-
-1. 🔴 **Rojo:** escribe una prueba que falle.
-2. 🟢 **Verde:** escribe lo mínimo para que pase (y que sigan pasando todas).
-3. 🔵 **Refactorizar:** mejora el código sin cambiar lo que hace; las pruebas siguen en verde.
-
 ### Leer un corrector automático
 
-| Busca | Python (`unittest`) | JavaScript (`node:test`) |
+| Busca | Python (`unittest`) | Otras herramientas |
 |---|---|---|
-| Cuántas fallan | `FAILED (failures=1)` | `fail 1` |
-| Cuál | `FAIL: test_…` | `✖ nombre de la prueba` |
-| Dónde | `File "…", line 10` | `fichero.test.js:10:10` |
-| Obtenido y esperado | `obtenido != esperado` (mira la línea de la aserción) | `actual: …` y `expected: …` |
+| Cuántas fallan | `FAILED (failures=1)` | `fail 1`, `1 failed` |
+| Cuál | `FAIL: test_…` | El nombre de la prueba, marcado con `FAIL` o ✖ |
+| Dónde | `File "…", line 10` | Un fichero y un número de línea |
+| Obtenido y esperado | `obtenido != esperado` (mira la línea de la aserción) | `actual` (o `got`, `received`) y `expected` |
 
 Pasos: cuántas fallan → cuál → dónde → esperado y obtenido (¡cuál es cuál!) → compáralos → traza con esa entrada.
 
@@ -2069,30 +1764,21 @@ Pasos: cuántas fallan → cuál → dónde → esperado y obtenido (¡cuál es 
 
    </details>
 
-9. ¿Qué diferencia hay entre una prueba unitaria y una de integración?
+9. ¿Qué es una prueba unitaria, qué es una prueba de integración y en qué consiste el TDD?
 
    <details>
    <summary>Ver respuesta</summary>
 
-   La unitaria prueba una pieza sola (un subalgoritmo): es rápida y, si falla, sabes qué pieza está mal. La de integración prueba varias piezas juntas y encuentra los errores en las uniones, como el de la sonda Mars Climate Orbiter, donde cada pieza hacía bien su cuenta pero con unidades distintas. Lo tienes en [1.10. Pruebas unitarias y pruebas de integración](#110-pruebas-unitarias-y-pruebas-de-integración).
+   La unitaria prueba una pieza sola (un subalgoritmo); la de integración, varias piezas juntas, y encuentra los errores en las uniones, como el de la sonda Mars Climate Orbiter. El TDD consiste en escribir cada prueba antes que el código, en ciclos de rojo (la prueba falla), verde (lo mínimo para que pase) y refactorizar (mejorar cómo está escrito el código sin cambiar lo que hace). Lo tienes en [1.12. Ideas que verás en tu curso](#112-ideas-que-verás-en-tu-curso).
 
    </details>
 
-10. ¿Cuáles son los tres pasos del TDD y qué significa refactorizar?
+10. Un corrector automático te muestra `AssertionError: 5 != 4` o `actual: 5, expected: 4`. ¿Qué te está diciendo y qué haces a continuación?
 
     <details>
     <summary>Ver respuesta</summary>
 
-    Rojo (escribir una prueba que falla), verde (escribir lo mínimo para que pase) y refactorizar (mejorar el código sin cambiar lo que hace, comprobando que las pruebas siguen en verde). Refactorizar es cambiar cómo está escrito el código sin cambiar su comportamiento. Lo tienes en [1.12. TDD: primero la prueba](#112-tdd-primero-la-prueba).
-
-    </details>
-
-11. Un corrector automático te muestra `AssertionError: 5 != 4` o `actual: 5, expected: 4`. ¿Qué te está diciendo y qué haces a continuación?
-
-    <details>
-    <summary>Ver respuesta</summary>
-
-    Que una prueba ha fallado: se esperaba 4 y tu programa ha dado 5. En `node:test` lo dice con las palabras `actual` (obtenido) y `expected` (esperado); en `unittest`, el orden depende de la aserción, así que hay que mirar su línea. A continuación, miras el nombre de la prueba y su entrada, y haces una traza con esa entrada para ver en qué paso sale 5 en vez de 4. Lo tienes en [1.13. Leer el mensaje de un corrector automático](#113-leer-el-mensaje-de-un-corrector-automático) y en el [apartado 2.5](#25-una-prueba-automática-en-python).
+    Que una prueba ha fallado: se esperaba 4 y tu programa ha dado 5. Si la herramienta lo dice con las palabras `actual` (obtenido) y `expected` (esperado), no hay duda; en `unittest`, el orden depende de la aserción, así que hay que mirar su línea. A continuación, miras el nombre de la prueba y su entrada, y haces una traza con esa entrada para ver en qué paso sale 5 en vez de 4. Lo tienes en [1.11. Leer el mensaje de un corrector automático](#111-leer-el-mensaje-de-un-corrector-automático) y en el [apartado 2.4](#24-una-prueba-automática-en-python).
 
     </details>
 

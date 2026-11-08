@@ -13,7 +13,7 @@ Secuencia ordenada, finita y precisa de pasos que resuelve un problema; no depen
 
 ### Aserción
 
-Instrucción de una prueba automática que afirma que algo debe ser cierto (por ejemplo, que lo obtenido es igual a lo esperado); si no lo es, la prueba falla. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#111-cómo-es-una-prueba-automática-por-dentro).
+Instrucción de una prueba automática que afirma que algo debe ser cierto (por ejemplo, que lo obtenido es igual a lo esperado); si no lo es, la prueba falla. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#110-cómo-es-una-prueba-automática-por-dentro).
 
 ### Asignar
 
@@ -61,7 +61,7 @@ Programa que traduce todo el código fuente antes de ejecutarlo y genera un prog
 
 ### Concurrencia
 
-Gestionar varias tareas en curso en el mismo periodo de tiempo, aunque no avancen en el mismo instante. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-concurrente-y-paralelo).
+Gestionar varias tareas en curso en el mismo periodo de tiempo, aunque no avancen en el mismo instante. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-otros-estilos-que-oirás-nombrar).
 
 ### Condición
 
@@ -105,7 +105,7 @@ El valor que tienen las variables de un programa en cada momento. Lo explica [01
 
 ### Evento
 
-Algo que ocurre (un clic, un mensaje, un pedido enviado) y a lo que reaccionan las partes del programa suscritas. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#110-orientado-a-eventos).
+Algo que ocurre (un clic, un mensaje, un pedido enviado) y a lo que reaccionan las partes del programa suscritas. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-otros-estilos-que-oirás-nombrar).
 
 ### Expresión
 
@@ -115,7 +115,7 @@ Combinación de valores, variables y operadores que produce un resultado. Lo exp
 
 ### Hilo
 
-Cada una de las líneas de trabajo independientes que avanzan a la vez dentro de un programa. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-concurrente-y-paralelo).
+Cada una de las líneas de trabajo independientes que avanzan a la vez dentro de un programa. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-otros-estilos-que-oirás-nombrar).
 
 ## I
 
@@ -165,7 +165,7 @@ Forma de pensar y de organizar la solución de un problema; un estilo de program
 
 ### Paralelismo
 
-Ejecutar varias tareas literalmente al mismo tiempo, en varios núcleos del procesador. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-concurrente-y-paralelo).
+Ejecutar varias tareas literalmente al mismo tiempo, en varios núcleos del procesador. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-otros-estilos-que-oirás-nombrar).
 
 ### Parámetro
 
@@ -177,7 +177,7 @@ Un algoritmo escrito en un lenguaje de programación para que un ordenador lo pu
 
 ### Programación asíncrona
 
-Estilo en el que se lanza una tarea que tarda y se sigue trabajando, indicando qué hacer cuando termine. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#19-asíncrono).
+Estilo en el que se lanza una tarea que tarda y se sigue trabajando, indicando qué hacer cuando termine. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-otros-estilos-que-oirás-nombrar).
 
 ### Programación declarativa
 
@@ -205,11 +205,11 @@ Pequeño programa que prueba otro: lo ejecuta con una entrada, compara lo obteni
 
 ### Prueba de integración
 
-Prueba que comprueba que varias piezas funcionan bien juntas. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#110-pruebas-unitarias-y-pruebas-de-integración).
+Prueba que comprueba que varias piezas funcionan bien juntas. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
 
 ### Prueba unitaria
 
-Prueba que comprueba una pieza pequeña sola, como un subalgoritmo. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#110-pruebas-unitarias-y-pruebas-de-integración).
+Prueba que comprueba una pieza pequeña sola, como un subalgoritmo. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
 
 ### Pseudocódigo
 
@@ -219,7 +219,7 @@ Forma de escribir algoritmos a medio camino entre el lenguaje natural y un lengu
 
 ### Refactorizar
 
-Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-tdd-primero-la-prueba).
+Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
 
 ### Regresión
 
@@ -235,7 +235,7 @@ Algoritmo con nombre propio que recibe parámetros, hace su trabajo y puede devo
 
 ### TDD
 
-Desarrollo guiado por pruebas: avanzar en ciclos de rojo (una prueba que falla), verde (lo mínimo para que pase) y refactorizar. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-tdd-primero-la-prueba).
+Desarrollo guiado por pruebas: avanzar en ciclos de rojo (una prueba que falla), verde (lo mínimo para que pase) y refactorizar. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
 
 ### Tipo de dato
 

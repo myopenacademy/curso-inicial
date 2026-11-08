@@ -139,8 +139,8 @@
               "titulo": "La media de valoraciones de un restaurante"
             },
             {
-              "id": "inicial.probar-un-programa.rojo-verde-y-refactorizar-con-la-letra-del-nie",
-              "titulo": "Rojo, verde y refactorizar con la letra del NIE"
+              "id": "inicial.probar-un-programa.los-casos-de-prueba-de-la-letra-del-nie",
+              "titulo": "Los casos de prueba de la letra del NIE"
             },
             {
               "id": "inicial.probar-un-programa.el-plan-de-pruebas-de-las-reservas-de-un-hotel-rural",
@@ -170,16 +170,12 @@
               "titulo": "Piensa en cadena"
             },
             {
-              "id": "inicial.paradigmas-de-programacion.preguntale-al-objeto",
-              "titulo": "Pregúntale al objeto"
-            },
-            {
               "id": "inicial.paradigmas-de-programacion.lee-la-cadena-y-predice-la-salida",
               "titulo": "Lee la cadena y predice la salida"
             },
             {
-              "id": "inicial.paradigmas-de-programacion.que-se-puede-hacer-a-la-vez",
-              "titulo": "¿Qué se puede hacer a la vez?"
+              "id": "inicial.paradigmas-de-programacion.preguntale-al-objeto",
+              "titulo": "Pregúntale al objeto"
             },
             {
               "id": "inicial.paradigmas-de-programacion.los-paradigmas-de-una-aplicacion-real",

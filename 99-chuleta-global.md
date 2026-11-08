@@ -278,6 +278,8 @@ Las cuatro primeras columnas, **antes** de ejecutar; las dos últimas, después.
 | Aserción | La comprobación: «esto debe ser igual a esto» |
 | Regresión | Algo que funcionaba y se ha estropeado al cambiar otra cosa |
 | Integración continua (CI) | Un servidor ejecuta todas las pruebas con cada cambio |
+| TDD | Escribir cada prueba antes que el código: rojo, verde, refactorizar |
+| Refactorizar | Cambiar cómo está escrito el código sin cambiar lo que hace |
 
 ```text
 PRUEBA "Nombre que dice qué se prueba"
@@ -286,20 +288,14 @@ PRUEBA "Nombre que dice qué se prueba"
 FIN PRUEBA
 ```
 
-#### TDD
-
-1. 🔴 **Rojo:** escribe una prueba que falle.
-2. 🟢 **Verde:** escribe lo mínimo para que pase (y que sigan pasando todas).
-3. 🔵 **Refactorizar:** mejora el código sin cambiar lo que hace; las pruebas siguen en verde.
-
 #### Leer un corrector automático
 
-| Busca | Python (`unittest`) | JavaScript (`node:test`) |
+| Busca | Python (`unittest`) | Otras herramientas |
 |---|---|---|
-| Cuántas fallan | `FAILED (failures=1)` | `fail 1` |
-| Cuál | `FAIL: test_…` | `✖ nombre de la prueba` |
-| Dónde | `File "…", line 10` | `fichero.test.js:10:10` |
-| Obtenido y esperado | `obtenido != esperado` (mira la línea de la aserción) | `actual: …` y `expected: …` |
+| Cuántas fallan | `FAILED (failures=1)` | `fail 1`, `1 failed` |
+| Cuál | `FAIL: test_…` | El nombre de la prueba, marcado con `FAIL` o ✖ |
+| Dónde | `File "…", line 10` | Un fichero y un número de línea |
+| Obtenido y esperado | `obtenido != esperado` (mira la línea de la aserción) | `actual` (o `got`, `received`) y `expected` |
 
 Pasos: cuántas fallan → cuál → dónde → esperado y obtenido (¡cuál es cuál!) → compáralos → traza con esa entrada.
 
@@ -324,7 +320,7 @@ Pasos: cuántas fallan → cuál → dónde → esperado y obtenido (¡cuál es 
 | **Orientado a objetos** | Objetos que juntan datos y comportamiento | Una empresa con empleados |
 | **Funcional** | Funciones sin efectos secundarios; cadenas de transformaciones | Una cadena de montaje |
 | **Declarativo** | Decir qué, no cómo | El taxi: «a la Plaza Mayor» |
-| **Concurrente / paralelo** | Varias tareas a la vez | Uno o varios camareros |
+| **Concurrente / paralelo** | Varias tareas a la vez (en curso o literalmente a la vez) | Uno o varios camareros |
 | **Asíncrono** | Lanzar y seguir; aviso al terminar | El avisador del restaurante |
 | **Orientado a eventos** | Reaccionar a lo que ocurre | El timbre de casa |
 | **Reactivo** | Flujos de datos que se propagan solos | Una hoja de cálculo |
@@ -340,14 +336,6 @@ Pasos: cuántas fallan → cuál → dónde → esperado y obtenido (¡cuál es 
 | Ejemplos | Bucles, pseudocódigo, recetas | SQL, HTML, CSS, fórmulas de hoja de cálculo |
 | Ventaja | Control total | Más corto y legible; el motor se encarga |
 | Inconveniente | Más detalles en los que equivocarse | Hay que entender lo que hace el motor por debajo |
-
-#### Concurrente, paralelo y asíncrono
-
-| Término | Significa | Analogía |
-|---|---|---|
-| **Concurrente** | Varias tareas en curso en el mismo periodo | Un camarero atendiendo varias mesas |
-| **Paralelo** | Varias tareas en el mismo instante, en varios núcleos | Varios camareros |
-| **Asíncrono** | No esperar a que termine; te avisan | El avisador del restaurante |
 
 #### Las tres operaciones funcionales
 
@@ -370,11 +358,6 @@ resultado ← lista                      // funcional
     → FILTRAR los que cumplen ...
     → TRANSFORMAR cada uno en ...
     → REDUCIR sumándolos
-
-LANZAR Tarea() Y CUANDO TERMINE: ...   // asíncrono
-CUANDO OCURRA "evento" HACER ... FIN CUANDO   // eventos
-AVISAR "evento" CON datos
-A LA VEZ HACER ... ESPERAR A QUE TERMINEN TODAS   // concurrente
 ```
 
 #### Para elegir
@@ -383,7 +366,7 @@ A LA VEZ HACER ... ESPERAR A QUE TERMINEN TODAS   // concurrente
 - ¿Muchos conceptos con datos y reglas? → **Objetos**.
 - ¿Procesar una colección? → **Funcional**.
 - ¿Hay un motor que sepa resolver el «cómo»? → **Declarativo**.
-- ¿Esperas de red o disco con tareas independientes? → **Concurrente** o **asíncrono**.
+- ¿Una tarea lenta que no debe bloquear lo demás? → **Asíncrono**.
 - ¿Varias partes reaccionan a un hecho? → **Eventos**.
 - ¿Datos que llegan sin parar a muchos usuarios? → **Reactivo**.
 - ¿Algo que se repite en todas las operaciones? → **Aspectos**.
