@@ -16,7 +16,7 @@ Cómo se hizo (para repetirlo): cuatro autores en paralelo con el mismo encargo;
 
 ## Cómo se cambian los documentos
 
-Los cambios en varios ficheros a la vez (plan, estado, módulos) se hacen con `python3 .verificacion/herramientas/reemplazar.py cambios.json`, que aplica **todas las sustituciones o ninguna** y comprueba después que el texto nuevo está en su sitio; el commit va encadenado con `&&`, así que solo se hace si todo ha ido bien. **Provisional:** la herramienta está en `.verificacion/`, fuera de Git; se ha pedido al kit que la incorpore a sus herramientas comunes, y entonces se usará desde `../kit-cursos/`. Motivo (8 de noviembre de 2026): dos veces, un script escribió unos ficheros, falló en otro y el commit se hizo igual con el cambio a medias.
+Los cambios en varios ficheros a la vez (plan, estado, módulos) se hacen con la herramienta común del kit, `python3 ../kit-cursos/herramientas/nucleo/reemplazar.py cambios.json` (`--comprobar` para probar sin escribir), que aplica **todas las sustituciones o ninguna** y comprueba después que el texto nuevo está en su sitio; el commit va encadenado con `&&`, así que solo se hace si todo ha ido bien. Motivo (8 de noviembre de 2026): dos veces, un script escribió unos ficheros, falló en otro y el commit se hizo igual con el cambio a medias.
 
 ## Dependencias con el kit
 
@@ -26,7 +26,7 @@ Se trabaja a la vez que `../kit-cursos/`. **Lee su `ESTADO.md` (solo leer) al em
 |---|---|---|
 | `formato_academia.py` | Comprobar y **cerrar la fase 1** (se puede escribir antes; no se da por cerrada sin pasar la comprobación) | **Hecho** (8 de noviembre de 2026): el curso da 0 errores |
 | `generar_indice.py` | Generar `00-indice.md` desde `curso.json` | **Hecho** (8 de noviembre de 2026) |
-| Incorporar `reemplazar.py` (cambios en varios ficheros, todos o ninguno) a las herramientas comunes | Que quede en Git y la usen todos los proyectos | Pedido el 8 de noviembre de 2026 |
+| `reemplazar.py` en las herramientas comunes (cambios en varios ficheros, todos o ninguno) | Que quede en Git y la usen todos los proyectos | **Hecho** (9 de noviembre de 2026, commit `f839009` del kit) |
 | `generar_chuleta_global.py` y `comprobar_mermaid.py` | Chuleta global y diagramas | **Hecho** (8 de noviembre de 2026); los 23 diagramas de la fase 1 se dibujan bien |
 | Plantillas (`curso.json`, módulo, retos) | No bloquea: se sigue `FORMATO.md` | **Hechas** en `../kit-cursos/plantillas/` (8 de noviembre de 2026); se usan como referencia |
 | Comprobadores de los formatos (JSON, YAML, XML, CSV, Markdown…) | Verificar ejemplos, ejercicios y retos de la fase 4 | **Hecho** (8 de noviembre de 2026); falta la comparación CSV ↔ JSON, que el kit hará con el reto de la fase 4 |
