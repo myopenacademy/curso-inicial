@@ -27,6 +27,10 @@ Instrucción de una prueba automática que afirma que algo debe ser cierto (por 
 
 Guardar un valor en una variable; en pseudocódigo se escribe con la flecha ←. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#variables).
 
+### Asíncrono
+
+Estilo en el que se lanza una tarea que tarda y se sigue trabajando, indicando qué hacer cuando termine. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#19-asíncrono).
+
 ## B
 
 ### Bandera
@@ -87,6 +91,10 @@ Texto dentro del código para las personas, que el ordenador ignora. Lo explica 
 
 Programa que traduce todo el código fuente antes de ejecutarlo y genera un programa ejecutable. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#17-lenguajes-compilados-e-interpretados).
 
+### Concurrencia
+
+Gestionar varias tareas en curso en el mismo periodo de tiempo, aunque no avancen en el mismo instante. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-concurrente-y-paralelo).
+
 ### Condición
 
 Expresión que da VERDADERO o FALSO y decide qué camino sigue un algoritmo. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#18-selección).
@@ -109,6 +117,10 @@ Programa que comprueba una solución ejecutando pruebas automáticas preparadas 
 
 Dato que agrupa varios datos sobre una misma cosa; a cada parte se llega con un punto: pedido.libros. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#listas-y-datos-con-partes).
 
+### Declarativo
+
+Forma de programar en la que se dice qué resultado se quiere, y un motor decide cómo conseguirlo. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#12-la-gran-división-imperativo-frente-a-declarativo).
+
 ### Depurar
 
 Encontrar dónde está un error y corregirlo, después de que una prueba haya descubierto que existe. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#12-qué-es-probar-un-programa).
@@ -130,6 +142,10 @@ Operador de la división entera: se queda solo con la parte entera (7 DIV 2 = 3)
 División que solo dice cuántas veces cabe un número en otro, sin decimales; lo que sobra es el resto. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#13-qué-es-un-algoritmo).
 
 ## E
+
+### Efecto secundario
+
+Cualquier cosa que hace una función además de devolver su resultado, como cambiar una variable de fuera o escribir en pantalla. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#16-funcional).
 
 ### Ejecutar
 
@@ -155,19 +171,57 @@ Error por el que el programa funciona sin quejarse, pero da un resultado equivoc
 
 Dar una vuelta de más o de menos en un bucle, por confundir < con ≤ o por empezar a contar en 0 o en 1 (off-by-one). Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#32-dar-una-vuelta-de-más-o-de-menos).
 
+### Estado
+
+El valor que tienen las variables de un programa en cada momento. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#14-imperativo-y-estructurado).
+
 ### Estructuras de control
 
 Las estructuras que deciden qué instrucciones se ejecutan y cuántas veces: selección y repetición (junto con la secuencia). Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#16-las-tres-estructuras-de-control).
+
+### Evento
+
+Algo que ocurre (un clic, un mensaje, un pedido enviado) y a lo que reaccionan las partes del programa suscritas. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#110-orientado-a-eventos).
 
 ### Expresión
 
 Combinación de valores, variables y operadores que produce un resultado. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#14-expresiones-y-operadores).
 
+## F
+
+### Filtrar, transformar y reducir
+
+Las tres operaciones básicas del estilo funcional (filter, map y reduce): quedarse con unos elementos, convertir cada uno en otra cosa y combinarlos en un resultado. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#16-funcional).
+
+### Funcional
+
+Estilo que construye el programa combinando funciones que no modifican nada, como una cadena de transformaciones. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#16-funcional).
+
+## G
+
+### Genérico
+
+Estilo que permite escribir código que sirve para cualquier tipo de dato sin repetirlo. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#113-otros-estilos-que-oirás-nombrar).
+
+## H
+
+### Hilo
+
+Cada una de las líneas de trabajo independientes que avanzan a la vez dentro de un programa. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-concurrente-y-paralelo).
+
 ## I
+
+### Imperativo
+
+Forma de programar en la que se dice al ordenador cómo hacer las cosas, paso a paso, cambiando variables. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#12-la-gran-división-imperativo-frente-a-declarativo).
 
 ### Inicializar
 
 Dar a una variable su primer valor antes de usarla. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#variables).
+
+### Inmutable
+
+Dato que, una vez creado, no cambia; en lugar de modificarlo se crea uno nuevo. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#16-funcional).
 
 ### Integración continua
 
@@ -191,6 +245,10 @@ Idioma pensado para que las personas escriban instrucciones que después se trad
 
 Dato que guarda varios valores en orden; cada uno se coge por su posición, empezando en la 0: ventas[0]. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#listas-y-datos-con-partes).
 
+### Lógico (paradigma)
+
+Estilo en el que se describen hechos y reglas y el programa deduce las respuestas. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#113-otros-estilos-que-oirás-nombrar).
+
 ## M
 
 ### Máquina virtual
@@ -200,6 +258,10 @@ Programa que ejecuta un código intermedio ya compilado, traduciéndolo sobre la
 ### MOD
 
 Operador del resto de la división entera (7 MOD 2 = 1). Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#operadores-aritméticos).
+
+### Multiparadigma
+
+Lenguaje que permite combinar varios estilos de programación en un mismo programa. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#13-casi-todos-los-lenguajes-son-multiparadigma).
 
 ## N
 
@@ -217,7 +279,27 @@ Símbolo o palabra que indica una operación en una expresión: +, MOD, ≥, Y�
 
 Y, O y NO: combinan condiciones; su resultado se resume en la tabla de verdad. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#operadores-lógicos).
 
+### Orientado a aspectos
+
+Estilo que escribe una sola vez las tareas transversales (registrar, comprobar permisos) y dice a qué partes del programa se aplican. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#112-orientado-a-aspectos).
+
+### Orientado a eventos
+
+Estilo en el que el programa reacciona a lo que ocurre en lugar de seguir un camino fijo. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#110-orientado-a-eventos).
+
+### Orientado a objetos
+
+Estilo que organiza el programa en objetos que juntan datos y el comportamiento que actúa sobre ellos. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#15-orientado-a-objetos).
+
 ## P
+
+### Paradigma de programación
+
+Forma de pensar y de organizar la solución de un problema; un estilo de programar, no un lenguaje. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#11-qué-es-un-paradigma).
+
+### Paralelismo
+
+Ejecutar varias tareas literalmente al mismo tiempo, en varios núcleos del procesador. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-concurrente-y-paralelo).
 
 ### Parámetro
 
@@ -261,6 +343,10 @@ Forma de escribir algoritmos a medio camino entre el lenguaje natural y un lengu
 
 ## R
 
+### Reactivo
+
+Estilo que trabaja con flujos de datos que llegan a lo largo del tiempo y propaga los cambios automáticamente. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#111-reactivo).
+
 ### Refactorizar
 
 Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-tdd-primero-la-prueba).
@@ -291,6 +377,10 @@ Estructura en la que las instrucciones se ejecutan una detrás de otra, de arrib
 
 Estructura de control que elige entre caminos según una condición (SI, SEGÚN). Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#18-selección).
 
+### Síncrono
+
+Forma de trabajar en la que se espera, sin hacer nada más, a que termine cada tarea (también, bloqueante). Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#19-asíncrono).
+
 ### Subalgoritmo
 
 Algoritmo con nombre propio que recibe parámetros, hace su trabajo y puede devolver un resultado; en los lenguajes, función, método o procedimiento. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#111-subalgoritmos).
@@ -304,6 +394,10 @@ Tabla con los casos de prueba de un programa: qué se prueba, entrada, salida es
 ### Tabla de verdad
 
 Tabla con el resultado de Y, O y NO para todas las combinaciones de VERDADERO y FALSO. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#operadores-lógicos).
+
+### Tarea transversal
+
+Tarea que se repite en muchas partes de un programa sin ser su objetivo principal, como registrar lo que pasa. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#112-orientado-a-aspectos).
 
 ### TDD
 
@@ -328,3 +422,9 @@ Codificación de caracteres que entiende todos los idiomas y que es la habitual 
 ### Variable
 
 Espacio con nombre donde se guarda un dato que puede cambiar mientras se ejecuta el algoritmo. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#variables).
+
+## Y
+
+### YAGNI
+
+Principio «no lo vas a necesitar»: no añadir complejidad pensando en necesidades que quizá no lleguen. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#35-crear-objetos-y-capas-para-todo).

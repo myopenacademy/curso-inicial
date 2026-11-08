@@ -11,6 +11,7 @@
   - [01.01 Qué es programar](#0101-qué-es-programar)
   - [01.02 Algoritmos y pseudocódigo](#0102-algoritmos-y-pseudocódigo)
   - [01.03 ¿Cómo sé que funciona? Probar un programa](#0103-cómo-sé-que-funciona-probar-un-programa)
+  - [01.04 Paradigmas de programación](#0104-paradigmas-de-programación)
 
 ---
 
@@ -308,6 +309,84 @@ Pasos: cuántas fallan → cuál → dónde → esperado y obtenido (¡cuál es 
 - La salida esperada sale del **enunciado**, nunca del programa.
 - Probar demuestra que **hay** errores, nunca que **no** los hay.
 - No cambies una prueba para que pase: averigua primero quién tiene razón.
+
+---
+
+### 01.04 Paradigmas de programación
+
+📖 Módulo completo: [fase-01-que-es-programar/04-paradigmas-de-programacion.md](fase-01-que-es-programar/04-paradigmas-de-programacion.md)
+
+#### Los paradigmas de un vistazo
+
+| Paradigma | Idea clave | Analogía |
+|---|---|---|
+| **Imperativo / estructurado** | Pasos que cambian variables; secuencia, selección y repetición | Una receta |
+| **Orientado a objetos** | Objetos que juntan datos y comportamiento | Una empresa con empleados |
+| **Funcional** | Funciones sin efectos secundarios; cadenas de transformaciones | Una cadena de montaje |
+| **Declarativo** | Decir qué, no cómo | El taxi: «a la Plaza Mayor» |
+| **Concurrente / paralelo** | Varias tareas a la vez | Uno o varios camareros |
+| **Asíncrono** | Lanzar y seguir; aviso al terminar | El avisador del restaurante |
+| **Orientado a eventos** | Reaccionar a lo que ocurre | El timbre de casa |
+| **Reactivo** | Flujos de datos que se propagan solos | Una hoja de cálculo |
+| **Orientado a aspectos** | Tareas transversales escritas una vez | El control de seguridad del aeropuerto |
+| **Genérico** | Código válido para cualquier tipo de dato | Un molde de repostería |
+| **Lógico** | Hechos y reglas; el programa deduce | Un detective que razona con pistas |
+
+#### Imperativo frente a declarativo
+
+| | Imperativo | Declarativo |
+|---|---|---|
+| Describe | **Cómo** (el camino) | **Qué** (el destino) |
+| Ejemplos | Bucles, pseudocódigo, recetas | SQL, HTML, CSS, fórmulas de hoja de cálculo |
+| Ventaja | Control total | Más corto y legible; el motor se encarga |
+| Inconveniente | Más detalles en los que equivocarse | Hay que entender lo que hace el motor por debajo |
+
+#### Concurrente, paralelo y asíncrono
+
+| Término | Significa | Analogía |
+|---|---|---|
+| **Concurrente** | Varias tareas en curso en el mismo periodo | Un camarero atendiendo varias mesas |
+| **Paralelo** | Varias tareas en el mismo instante, en varios núcleos | Varios camareros |
+| **Asíncrono** | No esperar a que termine; te avisan | El avisador del restaurante |
+
+#### Las tres operaciones funcionales
+
+| Operación | Qué hace | Nombre habitual en los lenguajes |
+|---|---|---|
+| Filtrar | Quedarse con los elementos que cumplen una condición | `filter` |
+| Transformar | Convertir cada elemento en otra cosa | `map` |
+| Reducir | Combinar todos en un único resultado | `reduce`, `sum`, `count` |
+
+#### Notaciones de este módulo
+
+```text
+OBJETO Nombre                          // orientado a objetos
+    DATOS: dato1, dato2
+    SUBALGORITMO Pregunta() ... DEVOLVER ... FIN SUBALGORITMO
+FIN OBJETO
+objeto.Pregunta()                      // se le pregunta al objeto
+
+resultado ← lista                      // funcional
+    → FILTRAR los que cumplen ...
+    → TRANSFORMAR cada uno en ...
+    → REDUCIR sumándolos
+
+LANZAR Tarea() Y CUANDO TERMINE: ...   // asíncrono
+CUANDO OCURRA "evento" HACER ... FIN CUANDO   // eventos
+AVISAR "evento" CON datos
+A LA VEZ HACER ... ESPERAR A QUE TERMINEN TODAS   // concurrente
+```
+
+#### Para elegir
+
+- ¿Un cálculo sencillo? → **Imperativo**, sin complicarlo.
+- ¿Muchos conceptos con datos y reglas? → **Objetos**.
+- ¿Procesar una colección? → **Funcional**.
+- ¿Hay un motor que sepa resolver el «cómo»? → **Declarativo**.
+- ¿Esperas de red o disco con tareas independientes? → **Concurrente** o **asíncrono**.
+- ¿Varias partes reaccionan a un hecho? → **Eventos**.
+- ¿Datos que llegan sin parar a muchos usuarios? → **Reactivo**.
+- ¿Algo que se repite en todas las operaciones? → **Aspectos**.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

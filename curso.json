@@ -153,8 +153,40 @@
           "id": "inicial.paradigmas-de-programacion",
           "fichero": "fase-01-que-es-programar/04-paradigmas-de-programacion.md",
           "titulo": "Paradigmas de programación",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.paradigmas-de-programacion.identifica-el-paradigma",
+              "titulo": "Identifica el paradigma"
+            },
+            {
+              "id": "inicial.paradigmas-de-programacion.imperativo-o-declarativo",
+              "titulo": "¿Imperativo o declarativo?"
+            },
+            {
+              "id": "inicial.paradigmas-de-programacion.lee-el-programa-y-predice-su-salida",
+              "titulo": "Lee el programa y predice su salida"
+            },
+            {
+              "id": "inicial.paradigmas-de-programacion.piensa-en-cadena",
+              "titulo": "Piensa en cadena"
+            },
+            {
+              "id": "inicial.paradigmas-de-programacion.preguntale-al-objeto",
+              "titulo": "Pregúntale al objeto"
+            },
+            {
+              "id": "inicial.paradigmas-de-programacion.lee-la-cadena-y-predice-la-salida",
+              "titulo": "Lee la cadena y predice la salida"
+            },
+            {
+              "id": "inicial.paradigmas-de-programacion.que-se-puede-hacer-a-la-vez",
+              "titulo": "¿Qué se puede hacer a la vez?"
+            },
+            {
+              "id": "inicial.paradigmas-de-programacion.los-paradigmas-de-una-aplicacion-real",
+              "titulo": "Los paradigmas de una aplicación real"
+            }
+          ]
         }
       ]
     },
