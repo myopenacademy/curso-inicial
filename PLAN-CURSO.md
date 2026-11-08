@@ -30,6 +30,7 @@ Aprobadas por el autor el 8 de noviembre de 2026:
 - **Fragmentos en lenguajes reales, solo para ilustrar** (8 de noviembre de 2026). «Sin un lenguaje concreto» quiere decir que el curso no enseña ningún lenguaje ni pide programar en uno. Para que se entiendan ideas como «compilado frente a interpretado» o los paradigmas, el texto puede mostrar **fragmentos cortos** en Python, Java, JavaScript o SQL, variando de lenguaje según lo que ilustre mejor cada idea (sin favorecer ninguno). Van en el texto, sin carpeta `codigo/`, y nunca se pide al alumno que los ejecute. Cada uno lleva una frase del tipo «no hace falta que entiendas cada línea: fíjate en…». Antes de incluirlos se comprueban en `.verificacion/`, fuera de Git. Lo que el alumno hace es siempre pseudocódigo o herramientas.
 - **Aviso sobre las salidas de terminal** (8 de noviembre de 2026). El primer módulo de la fase 2 que muestre salidas de terminal avisa **una sola vez** (los demás módulos no lo repiten; como mucho enlazan a ese aviso): las salidas del curso salen de una terminal concreta (la del kit: usuario `alumno`, máquina `ordenador`, Linux en español), y en su ordenador cambiarán el nombre de usuario, las rutas (en Windows con Git Bash, `/c/Users/…`), las fechas y algún detalle en macOS; y, cuando llegue a Git (fase 5), los identificadores de los commits, sus fechas y el nombre y el correo de quien los hace también serán distintos de los del curso (es lo primero que notará al comparar su `git log` con el del curso). Que se fije en **lo importante de cada salida**, no en que sea idéntica.
 - **«Fichero» en todo el texto** (9 de noviembre de 2026), como en la fase 1, el kit y `FORMATO.md`; es regla común de todos los cursos en `../CLAUDE.md` («Vocabulario común»). El módulo 02.02 avisa al principio de que «fichero» y «archivo» son lo mismo y de que las pantallas de Windows y macOS en español dicen «archivo» («Explorador de archivos», el menú «Archivo»). Su título se queda «Archivos, carpetas y rutas», porque es la palabra que el alumno verá y buscará en su ordenador. Los nombres propios de las pantallas («Explorador de archivos») se escriben como aparecen.
+- **Teclas y atajos con `<kbd>`** (9 de noviembre de 2026): una etiqueta por tecla, unidas con «+» (`<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>`); `FORMATO.md` 10.5 lo admite y la academia lo muestra como una tecla. Dentro de los bloques de código, sin HTML.
 - **La fase 8 no tiene retos**: el proyecto final ya es el reto.
 - **Normas sobre el uso de la IA** (apartado 6). Son de toda la academia, no solo de este curso: se anotan también en el plan general.
 - **Núcleo o Ampliación se marca por módulo, no por fase**: el proyecto final usa módulos de fases «recomendadas» (Markdown, JSON, Mermaid, tableros, secretos), y varios módulos de la fase 6 los necesitan casi todos los cursos.
@@ -51,9 +52,9 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | | `02-algoritmos-y-pseudocodigo.md` | Algoritmos y pseudocódigo | 4 | N |
 | | `03-probar-un-programa.md` | ¿Cómo sé que funciona? Probar un programa | 3 | N |
 | | `04-paradigmas-de-programacion.md` | Paradigmas de programación | 1,5 | A |
-| `fase-02-tu-ordenador` → `inicial.fase.tu-ordenador` | `01-como-funciona-un-ordenador.md` | Cómo funciona un ordenador | 1,5 | N |
-| | `02-archivos-carpetas-y-rutas.md` | Archivos, carpetas y rutas | 2 | N |
-| | `03-instalar-programas-y-path.md` | Instalar programas, variables de entorno y PATH | 2 | N |
+| `fase-02-tu-ordenador` → `inicial.fase.tu-ordenador` | `01-como-funciona-un-ordenador.md` | Cómo funciona un ordenador | 2 | N |
+| | `02-archivos-carpetas-y-rutas.md` | Archivos, carpetas y rutas | 2,5 | N |
+| | `03-instalar-programas-y-path.md` | Instalar programas, variables de entorno y PATH | 2,5 | N |
 | `fase-03-herramientas` → `inicial.fase.herramientas` | `01-terminal-lo-basico.md` | La terminal: lo básico | 3 | N |
 | | `02-terminal-sacarle-partido.md` | La terminal: sacarle partido | 3 | N |
 | | `03-editor-de-codigo.md` | El editor de código | 1,5 | N |
@@ -79,7 +80,7 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | | `05-seguridad-basica.md` | Seguridad básica | 1,5 | N |
 | `fase-08-proyecto-final` → `inicial.fase.proyecto-final` | `01-primer-repositorio.md` | Tu primer repositorio | 6 | N |
 
-Total: unas **69 horas**, más los retos (los de la fase 1, 3 horas). **La fase 1 está aprobada por el autor (8 de noviembre de 2026) y sus tiempos son definitivos.** La fase 1 quedó en 10,5 horas el 8 de noviembre de 2026, tras **ajustar la dosis** a un principiante: 01.03 y 01.04 se quedan con las ideas y dejan el detalle a cada curso. **Criterio para las fases siguientes:** «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Vigilar la extensión: el curso estaba ya en el límite.
+Total: unas **70,5 horas**, más los retos (los de la fase 1, 3 horas; los de la fase 2, 1,5). Tiempos de la fase 2 aprobados por el autor el 9 de noviembre de 2026 (pasa de 5,5 a 7 horas; el 02.03 incluye instalar de verdad). **La fase 1 está aprobada por el autor (8 de noviembre de 2026) y sus tiempos son definitivos.** La fase 1 quedó en 10,5 horas el 8 de noviembre de 2026, tras **ajustar la dosis** a un principiante: 01.03 y 01.04 se quedan con las ideas y dejan el detalle a cada curso. **Criterio para las fases siguientes:** «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Vigilar la extensión: el curso estaba ya en el límite.
 
 ### 4.1. Origen de cada módulo
 
