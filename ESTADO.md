@@ -10,10 +10,7 @@ Cómo se escribió: cuatro autores en paralelo con el mismo encargo y después *
 
 ## Siguiente paso
 
-**Revisión del autor de la fase 1.** Pendiente de su decisión:
-
-1. **Tiempos estimados.** Tras la revisión, la propuesta es: 01.01, 2 h (igual); **01.02, 4 h** (ahora 3); **01.03, 3 h** (ahora 2); **01.04, 2 h** (ahora 1,5); retos, 3 h. Si se aprueban, se cambian las cabeceras, `PLAN-CURSO.md` y se regenera el índice.
-2. **Decisiones de la revisión:** notación `lista[posición]` con la primera posición en la 0 y nombres sin tildes ni eñes (`anio`), en las convenciones de 02; ejercicio 7 de 03 reescrito (error de `DIV` en lugar de `/`) y ejercicio 8 de 03 sobre el NIE («Rojo, verde y refactorizar con la letra del NIE»), para no repetir ejercicios de 02; ejemplos y ejercicios quitados en 04 (eventos, aspectos, «tres estilos», diagrama de Gantt) y en 02 (horario con SEGÚN, sintaxis de Mermaid).
+**Revisión del autor de la fase 1.** Ya aprobado (8 de noviembre de 2026): los tiempos nuevos (01.02, 4 h; 01.03, 3 h; 01.04, 2 h), las convenciones `lista[posición]` desde 0 y nombres sin tildes ni eñes, los ejercicios reescritos de 01.03 y lo quitado en 01.02 y 01.04, y el **criterio del glosario** (solo términos que se usan en varios cursos o que se consultarán después: 55 de 96). **Pendiente:** que el autor lea entero el 01.02, hojee los demás, intente un reto (por ejemplo, el del taxi) y diga qué cambia.
 
 Después: prueba de importación de la fase 1 en una copia de la academia (desde su proyecto) y la fase 2.
 
