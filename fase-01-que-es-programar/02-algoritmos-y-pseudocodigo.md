@@ -293,7 +293,7 @@ FIN
 
 Con una entrada a las 9:15 y una salida a las 11:40: `entrada` = 9 × 60 + 15 = 555, `salida` = 11 × 60 + 40 = 700, `estancia` = 145 minutos, y se escribe `2 h 25 min`.
 
-Fíjate en el truco de pasar las horas a **minutos desde medianoche**: restar 11:40 − 9:15 «a mano» es incómodo (con 11:40 − 9:15 los minutos salen bien, pero con 10:05 − 9:50 hay que «pedir prestada» una hora), mientras que restar dos números enteros es trivial. Transformar los datos a una forma más cómoda es una técnica muy habitual.
+Fíjate en el truco de pasar las horas a **minutos desde medianoche**: restar 10:05 − 9:50 «a mano» obliga a «pedir prestada» una hora, mientras que restar dos números enteros es trivial. Transformar los datos a una forma más cómoda es una técnica muy habitual.
 
 > **📌 Nota:** en la secuencia **el orden importa**. Si escribieras `estancia ← salida - entrada` antes de calcular `salida`, el algoritmo usaría un valor que todavía no existe.
 
@@ -487,10 +487,10 @@ FIN PARA
 Para encontrar el **mayor** valor de una serie, se guarda el primero como «el mayor visto hasta ahora» y se compara con cada uno de los siguientes. Si aparece uno mayor, pasa a ser el nuevo máximo. El mínimo es igual, cambiando `>` por `<`.
 
 ```text
-mejorVenta ← la venta del primer día     // el primero es, de momento, el mejor
-PARA cada venta de los días siguientes HACER
-    SI venta > mejorVenta ENTONCES
-        mejorVenta ← venta
+mejorVenta ← ventasSemana[0]             // el primer día es, de momento, el mejor
+PARA dia DESDE 1 HASTA 6 HACER           // el resto de la semana: posiciones 1 a 6
+    SI ventasSemana[dia] > mejorVenta ENTONCES
+        mejorVenta ← ventasSemana[dia]
     FIN SI
 FIN PARA
 ```
@@ -1592,7 +1592,7 @@ Se lee: «es bisiesto si es divisible entre 400, o si es divisible entre 4 pero 
 
 #### Ejercicio 8 · Encuentra y corrige los errores
 
-**Situación real:** un compañero ha escrito este algoritmo para calcular la nota media de un alumno, y dice que «a veces da resultados raros y a veces se queda colgado». Encuentra **todos** los errores y escribe la versión corregida.
+**Situación real:** un compañero ha escrito este algoritmo para calcular la nota media de un alumno, y dice que «a veces da resultados raros y a veces no para de pedir notas». Encuentra **todos** los errores y escribe la versión corregida.
 
 ```text
 ALGORITMO NotaMedia
@@ -1635,11 +1635,11 @@ Hay **cuatro** errores. Haz la traza con 4 notas (7, 5, 9 y 6) y después piensa
 | # | Error | Consecuencia | Error típico |
 |---|---|---|---|
 | 1 | `suma` no se inicializa | La primera vez se suma a un valor desconocido: resultados «raros» | [3.3](#33-olvidar-inicializar-un-contador-o-un-acumulador) |
-| 2 | `i` nunca cambia dentro del bucle | Si `cantidad` es mayor que 1, `i < cantidad` es siempre verdadero: **se queda colgado** | [3.1](#31-bucles-infinitos) |
+| 2 | `i` nunca cambia dentro del bucle | Si `cantidad` es mayor que 1, `i < cantidad` es siempre verdadero: el bucle no termina nunca y, como tiene un `LEER` dentro, **pide notas sin parar** | [3.1](#31-bucles-infinitos) |
 | 3 | La condición es `i < cantidad` | Aun arreglando el error 2, con 4 notas solo se leerían 3 (`i` = 1, 2, 3) | [3.2](#32-dar-una-vuelta-de-más-o-de-menos) |
 | 4 | Si `cantidad` es 0, se divide entre 0 | El algoritmo falla con un alumno sin notas | [3.6](#36-dividir-entre-cero) |
 
-Fíjate en que el error 2 explica el «se queda colgado» y el error 1 los «resultados raros». Los errores 3 y 4 no los había notado nadie, pero están ahí: aparecerían en cuanto se arreglasen los otros, o con un alumno nuevo.
+Fíjate en que el error 2 explica el «no para de pedir notas» (observa lo que hace de verdad: no se cuelga sin más, sino que repite su `LEER` para siempre) y el error 1 los «resultados raros». Los errores 3 y 4 no los había notado nadie, pero están ahí: aparecerían en cuanto se arreglasen los otros, o con un alumno nuevo.
 
 **Versión corregida:**
 
