@@ -2,7 +2,7 @@
 
 > **Versiones:** Los fragmentos de ejemplo se han comprobado con Python 3.14, Java 25, Node.js 24 y SQLite 3.46 (8 de noviembre de 2026)
 > **Conviene saber antes:** [01.01 Qué es programar](01-que-es-programar.md) · [01.02 Algoritmos y pseudocódigo](02-algoritmos-y-pseudocodigo.md)
-> **Tiempo estimado:** 1,5 horas
+> **Tiempo estimado:** 2 horas
 > **Nivel:** Básico · Ampliación
 
 ## Qué aprenderás

@@ -26,6 +26,7 @@ Aprobadas por el autor el 8 de noviembre de 2026:
 - **macOS** (8 de noviembre de 2026): su terminal usa zsh por defecto y su bash es el 3.2. Por eso **los ejemplos y scripts del curso usan solo lo que funciona en bash 3.2** (nada de arrays asociativos, `mapfile`, `${var,,}` ni otras novedades de bash 4 y 5), y cuando un comando se comporta distinto en macOS y en Linux (`sed -i`, `date`, algunas opciones de `ls`…), **el módulo lo avisa**. Afecta también a la decisión 9 del plan general.
 - **Salidas en español** (8 de noviembre de 2026): las salidas de Git y de los comandos se muestran en español, que es lo que verá el alumno; el kit fija el idioma al verificar (`LC_ALL`).
 - **Rama principal `main`** (8 de noviembre de 2026): el curso dice `main` y explica cómo configurarlo (`init.defaultBranch`); el kit lo fija al verificar.
+- **Convenciones de pseudocódigo añadidas en la fase 1** (aprobadas el 8 de noviembre de 2026): `lista[posición]` con la **primera posición en la 0**, como en Python, Java y JavaScript; y **nombres sin tildes ni eñes** (`anio`), como en la programación real.
 - **Fragmentos en lenguajes reales, solo para ilustrar** (8 de noviembre de 2026). «Sin un lenguaje concreto» quiere decir que el curso no enseña ningún lenguaje ni pide programar en uno. Para que se entiendan ideas como «compilado frente a interpretado» o los paradigmas, el texto puede mostrar **fragmentos cortos** en Python, Java, JavaScript o SQL, variando de lenguaje según lo que ilustre mejor cada idea (sin favorecer ninguno). Van en el texto, sin carpeta `codigo/`, y nunca se pide al alumno que los ejecute. Cada uno lleva una frase del tipo «no hace falta que entiendas cada línea: fíjate en…». Antes de incluirlos se comprueban en `.verificacion/`, fuera de Git. Lo que el alumno hace es siempre pseudocódigo o herramientas.
 - **La fase 8 no tiene retos**: el proyecto final ya es el reto.
 - **Normas sobre el uso de la IA** (apartado 6). Son de toda la academia, no solo de este curso: se anotan también en el plan general.
@@ -45,9 +46,9 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | Fase (carpeta → id) | Fichero | Módulo | Horas | N/A |
 |---|---|---|---|---|
 | `fase-01-que-es-programar` → `inicial.fase.que-es-programar` | `01-que-es-programar.md` | Qué es programar | 2 | N |
-| | `02-algoritmos-y-pseudocodigo.md` | Algoritmos y pseudocódigo | 3 | N |
-| | `03-probar-un-programa.md` | ¿Cómo sé que funciona? Probar un programa | 2 | N |
-| | `04-paradigmas-de-programacion.md` | Paradigmas de programación | 1,5 | A |
+| | `02-algoritmos-y-pseudocodigo.md` | Algoritmos y pseudocódigo | 4 | N |
+| | `03-probar-un-programa.md` | ¿Cómo sé que funciona? Probar un programa | 3 | N |
+| | `04-paradigmas-de-programacion.md` | Paradigmas de programación | 2 | A |
 | `fase-02-tu-ordenador` → `inicial.fase.tu-ordenador` | `01-como-funciona-un-ordenador.md` | Cómo funciona un ordenador | 1,5 | N |
 | | `02-archivos-carpetas-y-rutas.md` | Archivos, carpetas y rutas | 2 | N |
 | | `03-instalar-programas-y-path.md` | Instalar programas, variables de entorno y PATH | 2 | N |
@@ -76,7 +77,7 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | | `05-seguridad-basica.md` | Seguridad básica | 1,5 | N |
 | `fase-08-proyecto-final` → `inicial.fase.proyecto-final` | `01-primer-repositorio.md` | Tu primer repositorio | 6 | N |
 
-Total: unas **67 horas**, más los retos. Las fases 1 a 7 terminan con su `retos.md`; la 8 no tiene retos (el proyecto es el reto). El proyecto para el portfolio es `inicial.primer-repositorio`.
+Total: unas **70 horas**, más los retos (los de la fase 1, 3 horas). Tiempos de la fase 1 ajustados a lo escrito el 8 de noviembre de 2026 (la fase pasa de 8,5 a 11 horas). **Vigilar la extensión** en las fases siguientes: el curso estaba ya en el límite. Las fases 1 a 7 terminan con su `retos.md`; la 8 no tiene retos (el proyecto es el reto). El proyecto para el portfolio es `inicial.primer-repositorio`.
 
 ### 4.1. Origen de cada módulo
 
@@ -170,6 +171,8 @@ Aprobado por el autor el 8 de noviembre de 2026 y pasado a la sesión del kit (l
 ## 9. El glosario
 
 Este curso tiene el **`glosario.md` común** que enlazan todos los cursos (`../kit-cursos/FORMATO.md`, apartado 9). **Crece con cada módulo**: cada término nuevo que se explica en un módulo entra en el glosario en el mismo commit, con una definición corta y un enlace al apartado del módulo donde se explica. Un `## Letra` por letra y un `### Término` por término, en orden alfabético.
+
+**Criterio para que un término entre** (aprobado el 8 de noviembre de 2026): solo los que **se usan en varios cursos** o que el alumno **va a necesitar consultar después** (algoritmo, variable, caso de prueba, API…), no cada palabra que un módulo explica una vez. La fase 1 explica 96 términos y entran 55. Los paradigmas se nombran completos («Programación funcional», no «Funcional»), porque otros cursos enlazan a esas anclas. La lista de cada fase se guarda en `.verificacion/`.
 
 ## 10. Cuándo se crean los ficheros obligatorios
 
