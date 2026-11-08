@@ -47,8 +47,8 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 |---|---|---|---|---|
 | `fase-01-que-es-programar` → `inicial.fase.que-es-programar` | `01-que-es-programar.md` | Qué es programar | 2 | N |
 | | `02-algoritmos-y-pseudocodigo.md` | Algoritmos y pseudocódigo | 4 | N |
-| | `03-probar-un-programa.md` | ¿Cómo sé que funciona? Probar un programa | 3 | N |
-| | `04-paradigmas-de-programacion.md` | Paradigmas de programación | 2 | A |
+| | `03-probar-un-programa.md` | ¿Cómo sé que funciona? Probar un programa | 2 | N |
+| | `04-paradigmas-de-programacion.md` | Paradigmas de programación | 1,5 | A |
 | `fase-02-tu-ordenador` → `inicial.fase.tu-ordenador` | `01-como-funciona-un-ordenador.md` | Cómo funciona un ordenador | 1,5 | N |
 | | `02-archivos-carpetas-y-rutas.md` | Archivos, carpetas y rutas | 2 | N |
 | | `03-instalar-programas-y-path.md` | Instalar programas, variables de entorno y PATH | 2 | N |
@@ -77,7 +77,7 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | | `05-seguridad-basica.md` | Seguridad básica | 1,5 | N |
 | `fase-08-proyecto-final` → `inicial.fase.proyecto-final` | `01-primer-repositorio.md` | Tu primer repositorio | 6 | N |
 
-Total: unas **70 horas**, más los retos (los de la fase 1, 3 horas). Tiempos de la fase 1 ajustados a lo escrito el 8 de noviembre de 2026 (la fase pasa de 8,5 a 11 horas). **Vigilar la extensión** en las fases siguientes: el curso estaba ya en el límite. Las fases 1 a 7 terminan con su `retos.md`; la 8 no tiene retos (el proyecto es el reto). El proyecto para el portfolio es `inicial.primer-repositorio`.
+Total: unas **68 horas**, más los retos (los de la fase 1, 3 horas). La fase 1 quedó en 9,5 horas el 8 de noviembre de 2026, tras **ajustar la dosis** a un principiante: 01.03 y 01.04 se quedan con las ideas y dejan el detalle a cada curso. **Criterio para las fases siguientes:** «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Vigilar la extensión: el curso estaba ya en el límite.
 
 ### 4.1. Origen de cada módulo
 

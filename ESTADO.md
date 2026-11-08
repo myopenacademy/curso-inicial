@@ -10,7 +10,7 @@ Cómo se escribió: cuatro autores en paralelo con el mismo encargo y después *
 
 ## Siguiente paso
 
-**Revisión del autor de la fase 1.** Ya aprobado (8 de noviembre de 2026): los tiempos nuevos (01.02, 4 h; 01.03, 3 h; 01.04, 2 h), las convenciones `lista[posición]` desde 0 y nombres sin tildes ni eñes, los ejercicios reescritos de 01.03 y lo quitado en 01.02 y 01.04, y el **criterio del glosario** (solo términos que se usan en varios cursos o que se consultarán después: 55 de 96). **Pendiente:** que el autor lea entero el 01.02, hojee los demás, intente un reto (por ejemplo, el del taxi) y diga qué cambia.
+**Revisión del autor de la fase 1.** Ya aprobado (8 de noviembre de 2026): el tiempo nuevo de 01.02 (4 h), las convenciones `lista[posición]` desde 0 y nombres sin tildes ni eñes, los ejercicios reescritos de 01.03 y lo quitado en 01.02 y 01.04, y el **criterio del glosario** (solo términos que se usan en varios cursos o que se consultarán después: 55 de 96). Tras la segunda opinión de la sesión de la raíz, **recortada la dosis** de 01.03 (prueba automática con un solo ejemplo en Python; unitarias, integración y TDD en «Ideas que verás en tu curso»; ejercicio 8 sobre casos de prueba del NIE; 2 h) y de 01.04 (los cuatro grandes paradigmas con su ejemplo; el resto en la tabla «Otros estilos que oirás nombrar»; 1,5 h), con retos y preguntas de repaso revisados para que nada dependa de lo quitado. **Pendiente:** que el autor lea entero el 01.02, hojee los demás, intente un reto (por ejemplo, el del taxi) y diga qué cambia.
 
 Después: prueba de importación de la fase 1 en una copia de la academia (desde su proyecto) y la fase 2.
 
@@ -52,6 +52,10 @@ Si algo bloquea, dilo al autor: él pasa la información de una sesión a otra.
 ## Convenciones de verificación para las fases 2 en adelante
 
 Desde el 8 de noviembre de 2026, `FORMATO.md` 7.1 fija los ficheros de verificación de cada ejemplo o solución con carpeta en `codigo/` (`entrada.txt`, `args.txt`, `termina-con-error.txt`, `salida-variable.txt`, `sesion.txt`, `debe-fallar.txt`, `separador.txt`) y las líneas exactas del texto tras el «📁 Código» (`**Salida:**`, `**Salida de error:**`, ``**En tu terminal** (`sesion.txt`):``), cada una con su bloque `text`. **Lo de bash de las fases 2 y 3 se escribe ya así.** El verificador del kit va en este orden: bash y sesiones de terminal; después formatos, Git y `curl`.
+
+### Verificador del kit (desde el 8 de noviembre de 2026)
+
+`python3 ../kit-cursos/herramientas/nucleo/verificar_codigo.py` (o con una fase o un módulo detrás). Scripts: bloque `bash` + «📁 Código» igual al `.sh`, ejecutado con `bash fichero.sh` (`args.txt`, `entrada.txt`) y comparado con «**Salida:**». Sesiones: «En tu terminal (`sesion.txt`):» con la pantalla (`$ `), terminal de 100 columnas, ficheros copiados con fecha 15 de enero de 2026, 10:00. **Entorno con Docker** (para cerrar una fase, siempre con Docker): Ubuntu 26.04.1 en español, hora de Madrid, Git 2.56.0, usuario `alumno`, máquina `ordenador`, sin red, identidad de Git «Ana García <ana@example.com>» y rama `main`: **las salidas esperadas se escriben con eso**. Los scripts se ejecutan también con bash 3.2.57 y deben hacer lo mismo; las diferencias de `sed`, `date` o `ls` entre macOS y Linux se avisan en el texto.
 
 ## Lista para el kit
 

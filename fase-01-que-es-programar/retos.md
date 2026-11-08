@@ -3,7 +3,7 @@
 > **Conviene saber antes:** los módulos de la fase.
 > **Tiempo estimado:** 3 horas
 
-Estos retos mezclan lo que has aprendido en los cuatro módulos de la fase: entender bien un problema y detectar lo que no está claro ([01.01](01-que-es-programar.md)), escribir y trazar algoritmos en pseudocódigo ([01.02](02-algoritmos-y-pseudocodigo.md)), probarlos con una tabla de casos normales, límite y no válidos ([01.03](03-probar-un-programa.md)) y reconocer otros estilos de programar ([01.04](04-paradigmas-de-programacion.md)).
+Estos retos mezclan lo que has aprendido en los cuatro módulos de la fase: entender bien un problema y detectar lo que no está claro ([01.01](01-que-es-programar.md)), escribir y trazar algoritmos en pseudocódigo ([01.02](02-algoritmos-y-pseudocodigo.md)), probarlos con una tabla de casos normales, límite y no válidos ([01.03](03-probar-un-programa.md)) y plantear un mismo cálculo en otro de los grandes estilos de programar, como el funcional o el orientado a objetos ([01.04](04-paradigmas-de-programacion.md)).
 
 Van de menor a mayor dificultad, y el último es el más completo. Son **opcionales**: sirven para afianzar lo aprendido y no bloquean nada. Como el pseudocódigo no lo ejecuta ningún ordenador, las soluciones son **razonadas**, con el pseudocódigo completo y su tabla de prueba o su traza. Hazlos en papel o en un documento, abre las pistas solo si te atascas y, si tu solución es distinta de la propuesta, compruébala con los mismos casos de prueba: puede estar igual de bien.
 
@@ -273,7 +273,7 @@ Los llegados son el número de elementos de `tiempos`; los premiados, el número
 1. **Entiende el problema.** Escribe la entrada y la salida, y las preguntas que le harías a la asociación antes de programar nada.
 2. **Diseña el algoritmo** en pseudocódigo, con las respuestas que te ha dado la asociación (están en la pista 1), descompuesto en subalgoritmos.
 3. **Pruébalo:** escribe la tabla de casos de prueba con casos normales, límite y no válidos, calcula la salida esperada de cada uno a partir de las normas y haz la traza de uno de ellos.
-4. **Opcional:** ¿cómo se plantearía en otro estilo de los del [módulo de paradigmas](04-paradigmas-de-programacion.md)?
+4. **Opcional:** ¿cómo se plantearía en otro de los grandes estilos del [módulo de paradigmas](04-paradigmas-de-programacion.md), como el orientado a objetos o el declarativo?
 
 <details>
 <summary>Pista 1</summary>
