@@ -4,13 +4,15 @@
 
 ## Dónde estamos
 
+**9 de noviembre de 2026: fase 2 escrita, revisada en conjunto y cerrada a falta de la revisión del autor.** Tres módulos (02.01 a 02.03, con 27 ejercicios) y `retos.md` con dos retos que se resuelven razonando, sin bash. Mismo método que la fase 1 (tres autores en paralelo, un editor para la revisión de conjunto, comprobaciones propias). Tiempos aprobados: 2 h, 2,5 h y 2,5 h, más 1,5 h de retos. «Fichero» en todo el texto, con el aviso en 02.02; teclas con `<kbd>`; datos que caducan confirmados en fuentes oficiales (lo que solo salía en prensa o guías de terceros, quitado o descrito de forma general). Comprobaciones de cierre: `formato_academia.py` 0 errores (5 avisos: retos de las fases 3 a 7); `verificar_codigo.py` con Docker, las 3 sesiones del 02.03 correctas con la terminal en español; Mermaid 12.2.0 y 10.9.8, los 23 diagramas del curso bien. Glosario: 82 términos (27 nuevos de la fase 2).
+
 **8 de noviembre de 2026: fase 1 aprobada por el autor tal como está, sin cambios, con los tiempos como definitivos** (01.01, 2 h; 01.02, 4 h; 01.03, 3 h; 01.04, 1,5 h; retos, 3 h). Fija el estilo, la profundidad y el formato de los 31 módulos: las fases siguientes se escriben igual.
 
 Cómo se hizo (para repetirlo): cuatro autores en paralelo con el mismo encargo; una revisión de conjunto por un solo editor (tono, cada término definido una vez, sin solapes, notación unificada, dosis de principiante); comprobaciones propias (formato del kit, Mermaid 12.2.0, fragmentos y salidas en `.verificacion/`); segunda opinión de la sesión de la raíz y correcciones; un commit por módulo. Criterio de dosis: «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Glosario: solo términos de varios cursos o que se consultarán después.
 
 ## Siguiente paso
 
-**Fase 2, «Tu ordenador por dentro».** Orden de la terminal aprobado (`PLAN-CURSO.md`, apartado 8): la fase 2 no tiene bash; empieza en la fase 3. Con el aviso único sobre las salidas de terminal (`PLAN-CURSO.md`, apartado 2), incluidos los identificadores y las fechas de los commits.
+**Revisión del autor de la fase 2** (la sesión de la raíz se ofrece a dar antes una segunda opinión). Después, **fase 3, «Herramientas del programador»**, la primera con bash: ejemplos y ejercicios con sus ficheros de verificación (`FORMATO.md` 7.1) y verificados con Docker; «La terminal: lo básico» enlaza a la carpeta actual (02.02 §1.9) y al aviso único (02.03 §2.2) en lugar de volver a explicarlos, y la terminal, bash y orden ya están definidos en 02.03.
 
 **Prueba de importación de la fase 1: hecha** (9 de noviembre de 2026, en una copia de prueba de la academia, revisada por el autor en el navegador). El curso no cambia nada: los identificadores de `curso.json` se quedan con punto y el «Siguiente» de 01.04 a `retos.md` está bien. Es la academia la que tiene que mostrar los retos (al final de cada fase en el índice y como «Siguiente» del último módulo). El importador que lee `curso.json` está pendiente en la academia; avisarán cuando esté.
 
@@ -54,6 +56,7 @@ Si algo bloquea, dilo al autor: él pasa la información de una sesión a otra.
 | 2026-11-08 | Módulo 01.03 ¿Cómo sé que funciona? Probar un programa escrito, revisado con la fase y disponible en `curso.json`, con sus ejercicios y sus términos en el glosario. |
 | 2026-11-08 | Módulo 01.04 Paradigmas de programación escrito, revisado con la fase y disponible en `curso.json`, con sus ejercicios y sus términos en el glosario. |
 | 2026-11-08 | Retos de la fase 1 (tres) y revisión de conjunto de la fase. Comprobaciones de cierre: formato 0 errores, Mermaid 12.2.0 y 10.9.1 sin fallos, fragmentos verificados. |
+| 2026-11-09 | Fase 2: módulos 02.01, 02.02 y 02.03 y retos (dos), con revisión de conjunto; un commit por módulo (`925d8f5`, `823f545`, `163ef4f`). |
 
 ## Convenciones de verificación para las fases 2 en adelante
 
