@@ -1439,7 +1439,7 @@ FIN
 
 El primero, con resto 0, comprueba que la tabla se cuenta desde la posición 0.
 
-**Ampliación: el NIE.** Los extranjeros residentes en España tienen un NIE, que empieza por X, Y o Z, sigue con 7 cifras y acaba en una letra de control. Se valida con el mismo algoritmo, sustituyendo antes la primera letra por un número: X por 0, Y por 1 y Z por 2. Por ejemplo, para `X1234567` se calcula la letra de 01234567, cuyo resto es 19: la letra es la **L**. Ese es el poder de los subalgoritmos: para validar el NIE basta con añadir la sustitución y volver a llamar a `LetraDni`. Lo harás, guiado por pruebas, en el [ejercicio 8 del módulo «Probar un programa»](03-probar-un-programa.md#ejercicio-8--rojo-verde-y-refactorizar-con-la-letra-del-nie).
+**Ampliación: el NIE.** Los extranjeros residentes en España tienen un NIE, que empieza por X, Y o Z, sigue con 7 cifras y acaba en una letra de control. Se valida con el mismo algoritmo, sustituyendo antes la primera letra por un número: X por 0, Y por 1 y Z por 2. Por ejemplo, para `X1234567` se calcula la letra de 01234567, cuyo resto es 19: la letra es la **L**. Ese es el poder de los subalgoritmos: para validar el NIE basta con añadir la sustitución y volver a llamar a `LetraDni`. Sus casos de prueba los prepararás en el [ejercicio 8 del módulo «Probar un programa»](03-probar-un-programa.md#ejercicio-8--los-casos-de-prueba-de-la-letra-del-nie).
 
 **Errores frecuentes al resolverlo:**
 
