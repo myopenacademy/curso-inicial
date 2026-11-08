@@ -168,7 +168,7 @@ De qué se encarga el sistema operativo:
 |---|---|---|
 | **Programas** | Pone en marcha los programas, los para y reparte el tiempo del procesador entre todos los que están abiertos | Puedes tener abiertos a la vez el navegador, la música y un editor |
 | **Memoria** | Decide qué parte de la RAM usa cada programa y que ninguno pise la de otro; si se llena, recurre a la memoria virtual | Un programa que falla no se lleva por delante a los demás |
-| **Ficheros** | Organiza el almacenamiento en ficheros y carpetas, con nombre, tamaño y fecha | El explorador de archivos de Windows, el Finder de macOS (lo verás en el [módulo siguiente](02-archivos-carpetas-y-rutas.md)) |
+| **Ficheros** | Organiza el almacenamiento en ficheros y carpetas, con nombre, tamaño y fecha | El Explorador de archivos de Windows, el Finder de macOS (lo verás en el [módulo siguiente](02-archivos-carpetas-y-rutas.md)) |
 | **Dispositivos** | Habla con cada pieza de hardware a través de unos programas pequeños llamados **controladores** (*drivers*) | Conectas una impresora o un ratón y funciona |
 | **Usuarios y permisos** | Cada persona tiene su **cuenta de usuario**, con sus ficheros, y el sistema decide qué puede hacer cada cuenta | Tu carpeta personal; el aviso que pide permiso o contraseña al instalar algo |
 

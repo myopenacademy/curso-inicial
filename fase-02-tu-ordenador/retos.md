@@ -16,7 +16,7 @@ Quiere hacer tres cosas: pasarle todo a Iker, que usa un Mac (su usuario es `ike
 1. ¿Cuánto ocupa todo, en GB (contando de 1000 en 1000)? Al mirar las propiedades de la carpeta, Windows dice que ocupa unos **5,47 GB**, y la memoria USB aparece como de unos **7,45 GB**. Explica las dos cifras. ¿Cabe todo en la memoria?
 2. ¿Cuánto tardará, como mínimo, en subir todo a la nube?
 3. Propón un nombre para la carpeta y una organización por dentro, de forma que la página del álbum funcione igual en el ordenador de Nerea, en el de Iker y si un día se publica en un servidor.
-4. Iker copiará la carpeta dentro de una carpeta `fotos` de su carpeta personal. Con tu organización, escribe la ruta absoluta del primer vídeo en el Mac de Iker, y la de ese mismo vídeo en el ordenador de Nerea (si ella también la guarda en una carpeta `fotos` de su carpeta personal), tal como la enseña el Explorador de Windows y tal como se escribe en Git Bash.
+4. Iker copiará la carpeta dentro de una carpeta `fotos` de su carpeta personal. Con tu organización, escribe la ruta absoluta del primer vídeo en el Mac de Iker, y la de ese mismo vídeo en el ordenador de Nerea (si ella también la guarda en una carpeta `fotos` de su carpeta personal), tal como la enseña el Explorador de archivos de Windows y tal como se escribe en Git Bash.
 5. Escribe la ruta que tendría que usar `index.html` para mostrar la primera foto. ¿Cambia de un ordenador a otro?
 
 <details>
@@ -130,7 +130,7 @@ zsh: command not found: revisa-md
 2. Encuentra el fallo. ¿Qué carpeta mira el sistema y por qué no encuentra nada en ella?
 3. Lucas, además, descargó el fichero equivocado. ¿Cuál debería haber descargado y qué pasaría si se queda con el que tiene?
 4. Propón cómo dejarlo bien: qué descargar, dónde guardar el programa (un sitio mejor que Descargas), qué carpeta añadir al PATH y cómo comprobar después que todo funciona, diciendo **qué tiene que ver** en cada salida.
-5. Su compañera Alba tiene un portátil con Windows 11 y procesador Intel, y usa Git Bash. ¿Qué fichero de la lista le corresponde? Si guarda el programa siguiendo la misma idea que Lucas, ¿qué carpeta tendría que añadir a su PATH, escrita como la ve el Explorador de Windows y como aparecería en el `echo $PATH` de Git Bash?
+5. Su compañera Alba tiene un portátil con Windows 11 y procesador Intel, y usa Git Bash. ¿Qué fichero de la lista le corresponde? Si guarda el programa siguiendo la misma idea que Lucas, ¿qué carpeta tendría que añadir a su PATH, escrita como la ve el Explorador de archivos de Windows y como aparecería en el `echo $PATH` de Git Bash?
 
 <details>
 <summary>Pista 1</summary>
@@ -214,7 +214,7 @@ Sacarlo de Descargas tiene una ventaja más: la carpeta ya no lleva la versión 
 
 | Cómo se ve | Carpeta |
 |---|---|
-| Explorador de Windows | `C:\Users\alba\herramientas\revisa-md\bin` |
+| Explorador de archivos (Windows) | `C:\Users\alba\herramientas\revisa-md\bin` |
 | `echo $PATH` en Git Bash | `/c/Users/alba/herramientas/revisa-md/bin` |
 
 (En Windows el programa será un `.exe`, pero la carpeta que va al PATH es la misma idea: la que contiene el programa.)

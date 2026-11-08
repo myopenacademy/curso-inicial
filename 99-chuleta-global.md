@@ -482,7 +482,7 @@ Siempre de 64 bits si hay elección, y siempre desde la página oficial.
 | Linux | `/home/ana` | `/home/ana/proyectos/web/index.html` | `/` |
 | Git Bash | `/c/Users/ana` | `/c/Users/ana/proyectos/web/index.html` | `/` |
 
-De Windows a Git Bash: `C:` → `/c` y cada `\` → `/`. `~` es la carpeta personal en macOS, Linux y Git Bash (no en el Explorador de Windows).
+De Windows a Git Bash: `C:` → `/c` y cada `\` → `/`. `~` es la carpeta personal en macOS, Linux y Git Bash (no en el Explorador de archivos de Windows).
 
 #### Moverse con rutas relativas
 

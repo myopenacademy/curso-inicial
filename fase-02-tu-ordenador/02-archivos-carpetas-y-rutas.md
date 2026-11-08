@@ -145,7 +145,7 @@ El programa con el que ves y ordenas tus carpetas es el **explorador de archivos
 
 Con él ya sabes hacer muchas cosas: entrar en una carpeta con doble clic, volver atrás, crear carpetas, cambiar nombres, mover ficheros arrastrándolos. Lo que quizá no has mirado nunca es **dónde está** exactamente lo que ves. Cada explorador lo enseña a su manera (Windows 11, macOS y GNOME a 8 de noviembre de 2026; los nombres pueden cambiar un poco entre versiones):
 
-- **Explorador de Windows.** Arriba hay una **barra de direcciones** que muestra la carpeta como una serie de nombres separados por flechitas (algo como «Este equipo › Disco local (C:) › Usuarios › ana › Descargas»). Si haces clic en un **hueco vacío** de esa barra, se convierte en texto y te enseña la ruta de verdad: `C:\Users\ana\Downloads`. Además, el menú que sale al hacer clic derecho sobre un fichero tiene una opción para **copiar su ruta** completa como texto, entre comillas.
+- **Explorador de archivos (Windows).** Arriba hay una **barra de direcciones** que muestra la carpeta como una serie de nombres separados por flechitas (algo como «Este equipo › Disco local (C:) › Usuarios › ana › Descargas»). Si haces clic en un **hueco vacío** de esa barra, se convierte en texto y te enseña la ruta de verdad: `C:\Users\ana\Downloads`. Además, el menú que sale al hacer clic derecho sobre un fichero tiene una opción para **copiar su ruta** completa como texto, entre comillas.
 - **Finder de macOS.** En el menú **Visualización**, la opción **Mostrar barra de ruta** añade abajo una barra con las carpetas que hay hasta la que estás viendo. El menú del clic derecho sobre un fichero también tiene una opción para copiar su ruta, que aparece al mantener pulsada la tecla <kbd>Opción</kbd>.
 - **Archivos de GNOME (Linux).** Encima de la lista de ficheros hay una **barra de rutas** que muestra la carpeta que estás viendo. Si haces clic derecho sobre un fichero y eliges **Propiedades**, la ventana muestra su **Carpeta padre**, por ejemplo `/home/ana/Descargas`; la ruta del fichero es esa carpeta, una `/` y su nombre: `/home/ana/Descargas/factura-octubre.pdf`.
 
@@ -262,7 +262,7 @@ Y una abreviatura que verás constantemente: **`~` (la virgulilla) significa «m
 | Linux | `/home/ana/proyectos/panaderia` |
 | Git Bash | `/c/Users/ana/proyectos/panaderia` |
 
-`~` es muy útil en documentación, porque vale para cualquier persona: cada una la lee como su propia carpeta personal. Pero **el Explorador de Windows no la entiende**: es una costumbre de las terminales de tipo Unix (Linux, macOS, Git Bash).
+`~` es muy útil en documentación, porque vale para cualquier persona: cada una la lee como su propia carpeta personal. Pero **el Explorador de archivos de Windows no la entiende**: es una costumbre de las terminales de tipo Unix (Linux, macOS, Git Bash).
 
 > **💡 Consejo:** en el teclado español, `~` se escribe con <kbd>AltGr</kbd>+<kbd>4</kbd> en Windows y Linux (a veces hay que pulsar después la barra espaciadora para que aparezca), y con <kbd>Opción</kbd>+<kbd>ñ</kbd> en macOS. La barra invertida `\`, con <kbd>AltGr</kbd>+<kbd>º</kbd> en Windows y Linux.
 
@@ -294,7 +294,7 @@ Para tus fotos y tus documentos personales puedes usar los nombres que quieras: 
 
 Es exactamente lo que hacen los cursos de esta academia: carpetas y ficheros en **minúsculas, sin tildes, sin eñes y sin espacios**, con guiones (`fase-02-tu-ordenador`, `02-archivos-carpetas-y-rutas.md`). Es la misma costumbre que viste en el pseudocódigo de la fase 1, donde se escribía `anio` en lugar de `año`.
 
-> **📌 Nota:** si alguna vez tienes que escribir una ruta con espacios (porque la carpeta no es tuya y no puedes cambiarle el nombre), la solución habitual es escribirla **entre comillas**: `"C:\Users\ana\Mis proyectos\web"`. Por eso, al copiar una ruta con el Explorador de Windows, la copia viene entre comillas. Lo practicarás en la terminal, en la fase 3.
+> **📌 Nota:** si alguna vez tienes que escribir una ruta con espacios (porque la carpeta no es tuya y no puedes cambiarle el nombre), la solución habitual es escribirla **entre comillas**: `"C:\Users\ana\Mis proyectos\web"`. Por eso, al copiar una ruta con el Explorador de archivos de Windows, la copia viene entre comillas. Lo practicarás en la terminal, en la fase 3.
 
 ### 1.14. La extensión
 
@@ -378,7 +378,7 @@ img/productos/croissant.jpg
 
 Fíjate en que la ruta relativa es **la misma en los cuatro casos**: lo que cambia de un ordenador a otro es la parte que va **hasta** `panaderia`, y la relativa no la lleva. Por eso las páginas de la web usan rutas relativas: así funciona en el ordenador de Ana, en el de quien la ayude y en el servidor donde se publique.
 
-> **📌 Nota:** en las páginas web y en casi todos los proyectos de programación las rutas relativas se escriben **siempre con `/`**, también en Windows. Es la costumbre de internet y la que entienden todos los sistemas. La barra invertida `\` queda para lo que te enseña el Explorador de Windows.
+> **📌 Nota:** en las páginas web y en casi todos los proyectos de programación las rutas relativas se escriben **siempre con `/`**, también en Windows. Es la costumbre de internet y la que entienden todos los sistemas. La barra invertida `\` queda para lo que te enseña el Explorador de archivos de Windows.
 
 ### 2.2. Las rutas relativas de una página web
 
@@ -485,7 +485,7 @@ Lo que **no** conviene es escribir la ruta absoluta (`/home/luis/tienda/datos/ve
 
 ### 3.2. Usar la barra que no toca
 
-**Qué pasa:** copias una ruta del Explorador de Windows, `C:\Users\ana\proyectos\panaderia`, y la pegas en Git Bash, en una página web o en un fichero de configuración, y no funciona.
+**Qué pasa:** copias una ruta del Explorador de archivos de Windows, `C:\Users\ana\proyectos\panaderia`, y la pegas en Git Bash, en una página web o en un fichero de configuración, y no funciona.
 
 **Por qué ocurre:** cada sitio espera su forma de escribir rutas. Git Bash, las páginas web y la mayoría de las herramientas de programación esperan `/`. Y, en las terminales de tipo Unix, la barra invertida `\` tiene un significado especial (lo verás en la fase 3), así que no se lee como un separador.
 
@@ -673,7 +673,7 @@ Mira **cómo empieza** cada ruta: por `/`, por una letra de unidad, por `~` o po
 **Situación real:** en un tutorial de un curso pone que guardes el proyecto en `~/proyectos/tienda-online/datos`. Dos compañeros de clase te preguntan cómo queda esa ruta en su ordenador. Su nombre de usuario es `jorge`.
 
 1. Escribe la ruta absoluta para Jorge en Windows (como la enseña el Explorador), en macOS, en Linux y en Git Bash.
-2. Otra compañera te pasa esta ruta, copiada del Explorador de Windows: `C:\Users\lucia\proyectos\tienda-online\README.md`. ¿Cómo la escribiría ella en Git Bash?
+2. Otra compañera te pasa esta ruta, copiada del Explorador de archivos de Windows: `C:\Users\lucia\proyectos\tienda-online\README.md`. ¿Cómo la escribiría ella en Git Bash?
 
 <details>
 <summary>Pista 1</summary>
@@ -1225,7 +1225,7 @@ La última sube de `css` a la carpeta del proyecto (`..`) y baja a `img`.
 | Linux | `/home/ana` | `/home/ana/proyectos/web/index.html` | `/` |
 | Git Bash | `/c/Users/ana` | `/c/Users/ana/proyectos/web/index.html` | `/` |
 
-De Windows a Git Bash: `C:` → `/c` y cada `\` → `/`. `~` es la carpeta personal en macOS, Linux y Git Bash (no en el Explorador de Windows).
+De Windows a Git Bash: `C:` → `/c` y cada `\` → `/`. `~` es la carpeta personal en macOS, Linux y Git Bash (no en el Explorador de archivos de Windows).
 
 ### Moverse con rutas relativas
 
