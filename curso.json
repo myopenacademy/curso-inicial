@@ -1,0 +1,260 @@
+{
+  "formato": 1,
+  "tipo": "curso",
+  "id": "inicial",
+  "titulo": "Fundamentos para programar",
+  "descripcion": "Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.",
+  "version": "0.1.0",
+  "idioma": "es",
+  "repositorio": "https://github.com/myopenacademy/curso-inicial",
+  "conviene_saber_antes": [],
+  "fases": [
+    {
+      "id": "inicial.fase.que-es-programar",
+      "carpeta": "fase-01-que-es-programar",
+      "titulo": "Qué es programar",
+      "modulos": [
+        {
+          "id": "inicial.que-es-programar",
+          "titulo": "Qué es programar",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.algoritmos-y-pseudocodigo",
+          "titulo": "Algoritmos y pseudocódigo",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.probar-un-programa",
+          "titulo": "¿Cómo sé que funciona? Probar un programa",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.paradigmas-de-programacion",
+          "titulo": "Paradigmas de programación",
+          "disponible": false,
+          "ejercicios": []
+        }
+      ]
+    },
+    {
+      "id": "inicial.fase.tu-ordenador",
+      "carpeta": "fase-02-tu-ordenador",
+      "titulo": "Tu ordenador por dentro",
+      "modulos": [
+        {
+          "id": "inicial.como-funciona-un-ordenador",
+          "titulo": "Cómo funciona un ordenador",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.archivos-carpetas-y-rutas",
+          "titulo": "Archivos, carpetas y rutas",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.instalar-programas-y-path",
+          "titulo": "Instalar programas, variables de entorno y PATH",
+          "disponible": false,
+          "ejercicios": []
+        }
+      ]
+    },
+    {
+      "id": "inicial.fase.herramientas",
+      "carpeta": "fase-03-herramientas",
+      "titulo": "Herramientas del programador",
+      "modulos": [
+        {
+          "id": "inicial.terminal-lo-basico",
+          "titulo": "La terminal: lo básico",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.terminal-sacarle-partido",
+          "titulo": "La terminal: sacarle partido",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.editor-de-codigo",
+          "titulo": "El editor de código",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.errores-y-depuracion",
+          "titulo": "Errores y depuración",
+          "disponible": false,
+          "ejercicios": []
+        }
+      ]
+    },
+    {
+      "id": "inicial.fase.formatos-y-diagramas",
+      "carpeta": "fase-04-formatos-y-diagramas",
+      "titulo": "Formatos y diagramas",
+      "modulos": [
+        {
+          "id": "inicial.texto-binario-y-codificacion",
+          "titulo": "Texto, binario y codificación",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.markdown",
+          "titulo": "Markdown",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.json-y-yaml",
+          "titulo": "JSON y YAML",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.xml-csv-y-otros",
+          "titulo": "XML, CSV y otros",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.diagramas-y-mermaid",
+          "titulo": "Diagramas y Mermaid",
+          "disponible": false,
+          "ejercicios": []
+        }
+      ]
+    },
+    {
+      "id": "inicial.fase.git-y-github",
+      "carpeta": "fase-05-git-y-github",
+      "titulo": "Git y GitHub",
+      "modulos": [
+        {
+          "id": "inicial.git-fundamentos",
+          "titulo": "Git: fundamentos",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.ramas-y-conflictos",
+          "titulo": "Ramas y conflictos",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.github",
+          "titulo": "GitHub",
+          "disponible": false,
+          "ejercicios": []
+        }
+      ]
+    },
+    {
+      "id": "inicial.fase.internet-y-aplicaciones",
+      "carpeta": "fase-06-internet-y-aplicaciones",
+      "titulo": "Internet y aplicaciones",
+      "modulos": [
+        {
+          "id": "inicial.redes",
+          "titulo": "Redes: IP, router, DNS y cortafuegos",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.puertos-y-localhost",
+          "titulo": "Puertos y localhost: tu ordenador como servidor",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.la-web-http-y-apis",
+          "titulo": "La web: HTTP, peticiones, respuestas y APIs",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.que-es-una-base-de-datos",
+          "titulo": "Qué es una base de datos",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.piezas-de-una-aplicacion",
+          "titulo": "Las piezas de una aplicación",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.que-es-la-ia",
+          "titulo": "Qué es la IA y cómo funciona por dentro",
+          "disponible": false,
+          "ejercicios": []
+        }
+      ]
+    },
+    {
+      "id": "inicial.fase.aprender-a-aprender",
+      "carpeta": "fase-07-aprender-a-aprender",
+      "titulo": "Aprender a aprender",
+      "modulos": [
+        {
+          "id": "inicial.como-estudiar",
+          "titulo": "Cómo estudiar con estos cursos",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.organizar-tu-trabajo",
+          "titulo": "Organizar tu trabajo",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.buscar-ayuda",
+          "titulo": "Buscar ayuda",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.programar-con-asistentes-de-ia",
+          "titulo": "Programar con asistentes de IA",
+          "disponible": false,
+          "ejercicios": []
+        },
+        {
+          "id": "inicial.seguridad-basica",
+          "titulo": "Seguridad básica",
+          "disponible": false,
+          "ejercicios": []
+        }
+      ]
+    },
+    {
+      "id": "inicial.fase.proyecto-final",
+      "carpeta": "fase-08-proyecto-final",
+      "titulo": "Proyecto final",
+      "modulos": [
+        {
+          "id": "inicial.primer-repositorio",
+          "titulo": "Tu primer repositorio",
+          "disponible": false,
+          "ejercicios": []
+        }
+      ]
+    }
+  ],
+  "proyecto": {
+    "tipo": "modulo",
+    "modulo": "inicial.primer-repositorio"
+  },
+  "equivalencias": []
+}

@@ -19,17 +19,63 @@ Que cualquiera, sin saber nada, termine preparado para empezar cualquier curso d
 - **Proyecto para el portfolio:** el módulo final «Tu primer repositorio» (`"proyecto": {"tipo": "modulo"}` en `curso.json`).
 - **Está en el límite de tamaño:** lo que se añada debería sustituir algo o ir como recomendado.
 
-## 3. Decisiones pendientes del autor (antes de escribir)
+Aprobadas por el autor el 8 de noviembre de 2026:
 
-1. **Nombre público** del curso (propuestas: «Fundamentos para programar», «Curso de iniciación»).
-2. **Terminal en Windows:** bash para todos con Git Bash o WSL (recomendado) o también PowerShell. Mirar antes cómo lo resuelve el módulo 01.04 del curso de Java original.
-3. **Normas de la academia sobre el uso de la IA** en ejercicios y proyectos (las usa el módulo 29).
-4. **Versiones** de las herramientas que se enseñan (VS Code, Git…), verificadas en su documentación oficial y fechadas.
-5. Qué se verifica de cada ejercicio de herramientas y cómo (se decide junto con la sesión del kit).
+- **Nombre público: «Fundamentos para programar».** Dice qué es sin sonar a curso menor. («Kit» queda solo para las herramientas.)
+- **Terminal: bash para todos.** En Windows, con **Git Bash**, que se instala con Git for Windows (hace falta igualmente para la fase 5); WSL se menciona como alternativa para cursos posteriores (DevOps). Por qué: un solo juego de comandos, el mismo que en servidores, Docker y CI, y verificable por el kit en Linux. El curso de Java original pone PowerShell y bash lado a lado (módulo 01.04), lo que duplica contenido y verificación. Consecuencias: Git for Windows se instala en el módulo «Instalar programas» (fase 2); «La terminal: lo básico» lleva solo una tabla pequeña de equivalencias con PowerShell, para reconocerlos; y **afecta al curso de Java**, que hoy da PowerShell por supuesto (se anota en el plan general).
+- **Normas sobre el uso de la IA** (apartado 6). Son de toda la academia, no solo de este curso: se anotan también en el plan general.
+- **Núcleo o Ampliación se marca por módulo, no por fase**: el proyecto final usa módulos de fases «recomendadas» (Markdown, JSON, Mermaid, tableros, secretos), y varios módulos de la fase 6 los necesitan casi todos los cursos.
+- **Retos de la fase 1 sin código verificable:** el pseudocódigo no se ejecuta, así que llevan una solución razonada y una tabla de prueba (lo que enseña el módulo «Probar un programa»).
+- **Versiones** de las herramientas: se verifican en la documentación oficial y se fechan en el texto; las de las fases 1 a 3, ya (apartado 7); el resto, al escribir cada fase.
+
+## 3. Decisiones pendientes
+
+1. **Qué se verifica de cada ejercicio de herramientas y cómo** (se decide con el autor y se pasa a la sesión del kit).
+2. **Fichero previsto de los módulos sin escribir en `curso.json`:** pedido al kit (ver `ESTADO.md`, «Avisos para el kit»). Mientras, los nombres cerrados están en el apartado 4.
 
 ## 4. Temario: 8 fases y 31 módulos
 
-♻️ = se adapta del curso de Java original (`../../../Curso Java Completo/`) · 🆕 = nuevo. Los identificadores, los nombres de fichero y las carpetas de las fases se cierran con el autor antes de escribir.
+Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: `inicial.`; el de cada módulo es el nombre de su fichero sin número; el de cada fase, `inicial.fase.` y el nombre de su carpeta sin número. Todos los módulos son de nivel **Básico**; N = Núcleo, A = Ampliación. Horas con ejercicios, sin retos.
+
+| Fase (carpeta → id) | Fichero | Módulo | Horas | N/A |
+|---|---|---|---|---|
+| `fase-01-que-es-programar` → `inicial.fase.que-es-programar` | `01-que-es-programar.md` | Qué es programar | 2 | N |
+| | `02-algoritmos-y-pseudocodigo.md` | Algoritmos y pseudocódigo | 3 | N |
+| | `03-probar-un-programa.md` | ¿Cómo sé que funciona? Probar un programa | 2 | N |
+| | `04-paradigmas-de-programacion.md` | Paradigmas de programación | 1,5 | A |
+| `fase-02-tu-ordenador` → `inicial.fase.tu-ordenador` | `01-como-funciona-un-ordenador.md` | Cómo funciona un ordenador | 1,5 | N |
+| | `02-archivos-carpetas-y-rutas.md` | Archivos, carpetas y rutas | 2 | N |
+| | `03-instalar-programas-y-path.md` | Instalar programas, variables de entorno y PATH | 2 | N |
+| `fase-03-herramientas` → `inicial.fase.herramientas` | `01-terminal-lo-basico.md` | La terminal: lo básico | 3 | N |
+| | `02-terminal-sacarle-partido.md` | La terminal: sacarle partido | 3 | N |
+| | `03-editor-de-codigo.md` | El editor de código | 1,5 | N |
+| | `04-errores-y-depuracion.md` | Errores y depuración | 2 | N |
+| `fase-04-formatos-y-diagramas` → `inicial.fase.formatos-y-diagramas` | `01-texto-binario-y-codificacion.md` | Texto, binario y codificación | 1,5 | A |
+| | `02-markdown.md` | Markdown | 2 | N |
+| | `03-json-y-yaml.md` | JSON y YAML | 2,5 | N |
+| | `04-xml-csv-y-otros.md` | XML, CSV y otros | 2 | A |
+| | `05-diagramas-y-mermaid.md` | Diagramas y Mermaid | 2 | N |
+| `fase-05-git-y-github` → `inicial.fase.git-y-github` | `01-git-fundamentos.md` | Git: fundamentos | 3 | N |
+| | `02-ramas-y-conflictos.md` | Ramas y conflictos | 3 | N |
+| | `03-github.md` | GitHub | 2,5 | N |
+| `fase-06-internet-y-aplicaciones` → `inicial.fase.internet-y-aplicaciones` | `01-redes.md` | Redes: IP, router, DNS y cortafuegos | 2,5 | A |
+| | `02-puertos-y-localhost.md` | Puertos y localhost: tu ordenador como servidor | 1,5 | N |
+| | `03-la-web-http-y-apis.md` | La web: HTTP, peticiones, respuestas y APIs | 3 | N |
+| | `04-que-es-una-base-de-datos.md` | Qué es una base de datos | 2 | A |
+| | `05-piezas-de-una-aplicacion.md` | Las piezas de una aplicación | 1,5 | N |
+| | `06-que-es-la-ia.md` | Qué es la IA y cómo funciona por dentro | 2 | N |
+| `fase-07-aprender-a-aprender` → `inicial.fase.aprender-a-aprender` | `01-como-estudiar.md` | Cómo estudiar con estos cursos | 1 | N |
+| | `02-organizar-tu-trabajo.md` | Organizar tu trabajo | 1,5 | N |
+| | `03-buscar-ayuda.md` | Buscar ayuda | 1 | N |
+| | `04-programar-con-asistentes-de-ia.md` | Programar con asistentes de IA | 2 | N |
+| | `05-seguridad-basica.md` | Seguridad básica | 1,5 | N |
+| `fase-08-proyecto-final` → `inicial.fase.proyecto-final` | `01-primer-repositorio.md` | Tu primer repositorio | 6 | N |
+
+Total: unas **67 horas**, más los retos. Cada fase termina con su `retos.md`. El proyecto para el portfolio es `inicial.primer-repositorio`.
+
+### 4.1. Origen de cada módulo
+
+♻️ = se adapta del curso de Java original (`../../../Curso Java Completo/`) · 🆕 = nuevo.
 
 | # | Fase | Módulo | Origen |
 |---|---|---|---|
@@ -53,7 +99,7 @@ Que cualquiera, sin saber nada, termine preparado para empezar cualquier curso d
 | 18 | | Ramas y conflictos | ♻️ 01.06 `fase-01-entorno/06-git-ramas-y-conflictos.md` |
 | 19 | | GitHub | ♻️ 01.07 `fase-01-entorno/07-github.md` |
 | 20 | **6. Internet y aplicaciones** | Redes: IP, router, DNS y cortafuegos | ♻️ parte general de 06.05 `fase-06-concurrencia-y-redes/05-redes-y-sockets.md` |
-| 21 | | Puertos y `localhost`: tu ordenador como servidor | 🆕 |
+| 21 | | Puertos y localhost: tu ordenador como servidor | 🆕 |
 | 22 | | La web: HTTP, peticiones, respuestas y APIs | ♻️ 10.01, 10.02 y 10.08 `fase-10-web/01-como-funciona-la-web.md`, `02-apis-y-rest.md`, `08-postman.md` |
 | 23 | | Qué es una base de datos | ♻️ 09.01 y 09.02 `fase-09-bases-de-datos/01-conceptos-de-bases-de-datos.md`, `02-tipos-de-bases-de-datos.md` |
 | 24 | | Las piezas de una aplicación | 🆕 |
@@ -69,9 +115,32 @@ Unos **19 se adaptan** y unos **12 son nuevos**. Qué lleva cada módulo nuevo o
 
 ## 5. Cómo se trabaja
 
-1. Cerrar con el autor las decisiones del apartado 3 y el temario: carpetas, ficheros, identificadores, tiempos, nivel y retos de cada fase. Escribir `curso.json`.
+1. ~~Cerrar con el autor las decisiones y el temario: carpetas, ficheros, identificadores, tiempos y nivel. Escribir `curso.json`.~~ Hecho el 8 de noviembre de 2026. Falta decidir los retos de cada fase y qué se verifica de cada ejercicio (apartado 3).
 2. Revisión del autor del plan entero antes de escribir nada.
 3. Fase 1 y **parar** para que el autor revise estilo, profundidad y formato.
 4. Prueba de importación de la fase 1 en una copia de la academia (desde su propio proyecto).
 5. El resto, fase a fase, con las reglas de `../CLAUDE.md`.
 6. Etiquetar la versión 1.0.0 y publicarlo con la academia (pack base 1.0).
+
+## 6. Normas sobre el uso de la IA
+
+Aprobadas por el autor el 8 de noviembre de 2026. Son de **toda la academia** (se anotan también en el plan general) y las explica el módulo «Programar con asistentes de IA». Son recomendaciones: no hay corrección ni seguimiento.
+
+1. **Intenta cada ejercicio tú primero.** Usa la IA como profesor: que te explique, te dé pistas o revise tu solución, no que la haga por ti.
+2. **Comprueba siempre lo que te dé**, con casos de prueba (módulo «Probar un programa»).
+3. **Nunca pegues** contraseñas, claves ni datos personales en un chat de IA.
+4. **En el proyecto final puedes usarla**, pero debes entender y poder explicar todo lo que entregues. Cuéntalo en el README, en una sección «Cómo lo hice».
+5. **Las soluciones del curso ya están plegadas**: mira antes la tuya.
+
+## 7. Versiones
+
+Verificadas en la documentación oficial el 8 de noviembre de 2026. En el texto de los módulos se fechan igual.
+
+| Herramienta | Versión | Fuente |
+|---|---|---|
+| Git | 2.56.0 (28 de septiembre de 2026) | git-scm.com, «Latest source release» |
+| Git for Windows (incluye Git Bash) | 2.56.0(4) (26 de octubre de 2026) | git-scm.com/install/windows |
+| Visual Studio Code | 1.145 (4 de noviembre de 2026; con la actualización 1.145.2) | code.visualstudio.com/updates |
+| Bash | 5.3 (5 de julio de 2025) | ftp.gnu.org/gnu/bash |
+
+VS Code saca versión cada mes: en el texto se dice «la versión de noviembre de 2026 (1.145)» y se explica que se actualiza solo. Las del resto de fases (Mermaid, `curl`, etc.) se verifican al escribir cada fase.
