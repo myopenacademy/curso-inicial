@@ -2,7 +2,7 @@
 
 > **Versiones:** Los fragmentos de ejemplo se han comprobado con Python 3.14, Java 25, Node.js 24 y SQLite 3.46 (8 de noviembre de 2026)
 > **Conviene saber antes:** [01.01 Qué es programar](01-que-es-programar.md) · [01.02 Algoritmos y pseudocódigo](02-algoritmos-y-pseudocodigo.md)
-> **Tiempo estimado:** 2 horas
+> **Tiempo estimado:** 1,5 horas
 > **Nivel:** Básico · Ampliación
 
 ## Qué aprenderás
@@ -10,8 +10,9 @@
 - Qué es un **paradigma de programación** y por qué existen varios.
 - La gran división entre programar de forma **imperativa** (decir *cómo*) y **declarativa** (decir *qué*).
 - Por qué casi todos los lenguajes modernos son **multiparadigma**.
-- La idea principal de cada paradigma que te vas a encontrar: imperativo y estructurado, orientado a objetos, funcional, declarativo, concurrente y paralelo, asíncrono, orientado a eventos, reactivo y orientado a aspectos.
-- A reconocer **el mismo problema resuelto en varios estilos**, en pseudocódigo y en fragmentos cortos de Python, Java, JavaScript y SQL.
+- La idea de los cuatro grandes paradigmas: **imperativo y estructurado**, **orientado a objetos**, **funcional** y **declarativo**.
+- A reconocer **el mismo problema resuelto en esos cuatro estilos**, en pseudocódigo y en fragmentos cortos de Python, Java, JavaScript y SQL.
+- Qué idea hay detrás de **otros estilos que oirás nombrar**: concurrente y paralelo, asíncrono, orientado a eventos, reactivo, orientado a aspectos, genérico y lógico.
 - Cuándo conviene cada paradigma y cómo conviven todos en una aplicación real.
 
 > **📌 Nota:** este módulo es de **Ampliación** y es un **mapa**. No pretende que domines ningún paradigma, sino que sepas que existen, qué idea hay detrás de cada uno y cómo reconocerlos cuando los veas. Si algo te parece abstracto, no te preocupes: puedes pasar a la fase siguiente y volver aquí más adelante. Cuando empieces el curso de un lenguaje concreto, este módulo te servirá para saber en qué estilo está escrito lo que lees.
@@ -67,7 +68,7 @@ flowchart LR
     D --> D3["Lógico"]
 ```
 
-El diagrama dice que los paradigmas se reparten en dos familias: los **imperativos** (el estructurado y, en general, el orientado a objetos) y los **declarativos** (el funcional, lenguajes como SQL o HTML y el lógico). Los demás estilos del módulo (concurrente, asíncrono, eventos, reactivo, aspectos) no están en el diagrama porque responden a otra pregunta: no tanto *cómo describes el cálculo* como *cuándo y en qué orden pasan las cosas*. Se pueden combinar con cualquiera de las dos familias.
+El diagrama dice que los paradigmas se reparten en dos familias: los **imperativos** (el estructurado y, en general, el orientado a objetos) y los **declarativos** (el funcional, lenguajes como SQL o HTML y el lógico). Los demás estilos que verás en el [apartado 1.8](#18-otros-estilos-que-oirás-nombrar) (asíncrono, eventos, reactivo…) no están en el diagrama porque responden a otra pregunta: no tanto *cómo describes el cálculo* como *cuándo y en qué orden pasan las cosas*. Se pueden combinar con cualquiera de las dos familias.
 
 > **📌 Nota:** la frontera no es una línea perfecta. Un mismo programa orientado a objetos puede tener partes muy funcionales, y el estilo funcional se considera declarativo porque describe transformaciones en lugar de pasos. Lo importante es la pregunta de fondo: **¿estoy describiendo el camino o el destino?**
 
@@ -148,7 +149,7 @@ La regla del envío gratis queda **en un único sitio**, junto a los datos a los
 | **Transformar** | *map* | Convierte cada elemento en otra cosa | De cada pedido, su importe |
 | **Reducir** | *reduce* | Combina todos los elementos en un único resultado | Sumar todos los importes |
 
-Para escribir cadenas así en pseudocódigo usaremos flechas, un paso por línea:
+Para escribir cadenas así en pseudocódigo, ampliamos las convenciones del curso con flechas, un paso por línea:
 
 ```text
 total ← pedidos
@@ -185,87 +186,26 @@ También es declarativa mucha **configuración**: en lugar de programar paso a p
 
 **Ventajas:** lo más corto y legible; el motor suele saber hacerlo de forma mucho más eficiente que tú (una base de datos sabe buscar entre millones de filas).
 
-**Inconvenientes:** necesitas un motor que sepa resolver ese problema; y si no entiendes un poco lo que hace por debajo, puedes pedirle cosas que le cuestan muchísimo (lo verás en los [errores típicos](#36-creer-que-lo-declarativo-es-magia)).
+**Inconvenientes:** necesitas un motor que sepa resolver ese problema; y si no entiendes un poco lo que hace por debajo, puedes pedirle cosas que le cuestan muchísimo (lo verás en los [errores típicos](#35-creer-que-lo-declarativo-es-magia)).
 
-### 1.8. Concurrente y paralelo
+### 1.8. Otros estilos que oirás nombrar
 
-**La idea:** hacer **varias cosas a la vez** en lugar de una detrás de otra. Por ejemplo, consultar tres almacenes al mismo tiempo en vez de esperar a que conteste el primero para preguntar al segundo.
+Además de los cuatro grandes, oirás hablar de otros estilos. La mayoría no responden a *cómo describes el cálculo*, sino a *cuándo y en qué orden pasan las cosas*, y se combinan con cualquiera de los anteriores. Aquí basta con que sepas qué idea hay detrás de cada uno y los reconozcas: el curso de cada lenguaje los explica cuando hacen falta.
 
-Hay dos ideas relacionadas que conviene distinguir:
+| Estilo | La idea, en una línea | Analogía |
+|---|---|---|
+| **Concurrente** | Varias tareas en curso en el mismo periodo de tiempo, aunque no avancen en el mismo instante | Un camarero que atiende varias mesas a la vez: toma nota en una, sirve en otra, cobra en la tercera |
+| **Paralelo** | Varias tareas ejecutándose literalmente al mismo tiempo, en varios núcleos del procesador | Varios camareros, cada uno con su mesa |
+| **Asíncrono** | Lanzar una tarea que tarda (un pago, una descarga) y seguir con otras cosas; te avisan cuando termina | El avisador que te dan en un restaurante de comida rápida: pides, te sientas y vibra cuando tu comida está lista |
+| **Orientado a eventos** | El programa no sigue un camino fijo: reacciona a lo que ocurre (un clic, un mensaje, un pedido enviado) | El timbre de casa: sigues con tus cosas y reaccionas cuando alguien llama |
+| **Reactivo** | Los datos llegan sin parar (un chat, la bolsa, un sensor) y todo lo que depende de ellos se actualiza solo | Una hoja de cálculo: si C1 es `=A1+B1`, al cambiar A1 se recalcula C1 sin que lo pidas |
+| **Orientado a aspectos** | Las tareas que se repiten en todo el programa sin ser su objetivo (registrar lo que pasa, comprobar permisos), llamadas **tareas transversales**, se escriben una sola vez | El control de seguridad de un aeropuerto: uno solo para los pasajeros de todas las aerolíneas |
+| **Genérico** | Un mismo código sirve para cualquier tipo de dato (un único «ordenar» para números, nombres o fechas) | Un molde de repostería: el mismo molde para un bizcocho de chocolate o de limón |
+| **Lógico** | Se describen hechos y reglas, y el programa deduce las respuestas (su lenguaje más conocido es Prolog) | Un detective que razona con las pistas |
 
-- **Concurrencia:** gestionar varias tareas **en el mismo periodo de tiempo**, aunque no avancen exactamente en el mismo instante. Es un camarero que atiende varias mesas: toma nota en una, lleva un plato a otra, cobra en la tercera. Ninguna mesa espera a que las demás hayan terminado de comer.
-- **Paralelismo:** ejecutar varias tareas **literalmente al mismo tiempo**, en varios núcleos del procesador (un procesador moderno tiene varios «cerebros» que trabajan a la vez). Son varios camareros, cada uno atendiendo su mesa.
+Dos detalles que conviene no confundir. Lo contrario de asíncrono es **síncrono** (o bloqueante): pides y esperas de pie, sin hacer nada más, hasta que te dan la comida. Y cada línea de trabajo independiente dentro de un programa concurrente se suele llamar **hilo** (*thread*).
 
-Cada una de esas líneas de trabajo independientes dentro de un programa se suele llamar **hilo** (*thread*).
-
-**Ventajas:** los programas aprovechan mucho mejor el tiempo, sobre todo cuando hay **esperas** (la red, el disco, una base de datos), y aprovechan los procesadores de varios núcleos.
-
-**Inconvenientes:** es uno de los temas más difíciles de la programación. Cuando varias tareas tocan **los mismos datos** a la vez, aparecen errores que solo ocurren algunas veces, según quién llegue antes, y que son muy difíciles de reproducir. Imagina dos cajeros vendiendo a la vez la última entrada de un concierto: si nadie coordina, la venden dos veces.
-
-> **📌 Nota:** aquí basta con la idea. Cómo se programa la concurrencia depende mucho de cada lenguaje, y la verás en el curso del lenguaje que elijas.
-
-### 1.9. Asíncrono
-
-**La idea:** lanzar una tarea que tarda (cobrar con tarjeta, descargar un fichero, pedir datos a otro servidor) y **seguir haciendo otras cosas** mientras tanto, indicando qué hacer **cuando termine**.
-
-**La analogía:** el avisador que te dan en algunos restaurantes de comida rápida. Pides, te dan el aparato y te vas a sentar. No te quedas plantado en el mostrador: cuando tu comida está lista, el aparato vibra.
-
-Lo contrario es la forma **síncrona** o **bloqueante**: pides y esperas de pie, sin hacer nada más, hasta que te dan la comida.
-
-Lo importante es que el orden en que **escribes** las instrucciones ya no es el orden en que **ocurren** las cosas: un mensaje escrito después del cobro puede salir antes que la confirmación del banco. Lo verás funcionando en el [ejemplo 2.7](#27-asíncrono-un-pago-que-no-bloquea-la-web).
-
-**Dónde lo verás:** en todo lo que habla con la red. Las páginas web lo usan constantemente (por eso no se congelan mientras cargan datos), y casi todos los lenguajes modernos tienen palabras para ello (en JavaScript, Python, C# y otros verás `async` y `await`).
-
-### 1.10. Orientado a eventos
-
-**La idea:** el programa no sigue un camino fijo de principio a fin, sino que **reacciona a lo que ocurre**: un clic, una tecla, un mensaje que llega, un pedido que se envía. Cada una de esas cosas que ocurren es un **evento**. Cada parte del programa se **suscribe** a los eventos que le interesan y actúa cuando suceden.
-
-**La analogía:** el timbre de casa. No te pasas el día mirando por la mirilla: sigues con tus cosas y, cuando alguien llama, reaccionas.
-
-```text
-// Una parte del programa se suscribe al evento
-CUANDO OCURRA "pedido enviado" CON pedido HACER
-    EnviarCorreoAlCliente(pedido)
-FIN CUANDO
-
-// Otra parte, la que envía el pedido, solo anuncia lo que ha pasado
-AVISAR "pedido enviado" CON pedido
-```
-
-**Ventajas:** las partes del programa quedan muy **independientes**: quien provoca el evento no necesita saber quién reaccionará ni cómo. Si mañana hay que mandar también un SMS al enviar un pedido, se añade otra suscripción **sin tocar** la parte que avisa.
-
-**Inconvenientes:** como nada sigue un camino fijo, a veces cuesta saber qué pasará cuando ocurra algo, y en qué orden.
-
-**Dónde lo verás:** es la base de las páginas web y de las aplicaciones con ventanas y botones (nada pasa hasta que el usuario hace algo), y de los sistemas en los que varios programas se mandan mensajes.
-
-### 1.11. Reactivo
-
-**La idea:** trabajar con **flujos de datos que llegan a lo largo del tiempo** (mensajes de un chat, precios de la bolsa, lecturas de un sensor) y definir cómo se transforman y a quién llegan, de forma que todo se actualiza **automáticamente** cuando llega un dato nuevo.
-
-**La analogía:** una hoja de cálculo. Si la celda C1 contiene `=A1+B1`, en cuanto cambias A1, C1 se recalcula sola. No tienes que ordenarle que lo haga: la relación está declarada y los cambios se propagan.
-
-Combina ideas de otros estilos: del funcional (transformar flujos con filtrar y transformar), del asíncrono (no quedarse esperando) y del orientado a eventos (reaccionar a lo que llega).
-
-**Dónde lo verás:** en aplicaciones con muchísimos usuarios a la vez y datos que llegan sin parar, y en las respuestas de los asistentes de inteligencia artificial que aparecen poco a poco, palabra a palabra. Es un estilo avanzado: aquí basta con que te suene.
-
-### 1.12. Orientado a aspectos
-
-**La idea:** hay tareas que se repiten en muchísimas partes de un programa sin ser su objetivo principal: **registrar lo que pasa** (lo que se llama *log*), medir tiempos, comprobar permisos. Se llaman **tareas transversales**, porque «atraviesan» todo el programa. La programación orientada a aspectos permite escribir esas tareas **una sola vez**, aparte, e indicar a qué partes del programa se aplican.
-
-**La analogía:** el control de seguridad de un aeropuerto. Cada aerolínea se ocupa de sus vuelos, pero ninguna tiene que montar su propio arco detector: hay un único control que se aplica a todos los pasajeros, sea cual sea su vuelo.
-
-Sin aspectos, si hay que registrar cuándo empieza y termina cada operación, cada uno de los cientos de subalgoritmos de una aplicación lleva sus dos líneas de registro, y basta con olvidarlas en uno para que el registro quede incompleto. Con aspectos, el registro se escribe **una sola vez**, con una regla que dice a qué operaciones se aplica.
-
-**Dónde lo verás:** no se suele programar «en aspectos» desde cero, pero muchas herramientas profesionales lo usan por dentro. Cuando en un curso veas que basta con poner una marca encima de un trozo de código para que «se registre» o «se compruebe el permiso», casi siempre hay aspectos detrás.
-
-### 1.13. Otros estilos que oirás nombrar
-
-Para que tengas el mapa completo, dos más:
-
-- **Genérico:** escribir código que funciona con **cualquier tipo de dato** sin repetirlo para cada uno. Por ejemplo, un único «ordenar una lista» que sirve para listas de números, de nombres o de fechas. La analogía es un **molde de repostería**: el mismo molde sirve para un bizcocho de chocolate o de limón; lo que cambia es la masa. Es muy importante en lenguajes como Java, C# o TypeScript, que comprueban los tipos de los datos antes de ejecutar.
-- **Lógico:** se describen **hechos y reglas** («Ana es madre de Luis», «la madre de mi madre es mi abuela»), y el programa **deduce** las respuestas a las preguntas que le haces («¿quién es la abuela de Luis?»). El lenguaje más conocido es **Prolog**, usado en investigación y en la inteligencia artificial clásica. Es muy declarativo y poco frecuente en el trabajo diario.
-
-### 1.14. Cómo conviven en una aplicación real
+### 1.9. Cómo conviven en una aplicación real
 
 En un proyecto profesional no se elige **un** paradigma: se usan **varios a la vez**, cada uno donde encaja mejor. Esta es la estructura simplificada de una tienda online:
 
@@ -292,7 +232,7 @@ Cada parte usa el estilo que mejor resuelve su problema:
 
 Y **por debajo de todo**, dentro de cada pieza, sigue habiendo código **imperativo y estructurado**: condiciones, bucles y asignaciones. Los demás paradigmas no sustituyen esa base: se apoyan en ella.
 
-### 1.15. Cuándo conviene cada uno
+### 1.10. Cuándo conviene cada uno
 
 | Paradigma | Encaja bien cuando… | Ejemplo típico |
 |---|---|---|
@@ -300,10 +240,9 @@ Y **por debajo de todo**, dentro de cada pieza, sigue habiendo código **imperat
 | **Orientado a objetos** | Hay muchos conceptos del mundo real con datos y reglas propias | Clientes, pedidos, facturas, préstamos de una biblioteca |
 | **Funcional** | Hay que procesar colecciones de datos: filtrar, transformar, agrupar, sumar | Informes, estadísticas, preparar datos para mostrarlos |
 | **Declarativo** | Existe un motor que sabe resolver el «cómo» | Consultas a bases de datos, páginas web, configuración |
-| **Concurrente / paralelo** | Hay tareas independientes con esperas, o cálculos muy pesados | Consultar varios servicios a la vez, procesar millones de registros |
 | **Asíncrono** | Una tarea tarda y no quieres que todo se detenga mientras | Pagos, envío de correos, pedir datos a otro servidor |
 | **Orientado a eventos** | Varias partes deben reaccionar a algo sin depender unas de otras | Botones de una web, avisos cuando cambia un pedido |
-| **Reactivo** | Llegan flujos continuos de datos y hay muchísimos usuarios a la vez | Chats, cotizaciones en tiempo real, respuestas de una IA que llegan poco a poco |
+| **Reactivo** | Llegan datos sin parar y hay que mostrarlos al momento | Chats, cotizaciones en tiempo real, ocupación de un local |
 | **Aspectos** | Una tarea se repite en muchos sitios sin ser el objetivo de ninguno | Registro de actividad, comprobar permisos |
 
 ## 2. Ejemplos de código
@@ -542,75 +481,6 @@ Los cuatro dan el mismo resultado. La diferencia está en lo fácil que es **lee
 
 > **⚠️ Cuidado:** no saques la conclusión de que «Python es imperativo» o «JavaScript es funcional». Se ha elegido un lenguaje distinto para cada estilo solo para que veas variedad. Los cuatro estilos se pueden escribir en Python, en JavaScript y en Java (el SQL es otra cosa: es un lenguaje solo para bases de datos). Eso es justo lo que significa que sean [multiparadigma](#13-casi-todos-los-lenguajes-son-multiparadigma).
 
-### 2.7. Asíncrono: un pago que no bloquea la web
-
-**Situación real:** cuando el cliente pulsa «Pagar», la tienda tiene que llamar al banco, que tarda un poco en responder. Mientras tanto, la web no debe quedarse congelada.
-
-**Pseudocódigo:**
-
-```text
-ESCRIBIR "1. El cliente pulsa «Pagar»"
-LANZAR CobrarConTarjeta(4590)
-    Y CUANDO TERMINE CON referencia: ESCRIBIR "3. Pago confirmado con referencia ", referencia
-ESCRIBIR "2. Mientras tanto, la web muestra «Procesando el pago...»"
-```
-
-**En JavaScript.** No hace falta que entiendas cada línea: fíjate en que `cobrarConTarjeta` simula un banco que tarda 300 milisegundos, y en que `.then(...)` dice qué hacer **cuando** el banco responda.
-
-```javascript
-// Estilo asíncrono: lanzar una tarea lenta y decir qué hacer cuando termine
-function cobrarConTarjeta(importe) {
-  // Simula la llamada al banco, que tarda 300 milisegundos en responder
-  return new Promise((responder) => setTimeout(() => responder("TX-" + importe), 300));
-}
-
-console.log("1. El cliente pulsa «Pagar»");
-cobrarConTarjeta(4590)
-  .then((referencia) => console.log("3. Pago confirmado con referencia " + referencia));
-console.log("2. Mientras tanto, la web muestra «Procesando el pago...»");
-```
-
-**Salida:**
-
-```text
-1. El cliente pulsa «Pagar»
-2. Mientras tanto, la web muestra «Procesando el pago...»
-3. Pago confirmado con referencia TX-4590
-```
-
-**Fíjate en el orden de la salida:** el mensaje 2 aparece **antes** que el 3, aunque en el código el cobro se escribe antes. El programa lanza el cobro y **sigue adelante sin esperar**; el mensaje 3 se escribe cuando el banco responde, unas décimas de segundo después. Es el avisador del restaurante: pides, te sientas, y te avisan cuando está listo.
-
-### 2.8. Concurrente: consultar tres almacenes a la vez
-
-**Situación real:** antes de confirmar un pedido, la tienda consulta las existencias de un libro en sus tres almacenes (Madrid, Sevilla y Zaragoza). Cada consulta viaja por la red y tarda **medio segundo**.
-
-**Una detrás de otra** (secuencial):
-
-```text
-stockMadrid ← ConsultarAlmacen("Madrid")        // medio segundo esperando
-stockSevilla ← ConsultarAlmacen("Sevilla")      // otro medio segundo
-stockZaragoza ← ConsultarAlmacen("Zaragoza")    // y otro más
-```
-
-**A la vez** (concurrente):
-
-```text
-A LA VEZ HACER
-    stockMadrid ← ConsultarAlmacen("Madrid")
-    stockSevilla ← ConsultarAlmacen("Sevilla")
-    stockZaragoza ← ConsultarAlmacen("Zaragoza")
-ESPERAR A QUE TERMINEN TODAS
-```
-
-| Forma | Tiempo aproximado | Por qué |
-|---|---|---|
-| Una detrás de otra | 1,5 segundos | Tres esperas de medio segundo, sumadas |
-| A la vez | 0,5 segundos | Las tres esperas ocurren al mismo tiempo; manda la más lenta |
-
-**Fíjate en que:** la ganancia sale de que las tres consultas son **independientes** (ninguna necesita el resultado de otra) y de que casi todo su tiempo es **esperar** a la red. Si una consulta necesitara el resultado de la anterior, no se podrían hacer a la vez. Lo practicarás en el [ejercicio 7](#ejercicio-7--qué-se-puede-hacer-a-la-vez).
-
-> **📌 Nota:** `OBJETO`, las cadenas con `→`, `LANZAR`, `CUANDO OCURRA`, `AVISAR` y `A LA VEZ` amplían las [convenciones de pseudocódigo del curso](02-algoritmos-y-pseudocodigo.md#15-pseudocódigo) solo en este módulo, para que veas la idea de cada estilo. Cada lenguaje los escribe a su manera.
-
 ## 3. Errores típicos
 
 ### 3.1. Creer que hay un paradigma mejor que todos los demás
@@ -619,7 +489,7 @@ ESPERAR A QUE TERMINEN TODAS
 
 **Por qué ocurre:** cada paradigma tiene defensores entusiastas, y en internet abundan las opiniones del tipo «la orientación a objetos está muerta» o «los bucles son de otra época».
 
-**Cómo evitarlo:** pregúntate siempre qué estilo hace el código **más fácil de leer y de mantener** para ese problema concreto. Como viste en el [apartado 1.14](#114-cómo-conviven-en-una-aplicación-real), en un proyecto real conviven varios.
+**Cómo evitarlo:** pregúntate siempre qué estilo hace el código **más fácil de leer y de mantener** para ese problema concreto. Como viste en el [apartado 1.9](#19-cómo-conviven-en-una-aplicación-real), en un proyecto real conviven varios.
 
 ### 3.2. Confundir el lenguaje con el paradigma
 
@@ -642,19 +512,11 @@ pedidos
 
 **Por qué ocurre:** al pasar de un estilo a otro, se arrastran las costumbres del primero.
 
-**Por qué es un problema:** el estilo funcional da por hecho que cada paso no toca nada de fuera. Algunos lenguajes directamente lo prohíben y dan un error; otros lo permiten, pero el código ya no tiene las ventajas de ninguno de los dos estilos, y si esos pasos llegan a ejecutarse a la vez (concurrencia), el total puede salir mal.
+**Por qué es un problema:** el estilo funcional da por hecho que cada paso no toca nada de fuera. Algunos lenguajes directamente lo prohíben y dan un error; otros lo permiten, pero el código ya no tiene las ventajas de ninguno de los dos estilos.
 
 **Cómo se arregla:** o el estilo funcional completo (`→ TRANSFORMAR en su importe → REDUCIR sumándolos`, como en el [ejemplo 2.4](#24-estilo-funcional)), o un bucle imperativo normal (como en el [ejemplo 2.2](#22-estilo-imperativo)). Lo que no conviene es la mezcla.
 
-### 3.4. Usar concurrencia sin necesidad
-
-**Qué pasa:** se lanzan tareas a la vez «para que vaya más rápido» y el programa no mejora, o empieza a fallar de vez en cuando sin motivo aparente.
-
-**Por qué ocurre:** la concurrencia solo ayuda cuando hay tareas **independientes** que **esperan** algo (red, disco) o cálculos realmente pesados. Para tareas cortas, organizar las tareas cuesta más de lo que se gana. Y cuando varias tareas modifican los mismos datos a la vez, aparecen errores que solo se manifiestan algunas veces, los más difíciles de encontrar.
-
-**Cómo evitarlo:** empieza siempre con código secuencial (una cosa detrás de otra). Introduce concurrencia solo cuando hayas comprobado que hay un problema de tiempo y que las tareas son independientes.
-
-### 3.5. Crear objetos y capas para todo
+### 3.4. Crear objetos y capas para todo
 
 **Qué pasa:** para un problema de diez líneas se crean cinco tipos de objetos, varias capas y relaciones entre ellos. El código resultante es más difícil de entender que el problema.
 
@@ -662,7 +524,7 @@ pedidos
 
 **Cómo evitarlo:** la estructura debe ser **proporcional** al problema. Hay un principio que lo resume, muy citado entre programadores: *YAGNI* (*You Aren't Gonna Need It*, «no lo vas a necesitar»). No añadas complejidad pensando en necesidades que quizá nunca lleguen.
 
-### 3.6. Creer que lo declarativo es magia
+### 3.5. Creer que lo declarativo es magia
 
 **Qué pasa:** como en SQL basta con decir **qué** se quiere, se escribe sin pensar en lo que ocurre por debajo, y la aplicación se vuelve lentísima cuando crecen los datos.
 
@@ -670,26 +532,14 @@ pedidos
 
 **Cómo evitarlo:** aprende también, aunque sea por encima, qué hay debajo de las herramientas declarativas que uses. Que el taxista elija la ruta no quiere decir que todas las rutas tarden lo mismo.
 
-### 3.7. Confundir concurrente, paralelo y asíncrono
-
-**Qué pasa:** se usan como sinónimos, y en una conversación con otros programadores (o en una entrevista de trabajo) genera confusión.
-
-**La diferencia, en una frase cada uno:**
-
-- **Concurrente:** varias tareas en curso en el mismo periodo de tiempo (un camarero con varias mesas).
-- **Paralelo:** varias tareas ejecutándose literalmente en el mismo instante, en varios núcleos (varios camareros).
-- **Asíncrono:** lanzar una tarea y no quedarse esperando; te avisan al terminar (el avisador del restaurante).
-
-Un programa asíncrono suele ser concurrente, pero no necesariamente paralelo: un solo camarero puede trabajar de forma asíncrona. De hecho, el [ejemplo 2.7](#27-asíncrono-un-pago-que-no-bloquea-la-web) es asíncrono y JavaScript lo ejecuta con un único hilo.
-
 ## 4. Buenas prácticas
 
-- **Elige el estilo según el problema**, no según la moda ni la costumbre. La tabla del [apartado 1.15](#115-cuándo-conviene-cada-uno) es un buen punto de partida.
-- **Dentro de una misma parte del programa, sé coherente.** Mezclar en el mismo trozo un bucle imperativo, una cadena funcional y una tarea asíncrona sin motivo hace el código difícil de seguir.
+- **Elige el estilo según el problema**, no según la moda ni la costumbre. La tabla del [apartado 1.10](#110-cuándo-conviene-cada-uno) es un buen punto de partida.
+- **Dentro de una misma parte del programa, sé coherente.** Mezclar en el mismo trozo un bucle imperativo y una cadena funcional sin motivo hace el código difícil de seguir.
 - **Usa objetos para organizar** el programa: qué conceptos hay y qué responsabilidades tiene cada uno. Pon cada regla **junto a los datos** a los que se refiere.
 - **Usa el estilo funcional para procesar colecciones:** filtrar, transformar, agrupar y sumar.
-- **Prefiere los datos que no cambian** (inmutables) siempre que puedas: evitan muchos errores, especialmente cuando hay varias tareas a la vez.
-- **Empieza por lo sencillo y secuencial.** Añade concurrencia, asincronía o eventos cuando haya una razón concreta.
+- **Prefiere los datos que no cambian** (inmutables) siempre que puedas: evitan muchos errores.
+- **Empieza por lo sencillo.** Un bucle claro es mejor que un estilo «avanzado» que no hace falta.
 - **Conoce lo que hay debajo de lo declarativo:** que el motor resuelva el «cómo» no te exime de entenderlo un poco.
 - **Piensa primero en pseudocódigo**, en el estilo que sea: los paradigmas son formas de pensar, y se pueden practicar sin saber ningún lenguaje.
 - **Comprueba cualquier estilo con los mismos casos de prueba.** Si reescribes un algoritmo en otro estilo, los casos de la tabla de prueba deben seguir dando lo mismo (como los cuatro estilos del [ejemplo común](#21-el-problema-común-pedidos-con-envío-gratis)).
@@ -698,7 +548,6 @@ Un programa asíncrono suele ser concurrente, pero no necesariamente paralelo: u
 
 - Reescribir código que funciona y se entiende solo para usar un estilo «más moderno».
 - Modificar variables de fuera desde dentro de una cadena funcional.
-- Lanzar tareas a la vez o asíncronas sin necesidad, «por si acaso».
 
 ## 5. Ejercicios prácticos resueltos
 
@@ -708,42 +557,40 @@ Un programa asíncrono suele ser concurrente, pero no necesariamente paralelo: u
 
 #### Ejercicio 1 · Identifica el paradigma
 
-Di qué paradigma predomina en cada caso:
+Di qué paradigma predomina en cada caso. Para los dos últimos, usa la tabla del [apartado 1.8](#18-otros-estilos-que-oirás-nombrar).
 
 1. `SELECT nombre FROM socios WHERE ciudad = 'Madrid';`
 2. Un programa con un bucle que recorre las facturas y va sumando su importe en una variable `total`.
 3. `facturas.filter((f) => f.pagada).length` (en JavaScript: de las facturas, quédate con las pagadas y cuéntalas).
-4. Una aplicación de escritorio en la que, al pulsar el botón «Guardar», se ejecuta el código que guarda el documento.
-5. Un programa con los objetos `Socio`, `Libro` y `Prestamo`, en el que cada préstamo sabe calcular sus días de retraso.
-6. Una tarea que manda 10.000 correos de una campaña repartiéndolos entre 8 trabajadores que funcionan a la vez.
-7. Una página web que, al pedir el tiempo que hace a otro servidor, sigue respondiendo a los clics mientras llega la respuesta.
+4. Un programa con los objetos `Socio`, `Libro` y `Prestamo`, en el que cada préstamo sabe calcular sus días de retraso.
+5. Una aplicación de escritorio en la que, al pulsar el botón «Guardar», se ejecuta el código que guarda el documento.
+6. Una página web que, al pedir el tiempo que hace a otro servidor, sigue respondiendo a los clics mientras llega la respuesta.
 
 <details>
 <summary>Pista 1</summary>
 
-Para cada caso, hazte estas preguntas: ¿se describe el resultado o los pasos? ¿Hay variables que van cambiando? ¿Hay objetos que saben hacer cosas? ¿Algo reacciona a lo que ocurre? ¿Hay cosas a la vez? ¿Hay una espera en la que no se bloquea nada?
+Para cada caso, hazte estas preguntas: ¿se describe el resultado o los pasos? ¿Hay variables que van cambiando? ¿Hay objetos que saben hacer cosas? ¿Algo reacciona a lo que ocurre? ¿Hay una espera en la que no se bloquea nada?
 
 </details>
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** en cada caso se busca el rasgo que delata al estilo: si se describe el resultado o los pasos, si hay variables que cambian, objetos que saben hacer cosas, reacciones a algo que ocurre, tareas a la vez o una espera que no bloquea.
+**Razonamiento:** en cada caso se busca el rasgo que delata al estilo: si se describe el resultado o los pasos, si hay variables que cambian, objetos que saben hacer cosas, reacciones a algo que ocurre o una espera que no bloquea.
 
 1. **Declarativo** (SQL): solo se describe qué datos se quieren («los nombres de los socios de Madrid»), no cómo buscarlos.
 2. **Imperativo y estructurado**: un bucle y una variable que va cambiando (un acumulador).
 3. **Funcional**: una cadena de operaciones (filtrar y contar) sin variables que cambien.
-4. **Orientado a eventos**: el código se ejecuta como **reacción** a algo que ocurre (el clic).
-5. **Orientado a objetos**: conceptos del mundo real con sus datos y su comportamiento (el préstamo «sabe» calcular su retraso).
-6. **Concurrente** (y paralelo, si los 8 trabajadores funcionan en núcleos distintos): varias tareas a la vez.
-7. **Asíncrono**: se lanza una petición que tarda y la página sigue funcionando; cuando llega la respuesta, se muestra.
+4. **Orientado a objetos**: conceptos del mundo real con sus datos y su comportamiento (el préstamo «sabe» calcular su retraso).
+5. **Orientado a eventos**: el código se ejecuta como **reacción** a algo que ocurre (el clic).
+6. **Asíncrono**: se lanza una petición que tarda y la página sigue funcionando; cuando llega la respuesta, se muestra.
 
 **Fíjate en que** varios de estos casos podrían convivir en el mismo programa: es lo normal.
 
 **Errores frecuentes al resolverlo:**
 
 - Decir que el 3 es imperativo porque «hace algo». La clave es que no hay bucle escrito a mano ni variable que cambie: hay una cadena de operaciones con nombre.
-- Confundir el 6 y el 7. En el 6 hay **varias tareas trabajando a la vez**; en el 7 hay **una espera que no bloquea**.
+- Confundir el 5 y el 6. En el 5, el código **reacciona** a algo que hace el usuario; en el 6 hay **una espera que no bloquea**: se lanza la petición y te avisan cuando llega la respuesta.
 
 </details>
 
@@ -927,78 +774,7 @@ Para este tipo de problemas (procesar una colección con varios pasos), el estil
 
 </details>
 
-#### Ejercicio 5 · Pregúntale al objeto
-
-**Situación real:** una biblioteca municipal presta libros durante **15 días**. Si se devuelven tarde, la multa es de **20 céntimos por día de retraso**, con un **máximo de 5 €** (500 céntimos).
-
-1. Escribe en pseudocódigo un `OBJETO Prestamo`, con la notación del [apartado 1.5](#15-orientado-a-objetos), que guarde el título del libro y los días que lleva prestado, y que sepa responder dos preguntas: sus días de retraso y su multa.
-2. Haz una tabla de prueba con estos préstamos: «Matilda», 10 días; «Momo», 15 días; «Heidi», 16 días; «Platero y yo», 40 días; «Pinocho», 60 días.
-
-<details>
-<summary>Pista 1</summary>
-
-Los días de retraso son los días prestado menos 15, pero nunca negativos: si lleva 10 días, el retraso es 0, no −5.
-
-</details>
-
-<details>
-<summary>Pista 2</summary>
-
-La multa puede usar la respuesta de la otra pregunta: `retraso ← DiasDeRetraso()`. Y el máximo se aplica como en la tarifa del aparcamiento del módulo de algoritmos: si sale más de 500, se queda en 500.
-
-</details>
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:** las dos reglas (cuándo hay retraso y cuánto se paga) son del préstamo, así que viven **dentro** del objeto. Cualquier parte del programa que necesite la multa solo tiene que **preguntarla**: `prestamo.Multa()`.
-
-**1. El objeto:**
-
-```text
-OBJETO Prestamo
-    DATOS: titulo, diasPrestado
-    CONSTANTE DIAS_PERMITIDOS ← 15
-    CONSTANTE CENTIMOS_POR_DIA ← 20
-    CONSTANTE MULTA_MAXIMA ← 500          // 5 € en céntimos
-
-    SUBALGORITMO DiasDeRetraso()
-        SI diasPrestado > DIAS_PERMITIDOS ENTONCES
-            DEVOLVER diasPrestado - DIAS_PERMITIDOS
-        SI NO
-            DEVOLVER 0
-        FIN SI
-    FIN SUBALGORITMO
-
-    SUBALGORITMO Multa()
-        multa ← DiasDeRetraso() * CENTIMOS_POR_DIA
-        SI multa > MULTA_MAXIMA ENTONCES
-            multa ← MULTA_MAXIMA
-        FIN SI
-        DEVOLVER multa
-    FIN SUBALGORITMO
-FIN OBJETO
-```
-
-**2. Tabla de prueba:**
-
-| Préstamo | Días prestado | `DiasDeRetraso()` | `Multa()` | ¿Qué comprueba? |
-|---|---|---|---|---|
-| Matilda | 10 | 0 | 0 | Devuelto a tiempo: no hay retraso negativo |
-| Momo | 15 | 0 | 0 | Límite: el día 15 todavía no hay multa |
-| Heidi | 16 | 1 | 20 | Límite: el primer día de retraso |
-| Platero y yo | 40 | 25 | 500 | Límite: 25 × 20 = 500, justo el máximo |
-| Pinocho | 60 | 45 | 500 | 45 × 20 = 900, pero se queda en el máximo |
-
-**Errores frecuentes al resolverlo:**
-
-- Dejar que `DiasDeRetraso` devuelva números negativos: «Matilda» tendría −5 días de retraso y una multa de −100 céntimos (¡la biblioteca le debería dinero!).
-- Escribir la regla de la multa en el algoritmo principal, fuera del objeto. Funciona, pero se pierde la ventaja del estilo: si otra parte del programa necesita la multa, tendría que copiar la regla.
-- Usar `≥ 15` en lugar de `> 15`: el préstamo de 15 días justos tendría multa.
-
-</details>
-
-#### Ejercicio 6 · Lee la cadena y predice la salida
+#### Ejercicio 5 · Lee la cadena y predice la salida
 
 **Situación real:** es la solución del ejercicio 4 escrita en JavaScript. No hace falta que entiendas cada línea: fíjate en la cadena `filter` → `map`, en `new Set(...)` (que **quita los repetidos**) y en `.sort()` (que **ordena**).
 
@@ -1074,69 +850,80 @@ Cupones que enviar: 2
 
 ### 🔴 Avanzado
 
-#### Ejercicio 7 · ¿Qué se puede hacer a la vez?
+#### Ejercicio 6 · Pregúntale al objeto
 
-**Situación real:** en el almacén, preparar un pedido urgente implica estas tareas. Cada una la hace una persona distinta, y algunas necesitan que otras hayan terminado:
+**Situación real:** una biblioteca municipal presta libros durante **15 días**. Si se devuelven tarde, la multa es de **20 céntimos por día de retraso**, con un **máximo de 5 €** (500 céntimos).
 
-| Tarea | Duración | Necesita que antes termine… |
-|---|---|---|
-| A. Cobrar el pedido | 2 min | — |
-| B. Comprobar las existencias | 1 min | — |
-| C. Generar la factura | 1 min | A |
-| D. Preparar el paquete | 3 min | A y B |
-| E. Imprimir la etiqueta de envío | 1 min | — |
-| F. Entregar al transportista | 1 min | D y E |
-
-1. ¿Cuánto se tarda si se hacen todas una detrás de otra?
-2. ¿Y si se hace a la vez todo lo que se pueda? Explica el plan minuto a minuto.
-3. ¿Qué tareas habría que acelerar para terminar antes?
+1. Escribe en pseudocódigo un `OBJETO Prestamo`, con la notación del [apartado 1.5](#15-orientado-a-objetos), que guarde el título del libro y los días que lleva prestado, y que sepa responder dos preguntas: sus días de retraso y su multa.
+2. Haz una tabla de prueba con estos préstamos: «Matilda», 10 días; «Momo», 15 días; «Heidi», 16 días; «Platero y yo», 40 días; «Pinocho», 60 días.
 
 <details>
 <summary>Pista 1</summary>
 
-Dos tareas pueden hacerse a la vez si **ninguna necesita a la otra**. Empieza por las que no necesitan nada: esas pueden arrancar en el minuto 0.
+Los días de retraso son los días prestado menos 15, pero nunca negativos: si lleva 10 días, el retraso es 0, no −5.
 
 </details>
 
 <details>
 <summary>Pista 2</summary>
 
-Ve minuto a minuto: cada vez que termina una tarea, mira qué tareas tienen ya terminado **todo** lo que necesitan y pueden empezar.
+La multa puede usar la respuesta de la otra pregunta: `retraso ← DiasDeRetraso()`. Y el máximo se aplica como en la tarifa del aparcamiento del módulo de algoritmos: si sale más de 500, se queda en 500.
 
 </details>
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** es la misma idea que el [ejemplo 2.8](#28-concurrente-consultar-tres-almacenes-a-la-vez): lo independiente se puede hacer a la vez; lo que depende de otra cosa tiene que esperar.
+**Razonamiento:** las dos reglas (cuándo hay retraso y cuánto se paga) son del préstamo, así que viven **dentro** del objeto. Cualquier parte del programa que necesite la multa solo tiene que **preguntarla**: `prestamo.Multa()`.
 
-**1. Una detrás de otra:** 2 + 1 + 1 + 3 + 1 + 1 = **9 minutos**.
+**1. El objeto:**
 
-**2. A la vez lo que se pueda:**
+```text
+OBJETO Prestamo
+    DATOS: titulo, diasPrestado
+    CONSTANTE DIAS_PERMITIDOS ← 15
+    CONSTANTE CENTIMOS_POR_DIA ← 20
+    CONSTANTE MULTA_MAXIMA ← 500          // 5 € en céntimos
 
-- **Minuto 0:** A, B y E no necesitan nada, así que empiezan las tres.
-- **Minuto 1:** terminan B y E. D todavía no puede empezar, porque necesita A.
-- **Minuto 2:** termina A. Pueden empezar C (necesitaba A) y D (necesitaba A y B).
-- **Minuto 3:** termina C.
-- **Minuto 5:** termina D. F ya tiene D y E, así que empieza.
-- **Minuto 6:** termina F.
+    SUBALGORITMO DiasDeRetraso()
+        SI diasPrestado > DIAS_PERMITIDOS ENTONCES
+            DEVOLVER diasPrestado - DIAS_PERMITIDOS
+        SI NO
+            DEVOLVER 0
+        FIN SI
+    FIN SUBALGORITMO
 
-**Total: 6 minutos**, frente a los 9 de hacerlo todo seguido.
+    SUBALGORITMO Multa()
+        multa ← DiasDeRetraso() * CENTIMOS_POR_DIA
+        SI multa > MULTA_MAXIMA ENTONCES
+            multa ← MULTA_MAXIMA
+        FIN SI
+        DEVOLVER multa
+    FIN SUBALGORITMO
+FIN OBJETO
+```
 
-**3. Qué acelerar:** la cadena **A → D → F** (2 + 3 + 1 = 6 minutos) es la que marca el tiempo total. Acelerar B, C o E **no sirve de nada**, porque ya terminan antes de que se las necesite; solo acortando A, D o F se termina antes.
+**2. Tabla de prueba:**
 
-**La lección para la programación:** hacer cosas a la vez ayuda, pero **las dependencias marcan el límite**. Por muchas tareas que lances a la vez, nunca bajarás de la cadena de dependencias más larga. Es lo que pasa con la concurrencia en un programa.
+| Préstamo | Días prestado | `DiasDeRetraso()` | `Multa()` | ¿Qué comprueba? |
+|---|---|---|---|---|
+| Matilda | 10 | 0 | 0 | Devuelto a tiempo: no hay retraso negativo |
+| Momo | 15 | 0 | 0 | Límite: el día 15 todavía no hay multa |
+| Heidi | 16 | 1 | 20 | Límite: el primer día de retraso |
+| Platero y yo | 40 | 25 | 500 | Límite: 25 × 20 = 500, justo el máximo |
+| Pinocho | 60 | 45 | 500 | 45 × 20 = 900, pero se queda en el máximo |
 
 **Errores frecuentes al resolverlo:**
 
-- Empezar D en el minuto 1, cuando termina B, olvidando que también necesita A.
-- Pensar que con 6 personas se tardaría 3 minutos (lo que dura la tarea más larga): las dependencias lo impiden.
+- Dejar que `DiasDeRetraso` devuelva números negativos: «Matilda» tendría −5 días de retraso y una multa de −100 céntimos (¡la biblioteca le debería dinero!).
+- Escribir la regla de la multa en el algoritmo principal, fuera del objeto. Funciona, pero se pierde la ventaja del estilo: si otra parte del programa necesita la multa, tendría que copiar la regla.
+- Usar `≥ 15` en lugar de `> 15`: el préstamo de 15 días justos tendría multa.
 
 </details>
 
 ### 🏆 Caso real
 
-#### Ejercicio 8 · Los paradigmas de una aplicación real
+#### Ejercicio 7 · Los paradigmas de una aplicación real
 
 **Situación real:** vas a trabajar en la aplicación de una cadena de gimnasios. Estas son algunas de sus funciones. Para cada una, indica qué paradigma (o paradigmas) encaja mejor y por qué:
 
@@ -1161,7 +948,7 @@ Para cada función, pregúntate qué la caracteriza: ¿hay un motor que resuelva
 <details>
 <summary>Pista 2</summary>
 
-Usa la tabla del [apartado 1.15](#115-cuándo-conviene-cada-uno). Y no busques un único paradigma para toda la aplicación: la respuesta correcta mezcla varios.
+Usa las tablas de los apartados [1.8](#18-otros-estilos-que-oirás-nombrar) y [1.10](#110-cuándo-conviene-cada-uno). Y no busques un único paradigma para toda la aplicación: la respuesta correcta mezcla varios.
 
 </details>
 
@@ -1223,7 +1010,7 @@ El diagrama dice que el servicio de reservas (organizado en objetos) registra ca
 | **Orientado a objetos** | Objetos que juntan datos y comportamiento | Una empresa con empleados |
 | **Funcional** | Funciones sin efectos secundarios; cadenas de transformaciones | Una cadena de montaje |
 | **Declarativo** | Decir qué, no cómo | El taxi: «a la Plaza Mayor» |
-| **Concurrente / paralelo** | Varias tareas a la vez | Uno o varios camareros |
+| **Concurrente / paralelo** | Varias tareas a la vez (en curso o literalmente a la vez) | Uno o varios camareros |
 | **Asíncrono** | Lanzar y seguir; aviso al terminar | El avisador del restaurante |
 | **Orientado a eventos** | Reaccionar a lo que ocurre | El timbre de casa |
 | **Reactivo** | Flujos de datos que se propagan solos | Una hoja de cálculo |
@@ -1239,14 +1026,6 @@ El diagrama dice que el servicio de reservas (organizado en objetos) registra ca
 | Ejemplos | Bucles, pseudocódigo, recetas | SQL, HTML, CSS, fórmulas de hoja de cálculo |
 | Ventaja | Control total | Más corto y legible; el motor se encarga |
 | Inconveniente | Más detalles en los que equivocarse | Hay que entender lo que hace el motor por debajo |
-
-### Concurrente, paralelo y asíncrono
-
-| Término | Significa | Analogía |
-|---|---|---|
-| **Concurrente** | Varias tareas en curso en el mismo periodo | Un camarero atendiendo varias mesas |
-| **Paralelo** | Varias tareas en el mismo instante, en varios núcleos | Varios camareros |
-| **Asíncrono** | No esperar a que termine; te avisan | El avisador del restaurante |
 
 ### Las tres operaciones funcionales
 
@@ -1269,11 +1048,6 @@ resultado ← lista                      // funcional
     → FILTRAR los que cumplen ...
     → TRANSFORMAR cada uno en ...
     → REDUCIR sumándolos
-
-LANZAR Tarea() Y CUANDO TERMINE: ...   // asíncrono
-CUANDO OCURRA "evento" HACER ... FIN CUANDO   // eventos
-AVISAR "evento" CON datos
-A LA VEZ HACER ... ESPERAR A QUE TERMINEN TODAS   // concurrente
 ```
 
 ### Para elegir
@@ -1282,7 +1056,7 @@ A LA VEZ HACER ... ESPERAR A QUE TERMINEN TODAS   // concurrente
 - ¿Muchos conceptos con datos y reglas? → **Objetos**.
 - ¿Procesar una colección? → **Funcional**.
 - ¿Hay un motor que sepa resolver el «cómo»? → **Declarativo**.
-- ¿Esperas de red o disco con tareas independientes? → **Concurrente** o **asíncrono**.
+- ¿Una tarea lenta que no debe bloquear lo demás? → **Asíncrono**.
 - ¿Varias partes reaccionan a un hecho? → **Eventos**.
 - ¿Datos que llegan sin parar a muchos usuarios? → **Reactivo**.
 - ¿Algo que se repite en todas las operaciones? → **Aspectos**.
@@ -1352,48 +1126,39 @@ A LA VEZ HACER ... ESPERAR A QUE TERMINEN TODAS   // concurrente
 
    </details>
 
-8. ¿Qué diferencia hay entre concurrente, paralelo y asíncrono?
+8. ¿Qué estilo representa cada una de estas analogías: el avisador del restaurante, el timbre de casa y la hoja de cálculo que se recalcula sola?
 
    <details>
    <summary>Ver respuesta</summary>
 
-   **Concurrente:** varias tareas en curso en el mismo periodo de tiempo (un camarero con varias mesas). **Paralelo:** varias tareas en el mismo instante, en varios núcleos (varios camareros). **Asíncrono:** lanzar una tarea y no quedarse esperando; te avisan al terminar (el avisador del restaurante). Lo tienes en [3.7. Confundir concurrente, paralelo y asíncrono](#37-confundir-concurrente-paralelo-y-asíncrono).
+   El avisador es el estilo **asíncrono** (lanzas una tarea y te avisan cuando termina); el timbre, el **orientado a eventos** (reaccionas a lo que ocurre), y la hoja de cálculo, el **reactivo** (cuando cambia un dato, se actualiza todo lo que depende de él). Lo tienes en [1.8. Otros estilos que oirás nombrar](#18-otros-estilos-que-oirás-nombrar).
 
    </details>
 
-9. En el ejemplo del pago asíncrono, ¿por qué el mensaje 2 sale antes que el 3, si el cobro está escrito antes?
+9. ¿Qué diferencia hay entre concurrente y paralelo?
 
    <details>
    <summary>Ver respuesta</summary>
 
-   Porque el cobro se lanza y el programa sigue adelante sin esperar: el mensaje 2 se escribe enseguida, y el 3 solo cuando el banco responde, unas décimas de segundo después. En lo asíncrono, el orden en que se escribe el código no es el orden en que ocurren las cosas. Lo tienes en [2.7. Asíncrono: un pago que no bloquea la web](#27-asíncrono-un-pago-que-no-bloquea-la-web).
+   Concurrente es tener varias tareas en curso en el mismo periodo de tiempo, aunque no avancen en el mismo instante (un camarero con varias mesas); paralelo es ejecutarlas literalmente a la vez, en varios núcleos del procesador (varios camareros). Lo tienes en [1.8. Otros estilos que oirás nombrar](#18-otros-estilos-que-oirás-nombrar).
 
    </details>
 
-10. ¿Cuál es la gran ventaja del estilo orientado a eventos?
+10. ¿Qué es una tarea transversal y qué estilo ayuda con ellas?
 
     <details>
     <summary>Ver respuesta</summary>
 
-    Que quien provoca el evento no necesita saber quién reacciona ni cómo. Por eso se pueden añadir reacciones nuevas (por ejemplo, un SMS cuando se envía un pedido) sin tocar el código que ya funciona. Lo tienes en [1.10. Orientado a eventos](#110-orientado-a-eventos).
+    Una tarea que se repite en muchísimas partes del programa sin ser el objetivo de ninguna, como registrar lo que pasa o comprobar permisos. La programación orientada a aspectos permite escribirla una sola vez y decir dónde se aplica. Lo tienes en [1.8. Otros estilos que oirás nombrar](#18-otros-estilos-que-oirás-nombrar).
 
     </details>
 
-11. ¿Qué es una tarea transversal y qué paradigma ayuda con ellas?
+11. En una aplicación real, ¿se elige un único paradigma? ¿Qué queda siempre por debajo?
 
     <details>
     <summary>Ver respuesta</summary>
 
-    Una tarea que se repite en muchísimas partes del programa sin ser el objetivo de ninguna, como registrar lo que pasa o comprobar permisos. La programación orientada a aspectos permite escribirla una sola vez y decir dónde se aplica. Lo tienes en [1.12. Orientado a aspectos](#112-orientado-a-aspectos).
-
-    </details>
-
-12. En una aplicación real, ¿se elige un único paradigma? ¿Qué queda siempre por debajo?
-
-    <details>
-    <summary>Ver respuesta</summary>
-
-    No: se usan varios a la vez, cada uno donde encaja mejor (objetos para organizar, SQL para los datos, funcional para los informes, eventos para avisar…). Y por debajo, dentro de cada pieza, sigue habiendo código imperativo y estructurado: condiciones, bucles y asignaciones. Lo tienes en [1.14. Cómo conviven en una aplicación real](#114-cómo-conviven-en-una-aplicación-real).
+    No: se usan varios a la vez, cada uno donde encaja mejor (objetos para organizar, SQL para los datos, funcional para los informes, eventos para avisar…). Y por debajo, dentro de cada pieza, sigue habiendo código imperativo y estructurado: condiciones, bucles y asignaciones. Lo tienes en [1.9. Cómo conviven en una aplicación real](#19-cómo-conviven-en-una-aplicación-real).
 
     </details>
 
