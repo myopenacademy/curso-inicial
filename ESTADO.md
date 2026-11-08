@@ -12,7 +12,7 @@ Cómo se hizo (para repetirlo): cuatro autores en paralelo con el mismo encargo;
 
 **Fase 2, «Tu ordenador por dentro».** Orden de la terminal aprobado (`PLAN-CURSO.md`, apartado 8): la fase 2 no tiene bash; empieza en la fase 3. Con el aviso único sobre las salidas de terminal (`PLAN-CURSO.md`, apartado 2), incluidos los identificadores y las fechas de los commits.
 
-Después: prueba de importación de la fase 1 en una copia de la academia (desde su proyecto).
+**Prueba de importación de la fase 1: hecha** (9 de noviembre de 2026, en una copia de prueba de la academia, revisada por el autor en el navegador). El curso no cambia nada: los identificadores de `curso.json` se quedan con punto y el «Siguiente» de 01.04 a `retos.md` está bien. Es la academia la que tiene que mostrar los retos (al final de cada fase en el índice y como «Siguiente» del último módulo). El importador que lee `curso.json` está pendiente en la academia; avisarán cuando esté.
 
 ## Cómo se cambian los documentos
 
