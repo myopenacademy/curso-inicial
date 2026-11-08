@@ -15,6 +15,7 @@
 - **Fase 02 — Tu ordenador por dentro**
   - [02.01 Cómo funciona un ordenador](#0201-cómo-funciona-un-ordenador)
   - [02.02 Archivos, carpetas y rutas](#0202-archivos-carpetas-y-rutas)
+  - [02.03 Instalar programas, variables de entorno y PATH](#0203-instalar-programas-variables-de-entorno-y-path)
 
 ---
 
@@ -524,6 +525,64 @@ Para resolverla: empieza en la carpeta actual y sigue la ruta parte a parte, apu
 1. Lee la ruta del mensaje **letra a letra**, mayúsculas incluidas.
 2. ¿Es **relativa**? Averigua la **carpeta actual**.
 3. Une las dos y comprueba en el explorador si esa ruta absoluta existe.
+
+---
+
+### 02.03 Instalar programas, variables de entorno y PATH
+
+📖 Módulo completo: [fase-02-tu-ordenador/03-instalar-programas-y-path.md](fase-02-tu-ordenador/03-instalar-programas-y-path.md)
+
+#### Conceptos clave
+
+| Concepto | Definición en una línea |
+|---|---|
+| **Instalar** | Copiar los ficheros de un programa, avisar al sistema de que existe y prepararlo para que lo encuentren |
+| **Instalador** | Programa que te guía, pantalla a pantalla, para instalar otro programa |
+| **Gestor de paquetes** | Programa que instala, actualiza y desinstala otros programas con una orden: winget, Homebrew, apt, dnf |
+| **Paquete** | Un programa preparado para instalarse con un gestor de paquetes |
+| **Terminal** | Ventana en la que escribes órdenes y el ordenador te contesta con texto |
+| **Git Bash** | La terminal con bash que trae Git for Windows; la del curso en Windows |
+| **bash / zsh** | Los «idiomas» de órdenes de la terminal de Linux (y Git Bash) y de macOS; las órdenes del curso funcionan en los dos |
+| **Indicador** (*prompt*) | El texto con el que la terminal espera una orden; termina en `$` (bash) o `%` (zsh) |
+| **Variable de entorno** | Dato con nombre que guarda el sistema y pueden leer todos los programas |
+| **PATH** | Variable de entorno con la lista ordenada de carpetas donde se buscan los programas |
+
+#### Instalar Git y VS Code (a 8 de noviembre de 2026)
+
+| Sistema | VS Code | Git |
+|---|---|---|
+| Windows | `code.visualstudio.com`, instalador de usuario (con *Add to PATH*) | `git-scm.com`, Git for Windows (x64 o ARM64): editor VS Code y rama `main`; el resto, como viene |
+| macOS | `.dmg`, arrastrar a `Aplicaciones` (Universal) | Escribir `git --version` y aceptar las herramientas de Apple, o `brew install git` |
+| Linux | `.deb` (o `.rpm`) de `code.visualstudio.com` | `sudo apt install git` o `sudo dnf install git` |
+
+#### Las tres órdenes de comprobación
+
+| Orden | Qué dice | Qué tienes que ver |
+|---|---|---|
+| `git --version` | La versión de Git | `git version` y un número |
+| `echo $PATH` | Las carpetas donde se buscan los programas | Una lista separada por `:` |
+| `command -v git` | En qué carpeta está el `git` que se ejecuta | Una ruta; si no sale nada, no está en el PATH |
+
+#### Cómo busca el sistema un programa
+
+1. Mira las carpetas del PATH **en orden**.
+2. Ejecuta el **primero** que encuentra con ese nombre exacto.
+3. Si no está en ninguna: «command not found», «orden no encontrada» o «no se reconoce como un comando».
+
+#### Ante un «command not found»
+
+1. ¿Lo has escrito bien? (minúsculas, sin tildes).
+2. ¿Has abierto una terminal **nueva** después de instalar?
+3. ¿Qué dice `command -v`?
+4. ¿Está la carpeta del programa en el PATH (`echo $PATH`)?
+
+#### Reglas de oro
+
+- Descarga solo de la **web oficial** (mira el dominio desde el final).
+- Elige el instalador de tu **sistema** y tu **arquitectura**.
+- En Windows, usa **Git Bash** para seguir el curso.
+- El `$` (o `%`) de las sesiones del curso **no se escribe**.
+- Tu salida no será idéntica a la del curso: fíjate en **lo importante**.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

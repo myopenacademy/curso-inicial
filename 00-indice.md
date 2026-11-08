@@ -1,7 +1,7 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 6 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** 7 de 31 módulos (los demás aparecen como «Pendiente»)
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
@@ -12,7 +12,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 ## Contenido
 
 - [Fase 01 — Qué es programar](#fase-01--qué-es-programar) · 4 módulos · ~10,5 h
-- [Fase 02 — Tu ordenador por dentro](#fase-02--tu-ordenador-por-dentro) · 3 módulos · ~4,5 h
+- [Fase 02 — Tu ordenador por dentro](#fase-02--tu-ordenador-por-dentro) · 3 módulos · ~7 h
 - [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos
 - [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos
 - [Fase 05 — Git y GitHub](#fase-05--git-y-github) · 3 módulos
@@ -20,7 +20,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
-**Tiempo de los módulos disponibles:** ~15 horas.
+**Tiempo de los módulos disponibles:** ~17,5 horas.
 
 ---
 
@@ -40,14 +40,14 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Fase 02 — Tu ordenador por dentro
 
-**Carpeta:** [`fase-02-tu-ordenador/`](fase-02-tu-ordenador/) · **Tiempo:** ~4,5 h
+**Carpeta:** [`fase-02-tu-ordenador/`](fase-02-tu-ordenador/) · **Tiempo:** ~7 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
 | 02.01 | [Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md) | Básico · Núcleo | 2 h | ✅ Disponible |
 | 02.02 | [Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md) | Básico · Núcleo | 2,5 h | ✅ Disponible |
-| 02.03 | Instalar programas, variables de entorno y PATH | — | — | Pendiente |
-| | Retos de la fase | | | Pendiente |
+| 02.03 | [Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md) | Básico · Núcleo | 2,5 h | ✅ Disponible |
+| | [Retos de la fase](fase-02-tu-ordenador/retos.md) | | | ✅ Disponible |
 
 ---
 

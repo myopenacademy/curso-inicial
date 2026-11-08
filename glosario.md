@@ -33,6 +33,10 @@ Guardar un valor en una variable; en pseudocódigo se escribe con la flecha ←.
 
 ## B
 
+### Bash
+
+Lenguaje de órdenes de la terminal de Linux, de Git Bash y de casi todos los servidores. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
+
 ### Bucle
 
 Estructura que repite un bloque de instrucciones varias veces (MIENTRAS, REPETIR, PARA); también se llama repetición o iteración. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#19-repetición).
@@ -153,6 +157,16 @@ Conjunto de datos guardado en el disco con un nombre (también, archivo). Lo exp
 
 Fichero que el explorador no muestra; en Linux y macOS, el que empieza por punto. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos).
 
+## G
+
+### Gestor de paquetes
+
+Programa que instala, actualiza y desinstala otros programas con una orden: winget, Homebrew, apt… Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#12-tres-formas-de-instalar).
+
+### Git Bash
+
+Terminal con bash que trae Git for Windows; la del curso en Windows. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
+
 ## H
 
 ### Hilo
@@ -164,6 +178,10 @@ Cada una de las líneas de trabajo independientes que avanzan a la vez dentro de
 ### Inmutable
 
 Dato que, una vez creado, no cambia; en lugar de modificarlo se crea uno nuevo. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#16-funcional).
+
+### Instalar
+
+Copiar los ficheros de un programa en su sitio, avisar al sistema de que existe y prepararlo para que lo encuentren. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#11-qué-es-instalar-un-programa).
 
 ### Integración continua
 
@@ -209,6 +227,10 @@ Símbolo o palabra que indica una operación en una expresión: +, MOD, ≥, Y�
 
 Y, O y NO: combinan condiciones; su resultado se resume en la tabla de verdad. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#operadores-lógicos).
 
+### Orden
+
+Instrucción que se escribe en la terminal para que el ordenador la ejecute (también, comando). Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
+
 ## P
 
 ### Paradigma de programación
@@ -222,6 +244,10 @@ Ejecutar varias tareas literalmente al mismo tiempo, en varios núcleos del proc
 ### Parámetro
 
 Dato que recibe un subalgoritmo al llamarlo, en el mismo orden en que se pasa entre paréntesis. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#111-subalgoritmos).
+
+### PATH
+
+Variable de entorno con la lista ordenada de carpetas donde el sistema busca los programas. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#110-el-path-dónde-busca-el-sistema-los-programas).
 
 ### Procesador
 
@@ -317,6 +343,10 @@ Algoritmo con nombre propio que recibe parámetros, hace su trabajo y puede devo
 
 Desarrollo guiado por pruebas: avanzar en ciclos de rojo (una prueba que falla), verde (lo mínimo para que pase) y refactorizar. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
 
+### Terminal
+
+Ventana en la que se escriben órdenes y el ordenador contesta con texto. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
+
 ### Tipo de dato
 
 Clase de valor que guarda un dato (entero, real, texto o lógico) y que decide qué operaciones admite. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#tipos-de-datos).
@@ -336,3 +366,7 @@ Codificación de caracteres que entiende todos los idiomas y que es la habitual 
 ### Variable
 
 Espacio con nombre donde se guarda un dato que puede cambiar mientras se ejecuta el algoritmo. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#variables).
+
+### Variable de entorno
+
+Dato con nombre que guarda el sistema operativo y que pueden consultar todos los programas. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#19-variables-de-entorno).

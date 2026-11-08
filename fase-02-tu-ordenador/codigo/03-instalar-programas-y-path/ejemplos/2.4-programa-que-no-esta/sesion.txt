@@ -1,0 +1,3 @@
+command -v gti
+command -v git
+gti --version

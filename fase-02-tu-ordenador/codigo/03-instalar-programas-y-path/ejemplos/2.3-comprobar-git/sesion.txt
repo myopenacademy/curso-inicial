@@ -1,0 +1,3 @@
+git --version
+echo $PATH
+command -v git

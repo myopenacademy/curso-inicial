@@ -190,7 +190,6 @@
       "carpeta": "fase-02-tu-ordenador",
       "titulo": "Tu ordenador por dentro",
       "retos": "fase-02-tu-ordenador/retos.md",
-      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.como-funciona-un-ordenador",
@@ -282,8 +281,44 @@
           "id": "inicial.instalar-programas-y-path",
           "fichero": "fase-02-tu-ordenador/03-instalar-programas-y-path.md",
           "titulo": "Instalar programas, variables de entorno y PATH",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.instalar-programas-y-path.instalador-tienda-o-gestor-de-paquetes",
+              "titulo": "Instalador, tienda o gestor de paquetes"
+            },
+            {
+              "id": "inicial.instalar-programas-y-path.es-la-web-oficial",
+              "titulo": "¿Es la web oficial?"
+            },
+            {
+              "id": "inicial.instalar-programas-y-path.lee-la-salida-de-git-version",
+              "titulo": "Lee la salida de git --version"
+            },
+            {
+              "id": "inicial.instalar-programas-y-path.lee-la-salida-de-echo-path",
+              "titulo": "Lee la salida de echo $PATH"
+            },
+            {
+              "id": "inicial.instalar-programas-y-path.que-programa-se-ejecutara",
+              "titulo": "Qué programa se ejecutará"
+            },
+            {
+              "id": "inicial.instalar-programas-y-path.lee-la-salida-de-command-v",
+              "titulo": "Lee la salida de command -v"
+            },
+            {
+              "id": "inicial.instalar-programas-y-path.instalado-pero-no-encontrado",
+              "titulo": "Instalado pero no encontrado"
+            },
+            {
+              "id": "inicial.instalar-programas-y-path.dos-versiones-de-git-en-el-mismo-ordenador",
+              "titulo": "Dos versiones de Git en el mismo ordenador"
+            },
+            {
+              "id": "inicial.instalar-programas-y-path.la-guia-de-instalacion-de-un-grupo-de-estudio",
+              "titulo": "La guía de instalación de un grupo de estudio"
+            }
+          ]
         }
       ]
     },
