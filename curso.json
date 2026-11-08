@@ -239,8 +239,44 @@
           "id": "inicial.archivos-carpetas-y-rutas",
           "fichero": "fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md",
           "titulo": "Archivos, carpetas y rutas",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.archivos-carpetas-y-rutas.lee-un-arbol-de-carpetas",
+              "titulo": "Lee un árbol de carpetas"
+            },
+            {
+              "id": "inicial.archivos-carpetas-y-rutas.absoluta-o-relativa",
+              "titulo": "¿Absoluta o relativa?"
+            },
+            {
+              "id": "inicial.archivos-carpetas-y-rutas.la-misma-ruta-en-cuatro-sistemas",
+              "titulo": "La misma ruta en cuatro sistemas"
+            },
+            {
+              "id": "inicial.archivos-carpetas-y-rutas.las-rutas-de-la-web-del-club-de-lectura",
+              "titulo": "Las rutas de la web del club de lectura"
+            },
+            {
+              "id": "inicial.archivos-carpetas-y-rutas.encuentra-el-error-en-la-ruta-relativa",
+              "titulo": "Encuentra el error en la ruta relativa"
+            },
+            {
+              "id": "inicial.archivos-carpetas-y-rutas.resuelve-una-ruta-paso-a-paso",
+              "titulo": "Resuelve una ruta paso a paso"
+            },
+            {
+              "id": "inicial.archivos-carpetas-y-rutas.funciona-en-mi-ordenador-y-no-en-el-servidor",
+              "titulo": "Funciona en mi ordenador y no en el servidor"
+            },
+            {
+              "id": "inicial.archivos-carpetas-y-rutas.por-que-el-programa-no-encuentra-el-fichero",
+              "titulo": "Por qué el programa no encuentra el fichero"
+            },
+            {
+              "id": "inicial.archivos-carpetas-y-rutas.organiza-las-carpetas-de-un-proyecto",
+              "titulo": "Organiza las carpetas de un proyecto"
+            }
+          ]
         },
         {
           "id": "inicial.instalar-programas-y-path",

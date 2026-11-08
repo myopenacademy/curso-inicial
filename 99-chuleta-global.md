@@ -14,6 +14,7 @@
   - [01.04 Paradigmas de programación](#0104-paradigmas-de-programación)
 - **Fase 02 — Tu ordenador por dentro**
   - [02.01 Cómo funciona un ordenador](#0201-cómo-funciona-un-ordenador)
+  - [02.02 Archivos, carpetas y rutas](#0202-archivos-carpetas-y-rutas)
 
 ---
 
@@ -447,6 +448,82 @@ Siempre de 64 bits si hay elección, y siempre desde la página oficial.
 1. **RAM** suficiente (16 GB va holgado, a 8 de noviembre de 2026), mejor si es ampliable.
 2. **SSD**, no disco duro.
 3. Procesador: cualquiera actual sirve para empezar.
+
+---
+
+### 02.02 Archivos, carpetas y rutas
+
+📖 Módulo completo: [fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md)
+
+#### Conceptos clave
+
+| Concepto | En una línea |
+|---|---|
+| **Fichero (archivo)** | Datos guardados en el disco con un nombre |
+| **Carpeta (directorio)** | Contenedor de ficheros y de otras carpetas |
+| **Carpeta padre** | La carpeta que contiene a otra o a un fichero |
+| **Árbol de carpetas** | Las carpetas unas dentro de otras, desde la raíz |
+| **Raíz** | La carpeta de la que cuelga todo: `/` en Linux y macOS, `C:\` (una por unidad) en Windows |
+| **Carpeta personal** | Tu carpeta: documentos, descargas, proyectos. Se abrevia `~` |
+| **Ruta** | La dirección de un fichero o carpeta en el árbol |
+| **Ruta absoluta** | Empieza en la raíz; sirve desde cualquier sitio, pero solo en ese ordenador |
+| **Ruta relativa** | Empieza en la carpeta actual; sirve en cualquier ordenador si el proyecto viaja entero |
+| **Carpeta actual (de trabajo)** | La carpeta desde la que se cuentan las rutas relativas de un programa en marcha |
+| **Extensión** | Lo que va tras el último punto del nombre: pista del tipo de fichero |
+| **Fichero oculto** | No se ve en el explorador; en Linux y macOS, los que empiezan por `.` |
+
+#### La misma ruta en cada sistema
+
+| Sistema | Carpeta personal | Ejemplo | Separador |
+|---|---|---|---|
+| Windows | `C:\Users\ana` | `C:\Users\ana\proyectos\web\index.html` | `\` |
+| macOS | `/Users/ana` | `/Users/ana/proyectos/web/index.html` | `/` |
+| Linux | `/home/ana` | `/home/ana/proyectos/web/index.html` | `/` |
+| Git Bash | `/c/Users/ana` | `/c/Users/ana/proyectos/web/index.html` | `/` |
+
+De Windows a Git Bash: `C:` → `/c` y cada `\` → `/`. `~` es la carpeta personal en macOS, Linux y Git Bash (no en el Explorador de Windows).
+
+#### Moverse con rutas relativas
+
+| Escribes | Significa |
+|---|---|
+| `nombre` | Entra en esa carpeta (o es ese fichero) |
+| `.` | Esta misma carpeta |
+| `..` | La carpeta padre: sube un nivel |
+| `../..` | Sube dos niveles |
+| `../img/logo.png` | Sube uno, entra en `img`, coge `logo.png` |
+
+Para resolverla: empieza en la carpeta actual y sigue la ruta parte a parte, apuntando dónde estás.
+
+#### ¿Desde dónde se cuenta una ruta relativa?
+
+| Quién la usa | Se cuenta desde |
+|---|---|
+| Una página web | La carpeta donde está la página |
+| Una hoja de estilos | La carpeta donde está la hoja de estilos |
+| Un programa en marcha | Su **carpeta actual**, no la carpeta donde está guardado |
+
+#### Ver rutas, extensiones y ocultos (8 de noviembre de 2026)
+
+| | Windows 11 | macOS | Linux (GNOME) |
+|---|---|---|---|
+| Ver la ruta de la carpeta | Clic en un hueco de la barra de direcciones | Visualización › Mostrar barra de ruta | Barra de rutas; Propiedades › Carpeta padre |
+| Copiar la ruta de un fichero | Clic derecho › opción de copiar la ruta | Clic derecho con <kbd>Opción</kbd> pulsada › opción de copiar la ruta | Propiedades › Carpeta padre, más el nombre |
+| Ver las extensiones | Menú Ver › Extensiones de nombre de archivo | Finder › Ajustes › Avanzado › Mostrar todas las extensiones de los archivos | Siempre visibles |
+| Ver los ocultos | Menú Ver › Elementos ocultos | Un atajo del Finder (o la terminal, fase 3) | <kbd>Ctrl</kbd>+<kbd>H</kbd> |
+
+#### Nombres en las carpetas de programación
+
+- Minúsculas, sin espacios, sin tildes, sin eñes: `web-panaderia`, `ventas-2026.csv`.
+- Solo letras, números, `-` y `_`.
+- Linux distingue mayúsculas (`Logo.png` ≠ `logo.png`); Windows y macOS normalmente no. Escribe las rutas letra a letra.
+- Ruta con espacios: entre comillas, `"C:\Users\ana\Mis proyectos"`.
+
+#### Si un programa no encuentra un fichero
+
+1. Lee la ruta del mensaje **letra a letra**, mayúsculas incluidas.
+2. ¿Es **relativa**? Averigua la **carpeta actual**.
+3. Une las dos y comprueba en el explorador si esa ruta absoluta existe.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

@@ -47,6 +47,18 @@ Grupo de 8 bits; la unidad con la que se miden ficheros, memoria y discos. Lo ex
 
 ## C
 
+### Carpeta
+
+Contenedor con nombre de ficheros y de otras carpetas (también, directorio). Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#12-carpetas-cajas-para-ordenar-los-ficheros).
+
+### Carpeta actual
+
+Carpeta desde la que se cuentan las rutas relativas de un programa en marcha (también, carpeta o directorio de trabajo). Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#19-la-carpeta-actual-y-las-rutas-relativas).
+
+### Carpeta personal
+
+La carpeta de cada usuario, con sus documentos, descargas y proyectos; se abrevia ~. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#15-tu-carpeta-personal).
+
 ### Caso de prueba
 
 Ejemplo concreto que dice qué datos se dan (entrada) y qué debe salir (salida esperada), decidido antes de ejecutar. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#13-el-caso-de-prueba).
@@ -126,6 +138,20 @@ Algo que ocurre (un clic, un mensaje, un pedido enviado) y a lo que reaccionan l
 ### Expresión
 
 Combinación de valores, variables y operadores que produce un resultado. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#14-expresiones-y-operadores).
+
+### Extensión
+
+Lo que va tras el último punto del nombre de un fichero; indica qué tipo de contenido tiene. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#114-la-extensión).
+
+## F
+
+### Fichero
+
+Conjunto de datos guardado en el disco con un nombre (también, archivo). Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#11-ficheros-donde-se-guardan-los-datos).
+
+### Fichero oculto
+
+Fichero que el explorador no muestra; en Linux y macOS, el que empieza por punto. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos).
 
 ## H
 
@@ -251,6 +277,10 @@ Forma de escribir algoritmos a medio camino entre el lenguaje natural y un lengu
 
 ## R
 
+### Raíz
+
+La carpeta de la que cuelga todo el árbol: / en Linux y macOS, una por unidad (C:\) en Windows. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#14-dónde-empieza-el-árbol-la-raíz).
+
 ### Refactorizar
 
 Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
@@ -258,6 +288,18 @@ Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.0
 ### Regresión
 
 Error en algo que antes funcionaba y que se ha estropeado al cambiar otra cosa. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
+
+### Ruta
+
+Dirección de un fichero o carpeta en el árbol: las carpetas que hay que recorrer, separadas por / o \. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#17-qué-es-una-ruta).
+
+### Ruta absoluta
+
+Ruta que empieza en la raíz y lleva todos los pasos hasta el fichero. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#18-rutas-absolutas).
+
+### Ruta relativa
+
+Ruta que se cuenta desde la carpeta actual, sin empezar en la raíz. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#19-la-carpeta-actual-y-las-rutas-relativas).
 
 ## S
 
