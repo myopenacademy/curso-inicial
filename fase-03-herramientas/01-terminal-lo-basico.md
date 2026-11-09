@@ -107,8 +107,8 @@ Se combinan como quieras: `ls -lh`, `ls -la`, `ls -lah`.
 **Cómo se lee `ls -l`.** Cada línea es un fichero o una carpeta. Por ejemplo:
 
 ```text
--rw-rw-r-- 1 alumno alumno  360 ene 15  2026 index.html
-drwxrwxr-x 2 alumno alumno 4096 ene 15  2026 css
+-rw-r--r-- 1 alumno alumno  360 ene 15  2026 index.html
+drwxr-xr-x 2 alumno alumno 4096 ene 15  2026 css
 ```
 
 Por ahora, fíjate solo en cuatro cosas:
@@ -120,7 +120,7 @@ Por ahora, fíjate solo en cuatro cosas:
 | **La fecha** | `ene 15  2026` | Cuándo se modificó por última vez. Si es de hace más de seis meses, sale el año; si es reciente, la hora |
 | **El nombre** | `index.html`, `css` | Al final de la línea |
 
-El resto (`rw-rw-r--`, el `1`, los dos `alumno`) son los **permisos**, el número de enlaces y el dueño del fichero: los verás en [«La terminal: sacarle partido»](02-terminal-sacarle-partido.md#110-permisos-quién-puede-leer-escribir-y-ejecutar).
+El resto (`rw-r--r--`, el `1`, los dos `alumno`) son los **permisos**, el número de enlaces y el dueño del fichero: los verás en [«La terminal: sacarle partido»](02-terminal-sacarle-partido.md#110-permisos-quién-puede-leer-escribir-y-ejecutar).
 
 > **📌 Nota:** el texto de los mensajes y el formato de las fechas cambian de un sistema a otro: en macOS y en Git Bash, por ejemplo, muchos mensajes salen en inglés, y alguno puede salir con una parte en inglés aunque el sistema esté en español (como el de `mkdir` del [ejemplo 2.3](#23-crear-la-estructura-de-un-proyecto)). Fíjate en **lo que dicen**, no en las palabras exactas. Vale para todos los módulos de la fase.
 
@@ -495,17 +495,17 @@ $ pwd
 $ cd web-panaderia
 $ ls -l
 total 20
--rw-rw-r-- 1 alumno alumno  269 ene 15  2026 contacto.html
-drwxrwxr-x 2 alumno alumno 4096 ene 15  2026 css
-drwxrwxr-x 2 alumno alumno 4096 ene 15  2026 img
--rw-rw-r-- 1 alumno alumno  360 ene 15  2026 index.html
-drwxrwxr-x 2 alumno alumno 4096 ene 15  2026 js
+-rw-r--r-- 1 alumno alumno  269 ene 15  2026 contacto.html
+drwxr-xr-x 2 alumno alumno 4096 ene 15  2026 css
+drwxr-xr-x 2 alumno alumno 4096 ene 15  2026 img
+-rw-r--r-- 1 alumno alumno  360 ene 15  2026 index.html
+drwxr-xr-x 2 alumno alumno 4096 ene 15  2026 js
 $ ls -a
 .  ..  contacto.html  css  .gitignore  img  index.html  js
 $ ls -lh img
 total 60K
--rw-rw-r-- 1 alumno alumno 4,8K ene 15  2026 logo.png
--rw-rw-r-- 1 alumno alumno  49K ene 15  2026 pan-de-centeno.jpg
+-rw-r--r-- 1 alumno alumno 4,8K ene 15  2026 logo.png
+-rw-r--r-- 1 alumno alumno  49K ene 15  2026 pan-de-centeno.jpg
 ```
 
 📁 **Código:** [`codigo/01-terminal-lo-basico/ejemplos/2.2-mirar-con-detalle/`](codigo/01-terminal-lo-basico/ejemplos/2.2-mirar-con-detalle/)
@@ -993,9 +993,9 @@ club-lectura
 $ cd club-lectura
 $ ls -l
 total 12
-drwxrwxr-x 2 alumno alumno 4096 ene 15  2026 libros
-drwxrwxr-x 2 alumno alumno 4096 ene 15  2026 reuniones
--rw-rw-r-- 1 alumno alumno   42 ene 15  2026 socios.csv
+drwxr-xr-x 2 alumno alumno 4096 ene 15  2026 libros
+drwxr-xr-x 2 alumno alumno 4096 ene 15  2026 reuniones
+-rw-r--r-- 1 alumno alumno   42 ene 15  2026 socios.csv
 $ ls -a
 .  ..  .config-club  libros  reuniones  socios.csv
 $ cd reuniones
