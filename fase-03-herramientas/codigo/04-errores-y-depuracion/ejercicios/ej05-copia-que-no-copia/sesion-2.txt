@@ -1,3 +1,2 @@
-bash copia-seguridad.sh
 ls -d */
 bash -x copia-seguridad.sh

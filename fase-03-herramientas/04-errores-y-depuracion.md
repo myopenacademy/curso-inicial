@@ -1048,7 +1048,7 @@ echo "Copia de seguridad terminada"
 
 Un día necesita recuperar un fichero y descubre que la copia está vacía. Lleva semanas así, y el script nunca ha dado ningún error:
 
-**En tu terminal** (`sesion.txt`):
+**En tu terminal** (`sesion-1.txt`):
 
 ```text
 $ bash copia-seguridad.sh
@@ -1088,13 +1088,11 @@ Para que avise: ¿qué debería pasar si la carpeta de origen **no** existe? Esc
 
 **2. Leer el mensaje.** No hay ninguno: es un **error de lógica**, y además el script dice que todo ha ido bien.
 
-**3. Aislar** con la traza, y mirando antes qué carpetas hay. Aquí va desde el principio, con la ejecución del paso 1, para que veas lo mismo que en tu terminal:
+**3. Aislar** con la traza, y mirando antes qué carpetas hay. Sigue en la misma carpeta, después de la ejecución del enunciado:
 
-**En tu terminal** (`sesion-traza.txt`):
+**En tu terminal** (`sesion-2.txt`):
 
 ```text
-$ bash copia-seguridad.sh
-Copia de seguridad terminada
 $ ls -d */
 copia-seguridad/  Documentos/
 $ bash -x copia-seguridad.sh
@@ -1134,7 +1132,7 @@ echo "Copia de seguridad terminada"
 
 **6. Volver a probar**, comprobando también lo que de verdad importa, que la copia tiene los ficheros:
 
-**En tu terminal** (`sesion-solucion.txt`):
+**En tu terminal** (`sesion-3.txt`):
 
 ```text
 $ bash copia-seguridad-corregido.sh
