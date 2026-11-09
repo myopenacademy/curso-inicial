@@ -407,8 +407,36 @@
           "id": "inicial.editor-de-codigo",
           "fichero": "fase-03-herramientas/03-editor-de-codigo.md",
           "titulo": "El editor de código",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.editor-de-codigo.editor-de-codigo-procesador-de-textos-o-ide",
+              "titulo": "Editor de código, procesador de textos o IDE"
+            },
+            {
+              "id": "inicial.editor-de-codigo.un-atajo-para-cada-tarea",
+              "titulo": "Un atajo para cada tarea"
+            },
+            {
+              "id": "inicial.editor-de-codigo.por-que-no-sale-el-resaltado",
+              "titulo": "Por qué no sale el resaltado"
+            },
+            {
+              "id": "inicial.editor-de-codigo.el-fichero-que-no-se-guarda",
+              "titulo": "El fichero que no se guarda"
+            },
+            {
+              "id": "inicial.editor-de-codigo.elegir-extensiones-con-criterio",
+              "titulo": "Elegir extensiones con criterio"
+            },
+            {
+              "id": "inicial.editor-de-codigo.editar-muchas-lineas-a-la-vez",
+              "titulo": "Editar muchas líneas a la vez"
+            },
+            {
+              "id": "inicial.editor-de-codigo.ayuda-a-marta-con-su-editor",
+              "titulo": "Ayuda a Marta con su editor"
+            }
+          ]
         },
         {
           "id": "inicial.errores-y-depuracion",

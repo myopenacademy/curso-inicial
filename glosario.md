@@ -35,6 +35,10 @@ Instrucción de una prueba automática que afirma que algo debe ser cierto (por 
 
 Guardar un valor en una variable; en pseudocódigo se escribe con la flecha ←. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#variables).
 
+### Atajo de teclado
+
+Combinación de teclas que hace lo mismo que una opción de un menú. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#114-los-atajos-de-teclado-esenciales).
+
 ## B
 
 ### Bash
@@ -127,6 +131,10 @@ Otro nombre de la carpeta, el habitual en inglés (directory) y en mucha documen
 
 ## E
 
+### Editor de código
+
+Programa para escribir y leer ficheros de texto plano, con ayudas para programar. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#11-qué-es-un-editor-de-código).
+
 ### Efecto secundario
 
 Cualquier cosa que hace una función además de devolver su resultado, como cambiar una variable de fuera o escribir en pantalla. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#16-funcional).
@@ -167,6 +175,10 @@ Combinación de valores, variables y operadores que produce un resultado. Lo exp
 
 Lo que va tras el último punto del nombre de un fichero; indica qué tipo de contenido tiene. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#114-la-extensión).
 
+### Extensión (de un editor)
+
+Complemento que se instala en un editor como VS Code para añadirle funciones; tiene sus mismos permisos. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#110-extensiones-ampliar-el-editor-con-cuidado).
+
 ## F
 
 ### Fichero
@@ -194,6 +206,10 @@ Terminal con bash que trae Git for Windows; la del curso en Windows. Lo explica 
 Cada una de las líneas de trabajo independientes que avanzan a la vez dentro de un programa. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-otros-estilos-que-oirás-nombrar).
 
 ## I
+
+### IDE
+
+Entorno de desarrollo integrado: editor de código con todo lo necesario para trabajar en un lenguaje concreto (ejecutar, probar, depurar). Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#12-editor-procesador-de-textos-e-ide).
 
 ### Inmutable
 
@@ -359,6 +375,10 @@ Fichero de texto en el que un programa va apuntando, línea a línea y con su fe
 
 Error en algo que antes funcionaba y que se ha estropeado al cambiar otra cosa. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
 
+### Resaltado de sintaxis
+
+Colores que pone el editor a cada parte del código según el lenguaje del fichero. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#19-el-resaltado-de-sintaxis).
+
 ### Root
 
 El administrador total en Linux y macOS, que puede hacerlo todo con cualquier fichero. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
@@ -414,6 +434,14 @@ Desarrollo guiado por pruebas: avanzar en ciclos de rojo (una prueba que falla),
 ### Terminal
 
 Ventana en la que se escriben órdenes y el ordenador contesta con texto. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
+
+### Terminal integrada
+
+Terminal dentro del editor de código, que se abre en la carpeta abierta. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#112-la-terminal-integrada).
+
+### Texto plano
+
+Texto hecho solo de caracteres, sin formato (negritas, tamaños, imágenes); es lo que leen los programas. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#11-qué-es-un-editor-de-código).
 
 ### Tipo de dato
 

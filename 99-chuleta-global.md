@@ -19,6 +19,7 @@
 - **Fase 03 — Herramientas del programador**
   - [03.01 La terminal: lo básico](#0301-la-terminal-lo-básico)
   - [03.02 La terminal: sacarle partido](#0302-la-terminal-sacarle-partido)
+  - [03.03 El editor de código](#0303-el-editor-de-código)
 
 ---
 
@@ -792,6 +793,56 @@ done
 | `wc -l`, `uniq -c` | El número, con este espaciado | El mismo número, con otro espaciado | Como Linux |
 | `date` de ayer | `date -d yesterday` | `date -v-1d` | Como Linux |
 | `sed -i` | `sed -i …` | `sed -i '' …` | Como Linux |
+
+---
+
+### 03.03 El editor de código
+
+📖 Módulo completo: [fase-03-herramientas/03-editor-de-codigo.md](fase-03-herramientas/03-editor-de-codigo.md)
+
+#### Conceptos clave
+
+| Concepto | En una línea |
+|---|---|
+| **Editor de código** | Programa para escribir ficheros de texto plano, con ayudas para programar |
+| **Texto plano** | Solo caracteres: sin negritas, tamaños ni imágenes. Es lo que leen los programas |
+| **Procesador de textos** | Word y similares: texto con formato para personas. No sirve para programar |
+| **IDE** | Editor con todo lo de un lenguaje concreto integrado: ejecutar, probar, depurar |
+| **Resaltado de sintaxis** | Colores que pone el editor según el lenguaje, que decide por la extensión |
+| **Paleta de comandos** | Caja donde escribes lo que quieres hacer y el editor te da la orden |
+| **Extensión de VS Code** | Complemento que añade funciones al editor; tiene sus mismos permisos |
+| **Terminal integrada** | Terminal dentro del editor, que se abre en la carpeta abierta |
+| **Multicursor** | Varios cursores a la vez: lo que escribes aparece en todos |
+
+#### Atajos esenciales (teclado estadounidense; mira los tuyos en el editor)
+
+| Para | Windows y Linux | macOS |
+|---|---|---|
+| Guardar | <kbd>Ctrl</kbd>+<kbd>S</kbd> | <kbd>Cmd</kbd>+<kbd>S</kbd> |
+| Deshacer / rehacer | <kbd>Ctrl</kbd>+<kbd>Z</kbd> / <kbd>Ctrl</kbd>+<kbd>Y</kbd> | <kbd>Cmd</kbd>+<kbd>Z</kbd> / <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>Z</kbd> |
+| Paleta de comandos | <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>P</kbd> | <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>P</kbd> |
+| Abrir rápido un fichero | <kbd>Ctrl</kbd>+<kbd>P</kbd> | <kbd>Cmd</kbd>+<kbd>P</kbd> |
+| Buscar / reemplazar en el fichero | <kbd>Ctrl</kbd>+<kbd>F</kbd> / <kbd>Ctrl</kbd>+<kbd>H</kbd> | <kbd>Cmd</kbd>+<kbd>F</kbd> / <kbd>Cmd</kbd>+<kbd>Opción</kbd>+<kbd>F</kbd> |
+| Buscar / reemplazar en la carpeta | <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>F</kbd> / <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>H</kbd> | <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>F</kbd> / <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>H</kbd> |
+| Comentar la línea | <kbd>Ctrl</kbd>+<kbd>/</kbd> | <kbd>Cmd</kbd>+<kbd>/</kbd> |
+| Mover la línea | <kbd>Alt</kbd>+<kbd>↑</kbd> / <kbd>Alt</kbd>+<kbd>↓</kbd> | <kbd>Opción</kbd>+<kbd>↑</kbd> / <kbd>Opción</kbd>+<kbd>↓</kbd> |
+| Multicursor | <kbd>Alt</kbd>+clic | <kbd>Opción</kbd>+clic |
+| Vista previa de Markdown | <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd> | <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd> |
+
+#### Antes de instalar una extensión
+
+1. ¿La necesito de verdad?
+2. ¿Quién la publica? ¿Está verificado (✓)? ¿El nombre es exactamente el que espero?
+3. ¿Cuántas instalaciones y qué opiniones tiene?
+4. ¿Se actualiza?
+
+#### Reglas de oro
+
+- Abre **la carpeta del proyecto**, no ficheros sueltos.
+- Si la pestaña tiene **●**, el disco tiene la versión vieja.
+- Los colores los decide la **extensión** del fichero.
+- **Mira los resultados** antes de reemplazar en todos los ficheros.
+- En Windows, la terminal integrada con **Git Bash**.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

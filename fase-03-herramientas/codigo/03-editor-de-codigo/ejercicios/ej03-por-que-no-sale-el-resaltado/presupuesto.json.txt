@@ -1,0 +1,4 @@
+{
+  "cliente": "Panadería Sol",
+  "total": 1250
+}
