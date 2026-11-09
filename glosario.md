@@ -27,6 +27,10 @@ Lo que se escribe detrás del nombre de una orden (o de un script) para decirle 
 
 Familia del procesador (x86-64 o ARM), que decide qué código máquina entiende y qué instalador hay que descargar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#110-32-y-64-bits-x86-64-y-arm).
 
+### ASCII
+
+Codificación de 128 caracteres (letras inglesas, cifras, signos y caracteres de control), un byte cada uno; la base de casi todas las demás. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#14-ascii-los-primeros-128-caracteres).
+
 ### Aserción
 
 Instrucción de una prueba automática que afirma que algo debe ser cierto (por ejemplo, que lo obtenido es igual a lo esperado); si no lo es, la prueba falla. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#110-cómo-es-una-prueba-automática-por-dentro).
@@ -44,6 +48,10 @@ Combinación de teclas que hace lo mismo que una opción de un menú. Lo explica
 ### Bash
 
 Lenguaje de órdenes de la terminal de Linux, de Git Bash y de casi todos los servidores. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
+
+### BOM
+
+Tres bytes invisibles (ef bb bf) que algunos programas ponen al principio de un fichero UTF-8; no hacen falta y rompen scripts, JSON y CSV. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#111-el-bom).
 
 ### Bucle
 
@@ -85,7 +93,7 @@ Caso de prueba con un valor justo en la frontera entre dos grupos de datos, o al
 
 ### Codificación de caracteres
 
-Tabla que asocia cada letra o símbolo con un número; si un programa y la consola usan tablas distintas, las tildes salen mal. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#35-las-tildes-y-las-eñes-salen-mal-en-la-consola).
+Tabla que asocia cada letra o símbolo con un número; si un programa y la consola usan tablas distintas, las tildes salen mal. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#14-ascii-los-primeros-128-caracteres).
 
 ### Código de salida
 
@@ -197,6 +205,14 @@ Complemento que se instala en un editor como VS Code para añadirle funciones; t
 
 Conjunto de datos guardado en el disco con un nombre (también, archivo). Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#11-ficheros-donde-se-guardan-los-datos).
 
+### Fichero binario
+
+Fichero cuyos bytes no son caracteres, sino datos con el formato de un programa (imagen, PDF, .docx, .zip); se abre con su programa. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#12-ficheros-de-texto-y-ficheros-binarios).
+
+### Fichero de texto
+
+Fichero cuyos bytes son caracteres según una codificación; se lee con cualquier editor. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#12-ficheros-de-texto-y-ficheros-binarios).
+
 ### Fichero oculto
 
 Fichero que el explorador no muestra; en Linux y macOS, el que empieza por punto. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos).
@@ -249,6 +265,10 @@ Programa que lee el código fuente y lo ejecuta instrucción a instrucción, cad
 
 ## L
 
+### Latin-1
+
+Codificación de un byte para Europa occidental (ISO-8859-1), con la ñ y las tildes pero sin el €. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#15-una-tabla-por-idioma-latin-1-y-windows-1252).
+
 ### Lenguaje de programación
 
 Idioma pensado para que las personas escriban instrucciones que después se traducen a código máquina. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#15-lenguajes-de-programación).
@@ -270,6 +290,10 @@ Pieza que guarda lo que se está usando ahora mismo; es muy rápida y se borra a
 ### Mínimo privilegio
 
 Principio de seguridad: cada usuario y cada programa, con los permisos justos para su tarea y ni uno más. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
+
+### Mojibake
+
+Caracteres estropeados («Ã±», «�») por leer un texto con una codificación distinta de la que se usó al escribirlo. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#110-caracteres-estropeados-mojibake).
 
 ## N
 
@@ -419,6 +443,10 @@ Conseguir que un error ocurra cuando uno quiere, con unos datos y unos pasos con
 
 Colores que pone el editor a cada parte del código según el lenguaje del fichero. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#19-el-resaltado-de-sintaxis).
 
+### RFC
+
+Documento técnico de la IETF, el organismo que publica las normas de internet (JSON en el RFC 8259, CSV en el RFC 4180, HTTP…). Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#111-el-bom).
+
 ### Root
 
 El administrador total en Linux y macOS, que puede hacerlo todo con cualquier fichero. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
@@ -501,9 +529,13 @@ La | que une dos órdenes: la salida de la primera es la entrada de la segunda (
 
 ## U
 
+### Unicode
+
+Tabla única que da un número a cada carácter de todos los idiomas (la ñ es U+00F1); UTF-8 es la forma habitual de guardarla. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#16-unicode-un-número-para-cada-carácter).
+
 ### UTF-8
 
-Codificación de caracteres que entiende todos los idiomas y que es la habitual hoy. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#35-las-tildes-y-las-eñes-salen-mal-en-la-consola).
+Codificación de caracteres que entiende todos los idiomas y que es la habitual hoy. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#17-utf-8-cómo-se-guardan-los-caracteres-de-unicode).
 
 ## V
 
@@ -514,3 +546,9 @@ Espacio con nombre donde se guarda un dato que puede cambiar mientras se ejecuta
 ### Variable de entorno
 
 Dato con nombre que guarda el sistema operativo y que pueden consultar todos los programas. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#19-variables-de-entorno).
+
+## W
+
+### Windows-1252
+
+Codificación de un byte de los Windows en español; casi igual que Latin-1, pero con el € y otros signos. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#15-una-tabla-por-idioma-latin-1-y-windows-1252).

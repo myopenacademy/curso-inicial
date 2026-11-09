@@ -1,0 +1,4 @@
+file lista.txt notas.txt saludo.sh logo.png
+od -c logo.png | head -n 1
+cp logo.png logo.txt
+file logo.txt

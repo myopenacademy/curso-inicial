@@ -1,0 +1,6 @@
+file precios.txt
+od -c precios.txt | head -n 1
+iconv -f LATIN1 -t UTF-8 precios.txt | od -c | head -n 1
+iconv -f WINDOWS-1252 -t UTF-8 precios.txt > precios-utf8.txt
+file precios-utf8.txt
+cat precios-utf8.txt

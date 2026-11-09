@@ -1,0 +1,7 @@
+printf '\357\273\277#!/usr/bin/env bash\n# Saluda\necho "Bienvenida, $1"\n' > bienvenida.sh
+bash bienvenida.sh Marta
+file bienvenida.sh
+od -c bienvenida.sh | head -n 1
+tail -c +4 bienvenida.sh > bienvenida-arreglado.sh
+file bienvenida-arreglado.sh
+bash bienvenida-arreglado.sh Marta

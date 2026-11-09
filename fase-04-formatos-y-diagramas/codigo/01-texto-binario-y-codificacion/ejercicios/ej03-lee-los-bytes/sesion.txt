@@ -1,0 +1,3 @@
+od -c mensaje.txt
+wc -c mensaje.txt
+wc -m mensaje.txt

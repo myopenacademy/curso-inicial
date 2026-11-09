@@ -1,0 +1,5 @@
+file con-bom.txt
+od -c con-bom.txt | head -n 1
+tail -c +4 con-bom.txt > sin-bom.txt
+file sin-bom.txt
+od -c sin-bom.txt | head -n 1

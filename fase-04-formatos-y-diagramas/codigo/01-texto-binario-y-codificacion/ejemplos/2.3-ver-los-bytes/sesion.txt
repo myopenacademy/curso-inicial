@@ -1,0 +1,4 @@
+od -c saludo.txt
+od -t x1 saludo.txt
+printf 'sí\r\n' > windows.txt
+od -c windows.txt

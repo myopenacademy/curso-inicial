@@ -1,0 +1,1 @@
+socios.csv está en Windows-1252 a propósito, no en UTF-8: es el fichero que hay que convertir.

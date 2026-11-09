@@ -21,6 +21,8 @@
   - [03.02 La terminal: sacarle partido](#0302-la-terminal-sacarle-partido)
   - [03.03 El editor de código](#0303-el-editor-de-código)
   - [03.04 Errores y depuración](#0304-errores-y-depuración)
+- **Fase 04 — Formatos y diagramas**
+  - [04.01 Texto, binario y codificación](#0401-texto-binario-y-codificación)
 
 ---
 
@@ -892,6 +894,58 @@ Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
 - ¿He corregido la **causa** o solo el síntoma?
 - ¿Funciona el caso que fallaba **y todos los demás**?
 - ¿He borrado los `echo` de **DEPURACIÓN** y los `set -x`?
+
+---
+
+## Fase 04 — Formatos y diagramas
+
+---
+
+### 04.01 Texto, binario y codificación
+
+📖 Módulo completo: [fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md)
+
+#### Bytes en UTF-8
+
+| Carácter | Bytes | Hexadecimal | `od -c` |
+|---|---|---|---|
+| `A` | 1 | `41` | `A` |
+| `ñ` | 2 | `c3 b1` | `303 261` |
+| `€` | 3 | `e2 82 ac` | `342 202 254` |
+| LF | 1 | `0a` | `\n` |
+| CRLF | 2 | `0d 0a` | `\r  \n` |
+| BOM | 3 | `ef bb bf` | `357 273 277` |
+
+#### Órdenes
+
+| Escribes | Qué hace |
+|---|---|
+| `file f` | Qué contiene `f`, sin mirar la extensión: si es texto, una pista de su codificación (y si tiene BOM) |
+| `wc -c f` / `wc -m f` | Bytes / caracteres (`-m`, solo con la terminal en UTF-8) |
+| `od -c f` | Los bytes, como caracteres o en octal |
+| `od -t x1 f` | Los bytes, en hexadecimal |
+| `iconv -f WINDOWS-1252 -t UTF-8 f > f-utf8` | Convierte a UTF-8, en un fichero nuevo |
+| `tail -c +4 f > f-sin-bom` | Quita los 3 bytes del BOM (solo si lo tiene) |
+| `tr -d '\r' < f > f-lf` | Pasa de CRLF a LF |
+
+#### Diagnóstico rápido
+
+| Ves | Qué pasa | Qué haces |
+|---|---|---|
+| `Ã±`, `Ã©` | UTF-8 leído como Windows-1252 | Que el programa lea UTF-8. El fichero está bien |
+| `�` o `?` | Windows-1252 leído como UTF-8 | Convertir el fichero a UTF-8 |
+| `UTF-8 (with BOM)` | Tiene BOM | Quitarlo |
+| `\r  \n` en `od -c` | Saltos de Windows | Pasar a LF |
+
+#### En VS Code
+
+| Dónde | Qué |
+|---|---|
+| Barra de estado, `UTF-8` | La codificación del fichero. Clic para cambiarla |
+| **Reopen with Encoding** (**Volver a abrir con codificación**) | Relee el fichero con otra tabla. No lo cambia |
+| **Save with Encoding** (**Guardar con codificación**) | Lo guarda en otra codificación. Sí lo cambia |
+
+**Regla de oro:** UTF-8 sin BOM y LF.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

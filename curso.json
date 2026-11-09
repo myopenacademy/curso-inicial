@@ -481,8 +481,32 @@
           "id": "inicial.texto-binario-y-codificacion",
           "fichero": "fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md",
           "titulo": "Texto, binario y codificación",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.texto-binario-y-codificacion.texto-o-binario",
+              "titulo": "¿Texto o binario?"
+            },
+            {
+              "id": "inicial.texto-binario-y-codificacion.bytes-y-caracteres",
+              "titulo": "Bytes y caracteres"
+            },
+            {
+              "id": "inicial.texto-binario-y-codificacion.lee-la-salida-de-od",
+              "titulo": "Lee la salida de od"
+            },
+            {
+              "id": "inicial.texto-binario-y-codificacion.los-precios-de-la-academia-de-baile",
+              "titulo": "Los precios de la academia de baile"
+            },
+            {
+              "id": "inicial.texto-binario-y-codificacion.el-script-que-no-arranca",
+              "titulo": "El script que no arranca"
+            },
+            {
+              "id": "inicial.texto-binario-y-codificacion.los-socios-del-club-de-montana",
+              "titulo": "Los socios del club de montaña"
+            }
+          ]
         },
         {
           "id": "inicial.markdown",

@@ -1,0 +1,7 @@
+printf 'n' | wc -c
+printf 'ñ' | wc -c
+printf '€' | wc -c
+cat nombres.txt
+wc -c nombres.txt
+wc -m nombres.txt
+LC_ALL=C wc -m nombres.txt

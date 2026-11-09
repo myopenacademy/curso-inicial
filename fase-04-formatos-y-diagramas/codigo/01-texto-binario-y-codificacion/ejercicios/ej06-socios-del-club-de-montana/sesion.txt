@@ -1,0 +1,8 @@
+file socios.csv
+head -n 1 socios.csv | od -c
+grep -c Peñ socios.csv
+iconv -f WINDOWS-1252 -t UTF-8 socios.csv > socios-utf8.csv
+file socios-utf8.csv
+cat socios-utf8.csv
+grep -c Peñ socios-utf8.csv
+grep Peñ socios-utf8.csv

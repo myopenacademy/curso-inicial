@@ -1,0 +1,3 @@
+wc -l equipo.txt
+wc -m equipo.txt
+wc -c equipo.txt

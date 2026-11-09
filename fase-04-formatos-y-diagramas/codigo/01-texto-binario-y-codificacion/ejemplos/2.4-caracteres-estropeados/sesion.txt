@@ -1,0 +1,5 @@
+cat pedido.txt
+iconv -f LATIN1 -t UTF-8 pedido.txt
+cat pedido-latin1.txt
+od -c pedido.txt | head -n 1
+od -c pedido-latin1.txt | head -n 1

@@ -1,0 +1,2 @@
+﻿nombre,teléfono
+Lucía,600111222

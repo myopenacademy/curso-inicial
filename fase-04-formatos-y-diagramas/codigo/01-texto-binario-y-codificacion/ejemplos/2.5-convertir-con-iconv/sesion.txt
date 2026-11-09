@@ -1,0 +1,5 @@
+file clientes.csv
+iconv -f WINDOWS-1252 -t UTF-8 clientes.csv > clientes-utf8.csv
+file clientes-utf8.csv
+cat clientes-utf8.csv
+wc -c clientes.csv clientes-utf8.csv
