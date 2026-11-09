@@ -50,7 +50,7 @@ Hay tres tipos de programa con los que se escribe, y conviene no confundirlos:
 
 Este curso usa **Visual Studio Code** (VS Code), que ya instalaste en [02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#15-instalar-visual-studio-code). Por estos motivos:
 
-- **Es gratuito** y su código es abierto.
+- **Es gratuito** y está hecho sobre código abierto: el código de base es público, con licencia MIT, y Microsoft le añade partes propias y publica el editor con su propia licencia. También envía a Microsoft datos de uso y de errores (lo que se llama **telemetría**), que puedes limitar o apagar con el ajuste `telemetry.telemetryLevel` (con `off`, nada). (Según las preguntas frecuentes y la documentación oficial de VS Code, consultadas el 9 de noviembre de 2026.)
 - **Funciona igual en Windows, macOS y Linux**, así que las explicaciones valen para todos.
 - **Es el más usado**: lleva años en cabeza de la encuesta anual de Stack Overflow a quienes programan; en la de 2025, tres de cada cuatro personas que respondieron decían usarlo (el 75,9 %, según la web oficial de la encuesta, consultada el 9 de noviembre de 2026). Eso significa que hay mucha documentación y mucha ayuda en internet.
 - **Sirve para cualquier lenguaje y formato**: el mismo editor te vale para este curso (Markdown, JSON, YAML…) y para el curso que hagas después.
@@ -120,6 +120,8 @@ Dos detalles de las pestañas que confunden al principio:
 
 - **Un clic en el explorador abre el fichero en modo vista previa**: su pestaña tiene el nombre **en cursiva**, y si haces clic en otro fichero, lo sustituye en la misma pestaña. Para que se quede abierto, haz **doble clic** en el fichero o empieza a escribir en él.
 - **Un punto en lugar de la ✕ de cerrar** quiere decir que el fichero tiene **cambios sin guardar**. Es tan importante que tiene su propio apartado, el siguiente.
+
+**Los números de línea.** A la izquierda del texto, cada línea lleva su número, y la barra de estado dice en qué línea y columna está el cursor (`Lín. 3, col. 7`). Te harán falta cuando un mensaje de error diga «línea 18»: para saltar a una línea, la orden **Go to Line** con <kbd>Ctrl</kbd>+<kbd>G</kbd> (en macOS, <kbd>Control</kbd>+<kbd>G</kbd>), escribes el número y pulsas <kbd>Intro</kbd>.
 
 > **💡 Consejo:** si te sobra espacio o te falta, la barra lateral se esconde y se muestra con <kbd>Ctrl</kbd>+<kbd>B</kbd> (en macOS, <kbd>Cmd</kbd>+<kbd>B</kbd>), y el menú **View** (**Ver**) tiene opciones para mostrar u ocultar cada parte.
 
@@ -357,7 +359,7 @@ En este módulo los ejemplos no son programas, sino **cosas que haces en el edit
 4. **Idioma (opcional).** Si quieres los menús en español, instala el paquete de idioma ([apartado 1.11](#111-extensiones-útiles-para-este-curso)) y reinicia VS Code cuando te lo pida.
 5. **Autoguardado.** Activa **File > Auto Save** (**Archivo > Autoguardado**).
 6. **La terminal (en Windows).** Elige Git Bash como perfil predeterminado ([apartado 1.12](#112-la-terminal-integrada)).
-7. **Saltos de línea LF.** Abre la configuración con **File > Preferences > Settings** (**Archivo > Preferencias > Configuración**), o con <kbd>Ctrl</kbd>+<kbd>,</kbd> (en macOS, <kbd>Cmd</kbd>+<kbd>,</kbd>), escribe `files.eol` en la caja de búsqueda y elige `\n` (LF). Así los ficheros nuevos se crean con los saltos de línea que entiende bash. Es imprescindible en Windows, donde si no se crean con `CRLF` ([apartado 1.15](#115-lo-que-verás-más-adelante)).
+7. **Saltos de línea LF.** Abre la configuración con **File > Preferences > Settings** (**Archivo > Preferencias > Configuración**; en macOS no está en el menú **File**, sino en el menú **Code**), o con <kbd>Ctrl</kbd>+<kbd>,</kbd> (en macOS, <kbd>Cmd</kbd>+<kbd>,</kbd>), escribe `files.eol` en la caja de búsqueda y elige `\n` (LF). Así los ficheros nuevos se crean con los saltos de línea que entiende bash. Es imprescindible en Windows, donde si no se crean con `CRLF` ([apartado 1.15](#115-lo-que-verás-más-adelante)).
 8. **Comprueba.** Abre la terminal integrada con **Terminal > New Terminal** y escribe `pwd`. Tiene que salir la ruta de `practicas-curso`: la terminal se ha abierto en la carpeta del editor.
 
 **En qué fijarte:** en el último paso, el indicador debe terminar en `$` (en macOS, en `%`) y `pwd` debe acabar en `practicas-curso`. Si en Windows ves `PS` al principio del indicador, la terminal sigue siendo PowerShell: vuelve al paso 6.
