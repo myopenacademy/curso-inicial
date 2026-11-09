@@ -1,0 +1,1 @@
+Tiene cinco errores: un atributo sin comillas, un & sin escapar, una etiqueta que se cierra con otra mayúscula, dos etiquetas mal anidadas y dos elementos raíz

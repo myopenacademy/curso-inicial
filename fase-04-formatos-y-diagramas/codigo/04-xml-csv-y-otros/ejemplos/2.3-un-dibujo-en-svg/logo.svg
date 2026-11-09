@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
+  <!-- El logotipo de la Panadería Sol: un círculo amarillo y el nombre -->
+  <circle cx="60" cy="60" r="40" fill="gold"/>
+  <text x="115" y="68" font-family="sans-serif" font-size="20" fill="saddlebrown">Panadería Sol</text>
+</svg>

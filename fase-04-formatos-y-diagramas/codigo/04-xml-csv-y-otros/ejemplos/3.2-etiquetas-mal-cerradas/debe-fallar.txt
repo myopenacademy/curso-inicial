@@ -1,0 +1,1 @@
+Tiene una etiqueta que se cierra con otra mayúscula (<cliente> y </Cliente>) y dos etiquetas mal anidadas (<producto><nombre></producto></nombre>)

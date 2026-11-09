@@ -1,0 +1,1 @@
+Tiene un & sin escapar en el título del libro (línea 4): debe escribirse &amp;

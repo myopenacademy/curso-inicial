@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedido numero="1024">
+  <cliente>Sara Molina</cliente>
+</pedido>
+<pedido numero="1025">
+  <cliente>Jorge Ruiz</cliente>
+</pedido>

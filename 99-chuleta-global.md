@@ -25,6 +25,7 @@
   - [04.01 Texto, binario y codificación](#0401-texto-binario-y-codificación)
   - [04.02 Markdown](#0402-markdown)
   - [04.03 JSON y YAML](#0403-json-y-yaml)
+  - [04.04 XML, CSV y otros](#0404-xml-csv-y-otros)
 
 ---
 
@@ -1084,6 +1085,56 @@ otro_documento: true
 | Configuración escrita y comentada por personas | YAML |
 | Lo que pida la herramienta | Lo que pida la herramienta |
 | Tablas | CSV ([04.04](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md)) |
+
+---
+
+### 04.04 XML, CSV y otros
+
+📖 Módulo completo: [fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md)
+
+#### XML
+
+| Pieza | Así se escribe |
+|---|---|
+| Declaración (la primera línea) | `<?xml version="1.0" encoding="UTF-8"?>` |
+| Elemento | `<titulo>Don Quijote</titulo>` |
+| Elemento vacío | `<agotado/>` |
+| Atributo (siempre con comillas) | `<libro codigo="L-001">` |
+| Comentario | `<!-- texto -->` |
+| Entidades | `&lt;` `<` · `&amp;` `&` · `&gt;` `>` · `&quot;` `"` · `&apos;` `'` |
+
+**Bien formado:** un solo elemento raíz · toda etiqueta se cierra · en orden inverso · las mayúsculas cuentan · atributos entre comillas · ni `<` ni `&` sueltos. **Válido:** bien formado y, además, sigue su esquema (XSD o DTD). **Comprobarlo:** ábrelo en el navegador.
+
+#### CSV y TSV
+
+| Regla | Ejemplo |
+|---|---|
+| Un campo con separador, comillas o salto de línea, entre comillas | `"Serrano, Lucía"` |
+| Una comilla dentro de un campo, doblada | `"Su perro ""Toby"""` |
+| Un campo vacío | `1,Lucía,,Madrid` |
+| Mismo número de campos en todas las filas | Comprueba con la cabecera |
+| CSV de Excel en español | `;` como separador y coma decimal |
+| TSV | Tabulador como separador; casi nunca comillas |
+
+| Para | Escribe |
+|---|---|
+| Ver el separador y la cabecera | `head -n 3 fichero.csv` |
+| Una columna de un CSV con `;` y sin comillas | `cut -d ';' -f 3 fichero.csv` |
+| Una columna de un TSV | `cut -f 3 fichero.tsv` |
+| Abrirlo en Excel sin sorpresas | Datos > Desde texto o CSV: codificación, delimitador y columnas de códigos como texto |
+
+`wc -l` cuenta **líneas**, no filas · `cut` no sabe de comillas.
+
+#### Configuración
+
+| Formato | Así es | Tipos |
+|---|---|---|
+| `.properties` | `tienda.puerto=8080` · comentarios con `#` o `!` | Todo es texto |
+| INI | `[tienda]` y `puerto = 8080` · comentarios con `;` | Todo es texto |
+| TOML 1.1.0 | `[tienda]` y `puerto = 8080`, `nombre = "Sol"`, `idiomas = ["es", "en"]` · comentarios con `#` | Texto con comillas, números, `true`/`false`, listas |
+| `.env` | `CLAVE=valor` · comentarios con `#` | Variables de entorno |
+
+**Secretos:** en el `.env`, y `.env` en el `.gitignore` · en Git, un `.env.example` sin valores reales.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

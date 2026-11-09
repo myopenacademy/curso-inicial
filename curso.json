@@ -574,8 +574,32 @@
           "id": "inicial.xml-csv-y-otros",
           "fichero": "fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md",
           "titulo": "XML, CSV y otros",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.xml-csv-y-otros.las-piezas-de-un-pedido-en-xml",
+              "titulo": "Las piezas de un pedido en XML"
+            },
+            {
+              "id": "inicial.xml-csv-y-otros.lee-las-inscripciones-de-una-carrera",
+              "titulo": "Lee las inscripciones de una carrera"
+            },
+            {
+              "id": "inicial.xml-csv-y-otros.arregla-el-xml-del-club-de-lectura",
+              "titulo": "Arregla el XML del club de lectura"
+            },
+            {
+              "id": "inicial.xml-csv-y-otros.el-csv-de-una-ferreteria",
+              "titulo": "El CSV de una ferretería"
+            },
+            {
+              "id": "inicial.xml-csv-y-otros.por-que-cut-se-equivoca-con-los-socios",
+              "titulo": "Por qué cut se equivoca con los socios"
+            },
+            {
+              "id": "inicial.xml-csv-y-otros.la-configuracion-de-la-tienda-en-linea",
+              "titulo": "La configuración de la tienda en línea"
+            }
+          ]
         },
         {
           "id": "inicial.diagramas-y-mermaid",

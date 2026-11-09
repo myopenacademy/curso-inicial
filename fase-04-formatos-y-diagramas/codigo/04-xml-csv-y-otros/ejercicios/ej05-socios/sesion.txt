@@ -1,0 +1,2 @@
+cut -d ',' -f 2 socios.csv
+cut -f 2 socios.tsv

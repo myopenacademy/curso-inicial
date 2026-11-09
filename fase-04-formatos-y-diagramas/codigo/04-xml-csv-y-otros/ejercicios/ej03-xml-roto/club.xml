@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<club nombre="Club de lectura Las Rozas">
+  <reunion fecha=2026-11-20>
+    <libro>Matemáticas & magia</libro>
+    <Lugar>Biblioteca municipal</lugar>
+    <asistentes><persona>Marta Gil</asistentes></persona>
+  </reunion>
+</club>
+<club nombre="Club de lectura Majadahonda"/>

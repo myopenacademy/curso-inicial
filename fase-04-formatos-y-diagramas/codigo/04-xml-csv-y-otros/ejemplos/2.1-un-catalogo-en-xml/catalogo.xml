@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Catálogo de la Librería Cervantes -->
+<catalogo tienda="Librería Cervantes" actualizado="2026-11-09">
+  <libro codigo="L-001" unidades="3">
+    <titulo>Don Quijote de la Mancha</titulo>
+    <autor>Miguel de Cervantes</autor>
+    <precio moneda="EUR">14.95</precio>
+  </libro>
+  <libro codigo="L-002" unidades="0">
+    <titulo>Cocina rápida &amp; sana</titulo>
+    <autor>Carmen Ortiz</autor>
+    <precio moneda="EUR">19.90</precio>
+    <agotado/>
+  </libro>
+</catalogo>

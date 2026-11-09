@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pedido numero="1024" fecha="2026-11-09">
+  <cliente telefono="600123456">Sara Molina</cliente>
+  <lineas>
+    <linea unidades="2">Barra de pan</linea>
+    <linea unidades="1">Tarta de queso</linea>
+  </lineas>
+  <nota>Sin gluten &amp; sin lactosa, por favor</nota>
+  <recoger-en-tienda/>
+</pedido>

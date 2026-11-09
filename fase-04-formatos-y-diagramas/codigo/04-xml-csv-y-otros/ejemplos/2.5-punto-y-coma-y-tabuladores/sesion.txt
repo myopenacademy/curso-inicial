@@ -1,0 +1,3 @@
+cut -d ';' -f 3 precios.csv
+cut -d ',' -f 1 precios.csv
+cut -f 3 precios.tsv

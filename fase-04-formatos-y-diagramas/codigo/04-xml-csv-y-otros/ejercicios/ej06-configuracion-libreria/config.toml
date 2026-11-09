@@ -1,0 +1,16 @@
+# Configuración de la tienda en línea de la Librería Cervantes.
+# Aquí no hay contraseñas ni claves: esas van en el .env, que no se sube a Git.
+[tienda]
+nombre = "Librería Cervantes"
+puerto = 8080
+modo_pruebas = true
+idiomas = ["es", "en"]
+
+[envios]
+gastos = 3.95
+gratis_desde = 30.00
+
+[correo]
+servidor = "smtp.example.com"
+puerto = 587
+usuario = "pedidos@example.com"

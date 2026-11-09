@@ -51,6 +51,10 @@ Guardar un valor en una variable; en pseudocódigo se escribe con la flecha ←.
 
 Combinación de teclas que hace lo mismo que una opción de un menú. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#114-los-atajos-de-teclado-esenciales).
 
+### Atributo (XML)
+
+Dato con nombre y valor entre comillas dentro de la etiqueta de apertura de un elemento (codigo="L-001"). Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#13-las-piezas-de-un-xml).
+
 ## B
 
 ### Bash
@@ -141,7 +145,7 @@ Dato con nombre cuyo valor no cambia durante todo el algoritmo. Lo explica [01.0
 
 ### CSV
 
-Fichero de texto con una tabla: una fila por línea y las columnas separadas por comas (o por punto y coma); la primera línea, la cabecera, suele decir qué es cada columna. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail).
+Fichero de texto con una tabla: una fila por línea y las columnas separadas por comas (o por punto y coma); la primera línea, la cabecera, suele decir qué es cada columna. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#18-csv-a-fondo-las-reglas).
 
 ## D
 
@@ -170,6 +174,14 @@ Cualquier cosa que hace una función además de devolver su resultado, como camb
 ### Ejecutar
 
 Poner en marcha un programa para que el ordenador siga sus instrucciones. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#14-qué-es-un-programa).
+
+### Elemento (XML)
+
+Una etiqueta de apertura, su contenido y su etiqueta de cierre (`<autor>…</autor>`); el elemento raíz contiene a todos los demás. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#13-las-piezas-de-un-xml).
+
+### Entidad (XML)
+
+Código entre `&` y `;` que representa un carácter especial en XML y HTML (y en las etiquetas de Mermaid): `&lt;` es `<`, `&amp;` es `&`. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#14-caracteres-especiales-las-entidades).
 
 ### Entrada estándar
 
@@ -217,9 +229,17 @@ Complemento que se instala en un editor como VS Code para añadirle funciones; t
 
 Conjunto de datos guardado en el disco con un nombre (también, archivo). Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#11-ficheros-donde-se-guardan-los-datos).
 
+### Fichero .env
+
+Fichero oculto con las variables de entorno y los secretos de un proyecto (NOMBRE=valor); no se sube a Git, se sube un .env.example. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#114-el-fichero-env-y-los-secretos).
+
 ### Fichero binario
 
 Fichero cuyos bytes no son caracteres, sino datos con el formato de un programa (imagen, PDF, .docx, .zip); se abre con su programa. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#12-ficheros-de-texto-y-ficheros-binarios).
+
+### Fichero de configuración
+
+Fichero de texto que un programa lee al arrancar para saber cómo comportarse (puerto, base de datos…), sin cambiar el programa. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#113-ficheros-de-configuración-properties-ini-y-toml).
 
 ### Fichero de texto
 
@@ -256,6 +276,10 @@ Cada una de las líneas de trabajo independientes que avanzan a la vez dentro de
 ### Historial de órdenes
 
 Las órdenes que ya has escrito en la terminal, que se recuperan con las flechas o se buscan con Ctrl+R. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#113-trucos-que-ahorran-tiempo).
+
+### HTML
+
+Lenguaje de marcas de las páginas web, con etiquetas fijas (`<p>`, `<a>`…); los navegadores arreglan sus errores al leerlo. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#17-html-el-pariente-de-xml).
 
 ## I
 
@@ -535,6 +559,10 @@ Espacios al principio de una línea que muestran qué va dentro de qué; en YAML
 
 Fichero de texto con órdenes que se ejecutan una detrás de otra, como un pequeño programa escrito en el lenguaje de la terminal. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#114-tu-primer-script).
 
+### Secreto
+
+Dato de configuración que no se puede compartir (contraseña, clave de una API); nunca va en Git. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#114-el-fichero-env-y-los-secretos).
+
 ### Serializar
 
 Convertir los datos de un programa en texto (o bytes) para guardarlos o enviarlos; lo contrario es analizar. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
@@ -581,6 +609,10 @@ Texto hecho solo de caracteres, sin formato (negritas, tamaños, imágenes); es 
 
 Clase de valor que guarda un dato (entero, real, texto o lógico) y que decide qué operaciones admite. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#tipos-de-datos).
 
+### TOML
+
+Formato de configuración con secciones entre corchetes, clave = valor y tipos (textos entre comillas, números, listas); versión 1.1.0. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#113-ficheros-de-configuración-properties-ini-y-toml).
+
 ### Traza
 
 Ejecutar un algoritmo a mano, paso a paso, anotando en una tabla el valor de cada variable a medida que cambia. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#la-traza). En bash, `bash -x` enseña la traza de un script mientras se ejecuta: lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#110-ver-la-traza-de-un-script).
@@ -614,6 +646,12 @@ Dato con nombre que guarda el sistema operativo y que pueden consultar todos los
 ### Windows-1252
 
 Codificación de un byte de los Windows en español; casi igual que Latin-1, pero con el € y otros signos. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#15-una-tabla-por-idioma-latin-1-y-windows-1252).
+
+## X
+
+### XML
+
+Formato de texto para datos con estructura de árbol, con etiquetas que elige quien lo usa (`<titulo>…</titulo>`); lo publica el W3C. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#12-xml-un-lenguaje-de-marcas-para-datos).
 
 ## Y
 
