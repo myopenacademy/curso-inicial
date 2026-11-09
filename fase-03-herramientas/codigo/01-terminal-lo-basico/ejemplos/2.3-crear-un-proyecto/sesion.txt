@@ -1,0 +1,8 @@
+mkdir recetas-app
+cd recetas-app
+mkdir -p src/pantallas datos docs
+touch README.md src/inicio.js datos/recetas.json
+ls
+ls -R
+mkdir docs
+mkdir -p docs

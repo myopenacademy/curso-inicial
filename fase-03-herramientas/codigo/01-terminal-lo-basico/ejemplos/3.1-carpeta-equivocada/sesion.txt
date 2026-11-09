@@ -1,0 +1,5 @@
+pwd
+ls ventas.csv
+ls
+cd tienda/datos
+ls ventas.csv

@@ -1,0 +1,16 @@
+pwd
+ls
+cd web-panaderia
+pwd
+ls
+cd css
+ls
+cd ../img
+pwd
+ls
+cd ..
+cd ~/web-panaderia/js
+pwd
+cd -
+cd
+pwd

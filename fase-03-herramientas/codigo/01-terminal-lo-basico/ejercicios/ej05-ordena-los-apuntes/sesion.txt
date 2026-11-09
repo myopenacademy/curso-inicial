@@ -1,0 +1,12 @@
+cp -r apuntes apuntes-copia
+cd apuntes
+ls
+mkdir temas
+mv tema1.txt tema2.txt temas
+mv resumen.txt resumen-final.txt
+rm tema1-borrador.txt
+rm "copia de tema2.txt"
+ls
+ls temas
+cd ..
+ls

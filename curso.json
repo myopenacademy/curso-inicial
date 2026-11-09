@@ -333,8 +333,44 @@
           "id": "inicial.terminal-lo-basico",
           "fichero": "fase-03-herramientas/01-terminal-lo-basico.md",
           "titulo": "La terminal: lo básico",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.terminal-lo-basico.donde-estas-despues-de-cada-orden",
+              "titulo": "Dónde estás después de cada orden"
+            },
+            {
+              "id": "inicial.terminal-lo-basico.primeros-pasos-por-el-club-de-lectura",
+              "titulo": "Primeros pasos por el club de lectura"
+            },
+            {
+              "id": "inicial.terminal-lo-basico.que-hace-cada-opcion",
+              "titulo": "Qué hace cada opción"
+            },
+            {
+              "id": "inicial.terminal-lo-basico.la-estructura-de-la-web-de-una-academia-de-baile",
+              "titulo": "La estructura de la web de una academia de baile"
+            },
+            {
+              "id": "inicial.terminal-lo-basico.ordena-los-apuntes",
+              "titulo": "Ordena los apuntes"
+            },
+            {
+              "id": "inicial.terminal-lo-basico.encuentra-el-error-en-cada-orden",
+              "titulo": "Encuentra el error en cada orden"
+            },
+            {
+              "id": "inicial.terminal-lo-basico.los-pedidos-de-la-tienda",
+              "titulo": "Los pedidos de la tienda"
+            },
+            {
+              "id": "inicial.terminal-lo-basico.que-ficheros-selecciona-cada-comodin",
+              "titulo": "Qué ficheros selecciona cada comodín"
+            },
+            {
+              "id": "inicial.terminal-lo-basico.el-portfolio-de-marta",
+              "titulo": "El portfolio de Marta"
+            }
+          ]
         },
         {
           "id": "inicial.terminal-sacarle-partido",

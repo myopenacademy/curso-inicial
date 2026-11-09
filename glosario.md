@@ -19,6 +19,10 @@ Secuencia ordenada, finita y precisa de pasos que resuelve un problema; no depen
 
 Pieza que guarda los datos de forma permanente (SSD o disco duro); se conserva al apagar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#16-el-almacenamiento-ssd-y-disco-duro).
 
+### Argumento
+
+Lo que se escribe detrás del nombre de una orden (o de un script) para decirle sobre qué trabajar: un fichero, una carpeta, un texto. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#12-cómo-se-escribe-una-orden).
+
 ### Arquitectura
 
 Familia del procesador (x86-64 o ARM), que decide qué código máquina entiende y qué instalador hay que descargar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#110-32-y-64-bits-x86-64-y-arm).
@@ -87,6 +91,10 @@ Instrucciones en binario, las únicas que entiende directamente el procesador. L
 
 Texto dentro del código para las personas, que el ordenador ignora. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#21-el-mismo-algoritmo-en-tres-lenguajes).
 
+### Comodín
+
+Carácter especial (* o ?) que sirve para nombrar muchos ficheros de una vez por un patrón; bash lo cambia por la lista de nombres que encajan. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#114-comodines-y-comillas).
+
 ### Compilador
 
 Programa que traduce todo el código fuente antes de ejecutarlo y genera un programa ejecutable. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#17-lenguajes-compilados-e-interpretados).
@@ -108,6 +116,10 @@ Dato con nombre cuyo valor no cambia durante todo el algoritmo. Lo explica [01.0
 ### Depurar
 
 Encontrar dónde está un error y corregirlo, después de que una prueba haya descubierto que existe. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#12-qué-es-probar-un-programa).
+
+### Directorio
+
+Otro nombre de la carpeta, el habitual en inglés (directory) y en mucha documentación. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#12-cómo-se-escribe-una-orden).
 
 ## E
 
@@ -219,6 +231,10 @@ Ordenadores de otra empresa, en un centro de datos, a los que se accede por inte
 
 ## O
 
+### Opción
+
+Parte de una orden, que empieza por guion (-l, --help), que cambia cómo trabaja. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#12-cómo-se-escribe-una-orden).
+
 ### Operador
 
 Símbolo o palabra que indica una operación en una expresión: +, MOD, ≥, Y… Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#14-expresiones-y-operadores).
@@ -310,6 +326,10 @@ La carpeta de la que cuelga todo el árbol: / en Linux y macOS, una por unidad (
 ### Refactorizar
 
 Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
+
+### Registro
+
+Fichero de texto en el que un programa va apuntando, línea a línea y con su fecha y hora, lo que pasa mientras funciona (log). Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#26-ver-un-fichero-de-texto-y-el-registro-de-una-aplicación).
 
 ### Regresión
 

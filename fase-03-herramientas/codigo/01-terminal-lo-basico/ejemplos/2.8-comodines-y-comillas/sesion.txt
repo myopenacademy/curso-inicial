@@ -1,0 +1,8 @@
+cd Fotos del viaje
+cd "Fotos del viaje"
+ls
+ls *.jpg
+ls foto-0?.jpg
+ls *.mp4 *.txt
+echo *.txt
+echo "*.txt"

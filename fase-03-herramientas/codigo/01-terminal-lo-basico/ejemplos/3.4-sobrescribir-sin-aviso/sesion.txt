@@ -1,0 +1,4 @@
+cat informe.txt
+cat informe-viejo.txt
+cp informe-viejo.txt informe.txt
+cat informe.txt

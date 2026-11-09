@@ -1,0 +1,3 @@
+cat
+@ctrl-c 2
+pwd

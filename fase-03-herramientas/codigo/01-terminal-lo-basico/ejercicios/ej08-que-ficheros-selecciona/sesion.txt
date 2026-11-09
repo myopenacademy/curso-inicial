@@ -1,0 +1,5 @@
+ls
+ls *.pdf
+ls informe-?.pdf
+ls *2026*
+ls informe*

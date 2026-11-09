@@ -1,0 +1,6 @@
+ls pedidos
+head -n 1 pedidos/2026-09.csv
+tail -n 2 pedidos/2026-11.csv
+grep "Lucía Martín" pedidos/*.csv
+grep -i -n "taza" pedidos/*.csv
+find . -name "devoluciones.txt"

@@ -16,6 +16,8 @@
   - [02.01 Cómo funciona un ordenador](#0201-cómo-funciona-un-ordenador)
   - [02.02 Archivos, carpetas y rutas](#0202-archivos-carpetas-y-rutas)
   - [02.03 Instalar programas, variables de entorno y PATH](#0203-instalar-programas-variables-de-entorno-y-path)
+- **Fase 03 — Herramientas del programador**
+  - [03.01 La terminal: lo básico](#0301-la-terminal-lo-básico)
 
 ---
 
@@ -583,6 +585,98 @@ Para resolverla: empieza en la carpeta actual y sigue la ruta parte a parte, apu
 - En Windows, usa **Git Bash** para seguir el curso.
 - El `$` (o `%`) de las sesiones del curso **no se escribe**.
 - Tu salida no será idéntica a la del curso: fíjate en **lo importante**.
+
+---
+
+## Fase 03 — Herramientas del programador
+
+---
+
+### 03.01 La terminal: lo básico
+
+📖 Módulo completo: [fase-03-herramientas/01-terminal-lo-basico.md](fase-03-herramientas/01-terminal-lo-basico.md)
+
+#### Cómo es una orden
+
+```text
+nombre  -opciones  argumentos       ls -lh img
+```
+
+- Opciones cortas con un guion (`-l`), que se pueden juntar (`-lah`); largas, con dos (`--help`).
+- El espacio separa las piezas; un nombre con espacios va entre comillas.
+- Las mayúsculas cuentan. El `$` de las sesiones del curso no se escribe.
+
+#### Mirar y moverse
+
+| Orden | Qué hace |
+|---|---|
+| `pwd` | Escribe la ruta de la carpeta actual |
+| `ls` / `ls carpeta` | Lista la carpeta actual / esa carpeta |
+| `ls -l` · `-a` · `-h` · `-R` | Con detalles · con ocultos · tamaños legibles · con las subcarpetas |
+| `cd carpeta` | Entra en una carpeta (ruta relativa o absoluta) |
+| `cd ..` · `cd ../otra` | Sube un nivel · pasa a una carpeta hermana |
+| `cd` o `cd ~` | Va a tu carpeta personal |
+| `cd -` | Vuelve a la carpeta anterior |
+| `explorer .` · `open .` · `xdg-open .` | Abre la carpeta actual en el explorador (Git Bash · macOS · Linux) |
+
+#### Crear, copiar, mover y borrar
+
+| Orden | Qué hace |
+|---|---|
+| `mkdir a b` · `mkdir -p a/b/c` | Crea carpetas · crea también las carpetas padre que falten |
+| `touch fichero` | Crea un fichero vacío (o le pone la fecha de ahora) |
+| `cp origen destino` · `cp -r carpeta copia` | Copia un fichero · una carpeta entera |
+| `mv origen destino` | Mueve, o renombra si el destino no es una carpeta |
+| `rm fichero` · `rm -r carpeta` | Borra un fichero · una carpeta con todo (**sin papelera**) |
+| `rmdir carpeta` | Borra una carpeta solo si está vacía |
+| `-i` (en `cp`, `mv`, `rm`) | Pregunta antes de sustituir o borrar |
+
+#### Ver y buscar
+
+| Orden | Qué hace |
+|---|---|
+| `cat fichero` | Escribe el fichero entero |
+| `less fichero` | Lo enseña página a página (<kbd>Espacio</kbd> avanza, <kbd>/</kbd> busca, <kbd>Q</kbd> sale) |
+| `head -n 5 fichero` · `tail -n 5 fichero` | Las 5 primeras · las 5 últimas líneas (sin `-n`, 10) |
+| `grep texto fichero` | Las líneas que contienen el texto (`-i` sin mayúsculas, `-n` con número de línea) |
+| `find . -name "nombre"` | Busca ficheros por su nombre desde aquí hacia abajo |
+| `echo texto` | Escribe el texto (y enseña cómo entiende bash lo que escribes) |
+
+#### Ayuda y trucos
+
+| Qué | Cómo |
+|---|---|
+| Ayuda de una orden | `orden --help`; `man orden` (no en Git Bash); `help cd` para las de bash |
+| Autocompletar | <kbd>Tab</kbd> (dos veces: ver las opciones) |
+| Historial | <kbd>↑</kbd> y <kbd>↓</kbd>; buscar con <kbd>Ctrl</kbd>+<kbd>R</kbd> |
+| Parar una orden | <kbd>Ctrl</kbd>+<kbd>C</kbd> (en `less` y `man`, <kbd>Q</kbd>) |
+| Limpiar la pantalla | `clear` o <kbd>Ctrl</kbd>+<kbd>L</kbd> |
+| Escribir una ruta sin errores | Arrastra el fichero o la carpeta a la ventana de la terminal |
+| Copiar y pegar | Linux: <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>C</kbd> / <kbd>V</kbd> · macOS: <kbd>Cmd</kbd>+<kbd>C</kbd> / <kbd>V</kbd> · Git Bash: seleccionar copia, <kbd>Mayús</kbd>+<kbd>Insert</kbd> pega |
+
+#### Comodines y comillas
+
+| Escribes | Significa |
+|---|---|
+| `*` | Cualquier texto, también ninguno: `*.jpg`, `informe*`, `*2026*` |
+| `?` | Exactamente un carácter: `foto-0?.jpg` |
+| `"Mis fotos"` o `Mis\ fotos` | Un nombre con espacios, como una sola pieza |
+| `"*.txt"` | El patrón tal cual, sin cambiarlo por los ficheros |
+
+#### Antes de borrar
+
+1. `pwd`: ¿estoy donde creo?
+2. `ls` con **el mismo patrón** que vas a borrar: ¿es eso lo que quiero borrar?
+3. ¿Tengo copia? Si no, `cp -r`.
+4. Lee la orden entera, espacio a espacio, y entonces <kbd>Intro</kbd>.
+
+#### PowerShell y cmd, para reconocerlas
+
+| bash | PowerShell | cmd |
+|---|---|---|
+| `pwd` · `ls` · `cd` | `Get-Location` · `Get-ChildItem` · `Set-Location` | `cd` · `dir` · `cd` |
+| `cp` · `mv` · `rm` | `Copy-Item` · `Move-Item` · `Remove-Item` | `copy` · `move` · `del` |
+| `cat` · `grep` · `clear` | `Get-Content` · `Select-String` · `Clear-Host` | `type` · `findstr` · `cls` |
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

@@ -1,0 +1,10 @@
+cp -r portfolio portfolio-copia
+cd portfolio
+ls
+mkdir css img
+mv estilos.css css
+mv foto-boda.jpg foto-retrato.jpg foto-paisaje.jpg img
+cat borrador-index.html
+rm borrador-index.html
+grep -n PENDIENTE notas.txt
+ls -R

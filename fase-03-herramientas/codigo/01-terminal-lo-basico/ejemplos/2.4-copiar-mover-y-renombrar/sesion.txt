@@ -1,0 +1,9 @@
+cd encargos
+ls
+mkdir facturas
+mv factura-enero.pdf factura-febrero.pdf facturas
+mv presupuesto-borrador.txt presupuesto-bodega.txt
+cp presupuesto-bodega.txt presupuesto-bodega-v2.txt
+cp -r facturas facturas-copia
+ls
+ls facturas

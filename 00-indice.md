@@ -1,7 +1,7 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 7 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** 8 de 31 módulos (los demás aparecen como «Pendiente»)
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
@@ -13,14 +13,14 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 - [Fase 01 — Qué es programar](#fase-01--qué-es-programar) · 4 módulos · ~10,5 h
 - [Fase 02 — Tu ordenador por dentro](#fase-02--tu-ordenador-por-dentro) · 3 módulos · ~7 h
-- [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos
+- [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos · ~3 h
 - [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos
 - [Fase 05 — Git y GitHub](#fase-05--git-y-github) · 3 módulos
 - [Fase 06 — Internet y aplicaciones](#fase-06--internet-y-aplicaciones) · 6 módulos
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
-**Tiempo de los módulos disponibles:** ~17,5 horas.
+**Tiempo de los módulos disponibles:** ~20,5 horas.
 
 ---
 
@@ -53,11 +53,11 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Fase 03 — Herramientas del programador
 
-**Carpeta:** `fase-03-herramientas/` (todavía no existe)
+**Carpeta:** [`fase-03-herramientas/`](fase-03-herramientas/) · **Tiempo:** ~3 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
-| 03.01 | La terminal: lo básico | — | — | Pendiente |
+| 03.01 | [La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md) | Básico · Núcleo | 3 h | ✅ Disponible |
 | 03.02 | La terminal: sacarle partido | — | — | Pendiente |
 | 03.03 | El editor de código | — | — | Pendiente |
 | 03.04 | Errores y depuración | — | — | Pendiente |

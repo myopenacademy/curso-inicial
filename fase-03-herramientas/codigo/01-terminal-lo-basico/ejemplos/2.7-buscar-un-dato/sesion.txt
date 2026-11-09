@@ -1,0 +1,5 @@
+ls actas
+grep presupuesto actas/acta-enero.txt
+grep -n presupuesto actas/*.txt
+grep -i -n presupuesto actas/*.txt
+find . -name "socios.csv"

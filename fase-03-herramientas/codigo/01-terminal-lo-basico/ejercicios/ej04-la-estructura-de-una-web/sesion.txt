@@ -1,0 +1,4 @@
+mkdir -p web-academia-baile/css web-academia-baile/img web-academia-baile/paginas
+cd web-academia-baile
+touch index.html css/estilos.css paginas/horarios.html paginas/precios.html
+ls -R

@@ -1,0 +1,4 @@
+cat lista-compra.txt
+head registro.log
+head -n 3 registro.log
+tail -n 2 registro.log

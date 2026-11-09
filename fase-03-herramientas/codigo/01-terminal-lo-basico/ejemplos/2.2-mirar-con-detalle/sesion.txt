@@ -1,0 +1,4 @@
+cd web-panaderia
+ls -l
+ls -a
+ls -lh img
