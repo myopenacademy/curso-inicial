@@ -52,7 +52,7 @@ ls  -l  web-panaderia
 Tres reglas que se cumplen siempre:
 
 1. **El espacio separa.** Para la terminal, cada espacio separa una pieza de la siguiente. Por eso `mkdir mis apuntes` crea **dos** carpetas, `mis` y `apuntes`. Si un nombre tiene espacios, va **entre comillas**: `mkdir "mis apuntes"` ([apartado 1.14](#114-comodines-y-comillas)).
-2. **Las mayúsculas cuentan.** `ls` no es `LS`, y `-l` no es `-L` (que existe y hace otra cosa). Las órdenes y casi todas las opciones van en minúsculas.
+2. **Las mayúsculas cuentan.** En Linux, `ls` no es `LS` (esa orden no existe). En macOS y en Windows puede que `LS` funcione, porque allí los nombres de los ficheros normalmente no distinguen mayúsculas, pero no cuentes con ello. Y en las opciones cuentan siempre: `-l` no es `-L` (que existe y hace otra cosa). Las órdenes y casi todas las opciones van en minúsculas.
 3. **La terminal no adivina.** Como el ordenador de la [fase 1](../fase-01-que-es-programar/01-que-es-programar.md#11-un-ordenador-es-muy-rápido-y-muy-obediente), hace exactamente lo que escribes. Si escribes mal el nombre, te dirá que la orden no existe; si escribes mal una opción, es la orden la que se queja.
 
 Los nombres de las órdenes parecen crípticos, pero casi todos son abreviaturas del inglés. Saberlo ayuda a recordarlas: `ls` es *list* (listar), `cd` es *change directory* (cambiar de carpeta), `mkdir` es *make directory* (crear una carpeta), `cp` es *copy*, `mv` es *move*, `rm` es *remove* (quitar).
@@ -116,7 +116,7 @@ Por ahora, fíjate solo en cuatro cosas:
 | Parte | En el ejemplo | Qué es |
 |---|---|---|
 | **El primer carácter** | `-` y `d` | `d` es una carpeta (*directory*); `-`, un fichero normal. Es la forma más rápida de distinguirlos |
-| **El tamaño** | `360`, `4096` | Lo que ocupa, en bytes (con `-h`, en K, M o G). El de una carpeta no es lo que ocupa su contenido: es lo que ocupa su «índice», casi siempre 4096 |
+| **El tamaño** | `360`, `4096` | Lo que ocupa, en bytes (con `-h`, en K, M o G). El de una carpeta no es lo que ocupa su contenido, sino su «índice»: en Linux suele ser 4096; en otros sistemas, otro número |
 | **La fecha** | `ene 15  2026` | Cuándo se modificó por última vez. Si es de hace más de seis meses, sale el año; si es reciente, la hora |
 | **El nombre** | `index.html`, `css` | Al final de la línea |
 
@@ -342,7 +342,7 @@ Se lee: «`grep`, opcionalmente una o varias opciones, **obligatoriamente** lo q
 - **En Linux**, `man` existe y suele tener los manuales de todo. (Algunas instalaciones mínimas los quitan para ocupar menos.)
 - **En macOS**, `man` existe y funciona igual.
 - **En Git Bash**, la orden `man` **no viene incluida** (a 9 de noviembre de 2026): usa `--help`. Para Git, `git help` seguido de una orden abre su manual en el navegador.
-- **Las órdenes propias de bash** (como `cd`, `pwd` o `echo`) no son programas aparte, sino parte de bash, y no tienen su propia página de manual: su ayuda sale con `help` y la orden (`help cd`).
+- **Las órdenes propias de bash** (como `cd`, `pwd` o `echo`) no son programas aparte, sino parte de bash, y no tienen su propia página de manual: su ayuda sale con `help` y la orden (`help cd`). `help` es de bash: en zsh, la terminal de macOS, no existe, y la ayuda de sus órdenes propias está en su manual, `man zshbuiltins`.
 
 > **💡 Consejo:** el manual está en inglés casi siempre. No pasa nada: lo que buscas suele ser una opción, y la descripción es corta. Y si no te aclaras, la documentación de internet y la IA ayudan; lo verás en el módulo «Buscar ayuda» (fase 7). Pero mira primero `--help`: es la fuente más directa y no se equivoca de versión.
 
@@ -512,7 +512,7 @@ total 60K
 
 **En qué fijarte:**
 
-1. En **`ls -l`**, las líneas que empiezan por **`d`** son carpetas (`css`, `img`, `js`) y las que empiezan por **`-`**, ficheros. Las carpetas marcan `4096`, que no es lo que ocupa su contenido ([apartado 1.4](#14-qué-hay-aquí-ls)).
+1. En **`ls -l`**, las líneas que empiezan por **`d`** son carpetas (`css`, `img`, `js`) y las que empiezan por **`-`**, ficheros. Las carpetas marcan `4096` (en tu sistema puede ser otro número), que no es lo que ocupa su contenido ([apartado 1.4](#14-qué-hay-aquí-ls)).
 2. **`ls -a`** enseña `.gitignore`, que `ls` a secas no enseñaba, y las dos carpetas especiales `.` y `..`.
 3. **`ls -lh img`** da los tamaños legibles: la foto ocupa unos `49K` (49 kilobytes) y el logo, `4,8K`. Nada preocupante para una web. (La línea `total` es el espacio que ocupa la carpeta en el disco; no hace falta que te fijes en ella.)
 4. Las fechas salen iguales porque los ficheros del curso se copiaron todos a la vez; en tu ordenador verás las tuyas.
@@ -1581,7 +1581,7 @@ nombre  -opciones  argumentos       ls -lh img
 
 | Qué | Cómo |
 |---|---|
-| Ayuda de una orden | `orden --help`; `man orden` (no en Git Bash); `help cd` para las de bash |
+| Ayuda de una orden | `orden --help`; `man orden` (no en Git Bash); `help cd` para las de bash (en zsh, `man zshbuiltins`) |
 | Autocompletar | <kbd>Tab</kbd> (dos veces: ver las opciones) |
 | Historial | <kbd>↑</kbd> y <kbd>↓</kbd>; buscar con <kbd>Ctrl</kbd>+<kbd>R</kbd> |
 | Parar una orden | <kbd>Ctrl</kbd>+<kbd>C</kbd> (en `less` y `man`, <kbd>Q</kbd>) |
@@ -1701,7 +1701,7 @@ nombre  -opciones  argumentos       ls -lh img
     <details>
     <summary>Ver respuesta</summary>
 
-    Con `orden --help`, que escribe un resumen de su uso y sus opciones, o con `man orden`, que abre su página del manual (se sale con <kbd>Q</kbd>). En Git Bash no viene `man`, así que se usa `--help`. Las órdenes propias de bash, como `cd`, tienen su ayuda en `help cd`. Lo tienes en [1.12. Pedir ayuda: --help y man](#112-pedir-ayuda---help-y-man).
+    Con `orden --help`, que escribe un resumen de su uso y sus opciones, o con `man orden`, que abre su página del manual (se sale con <kbd>Q</kbd>). En Git Bash no viene `man`, así que se usa `--help`. Las órdenes propias de bash, como `cd`, tienen su ayuda en `help cd` (en el zsh de macOS no existe `help`: allí, `man zshbuiltins`). Lo tienes en [1.12. Pedir ayuda: --help y man](#112-pedir-ayuda---help-y-man).
 
     </details>
 
