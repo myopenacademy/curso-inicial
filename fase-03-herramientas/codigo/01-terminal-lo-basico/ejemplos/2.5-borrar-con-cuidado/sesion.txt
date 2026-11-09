@@ -1,4 +1,5 @@
 cd encargos
+mkdir vacia
 ls
 rm notas-viejas.txt
 rmdir pruebas

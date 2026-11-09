@@ -593,12 +593,13 @@ factura-enero.pdf  factura-febrero.pdf
 
 ### 2.5. Borrar con cuidado
 
-**Situación real:** en la misma carpeta `encargos` quedan restos que ya no sirven: unas notas viejas, una carpeta `pruebas` con dos versiones antiguas de un logo y una carpeta `vacia` que creaste sin querer. Vas a borrarlos, **mirando antes** lo que borras.
+**Situación real:** en la misma carpeta `encargos` quedan restos que ya no sirven: unas notas viejas y una carpeta `pruebas` con dos versiones antiguas de un logo. Además, al empezar, creas sin querer una carpeta `vacia`. Vas a borrarlo todo, **mirando antes** lo que borras.
 
 **En tu terminal** (`sesion.txt`):
 
 ```text
 $ cd encargos
+$ mkdir vacia
 $ ls
 clientes.txt  notas-viejas.txt  pruebas  vacia
 $ rm notas-viejas.txt
