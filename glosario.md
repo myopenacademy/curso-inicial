@@ -157,6 +157,18 @@ Herramienta que ejecuta un programa bajo su control para detenerlo en puntos de 
 
 Encontrar dónde está un error y corregirlo, después de que una prueba haya descubierto que existe. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#12-qué-es-probar-un-programa).
 
+### Diagrama de bloques
+
+Diagrama que dibuja las piezas de un sistema como cajas y sus conexiones como flechas; también se llama diagrama de arquitectura. Lo explica [04.05 Diagramas y Mermaid](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#12-tres-diagramas-para-empezar).
+
+### Diagrama de flujo
+
+Representación gráfica de un algoritmo o un proceso: cada paso es una figura y las flechas marcan el orden (definido en 01.02; aún no estaba en el glosario). Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#112-diagramas-de-flujo).
+
+### Diagrama de secuencia
+
+Diagrama que pone a cada participante en una columna y dibuja, de arriba abajo en el orden en que ocurren, los mensajes que se mandan. Lo explica [04.05 Diagramas y Mermaid](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#12-tres-diagramas-para-empezar).
+
 ### Directorio
 
 Otro nombre de la carpeta, el habitual en inglés (directory) y en mucha documentación. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#12-cómo-se-escribe-una-orden).
@@ -344,6 +356,10 @@ Lenguaje de marcas ligero: texto plano con unos pocos símbolos (#, *, -) que un
 ### Memoria RAM
 
 Pieza que guarda lo que se está usando ahora mismo; es muy rápida y se borra al apagar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#15-la-memoria-ram-rápida-y-olvidadiza).
+
+### Mermaid
+
+Herramienta gratuita y de código abierto que dibuja diagramas a partir de un texto escrito en un bloque mermaid de Markdown; la usan GitHub, la academia y VS Code. Lo explica [04.05 Diagramas y Mermaid](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#13-dibujar-escribiendo-mermaid).
 
 ### Mínimo privilegio
 
@@ -622,6 +638,10 @@ Ejecutar un algoritmo a mano, paso a paso, anotando en una tabla el valor de cad
 La | que une dos órdenes: la salida de la primera es la entrada de la segunda (pipe). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#15-tuberías-la-salida-de-una-orden-es-la-entrada-de-otra).
 
 ## U
+
+### UML
+
+Unified Modeling Language: lenguaje gráfico estándar del OMG para dibujar el diseño de un programa (versión 2.5.1). Lo explica [04.05 Diagramas y Mermaid](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#112-más-tipos-de-diagramas-uml-y-otras-notaciones).
 
 ### Unicode
 

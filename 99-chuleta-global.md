@@ -26,6 +26,7 @@
   - [04.02 Markdown](#0402-markdown)
   - [04.03 JSON y YAML](#0403-json-y-yaml)
   - [04.04 XML, CSV y otros](#0404-xml-csv-y-otros)
+  - [04.05 Diagramas y Mermaid](#0405-diagramas-y-mermaid)
 
 ---
 
@@ -1135,6 +1136,80 @@ otro_documento: true
 | `.env` | `CLAVE=valor` · comentarios con `#` | Variables de entorno |
 
 **Secretos:** en el `.env`, y `.env` en el `.gitignore` · en Git, un `.env.example` sin valores reales.
+
+---
+
+### 04.05 Diagramas y Mermaid
+
+📖 Módulo completo: [fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md)
+
+#### Los tres diagramas
+
+| Diagrama | Responde a | En Mermaid |
+|---|---|---|
+| De flujo | ¿Qué pasos y qué decisiones? | `flowchart TD` |
+| De bloques | ¿Qué piezas hay y cómo se conectan? | `flowchart LR` con `subgraph` |
+| De secuencia | ¿Quién habla con quién, y en qué orden? | `sequenceDiagram` |
+
+#### Diagrama de flujo
+
+````text
+```mermaid
+flowchart TD
+    inicio(["Inicio"]) --> leer[/"Leer el pedido"/]
+    leer --> stock{"¿Hay stock?"}
+    stock -- Sí --> enviar["Enviar"]
+    stock -- No --> esperar[["Pedir al proveedor"]]
+    esperar --> stock
+    enviar --> fin(["Fin"])
+```
+````
+
+| Formas | Flechas |
+|---|---|
+| `(["…"])` óvalo · `["…"]` rectángulo · `{"…"}` rombo | `-->` flecha · `---` línea · `-.->` puntos · `==>` gruesa |
+| `[/"…"/]` paralelogramo · `[["…"]]` subproceso | `-- texto -->` o `-->\|texto\|` · `-. "texto" .->` |
+| `("…")` redondeado · `[("…")]` cilindro | `A --> B --> C` encadenar |
+
+Direcciones: `TD` (o `TB`), `LR`, `BT`, `RL`. Grupos: `subgraph id ["Título"]` … `end`. Comentario: `%% texto`, en su propia línea.
+
+#### Diagrama de secuencia
+
+````text
+```mermaid
+sequenceDiagram
+    autonumber
+    actor cliente as Luis
+    participant web as Web
+    cliente->>web: Pide algo
+    alt va bien
+        web-->>cliente: Hecho
+    else va mal
+        web-->>cliente: Error
+    end
+    Note over web: Una nota
+```
+````
+
+| Se escribe | Qué es |
+|---|---|
+| `participant id as Nombre` · `actor id as Nombre` | Participante (un programa) · persona |
+| `A->>B: texto` · `B-->>A: texto` | Mensaje (continua) · respuesta (discontinua) |
+| `alt` … `else` … `end` · `opt` … `end` · `loop` … `end` | Si… si no · si · repetir |
+| `Note over A,B: texto` · `autonumber` | Nota · numerar los mensajes |
+
+#### Caracteres especiales
+
+| Para | Escribe |
+|---|---|
+| Paréntesis, comas, dos puntos… en un diagrama de flujo | La etiqueta entre comillas: `A["Pagar (con tarjeta)"]` |
+| `"` `<` `>` `&` dentro de una etiqueta | `&quot;` `&lt;` `&gt;` `&amp;` |
+| Un salto de línea | `<br/>` |
+| Un nodo final | `fin`, nunca `end` |
+
+#### Dónde se ve
+
+GitHub (ficheros `.md`, *issues*, *pull requests*), la academia, la vista previa de VS Code (desde la 1.121, sin extensiones) y el editor en línea `https://mermaid.live`, para probar.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

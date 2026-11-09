@@ -605,8 +605,32 @@
           "id": "inicial.diagramas-y-mermaid",
           "fichero": "fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md",
           "titulo": "Diagramas y Mermaid",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.diagramas-y-mermaid.que-diagrama-dibujarias",
+              "titulo": "Qué diagrama dibujarías"
+            },
+            {
+              "id": "inicial.diagramas-y-mermaid.leer-un-diagrama-sin-dibujarlo",
+              "titulo": "Leer un diagrama sin dibujarlo"
+            },
+            {
+              "id": "inicial.diagramas-y-mermaid.del-pseudocodigo-al-diagrama",
+              "titulo": "Del pseudocódigo al diagrama"
+            },
+            {
+              "id": "inicial.diagramas-y-mermaid.arregla-el-diagrama",
+              "titulo": "Arregla el diagrama"
+            },
+            {
+              "id": "inicial.diagramas-y-mermaid.las-piezas-de-una-academia-de-idiomas",
+              "titulo": "Las piezas de una academia de idiomas"
+            },
+            {
+              "id": "inicial.diagramas-y-mermaid.documenta-el-prestamo-de-material-del-club",
+              "titulo": "Documenta el préstamo de material del club"
+            }
+          ]
         }
       ]
     },
