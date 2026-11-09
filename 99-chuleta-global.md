@@ -642,14 +642,14 @@ nombre  -opciones  argumentos       ls -lh img
 | `less fichero` | Lo enseña página a página (<kbd>Espacio</kbd> avanza, <kbd>/</kbd> busca, <kbd>Q</kbd> sale) |
 | `head -n 5 fichero` · `tail -n 5 fichero` | Las 5 primeras · las 5 últimas líneas (sin `-n`, 10) |
 | `grep texto fichero` | Las líneas que contienen el texto (`-i` sin mayúsculas, `-n` con número de línea) |
-| `find . -name "nombre"` | Busca ficheros por su nombre desde aquí hacia abajo |
+| `find carpeta -name "nombre"` | Busca ficheros por su nombre en esa carpeta y en las de dentro (`.`: desde aquí) |
 | `echo texto` | Escribe el texto (y enseña cómo entiende bash lo que escribes) |
 
 #### Ayuda y trucos
 
 | Qué | Cómo |
 |---|---|
-| Ayuda de una orden | `orden --help`; `man orden` (no en Git Bash); `help cd` para las de bash (en zsh, `man zshbuiltins`) |
+| Ayuda de una orden | `orden --help` (no en muchas de macOS); `man orden` (no en Git Bash); `help cd` para las de bash (en zsh, `man zshbuiltins`) |
 | Autocompletar | <kbd>Tab</kbd> (dos veces: ver las opciones) |
 | Historial | <kbd>↑</kbd> y <kbd>↓</kbd>; buscar con <kbd>Ctrl</kbd>+<kbd>R</kbd> |
 | Parar una orden | <kbd>Ctrl</kbd>+<kbd>C</kbd> (en `less` y `man`, <kbd>Q</kbd>) |
@@ -788,7 +788,7 @@ done
 
 | Qué | Linux | macOS | Git Bash |
 |---|---|---|---|
-| Fichero de configuración de la terminal | `~/.bashrc` | `~/.zshrc` | `~/.bashrc` (se carga a través de `~/.bash_profile`) |
+| Fichero de configuración de la terminal | `~/.bashrc` | `~/.zshrc` (si tu terminal sigue con bash, `~/.bash_profile`) | `~/.bashrc` (se carga a través de `~/.bash_profile`) |
 | `chmod +x` | Funciona | Funciona | Casi sin efecto: es ejecutable lo que empieza por `#!` |
 | `sudo` | Sí | Sí | No lo trae |
 | `wc -l`, `uniq -c` | El número, con este espaciado | El mismo número, con otro espaciado | Como Linux |
@@ -870,7 +870,7 @@ Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
 | `orden no encontrada` | `command not found` | Orden mal escrita o programa no instalado o fuera del PATH |
 | `No existe el archivo o el directorio` | `No such file or directory` | Carpeta actual equivocada, nombre mal escrito (mayúsculas, tildes), ruta con espacios sin comillas |
 | `Permiso denegado` | `Permission denied` | Script sin `chmod +x`, o escribir donde no debes (mira la ruta: ¿una variable vacía?) |
-| `No es un directorio` | `Not a directory` | Usas un fichero como si fuera una carpeta |
+| `No es un directorio` | `Not a directory` | Usas como carpeta algo que no lo es: un fichero, o un nombre con `/` al final que no existe (`mv foto.jpg imagenes/`, sin haber creado `imagenes`) |
 | `variable sin asignar` | `unbound variable` | Con `set -u`: variable mal escrita o sin valor |
 | `$'\r': orden no encontrada` | `$'\r': command not found` | Script guardado con saltos de línea de Windows (CRLF): cámbialo a LF en la barra de estado de VS Code |
 | `error de sintaxis: no se esperaba el final del fichero` | `syntax error: unexpected end of file` | Falta un `fi`, un `done` o unas comillas de cierre: mira hacia arriba |

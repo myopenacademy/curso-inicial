@@ -123,6 +123,10 @@ Expresión que da VERDADERO o FALSO y decide qué camino sigue un algoritmo. Lo 
 
 Dato con nombre cuyo valor no cambia durante todo el algoritmo. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#constantes).
 
+### CSV
+
+Fichero de texto con una tabla: una fila por línea y las columnas separadas por comas (o por punto y coma); la primera línea, la cabecera, suele decir qué es cada columna. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail).
+
 ## D
 
 ### Depurador
@@ -213,11 +217,19 @@ Terminal con bash que trae Git for Windows; la del curso en Windows. Lo explica 
 
 Cada una de las líneas de trabajo independientes que avanzan a la vez dentro de un programa. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-otros-estilos-que-oirás-nombrar).
 
+### Historial de órdenes
+
+Las órdenes que ya has escrito en la terminal, que se recuperan con las flechas o se buscan con Ctrl+R. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#113-trucos-que-ahorran-tiempo).
+
 ## I
 
 ### IDE
 
 Entorno de desarrollo integrado: editor de código con todo lo necesario para trabajar en un lenguaje concreto (ejecutar, probar, depurar). Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#12-editor-procesador-de-textos-e-ide).
+
+### Indicador
+
+Texto con el que la terminal muestra que espera una orden; termina en $ o en % (en inglés, prompt). Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#21-abrir-la-terminal-por-primera-vez).
 
 ### Inmutable
 
@@ -284,6 +296,14 @@ Y, O y NO: combinan condiciones; su resultado se resume en la tabla de verdad. L
 Instrucción que se escribe en la terminal para que el ordenador la ejecute (también, comando). Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
 
 ## P
+
+### Paginador
+
+Programa, como less, que enseña un texto largo una pantalla cada vez; se sale con Q. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail).
+
+### Paleta de comandos
+
+Caja de VS Code en la que se escribe lo que se quiere hacer y el editor propone las órdenes que encajan. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#17-la-paleta-de-comandos).
 
 ### Paradigma de programación
 
@@ -385,7 +405,7 @@ Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.0
 
 ### Registro
 
-Fichero de texto en el que un programa va apuntando, línea a línea y con su fecha y hora, lo que pasa mientras funciona (log). Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#26-ver-un-fichero-de-texto-y-el-registro-de-una-aplicación).
+Fichero de texto en el que un programa va apuntando, línea a línea y con su fecha y hora, lo que pasa mientras funciona (log). Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail).
 
 ### Regresión
 
@@ -424,6 +444,10 @@ Canal aparte por el que una orden escribe sus mensajes de error y sus avisos (st
 ### Salida estándar
 
 Canal por el que una orden escribe sus resultados (stdout); por defecto, la pantalla. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#11-los-tres-canales-de-una-orden).
+
+### Salto de línea (LF y CRLF)
+
+Marca invisible al final de cada línea de un fichero de texto: Linux y macOS usan un carácter (LF) y Windows, dos (CRLF); bash solo entiende LF. Lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#32-un-script-con-los-saltos-de-línea-de-windows).
 
 ### Script
 
@@ -469,7 +493,7 @@ Clase de valor que guarda un dato (entero, real, texto o lógico) y que decide q
 
 ### Traza
 
-Ejecutar un algoritmo a mano, paso a paso, anotando en una tabla el valor de cada variable a medida que cambia. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#la-traza).
+Ejecutar un algoritmo a mano, paso a paso, anotando en una tabla el valor de cada variable a medida que cambia. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#la-traza). En bash, `bash -x` enseña la traza de un script mientras se ejecuta: lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#110-ver-la-traza-de-un-script).
 
 ### Tubería
 
