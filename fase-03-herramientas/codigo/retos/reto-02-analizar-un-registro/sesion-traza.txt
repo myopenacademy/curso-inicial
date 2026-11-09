@@ -1,0 +1,2 @@
+bash -x errores-nora.sh citas.log 2>&1 | head -n 5
+grep " ERROR " citas.log | cut -d ' ' -f 4-

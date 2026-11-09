@@ -327,7 +327,6 @@
       "carpeta": "fase-03-herramientas",
       "titulo": "Herramientas del programador",
       "retos": "fase-03-herramientas/retos.md",
-      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.terminal-lo-basico",
@@ -442,8 +441,32 @@
           "id": "inicial.errores-y-depuracion",
           "fichero": "fase-03-herramientas/04-errores-y-depuracion.md",
           "titulo": "Errores y depuración",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.errores-y-depuracion.quien-se-queja-y-de-que",
+              "titulo": "Quién se queja y de qué"
+            },
+            {
+              "id": "inicial.errores-y-depuracion.un-script-con-dos-erratas",
+              "titulo": "Un script con dos erratas"
+            },
+            {
+              "id": "inicial.errores-y-depuracion.el-informe-que-se-llama-solo-con-la-fecha",
+              "titulo": "El informe que se llama solo con la fecha"
+            },
+            {
+              "id": "inicial.errores-y-depuracion.el-album-de-fotos-vacio",
+              "titulo": "El álbum de fotos vacío"
+            },
+            {
+              "id": "inicial.errores-y-depuracion.la-copia-de-seguridad-que-no-copia-nada",
+              "titulo": "La copia de seguridad que no copia nada"
+            },
+            {
+              "id": "inicial.errores-y-depuracion.pide-ayuda-bien",
+              "titulo": "Pide ayuda bien"
+            }
+          ]
         }
       ]
     },

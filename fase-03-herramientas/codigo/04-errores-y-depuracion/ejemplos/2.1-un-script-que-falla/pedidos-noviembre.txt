@@ -1,0 +1,6 @@
+2026-11-08;09:15;Madrid;cuaderno;3
+2026-11-08;10:02;Sevilla;bolígrafo;10
+2026-11-09;09:05;Madrid;mochila;1
+2026-11-09;09:41;Valencia;bolígrafo;25
+2026-11-09;11:20;Sevilla;agenda;2
+2026-11-10;08:59;Sevilla;mochila;1

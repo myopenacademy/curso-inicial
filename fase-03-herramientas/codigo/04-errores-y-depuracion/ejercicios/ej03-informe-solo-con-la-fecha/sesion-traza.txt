@@ -1,0 +1,1 @@
+bash -x informe-del-dia.sh

@@ -1,0 +1,3 @@
+bash contar-clientes.sh
+cat clientes.csv
+bash -x contar-clientes.sh

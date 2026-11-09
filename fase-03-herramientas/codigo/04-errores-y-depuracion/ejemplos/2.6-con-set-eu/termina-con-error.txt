@@ -1,0 +1,1 @@
+Falla a propósito: la variable proyeto está mal escrita y set -u detiene el script

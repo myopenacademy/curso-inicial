@@ -1,0 +1,6 @@
+bash resumen-registro.sh citas.log > resumen.txt
+head -n 5 resumen.txt
+bash resumen-registro.sh citas.txt
+echo $?
+bash resumen-registro.sh
+echo $?

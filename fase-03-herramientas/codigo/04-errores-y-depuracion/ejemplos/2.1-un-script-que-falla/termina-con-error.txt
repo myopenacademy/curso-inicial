@@ -1,0 +1,1 @@
+Falla a propósito: la orden ehco está mal escrita y el fichero se llama pedidos-noviembre.txt, no pedidos.txt

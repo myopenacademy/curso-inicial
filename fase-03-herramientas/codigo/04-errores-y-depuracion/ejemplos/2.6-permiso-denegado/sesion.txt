@@ -1,0 +1,3 @@
+bash crear-proyecto.sh
+ls tienda-online
+bash -x crear-proyecto.sh

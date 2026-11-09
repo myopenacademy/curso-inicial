@@ -20,6 +20,7 @@
   - [03.01 La terminal: lo básico](#0301-la-terminal-lo-básico)
   - [03.02 La terminal: sacarle partido](#0302-la-terminal-sacarle-partido)
   - [03.03 El editor de código](#0303-el-editor-de-código)
+  - [03.04 Errores y depuración](#0304-errores-y-depuración)
 
 ---
 
@@ -843,6 +844,52 @@ done
 - Los colores los decide la **extensión** del fichero.
 - **Mira los resultados** antes de reemplazar en todos los ficheros.
 - En Windows, la terminal integrada con **Git Bash**.
+
+---
+
+### 03.04 Errores y depuración
+
+📖 Módulo completo: [fase-03-herramientas/04-errores-y-depuracion.md](fase-03-herramientas/04-errores-y-depuracion.md)
+
+#### Método para depurar
+
+1. **Reproducir** con un caso concreto: qué hago, qué esperaba, qué pasa.
+2. **Leer el mensaje entero**, empezando por el primero.
+3. **Aislar** dónde falla, dividiendo a la mitad.
+4. **Hipótesis** y comprobarla antes de cambiar nada.
+5. **Corregir la causa** cambiando una sola cosa (y deshacerla si no sirve).
+6. **Volver a probar todos los casos.**
+
+Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
+
+#### Mensajes frecuentes
+
+| En español | En inglés | Causa más probable |
+|---|---|---|
+| `orden no encontrada` | `command not found` | Orden mal escrita o programa no instalado o fuera del PATH |
+| `No existe el archivo o el directorio` | `No such file or directory` | Carpeta actual equivocada, nombre mal escrito (mayúsculas, tildes), ruta con espacios sin comillas |
+| `Permiso denegado` | `Permission denied` | Script sin `chmod +x`, o escribir donde no debes (mira la ruta: ¿una variable vacía?) |
+| `No es un directorio` | `Not a directory` | Usas un fichero como si fuera una carpeta |
+| `variable sin asignar` | `unbound variable` | Con `set -u`: variable mal escrita o sin valor |
+| `error de sintaxis: no se esperaba el final del fichero` | `syntax error: unexpected end of file` | Falta un `fi`, un `done` o unas comillas de cierre: mira hacia arriba |
+
+#### Herramientas
+
+| Herramienta | Para qué |
+|---|---|
+| `echo "DEPURACIÓN x: $x"` | Ver un valor en un punto concreto (añade `>&2` para mandarlo a la salida de error). Bórralos al terminar |
+| `bash -x script.sh` | La traza: cada orden con sus valores, precedida de `+` (y `++` las de dentro de `$( )`) |
+| `set -x` … `set +x` | La traza solo de un trozo del script |
+| `bash -n script.sh` | Comprobar la escritura sin ejecutar |
+| `set -eu` | Al principio del script: parar si una orden falla (`-e`) o si se usa una variable sin valor (`-u`) |
+| Ejecutar media tubería | Aislar qué orden de una tubería falla |
+| Depurador | Puntos de parada, paso a paso y ver variables (cada lenguaje tiene el suyo) |
+
+#### Antes de dar un error por arreglado
+
+- ¿He corregido la **causa** o solo el síntoma?
+- ¿Funciona el caso que fallaba **y todos los demás**?
+- ¿He borrado los `echo` de **DEPURACIÓN** y los `set -x`?
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

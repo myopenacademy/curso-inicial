@@ -53,6 +53,10 @@ Estructura que repite un bloque de instrucciones varias veces (MIENTRAS, REPETIR
 
 Bucle cuya condición de salida nunca llega a cumplirse, de modo que se repite para siempre. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#19-repetición).
 
+### Bug
+
+Error de un programa, en la jerga de la programación; de ahí debug, depurar. Lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#11-equivocarse-es-parte-del-trabajo).
+
 ### Byte
 
 Grupo de 8 bits; la unidad con la que se miden ficheros, memoria y discos. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#12-bits-y-bytes-todo-son-números).
@@ -120,6 +124,10 @@ Expresión que da VERDADERO o FALSO y decide qué camino sigue un algoritmo. Lo 
 Dato con nombre cuyo valor no cambia durante todo el algoritmo. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#constantes).
 
 ## D
+
+### Depurador
+
+Herramienta que ejecuta un programa bajo su control para detenerlo en puntos de parada, avanzar paso a paso y ver el valor de las variables. Lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#112-el-depurador-puntos-de-parada-y-paso-a-paso).
 
 ### Depurar
 
@@ -293,6 +301,10 @@ Dato que recibe un subalgoritmo al llamarlo, en el mismo orden en que se pasa en
 
 Variable de entorno con la lista ordenada de carpetas donde el sistema busca los programas. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#110-el-path-dónde-busca-el-sistema-los-programas).
 
+### Patito de goma
+
+Técnica de depuración: explicar el código línea a línea, en voz alta, para encontrar el error al explicarlo. Lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#18-el-patito-de-goma).
+
 ### Permisos
 
 Lo que cada usuario puede hacer con un fichero o una carpeta: leer (r), escribir (w) y ejecutar (x). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#110-permisos-quién-puede-leer-escribir-y-ejecutar).
@@ -353,6 +365,10 @@ Prueba que comprueba una pieza pequeña sola, como un subalgoritmo. Lo explica [
 
 Forma de escribir algoritmos a medio camino entre el lenguaje natural y un lenguaje de programación, con palabras normales y una estructura fija. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#15-pseudocódigo).
 
+### Punto de parada
+
+Marca en una línea de un programa en la que el depurador lo detiene, justo antes de ejecutarla (breakpoint). Lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#112-el-depurador-puntos-de-parada-y-paso-a-paso).
+
 ## R
 
 ### Raíz
@@ -374,6 +390,10 @@ Fichero de texto en el que un programa va apuntando, línea a línea y con su fe
 ### Regresión
 
 Error en algo que antes funcionaba y que se ha estropeado al cambiar otra cosa. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
+
+### Reproducir un error
+
+Conseguir que un error ocurra cuando uno quiere, con unos datos y unos pasos concretos; primer paso para depurar. Lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#13-reproducir-el-error).
 
 ### Resaltado de sintaxis
 

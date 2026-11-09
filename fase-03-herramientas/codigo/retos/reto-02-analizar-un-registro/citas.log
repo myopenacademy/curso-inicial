@@ -1,0 +1,16 @@
+2026-11-12 08:30:01 INFO Arranca la aplicación de citas
+2026-11-12 08:30:02 INFO Conectada a la base de datos
+2026-11-12 09:05:44 INFO Cita reservada para Luna (perro) a las 10:30
+2026-11-12 09:12:10 ERROR No se pudo enviar el SMS de recordatorio
+2026-11-12 09:40:31 INFO Cita reservada para Simba (gato) a las 12:00
+2026-11-12 10:02:15 WARN El pago con tarjeta tarda más de 5 segundos
+2026-11-12 10:02:20 ERROR La pasarela de pago no responde
+2026-11-12 10:15:03 ERROR No se pudo enviar el SMS de recordatorio
+2026-11-12 10:31:47 INFO Cita cancelada para Toby (perro)
+2026-11-12 11:20:09 ERROR La pasarela de pago no responde
+2026-11-12 11:58:30 WARN Quedan pocas citas libres para el sábado
+2026-11-12 12:44:12 INFO Cita reservada para Kira (perro) a las 17:00
+2026-11-12 13:05:55 ERROR No se pudo enviar el SMS de recordatorio
+2026-11-12 13:30:00 INFO Copia de seguridad hecha
+2026-11-12 14:10:41 ERROR No se pudo leer la ficha de Nala
+2026-11-12 14:11:02 INFO Ficha de Nala recuperada de la copia
