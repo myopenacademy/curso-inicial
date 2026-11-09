@@ -19,6 +19,10 @@ Secuencia ordenada, finita y precisa de pasos que resuelve un problema; no depen
 
 Pieza que guarda los datos de forma permanente (SSD o disco duro); se conserva al apagar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#16-el-almacenamiento-ssd-y-disco-duro).
 
+### Analizar (parsear)
+
+Leer un texto escrito en un formato (JSON, YAML…) y convertirlo en datos que un programa puede usar; lo hace un analizador o parser. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
+
 ### Ancla
 
 Identificador de un título que se genera a partir de su texto y permite enlazar a esa sección (#cómo-hacerse-socio). Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#19-anclas-enlazar-a-un-título).
@@ -225,6 +229,10 @@ Fichero cuyos bytes son caracteres según una codificación; se lee con cualquie
 
 Fichero que el explorador no muestra; en Linux y macOS, el que empieza por punto. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos).
 
+### Formato de datos
+
+Reglas para escribir datos como texto de modo que otro programa los pueda leer: JSON, YAML, CSV, XML… Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
+
 ## G
 
 ### Gestor de paquetes
@@ -275,6 +283,12 @@ Práctica en la que un servidor ejecuta todas las pruebas automáticamente cada 
 
 Programa que lee el código fuente y lo ejecuta instrucción a instrucción, cada vez que se pone en marcha. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#17-lenguajes-compilados-e-interpretados).
 
+## J
+
+### JSON
+
+Formato de datos estricto, con objetos entre llaves y listas entre corchetes; el habitual para intercambiar datos entre programas y en las API. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#13-json-el-formato-para-intercambiar-datos).
+
 ## L
 
 ### Latin-1
@@ -321,7 +335,15 @@ Caracteres estropeados («Ã±», «�») por leer un texto con una codificaci�
 
 Ordenadores de otra empresa, en un centro de datos, a los que se accede por internet. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#111-la-nube-el-ordenador-de-otro).
 
+### Null
+
+Valor que dice que un dato no existe o no se sabe; es distinto de un texto vacío y de 0. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#14-los-seis-tipos-de-valores-de-json).
+
 ## O
+
+### Objeto (JSON)
+
+Grupo de pares clave-valor entre llaves; en YAML se llama mapa. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#12-las-tres-piezas-valores-listas-y-objetos).
 
 ### Opción
 
@@ -348,6 +370,10 @@ Programa, como less, que enseña un texto largo una pantalla cada vez; se sale c
 ### Paleta de comandos
 
 Caja de VS Code en la que se escribe lo que se quiere hacer y el editor propone las órdenes que encajan. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#17-la-paleta-de-comandos).
+
+### Par clave-valor
+
+Un nombre (la clave) y el dato que le corresponde (el valor), como "ciudad": "Huesca". Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#12-las-tres-piezas-valores-listas-y-objetos).
 
 ### Paradigma de programación
 
@@ -501,9 +527,17 @@ Canal por el que una orden escribe sus resultados (stdout); por defecto, la pant
 
 Marca invisible al final de cada línea de un fichero de texto: Linux y macOS usan un carácter (LF) y Windows, dos (CRLF); bash solo entiende LF. Lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#32-un-script-con-los-saltos-de-línea-de-windows).
 
+### Sangría
+
+Espacios al principio de una línea que muestran qué va dentro de qué; en YAML (y en algunos lenguajes) cambia el significado. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#110-mapas-listas-y-sangría).
+
 ### Script
 
 Fichero de texto con órdenes que se ejecutan una detrás de otra, como un pequeño programa escrito en el lenguaje de la terminal. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#114-tu-primer-script).
+
+### Serializar
+
+Convertir los datos de un programa en texto (o bytes) para guardarlos o enviarlos; lo contrario es analizar. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
 
 ### Shebang
 
@@ -580,3 +614,9 @@ Dato con nombre que guarda el sistema operativo y que pueden consultar todos los
 ### Windows-1252
 
 Codificación de un byte de los Windows en español; casi igual que Latin-1, pero con el € y otros signos. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#15-una-tabla-por-idioma-latin-1-y-windows-1252).
+
+## Y
+
+### YAML
+
+Formato de datos pensado para que lo escriban personas, con la estructura marcada por la sangría y con comentarios; el habitual para la configuración. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#19-yaml-el-formato-para-que-lo-escriban-personas).

@@ -1,0 +1,9 @@
+salida: Valle de Ordesa
+inscritos:
+  - nombre: Lucía Martín
+    federada: true
+  - nombre: Javier Ruiz
+     federada: false
+material_comun:
+- botiquín
+  - cuerda

@@ -1,0 +1,27 @@
+{
+  "casa": "Casa Rural El Roble",
+  "reservas": [
+    {
+      "codigo": "R-0107",
+      "huesped": "Elena Torres",
+      "telefono": "612345678",
+      "llegada": "2026-12-05",
+      "noches": 2,
+      "personas": 4,
+      "mascota": false,
+      "extras": ["desayuno", "leña"],
+      "comentario": null
+    },
+    {
+      "codigo": "R-0108",
+      "huesped": "Pablo Navarro",
+      "telefono": "698765432",
+      "llegada": "2026-12-19",
+      "noches": 3,
+      "personas": 2,
+      "mascota": true,
+      "extras": [],
+      "comentario": "Llegarán tarde, hacia las 22:00"
+    }
+  ]
+}

@@ -24,6 +24,7 @@
 - **Fase 04 — Formatos y diagramas**
   - [04.01 Texto, binario y codificación](#0401-texto-binario-y-codificación)
   - [04.02 Markdown](#0402-markdown)
+  - [04.03 JSON y YAML](#0403-json-y-yaml)
 
 ---
 
@@ -1004,6 +1005,85 @@ Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
 #### Un README tiene
 
 Título · qué es (una frase) · captura · qué hace · requisitos · instalación · uso · estado · cómo colaborar · licencia.
+
+---
+
+### 04.03 JSON y YAML
+
+📖 Módulo completo: [fase-04-formatos-y-diagramas/03-json-y-yaml.md](fase-04-formatos-y-diagramas/03-json-y-yaml.md)
+
+#### Conceptos clave
+
+| Concepto | En una línea |
+|---|---|
+| **Formato de datos** | Reglas para escribir datos como texto y que otro programa los pueda leer |
+| **Dato estructurado** | Un dato con partes, que pueden tener partes: se describe con valores, listas y objetos |
+| **Par clave-valor** | Un nombre (la clave) y el dato que le corresponde (el valor): `"ciudad": "Huesca"` |
+| **Objeto (JSON) / mapa (YAML)** | Un grupo de pares clave-valor; el orden de las claves no importa |
+| **Lista** | Valores en orden; el orden sí importa |
+| **Anidar** | Meter una lista o un objeto dentro de otro |
+| **`null`** | «Este dato no existe»: distinto de `""`, de `0` y de `[]` |
+| **JSON** | Formato estricto, para intercambiar datos entre programas (las API) |
+| **YAML** | Formato con sangría y comentarios, para la configuración que escriben personas |
+| **YAML 1.1 / 1.2** | La 1.1 lee `yes`, `no`, `on` y `off` como booleanos; la 1.2, solo `true` y `false` |
+| **JSON with Comments** | Variante de JSON con comentarios que usa VS Code en su `settings.json` |
+
+#### JSON
+
+```json
+{
+  "texto": "con comillas dobles",
+  "numero": 12.5,
+  "booleano": true,
+  "nulo": null,
+  "lista": ["a", "b"],
+  "objeto": {"clave": "valor"},
+  "vacios": [[], {}, ""]
+}
+```
+
+Comillas dobles · coma entre elementos y ninguna tras el último · sin comentarios · punto decimal y sin ceros delante · `true`, `false` y `null` en minúsculas · un solo valor de primer nivel · UTF-8
+
+#### YAML
+
+```yaml
+# Comentario
+clave: valor                # espacio tras los dos puntos
+mapa:
+  dentro: 1                 # sangría con ESPACIOS, nunca tabuladores
+lista:
+  - a
+  - b
+lista_de_mapas:
+  - nombre: Ana
+    edad: 34                # alineada con nombre, no con el guion
+en_linea: [a, b]
+vacios: []
+texto_largo: |              # | conserva los saltos de línea; > los junta
+  línea 1
+  línea 2
+seguro: "NO"                # comillas: NO, yes, on, off, 01001, 1.10, 12:30, #color, fechas
+---
+otro_documento: true
+```
+
+#### En VS Code
+
+| Para | Qué hacer |
+|---|---|
+| Ver los errores | Panel **Problems**: <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>M</kbd> (macOS: <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>M</kbd>); <kbd>F8</kbd>, el siguiente |
+| Dar formato a un JSON | **Format Document**: <kbd>Mayús</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> (Windows), <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>I</kbd> (Linux), <kbd>Mayús</kbd>+<kbd>Opción</kbd>+<kbd>F</kbd> (macOS) |
+| Comprobar un YAML | Extensión **YAML** de Red Hat (de serie, solo colores) |
+| Ver espacios y tabuladores | **View > Appearance > Render Whitespace** |
+
+#### Cuál elegir
+
+| Para | Formato |
+|---|---|
+| Intercambiar datos entre programas, API | JSON |
+| Configuración escrita y comentada por personas | YAML |
+| Lo que pida la herramienta | Lo que pida la herramienta |
+| Tablas | CSV ([04.04](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md)) |
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

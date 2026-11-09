@@ -1,0 +1,15 @@
+{
+  "nombre": "Club de Montaña Cumbres",
+  "puerto": 8080,
+  "modo_pruebas": false,
+  "correo": {
+    "servidor": "correo.cumbres.example.com",
+    "remitente": "hola@cumbres.example.com"
+  },
+  "idiomas": ["es", "en", "fr"],
+  "version": "1.10",
+  "codigo_postal": "22001",
+  "color_principal": "#2e7d32",
+  "pie_de_correo": "Club de Montaña Cumbres\nCalle Mayor, 12 · Huesca\n",
+  "aviso_salidas": "Las salidas se confirman el jueves anterior.\n"
+}

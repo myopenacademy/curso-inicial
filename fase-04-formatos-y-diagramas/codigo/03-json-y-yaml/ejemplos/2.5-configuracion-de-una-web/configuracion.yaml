@@ -1,0 +1,27 @@
+# Configuración de la web del club
+nombre: Club de Montaña Cumbres
+puerto: 8080
+modo_pruebas: false   # true solo en el ordenador de quien programa
+
+# Un mapa dentro de otro: lo que va dentro, sangrado con dos espacios
+correo:
+  servidor: correo.cumbres.example.com
+  remitente: hola@cumbres.example.com
+
+# Una lista corta, escrita en una línea
+idiomas: [es, en, fr]
+
+# Textos que parecen otra cosa: entre comillas
+version: "1.10"
+codigo_postal: "22001"
+color_principal: "#2e7d32"
+
+# Un texto de varias líneas: | conserva los saltos de línea
+pie_de_correo: |
+  Club de Montaña Cumbres
+  Calle Mayor, 12 · Huesca
+
+# > junta las líneas en una sola
+aviso_salidas: >
+  Las salidas se confirman
+  el jueves anterior.

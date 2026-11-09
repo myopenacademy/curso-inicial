@@ -1,0 +1,1 @@
+Las claves y los textos van entre comillas simples o sin comillas: JSON solo admite comillas dobles.

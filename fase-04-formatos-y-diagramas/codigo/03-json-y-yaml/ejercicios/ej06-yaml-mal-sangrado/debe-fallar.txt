@@ -1,0 +1,1 @@
+La sangría está mal en las líneas 6 y 9: federada de Javier va un espacio más adentro y la lista de material no está alineada.

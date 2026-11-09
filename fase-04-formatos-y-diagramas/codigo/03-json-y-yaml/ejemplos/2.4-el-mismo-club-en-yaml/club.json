@@ -1,0 +1,27 @@
+{
+  "club": "Club de Montaña Cumbres",
+  "ciudad": "Huesca",
+  "fundado": 1987,
+  "web": "https://cumbres.example.com",
+  "cuota_anual": 45.5,
+  "admite_menores": true,
+  "socios": [
+    {
+      "nombre": "Lucía Martín",
+      "carnet": "C-0012",
+      "federada": true,
+      "actividades": ["senderismo", "escalada"]
+    },
+    {
+      "nombre": "Javier Ruiz",
+      "carnet": "C-0047",
+      "federada": false,
+      "actividades": []
+    }
+  ],
+  "sede": {
+    "calle": "Calle Mayor, 12",
+    "codigo_postal": "22001",
+    "telefono": null
+  }
+}

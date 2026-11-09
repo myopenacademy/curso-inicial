@@ -1,0 +1,1 @@
+Tiene cuatro errores: comillas simples en una clave, coma decimal, True con mayúscula y una coma final.

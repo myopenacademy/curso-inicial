@@ -1,0 +1,1 @@
+Lleva un comentario con //, y JSON no admite comentarios.

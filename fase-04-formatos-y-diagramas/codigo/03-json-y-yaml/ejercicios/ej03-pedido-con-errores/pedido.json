@@ -1,0 +1,11 @@
+{
+  "pedido": "P-2041",
+  'cliente': "Marta Sanz",
+  "fecha": "2026-11-09",
+  "lineas": [
+    {"producto": "Pan de centeno", "unidades": 2, "precio": 2,40},
+    {"producto": "Ensaimada", "unidades": 1, "precio": 3.50}
+  ],
+  "pagado": True,
+  "notas": null,
+}

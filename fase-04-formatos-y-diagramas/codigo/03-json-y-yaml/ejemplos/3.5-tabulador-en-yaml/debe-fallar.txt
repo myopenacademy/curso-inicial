@@ -1,0 +1,1 @@
+La sangría de las líneas 3 y 4 es un tabulador, y YAML solo admite espacios.

@@ -539,8 +539,36 @@
           "id": "inicial.json-y-yaml",
           "fichero": "fase-04-formatos-y-diagramas/03-json-y-yaml.md",
           "titulo": "JSON y YAML",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.json-y-yaml.que-tipo-tiene-cada-valor",
+              "titulo": "Qué tipo tiene cada valor"
+            },
+            {
+              "id": "inicial.json-y-yaml.la-ficha-de-un-libro",
+              "titulo": "La ficha de un libro"
+            },
+            {
+              "id": "inicial.json-y-yaml.arregla-el-pedido-de-la-panaderia",
+              "titulo": "Arregla el pedido de la panadería"
+            },
+            {
+              "id": "inicial.json-y-yaml.de-json-a-yaml",
+              "titulo": "De JSON a YAML"
+            },
+            {
+              "id": "inicial.json-y-yaml.las-trampas-de-un-viaje-a-noruega",
+              "titulo": "Las trampas de un viaje a Noruega"
+            },
+            {
+              "id": "inicial.json-y-yaml.un-yaml-mal-sangrado",
+              "titulo": "Un YAML mal sangrado"
+            },
+            {
+              "id": "inicial.json-y-yaml.las-reservas-de-una-casa-rural",
+              "titulo": "Las reservas de una casa rural"
+            }
+          ]
         },
         {
           "id": "inicial.xml-csv-y-otros",

@@ -1,0 +1,5 @@
+wc -l club.json club-compacto.json
+wc -c club.json club-compacto.json
+head -n 3 club.json
+grep carnet club.json
+grep -c carnet club-compacto.json

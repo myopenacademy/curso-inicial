@@ -1,0 +1,18 @@
+ruta: Circular de Linás de Broto
+dificultad: media
+distancia_km: 12.5
+desnivel_m: 850
+circular: true
+puntos:
+  - nombre: Linás de Broto
+    altitud_m: 1250
+  - nombre: Collado de Otal
+    altitud_m: 2010
+material:
+  - botas
+  - agua
+  - chubasquero
+guia:
+  nombre: Lucía Martín
+  telefono: "600123456"
+observaciones: null

@@ -1,0 +1,1 @@
+La línea 4 tiene un espacio menos de sangría que la 3, aunque las dos son claves de sede.

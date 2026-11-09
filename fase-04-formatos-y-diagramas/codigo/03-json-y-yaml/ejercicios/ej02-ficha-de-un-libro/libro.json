@@ -1,0 +1,14 @@
+{
+  "titulo": "La sombra del viento",
+  "autor": "Carlos Ruiz Zafón",
+  "anio": 2001,
+  "isbn": "978-84-08-04363-7",
+  "paginas": 576,
+  "precio": 10.95,
+  "disponible": false,
+  "temas": ["novela", "misterio", "Barcelona"],
+  "prestamo": {
+    "socio": "Andrés Gil",
+    "devolver_antes_de": "2026-11-23"
+  }
+}
