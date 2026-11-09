@@ -129,7 +129,7 @@ Unos **19 se adaptan** y unos **12 son nuevos**. Qué lleva cada módulo nuevo o
 2. ~~Revisión del autor del plan entero antes de escribir nada.~~ Aprobado el 8 de noviembre de 2026, con los ajustes de glosario, ficheros obligatorios y retos (apartados 8 a 10).
 3. ~~Fase 1 y **parar** para que el autor revise estilo, profundidad y formato.~~ Aprobada el 8 de noviembre de 2026, tal como está.
 4. Prueba de importación de la fase 1 en una copia de la academia (desde su propio proyecto).
-5. El resto, fase a fase, con las reglas de `../CLAUDE.md`.
+5. El resto, fase a fase, con las reglas de `../CLAUDE.md` y el método del apartado 11.
 6. Etiquetar la versión 1.0.0 y publicarlo con la academia (pack base 1.0).
 
 ## 6. Normas sobre el uso de la IA
@@ -189,3 +189,62 @@ Este curso tiene el **`glosario.md` común** que enlazan todos los cursos (`../k
 | `glosario.md` | Con el primer módulo, y crece con cada uno (apartado 9) |
 | `99-chuleta-global.md` | Con el primer módulo, y crece a medida que se escriben (lo generará el kit) |
 | `LICENSE`, `CONTRIBUTING.md`, `CHANGELOG.md` | Antes de publicar (paso 6 del apartado 5) |
+
+## 11. Cómo se escribe una fase
+
+Escrito el 9 de noviembre de 2026, al empezar la fase 4, a propuesta de la sesión de la raíz: el encargo de las fases 1 a 3 no se había guardado y cada fase lo habría reconstruido algo distinto. **Las fases 4 a 8 usan este apartado tal cual**; lo propio de cada fase (temario de cada módulo, qué ya se explicó antes, retos, peticiones al kit) va en el «Siguiente paso» de `ESTADO.md` y se añade al encargo. Si el método cambia, se cambia aquí, con la aprobación del autor.
+
+El orden: (1) un **autor por módulo**, en paralelo; (2) los **retos**, cuando los módulos están escritos; (3) la **revisión de conjunto** por un solo editor; (4) las **comprobaciones de cierre** y un commit por módulo; (5) la **segunda opinión** de la sesión de la raíz y sus correcciones, con un editor nuevo; (6) parar para el autor.
+
+### 11.1. Encargo a los autores
+
+Cada autor recibe este texto, más el nombre de su módulo, su tiempo, su dosis y lo propio de la fase.
+
+> **Lee antes de escribir:** los tres `CLAUDE.md` (raíz, `Cursos/` y el del curso); de `PLAN-CURSO.md`, los apartados 2, 4, 7, 9 y 11; de `ESTADO.md`, «Convenciones de verificación»; `../kit-cursos/FORMATO.md` entero; de `../kit-cursos/herramientas/README.md`, `verificar_codigo.py` y `formato_academia.py`; dos módulos aprobados como modelo de estilo y profundidad (`fase-03-herramientas/02-terminal-sacarle-partido.md` y `03-editor-de-codigo.md`); y el `glosario.md`, para enlazar lo que ya está definido.
+>
+> **Qué escribes y qué no tocas.** Solo tu módulo (`fase-NN-…/NN-nombre.md`) y su carpeta `codigo/NN-nombre/`; las pruebas sueltas, en `.verificacion/fase-NN/NN-nombre/` (fuera de Git). No tocas otros módulos, `curso.json`, `glosario.md`, `00-indice.md`, `99-chuleta-global.md`, `ESTADO.md` ni `PLAN-CURSO.md`, ni haces commits: trabajáis varios a la vez y eso lo integra la sesión del curso.
+>
+> **Plantilla** (`FORMATO.md` 4 y 5): título `# NN.MM Título`; cabecera con `Versiones` (si hay herramientas o normas con versión), `Conviene saber antes` (solo enlaces, con ancla si precisa), `Tiempo estimado` y `Nivel` (`Básico · Núcleo` o `Básico · Ampliación`, según el apartado 4); `## Qué aprenderás`; `## 1. Teoría` con subapartados `### 1.N.`; `## 2. Ejemplos de código`; `## 3. Errores típicos` (cada uno con «Qué pasa», «Por qué ocurre» y «Cómo se arregla»); `## 4. Buenas prácticas`; `## 5. Ejercicios prácticos resueltos`, con `### 🟢 Básico`, `### 🟡 Intermedio`, `### 🔴 Avanzado` y `### 🏆 Caso real`, ejercicios `#### Ejercicio N · Título` numerados seguidos en todo el módulo, pistas plegadas (`<summary>Pista 1</summary>`…) **antes** de `<summary>Ver solución</summary>`, y soluciones completas, comentadas y explicadas, con «Errores frecuentes al resolverlo» cuando aporte; `## 6. Chuleta`; `## 7. Preguntas de repaso`, cada una con `<summary>Ver respuesta</summary>` y un enlace al apartado que la explica.
+>
+> **Para quién y cuánto.** Principiante absoluto que ha hecho las fases anteriores. De menor a mayor complejidad, con casos reales (nombres de personas, tiendas, clubes…). Dosis: unas **600 líneas por hora** del tiempo del módulo; criterio, «¿le sirve al alumno antes de empezar su curso?»: la idea sí, el detalle no siempre. Unos 6 u 8 ejercicios, repartidos en los cuatro niveles.
+>
+> **Estilo.** Español de España, tuteando. «Fichero», no «archivo» (salvo lo que sale en pantalla). Teclas con `<kbd>`. Títulos (módulo, apartados, ejercicios) en texto plano, sin `` ` ``, `**` ni enlaces. Cada término se define **una sola vez** en el curso: si ya lo explicó un módulo anterior o está en el glosario, se enlaza, no se redefine. Notas con `> **📌 Nota:**` y avisos con `> **⚠️ …**`, como los módulos modelo. Mermaid sin negrita ni cursiva en las etiquetas y solo con las entidades `&quot;`, `&lt;`, `&gt;` y `&amp;`.
+>
+> **Exactitud.** Versiones, normas y datos que caducan, **comprobados en la fuente oficial** y fechados en el texto («a 9 de noviembre de 2026»); apunta las fuentes en `.verificacion/fase-NN/NN-nombre/fuentes.txt`. Nada inventado: ni opciones, ni mensajes de error, ni salidas. Lo que no se pueda comprobar (macOS, Windows) se dice en general, sin afirmar detalles.
+>
+> **Código** (`FORMATO.md` 7 y 7.1, y «Convenciones de verificación» de `ESTADO.md`). Todo programa, sesión o fichero de datos completo va en su carpeta de `codigo/`, con «📁 Código» debajo y el bloque idéntico al fichero; las salidas, las de la terminal del kit (Docker: Ubuntu en español, usuario `alumno`, coreutils de GNU). Solo órdenes que existan en Git Bash, Linux y macOS, y scripts compatibles con bash 3.2; si algo cambia en macOS, se avisa. Lo que no viaja con Git: nada de carpetas vacías ni de permisos guardados (se crean con `mkdir` o `chmod` en la sesión); todo con LF; un error se provoca dentro de la sesión, no con un fichero roto que no viajaría (salvo los ficheros de datos rotos a propósito, con su `debe-fallar.txt`, cada uno en su carpeta). Las sesiones que el alumno hace una detrás de otra, encadenadas (`sesion-1.txt`, `sesion-2.txt`…); cada repositorio de Git, en una carpeta nueva creada dentro de la sesión (`mkdir … && cd … && git init`), porque los `sesion*.txt` van en el ZIP del alumno.
+>
+> **Antes de entregar,** desde la raíz del curso: `python3 ../kit-cursos/herramientas/nucleo/verificar_codigo.py fase-NN-…/NN-nombre.md` (con Docker) sin errores ni avisos; `python3 ../kit-cursos/herramientas/formato_academia.py` sin errores en tu módulo (los avisos de enlaces a módulos aún no escritos son normales); y `python3 ../kit-cursos/herramientas/nucleo/comprobar_mermaid.py` si tienes diagramas.
+>
+> **Entrega** (en tu respuesta final, breve): líneas y ejercicios (con sus títulos); términos propuestos para el glosario en `.verificacion/fase-NN/NN-nombre/glosario.tsv` (término, definición de una línea, ancla del apartado), solo los que se usan en varios cursos o se consultarán después; qué has comprobado y en qué fuente; lo que no has podido comprobar; dudas para el autor; y lo que necesites del kit.
+
+### 11.2. Los retos
+
+Cuando los módulos están escritos, un autor más escribe `retos.md` y `codigo/retos/` (`FORMATO.md` 6): dos o tres retos que mezclan varios módulos, de menor a mayor, el último el del apartado 8; cada uno con enunciado, pistas plegadas y solución en `<details>` verificada como el resto del código. Mismo encargo que los autores (11.1), leyendo además los módulos de la fase. Si un reto necesita una comprobación nueva del kit, se le pide en cuanto se sepa cuál (bloque 📣).
+
+### 11.3. Encargo al editor de la revisión de conjunto
+
+Un solo editor, con el contexto limpio, recibe:
+
+> Lee lo mismo que los autores (11.1) y después **todos los módulos y los retos de la fase**, en orden, y las fases anteriores por encima. Revisa la fase como un todo y corrige directamente en los ficheros:
+>
+> - **Tono y estilo** iguales a los de las fases aprobadas; reglas de estilo de 11.1.
+> - **Cada término definido una vez**: en el primer módulo que lo usa; los demás enlazan. Sin solapes entre módulos ni con fases anteriores; notación y ejemplos unificados (los mismos nombres de personas o ficheros no se contradicen).
+> - **Dosis**: que cada módulo se ajuste a su tiempo (unas 600 líneas por hora); recorta lo que no le sirve al alumno antes de su curso. Si sobran ejercicios, quita los más flojos y dilo.
+> - **Exactitud**: vuelve a comprobar los datos que caducan, las afirmaciones dudosas y lo que se dice de macOS y Windows; quita lo que no se pueda comprobar.
+> - **Formato** (`FORMATO.md`) y enlaces entre módulos y al glosario.
+>
+> Al terminar, `verificar_codigo.py` de la fase con Docker, `formato_academia.py` y `comprobar_mermaid.py` sin errores. No toques `curso.json`, `glosario.md` ni los ficheros generados, ni hagas commits. Entrega: la lista de cambios por módulo (con lo quitado y por qué), las líneas finales de cada módulo, los términos del glosario revisados y lo que deba decidir el autor.
+
+### 11.4. Comprobaciones de cierre
+
+Las hace la sesión del curso, en este orden:
+
+1. **Glosario:** los términos revisados, en `glosario.md` con el ayudante de un solo uso (orden alfabético español, rechaza repetidos), con el criterio del apartado 9.
+2. **`curso.json`:** `python3 ../kit-cursos/herramientas/nucleo/declarar_ejercicios.py` para cada módulo (y disponible); después `generar_indice.py` y `generar_chuleta_global.py`.
+3. **Comprobaciones:** `formato_academia.py` con 0 errores; `verificar_codigo.py` de la fase con Docker, 0 errores y 0 avisos; `comprobar_mermaid.py` sin fallos.
+4. **Un commit por módulo** (el módulo, su `codigo/`, sus términos del glosario y lo generado) y otro para los retos; `ESTADO.md` al día con cada uno.
+5. **Documentación:** `ESTADO.md`, tiempos en el apartado 4, `README.md`, `ROADMAP.md` y módulos anteriores que deban enlazar a los nuevos.
+6. **Verificación del último commit, como la recibe el alumno:** `python3 ../kit-cursos/herramientas/nucleo/verificar_codigo.py --commit fase-NN-…`, más `formato_academia.py` y `comprobar_mermaid.py`; el resultado, en `ESTADO.md`.
+7. **Segunda opinión** de la sesión de la raíz (el autor la pide); sus correcciones las aplica un editor nuevo con la lista completa; se repite el paso 6.
+8. **Parar** para que el autor revise la fase.
