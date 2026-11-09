@@ -334,7 +334,7 @@ Tres que merecen una explicación:
 Tres cosas del editor que ahora solo necesitas saber que existen:
 
 - **Formato automático.** VS Code puede **ordenar el aspecto** de un fichero (sangrías, espacios) con la orden **Format Document** (**Dar formato al documento**) de la paleta: <kbd>Mayús</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> en Windows, <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>I</kbd> en Linux y <kbd>Mayús</kbd>+<kbd>Opción</kbd>+<kbd>F</kbd> en macOS. Lo usarás con los ficheros JSON de la fase 4.
-- **Codificación y saltos de línea en la barra de estado.** A la derecha de la barra de estado verás algo como `UTF-8` y `LF` (o `CRLF`). Lo primero es la [codificación de caracteres](../fase-01-que-es-programar/01-que-es-programar.md#35-las-tildes-y-las-eñes-salen-mal-en-la-consola) del fichero; lo segundo, cómo marca el final de cada línea (Windows lo hace de una forma y Linux y macOS de otra). Haciendo clic en cada uno se puede cambiar. Lo entenderás en el módulo «Texto, binario y codificación» (fase 4); de momento, **no lo cambies**.
+- **Codificación y saltos de línea en la barra de estado.** A la derecha de la barra de estado verás algo como `UTF-8` y `LF` (o `CRLF`). Lo primero es la [codificación de caracteres](../fase-01-que-es-programar/01-que-es-programar.md#35-las-tildes-y-las-eñes-salen-mal-en-la-consola) del fichero; lo segundo, cómo marca el final de cada línea (Windows lo hace de una forma y Linux y macOS de otra). Haciendo clic en cada uno se puede cambiar. La codificación, de momento, **no la cambies**: lo entenderás en el módulo «Texto, binario y codificación» (fase 4). Los saltos de línea, en cambio, importan ya: **los scripts de bash tienen que estar en `LF`**; con `CRLF`, que es lo que pone VS Code en Windows si no le dices otra cosa, bash falla con mensajes raros ([03.04, error típico 3.2](04-errores-y-depuracion.md#32-un-script-con-los-saltos-de-línea-de-windows)). Para que los ficheros nuevos se creen con `LF`, está el ajuste del [ejemplo 2.1](#21-preparar-vs-code-para-el-curso).
 - **La IA integrada.** VS Code trae un chat con un **asistente de IA** (en la barra lateral secundaria) que puede explicar, sugerir y escribir código; cómo usarlo bien, y sus normas en esta academia, lo verás en el módulo «Programar con asistentes de IA» (fase 7).
 
 ## 2. Ejemplos de código
@@ -357,7 +357,8 @@ En este módulo los ejemplos no son programas, sino **cosas que haces en el edit
 4. **Idioma (opcional).** Si quieres los menús en español, instala el paquete de idioma ([apartado 1.11](#111-extensiones-útiles-para-este-curso)) y reinicia VS Code cuando te lo pida.
 5. **Autoguardado.** Activa **File > Auto Save** (**Archivo > Autoguardado**).
 6. **La terminal (en Windows).** Elige Git Bash como perfil predeterminado ([apartado 1.12](#112-la-terminal-integrada)).
-7. **Comprueba.** Abre la terminal integrada con **Terminal > New Terminal** y escribe `pwd`. Tiene que salir la ruta de `practicas-curso`: la terminal se ha abierto en la carpeta del editor.
+7. **Saltos de línea LF.** Abre la configuración con **File > Preferences > Settings** (**Archivo > Preferencias > Configuración**), o con <kbd>Ctrl</kbd>+<kbd>,</kbd> (en macOS, <kbd>Cmd</kbd>+<kbd>,</kbd>), escribe `files.eol` en la caja de búsqueda y elige `\n` (LF). Así los ficheros nuevos se crean con los saltos de línea que entiende bash. Es imprescindible en Windows, donde si no se crean con `CRLF` ([apartado 1.15](#115-lo-que-verás-más-adelante)).
+8. **Comprueba.** Abre la terminal integrada con **Terminal > New Terminal** y escribe `pwd`. Tiene que salir la ruta de `practicas-curso`: la terminal se ha abierto en la carpeta del editor.
 
 **En qué fijarte:** en el último paso, el indicador debe terminar en `$` (en macOS, en `%`) y `pwd` debe acabar en `practicas-curso`. Si en Windows ves `PS` al principio del indicador, la terminal sigue siendo PowerShell: vuelve al paso 6.
 
@@ -883,6 +884,7 @@ En el 2, ¿qué tiene de especial macOS con la orden `code`? Y en el 4, ¿qué s
 | **Extensión de VS Code** | Complemento que añade funciones al editor; tiene sus mismos permisos |
 | **Terminal integrada** | Terminal dentro del editor, que se abre en la carpeta abierta |
 | **Multicursor** | Varios cursores a la vez: lo que escribes aparece en todos |
+| **LF / CRLF** | Los saltos de línea de Linux y macOS / de Windows; se ven y se cambian en la barra de estado. Los scripts de bash, siempre con `LF` (ajuste `files.eol`: `\n`) |
 
 ### Atajos esenciales (teclado estadounidense; mira los tuyos en el editor)
 
