@@ -80,7 +80,7 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | | `05-seguridad-basica.md` | Seguridad básica | 1,5 | N |
 | `fase-08-proyecto-final` → `inicial.fase.proyecto-final` | `01-primer-repositorio.md` | Tu primer repositorio | 6 | N |
 
-Total: unas **70,5 horas**, más los retos (los de la fase 1, 3 horas; los de la fase 2, 1,5). Tiempos de la fase 2 aprobados por el autor el 9 de noviembre de 2026 (pasa de 5,5 a 7 horas; el 02.03 incluye instalar de verdad). **La fase 1 está aprobada por el autor (8 de noviembre de 2026) y sus tiempos son definitivos.** La fase 1 quedó en 10,5 horas el 8 de noviembre de 2026, tras **ajustar la dosis** a un principiante: 01.03 y 01.04 se quedan con las ideas y dejan el detalle a cada curso. **Criterio para las fases siguientes:** «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Vigilar la extensión: el curso estaba ya en el límite.
+Total: unas **70,5 horas**, más los retos (los de la fase 1, 3 horas; los de la fase 2, 1,5; los de la fase 3, 2). Tiempos de la fase 2 aprobados por el autor el 9 de noviembre de 2026 (pasa de 5,5 a 7 horas; el 02.03 incluye instalar de verdad). **La fase 1 está aprobada por el autor (8 de noviembre de 2026) y sus tiempos son definitivos.** La fase 1 quedó en 10,5 horas el 8 de noviembre de 2026, tras **ajustar la dosis** a un principiante: 01.03 y 01.04 se quedan con las ideas y dejan el detalle a cada curso. **Criterio para las fases siguientes:** «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Vigilar la extensión: el curso estaba ya en el límite.
 
 ### 4.1. Origen de cada módulo
 
