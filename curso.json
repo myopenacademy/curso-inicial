@@ -512,8 +512,28 @@
           "id": "inicial.markdown",
           "fichero": "fase-04-formatos-y-diagramas/02-markdown.md",
           "titulo": "Markdown",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.markdown.los-apuntes-de-una-excursion",
+              "titulo": "Los apuntes de una excursión"
+            },
+            {
+              "id": "inicial.markdown.las-actividades-del-polideportivo",
+              "titulo": "Las actividades del polideportivo"
+            },
+            {
+              "id": "inicial.markdown.la-documentacion-de-la-ludoteca",
+              "titulo": "La documentación de la ludoteca"
+            },
+            {
+              "id": "inicial.markdown.arregla-el-readme-del-huerto",
+              "titulo": "Arregla el README del huerto"
+            },
+            {
+              "id": "inicial.markdown.el-readme-de-las-reservas-de-padel",
+              "titulo": "El README de las reservas de pádel"
+            }
+          ]
         },
         {
           "id": "inicial.json-y-yaml",

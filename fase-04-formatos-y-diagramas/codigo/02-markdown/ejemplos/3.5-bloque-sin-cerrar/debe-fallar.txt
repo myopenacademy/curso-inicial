@@ -1,0 +1,1 @@
+El bloque de código que empieza con ```bash no se cierra: todo lo que viene detrás se ve como código.

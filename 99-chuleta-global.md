@@ -23,6 +23,7 @@
   - [03.04 Errores y depuración](#0304-errores-y-depuración)
 - **Fase 04 — Formatos y diagramas**
   - [04.01 Texto, binario y codificación](#0401-texto-binario-y-codificación)
+  - [04.02 Markdown](#0402-markdown)
 
 ---
 
@@ -946,6 +947,63 @@ Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
 | **Save with Encoding** (**Guardar con codificación**) | Lo guarda en otra codificación. Sí lo cambia |
 
 **Regla de oro:** UTF-8 sin BOM y LF.
+
+---
+
+### 04.02 Markdown
+
+📖 Módulo completo: [fase-04-formatos-y-diagramas/02-markdown.md](fase-04-formatos-y-diagramas/02-markdown.md)
+
+#### Lo básico
+
+| Para | Escribes |
+|---|---|
+| Título de nivel 1, 2, 3… | `# Título`, `## Sección`, `### Apartado` (con espacio) |
+| Párrafo nuevo | Una línea en blanco |
+| Salto de línea dentro del párrafo | `\` al final de la línea |
+| Cursiva | `*cursiva*` |
+| Negrita | `**negrita**` |
+| Tachado (GFM) | `~~tachado~~` |
+| Lista sin orden | `- elemento` |
+| Lista numerada | `1. paso` |
+| Sublista | Sangrada hasta el texto de arriba: 2 espacios bajo `- `, 3 bajo `1. ` |
+| Lista de tareas (GFM) | `- [ ] pendiente` y `- [x] hecha` |
+| Cita | `> texto` |
+| Línea horizontal | `---`, con una línea en blanco encima |
+
+#### Enlaces, imágenes y código
+
+| Para | Escribes |
+|---|---|
+| Enlace | `[texto que dice adónde](https://www.ejemplo.com)` |
+| Enlace a otro fichero | `[texto](fase-04-formatos-y-diagramas/docs/guia.md)` o `[texto](README.md)` |
+| Enlace a un título | `[texto](fase-04-formatos-y-diagramas/02-markdown.md#título-en-minúsculas)` o `[texto](fase-04-formatos-y-diagramas/guia.md#ancla)` |
+| Imagen | `![lo que aporta la imagen](fase-04-formatos-y-diagramas/img/foto.png)` |
+| Código en línea | `` `pwd` `` |
+| Escapar una marca | `\*`, `\#`, `\_` (y la barra vertical de una tabla, con una barra invertida delante) |
+
+#### Cómo genera GitHub un ancla
+
+1. Quita el formato.
+2. Todo a minúsculas.
+3. Quita la puntuación, menos `-` y `_` (las tildes se quedan).
+4. Cada espacio, un guion.
+5. Repetidos: `-1`, `-2`…
+
+`## 1.2. ¿Cómo me apunto?` → `#12-cómo-me-apunto`
+
+#### En VS Code
+
+| Para | Windows y Linux | macOS |
+|---|---|---|
+| Vista previa | <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd> | <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd> |
+| Vista previa al lado | <kbd>Ctrl</kbd>+<kbd>K</kbd> y <kbd>V</kbd> | <kbd>Cmd</kbd>+<kbd>K</kbd> y <kbd>V</kbd> |
+| Saltar a un título | <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>O</kbd> | <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>O</kbd> |
+| Avisos de enlaces rotos | Ajuste `markdown.validate.enabled` | Igual |
+
+#### Un README tiene
+
+Título · qué es (una frase) · captura · qué hace · requisitos · instalación · uso · estado · cómo colaborar · licencia.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180">
+  <rect x="0" y="0" width="320" height="180" fill="#ffffff"/>
+  <rect x="10" y="10" width="300" height="160" fill="none" stroke="#333333" stroke-width="3"/>
+  <rect x="200" y="20" width="100" height="70" fill="#cfe8ff" stroke="#333333"/>
+  <text x="250" y="60" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#000000">Sala 2</text>
+  <rect x="200" y="110" width="100" height="50" fill="#eeeeee" stroke="#333333"/>
+  <text x="250" y="140" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">Ascensores</text>
+  <rect x="130" y="160" width="60" height="10" fill="#ffd27f" stroke="#333333"/>
+  <text x="160" y="150" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#000000">Entrada</text>
+</svg>

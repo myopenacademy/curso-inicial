@@ -1,0 +1,1 @@
+Está roto a propósito: el ancla #Cómo-apuntarse no existe (va en minúsculas), la imagen img/Logo.svg se llama img/logo.svg, la fila del martes tiene una celda de más y el último bloque de código no se cierra.

@@ -19,6 +19,10 @@ Secuencia ordenada, finita y precisa de pasos que resuelve un problema; no depen
 
 Pieza que guarda los datos de forma permanente (SSD o disco duro); se conserva al apagar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#16-el-almacenamiento-ssd-y-disco-duro).
 
+### Ancla
+
+Identificador de un título que se genera a partir de su texto y permite enlazar a esa sección (#cómo-hacerse-socio). Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#19-anclas-enlazar-a-un-título).
+
 ### Argumento
 
 Lo que se escribe detrás del nombre de una orden (o de un script) para decirle sobre qué trabajar: un fichero, una carpeta, un texto. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#12-cómo-se-escribe-una-orden).
@@ -179,6 +183,10 @@ Error por no respetar las reglas del lenguaje; lo detecta el compilador o el int
 
 Error por el que el programa funciona sin quejarse, pero da un resultado equivocado; solo lo descubren las pruebas. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#18-tres-tipos-de-errores).
 
+### Escapar
+
+Escribir un carácter especial de otra forma para que no se tome por una marca del formato: \* en Markdown, \" en JSON, &amp; en XML, "" en CSV. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#114-escapar-caracteres).
+
 ### Estado
 
 El valor que tienen las variables de un programa en cada momento. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#14-imperativo-y-estructurado).
@@ -227,6 +235,10 @@ Programa que instala, actualiza y desinstala otros programas con una orden: wing
 
 Terminal con bash que trae Git for Windows; la del curso en Windows. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
 
+### GitHub Flavored Markdown (GFM)
+
+El Markdown de GitHub: CommonMark (la especificación de base) más tablas, listas de tareas, tachado, autoenlaces y un filtro de HTML peligroso. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#12-un-estándar-y-varios-sabores-commonmark-y-gfm).
+
 ## H
 
 ### Hilo
@@ -269,6 +281,10 @@ Programa que lee el código fuente y lo ejecuta instrucción a instrucción, cad
 
 Codificación de un byte para Europa occidental (ISO-8859-1), con la ñ y las tildes pero sin el €. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#15-una-tabla-por-idioma-latin-1-y-windows-1252).
 
+### Lenguaje de marcas
+
+Texto con marcas que dicen qué es cada parte (un título, una lista, un enlace) para que un programa decida cómo mostrarlo; HTML, XML y Markdown lo son. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#11-qué-es-markdown).
+
 ### Lenguaje de programación
 
 Idioma pensado para que las personas escriban instrucciones que después se traducen a código máquina. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#15-lenguajes-de-programación).
@@ -282,6 +298,10 @@ Dato que guarda varios valores en orden; cada uno se coge por su posición, empe
 ### Máquina virtual
 
 Programa que ejecuta un código intermedio ya compilado, traduciéndolo sobre la marcha (así funcionan Java y C#). Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#17-lenguajes-compilados-e-interpretados).
+
+### Markdown
+
+Lenguaje de marcas ligero: texto plano con unos pocos símbolos (#, *, -) que un programa convierte en títulos, listas o enlaces; ficheros .md. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#11-qué-es-markdown).
 
 ### Memoria RAM
 
@@ -419,6 +439,10 @@ Marca en una línea de un programa en la que el depurador lo detiene, justo ante
 
 La carpeta de la que cuelga todo el árbol: / en Linux y macOS, una por unidad (C:\) en Windows. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#14-dónde-empieza-el-árbol-la-raíz).
 
+### README
+
+Fichero (normalmente README.md) que presenta un proyecto: qué es, cómo se usa y cómo se instala; GitHub lo muestra en la portada del repositorio. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#116-el-fichero-readme).
+
 ### Redirigir
 
 Cambiar adónde va (o de dónde viene) un canal de una orden: la salida a un fichero con >, los errores con 2>, la entrada con <. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#11-los-tres-canales-de-una-orden).
@@ -510,6 +534,10 @@ Ventana en la que se escriben órdenes y el ordenador contesta con texto. Lo exp
 ### Terminal integrada
 
 Terminal dentro del editor de código, que se abre en la carpeta abierta. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#112-la-terminal-integrada).
+
+### Texto alternativo
+
+Descripción de una imagen con palabras, para quien no puede verla o cuando no carga. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#110-imágenes-y-texto-alternativo).
 
 ### Texto plano
 

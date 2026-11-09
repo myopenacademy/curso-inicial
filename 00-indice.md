@@ -1,7 +1,7 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 12 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** 13 de 31 módulos (los demás aparecen como «Pendiente»)
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
@@ -14,13 +14,13 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 01 — Qué es programar](#fase-01--qué-es-programar) · 4 módulos · ~10,5 h
 - [Fase 02 — Tu ordenador por dentro](#fase-02--tu-ordenador-por-dentro) · 3 módulos · ~7 h
 - [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos · ~9,5 h
-- [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos · ~1,5 h
+- [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos · ~4 h
 - [Fase 05 — Git y GitHub](#fase-05--git-y-github) · 3 módulos
 - [Fase 06 — Internet y aplicaciones](#fase-06--internet-y-aplicaciones) · 6 módulos
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
-**Tiempo de los módulos disponibles:** ~28,5 horas.
+**Tiempo de los módulos disponibles:** ~31 horas.
 
 ---
 
@@ -67,12 +67,12 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Fase 04 — Formatos y diagramas
 
-**Carpeta:** [`fase-04-formatos-y-diagramas/`](fase-04-formatos-y-diagramas/) · **Tiempo:** ~1,5 h
+**Carpeta:** [`fase-04-formatos-y-diagramas/`](fase-04-formatos-y-diagramas/) · **Tiempo:** ~4 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
 | 04.01 | [Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md) | Básico · Ampliación | 1,5 h | ✅ Disponible |
-| 04.02 | Markdown | — | — | Pendiente |
+| 04.02 | [Markdown](fase-04-formatos-y-diagramas/02-markdown.md) | Básico · Núcleo | 2,5 h | ✅ Disponible |
 | 04.03 | JSON y YAML | — | — | Pendiente |
 | 04.04 | XML, CSV y otros | — | — | Pendiente |
 | 04.05 | Diagramas y Mermaid | — | — | Pendiente |
