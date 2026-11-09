@@ -9,3 +9,10 @@ bash copia.sh fotos
 echo $?
 bash copia.sh
 echo $?
+bash copia.sh ../documentos
+echo $?
+bash copia.sh .
+bash copia.sh /
+chmod -w documentos/notas.txt
+bash copia.sh documentos
+bash copia.sh documentos

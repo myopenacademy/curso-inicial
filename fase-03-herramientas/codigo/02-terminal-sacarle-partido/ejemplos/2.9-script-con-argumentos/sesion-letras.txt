@@ -1,0 +1,2 @@
+bash stock.sh Folios ocho 10
+echo $?

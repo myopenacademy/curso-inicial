@@ -231,6 +231,7 @@ Este cambio **dura lo que dura la terminal**. Al cerrarla, se pierde, y la próx
 |---|---|---|
 | Linux (bash) | `~/.bashrc` | Ya existe; añade tu línea al final |
 | macOS (Terminal, con zsh) | `~/.zshrc` | Puede que no exista: si no está, se crea. La línea se escribe igual en zsh |
+| macOS, si tu terminal sigue con bash | `~/.bash_profile` | Las cuentas nuevas usan zsh desde macOS 10.15 (según el soporte de Apple); una cuenta más antigua puede seguir con bash (su indicador termina en `$`, no en `%`). Puede que no exista: si no está, se crea |
 | Windows (Git Bash) | `~/.bashrc` | Puede que no exista: si no está, se crea. Ver la nota de abajo |
 
 La forma más rápida de añadir la línea al final del fichero es con lo que ya sabes, `>>` (en macOS, cambia `~/.bashrc` por `~/.zshrc`):
@@ -242,6 +243,8 @@ echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
 Fíjate en las **comillas simples** de fuera: así, `$HOME` y `$PATH` se escriben en el fichero **tal cual**, con su `$`, y se calculan cada vez que se abre la terminal. Y en el `>>`: con un solo `>` **borrarías** toda tu configuración. (También puedes abrir el fichero con tu [editor de código](03-editor-de-codigo.md#14-abre-carpetas-no-ficheros-sueltos), el módulo siguiente, y escribir la línea al final.)
 
 Después, **cierra la terminal y abre otra**: el fichero solo se lee al abrirse. Comprueba con `echo $PATH` que tu carpeta está al principio.
+
+> **📌 Nota para Ubuntu:** si la carpeta `~/bin` ya existe cuando inicias sesión en el ordenador, Ubuntu la pone en el PATH sin que hagas nada: lo hace el fichero `~/.profile` que trae cada cuenta. Pero ese fichero solo se lee al iniciar sesión, así que, si creas `~/bin` después, no estará hasta la próxima vez que entres. Añadir tu línea a `~/.bashrc` funciona siempre; en el peor caso, la carpeta aparece dos veces en el PATH, y no pasa nada.
 
 > **📌 Nota para Git Bash:** Git Bash, al abrirse, no lee `~/.bashrc` directamente, sino `~/.bash_profile`. Pero Git for Windows lo tiene previsto: si encuentra un `~/.bashrc` y no hay `~/.bash_profile` (ni `~/.bash_login` ni `~/.profile`), **crea él mismo un `~/.bash_profile`** que carga tu `~/.bashrc`, y te avisa con un mensaje en rojo que empieza por `WARNING: Found ~/.bashrc but no ~/.bash_profile…` y dice que lo ha creado por ti. Sale solo la primera vez y es normal (comprobado en el código de Git for Windows el 9 de noviembre de 2026). Si ya tenías un `~/.bash_profile`, asegúrate de que carga `~/.bashrc`, o pon tu línea directamente en él.
 
@@ -281,7 +284,7 @@ Así que `-rw-r--r--` es un fichero que su propietario puede leer y cambiar, y l
 
 | Orden | Qué hace |
 |---|---|
-| `chmod +x script.sh` | Da permiso de **ejecución** (a todos los que ya pueden leerlo) |
+| `chmod +x script.sh` | Da permiso de **ejecución** al propietario, al grupo y a los demás (en algunos sistemas, según su configuración, no a todos) |
 | `chmod u+x script.sh` | Da permiso de ejecución solo al propietario (`u`, de *user*) |
 | `chmod -w notas.txt` | Quita el permiso de escritura (para no cambiarlo sin querer) |
 
@@ -315,9 +318,11 @@ prueba
 
 `whoami` («¿quién soy?») te dice tu usuario. `/etc` es una carpeta del sistema (guarda su configuración): no te deja escribir en ella. En tu carpeta personal, en cambio, sí. Eso no es un fallo: es la protección funcionando.
 
-Cuando **de verdad** necesitas hacer algo como administrador (instalar un programa para todo el sistema, cambiar su configuración), se pone **`sudo`** delante de la orden. Ya lo viste en [02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#12-tres-formas-de-instalar) con `sudo apt install git`. `sudo` (de *superuser do*, «hazlo como administrador») te pide **tu** contraseña (al escribirla no se ve nada; es normal) y ejecuta **esa orden, y solo esa**, como `root`. Solo pueden usarlo las cuentas de administrador del ordenador.
+Cuando **de verdad** necesitas hacer algo como administrador (instalar un programa para todo el sistema, cambiar su configuración), se pone **`sudo`** delante de la orden. Ya lo viste en [02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#12-tres-formas-de-instalar) con `sudo apt install git`. `sudo` (de *superuser do*, «hazlo como administrador») te pide **tu** contraseña (al escribirla no se ve nada; es normal) y ejecuta **esa orden, y solo esa**, como `root`. Durante unos minutos no te la vuelve a pedir. Solo pueden usarlo las cuentas de administrador del ordenador.
 
-`sudo` existe en Linux y en macOS. **Git Bash no lo trae**: en Windows, lo que necesita permisos de administrador lo hace un instalador (te pide permiso con una ventana) o un programa abierto con «Ejecutar como administrador».
+> **📌 Nota:** «solo esa orden» quiere decir que una redirección no se beneficia. `sudo echo "prueba" > /etc/prueba.txt` sigue diciendo `bash: /etc/prueba.txt: Permiso denegado`: el `>` lo hace tu terminal, con tu usuario, antes de lanzar la orden; `sudo` solo afecta a `echo`.
+
+`sudo` existe en Linux y en macOS. **Git Bash no lo trae**: en Windows, lo que necesita permisos de administrador lo hace un instalador (te pide permiso con una ventana) o un programa abierto con «Ejecutar como administrador». (Windows 11, desde su versión 24H2, tiene un `sudo` propio que hay que activar en la Configuración; es otro programa, que funciona a su manera, según la documentación de Microsoft consultada el 9 de noviembre de 2026.)
 
 **Cuándo no usar `sudo`** (casi siempre):
 
@@ -343,6 +348,8 @@ Cada proceso tiene un número que lo identifica, el **PID** (del inglés *proces
 | Obligarle a terminar | `kill -9 PID` | El sistema lo mata al momento, sin dejarle hacer nada. **Último recurso** |
 
 <kbd>Ctrl</kbd>+<kbd>C</kbd>, el freno de emergencia que ya conoces de [03.01](01-terminal-lo-basico.md#113-trucos-que-ahorran-tiempo), es lo que más vas a usar: un script que no termina (un [bucle infinito](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#19-repetición), por ejemplo), una orden que tarda demasiado o que lanzaste por error. Pulsas <kbd>Ctrl</kbd>+<kbd>C</kbd> y la terminal vuelve a ser tuya; verás `^C` en la pantalla.
+
+> **⚠️ Cuidado:** no lo confundas con <kbd>Ctrl</kbd>+<kbd>Z</kbd>, que en los editores es «deshacer». En la terminal, <kbd>Ctrl</kbd>+<kbd>Z</kbd> no termina la orden: la **suspende** (la deja parada, pero sigue existiendo) y te devuelve el indicador. Si te pasa, escribe `fg` para traerla de vuelta y párala con <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 `kill` sirve para un proceso que **no** tienes delante: uno que se ha quedado colgado en otra ventana, o uno que lanzaste **en segundo plano**. Una orden seguida de **`&`** (`sleep 300 &`) se queda trabajando en segundo plano y te devuelve el indicador enseguida; bash te dice su número de trabajo entre corchetes (`[1]`) y su PID. Para pararla, `kill` con su PID, o con `%` y su número de trabajo: `kill %1`. Lo verás en el [ejemplo 2.7](#27-parar-un-proceso).
 
@@ -512,10 +519,14 @@ Con un `for` y `$(( ))` se hace el [contador](../fase-01-que-es-programar/02-alg
 ```bash
 total=0
 for fichero in *.txt; do
-    total=$((total + 1))
+    if [ -e "$fichero" ]; then
+        total=$((total + 1))
+    fi
 done
 echo "Hay $total ficheros de texto"
 ```
+
+¿Para qué el `if`? Si no hay ningún `.txt`, bash deja el patrón tal cual ([03.01, apartado 1.14](01-terminal-lo-basico.md#114-comodines-y-comillas)) y el bucle da **una** vuelta con `*.txt`, un fichero que no existe: sin el `[ -e … ]`, diría «Hay 1 ficheros de texto».
 
 Bash tiene también `while` (el `MIENTRAS`), `case` (el `SEGÚN`) y funciones (los subalgoritmos). No los necesitas todavía: con `if` y `for` puedes hacer la mayoría de los scripts del día a día, y si tu curso usa más bash, allí los verás.
 
@@ -686,7 +697,7 @@ $ cut -d ';' -f 3 pedidos.txt | uniq -c
 
 ### 2.4. Quedarse con los errores de un registro
 
-**Situación real:** la tienda online de la papelería escribe un [registro](01-terminal-lo-basico.md#26-ver-un-fichero-de-texto-y-el-registro-de-una-aplicación) (*log*) en el que cada línea lleva su fecha, su hora y su **nivel**: `INFO` (información normal), `WARN` (un aviso) o `ERROR`. Es la forma habitual de los registros de las aplicaciones. Un cliente se queja de que algo falló esa mañana. El registro de un día de verdad tiene miles de líneas; este, para que lo veas entero, tiene diez:
+**Situación real:** la tienda online de la papelería escribe un [registro](01-terminal-lo-basico.md#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail) (*log*) en el que cada línea lleva su fecha, su hora y su **nivel**: `INFO` (información normal), `WARN` (un aviso) o `ERROR`. Es la forma habitual de los registros de las aplicaciones. Un cliente se queja de que algo falló esa mañana. El registro de un día de verdad tiene miles de líneas; este, para que lo veas entero, tiene diez:
 
 ```text
 2026-11-09 08:00:01 INFO Arranca la tienda online
@@ -984,7 +995,21 @@ Uso: bash stock.sh PRODUCTO UNIDADES MINIMO
 - **Cada camino termina con su código**: `exit 1` si hay que reponer; si llega al final sin ningún `exit`, termina con el código del último `echo`, que es 0.
 - **Las comillas cuentan**: con `"Papel A4"` son tres argumentos; sin ellas, cuatro, y el script dice cómo se usa.
 
-> **📌 Nota:** si escribes una letra donde va un número (`bash stock.sh Folios ocho 10`), `-lt` no sabe compararla y bash da un error. Comprobar que un dato es un número de verdad es la [validación de un dato](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#validación-de-un-dato) de la fase 1; en bash se puede hacer, pero no la necesitas todavía.
+**Y si se cuela una letra donde va un número**, el script no se para:
+
+**En tu terminal** (`sesion-letras.txt`):
+
+```text
+$ bash stock.sh Folios ocho 10
+stock.sh: línea 18: [: ocho: se esperaba un entero
+Folios: hay suficientes (ocho unidades)
+$ echo $?
+0
+```
+
+📁 **Código:** [`codigo/02-terminal-sacarle-partido/ejemplos/2.9-script-con-argumentos/`](codigo/02-terminal-sacarle-partido/ejemplos/2.9-script-con-argumentos/)
+
+`-lt` no sabe comparar `ocho` y bash avisa, pero la comparación cuenta como falsa: el script sigue, contesta «hay suficientes» y termina con 0, como si todo fuera bien. Otro script que mirase el código creería que no hay que reponer. Por eso conviene comprobar que un dato es un número de verdad antes de usarlo: es la [validación de un dato](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#validación-de-un-dato) de la fase 1. En bash se puede hacer, pero no la necesitas todavía; lo importante es la idea: **un dato que no has comprobado puede dar una respuesta que parece buena y no lo es**.
 
 ## 3. Errores típicos
 
@@ -1540,13 +1565,13 @@ $ echo $?
 
 **Situación real:** llevas tus documentos de una reforma en la carpeta `documentos` y quieres hacer una copia de seguridad cada día, guardada aparte y con la fecha en el nombre, para poder volver atrás si borras o estropeas algo. Escribe `copia.sh`, que:
 
-- Reciba como argumento la carpeta que hay que copiar (`bash copia.sh documentos`).
+- Reciba como argumento **una carpeta de la carpeta actual**, solo su nombre (`bash copia.sh documentos`). Si le dan otra cosa (`/`, `.`, `..` o una ruta con `/` en medio, como `../documentos`), que se niegue: la copia, y el borrado de la copia anterior, acabarían fuera de `copias`.
 - La copie dentro de una carpeta `copias`, con el nombre de la carpeta y la fecha de hoy: `copias/documentos-2026-11-09`. Si `copias` no existe, que la cree.
 - Si ya hay una copia de hoy, la sustituya por la nueva, avisando por la salida de error.
 - Compruebe **de verdad** que la copia se ha hecho: que `cp` ha terminado bien, que la copia existe y que tiene tantos ficheros como el original. Si algo falla, que lo diga y termine con 1.
 - Al terminar, diga dónde ha dejado la copia y cuántos ficheros tiene.
 - Funcione también si escribes la carpeta con una barra al final (`bash copia.sh documentos/`), que es como la escribe el tabulador.
-- Si no le dan una carpeta, o la carpeta no existe, lo diga por la salida de error y termine con un código distinto de 0 (2 si se usa mal y 1 si la carpeta no existe).
+- Si no le dan una carpeta, le dan una ruta o la carpeta no existe, lo diga por la salida de error y termine con un código distinto de 0 (2 si se usa mal y 1 si la carpeta no existe).
 - Funcione igual en Linux, macOS y Git Bash.
 
 <details>
@@ -1559,25 +1584,25 @@ Para la fecha, `date +%Y-%m-%d` dentro de `$( )` ([apartado 1.15](#115-argumento
 <details>
 <summary>Pista 2</summary>
 
-Para saber si la carpeta existe, `[ -d "$origen" ]`; para saber si ya hay copia de hoy, `[ -e "$destino" ]`. Para saber si `cp` ha ido bien, su [código de salida](#113-códigos-de-salida): `if ! cp …; then` es «si `cp` **no** termina bien». Para contar los ficheros, un `for` con un contador, como en el [apartado 1.16](#116-decidir-y-repetir-en-un-script-if-y-for), en el original y en la copia. Y para quitar la barra del final, `${1%/}`: es el primer argumento sin la `/` del final, si la lleva.
+Para saber si la carpeta existe, `[ -d "$origen" ]`; para saber si ya hay copia de hoy, `[ -e "$destino" ]`. Para saber si `cp` ha ido bien, su [código de salida](#113-códigos-de-salida): `if ! cp …; then` es «si `cp` **no** termina bien». Para contar los ficheros, un `for` con un contador, como en el [apartado 1.16](#116-decidir-y-repetir-en-un-script-if-y-for), en el original y en la copia. Y para quitar la barra del final, `${1%/}`: es el primer argumento sin la `/` del final, si la lleva. Para saber si lo que queda lleva una `/` en medio, una tubería que ya conoces: `echo "$origen" | grep -q /`.
 
 </details>
 
 <details>
 <summary>Pista 3</summary>
 
-Escribe primero en comentarios los pasos, como en pseudocódigo: comprobar el argumento, comprobar la carpeta, calcular el nombre de la copia, quitar la de hoy si existe, copiar, comprobar la copia y avisar. Y piensa con qué casos lo vas a probar: normales, límite (una carpeta vacía, una barra al final) y no válidos. Después, rellena cada paso con su orden.
+Escribe primero en comentarios los pasos, como en pseudocódigo: comprobar el argumento, comprobar que es un nombre sin ruta, comprobar la carpeta, calcular el nombre de la copia, quitar la de hoy si existe, copiar, comprobar la copia y avisar. Y piensa con qué casos lo vas a probar: normales, límite (una carpeta vacía, una barra al final, un fichero de solo lectura) y no válidos (también rutas como `..` o `../documentos`). Después, rellena cada paso con su orden.
 
 </details>
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** el script sigue los pasos de la pista 3, cada uno con un comentario numerado. Primero se comprueba todo lo que puede fallar; después se calcula el nombre de la copia con la fecha; se quita la de hoy si ya existía (porque `cp -R` sobre una carpeta que ya existe metería la copia **dentro** de ella); se copia, y se comprueba la copia antes de decir que está hecha.
+**Razonamiento:** el script sigue los pasos de la pista 3, cada uno con un comentario numerado. Primero se comprueba todo lo que puede fallar, también que el argumento sea solo un nombre: con `../documentos`, el destino sería `copias/../documentos-2026-11-09`, fuera de `copias`, y el borrado del paso 5 también actuaría allí. Después se calcula el nombre de la copia con la fecha; se quita la de hoy si ya existía (porque `cp -R` sobre una carpeta que ya existe metería la copia **dentro** de ella); se copia, y se comprueba la copia antes de decir que está hecha.
 
 ```bash
 #!/usr/bin/env bash
-# Copia de seguridad de una carpeta, con la fecha de hoy en el nombre.
+# Copia de seguridad de una carpeta de la carpeta actual, con la fecha de hoy en el nombre.
 # Uso: bash copia.sh CARPETA
 # La copia se guarda en copias/CARPETA-AAAA-MM-DD (si ya hay una de hoy, la sustituye).
 # Termina con 0 si la hace, con 1 si la carpeta no existe o la copia falla, y con 2 si se usa mal.
@@ -1591,30 +1616,44 @@ fi
 # ${1%/} es el argumento sin la / del final, si la lleva (el tabulador la pone: documentos/)
 origen=${1%/}
 
-# 2. Comprobar que la carpeta existe (-d: «existe y es una carpeta»)
+# 2. Comprobar que es el nombre de una carpeta de aquí, sin ruta: con ../docs o con .,
+#    la copia (y el rm del paso 4) acabarían fuera de copias/. Se rechazan / (que sin
+#    su barra queda vacío), . y .., y cualquier nombre que lleve una / (../docs, /home/ana)
+if [ "$origen" = "" ] || [ "$origen" = "." ] || [ "$origen" = ".." ] ||
+    echo "$origen" | grep -q /; then
+    echo "Error: escribe solo el nombre de una carpeta de la carpeta actual (por ejemplo, documentos)" >&2
+    exit 2
+fi
+
+# 3. Comprobar que la carpeta existe (-d: «existe y es una carpeta»)
 if [ ! -d "$origen" ]; then
     echo "Error: no existe la carpeta $origen" >&2
     exit 1
 fi
 
-# 3. El nombre de la copia, con la fecha de hoy (por ejemplo, copias/documentos-2026-11-09)
+# 4. El nombre de la copia, con la fecha de hoy (por ejemplo, copias/documentos-2026-11-09)
 hoy=$(date +%Y-%m-%d)
 destino="copias/$origen-$hoy"
 
-# 4. Si ya hay una copia de hoy, se sustituye por esta (avisando por la salida de error)
+# 5. Si ya hay una copia de hoy, se borra para sustituirla (avisando por la salida de error).
+#    Con -f, rm no pregunta por los ficheros de solo lectura; aquí es seguro, porque el
+#    paso 2 garantiza que destino está dentro de copias/. Y se comprueba que lo ha borrado.
 if [ -e "$destino" ]; then
     echo "Aviso: ya había una copia de hoy; la sustituyo por esta" >&2
-    rm -r "$destino"
+    if ! rm -rf "$destino"; then
+        echo "Error: no se ha podido borrar la copia anterior, $destino" >&2
+        exit 1
+    fi
 fi
 
-# 5. Copiar, y comprobar que cp ha terminado bien y que la copia existe
+# 6. Copiar, y comprobar que cp ha terminado bien y que la copia existe
 mkdir -p copias
 if ! cp -R "$origen" "$destino" || [ ! -d "$destino" ]; then
     echo "Error: no se ha podido copiar $origen" >&2
     exit 1
 fi
 
-# 6. Contar lo que hay en el original y en la copia: tiene que ser lo mismo
+# 7. Contar lo que hay en el original y en la copia: tiene que ser lo mismo
 #    (en una carpeta vacía, el * se queda tal cual; por eso se comprueba con -e)
 en_origen=0
 for fichero in "$origen"/*; do
@@ -1646,7 +1685,7 @@ Con `bash copia.sh documentos`, en una carpeta con `documentos` y sus tres fiche
 Copia hecha: copias/documentos-2026-11-09 (3 ficheros)
 ```
 
-La fecha será la del día en que lo ejecutes. Y los demás [casos de prueba](../fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos): uno normal repetido (ya hay copia de hoy, y esta vez con la barra que pone el tabulador), uno límite (una carpeta vacía) y dos no válidos (una carpeta que no existe y ningún argumento):
+La fecha será la del día en que lo ejecutes. Y los demás [casos de prueba](../fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos): uno normal repetido (ya hay copia de hoy, y esta vez con la barra que pone el tabulador), uno límite (una carpeta vacía), los no válidos (una carpeta que no existe, ningún argumento y tres rutas que no son una carpeta de aquí) y otro límite: un fichero de solo lectura en la carpeta (con `chmod -w`, del [apartado 1.10](#110-permisos-quién-puede-leer-escribir-y-ejecutar)), copiado dos veces para que la segunda tenga que borrar una copia que lo lleva:
 
 **En tu terminal** (`sesion.txt`):
 
@@ -1673,24 +1712,40 @@ $ bash copia.sh
 Uso: bash copia.sh CARPETA
 $ echo $?
 2
+$ bash copia.sh ../documentos
+Error: escribe solo el nombre de una carpeta de la carpeta actual (por ejemplo, documentos)
+$ echo $?
+2
+$ bash copia.sh .
+Error: escribe solo el nombre de una carpeta de la carpeta actual (por ejemplo, documentos)
+$ bash copia.sh /
+Error: escribe solo el nombre de una carpeta de la carpeta actual (por ejemplo, documentos)
+$ chmod -w documentos/notas.txt
+$ bash copia.sh documentos
+Aviso: ya había una copia de hoy; la sustituyo por esta
+Copia hecha: copias/documentos-2026-11-09 (3 ficheros)
+$ bash copia.sh documentos
+Aviso: ya había una copia de hoy; la sustituyo por esta
+Copia hecha: copias/documentos-2026-11-09 (3 ficheros)
 ```
 
 📁 **Código:** [`codigo/02-terminal-sacarle-partido/ejercicios/ej06-copia-de-seguridad/`](codigo/02-terminal-sacarle-partido/ejercicios/ej06-copia-de-seguridad/)
 
 **Por qué así:**
 
-- **Funciona en los tres sistemas** porque solo usa lo que es igual en todos: `date +%Y-%m-%d`, `mkdir -p`, `cp -R`, `rm -r`, `if`, `for` y `$(( ))`. Nada de `date -d` ni de opciones que solo existen en Linux.
+- **Funciona en los tres sistemas** porque solo usa lo que es igual en todos: `date +%Y-%m-%d`, `mkdir -p`, `cp -R`, `rm -rf`, `grep -q`, `if`, `for` y `$(( ))`. Nada de `date -d` ni de opciones que solo existen en Linux.
 - **La fecha en formato año-mes-día** (`2026-11-09`) hace que, al listar las copias, salgan **ordenadas por fecha** sin hacer nada: el orden alfabético y el de las fechas coinciden.
 - **Comprueba antes y después de actuar**, y cada fallo tiene su código: 2 si se usa mal, 1 si la carpeta no existe o la copia falla. Otro script podría decidir qué hacer según ese código.
 - **El aviso va por la salida de error**: si guardas la salida en un registro de copias (`bash copia.sh documentos >> copias.log`), allí solo quedan las líneas de «Copia hecha», y los avisos siguen saliendo en la pantalla, donde los ves.
-- **`rm -r` solo borra la copia de hoy**, nunca el original: `destino` siempre empieza por `copias/`. Aun así, un `rm -r` en un script merece siempre una segunda lectura.
+- **El borrado solo puede tocar la copia de hoy**, nunca el original ni nada de fuera: `destino` siempre empieza por `copias/` y, como el paso 2 no deja pasar rutas, se queda dentro. Por eso aquí, y solo aquí, vale `rm -rf`: con `rm -r` sin más, un fichero de solo lectura en la copia vieja hace que `rm` **pregunte** si lo borra, y si le contestas que no, la copia vieja se queda a medias y la nueva se mezcla con ella. Aun así, se mira el código de salida de `rm`, y un `rm -r` en un script merece siempre una segunda lectura.
 - **No se fía de nada**: mira el código de salida de `cp`, que la copia exista y que tenga tantos ficheros como el original. Sin esas comprobaciones, con `documentos/` el script calculaba `copias/documentos/-2026-11-09`, `cp` fallaba… y el script decía igualmente «Copia hecha (1 ficheros)»: el `for` contaba el `*` que se queda tal cual cuando no hay nada. Por eso se cuenta con `[ -e … ]`. Una copia de seguridad que dice «hecha» sin comprobarlo es peor que no tenerla.
-- **Probado con casos límite**, no solo con el bueno: la barra final y la carpeta vacía son justo los casos en los que fallaba una versión que parecía correcta ([01.03](../fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos)).
+- **Probado con casos límite**, no solo con el bueno: la barra final, la carpeta vacía, las rutas y el fichero de solo lectura son justo los casos en los que fallaban versiones que parecían correctas ([01.03](../fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos)).
 
 **Errores frecuentes al resolverlo:**
 
 - Usar `cp` sin `-R`: con una carpeta, `cp` se niega a copiar.
 - Escribir `mkdir copias` sin `-p`: la segunda vez da error porque ya existe.
+- Aceptar cualquier ruta como argumento: con `.`, `cp` intentaría copiar la carpeta actual dentro de sí misma (`copias` está dentro), fallaría y dejaría una copia a medias, y encima oculta (`copias/.-2026-11-09` empieza por punto); con `../documentos`, el script copiaría y borraría fuera de `copias`.
 - No sustituir la copia de hoy: la segunda ejecución metería una copia **dentro** de la otra (`copias/documentos-2026-11-09/documentos`).
 - Usar `date -d` o `date -v` para algo que no lo necesita: deja de funcionar en uno de los dos sistemas.
 - Mandar los errores con `echo` normal, sin `>&2`.
@@ -1801,7 +1856,7 @@ done
 
 | Qué | Linux | macOS | Git Bash |
 |---|---|---|---|
-| Fichero de configuración de la terminal | `~/.bashrc` | `~/.zshrc` | `~/.bashrc` (se carga a través de `~/.bash_profile`) |
+| Fichero de configuración de la terminal | `~/.bashrc` | `~/.zshrc` (si tu terminal sigue con bash, `~/.bash_profile`) | `~/.bashrc` (se carga a través de `~/.bash_profile`) |
 | `chmod +x` | Funciona | Funciona | Casi sin efecto: es ejecutable lo que empieza por `#!` |
 | `sudo` | Sí | Sí | No lo trae |
 | `wc -l`, `uniq -c` | El número, con este espaciado | El mismo número, con otro espaciado | Como Linux |
