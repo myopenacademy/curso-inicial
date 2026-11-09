@@ -3,12 +3,12 @@ cd Descargas
 ls
 ls | wc -l
 mkdir documentos imagenes audio-y-video comprimidos
-mv *.pdf *.docx *.xlsx *.txt documentos
-mv *.jpg *.png imagenes
-mv *.mp3 *.mp4 audio-y-video
-mv *.zip comprimidos
+mv *.pdf *.docx *.xlsx *.txt documentos/
+mv *.jpg *.png imagenes/
+mv *.mp3 *.mp4 audio-y-video/
+mv *.zip comprimidos/
 ls
-mv *.JPG imagenes
+mv *.JPG imagenes/
 ls
 find . -type f | wc -l
 ls -R

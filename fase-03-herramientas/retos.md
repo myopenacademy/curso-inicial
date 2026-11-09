@@ -5,7 +5,7 @@
 
 Estos retos mezclan lo que has aprendido en los cuatro módulos de la fase: moverte y manejar ficheros desde la terminal ([03.01](01-terminal-lo-basico.md)), encadenar órdenes, redirigir sus salidas y escribir scripts ([03.02](02-terminal-sacarle-partido.md)), trabajar con el editor de código ([03.03](03-editor-de-codigo.md)) y encontrar los errores con método ([03.04](04-errores-y-depuracion.md)).
 
-Van de menor a mayor dificultad, y el último es el más completo. Son **opcionales**: sirven para afianzar lo aprendido y no bloquean nada. Se hacen **en tu terminal**: copia a tu carpeta personal la carpeta del reto (la tienes en el enlace «📁 Código» de cada solución), abre una terminal nueva y trabaja ahí; si lo estropeas, vuelve a copiarla y empieza otra vez. Abre las pistas solo si te atascas y, si tu solución es distinta de la propuesta, comprueba que hace lo mismo: puede estar igual de bien. Recuerda que tus salidas no serán idénticas letra a letra ([el aviso de 02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#22-un-aviso-sobre-las-salidas-de-la-terminal)).
+Van de menor a mayor dificultad, y el último es el más completo. Son **opcionales**: sirven para afianzar lo aprendido y no bloquean nada. Se hacen **en tu terminal**: copia a tu carpeta personal la carpeta del reto **entera** (la tienes en el enlace «📁 Código» de cada solución), abre una terminal, entra en ella con `cd` y trabaja ahí; si lo estropeas, vuelve a copiarla y empieza otra vez. Abre las pistas solo si te atascas y, si tu solución es distinta de la propuesta, comprueba que hace lo mismo: puede estar igual de bien. Recuerda que tus salidas no serán idénticas letra a letra ([el aviso de 02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#22-un-aviso-sobre-las-salidas-de-la-terminal)).
 
 ## Reto 1 · Ordenar la carpeta de Descargas
 
@@ -37,6 +37,10 @@ Ordénala **desde la terminal**, con el menor número de órdenes que puedas y s
 4. Comprueba que no queda nada suelto en `Descargas` y que **siguen siendo catorce** ficheros: cuéntalos con una tubería antes de empezar y al terminar.
 5. Termina con una sola orden que enseñe cómo ha quedado todo el árbol.
 
+Para contar al final, cuando los ficheros ya estén dentro de las subcarpetas, `ls` no te sirve. Usa `find . -type f`: es el `find` de [03.01](01-terminal-lo-basico.md#110-buscar-grep-y-find), pero en lugar de buscar un nombre, escribe la ruta de **todos los ficheros** (`-type f`: solo ficheros, no carpetas) desde la carpeta actual hacia abajo.
+
+> **⚠️ Cuidado:** trabaja en la carpeta `Descargas` **del reto**, nunca en la tuya de verdad. En Linux en español tienes una `~/Descargas` real, y un `cd Descargas` desde tu carpeta personal te llevaría a ella: los `mv` con comodines moverían tus descargas. Copia la carpeta del reto entera (`reto-01-ordenar-descargas`), entra en ella y comprueba con `pwd` que la ruta termina en `reto-01-ordenar-descargas` **antes** de escribir `cd Descargas`. La sesión de la solución empieza ahí.
+
 <details>
 <summary>Pista 1</summary>
 
@@ -47,7 +51,7 @@ Para la copia, `cp` con la opción que copia carpetas; para crear las cuatro car
 <details>
 <summary>Pista 2</summary>
 
-Mira las extensiones **letra a letra**: ¿están todas en minúsculas? Y para contar al final, cuando los ficheros ya están dentro de las subcarpetas, `ls` no te sirve: `find . -type f` escribe la ruta de **todos los ficheros** (`-type f`: solo ficheros, no carpetas) desde la carpeta actual hacia abajo.
+Mira las extensiones **letra a letra**: ¿están todas en minúsculas? Y escribe la carpeta de destino con una barra al final (`imagenes/`): si un día no existe, `mv` se quejará en lugar de hacer otra cosa.
 
 </details>
 
@@ -70,13 +74,13 @@ $ ls
 $ ls | wc -l
 14
 $ mkdir documentos imagenes audio-y-video comprimidos
-$ mv *.pdf *.docx *.xlsx *.txt documentos
-$ mv *.jpg *.png imagenes
-$ mv *.mp3 *.mp4 audio-y-video
-$ mv *.zip comprimidos
+$ mv *.pdf *.docx *.xlsx *.txt documentos/
+$ mv *.jpg *.png imagenes/
+$ mv *.mp3 *.mp4 audio-y-video/
+$ mv *.zip comprimidos/
 $ ls
 audio-y-video  comprimidos  documentos  imagenes  IMG_2042.JPG
-$ mv *.JPG imagenes
+$ mv *.JPG imagenes/
 $ ls
 audio-y-video  comprimidos  documentos  imagenes
 $ find . -type f | wc -l
@@ -103,15 +107,16 @@ contrato-alquiler.pdf  factura-luz-octubre.pdf  presupuesto-reforma.xlsx
 
 **En qué fijarte:**
 
-- **Cuatro `mv` para catorce ficheros.** Cada uno lleva varios patrones y, al final, la carpeta de destino, que tiene que existir antes: por eso el `mkdir` va primero.
-- **El primer `ls` de comprobación delata un fichero suelto:** `IMG_2042.JPG`. El patrón `*.jpg` no lo ha cogido, porque bash distingue mayúsculas al comparar los comodines ([03.04, error típico 3.1](04-errores-y-depuracion.md#31-los-tres-mensajes-de-siempre)). Sin ese `ls` se habría quedado ahí. Con `mv *.JPG imagenes` queda resuelto. (También valía `mv *.jpg *.JPG *.png imagenes` desde el principio, si lo ves venir.)
-- **`ls` escribe entre comillas simples** el nombre con espacios: es su forma de avisar de que lleva espacios; las comillas no forman parte del nombre.
+- **Cuatro `mv` para catorce ficheros.** Cada uno lleva varios patrones y, al final, la carpeta de destino, que tiene que existir antes: por eso el `mkdir` va primero. La barra final (`imagenes/`) le dice a `mv` que el destino **es una carpeta**: si no existiera, se quejaría en lugar de hacer otra cosa (lo verás en los errores frecuentes).
+- **El primer `ls` de comprobación delata un fichero suelto:** `IMG_2042.JPG`. El patrón `*.jpg` no lo ha cogido, porque bash distingue mayúsculas al comparar los comodines ([03.04, error típico 3.1](04-errores-y-depuracion.md#31-los-tres-mensajes-de-siempre)). Sin ese `ls` se habría quedado ahí. Con `mv *.JPG imagenes/` queda resuelto. (También valía `mv *.jpg *.JPG *.png imagenes/` desde el principio, si lo ves venir.)
+- **`ls` escribe entre comillas simples** el nombre con espacios: es su forma de avisar de que lleva espacios; las comillas no forman parte del nombre. (El `ls` de macOS no las pone.)
+- **En zsh, la terminal de macOS**, un patrón que no encaja con nada **cancela la orden entera**: si no tuvieras ningún `.xlsx`, `mv *.pdf *.docx *.xlsx *.txt documentos/` no movería nada y diría `no matches found: *.xlsx` ([03.01, apartado 1.14](01-terminal-lo-basico.md#114-comodines-y-comillas)). Lee el mensaje, quita ese patrón y repite la orden. En bash, `mv` mueve los demás y se queja solo del que no existe.
 - **Catorce antes y catorce después.** El primer recuento cuenta lo que lista `ls` en la carpeta; el segundo, con `find . -type f`, los ficheros de todas las subcarpetas. Si saliera menos, sabrías que algo se ha perdido, y tienes `Descargas-copia` para recuperarlo.
 - **`ls -R`** enseña el árbol entero: cada carpeta con lo que tiene dentro.
 
 **Errores frecuentes al resolverlo:**
 
-- Mover antes de crear las carpetas: con varios ficheros y un destino que no existe, `mv` se queja y no mueve nada.
+- Mover antes de crear las carpetas: con varios ficheros y un destino que no existe, `mv` se queja y no mueve nada. Con **un solo** fichero es peor: `mv *.JPG imagenes`, sin la carpeta, no se queja, sino que **renombra** `IMG_2042.JPG` a `imagenes`, un fichero sin extensión. Con la barra, `mv *.JPG imagenes/`, sí se queja: `mv: no se puede mover 'IMG_2042.JPG' a 'imagenes/': No es un directorio`.
 - Escribir `mv * .pdf documentos`, con un espacio de más: `*` serían **todos** los ficheros (y las carpetas recién creadas). Es el [error típico 3.3 de 03.01](01-terminal-lo-basico.md#33-un-espacio-de-más-al-borrar); antes de un `mv` o un `rm` con comodines, prueba el patrón con `ls`.
 - Poner comillas al patrón (`mv "*.pdf" documentos`): las comillas apagan el comodín, y `mv` buscaría un fichero llamado literalmente `*.pdf`.
 - Dar el trabajo por terminado sin el último `ls`: el `.JPG` se habría quedado suelto.
@@ -120,7 +125,7 @@ contrato-alquiler.pdf  factura-luz-octubre.pdf  presupuesto-reforma.xlsx
 
 ## Reto 2 · El script que analiza un registro
 
-**Situación real:** en una clínica veterinaria, la aplicación de citas escribe un [registro](01-terminal-lo-basico.md#26-ver-un-fichero-de-texto-y-el-registro-de-una-aplicación), `citas.log`, con una línea por cada cosa que pasa: la fecha, la hora, el nivel (`INFO`, `WARN` o `ERROR`) y un mensaje. Este es el del 12 de noviembre:
+**Situación real:** en una clínica veterinaria, la aplicación de citas escribe un [registro](01-terminal-lo-basico.md#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail), `citas.log`, con una línea por cada cosa que pasa: la fecha, la hora, el nivel (`INFO`, `WARN` o `ERROR`) y un mensaje. Este es el del 12 de noviembre:
 
 ```text
 2026-11-12 08:30:01 INFO Arranca la aplicación de citas
