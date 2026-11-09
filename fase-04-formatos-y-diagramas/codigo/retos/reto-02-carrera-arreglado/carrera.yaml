@@ -1,0 +1,18 @@
+carrera: San Silvestre de Tudela
+fecha: "2026-12-31"
+hora_salida: "18:00"
+lugar: Plaza de los Fueros
+lema: "Corre: el año se acaba"
+contacto:
+  nombre: Irene Sanz
+  correo: irene@example.com
+distancias:
+  - nombre: Infantil
+    km: 1
+    precio: 0
+  - nombre: Popular
+    km: 5
+    precio: 8
+  - nombre: Absoluta
+    km: 10
+    precio: 12

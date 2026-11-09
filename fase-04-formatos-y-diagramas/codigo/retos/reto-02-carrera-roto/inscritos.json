@@ -1,0 +1,5 @@
+[
+  {"dorsal": 1, "nombre": "Javier Moreno", "carrera": "Absoluta", 'pagado': true},
+  {"dorsal": 2, "nombre": "Óscar Lacarra", "carrera": "Popular", "pagado": false}
+  {"dorsal": 3, "nombre": "Nerea Aranda", "carrera": "Infantil", "pagado": true},
+]

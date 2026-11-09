@@ -1,0 +1,1 @@
+Los tres ficheros tienen errores a propósito: el reto consiste en encontrarlos y arreglarlos.

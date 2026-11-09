@@ -475,7 +475,6 @@
       "carpeta": "fase-04-formatos-y-diagramas",
       "titulo": "Formatos y diagramas",
       "retos": "fase-04-formatos-y-diagramas/retos.md",
-      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.texto-binario-y-codificacion",

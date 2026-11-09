@@ -1,0 +1,8 @@
+file catalogo-tpv.csv
+iconv -f WINDOWS-1252 -t UTF-8 catalogo-tpv.csv > catalogo-utf8.csv
+cat catalogo-utf8.csv
+cut -d ';' -f 2 catalogo-utf8.csv | grep -c ','
+tr ',;' '.,' < catalogo-utf8.csv > catalogo.csv
+cat catalogo.csv
+file catalogo.csv
+cut -d ',' -f 3 catalogo.csv

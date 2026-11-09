@@ -1,0 +1,1 @@
+catalogo-tpv.csv está en Windows-1252 a propósito, como lo exporta el programa de la caja: no es UTF-8.

@@ -76,7 +76,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 | 04.03 | [JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md) | Básico · Núcleo | 2,5 h | ✅ Disponible |
 | 04.04 | [XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md) | Básico · Ampliación | 2 h | ✅ Disponible |
 | 04.05 | [Diagramas y Mermaid](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md) | Básico · Núcleo | 2,5 h | ✅ Disponible |
-| | Retos de la fase | | | Pendiente |
+| | [Retos de la fase](fase-04-formatos-y-diagramas/retos.md) | | | ✅ Disponible |
 
 ---
 

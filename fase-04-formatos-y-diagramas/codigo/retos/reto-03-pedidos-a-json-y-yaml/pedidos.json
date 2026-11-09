@@ -1,0 +1,57 @@
+[
+  {
+    "pedido": "P-1041",
+    "fecha": "2026-11-02",
+    "cliente": "Lucía Herrera",
+    "codigo_postal": "45600",
+    "producto": "Taza de desayuno",
+    "cantidad": 2,
+    "precio_unidad": 14.50,
+    "pagado": true,
+    "notas": null
+  },
+  {
+    "pedido": "P-1042",
+    "fecha": "2026-11-02",
+    "cliente": "Gómez, Andrés",
+    "codigo_postal": "08012",
+    "producto": "Plato llano",
+    "cantidad": 6,
+    "precio_unidad": 11.00,
+    "pagado": true,
+    "notas": "Regalo: envolver aparte"
+  },
+  {
+    "pedido": "P-1043",
+    "fecha": "2026-11-03",
+    "cliente": "Marta Ibáñez",
+    "codigo_postal": "28004",
+    "producto": "Jarra de agua",
+    "cantidad": 1,
+    "precio_unidad": 32.90,
+    "pagado": false,
+    "notas": "Que ponga \"frágil\" en la caja"
+  },
+  {
+    "pedido": "P-1044",
+    "fecha": "2026-11-04",
+    "cliente": "Jorge Castro",
+    "codigo_postal": "10003",
+    "producto": "Fuente de horno",
+    "cantidad": 1,
+    "precio_unidad": 27.00,
+    "pagado": true,
+    "notas": null
+  },
+  {
+    "pedido": "P-1045",
+    "fecha": "2026-11-05",
+    "cliente": "Nuria Pons",
+    "codigo_postal": "07001",
+    "producto": "Juego de 4 tazas",
+    "cantidad": 1,
+    "precio_unidad": 49.90,
+    "pagado": false,
+    "notas": "Entregar después de las 18:30"
+  }
+]

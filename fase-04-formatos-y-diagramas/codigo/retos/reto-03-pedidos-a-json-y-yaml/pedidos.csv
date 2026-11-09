@@ -1,0 +1,6 @@
+pedido,fecha,cliente,codigo_postal,producto,cantidad,precio_unidad,pagado,notas
+P-1041,2026-11-02,Lucía Herrera,45600,Taza de desayuno,2,14.50,sí,
+P-1042,2026-11-02,"Gómez, Andrés",08012,Plato llano,6,11.00,sí,Regalo: envolver aparte
+P-1043,2026-11-03,Marta Ibáñez,28004,Jarra de agua,1,32.90,no,"Que ponga ""frágil"" en la caja"
+P-1044,2026-11-04,Jorge Castro,10003,Fuente de horno,1,27.00,sí,
+P-1045,2026-11-05,Nuria Pons,07001,Juego de 4 tazas,1,49.90,no,Entregar después de las 18:30

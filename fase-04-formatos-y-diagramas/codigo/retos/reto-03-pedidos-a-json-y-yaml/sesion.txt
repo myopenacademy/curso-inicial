@@ -1,0 +1,4 @@
+tail -n +2 pedidos.csv | wc -l
+grep -c '"pedido":' pedidos.json
+grep -c '^- pedido:' pedidos.yaml
+grep 08012 pedidos.csv pedidos.json pedidos.yaml
