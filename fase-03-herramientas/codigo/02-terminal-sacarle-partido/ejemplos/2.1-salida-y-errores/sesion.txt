@@ -1,0 +1,12 @@
+ls pedidos.txt facturas.txt
+ls pedidos.txt facturas.txt > lista.txt
+cat lista.txt
+ls pedidos.txt facturas.txt 2> errores.txt
+cat errores.txt
+ls pedidos.txt facturas.txt > lista.txt 2> errores.txt
+ls pedidos.txt facturas.txt 2> /dev/null
+echo "Primera línea" > notas.txt
+echo "Segunda línea" >> notas.txt
+cat notas.txt
+echo "Esto lo borra todo" > notas.txt
+cat notas.txt

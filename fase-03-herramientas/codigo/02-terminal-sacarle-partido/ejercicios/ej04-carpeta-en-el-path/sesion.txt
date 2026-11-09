@@ -1,0 +1,11 @@
+mkdir ~/scripts
+mv cuantos.sh ~/scripts/
+chmod +x ~/scripts/cuantos.sh
+export PATH="$HOME/scripts:$PATH"
+command -v cuantos.sh
+cd ~/fotos
+cuantos.sh
+cd
+cuantos.sh
+echo 'export PATH="$HOME/scripts:$PATH"' >> ~/.bashrc
+tail -n 1 ~/.bashrc

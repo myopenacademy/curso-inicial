@@ -1,0 +1,4 @@
+whoami
+echo "prueba" > /etc/prueba.txt
+echo "prueba" > ~/prueba.txt
+cat ~/prueba.txt

@@ -1,0 +1,8 @@
+bash stock.sh Bolígrafos 120 10
+echo $?
+bash stock.sh Folios 8 10
+echo $?
+bash stock.sh Folios
+echo $?
+bash stock.sh "Papel A4" 3 20
+bash stock.sh Papel A4 3 20

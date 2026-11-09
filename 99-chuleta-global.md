@@ -18,6 +18,7 @@
   - [02.03 Instalar programas, variables de entorno y PATH](#0203-instalar-programas-variables-de-entorno-y-path)
 - **Fase 03 — Herramientas del programador**
   - [03.01 La terminal: lo básico](#0301-la-terminal-lo-básico)
+  - [03.02 La terminal: sacarle partido](#0302-la-terminal-sacarle-partido)
 
 ---
 
@@ -677,6 +678,120 @@ nombre  -opciones  argumentos       ls -lh img
 | `pwd` · `ls` · `cd` | `Get-Location` · `Get-ChildItem` · `Set-Location` | `cd` · `dir` · `cd` |
 | `cp` · `mv` · `rm` | `Copy-Item` · `Move-Item` · `Remove-Item` | `copy` · `move` · `del` |
 | `cat` · `grep` · `clear` | `Get-Content` · `Select-String` · `Clear-Host` | `type` · `findstr` · `cls` |
+
+---
+
+### 03.02 La terminal: sacarle partido
+
+📖 Módulo completo: [fase-03-herramientas/02-terminal-sacarle-partido.md](fase-03-herramientas/02-terminal-sacarle-partido.md)
+
+#### Redirecciones
+
+| Escribes | Qué hace |
+|---|---|
+| `orden > f` | La salida, a `f`, **vaciándolo antes** |
+| `orden >> f` | La salida, **al final** de `f` |
+| `orden 2> f` | Los errores, a `f` |
+| `orden 2> /dev/null` | Tira los errores |
+| `orden > f 2>&1` | La salida y los errores, a `f` |
+| `orden < f` | Lee de `f` en lugar del teclado |
+| `orden1 \| orden2` | La salida de `orden1` es la entrada de `orden2` |
+| `echo "…" >&2` | En un script, escribe por la salida de error |
+
+#### Filtros
+
+| Orden | Qué hace |
+|---|---|
+| `grep texto f` | Las líneas con `texto` (`-i` sin mayúsculas, `-c` contar, `-v` las que no, `-q` sin escribir) |
+| `sort` | Ordena (`-n` como números, `-r` al revés) |
+| `uniq -c` | Cuenta las líneas iguales **seguidas** (siempre después de `sort`) |
+| `wc -l` | Cuenta las líneas |
+| `cut -d ';' -f 3` | La columna 3, separadas por `;` |
+| `head -n 5` / `tail -n 5` | Las 5 primeras / últimas |
+
+#### Recetas
+
+| Para | Escribe |
+|---|---|
+| Contar las líneas con algo | `grep -c texto f` |
+| Las líneas con una cosa y otra | `grep uno f \| grep otro` |
+| Cuántas veces sale cada valor de una columna | `cut -d ';' -f 3 f \| sort \| uniq -c \| sort -rn` |
+| Los 3 que más salen | … `\| sort -rn \| head -n 3` |
+| Guardar los errores de un registro | `grep ERROR app.log > errores.txt` |
+
+#### Variables y PATH
+
+| Escribes | Qué hace |
+|---|---|
+| `nombre=valor` | Crea una variable (**sin espacios** alrededor del `=`) |
+| `echo "$nombre"` | Usa su valor (comillas dobles: se sustituye; simples: tal cual) |
+| `export nombre` | La pasan a heredar los programas que lances |
+| `export PATH="$HOME/bin:$PATH"` | Añade `~/bin` al principio del PATH, en esta terminal |
+| `echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc` | Lo mismo, para siempre (en macOS, `~/.zshrc`). Después, terminal nueva |
+
+#### Permisos, administrador y procesos
+
+| Escribes | Qué hace |
+|---|---|
+| `ls -l` | Lista con permisos: tipo + propietario, grupo y demás (`rwx`) |
+| `chmod +x script.sh` | Da permiso de ejecución |
+| `sudo orden` | Ejecuta esa orden como administrador (Linux y macOS). Solo si hace falta |
+| `ps` / `ps aux` | Los procesos de esta terminal / todos |
+| `top` | Los que más gastan, en directo (<kbd>Q</kbd> para salir) |
+| <kbd>Ctrl</kbd>+<kbd>C</kbd> | Para la orden que está en marcha |
+| `kill PID` / `kill %1` | Pide a un proceso que termine (`kill -9`, último recurso) |
+| `orden &` | La lanza en segundo plano |
+
+#### Códigos de salida
+
+| Escribes | Qué hace |
+|---|---|
+| `echo $?` | El código de la última orden: **0, bien**; otro número, algo falló |
+| `orden1 && orden2` | `orden2` solo si `orden1` fue bien |
+| `orden1 \|\| orden2` | `orden2` solo si `orden1` falló |
+| `exit 1` | En un script, termina con ese código |
+
+#### Plantilla de un script
+
+```bash
+#!/usr/bin/env bash
+# Qué hace el script.
+# Uso: bash mi-script.sh ARGUMENTO
+
+if [ $# -ne 1 ]; then
+    echo "Uso: bash mi-script.sh ARGUMENTO" >&2
+    exit 2
+fi
+
+dato=$1
+
+for elemento in uno dos tres; do
+    echo "$dato: $elemento"
+done
+```
+
+| En el script | Significa |
+|---|---|
+| `$1`, `$2`… / `$#` | Los argumentos / cuántos son |
+| `$(orden)` | Lo que escribe esa orden |
+| `$((total + 1))` | Una cuenta con enteros |
+| `if [ … ]; then … else … fi` | `SI … ENTONCES … SI NO … FIN SI` |
+| `for x in a b c; do … done` | `PARA cada x DE … HACER … FIN PARA` |
+| `-eq -ne -lt -le -gt -ge` | Comparar números |
+| `= !=` | Comparar texto |
+| `-f` / `-d` / `-e` | Es un fichero / una carpeta / existe |
+| `bash script.sh` / `./script.sh` | Ejecutarlo (para `./`, antes `chmod +x`) |
+
+#### Diferencias entre sistemas
+
+| Qué | Linux | macOS | Git Bash |
+|---|---|---|---|
+| Fichero de configuración de la terminal | `~/.bashrc` | `~/.zshrc` | `~/.bashrc` (se carga a través de `~/.bash_profile`) |
+| `chmod +x` | Funciona | Funciona | Casi sin efecto: es ejecutable lo que empieza por `#!` |
+| `sudo` | Sí | Sí | No lo trae |
+| `wc -l`, `uniq -c` | El número, con este espaciado | El mismo número, con otro espaciado | Como Linux |
+| `date` de ayer | `date -d yesterday` | `date -v-1d` | Como Linux |
+| `sed -i` | `sed -i …` | `sed -i '' …` | Como Linux |
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

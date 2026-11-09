@@ -1,0 +1,8 @@
+head -n 3 pedidos.txt
+wc -l pedidos.txt
+grep 2026-11-09 pedidos.txt
+grep 2026-11-09 pedidos.txt | wc -l
+grep -c 2026-11-09 pedidos.txt
+grep 2026-11-09 pedidos.txt | grep Madrid
+grep 2026-11-09 pedidos.txt | grep -c Madrid
+grep -v 2026-11-09 pedidos.txt | wc -l

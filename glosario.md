@@ -79,6 +79,10 @@ Caso de prueba con un valor justo en la frontera entre dos grupos de datos, o al
 
 Tabla que asocia cada letra o símbolo con un número; si un programa y la consola usan tablas distintas, las tildes salen mal. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#35-las-tildes-y-las-eñes-salen-mal-en-la-consola).
 
+### Código de salida
+
+Número que devuelve una orden al terminar: 0 si todo ha ido bien y otro número si algo ha fallado; en bash se consulta con $?. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#113-códigos-de-salida).
+
 ### Código fuente
 
 El texto de un programa tal y como lo escribe una persona. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#14-qué-es-un-programa).
@@ -130,6 +134,10 @@ Cualquier cosa que hace una función además de devolver su resultado, como camb
 ### Ejecutar
 
 Poner en marcha un programa para que el ordenador siga sus instrucciones. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#14-qué-es-un-programa).
+
+### Entrada estándar
+
+Canal por el que una orden lee sus datos; por defecto, el teclado (stdin). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#11-los-tres-canales-de-una-orden).
 
 ### Error de ejecución
 
@@ -223,6 +231,10 @@ Programa que ejecuta un código intermedio ya compilado, traduciéndolo sobre la
 
 Pieza que guarda lo que se está usando ahora mismo; es muy rápida y se borra al apagar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#15-la-memoria-ram-rápida-y-olvidadiza).
 
+### Mínimo privilegio
+
+Principio de seguridad: cada usuario y cada programa, con los permisos justos para su tarea y ni uno más. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
+
 ## N
 
 ### Nube
@@ -264,6 +276,14 @@ Dato que recibe un subalgoritmo al llamarlo, en el mismo orden en que se pasa en
 ### PATH
 
 Variable de entorno con la lista ordenada de carpetas donde el sistema busca los programas. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#110-el-path-dónde-busca-el-sistema-los-programas).
+
+### Permisos
+
+Lo que cada usuario puede hacer con un fichero o una carpeta: leer (r), escribir (w) y ejecutar (x). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#110-permisos-quién-puede-leer-escribir-y-ejecutar).
+
+### PID
+
+Número que identifica a cada proceso en marcha (process identifier). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#112-procesos-verlos-y-pararlos).
 
 ### Procesador
 
@@ -323,6 +343,10 @@ Forma de escribir algoritmos a medio camino entre el lenguaje natural y un lengu
 
 La carpeta de la que cuelga todo el árbol: / en Linux y macOS, una por unidad (C:\) en Windows. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#14-dónde-empieza-el-árbol-la-raíz).
 
+### Redirigir
+
+Cambiar adónde va (o de dónde viene) un canal de una orden: la salida a un fichero con >, los errores con 2>, la entrada con <. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#11-los-tres-canales-de-una-orden).
+
 ### Refactorizar
 
 Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
@@ -334,6 +358,10 @@ Fichero de texto en el que un programa va apuntando, línea a línea y con su fe
 ### Regresión
 
 Error en algo que antes funcionaba y que se ha estropeado al cambiar otra cosa. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
+
+### Root
+
+El administrador total en Linux y macOS, que puede hacerlo todo con cualquier fichero. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
 
 ### Ruta
 
@@ -349,6 +377,22 @@ Ruta que se cuenta desde la carpeta actual, sin empezar en la raíz. Lo explica 
 
 ## S
 
+### Salida de error
+
+Canal aparte por el que una orden escribe sus mensajes de error y sus avisos (stderr); por defecto, a la pantalla. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#11-los-tres-canales-de-una-orden).
+
+### Salida estándar
+
+Canal por el que una orden escribe sus resultados (stdout); por defecto, la pantalla. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#11-los-tres-canales-de-una-orden).
+
+### Script
+
+Fichero de texto con órdenes que se ejecutan una detrás de otra, como un pequeño programa escrito en el lenguaje de la terminal. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#114-tu-primer-script).
+
+### Shebang
+
+Primera línea de un script, que empieza por #! y dice con qué programa se ejecuta (#!/usr/bin/env bash). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#114-tu-primer-script).
+
 ### Sistema operativo
 
 Programa que administra el ordenador y hace de intermediario entre el hardware y los demás programas: Windows, macOS, Linux. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#17-el-sistema-operativo).
@@ -356,6 +400,10 @@ Programa que administra el ordenador y hace de intermediario entre el hardware y
 ### Subalgoritmo
 
 Algoritmo con nombre propio que recibe parámetros, hace su trabajo y puede devolver un resultado; en los lenguajes, función, método o procedimiento. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#111-subalgoritmos).
+
+### Sudo
+
+Orden que ejecuta otra como administrador (root), pidiendo la contraseña; en Linux y macOS. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
 
 ## T
 
@@ -374,6 +422,10 @@ Clase de valor que guarda un dato (entero, real, texto o lógico) y que decide q
 ### Traza
 
 Ejecutar un algoritmo a mano, paso a paso, anotando en una tabla el valor de cada variable a medida que cambia. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#la-traza).
+
+### Tubería
+
+La | que une dos órdenes: la salida de la primera es la entrada de la segunda (pipe). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#15-tuberías-la-salida-de-una-orden-es-la-entrada-de-otra).
 
 ## U
 

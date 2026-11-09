@@ -376,8 +376,32 @@
           "id": "inicial.terminal-sacarle-partido",
           "fichero": "fase-03-herramientas/02-terminal-sacarle-partido.md",
           "titulo": "La terminal: sacarle partido",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.terminal-sacarle-partido.las-reservas-de-un-dia",
+              "titulo": "Las reservas de un día"
+            },
+            {
+              "id": "inicial.terminal-sacarle-partido.lee-los-permisos-de-ls-l",
+              "titulo": "Lee los permisos de ls -l"
+            },
+            {
+              "id": "inicial.terminal-sacarle-partido.los-productos-mas-vendidos",
+              "titulo": "Los productos más vendidos"
+            },
+            {
+              "id": "inicial.terminal-sacarle-partido.anade-una-carpeta-al-path-y-ejecuta-un-script-desde-cualquier-sitio",
+              "titulo": "Añade una carpeta al PATH y ejecuta un script desde cualquier sitio"
+            },
+            {
+              "id": "inicial.terminal-sacarle-partido.un-script-que-cuenta-las-reservas-de-un-dia",
+              "titulo": "Un script que cuenta las reservas de un día"
+            },
+            {
+              "id": "inicial.terminal-sacarle-partido.copia-de-seguridad-de-una-carpeta-con-la-fecha",
+              "titulo": "Copia de seguridad de una carpeta con la fecha"
+            }
+          ]
         },
         {
           "id": "inicial.editor-de-codigo",

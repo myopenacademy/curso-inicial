@@ -1,0 +1,7 @@
+ls -l hola.sh
+./hola.sh
+bash hola.sh
+chmod +x hola.sh
+ls -l hola.sh
+./hola.sh
+hola.sh

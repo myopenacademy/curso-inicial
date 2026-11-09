@@ -1,0 +1,10 @@
+grep ERROR tienda.log
+grep -c ERROR tienda.log
+grep -v INFO tienda.log
+grep pago tienda.log
+grep -i pago tienda.log
+grep ERROR tienda.log > errores.txt
+grep WARN tienda.log >> errores.txt
+wc -l errores.txt
+cut -d ' ' -f 3 tienda.log | sort | uniq -c
+tail -n 2 tienda.log

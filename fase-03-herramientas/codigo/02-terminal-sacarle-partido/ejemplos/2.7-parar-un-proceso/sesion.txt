@@ -1,0 +1,7 @@
+sleep 60
+@ctrl-c 2
+echo "La terminal vuelve a ser tuya"
+sleep 300 &
+ps
+kill %1
+ps

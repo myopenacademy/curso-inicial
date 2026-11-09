@@ -1,0 +1,4 @@
+bash reservas-dia.sh 2026-11-15
+bash reservas-dia.sh 2026-12-25
+bash reservas-dia.sh
+echo $?

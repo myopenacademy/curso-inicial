@@ -1,0 +1,16 @@
+2026-11-02;Madrid;cuaderno
+2026-11-02;Sevilla;bolígrafo
+2026-11-02;Madrid;bolígrafo
+2026-11-03;Valencia;agenda
+2026-11-03;Madrid;cuaderno
+2026-11-03;Sevilla;mochila
+2026-11-04;Madrid;bolígrafo
+2026-11-04;Valencia;cuaderno
+2026-11-04;Sevilla;bolígrafo
+2026-11-05;Madrid;estuche
+2026-11-05;Valencia;bolígrafo
+2026-11-05;Madrid;cuaderno
+2026-11-06;Sevilla;agenda
+2026-11-06;Sevilla;bolígrafo
+2026-11-06;Valencia;agenda
+2026-11-06;Valencia;estuche

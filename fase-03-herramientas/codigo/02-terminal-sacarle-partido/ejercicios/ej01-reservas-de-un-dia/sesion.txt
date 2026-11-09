@@ -1,0 +1,7 @@
+grep 2026-11-14 reservas.txt
+grep -c 2026-11-14 reservas.txt
+grep 2026-11-14 reservas.txt | grep -c cancelada
+grep 2026-11-14 reservas.txt | grep -v cancelada
+grep 2026-11-14 reservas.txt | grep -v cancelada | wc -l
+grep 2026-11-14 reservas.txt | grep -v cancelada > sabado.txt
+cat sabado.txt

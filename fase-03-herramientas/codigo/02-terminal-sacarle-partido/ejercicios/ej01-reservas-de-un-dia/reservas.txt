@@ -1,0 +1,9 @@
+2026-11-13;21:00;García;4;confirmada
+2026-11-13;21:30;López;2;confirmada
+2026-11-14;14:00;Martín;6;confirmada
+2026-11-14;14:30;Sánchez;2;cancelada
+2026-11-14;21:00;Pérez;3;confirmada
+2026-11-14;21:15;Gómez;5;confirmada
+2026-11-14;22:00;Ruiz;2;cancelada
+2026-11-15;14:00;Díaz;8;confirmada
+2026-11-15;21:30;Moreno;2;confirmada

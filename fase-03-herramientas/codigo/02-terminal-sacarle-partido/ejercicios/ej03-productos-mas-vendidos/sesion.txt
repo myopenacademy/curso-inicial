@@ -1,0 +1,4 @@
+cut -d ';' -f 3 ventas.txt | sort | uniq -c | sort -rn
+cut -d ';' -f 3 ventas.txt | sort | uniq -c | sort -rn | head -n 3
+cut -d ';' -f 3 ventas.txt | sort | uniq -c | sort -rn | head -n 3 > mas-vendidos.txt
+grep Madrid ventas.txt | cut -d ';' -f 3 | sort | uniq -c | sort -rn | head -n 1

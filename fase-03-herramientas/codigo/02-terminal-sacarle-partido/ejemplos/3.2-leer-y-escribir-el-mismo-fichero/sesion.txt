@@ -1,0 +1,3 @@
+wc -l pedidos.txt
+sort pedidos.txt > pedidos.txt
+wc -l pedidos.txt

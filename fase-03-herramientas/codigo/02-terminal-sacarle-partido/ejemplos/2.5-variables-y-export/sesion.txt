@@ -1,0 +1,13 @@
+echo $HOME
+echo $USER
+echo $LANG
+echo "Mi carpeta personal es $HOME"
+ciudad=Sevilla
+echo $ciudad
+echo "Vivo en $ciudad"
+echo 'Vivo en $ciudad'
+bash muestra-ciudad.sh
+export ciudad
+bash muestra-ciudad.sh
+ciudad = Madrid
+echo "Vivo en $ciuda"

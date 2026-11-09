@@ -1,0 +1,8 @@
+bash copia.sh documentos
+ls copias
+ls copias/*
+bash copia.sh documentos
+bash copia.sh fotos
+echo $?
+bash copia.sh
+echo $?

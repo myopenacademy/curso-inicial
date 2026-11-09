@@ -1,0 +1,10 @@
+2026-11-09 08:00:01 INFO Arranca la tienda online
+2026-11-09 08:00:03 INFO Conectada a la base de datos
+2026-11-09 09:12:44 WARN El pago del pedido 1043 tarda más de 5 segundos
+2026-11-09 09:13:02 INFO Pago del pedido 1043 confirmado
+2026-11-09 10:27:19 ERROR No se pudo enviar el correo del pedido 1044
+2026-11-09 11:02:51 INFO Pedido 1045 pagado
+2026-11-09 11:40:07 ERROR La pasarela de pago no responde
+2026-11-09 11:40:37 ERROR La pasarela de pago no responde
+2026-11-09 12:15:00 WARN Quedan pocas unidades de mochila
+2026-11-09 13:30:22 INFO Pedido 1046 pagado

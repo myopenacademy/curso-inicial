@@ -1,0 +1,6 @@
+cut -d ';' -f 3 pedidos.txt
+cut -d ';' -f 3 pedidos.txt | sort
+cut -d ';' -f 3 pedidos.txt | sort | uniq -c
+cut -d ';' -f 3 pedidos.txt | sort | uniq -c | sort -rn
+cut -d ';' -f 3 pedidos.txt | sort | uniq -c | sort -rn | head -n 1
+cut -d ';' -f 3 pedidos.txt | uniq -c

@@ -1,0 +1,11 @@
+ls pedidos.txt
+echo $?
+ls facturas.txt
+echo $?
+grep Bilbao pedidos.txt
+echo $?
+grep Zaragoza pedidos.txt
+echo $?
+grep -q Bilbao pedidos.txt && echo "Hay pedidos de Bilbao"
+grep -q Zaragoza pedidos.txt && echo "Hay pedidos de Zaragoza"
+grep -q Zaragoza pedidos.txt || echo "No hay pedidos de Zaragoza"
