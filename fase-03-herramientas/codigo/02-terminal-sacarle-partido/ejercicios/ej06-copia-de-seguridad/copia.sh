@@ -2,7 +2,7 @@
 # Copia de seguridad de una carpeta, con la fecha de hoy en el nombre.
 # Uso: bash copia.sh CARPETA
 # La copia se guarda en copias/CARPETA-AAAA-MM-DD (si ya hay una de hoy, la sustituye).
-# Termina con 0 si la hace, con 1 si la carpeta no existe y con 2 si se usa mal.
+# Termina con 0 si la hace, con 1 si la carpeta no existe o la copia falla, y con 2 si se usa mal.
 
 # 1. Comprobar que se ha dicho qué carpeta copiar
 if [ $# -ne 1 ]; then
@@ -10,7 +10,8 @@ if [ $# -ne 1 ]; then
     exit 2
 fi
 
-origen=$1
+# ${1%/} es el argumento sin la / del final, si la lleva (el tabulador la pone: documentos/)
+origen=${1%/}
 
 # 2. Comprobar que la carpeta existe (-d: «existe y es una carpeta»)
 if [ ! -d "$origen" ]; then
@@ -28,14 +29,30 @@ if [ -e "$destino" ]; then
     rm -r "$destino"
 fi
 
-# 5. Copiar
+# 5. Copiar, y comprobar que cp ha terminado bien y que la copia existe
 mkdir -p copias
-cp -R "$origen" "$destino"
+if ! cp -R "$origen" "$destino" || [ ! -d "$destino" ]; then
+    echo "Error: no se ha podido copiar $origen" >&2
+    exit 1
+fi
 
-# 6. Contar lo copiado, para comprobar que no está vacía
-total=0
-for fichero in "$destino"/*; do
-    total=$((total + 1))
+# 6. Contar lo que hay en el original y en la copia: tiene que ser lo mismo
+#    (en una carpeta vacía, el * se queda tal cual; por eso se comprueba con -e)
+en_origen=0
+for fichero in "$origen"/*; do
+    if [ -e "$fichero" ]; then
+        en_origen=$((en_origen + 1))
+    fi
 done
+en_copia=0
+for fichero in "$destino"/*; do
+    if [ -e "$fichero" ]; then
+        en_copia=$((en_copia + 1))
+    fi
+done
+if [ "$en_copia" -ne "$en_origen" ]; then
+    echo "Error: la copia tiene $en_copia ficheros y el original, $en_origen" >&2
+    exit 1
+fi
 
-echo "Copia hecha: $destino ($total ficheros)"
+echo "Copia hecha: $destino ($en_copia ficheros)"

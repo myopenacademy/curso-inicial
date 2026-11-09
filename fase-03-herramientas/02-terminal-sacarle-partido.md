@@ -348,7 +348,7 @@ Cada proceso tiene un número que lo identifica, el **PID** (del inglés *proces
 
 > **⚠️ Cuidado:** lo que viste en 02.01 sobre [finalizar procesos a ciegas](../fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#36-finalizar-procesos-a-ciegas) vale igual aquí. No hagas `kill` a procesos que no reconoces, y empieza siempre por `kill` sin más: `kill -9` no deja al programa guardar nada.
 
-> **📌 Nota para macOS y Git Bash:** `ps`, `kill` y <kbd>Ctrl</kbd>+<kbd>C</kbd> funcionan igual. `top` existe en macOS, pero su pantalla es distinta de la de Linux (más columnas y otro orden); en Git Bash, `ps` solo enseña los procesos de Git Bash, y para ver los de Windows lo más cómodo es el Administrador de tareas.
+> **📌 Nota para macOS y Git Bash:** `kill` y <kbd>Ctrl</kbd>+<kbd>C</kbd> funcionan igual. `top` existe en macOS, pero su pantalla es distinta de la de Linux (más columnas y otro orden); en Git Bash, `ps` es otra versión, la de MSYS2, que viene de la de Cygwin, con otras opciones: según la documentación de Cygwin (consultada el 9 de noviembre de 2026), no tiene la forma `ps aux` (el equivalente es `ps -a`), enseña solo los procesos de Git Bash salvo que añadas `-W`, y puede que no tengas `top`. Para ver los programas de Windows, lo más cómodo es el Administrador de tareas.
 
 ### 1.13. Códigos de salida
 
@@ -364,7 +364,7 @@ ls pedidos.txt
 echo $?
 ```
 
-Si `pedidos.txt` existe, `echo $?` escribe `0`; si no, otro número (`ls` usa el `2` para «no existe»). Tiene que ser **justo después**: la siguiente orden que escribas (aunque sea el propio `echo`) cambia `$?`.
+Si `pedidos.txt` existe, `echo $?` escribe `0`; si no, otro número distinto de 0 (en Linux, `ls` usa el 2; en macOS, el 1). Tiene que ser **justo después**: la siguiente orden que escribas (aunque sea el propio `echo`) cambia `$?`.
 
 > **⚠️ Cuidado:** un código distinto de 0 no siempre es una catástrofe. `grep` devuelve **1** cuando no encuentra lo que buscas: no ha fallado nada, simplemente no estaba. Por eso el significado exacto depende de cada orden.
 
@@ -916,7 +916,7 @@ No hay pedidos de Zaragoza
 **En qué fijarte:**
 
 - **Todo bien, 0.** `ls` de un fichero que existe y `grep` que encuentra algo.
-- **`ls` de un fichero que no existe, 2**: para `ls`, un problema serio.
+- **`ls` de un fichero que no existe, 2** en Linux (en macOS, 1): un número distinto de 0, porque para `ls` es un problema.
 - **`grep` que no encuentra nada, 1**, y en silencio. No es un error de verdad: es la respuesta «no está». Cada orden decide qué significa cada número.
 - **`&&` y `||` usan el código sin enseñarlo.** `grep -q` no escribe nada: solo deja su código, y según sea 0 o 1 se ejecuta o no el `echo`.
 
@@ -1527,7 +1527,7 @@ $ echo $?
 
 **Errores frecuentes al resolverlo:**
 
-- Olvidar las comillas en `"^$fecha;"`: aquí funcionaría, pero es una mala costumbre.
+- Olvidar las comillas en `"^$fecha;"`: sin ellas, el `;` **separa órdenes** (como viste en el [ejemplo 2.3](#23-qué-tienda-tiene-más-pedidos)), así que `grep` se queda sin fichero y se pone a esperar a que escribas, como el `cat` sin nada de [03.01](01-terminal-lo-basico.md#36-la-terminal-no-contesta): el script parece colgado hasta que pulsas <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 - Escribir `[ $total -eq 0 ]` sin espacios dentro de los corchetes (`[$total -eq 0]`): bash no lo entiende.
 - Mandar el mensaje de uso a la salida estándar: quien guarde el resultado en un fichero se encontraría el mensaje dentro.
 - Terminar con `exit 1` cuando no hay reservas: no es un error, es una respuesta válida.
@@ -1543,7 +1543,9 @@ $ echo $?
 - Reciba como argumento la carpeta que hay que copiar (`bash copia.sh documentos`).
 - La copie dentro de una carpeta `copias`, con el nombre de la carpeta y la fecha de hoy: `copias/documentos-2026-11-09`. Si `copias` no existe, que la cree.
 - Si ya hay una copia de hoy, la sustituya por la nueva, avisando por la salida de error.
-- Al terminar, diga dónde ha dejado la copia y cuántos ficheros tiene, para comprobar que no está vacía.
+- Compruebe **de verdad** que la copia se ha hecho: que `cp` ha terminado bien, que la copia existe y que tiene tantos ficheros como el original. Si algo falla, que lo diga y termine con 1.
+- Al terminar, diga dónde ha dejado la copia y cuántos ficheros tiene.
+- Funcione también si escribes la carpeta con una barra al final (`bash copia.sh documentos/`), que es como la escribe el tabulador.
 - Si no le dan una carpeta, o la carpeta no existe, lo diga por la salida de error y termine con un código distinto de 0 (2 si se usa mal y 1 si la carpeta no existe).
 - Funcione igual en Linux, macOS y Git Bash.
 
@@ -1557,28 +1559,28 @@ Para la fecha, `date +%Y-%m-%d` dentro de `$( )` ([apartado 1.15](#115-argumento
 <details>
 <summary>Pista 2</summary>
 
-Para saber si la carpeta existe, `[ -d "$origen" ]`; para saber si ya hay copia de hoy, `[ -e "$destino" ]`. Para contar los ficheros copiados, un `for` con un contador, como en el [apartado 1.16](#116-decidir-y-repetir-en-un-script-if-y-for).
+Para saber si la carpeta existe, `[ -d "$origen" ]`; para saber si ya hay copia de hoy, `[ -e "$destino" ]`. Para saber si `cp` ha ido bien, su [código de salida](#113-códigos-de-salida): `if ! cp …; then` es «si `cp` **no** termina bien». Para contar los ficheros, un `for` con un contador, como en el [apartado 1.16](#116-decidir-y-repetir-en-un-script-if-y-for), en el original y en la copia. Y para quitar la barra del final, `${1%/}`: es el primer argumento sin la `/` del final, si la lleva.
 
 </details>
 
 <details>
 <summary>Pista 3</summary>
 
-Escribe primero en comentarios los pasos, como en pseudocódigo: comprobar el argumento, comprobar la carpeta, calcular el nombre de la copia, quitar la de hoy si existe, copiar, contar y avisar. Después, rellena cada paso con su orden.
+Escribe primero en comentarios los pasos, como en pseudocódigo: comprobar el argumento, comprobar la carpeta, calcular el nombre de la copia, quitar la de hoy si existe, copiar, comprobar la copia y avisar. Y piensa con qué casos lo vas a probar: normales, límite (una carpeta vacía, una barra al final) y no válidos. Después, rellena cada paso con su orden.
 
 </details>
 
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** el script sigue los pasos de la pista 3, cada uno con un comentario numerado. Primero se comprueba todo lo que puede fallar; después se calcula el nombre de la copia con la fecha; se quita la de hoy si ya existía (porque `cp -R` sobre una carpeta que ya existe metería la copia **dentro** de ella); se copia, y se cuenta lo copiado.
+**Razonamiento:** el script sigue los pasos de la pista 3, cada uno con un comentario numerado. Primero se comprueba todo lo que puede fallar; después se calcula el nombre de la copia con la fecha; se quita la de hoy si ya existía (porque `cp -R` sobre una carpeta que ya existe metería la copia **dentro** de ella); se copia, y se comprueba la copia antes de decir que está hecha.
 
 ```bash
 #!/usr/bin/env bash
 # Copia de seguridad de una carpeta, con la fecha de hoy en el nombre.
 # Uso: bash copia.sh CARPETA
 # La copia se guarda en copias/CARPETA-AAAA-MM-DD (si ya hay una de hoy, la sustituye).
-# Termina con 0 si la hace, con 1 si la carpeta no existe y con 2 si se usa mal.
+# Termina con 0 si la hace, con 1 si la carpeta no existe o la copia falla, y con 2 si se usa mal.
 
 # 1. Comprobar que se ha dicho qué carpeta copiar
 if [ $# -ne 1 ]; then
@@ -1586,7 +1588,8 @@ if [ $# -ne 1 ]; then
     exit 2
 fi
 
-origen=$1
+# ${1%/} es el argumento sin la / del final, si la lleva (el tabulador la pone: documentos/)
+origen=${1%/}
 
 # 2. Comprobar que la carpeta existe (-d: «existe y es una carpeta»)
 if [ ! -d "$origen" ]; then
@@ -1604,17 +1607,33 @@ if [ -e "$destino" ]; then
     rm -r "$destino"
 fi
 
-# 5. Copiar
+# 5. Copiar, y comprobar que cp ha terminado bien y que la copia existe
 mkdir -p copias
-cp -R "$origen" "$destino"
+if ! cp -R "$origen" "$destino" || [ ! -d "$destino" ]; then
+    echo "Error: no se ha podido copiar $origen" >&2
+    exit 1
+fi
 
-# 6. Contar lo copiado, para comprobar que no está vacía
-total=0
-for fichero in "$destino"/*; do
-    total=$((total + 1))
+# 6. Contar lo que hay en el original y en la copia: tiene que ser lo mismo
+#    (en una carpeta vacía, el * se queda tal cual; por eso se comprueba con -e)
+en_origen=0
+for fichero in "$origen"/*; do
+    if [ -e "$fichero" ]; then
+        en_origen=$((en_origen + 1))
+    fi
 done
+en_copia=0
+for fichero in "$destino"/*; do
+    if [ -e "$fichero" ]; then
+        en_copia=$((en_copia + 1))
+    fi
+done
+if [ "$en_copia" -ne "$en_origen" ]; then
+    echo "Error: la copia tiene $en_copia ficheros y el original, $en_origen" >&2
+    exit 1
+fi
 
-echo "Copia hecha: $destino ($total ficheros)"
+echo "Copia hecha: $destino ($en_copia ficheros)"
 ```
 
 📁 **Código:** [`codigo/02-terminal-sacarle-partido/ejercicios/ej06-copia-de-seguridad/`](codigo/02-terminal-sacarle-partido/ejercicios/ej06-copia-de-seguridad/)
@@ -1627,7 +1646,7 @@ Con `bash copia.sh documentos`, en una carpeta con `documentos` y sus tres fiche
 Copia hecha: copias/documentos-2026-11-09 (3 ficheros)
 ```
 
-La fecha será la del día en que lo ejecutes. Y todos los casos, uno detrás de otro:
+La fecha será la del día en que lo ejecutes. Y los demás [casos de prueba](../fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos): uno normal repetido (ya hay copia de hoy, y esta vez con la barra que pone el tabulador), uno límite (una carpeta vacía) y dos no válidos (una carpeta que no existe y ningún argumento):
 
 **En tu terminal** (`sesion.txt`):
 
@@ -1638,9 +1657,14 @@ $ ls copias
 documentos-2026-11-09
 $ ls copias/*
 lista-compra.txt  notas.txt  presupuesto.txt
-$ bash copia.sh documentos
+$ bash copia.sh documentos/
 Aviso: ya había una copia de hoy; la sustituyo por esta
 Copia hecha: copias/documentos-2026-11-09 (3 ficheros)
+$ mkdir vacia
+$ bash copia.sh vacia
+Copia hecha: copias/vacia-2026-11-09 (0 ficheros)
+$ ls copias
+documentos-2026-11-09  vacia-2026-11-09
 $ bash copia.sh fotos
 Error: no existe la carpeta fotos
 $ echo $?
@@ -1657,10 +1681,11 @@ $ echo $?
 
 - **Funciona en los tres sistemas** porque solo usa lo que es igual en todos: `date +%Y-%m-%d`, `mkdir -p`, `cp -R`, `rm -r`, `if`, `for` y `$(( ))`. Nada de `date -d` ni de opciones que solo existen en Linux.
 - **La fecha en formato año-mes-día** (`2026-11-09`) hace que, al listar las copias, salgan **ordenadas por fecha** sin hacer nada: el orden alfabético y el de las fechas coinciden.
-- **Comprueba antes de actuar** y cada fallo tiene su código: 2 si se usa mal, 1 si la carpeta no existe. Otro script podría decidir qué hacer según ese código.
+- **Comprueba antes y después de actuar**, y cada fallo tiene su código: 2 si se usa mal, 1 si la carpeta no existe o la copia falla. Otro script podría decidir qué hacer según ese código.
 - **El aviso va por la salida de error**: si guardas la salida en un registro de copias (`bash copia.sh documentos >> copias.log`), allí solo quedan las líneas de «Copia hecha», y los avisos siguen saliendo en la pantalla, donde los ves.
 - **`rm -r` solo borra la copia de hoy**, nunca el original: `destino` siempre empieza por `copias/`. Aun así, un `rm -r` en un script merece siempre una segunda lectura.
-- **Contar lo copiado** es una comprobación sencilla de que la copia no está vacía. Una copia de seguridad que nunca se comprueba no es de fiar.
+- **No se fía de nada**: mira el código de salida de `cp`, que la copia exista y que tenga tantos ficheros como el original. Sin esas comprobaciones, con `documentos/` el script calculaba `copias/documentos/-2026-11-09`, `cp` fallaba… y el script decía igualmente «Copia hecha (1 ficheros)»: el `for` contaba el `*` que se queda tal cual cuando no hay nada. Por eso se cuenta con `[ -e … ]`. Una copia de seguridad que dice «hecha» sin comprobarlo es peor que no tenerla.
+- **Probado con casos límite**, no solo con el bueno: la barra final y la carpeta vacía son justo los casos en los que fallaba una versión que parecía correcta ([01.03](../fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos)).
 
 **Errores frecuentes al resolverlo:**
 
@@ -1669,6 +1694,7 @@ $ echo $?
 - No sustituir la copia de hoy: la segunda ejecución metería una copia **dentro** de la otra (`copias/documentos-2026-11-09/documentos`).
 - Usar `date -d` o `date -v` para algo que no lo necesita: deja de funcionar en uno de los dos sistemas.
 - Mandar los errores con `echo` normal, sin `>&2`.
+- Decir «Copia hecha» sin comprobar nada: el mensaje tiene que salir **después** de comprobar la copia, no por haber llegado al final del script.
 
 </details>
 
@@ -1725,7 +1751,7 @@ $ echo $?
 | `ls -l` | Lista con permisos: tipo + propietario, grupo y demás (`rwx`) |
 | `chmod +x script.sh` | Da permiso de ejecución |
 | `sudo orden` | Ejecuta esa orden como administrador (Linux y macOS). Solo si hace falta |
-| `ps` / `ps aux` | Los procesos de esta terminal / todos |
+| `ps` / `ps aux` | Los procesos de esta terminal / todos (en Git Bash, `ps -a`) |
 | `top` | Los que más gastan, en directo (<kbd>Q</kbd> para salir) |
 | <kbd>Ctrl</kbd>+<kbd>C</kbd> | Para la orden que está en marcha |
 | `kill PID` / `kill %1` | Pide a un proceso que termine (`kill -9`, último recurso) |

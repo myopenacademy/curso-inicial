@@ -1,7 +1,10 @@
 bash copia.sh documentos
 ls copias
 ls copias/*
-bash copia.sh documentos
+bash copia.sh documentos/
+mkdir vacia
+bash copia.sh vacia
+ls copias
 bash copia.sh fotos
 echo $?
 bash copia.sh
