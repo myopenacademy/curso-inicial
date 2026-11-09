@@ -24,6 +24,8 @@ Cómo se hizo (para repetirlo): cuatro autores en paralelo con el mismo encargo;
 
 **Fase 4, «Formatos y diagramas», en marcha** (9 de noviembre de 2026): cinco autores en paralelo con el encargo de `PLAN-CURSO.md` 11.1 más lo propio de la fase, que sigue. Después, los retos (11.2), la revisión de conjunto (11.3) y el cierre (11.4). **Al escribir el reto, avisar al kit** de qué necesita la comparación CSV ↔ JSON.
 
+**Cómo va (9 de noviembre de 2026):** los módulos se escriben en disco, **sin commit hasta la revisión de conjunto** (un commit por módulo en el cierre, 11.4). **04.04 entregado:** 1.393 líneas (unas 190 de más: el autor propone quitar el ejemplo 2.3 del SVG o el ejercicio 6), 7 ejercicios, `verificar_codigo.py` con Docker 0 errores y 0 avisos, Mermaid bien; 14 términos propuestos en `.verificacion/fase-04/04-xml-csv-y-otros/glosario.tsv`; no comprobado (dicho en general): el tipo «CSV UTF-8» de Excel y que Excel guarde en Windows-1252; para el editor: solapes «lenguaje de marcas» y «escapar» con 04.02, «secreto» y `.env` con la fase 7, enlaces a 04.01 sin ancla. Para el kit, sin bloquear: no comprueba `.tsv`, `.toml`, `.ini` ni `.svg` (un comprobador de TOML con `tomllib` cubriría el ejercicio 7). **04.01:** avisado de un `socios.csv` con CRLF en su ejercicio 7 (crearlo en la sesión o pedir `-text`). 04.01, 04.02, 04.03 y 04.05, escribiéndose.
+
 ### Lo propio de la fase 4 (se añade al encargo de los autores)
 
 Carpeta: fase-04-formatos-y-diagramas/ (créala si no existe; los módulos y su codigo/ van ahí).
