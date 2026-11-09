@@ -101,7 +101,7 @@ Al abrir una carpeta, la ventana de VS Code tiene estas partes (con los nombres 
 │ a │                 │   $                                      │
 │ d │                 │                                          │
 ├───┴─────────────────┴──────────────────────────────────────────┤
-│ BARRA DE ESTADO                     Lín. 3, col. 7   UTF-8  LF │
+│ BARRA DE ESTADO                        Ln 3, Col 7   UTF-8  LF │
 └────────────────────────────────────────────────────────────────┘
 ```
 
@@ -121,7 +121,7 @@ Dos detalles de las pestañas que confunden al principio:
 - **Un clic en el explorador abre el fichero en modo vista previa**: su pestaña tiene el nombre **en cursiva**, y si haces clic en otro fichero, lo sustituye en la misma pestaña. Para que se quede abierto, haz **doble clic** en el fichero o empieza a escribir en él.
 - **Un punto en lugar de la ✕ de cerrar** quiere decir que el fichero tiene **cambios sin guardar**. Es tan importante que tiene su propio apartado, el siguiente.
 
-**Los números de línea.** A la izquierda del texto, cada línea lleva su número, y la barra de estado dice en qué línea y columna está el cursor (`Lín. 3, col. 7`). Te harán falta cuando un mensaje de error diga «línea 18»: para saltar a una línea, la orden **Go to Line** con <kbd>Ctrl</kbd>+<kbd>G</kbd> (en macOS, <kbd>Control</kbd>+<kbd>G</kbd>), escribes el número y pulsas <kbd>Intro</kbd>.
+**Los números de línea.** A la izquierda del texto, cada línea lleva su número, y la barra de estado dice en qué línea y columna está el cursor (`Ln 3, Col 7`; con VS Code en español, `Lín. 3, col. 7`). Te harán falta cuando un mensaje de error diga «línea 18»: para saltar a una línea, la orden **Go to Line** con <kbd>Ctrl</kbd>+<kbd>G</kbd> (en macOS, <kbd>Control</kbd>+<kbd>G</kbd>), escribes el número y pulsas <kbd>Intro</kbd>.
 
 > **💡 Consejo:** si te sobra espacio o te falta, la barra lateral se esconde y se muestra con <kbd>Ctrl</kbd>+<kbd>B</kbd> (en macOS, <kbd>Cmd</kbd>+<kbd>B</kbd>), y el menú **View** (**Ver**) tiene opciones para mostrar u ocultar cada parte.
 
