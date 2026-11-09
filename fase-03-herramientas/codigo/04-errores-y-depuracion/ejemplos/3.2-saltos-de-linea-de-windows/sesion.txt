@@ -1,0 +1,6 @@
+printf '#!/bin/bash\r\n\r\ncd notas\r\nls\r\n' > roto.sh
+cat -e roto.sh
+bash roto.sh
+tr -d '\r' < roto.sh > bien.sh
+cat -e bien.sh
+bash bien.sh

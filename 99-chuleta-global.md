@@ -649,7 +649,7 @@ nombre  -opciones  argumentos       ls -lh img
 
 | Qué | Cómo |
 |---|---|
-| Ayuda de una orden | `orden --help`; `man orden` (no en Git Bash); `help cd` para las de bash |
+| Ayuda de una orden | `orden --help`; `man orden` (no en Git Bash); `help cd` para las de bash (en zsh, `man zshbuiltins`) |
 | Autocompletar | <kbd>Tab</kbd> (dos veces: ver las opciones) |
 | Historial | <kbd>↑</kbd> y <kbd>↓</kbd>; buscar con <kbd>Ctrl</kbd>+<kbd>R</kbd> |
 | Parar una orden | <kbd>Ctrl</kbd>+<kbd>C</kbd> (en `less` y `man`, <kbd>Q</kbd>) |
@@ -738,7 +738,7 @@ nombre  -opciones  argumentos       ls -lh img
 | `ls -l` | Lista con permisos: tipo + propietario, grupo y demás (`rwx`) |
 | `chmod +x script.sh` | Da permiso de ejecución |
 | `sudo orden` | Ejecuta esa orden como administrador (Linux y macOS). Solo si hace falta |
-| `ps` / `ps aux` | Los procesos de esta terminal / todos |
+| `ps` / `ps aux` | Los procesos de esta terminal / todos (en Git Bash, `ps -a`) |
 | `top` | Los que más gastan, en directo (<kbd>Q</kbd> para salir) |
 | <kbd>Ctrl</kbd>+<kbd>C</kbd> | Para la orden que está en marcha |
 | `kill PID` / `kill %1` | Pide a un proceso que termine (`kill -9`, último recurso) |
@@ -814,6 +814,7 @@ done
 | **Extensión de VS Code** | Complemento que añade funciones al editor; tiene sus mismos permisos |
 | **Terminal integrada** | Terminal dentro del editor, que se abre en la carpeta abierta |
 | **Multicursor** | Varios cursores a la vez: lo que escribes aparece en todos |
+| **LF / CRLF** | Los saltos de línea de Linux y macOS / de Windows; se ven y se cambian en la barra de estado. Los scripts de bash, siempre con `LF` (ajuste `files.eol`: `\n`) |
 
 #### Atajos esenciales (teclado estadounidense; mira los tuyos en el editor)
 
@@ -871,6 +872,7 @@ Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
 | `Permiso denegado` | `Permission denied` | Script sin `chmod +x`, o escribir donde no debes (mira la ruta: ¿una variable vacía?) |
 | `No es un directorio` | `Not a directory` | Usas un fichero como si fuera una carpeta |
 | `variable sin asignar` | `unbound variable` | Con `set -u`: variable mal escrita o sin valor |
+| `$'\r': orden no encontrada` | `$'\r': command not found` | Script guardado con saltos de línea de Windows (CRLF): cámbialo a LF en la barra de estado de VS Code |
 | `error de sintaxis: no se esperaba el final del fichero` | `syntax error: unexpected end of file` | Falta un `fi`, un `done` o unas comillas de cierre: mira hacia arriba |
 
 #### Herramientas

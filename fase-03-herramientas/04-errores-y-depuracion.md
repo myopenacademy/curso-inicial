@@ -544,6 +544,8 @@ Proyecto tienda-online creado
 
 > **⚠️ Cuidado:** ante un «Permiso denegado», **no** lo «arregles» ejecutándolo como administrador (con `sudo`). Aquí habría funcionado… y habría creado un `README.md` en la raíz del disco. Primero entiende **qué** intenta hacer la orden y **dónde**; los permisos los viste en [«La terminal: sacarle partido»](02-terminal-sacarle-partido.md#110-permisos-quién-puede-leer-escribir-y-ejecutar).
 
+> **📌 Nota:** la raíz no es igual en todos los sistemas. En macOS y en Git Bash, el mensaje puede ser otro y, en Git Bash, según dónde esté instalado, incluso puede que el fichero se cree en su carpeta de instalación. La pista que importa es la misma en todos: la ruta `/README.md`, que no es donde querías escribir.
+
 **Que no vuelva a pasar: `set -eu`.** Si el script hubiera empezado con `set -eu` ([apartado 1.11](#111-dos-seguros-para-tus-scripts)), bash habría detenido el script en la variable mal escrita, diciendo su nombre, en lugar de tratarla como vacía y seguir:
 
 ```bash
@@ -571,7 +573,7 @@ crear-proyecto.sh: línea 6: proyeto: variable sin asignar
 
 ## 3. Errores típicos
 
-El primero reúne los mensajes que más vas a ver al usar la terminal y escribir scripts. Los tres últimos son errores **al depurar**.
+Los tres primeros son los tropiezos que más vas a ver al usar la terminal y escribir scripts. Los dos últimos son errores **al depurar**.
 
 ### 3.1. Los tres mensajes de siempre
 
@@ -588,7 +590,47 @@ Dos de esas causas son difíciles de ver a simple vista:
 - **Las mayúsculas.** En Linux, `Presupuestos` y `presupuestos` son nombres distintos; en Windows y macOS, normalmente, no. Por eso hay scripts que funcionan en tu ordenador y fallan en el servidor, que casi siempre es Linux. Ojo: los comodines como `*.JPG` distinguen mayúsculas también en macOS, porque los compara bash, no el sistema ([ejercicio 4](#ejercicio-4--el-álbum-de-fotos-vacío)).
 - **Las tildes.** Para el ordenador, `ó` y `o` son letras distintas: `presupuesto-reunión.txt` no es `presupuesto-reunion.txt`. Pasa mucho con nombres escritos a mano y con ficheros que vienen de otro sistema (a veces, incluso, dos nombres que se ven idénticos se guardan con letras distintas por dentro; lo entenderás en «Texto, binario y codificación», fase 4). Por eso, en los ficheros de programación, [nombres sin tildes, sin eñes y sin espacios](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#113-cómo-nombrar-ficheros-y-carpetas).
 
-### 3.2. El script que funciona en un sitio y no en otro
+### 3.2. Un script con los saltos de línea de Windows
+
+**Qué pasa:** escribes un script en Windows, lo ejecutas en Git Bash y fallan órdenes que están bien escritas, con mensajes raros: `$'\r': orden no encontrada`, o el nombre de una carpeta que sí existe con un `\r` pegado al final (`$'notas\r'`). Con la bash de macOS, el mensaje sale en inglés (`command not found`) y puede que sin el `$'\r'` a la vista ([nota de 03.01](01-terminal-lo-basico.md#14-qué-hay-aquí-ls)).
+
+**Por qué ocurre:** cada línea de un fichero de texto termina con una marca invisible, el **salto de línea**. Windows usa dos caracteres, el retorno de carro y el salto (lo que VS Code llama **CRLF**), y Linux y macOS, uno solo (**LF**). bash solo entiende LF: el retorno de carro, que bash escribe `\r` en sus mensajes, se queda pegado al final de cada línea como una letra más, y `ls` pasa a ser `ls\r`, una orden que no existe. La línea en blanco es la que da el mensaje más raro: con CRLF no está vacía, sino que tiene un `\r` solo, y bash lo toma por el nombre de una orden. Y VS Code, en Windows, crea los ficheros nuevos con CRLF si no le dices otra cosa. (Los saltos de línea se explican a fondo en «Texto, binario y codificación», fase 4.)
+
+Para verlo sin necesidad de Windows, la primera orden de esta sesión crea a propósito un script pequeño con CRLF (`\r\n` es el salto de Windows), con una línea en blanco, como tienen casi todos. `cat -e` enseña lo invisible: un `$` donde termina cada línea y un `^M` por cada retorno de carro que sobra:
+
+**En tu terminal** (`sesion.txt`):
+
+```text
+$ printf '#!/bin/bash\r\n\r\ncd notas\r\nls\r\n' > roto.sh
+$ cat -e roto.sh
+#!/bin/bash^M$
+^M$
+cd notas^M$
+ls^M$
+$ bash roto.sh
+roto.sh: línea 2: $'\r': orden no encontrada
+roto.sh: línea 3: cd: $'notas\r': No existe el archivo o el directorio
+roto.sh: línea 4: $'ls\r': orden no encontrada
+$ tr -d '\r' < roto.sh > bien.sh
+$ cat -e bien.sh
+#!/bin/bash$
+$
+cd notas$
+ls$
+$ bash bien.sh
+compras.txt
+```
+
+📁 **Código:** [`codigo/04-errores-y-depuracion/ejemplos/3.2-saltos-de-linea-de-windows/`](codigo/04-errores-y-depuracion/ejemplos/3.2-saltos-de-linea-de-windows/)
+
+**Cómo se arregla:**
+
+- **En VS Code**, mira la barra de estado, abajo a la derecha: si dice `CRLF`, haz clic, elige `LF` (es la orden **Change End of Line Sequence**, **Cambiar secuencia de fin de línea**) y guarda.
+- **Para que no vuelva a pasar**, abre la configuración (<kbd>Ctrl</kbd>+<kbd>,</kbd>; en macOS, <kbd>Cmd</kbd>+<kbd>,</kbd>), busca `files.eol` y elige `\n`, que es LF. Desde entonces, los ficheros **nuevos** se crean con LF; los que ya tenías, cámbialos uno a uno en la barra de estado. Es uno de los pasos de [preparar VS Code para el curso](03-editor-de-codigo.md#21-preparar-vs-code-para-el-curso).
+- **Para comprobarlo en la terminal**, `cat -e`, que funciona igual en Linux, macOS y Git Bash: con CRLF verás `ls^M$`; con LF, `ls$`. Y para arreglar un fichero desde la terminal, `tr -d '\r' < roto.sh > bien.sh` quita los retornos de carro y deja el resultado en otro fichero, como en la sesión; funciona igual en los tres sistemas.
+- Si usas Git (lo verás en la fase 5), un fichero `.gitattributes` puede hacer que los scripts se guarden siempre con LF; el repositorio de este curso lo tiene.
+
+### 3.3. El script que funciona en un sitio y no en otro
 
 **Qué pasa:** el script funciona cuando lo ejecutas desde su carpeta y falla desde otra; o funciona en tu ordenador y falla en el de un compañero.
 
@@ -602,7 +644,7 @@ Dos de esas causas son difíciles de ver a simple vista:
 
 **Cómo se arregla:** busca **la diferencia** entre los dos sitios, una cosa cada vez. Es reproducir el error ([apartado 1.3](#13-reproducir-el-error)): si sabes qué lo hace fallar, sabes qué buscar.
 
-### 3.3. Esconder los errores
+### 3.4. Esconder los errores
 
 **Qué pasa:** para que «no salgan mensajes feos», alguien añade `2> /dev/null` a las órdenes del script. El script ya no muestra errores… y no hace lo que debe, sin que nadie se entere.
 
@@ -610,7 +652,7 @@ Dos de esas causas son difíciles de ver a simple vista:
 
 **Cómo se evita:** no escondas errores que no entiendes. Si un error es **esperado** y sabes por qué sale, trátalo de forma explícita (comprueba antes que el fichero existe, por ejemplo) en lugar de silenciarlo.
 
-### 3.4. Cambiar cosas al azar
+### 3.5. Cambiar cosas al azar
 
 **Qué pasa:** pruebas a añadir comillas, quitar una barra, cambiar un `-c` por un `-l`… hasta que «funciona» con el caso que probabas. Y falla con el siguiente.
 
@@ -1068,7 +1110,7 @@ Después de la condición `'[' -d Documetos ']'` («¿existe la carpeta `Documet
 
 **4. Hipótesis.** La carpeta de la condición es `Documetos`, sin la `n`, y la que existe es `Documentos`. Se comprueba comparando las dos líneas de arriba: confirmada.
 
-**5. Corregir.** Primero, la causa: `origen="Documentos"`. Pero el caso real enseña algo más grave: **el script callaba**. El `if` estaba pensado para «no copiar si no hay nada que copiar», y ese silencio es el que ha escondido el error durante semanas (como el [error típico 3.3](#33-esconder-los-errores)). La versión corregida, si la carpeta no existe, **lo dice y termina con error**:
+**5. Corregir.** Primero, la causa: `origen="Documentos"`. Pero el caso real enseña algo más grave: **el script callaba**. El `if` estaba pensado para «no copiar si no hay nada que copiar», y ese silencio es el que ha escondido el error durante semanas (como el [error típico 3.4](#34-esconder-los-errores)). La versión corregida, si la carpeta no existe, **lo dice y termina con error**:
 
 ```bash
 #!/usr/bin/env bash
@@ -1197,6 +1239,7 @@ Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
 | `Permiso denegado` | `Permission denied` | Script sin `chmod +x`, o escribir donde no debes (mira la ruta: ¿una variable vacía?) |
 | `No es un directorio` | `Not a directory` | Usas un fichero como si fuera una carpeta |
 | `variable sin asignar` | `unbound variable` | Con `set -u`: variable mal escrita o sin valor |
+| `$'\r': orden no encontrada` | `$'\r': command not found` | Script guardado con saltos de línea de Windows (CRLF): cámbialo a LF en la barra de estado de VS Code |
 | `error de sintaxis: no se esperaba el final del fichero` | `syntax error: unexpected end of file` | Falta un `fi`, un `done` o unas comillas de cierre: mira hacia arriba |
 
 ### Herramientas
