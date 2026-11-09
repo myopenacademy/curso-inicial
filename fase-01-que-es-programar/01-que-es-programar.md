@@ -491,7 +491,7 @@ La ?ltima caja
 
 **Por qué ocurre:** el programa escribe el texto bien, pero la **consola** (la ventana de texto donde se ve lo que escribe un programa) usa una **codificación de caracteres** distinta. Una codificación es la tabla que asocia cada letra con un número; si el programa y la consola usan tablas distintas, las letras que no son del inglés (tildes, eñes, `ü`, `¿`) se estropean. En el primer caso, la consola lee la `ú` con la tabla equivocada y dibuja dos caracteres raros; en el segundo, no sabe dibujarla y pone `?`. Pasa sobre todo en consolas de Windows antiguas.
 
-**Cómo se arregla:** haciendo que todo use **UTF-8**, la codificación que entiende todos los idiomas y que es la habitual hoy. No tienes que hacer nada ahora: lo verás a fondo en el módulo «Texto, binario y codificación» (fase 4). Lo importante es que, si te pasa, sepas que **tu programa no está mal**: es un problema de cómo se muestra el texto.
+**Cómo se arregla:** haciendo que todo use **UTF-8**, la codificación que entiende todos los idiomas y que es la habitual hoy. No tienes que hacer nada ahora: lo verás a fondo en [04.01 Texto, binario y codificación](../fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#17-utf-8-cómo-se-guardan-los-caracteres-de-unicode). Lo importante es que, si te pasa, sepas que **tu programa no está mal**: es un problema de cómo se muestra el texto.
 
 ### 3.6. Copiar código sin entenderlo
 

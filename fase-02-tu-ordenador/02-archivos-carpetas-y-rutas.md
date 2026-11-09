@@ -308,7 +308,7 @@ Dos ideas para quedarte por ahora:
   - **macOS:** en el Finder, menú **Finder** › **Ajustes** › **Avanzado** › **Mostrar todas las extensiones de los archivos**.
   - **Linux:** los exploradores la enseñan siempre.
 
-Qué tipos de fichero hay, y qué diferencia un fichero de texto de uno binario, lo verás en el módulo «Texto, binario y codificación» (fase 4).
+Qué tipos de fichero hay, y qué diferencia un fichero de texto de uno binario, lo verás en [04.01 Texto, binario y codificación](../fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#12-ficheros-de-texto-y-ficheros-binarios).
 
 ### 1.15. Ficheros ocultos
 

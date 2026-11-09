@@ -606,7 +606,7 @@ flowchart TD
 
 En texto: se empieza con `dia` a 1 y `total` a 0; mientras `dia` sea como mucho 7, se lee la venta, se suma al total, se pasa al día siguiente y se vuelve a la pregunta; cuando `dia` llega a 8, se escribe el total.
 
-> **📌 Nota:** los diagramas de este curso no son imágenes: están escritos como texto con **Mermaid**, una notación que GitHub y la academia convierten en dibujo. La verás en el módulo «Diagramas y Mermaid» (fase 4). Para los ejercicios de este módulo, un dibujo en papel vale exactamente igual.
+> **📌 Nota:** los diagramas de este curso no son imágenes: están escritos como texto con **Mermaid**, una notación que GitHub y la academia convierten en dibujo. La verás en [04.05 Diagramas y Mermaid](../fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#13-dibujar-escribiendo-mermaid). Para los ejercicios de este módulo, un dibujo en papel vale exactamente igual.
 
 **¿Pseudocódigo o diagrama?**
 

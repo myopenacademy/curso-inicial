@@ -44,7 +44,7 @@ Dentro del ordenador todo se guarda como **números**, y esos números se escrib
 
 Con 8 bits se pueden formar **256 combinaciones distintas** (de `00000000` a `11111111`), porque cada bit dobla las posibilidades: 2 × 2 × 2 × 2 × 2 × 2 × 2 × 2 = 256. Eso basta, por ejemplo, para guardar una letra sin tilde: la `A` se guarda como el número 65, que en binario es `01000001`.
 
-> **📌 Nota:** no necesitas saber pasar números a binario ni hacer cuentas con unos y ceros. Te basta con la idea: **un bit es un 0 o un 1, un byte son 8 bits, y todo lo que hay en el ordenador acaba siendo bytes**. Cómo se convierte un texto con tildes en bytes lo verás en el módulo «Texto, binario y codificación» (fase 4).
+> **📌 Nota:** no necesitas saber pasar números a binario ni hacer cuentas con unos y ceros. Te basta con la idea: **un bit es un 0 o un 1, un byte son 8 bits, y todo lo que hay en el ordenador acaba siendo bytes**. Cómo se convierte un texto con tildes en bytes lo verás en [04.01 Texto, binario y codificación](../fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#17-utf-8-cómo-se-guardan-los-caracteres-de-unicode).
 
 ### 1.3. KB, MB, GB y TB
 

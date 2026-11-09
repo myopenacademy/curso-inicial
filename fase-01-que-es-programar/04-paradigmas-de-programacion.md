@@ -183,7 +183,7 @@ Dos palabras que oirás mucho junto al estilo funcional:
 | **CSS** | Qué aspecto tiene ese contenido (colores, tamaños, márgenes) | El navegador |
 | **Fórmulas de una hoja de cálculo** | Qué valor tiene una celda | La hoja de cálculo |
 
-También es declarativa mucha **configuración**: en lugar de programar paso a paso cómo preparar algo, se escribe en un fichero qué se quiere y una herramienta se ocupa del resto. Lo verás con formatos como JSON y YAML en la fase 4 («Formatos y diagramas»).
+También es declarativa mucha **configuración**: en lugar de programar paso a paso cómo preparar algo, se escribe en un fichero qué se quiere y una herramienta se ocupa del resto. Lo verás con formatos como JSON y YAML en [04.03 JSON y YAML](../fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
 
 **Ventajas:** lo más corto y legible; el motor suele saber hacerlo de forma mucho más eficiente que tú (una base de datos sabe buscar entre millones de filas).
 

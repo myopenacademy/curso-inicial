@@ -766,7 +766,7 @@ Tienes que dejarlo así, **sin escribir cinco veces lo mismo** y sin cortar y pe
 - [ ] Pedro Sanz
 ```
 
-(Esa forma, `- [ ] `, es una lista de tareas de Markdown, para ir marcando quién confirma; la verás en la fase 4.)
+(Esa forma, `- [ ] `, es una lista de tareas de Markdown, para ir marcando quién confirma; la verás en [04.02 Markdown](../fase-04-formatos-y-diagramas/02-markdown.md#17-listas-de-tareas).)
 
 Escribe qué teclas pulsarías, en orden, y hazlo en tu editor.
 

@@ -252,7 +252,7 @@ Tu red de seguridad de verdad no es tener cuidado (que también), sino **tener c
 Para leer un fichero de texto sin abrir un editor tienes cuatro órdenes, según cómo sea de largo y qué parte quieras. En los ejemplos aparecen dos clases de ficheros de texto que verás a menudo:
 
 - Un **registro** (en inglés, *log*): un fichero de texto en el que un programa va apuntando, línea a línea, lo que pasa mientras funciona, cada cosa con su fecha y su hora. Suelen terminar en `.log` y tener miles de líneas, así que no se leen enteros: se mira el principio o el final.
-- Un **CSV**: un fichero de texto con una tabla, una fila por línea y las columnas separadas por comas (o por punto y coma). Su primera línea, la **cabecera**, suele decir qué es cada columna. Lo verás a fondo en la fase 4.
+- Un **CSV**: un fichero de texto con una tabla, una fila por línea y las columnas separadas por comas (o por punto y coma). Su primera línea, la **cabecera**, suele decir qué es cada columna. Lo verás a fondo en [04.04 XML, CSV y otros](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#18-csv-a-fondo-las-reglas).
 
 | Orden | Qué escribe | Para qué |
 |---|---|---|
@@ -277,7 +277,7 @@ En `less`, las letras se pulsan **en minúscula**, porque con la mayúscula algu
 
 > **⚠️ Cuidado:** la tecla más importante de `less` es <kbd>Q</kbd> (*quit*). Si un día la terminal no te deja escribir órdenes y abajo ves `:` o `(END)`, estás dentro de `less` (o de otro paginador): pulsa <kbd>Q</kbd>. Te pasará con Git, en la fase 5, que usa `less` para enseñarte el historial cuando no cabe en la pantalla.
 
-Estas órdenes son para ficheros de **texto**. Si haces `cat` de una imagen o un PDF, verás símbolos sin sentido (es un [fichero binario](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#114-la-extensión), lo verás en la fase 4) y a veces la terminal se queda con caracteres raros. No se rompe nada: escribe `clear` ([apartado 1.13](#113-trucos-que-ahorran-tiempo)).
+Estas órdenes son para ficheros de **texto**. Si haces `cat` de una imagen o un PDF, verás símbolos sin sentido (es un [fichero binario](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#114-la-extensión), lo verás en [04.01](../fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#12-ficheros-de-texto-y-ficheros-binarios)) y a veces la terminal se queda con caracteres raros. No se rompe nada: escribe `clear` ([apartado 1.13](#113-trucos-que-ahorran-tiempo)).
 
 ### 1.10. Buscar: grep y find
 

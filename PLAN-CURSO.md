@@ -61,10 +61,10 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | | `03-editor-de-codigo.md` | El editor de código | 1,5 | N |
 | | `04-errores-y-depuracion.md` | Errores y depuración | 2 | N |
 | `fase-04-formatos-y-diagramas` → `inicial.fase.formatos-y-diagramas` | `01-texto-binario-y-codificacion.md` | Texto, binario y codificación | 1,5 | A |
-| | `02-markdown.md` | Markdown | 2 | N |
+| | `02-markdown.md` | Markdown | 2,5 | N |
 | | `03-json-y-yaml.md` | JSON y YAML | 2,5 | N |
 | | `04-xml-csv-y-otros.md` | XML, CSV y otros | 2 | A |
-| | `05-diagramas-y-mermaid.md` | Diagramas y Mermaid | 2 | N |
+| | `05-diagramas-y-mermaid.md` | Diagramas y Mermaid | 2,5 | N |
 | `fase-05-git-y-github` → `inicial.fase.git-y-github` | `01-git-fundamentos.md` | Git: fundamentos | 3 | N |
 | | `02-ramas-y-conflictos.md` | Ramas y conflictos | 3 | N |
 | | `03-github.md` | GitHub | 2,5 | N |
@@ -81,7 +81,7 @@ Cerrado con el autor el 8 de noviembre de 2026. Prefijo de los identificadores: 
 | | `05-seguridad-basica.md` | Seguridad básica | 1,5 | N |
 | `fase-08-proyecto-final` → `inicial.fase.proyecto-final` | `01-primer-repositorio.md` | Tu primer repositorio | 6 | N |
 
-Total: unas **70,5 horas**, más los retos (los de la fase 1, 3 horas; los de la fase 2, 1,5; los de la fase 3, 2). Tiempos de la fase 2 aprobados por el autor el 9 de noviembre de 2026 (pasa de 5,5 a 7 horas; el 02.03 incluye instalar de verdad). **La fase 1 está aprobada por el autor (8 de noviembre de 2026) y sus tiempos son definitivos.** La fase 1 quedó en 10,5 horas el 8 de noviembre de 2026, tras **ajustar la dosis** a un principiante: 01.03 y 01.04 se quedan con las ideas y dejan el detalle a cada curso. **Criterio para las fases siguientes:** «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Vigilar la extensión: el curso estaba ya en el límite.
+Total: unas **71,5 horas**, más los retos (los de la fase 1, 3 horas; los de la fase 2, 1,5; los de la fase 3, 2; los de la fase 4, 3). Fase 4 (9 de noviembre de 2026, decidido por el autor tras la revisión de conjunto): 04.02 y 04.05 pasan de 2 a 2,5 horas, porque no llegaban a la dosis sin quitar algo necesario; sus retos, 3 horas, por el trabajo a mano del reto 3. Tiempos de la fase 2 aprobados por el autor el 9 de noviembre de 2026 (pasa de 5,5 a 7 horas; el 02.03 incluye instalar de verdad). **La fase 1 está aprobada por el autor (8 de noviembre de 2026) y sus tiempos son definitivos.** La fase 1 quedó en 10,5 horas el 8 de noviembre de 2026, tras **ajustar la dosis** a un principiante: 01.03 y 01.04 se quedan con las ideas y dejan el detalle a cada curso. **Criterio para las fases siguientes:** «¿le sirve al alumno antes de empezar su curso?»; la idea sí, el detalle no siempre. Vigilar la extensión: el curso estaba ya en el límite.
 
 ### 4.1. Origen de cada módulo
 
