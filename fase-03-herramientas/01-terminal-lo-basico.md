@@ -67,7 +67,7 @@ Ya conoces la [carpeta actual](../fase-02-tu-ordenador/02-archivos-carpetas-y-ru
 
 - Si escribes un nombre de fichero sin ruta (`cat notas.txt`), la terminal lo busca **en la carpeta actual**.
 - Si escribes una ruta relativa (`cat datos/notas.txt`), se cuenta **desde la carpeta actual**.
-- La terminal se abre siempre en tu **carpeta personal** (`~`), y ahí sigue hasta que te muevas.
+- Una terminal nueva, abierta desde el menú del sistema, empieza en tu **carpeta personal** (`~`), y ahí sigue hasta que te muevas. (Si la abres de otra forma, puede empezar en otra: la terminal del editor de código, en la carpeta que tengas abierta en él; Git Bash, con «Git Bash Here» del menú del clic derecho, en la carpeta donde hiciste clic. Por eso, ante la duda, `pwd`.)
 
 Piensa en la terminal como en una persona que recorre el árbol de carpetas: siempre está **en una** carpeta, y todo lo que le pides lo hace desde allí, salvo que le des una ruta absoluta.
 
@@ -249,7 +249,10 @@ Tu red de seguridad de verdad no es tener cuidado (que también), sino **tener c
 
 ### 1.9. Ver qué hay dentro de un fichero: cat, less, head y tail
 
-Para leer un fichero de texto sin abrir un editor tienes cuatro órdenes, según cómo sea de largo y qué parte quieras:
+Para leer un fichero de texto sin abrir un editor tienes cuatro órdenes, según cómo sea de largo y qué parte quieras. En los ejemplos aparecen dos clases de ficheros de texto que verás a menudo:
+
+- Un **registro** (en inglés, *log*): un fichero de texto en el que un programa va apuntando, línea a línea, lo que pasa mientras funciona, cada cosa con su fecha y su hora. Suelen terminar en `.log` y tener miles de líneas, así que no se leen enteros: se mira el principio o el final.
+- Un **CSV**: un fichero de texto con una tabla, una fila por línea y las columnas separadas por comas (o por punto y coma). Su primera línea, la **cabecera**, suele decir qué es cada columna. Lo verás a fondo en la fase 4.
 
 | Orden | Qué escribe | Para qué |
 |---|---|---|
@@ -265,10 +268,12 @@ Con **`-n`** y un número, `head` y `tail` escriben las líneas que quieras: `he
 | Tecla | Qué hace en `less` |
 |---|---|
 | <kbd>Espacio</kbd> o <kbd>AvPág</kbd> | Avanza una pantalla |
-| <kbd>B</kbd> o <kbd>RePág</kbd> | Retrocede una pantalla |
+| <kbd>b</kbd> o <kbd>RePág</kbd> | Retrocede una pantalla |
 | <kbd>↓</kbd> y <kbd>↑</kbd> | Avanza o retrocede una línea |
-| <kbd>/</kbd>, un texto e <kbd>Intro</kbd> | Busca ese texto hacia delante; <kbd>N</kbd> salta a la siguiente coincidencia |
+| <kbd>/</kbd>, un texto e <kbd>Intro</kbd> | Busca ese texto hacia delante; <kbd>n</kbd> salta a la siguiente coincidencia, y <kbd>Mayús</kbd>+<kbd>N</kbd>, a la anterior |
 | <kbd>Q</kbd> | **Sale** de `less` y vuelve al indicador |
+
+En `less`, las letras se pulsan **en minúscula**, porque con la mayúscula algunas hacen otra cosa: <kbd>n</kbd> busca hacia delante y <kbd>Mayús</kbd>+<kbd>N</kbd>, hacia atrás. La <kbd>Q</kbd> de salir funciona de las dos formas. Las tienes todas en su manual, `man less`.
 
 > **⚠️ Cuidado:** la tecla más importante de `less` es <kbd>Q</kbd> (*quit*). Si un día la terminal no te deja escribir órdenes y abajo ves `:` o `(END)`, estás dentro de `less` (o de otro paginador): pulsa <kbd>Q</kbd>. Te pasará con Git, en la fase 5, que usa `less` para enseñarte el historial cuando no cabe en la pantalla.
 
@@ -301,10 +306,12 @@ Si le das **varios ficheros**, `grep` escribe delante de cada línea el nombre d
 **`find`** busca ficheros y carpetas **por su nombre**, entrando en todas las carpetas que haya por debajo de la que le digas. La forma más sencilla:
 
 ```text
-find . -name "socios.csv"
+find documentos -name "socios.csv"
 ```
 
-Se lee así: «busca **desde aquí** (`.`) **hacia abajo** los que **se llamen** `socios.csv`». Contesta con la ruta de cada uno que encuentra, empezando por `./`, que es «desde la carpeta actual». El nombre puede llevar comodines (`find . -name "*.csv"`, todos los que terminan en `.csv`; los comodines están en el [apartado 1.14](#114-comodines-y-comillas)), y entonces las comillas son obligatorias.
+Se lee así: «busca **en la carpeta `documentos` y en todas las de dentro** los que **se llamen** `socios.csv`». Contesta con la ruta de cada uno que encuentra, empezando por la carpeta que le has dado (`documentos/2026/socios.csv`). Para buscar desde la carpeta actual, se le da `.`: `find . -name "socios.csv"`. El nombre puede llevar comodines (`find documentos -name "*.csv"`, todos los que terminan en `.csv`; los comodines están en el [apartado 1.14](#114-comodines-y-comillas)), y entonces las comillas son obligatorias.
+
+> **💡 Consejo:** dale a `find` la carpeta más concreta que puedas. Desde tu carpeta personal, `find .` recorre **todas** tus carpetas: puede tardar mucho, llenarte la pantalla de errores de «Permiso denegado» y, en macOS, hacer que el sistema te pida permiso para que la terminal entre en carpetas como Documentos o Escritorio.
 
 > **📌 Nota:** `find` no distingue mayúsculas solo si se lo pides, con `-iname` en lugar de `-name`. Y cuando encuentra varios, **no los ordena** alfabéticamente: los escribe en el orden en que los va encontrando, que puede cambiar de un ordenador a otro.
 
@@ -326,7 +333,7 @@ Dicho así parece inútil, pero es una de las órdenes que más vas a usar, por 
 
 Nadie se sabe de memoria las opciones de todas las órdenes. Lo que sí sabe quien programa es **dónde mirarlas**, y la primera fuente es la propia terminal:
 
-- **`--help`**: casi todas las órdenes escriben un resumen de cómo se usan y sus opciones con `orden --help`. Por ejemplo, `mkdir --help` o `grep --help`. Es corto, está en la terminal y, en un sistema en español, suele salir en español.
+- **`--help`**: en Linux y en Git Bash, casi todas las órdenes escriben un resumen de cómo se usan y sus opciones con `orden --help`. Por ejemplo, `mkdir --help` o `grep --help`. Es corto, está en la terminal y, en un sistema en español, suele salir en español. (En macOS, muchas no lo entienden: lo verás abajo.)
 - **`man`** (*manual*): abre la **página del manual** de una orden, mucho más completa, en el paginador `less`. Se recorre con las teclas del [apartado 1.9](#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail) y se sale con <kbd>Q</kbd>: `man ls`, `man grep`.
 
 Las páginas del manual tienen siempre las mismas partes: el nombre (*NAME*), cómo se escribe la orden (*SYNOPSIS*), qué hace (*DESCRIPTION*) y sus opciones. En la línea de cómo se escribe, lo que va entre corchetes `[...]` es **opcional**, y los puntos suspensivos `...` quieren decir «puedes poner varios». Por ejemplo, el resumen de `grep` empieza así:
@@ -340,11 +347,11 @@ Se lee: «`grep`, opcionalmente una o varias opciones, **obligatoriamente** lo q
 **Lo que cambia en tu sistema:**
 
 - **En Linux**, `man` existe y suele tener los manuales de todo. (Algunas instalaciones mínimas los quitan para ocupar menos.)
-- **En macOS**, `man` existe y funciona igual.
+- **En macOS**, `man` existe y funciona igual. Pero sus órdenes son de otra familia (las de BSD, no las de GNU que traen Linux y Git Bash), y muchas **no entienden `--help`**: se quejan de que no conocen esa opción y, como mucho, enseñan una línea de uso. En macOS, la ayuda es `man`.
 - **En Git Bash**, la orden `man` **no viene incluida** (a 9 de noviembre de 2026): usa `--help`. Para Git, `git help` seguido de una orden abre su manual en el navegador.
-- **Las órdenes propias de bash** (como `cd`, `pwd` o `echo`) no son programas aparte, sino parte de bash, y no tienen su propia página de manual: su ayuda sale con `help` y la orden (`help cd`). `help` es de bash: en zsh, la terminal de macOS, no existe, y la ayuda de sus órdenes propias está en su manual, `man zshbuiltins`.
+- **Las órdenes propias de bash** (como `cd`, `pwd` o `echo`) son parte de bash, y su ayuda sale con `help` y la orden (`help cd`). `cd` no tiene página del manual. `man pwd` y `man echo` sí abren una, pero es la de un programa aparte con el mismo nombre, no la de la orden de bash, que puede tener opciones distintas. `help` es de bash: en zsh, la terminal de macOS, no existe, y la ayuda de sus órdenes propias está en su manual, `man zshbuiltins`.
 
-> **💡 Consejo:** el manual está en inglés casi siempre. No pasa nada: lo que buscas suele ser una opción, y la descripción es corta. Y si no te aclaras, la documentación de internet y la IA ayudan; lo verás en el módulo «Buscar ayuda» (fase 7). Pero mira primero `--help`: es la fuente más directa y no se equivoca de versión.
+> **💡 Consejo:** el manual está en inglés casi siempre. No pasa nada: lo que buscas suele ser una opción, y la descripción es corta. Y si no te aclaras, la documentación de internet y la IA ayudan; lo verás en el módulo «Buscar ayuda» (fase 7). Pero mira primero la ayuda de tu terminal (`--help` o `man`): es la fuente más directa y no se equivoca de versión.
 
 ### 1.13. Trucos que ahorran tiempo
 
@@ -393,13 +400,22 @@ Las comillas tienen otro efecto: **apagan los comodines**. `echo *.txt` escribe 
 
 > **📌 Nota:** las comillas pueden ser dobles (`"…"`) o simples (`'…'`). Para nombres con espacios, las dos sirven. La diferencia entre ellas (las simples lo dejan **todo** tal cual, incluido el `$` de las variables) la verás en el [módulo siguiente](02-terminal-sacarle-partido.md#17-variables-en-la-terminal).
 
-**Lo que cambia en macOS (zsh): un comodín que no encaja con nada.** Si escribes `ls *.xyz` y no hay ningún fichero así, bash le pasa a `ls` el patrón tal cual y es `ls` quien dice que no existe:
+**Lo que cambia en macOS (zsh).** Un comodín que no encaja con nada: si escribes `ls *.xyz` y no hay ningún fichero así, bash le pasa a `ls` el patrón tal cual y es `ls` quien dice que no existe:
 
 ```text
 ls: no se puede acceder a '*.xyz': No existe el archivo o el directorio
 ```
 
-zsh, en cambio, ni siquiera ejecuta la orden: contesta él mismo `zsh: no matches found: *.xyz`. Significan lo mismo: «no hay ningún fichero que encaje con ese patrón».
+zsh, en cambio, ni siquiera ejecuta la orden: contesta él mismo `zsh: no matches found: *.xyz`. Significan lo mismo: «no hay ningún fichero que encaje con ese patrón». Esta y otras diferencias de los ejemplos de este módulo, juntas:
+
+| Lo que escribes | En bash (Linux, Git Bash) | En zsh (la terminal de macOS) |
+|---|---|---|
+| Un patrón que no encaja con nada, como `*.xyz` | Se lo pasa tal cual a la orden, que dice que no existe. Si en la orden hay otros patrones que sí encajan, la orden se ejecuta con ellos | Dice `no matches found` y **no ejecuta la orden**, aunque los demás patrones sí encajen: no se hace nada |
+| Un nombre con espacios sin comillas: `cd Mis apuntes` | `cd: demasiados argumentos` | Otro mensaje: `cd: string not in pwd: Mis` (con dos palabras, zsh intenta otra forma de `cd`, que no te hace falta). Se arregla igual: con comillas |
+| `rm *` (o `rm` con un `*` suelto, como en el [error típico 3.3](#33-un-espacio-de-más-al-borrar)) | Borra sin preguntar | Pregunta antes si de verdad quieres borrar todos los ficheros de la carpeta. Es una ayuda, no una red: con `rm *.txt` ya no pregunta |
+| `ls` de un nombre con espacios | Lo escribe entre comillas simples (`'Mis apuntes'`) para que veas los espacios | El `ls` de macOS lo escribe sin comillas |
+
+(Comprobado en la documentación oficial de zsh y en el manual de `ls` de BSD el 9 de noviembre de 2026.)
 
 ### 1.15. Las órdenes de PowerShell, para reconocerlas
 
@@ -487,12 +503,12 @@ $ pwd
 
 ### 2.2. Mirar una carpeta con detalle: ls -l, -a y -h
 
-**Situación real:** en la misma web, quieres saber qué es cada cosa (fichero o carpeta), si hay ficheros ocultos y cuánto ocupan las imágenes, porque la web va lenta y sospechas de alguna foto. Esta copia de la web tiene además un fichero oculto, `.gitignore`.
+**Situación real:** la panadería te manda ahora la versión de la web que tiene publicada, `web-panaderia-publicada`: los mismos ficheros y un fichero oculto más, `.gitignore`. Quieres saber qué es cada cosa (fichero o carpeta), si hay ficheros ocultos y cuánto ocupan las imágenes, porque la web va lenta y sospechas de alguna foto.
 
 **En tu terminal** (`sesion.txt`):
 
 ```text
-$ cd web-panaderia
+$ cd web-panaderia-publicada
 $ ls -l
 total 20
 -rw-r--r-- 1 alumno alumno  269 ene 15  2026 contacto.html
@@ -593,12 +609,12 @@ factura-enero.pdf  factura-febrero.pdf
 
 ### 2.5. Borrar con cuidado
 
-**Situación real:** en la misma carpeta `encargos` quedan restos que ya no sirven: unas notas viejas y una carpeta `pruebas` con dos versiones antiguas de un logo. Además, al empezar, creas sin querer una carpeta `vacia`. Vas a borrarlo todo, **mirando antes** lo que borras.
+**Situación real:** en la carpeta de los encargos del año pasado, `encargos-2025`, quedan restos que ya no sirven: unas notas viejas y una carpeta `pruebas` con dos versiones antiguas de un logo. Además, al empezar, creas sin querer una carpeta `vacia`. Vas a borrarlo todo, **mirando antes** lo que borras.
 
 **En tu terminal** (`sesion.txt`):
 
 ```text
-$ cd encargos
+$ cd encargos-2025
 $ mkdir vacia
 $ ls
 clientes.txt  notas-viejas.txt  pruebas  vacia
@@ -624,7 +640,7 @@ clientes.txt
 
 ### 2.6. Ver un fichero de texto y el registro de una aplicación
 
-**Situación real:** quieres echar un vistazo rápido a dos ficheros: una lista de la compra, muy corta, y el registro de la aplicación de gestión de una oficina. Un **registro** (en inglés, *log*) es un fichero de texto en el que un programa va apuntando, línea a línea, lo que pasa mientras funciona, cada cosa con su fecha y su hora: aquí, quién entra, quién sale y qué errores ha habido. Los registros de verdad tienen miles de líneas, así que no se leen enteros: se mira el principio o el final.
+**Situación real:** quieres echar un vistazo rápido a dos ficheros: una lista de la compra, muy corta, y el [registro](#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail) de la aplicación de gestión de una oficina, donde la aplicación apunta quién entra, quién sale y qué errores ha habido. Este es corto, de 12 líneas, pero haz como con uno de verdad: mira el principio y el final.
 
 **En tu terminal** (`sesion.txt`):
 
@@ -680,8 +696,8 @@ $ grep -i -n presupuesto actas/*.txt
 actas/acta-enero.txt:3:Se aprueba el presupuesto de la excursión.
 actas/acta-febrero.txt:3:Presupuesto: falta el de la imprenta.
 actas/acta-marzo.txt:3:Luis pide revisar el presupuesto de la excursión.
-$ find . -name "socios.csv"
-./documentos/2026/socios.csv
+$ find documentos -name "socios.csv"
+documentos/2026/socios.csv
 ```
 
 📁 **Código:** [`codigo/01-terminal-lo-basico/ejemplos/2.7-buscar-un-dato/`](codigo/01-terminal-lo-basico/ejemplos/2.7-buscar-un-dato/)
@@ -691,7 +707,7 @@ $ find . -name "socios.csv"
 1. Con **un fichero**, `grep` escribe solo las líneas que contienen `presupuesto`.
 2. Con **varios** (`actas/*.txt`, los tres, gracias al comodín), cada línea va precedida del **nombre del fichero**, y con `-n`, del **número de línea**: `actas/acta-enero.txt:3:` es «línea 3 del acta de enero».
 3. **Sin `-i`**, el acta de febrero no aparece, porque allí pone `Presupuesto`, con mayúscula. **Con `-i`**, sí. Si buscas una palabra en textos escritos por personas, usa casi siempre `-i`.
-4. **`find . -name "socios.csv"`** recorre todas las carpetas desde la actual y encuentra el fichero dos niveles más abajo: `./documentos/2026/socios.csv`. Esa ruta, relativa a la carpeta actual, la puedes usar directamente (`cat ./documentos/2026/socios.csv`).
+4. **`find documentos -name "socios.csv"`** recorre `documentos` y todas las carpetas de dentro, y encuentra el fichero un nivel más abajo: `documentos/2026/socios.csv`. Esa ruta, relativa a la carpeta actual, la puedes usar directamente (`cat documentos/2026/socios.csv`).
 
 ### 2.8. Comodines y comillas con las fotos de un viaje
 
@@ -724,7 +740,7 @@ $ echo "*.txt"
 
 **En qué fijarte:**
 
-1. **`cd Fotos del viaje`**, sin comillas, falla con «demasiados argumentos»: bash le ha pasado a `cd` tres piezas (`Fotos`, `del` y `viaje`). **Con comillas**, es una sola.
+1. **`cd Fotos del viaje`**, sin comillas, falla con «demasiados argumentos»: bash le ha pasado a `cd` tres piezas (`Fotos`, `del` y `viaje`). **Con comillas**, es una sola. (En zsh, el mensaje es otro: lo tienes en la [tabla del apartado 1.14](#114-comodines-y-comillas).)
 2. **`ls *.jpg`** deja fuera el vídeo y las notas.
 3. **`ls foto-0?.jpg`** selecciona de la 01 a la 09: el `?` es **un** carácter, así que `foto-10.jpg`, `foto-11.jpg` y `foto-12.jpg` no encajan (después de `foto-` tienen `1`, no `0`).
 4. **`ls *.mp4 *.txt`**: se pueden poner varios patrones; bash junta las dos listas.
@@ -772,7 +788,7 @@ bash: cd: demasiados argumentos
 
 📁 **Código:** [`codigo/01-terminal-lo-basico/ejemplos/3.2-espacios-sin-comillas/`](codigo/01-terminal-lo-basico/ejemplos/3.2-espacios-sin-comillas/)
 
-**Por qué ocurre:** el espacio separa las piezas de una orden ([apartado 1.2](#12-cómo-se-escribe-una-orden)). `mkdir` recibió **dos** argumentos, `Mis` y `apuntes`, y creó dos carpetas **sin decir nada**. Después, `cd` recibió dos y se quejó, porque solo admite una.
+**Por qué ocurre:** el espacio separa las piezas de una orden ([apartado 1.2](#12-cómo-se-escribe-una-orden)). `mkdir` recibió **dos** argumentos, `Mis` y `apuntes`, y creó dos carpetas **sin decir nada**. Después, `cd` recibió dos y se quejó, porque solo admite una. (En zsh, `cd` contesta `cd: string not in pwd: Mis`, que dice lo mismo de otra forma: [apartado 1.14](#114-comodines-y-comillas).)
 
 **Cómo se arregla:** pon el nombre entre comillas: `mkdir "Mis apuntes"`, `cd "Mis apuntes"`. Y deshaz lo hecho: `rmdir Mis apuntes` borra las dos carpetas vacías que sobran. Mejor aún: en tus carpetas de trabajo, usa nombres sin espacios ([02.02, apartado 1.13](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#113-cómo-nombrar-ficheros-y-carpetas)): `mis-apuntes`.
 
@@ -792,7 +808,7 @@ $ ls
 
 📁 **Código:** [`codigo/01-terminal-lo-basico/ejemplos/3.3-un-espacio-de-mas/`](codigo/01-terminal-lo-basico/ejemplos/3.3-un-espacio-de-mas/)
 
-**Por qué ocurre:** con el espacio, `rm` recibió **dos** cosas para borrar: `*`, que bash cambió por **todos** los ficheros de la carpeta, y `.txt`, un fichero que no existe. Borró todos los ficheros (el PDF y la imagen también) y después se quejó del único que no encontró. El mensaje de error llega cuando ya no tiene arreglo, y no hay papelera.
+**Por qué ocurre:** con el espacio, `rm` recibió **dos** cosas para borrar: `*`, que bash cambió por **todos** los ficheros de la carpeta, y `.txt`, un fichero que no existe. Borró todos los ficheros (el PDF y la imagen también) y después se quejó del único que no encontró. El mensaje de error llega cuando ya no tiene arreglo, y no hay papelera. (zsh, la terminal de macOS, pregunta antes de un `rm` con un `*` suelto, pero no cuentes con ello: con otras órdenes y otros patrones no pregunta; [apartado 1.14](#114-comodines-y-comillas).)
 
 **Cómo se evita:**
 
@@ -883,7 +899,7 @@ notas.txt
 - **Antes de borrar con un comodín, `ls` con el mismo patrón.** Y prefiere `rmdir` a `rm -r` cuando la carpeta debería estar vacía.
 - **Haz una copia (`cp -r`) antes de reorganizar** una carpeta que te importa.
 - **Nombres sin espacios, sin tildes y en minúsculas** en tus carpetas de trabajo: te ahorrarás comillas y sustos.
-- **Pide ayuda a la terminal** (`--help`, `man`) antes que a internet: es la documentación de **tu** versión.
+- **Pide ayuda a la terminal** (`--help` o `man`; en macOS, `man`) antes que a internet: es la documentación de **tu** versión.
 - **Entiende lo que pegas**: no ejecutes órdenes copiadas de webs que no conoces, y menos si empiezan por `rm` o llevan `sudo`.
 
 **Lo que conviene evitar:**
@@ -1067,7 +1083,7 @@ Recuerda de dónde vienen las letras: `a` de *all*, `h` de *human*, `p` de *pare
 
 **Errores frecuentes al resolverlo:**
 
-- Pensar que `-h` en `ls` es la ayuda (*help*). En `ls`, la ayuda es `--help`, con dos guiones y la palabra entera.
+- Pensar que `-h` en `ls` es la ayuda (*help*). En `ls`, la ayuda es `--help`, con dos guiones y la palabra entera (en macOS, `man ls`).
 - Creer que `rm notas`, al negarse, ha borrado algo. No ha borrado nada.
 
 </details>
@@ -1321,8 +1337,8 @@ $ grep -i -n "taza" pedidos/*.csv
 pedidos/2026-09.csv:2:101,2026-09-03,Lucía Martín,Taza de cerámica,12.50
 pedidos/2026-10.csv:3:105,2026-10-14,Nuria Gil,TAZA grande,15.00
 pedidos/2026-11.csv:4:109,2026-11-06,Ana Torres,Taza de cerámica,12.50
-$ find . -name "devoluciones.txt"
-./gestion/2026/otono/devoluciones.txt
+$ find gestion -name "devoluciones.txt"
+gestion/2026/otono/devoluciones.txt
 ```
 
 📁 **Código:** [`codigo/01-terminal-lo-basico/ejercicios/ej07-los-pedidos-de-la-tienda/`](codigo/01-terminal-lo-basico/ejercicios/ej07-los-pedidos-de-la-tienda/)
@@ -1334,7 +1350,7 @@ $ find . -name "devoluciones.txt"
 3. El 108 (Pedro Vidal, un cuaderno) y el 109 (Ana Torres, una taza de cerámica).
 4. En **septiembre** (una taza de cerámica, pedido 101) y en **noviembre** (una lámina A4, pedido 107): lo dicen los nombres de fichero delante de cada línea. El nombre va entre comillas porque tiene un espacio.
 5. **Tres**: uno por mes. Sin `-i`, `grep taza` no habría encontrado ninguno, porque en los ficheros pone `Taza` y `TAZA`. Con `-n`, además, sabes en qué línea de cada fichero está.
-6. En `./gestion/2026/otono/devoluciones.txt`, tres carpetas más abajo.
+6. En `gestion/2026/otono/devoluciones.txt`, dos carpetas por debajo de `gestion`. Se busca en `gestion` y no en `.` porque el enunciado dice dónde está, y porque desde la carpeta personal `find .` recorrería todas tus carpetas ([apartado 1.10](#110-buscar-grep-y-find)).
 
 **Por qué esta forma:** en una tienda de verdad, cada fichero tendría cientos de líneas, y abrirlos uno a uno para buscar a una clienta sería lentísimo. Con `grep`, la respuesta sale en un segundo, tenga el fichero 10 líneas o 100 000. En el [módulo siguiente](02-terminal-sacarle-partido.md#15-tuberías-la-salida-de-una-orden-es-la-entrada-de-otra) aprenderás a **contar** los resultados y a encadenar órdenes (por ejemplo, para saber cuántos pedidos ha hecho cada cliente).
 
@@ -1381,7 +1397,7 @@ notas-2026-01.txt
 <details>
 <summary>Pista 2</summary>
 
-En el 2, ¿cuántos caracteres hay entre `informe-` y `.pdf` en `informe-10.pdf`? En el 6, recuerda que en Linux las mayúsculas cuentan.
+En el 2, ¿cuántos caracteres hay entre `informe-` y `.pdf` en `informe-10.pdf`? En el 6, recuerda que en los comodines las mayúsculas cuentan: los compara bash (o zsh), letra a letra.
 
 </details>
 
@@ -1397,7 +1413,7 @@ En el 2, ¿cuántos caracteres hay entre `informe-` y `.pdf` en `informe-10.pdf`
 | 3 | `*2026*` | `fotos-2026.zip`, `notas-2026-01.txt` | Los que tienen `2026` en cualquier sitio |
 | 4 | `informe*` | Los tres PDF e `informe-final.docx` | Todo lo que empieza por `informe`, termine como termine |
 | 5 | `notas-????-??.txt` | `notas-2025-12.txt`, `notas-2026-01.txt` | Cuatro caracteres (el año), un guion y dos (el mes) |
-| 6 | `*.PDF` | Ninguno en Linux | Las mayúsculas cuentan: `.pdf` no es `.PDF`. bash deja el patrón tal cual y `ls` dice que no existe (en zsh, `no matches found`) |
+| 6 | `*.PDF` | Ninguno | Las mayúsculas cuentan: `.pdf` no es `.PDF`. bash deja el patrón tal cual y `ls` dice que no existe (en zsh, `no matches found`) |
 
 **La comprobación:**
 
@@ -1575,14 +1591,14 @@ nombre  -opciones  argumentos       ls -lh img
 | `less fichero` | Lo enseña página a página (<kbd>Espacio</kbd> avanza, <kbd>/</kbd> busca, <kbd>Q</kbd> sale) |
 | `head -n 5 fichero` · `tail -n 5 fichero` | Las 5 primeras · las 5 últimas líneas (sin `-n`, 10) |
 | `grep texto fichero` | Las líneas que contienen el texto (`-i` sin mayúsculas, `-n` con número de línea) |
-| `find . -name "nombre"` | Busca ficheros por su nombre desde aquí hacia abajo |
+| `find carpeta -name "nombre"` | Busca ficheros por su nombre en esa carpeta y en las de dentro (`.`: desde aquí) |
 | `echo texto` | Escribe el texto (y enseña cómo entiende bash lo que escribes) |
 
 ### Ayuda y trucos
 
 | Qué | Cómo |
 |---|---|
-| Ayuda de una orden | `orden --help`; `man orden` (no en Git Bash); `help cd` para las de bash (en zsh, `man zshbuiltins`) |
+| Ayuda de una orden | `orden --help` (no en muchas de macOS); `man orden` (no en Git Bash); `help cd` para las de bash (en zsh, `man zshbuiltins`) |
 | Autocompletar | <kbd>Tab</kbd> (dos veces: ver las opciones) |
 | Historial | <kbd>↑</kbd> y <kbd>↓</kbd>; buscar con <kbd>Ctrl</kbd>+<kbd>R</kbd> |
 | Parar una orden | <kbd>Ctrl</kbd>+<kbd>C</kbd> (en `less` y `man`, <kbd>Q</kbd>) |
@@ -1697,12 +1713,12 @@ nombre  -opciones  argumentos       ls -lh img
 
    </details>
 
-10. ¿Cómo pides ayuda sobre una orden a la propia terminal? ¿Qué cambia en Git Bash?
+10. ¿Cómo pides ayuda sobre una orden a la propia terminal? ¿Qué cambia en Git Bash y en macOS?
 
     <details>
     <summary>Ver respuesta</summary>
 
-    Con `orden --help`, que escribe un resumen de su uso y sus opciones, o con `man orden`, que abre su página del manual (se sale con <kbd>Q</kbd>). En Git Bash no viene `man`, así que se usa `--help`. Las órdenes propias de bash, como `cd`, tienen su ayuda en `help cd` (en el zsh de macOS no existe `help`: allí, `man zshbuiltins`). Lo tienes en [1.12. Pedir ayuda: --help y man](#112-pedir-ayuda---help-y-man).
+    Con `orden --help`, que escribe un resumen de su uso y sus opciones, o con `man orden`, que abre su página del manual (se sale con <kbd>Q</kbd>). En Git Bash no viene `man`, así que se usa `--help`; en macOS, al revés: muchas órdenes no entienden `--help`, y se usa `man`. Las órdenes propias de bash, como `cd`, tienen su ayuda en `help cd` (en el zsh de macOS no existe `help`: allí, `man zshbuiltins`). Lo tienes en [1.12. Pedir ayuda: --help y man](#112-pedir-ayuda---help-y-man).
 
     </details>
 
