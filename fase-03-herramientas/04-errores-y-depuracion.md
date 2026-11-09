@@ -167,7 +167,7 @@ Es dividir a la mitad con la vista: pones un `echo` a mitad del script y ves si 
 
 Dos costumbres que te ahorrarán disgustos:
 
-- **Márcalos con una palabra fácil de buscar**, siempre la misma (`DEPURACIÓN`), para encontrarlos y **borrarlos todos** al terminar. Un mensaje de depuración olvidado acaba saliendo en el resultado final .
+- **Márcalos con una palabra fácil de buscar**, siempre la misma (`DEPURACIÓN`), para encontrarlos y **borrarlos todos** al terminar. Un mensaje de depuración olvidado acaba saliendo en el resultado final.
 - **Si el script escribe un resultado que otro programa va a leer**, manda los mensajes de depuración a la salida de error con `>&2`, como aprendiste en [«La terminal: sacarle partido»](02-terminal-sacarle-partido.md#13-mandar-los-errores-a-otro-sitio-2-y-devnull): `echo "DEPURACIÓN total: $total" >&2`. Así se ven en pantalla, pero no se mezclan con el resultado si lo rediriges a un fichero.
 
 ### 1.10. Ver la traza de un script
@@ -196,7 +196,7 @@ Tres detalles para leerla:
 - `++` (dos signos) es una orden que se ejecuta **dentro** de otra, como la que va entre `$(` y `)`.
 - bash escribe las órdenes a su manera: quita las comillas que sobran y pone comillas simples (`'Hay 5 clientes'`) donde hay espacios, para que veas dónde empieza y termina cada parte.
 
-> **📌 Nota:** la traza sale por la salida de error, así que se ve en pantalla aunque redirijas el resultado a un fichero. Y si solo te interesa un trozo del script, puedes escribir `set -x` justo antes de ese trozo y `set +x` justo después: la traza se activa y se desactiva ahí. Recuerda quitar las dos líneas al terminar.
+> **📌 Nota:** la traza sale por la salida de error, así que se ve en pantalla aunque redirijas el resultado a un fichero. Y si solo te interesa un trozo del script, puedes escribir `set -x` justo antes de ese trozo y `set +x` justo después: la traza se activa y se desactiva ahí. La última línea de la traza será `+ set +x`: es la propia orden que la apaga, que también sale. Recuerda quitar las dos líneas al terminar.
 
 ### 1.11. Dos seguros para tus scripts
 
@@ -314,7 +314,7 @@ revisar-fotos.sh: línea 8: error de sintaxis: no se esperaba el final del fiche
 
 - Es un **error de escritura** (de sintaxis): el script no está bien escrito según las reglas de bash. Por eso **no se ejecuta nada** del `if`: bash necesita leer el `if` entero, hasta su `fi`, antes de ejecutarlo, y no lo encuentra.
 - El mensaje dice **línea 8**, pero el script solo tiene 7. La línea 8 es «el final del fichero»: bash ha llegado al final buscando el `fi` y se queja ahí. **El error no está en la línea 8**: está en que al `if` de la línea 3 le falta su `fi`, que debería ir después de la línea 6.
-- Esta bash, además, te da la pista: «desde la orden «if» en la línea 3». La de macOS es más escueta (`line 8: syntax error: unexpected end of file`), así que allí tendrás que buscar tú el bloque sin cerrar, mirando hacia arriba.
+- Esta bash, la 5.3, te da además la pista: «desde la orden «if» en la línea 3». Las anteriores, que son las que traen muchos sistemas, dan un mensaje más corto, que solo dice que el fichero se ha acabado antes de tiempo: en macOS, `line 8: syntax error: unexpected end of file`, y en otros sistemas, algo parecido. Allí tendrás que buscar tú el bloque sin cerrar, mirando hacia arriba.
 
 **Cómo se arregla:** añadiendo `fi` en una línea después de la 6, a la altura del `if`. Con el `if` cerrado, el script escribe «Todavía no tienes la carpeta fotos» y «Revisión terminada».
 
@@ -322,7 +322,7 @@ revisar-fotos.sh: línea 8: error de sintaxis: no se esperaba el final del fiche
 
 ### 2.3. La traza de bash -x: los clientes que sobran
 
-**Situación real:** un script cuenta los clientes de un fichero CSV (una tabla en texto, con los datos separados por comas; lo verás a fondo en la fase 4). Dice que hay 5, pero tú cuentas 4.
+**Situación real:** un script cuenta los clientes de un fichero [CSV](01-terminal-lo-basico.md#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail). Dice que hay 5, pero tú cuentas 4.
 
 ```bash
 #!/usr/bin/env bash
@@ -1088,13 +1088,15 @@ Para que avise: ¿qué debería pasar si la carpeta de origen **no** existe? Esc
 
 **2. Leer el mensaje.** No hay ninguno: es un **error de lógica**, y además el script dice que todo ha ido bien.
 
-**3. Aislar** con la traza, y mirando antes qué carpetas hay:
+**3. Aislar** con la traza, y mirando antes qué carpetas hay. Aquí va desde el principio, con la ejecución del paso 1, para que veas lo mismo que en tu terminal:
 
 **En tu terminal** (`sesion-traza.txt`):
 
 ```text
+$ bash copia-seguridad.sh
+Copia de seguridad terminada
 $ ls -d */
-Documentos/
+copia-seguridad/  Documentos/
 $ bash -x copia-seguridad.sh
 + origen=Documetos
 + destino=copia-seguridad
@@ -1106,7 +1108,7 @@ Copia de seguridad terminada
 
 📁 **Código:** [`codigo/04-errores-y-depuracion/ejercicios/ej05-copia-que-no-copia/`](codigo/04-errores-y-depuracion/ejercicios/ej05-copia-que-no-copia/)
 
-Después de la condición `'[' -d Documetos ']'` («¿existe la carpeta `Documetos`?») no aparece ningún `cp`: **la condición no se cumple** y el `cp` no se ejecuta nunca.
+`ls -d */` enseña dos carpetas: `Documentos`, la de Rosa, y `copia-seguridad`, que ha creado el propio script con su `mkdir -p`. En la traza, después de la condición `'[' -d Documetos ']'` («¿existe la carpeta `Documetos`?») no aparece ningún `cp`: **la condición no se cumple** y el `cp` no se ejecuta nunca.
 
 **4. Hipótesis.** La carpeta de la condición es `Documetos`, sin la `n`, y la que existe es `Documentos`. Se comprueba comparando las dos líneas de arriba: confirmada.
 
@@ -1237,7 +1239,7 @@ Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
 | `orden no encontrada` | `command not found` | Orden mal escrita o programa no instalado o fuera del PATH |
 | `No existe el archivo o el directorio` | `No such file or directory` | Carpeta actual equivocada, nombre mal escrito (mayúsculas, tildes), ruta con espacios sin comillas |
 | `Permiso denegado` | `Permission denied` | Script sin `chmod +x`, o escribir donde no debes (mira la ruta: ¿una variable vacía?) |
-| `No es un directorio` | `Not a directory` | Usas un fichero como si fuera una carpeta |
+| `No es un directorio` | `Not a directory` | Usas como carpeta algo que no lo es: un fichero, o un nombre con `/` al final que no existe (`mv foto.jpg imagenes/`, sin haber creado `imagenes`) |
 | `variable sin asignar` | `unbound variable` | Con `set -u`: variable mal escrita o sin valor |
 | `$'\r': orden no encontrada` | `$'\r': command not found` | Script guardado con saltos de línea de Windows (CRLF): cámbialo a LF en la barra de estado de VS Code |
 | `error de sintaxis: no se esperaba el final del fichero` | `syntax error: unexpected end of file` | Falta un `fi`, un `done` o unas comillas de cierre: mira hacia arriba |
