@@ -741,8 +741,40 @@
           "id": "inicial.redes",
           "fichero": "fase-06-internet-y-aplicaciones/01-redes.md",
           "titulo": "Redes: IP, router, DNS y cortafuegos",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.redes.privada-publica-o-especial",
+              "titulo": "Privada, pública o especial"
+            },
+            {
+              "id": "inicial.redes.quien-es-el-cliente-y-quien-el-servidor",
+              "titulo": "Quién es el cliente y quién el servidor"
+            },
+            {
+              "id": "inicial.redes.lee-la-salida-de-ping",
+              "titulo": "Lee la salida de ping"
+            },
+            {
+              "id": "inicial.redes.lee-la-salida-de-nslookup",
+              "titulo": "Lee la salida de nslookup"
+            },
+            {
+              "id": "inicial.redes.tcp-o-udp",
+              "titulo": "TCP o UDP"
+            },
+            {
+              "id": "inicial.redes.el-viaje-de-una-peticion",
+              "titulo": "El viaje de una petición"
+            },
+            {
+              "id": "inicial.redes.lo-deja-pasar-el-cortafuegos",
+              "titulo": "Lo deja pasar el cortafuegos"
+            },
+            {
+              "id": "inicial.redes.no-hay-internet-en-la-academia-de-baile",
+              "titulo": "No hay internet en la academia de baile"
+            }
+          ]
         },
         {
           "id": "inicial.puertos-y-localhost",

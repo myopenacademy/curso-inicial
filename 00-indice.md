@@ -1,7 +1,7 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 19 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** 20 de 31 módulos (los demás aparecen como «Pendiente»)
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
@@ -16,11 +16,11 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos · ~9,5 h
 - [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos · ~11 h
 - [Fase 05 — Git y GitHub](#fase-05--git-y-github) · 3 módulos · ~8,5 h
-- [Fase 06 — Internet y aplicaciones](#fase-06--internet-y-aplicaciones) · 6 módulos
+- [Fase 06 — Internet y aplicaciones](#fase-06--internet-y-aplicaciones) · 6 módulos · ~2,5 h
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
-**Tiempo de los módulos disponibles:** ~46,5 horas.
+**Tiempo de los módulos disponibles:** ~49 horas.
 
 ---
 
@@ -95,11 +95,11 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Fase 06 — Internet y aplicaciones
 
-**Carpeta:** `fase-06-internet-y-aplicaciones/` (todavía no existe)
+**Carpeta:** [`fase-06-internet-y-aplicaciones/`](fase-06-internet-y-aplicaciones/) · **Tiempo:** ~2,5 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
-| 06.01 | Redes: IP, router, DNS y cortafuegos | — | — | Pendiente |
+| 06.01 | [Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md) | Básico · Ampliación | 2,5 h | ✅ Disponible |
 | 06.02 | Puertos y localhost: tu ordenador como servidor | — | — | Pendiente |
 | 06.03 | La web: HTTP, peticiones, respuestas y APIs | — | — | Pendiente |
 | 06.04 | Qué es una base de datos | — | — | Pendiente |

@@ -31,6 +31,8 @@
   - [05.01 Git: fundamentos](#0501-git-fundamentos)
   - [05.02 Ramas y conflictos](#0502-ramas-y-conflictos)
   - [05.03 GitHub](#0503-github)
+- **Fase 06 — Internet y aplicaciones**
+  - [06.01 Redes: IP, router, DNS y cortafuegos](#0601-redes-ip-router-dns-y-cortafuegos)
 
 ---
 
@@ -1400,6 +1402,75 @@ gitGraph
 | Cerrar una *issue* al fusionar | `Closes #N` (o `fixes`, `resolves`…) en la descripción |
 | Hacer un *fork* · ponerlo al día | **Fork** · **Sync fork > Update branch** |
 | README de perfil | Repositorio público con tu nombre de usuario y un `README.md` |
+
+---
+
+## Fase 06 — Internet y aplicaciones
+
+---
+
+### 06.01 Redes: IP, router, DNS y cortafuegos
+
+📖 Módulo completo: [fase-06-internet-y-aplicaciones/01-redes.md](fase-06-internet-y-aplicaciones/01-redes.md)
+
+#### Conceptos
+
+| Concepto | En una línea |
+|---|---|
+| Internet | Una red de redes que se pasan los datos con las mismas reglas |
+| Paquete | Cada trozo en que se parten los datos, con su dirección de origen y de destino |
+| Cliente / servidor | El que pide / el que espera peticiones y contesta (papeles, no tipos de ordenador) |
+| Protocolo | Las reglas de una conversación entre programas (IP, TCP, UDP, DNS, HTTP, SSH…) |
+| Dirección IP | El número que identifica a un equipo en una red |
+| Router | Une la red de casa con internet; da direcciones, hace de wifi, de DNS y de cortafuegos |
+| Puerta de enlace | La dirección del router por dentro, a la que se manda todo lo que va fuera |
+| NAT | El router cambia la dirección privada de lo que sale por su pública, y deshace el cambio en las respuestas |
+| DNS | Convierte nombres en direcciones IP; las respuestas se guardan un rato (caché) |
+| TCP / UDP | Llega todo y en orden / llega rápido, sin garantías |
+| Puerto | El número que dice a qué programa del equipo va cada paquete ([06.02](fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md#11-una-dirección-ip-no-basta-el-puerto)) |
+| Cortafuegos | Decide qué conexiones pasan: las entrantes se bloquean, las salientes pasan |
+
+#### Direcciones
+
+| Dirección | Qué es |
+|---|---|
+| Cuatro números del 0 al 255 (`192.168.1.37`) | IPv4 |
+| Grupos hexadecimales con `:` (`2001:db8::25`) | IPv6; `::` abrevia los ceros |
+| `192.168.x.x`, `10.x.x.x`, `172.16.x.x` a `172.31.x.x` | Privadas: solo valen dentro de su red |
+| Las demás | Públicas: únicas en internet |
+| `127.0.0.1`, `::1`, `localhost` | Este mismo equipo |
+| `169.254.x.x` | El equipo no ha conseguido dirección del router |
+| `192.0.2.x`, `198.51.100.x`, `203.0.113.x`, `2001:db8:…` | De documentación, para ejemplos |
+| `example.com`, `.invalid` | Nombres para ejemplos y para nombres que no existen |
+
+#### Órdenes
+
+| Orden | Qué hace |
+|---|---|
+| `ping -c 4 dirección-o-nombre` | Manda 4 paquetes de prueba y dice si responde y cuánto tarda (Linux y macOS) |
+| `ping nombre` | En Git Bash (el de Windows): manda 4 y para solo |
+| <kbd>Ctrl</kbd>+<kbd>C</kbd> | Para un `ping` sin `-c` y escribe el resumen |
+| `nslookup nombre` | Pregunta al DNS la dirección de un nombre |
+
+#### Cómo leer las salidas
+
+| Ves | Quiere decir |
+|---|---|
+| `4 received, 0% packet loss` | Todo ha ido y vuelto |
+| `0 received, 100% packet loss` | No ha vuelto nada: no contesta (que no es lo mismo que «está caído») |
+| `time=2.85 ms` | Lo que tarda en ir y volver |
+| `ping: …: Nombre o servicio desconocido` | No ha conseguido la dirección del nombre |
+| `Non-authoritative answer` + `Address` | El DNS ha contestado: lo normal |
+| `NXDOMAIN` | El DNS contesta que el nombre no existe |
+| `timed out`, `no servers could be reached` | El servidor DNS no contesta |
+
+#### Diagnóstico de «no hay internet», de dentro hacia fuera
+
+1. ¿Tiene el equipo una dirección de la red (no una `169.254.x.x`)?
+2. ¿Responde el router? `ping -c 4 192.168.1.1` (la tuya, en los ajustes de red).
+3. ¿Se llega a internet con una dirección, sin DNS? `ping -c 4` a una dirección conocida.
+4. ¿Contesta el DNS? `nslookup example.com`.
+5. ¿Les pasa a los demás equipos? Si sí, router o proveedor.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

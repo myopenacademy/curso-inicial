@@ -95,6 +95,10 @@ Grupo de 8 bits; la unidad con la que se miden ficheros, memoria y discos. Lo ex
 
 ## C
 
+### Caché
+
+Copia guardada de algo (una respuesta del DNS, una página, un dato consultado) para no tener que volver a pedirlo o calcularlo. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#112-cómo-se-resuelve-un-nombre).
+
 ### Carpeta
 
 Contenedor con nombre de ficheros y de otras carpetas (también, directorio). Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#12-carpetas-cajas-para-ordenar-los-ficheros).
@@ -118,6 +122,10 @@ Caso de prueba con un valor justo en la frontera entre dos grupos de datos, o al
 ### Clave SSH
 
 Par de ficheros (la clave pública, que se da al servidor, y la privada, que no sale de tu ordenador) para conectarse a un servidor sin contraseña. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#15-ssh-un-par-de-claves).
+
+### Cliente
+
+Programa que toma la iniciativa y pide algo a un servidor (el navegador, Git al hacer push). Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#13-cliente-y-servidor).
 
 ### Codificación de caracteres
 
@@ -171,6 +179,10 @@ Dato con nombre cuyo valor no cambia durante todo el algoritmo. Lo explica [01.0
 
 Sistema que guarda la historia de un proyecto (qué cambió, quién, cuándo y por qué) y permite volver a cualquier versión anterior. Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#12-el-control-de-versiones).
 
+### Cortafuegos
+
+Programa o aparato que decide qué conexiones pasan y cuáles no, según unas reglas (en inglés, firewall). Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#114-el-cortafuegos).
+
 ### CSV
 
 Fichero de texto con una tabla: una fila por línea y las columnas separadas por comas (o por punto y coma); la primera línea, la cabecera, suele decir qué es cada columna. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#18-csv-a-fondo-las-reglas).
@@ -201,9 +213,21 @@ Diagrama que pone a cada participante en una columna y dibuja, de arriba abajo e
 
 Las diferencias entre dos versiones de un fichero de texto, línea a línea: con + lo añadido y con - lo quitado (git diff). Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#110-ver-los-cambios-diff-y-show).
 
+### Dirección IP
+
+Número que identifica a un equipo dentro de una red: cuatro números en IPv4 (192.168.1.37) o grupos hexadecimales en IPv6 (2001:db8::25). Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#15-la-dirección-ip).
+
 ### Directorio
 
 Otro nombre de la carpeta, el habitual en inglés (directory) y en mucha documentación. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#12-cómo-se-escribe-una-orden).
+
+### DNS
+
+Sistema que convierte nombres de dominio, como example.com, en direcciones IP. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#111-dns-de-nombres-a-números).
+
+### Dominio
+
+Nombre de una web o un servicio en internet (example.com); es la parte de la dirección que va antes de la primera /, y se lee desde el final. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#13-descarga-siempre-de-la-web-oficial).
 
 ## E
 
@@ -387,6 +411,14 @@ Práctica en la que un servidor ejecuta todas las pruebas automáticamente cada 
 
 Programa que lee el código fuente y lo ejecuta instrucción a instrucción, cada vez que se pone en marcha. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#17-lenguajes-compilados-e-interpretados).
 
+### IP privada
+
+Dirección de los bloques 10.x, 172.16-31.x o 192.168.x, que solo vale dentro de su red (la de casa, la de la empresa). Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#18-ip-privada-e-ip-pública).
+
+### IP pública
+
+Dirección única en internet, a la que se puede llegar desde cualquier sitio; en casa, la tiene el router por fuera. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#18-ip-privada-e-ip-pública).
+
 ### Issue
 
 Aviso de un fallo o de una tarea pendiente en un proyecto de GitHub, con sus comentarios. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#111-issues-y-tableros).
@@ -555,6 +587,10 @@ Forma de programar en la que se dice al ordenador cómo hacer las cosas, paso a 
 
 Estilo que organiza el programa en objetos que juntan datos y el comportamiento que actúa sobre ellos. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#15-orientado-a-objetos).
 
+### Protocolo
+
+Conjunto de reglas que siguen dos programas para comunicarse (IP, TCP, DNS, HTTP, SSH…). Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#14-protocolos-las-reglas-de-la-conversación).
+
 ### Prueba automática
 
 Pequeño programa que prueba otro: lo ejecuta con una entrada, compara lo obtenido con lo esperado y dice si pasa o falla. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
@@ -683,6 +719,10 @@ Dato de configuración que no se puede compartir (contraseña, clave de una API)
 
 Convertir los datos de un programa en texto (o bytes) para guardarlos o enviarlos; lo contrario es analizar. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
 
+### Servidor
+
+Programa que espera peticiones y las contesta; por extensión, el ordenador donde funciona. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#13-cliente-y-servidor).
+
 ### Shebang
 
 Primera línea de un script, que empieza por #! y dice con qué programa se ejecuta (#!/usr/bin/env bash). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#114-tu-primer-script).
@@ -700,6 +740,10 @@ Algoritmo con nombre propio que recibe parámetros, hace su trabajo y puede devo
 Orden que ejecuta otra como administrador (root), pidiendo la contraseña; en Linux y macOS. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
 
 ## T
+
+### TCP
+
+Protocolo que garantiza que los datos llegan enteros y en orden, a cambio de algo más de lentitud; lo usan la web, Git y SSH. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#113-tcp-y-udp).
 
 ### TDD
 
@@ -742,6 +786,10 @@ Ejecutar un algoritmo a mano, paso a paso, anotando en una tabla el valor de cad
 La | que une dos órdenes: la salida de la primera es la entrada de la segunda (pipe). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#15-tuberías-la-salida-de-una-orden-es-la-entrada-de-otra).
 
 ## U
+
+### UDP
+
+Protocolo que manda mensajes sueltos, rápido y sin garantía de que lleguen; lo usan las videollamadas y los juegos en línea. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#113-tcp-y-udp).
 
 ### UML
 
