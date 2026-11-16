@@ -1,0 +1,10 @@
+cd libreria
+git switch -c caso-b
+echo 'Sábados, de 10:00 a 14:00' >> horario.txt
+git add horario.txt
+git commit -m "Añade el horario del sábado"
+git switch main
+echo 'Teatro: 14 €' >> precios.txt
+git add precios.txt
+git commit -m "Añade el teatro"
+git merge --no-edit caso-b

@@ -1,0 +1,8 @@
+mkdir cafeteria && cd cafeteria && git init
+echo 'Café solo: 1,20 €' > carta.txt
+git add carta.txt
+git commit -m "Primera carta"
+git branch postres
+git switch postre
+git merge postre
+git branch

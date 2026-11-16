@@ -1,0 +1,13 @@
+cd libreria
+git switch -c caso-d
+printf '%s\n' 'Novela: 21 €' 'Cómic: 13 €' 'Poesía: 15 €' 'Ensayo: 18 €' > precios.txt
+printf '%s\n' 'Viajes: 22 €' 'Infantil: 10 €' 'Teatro: 15 €' >> precios.txt
+git add precios.txt
+git commit -m "Sube el cómic a 13 €"
+git switch main
+printf '%s\n' 'Novela: 21 €' 'Cómic: 14 €' 'Poesía: 15 €' 'Ensayo: 18 €' > precios.txt
+printf '%s\n' 'Viajes: 22 €' 'Infantil: 10 €' 'Teatro: 15 €' >> precios.txt
+git add precios.txt
+git commit -m "Sube el cómic a 14 €"
+git merge --no-edit caso-d
+git merge --abort

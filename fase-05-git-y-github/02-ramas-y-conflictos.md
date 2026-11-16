@@ -7,7 +7,7 @@
 
 ## Qué aprenderás
 
-- Qué es una **rama**, para qué sirve y qué es por dentro: una etiqueta que apunta a un commit.
+- Qué es una **rama**, para qué sirve y qué es por dentro: un nombre que apunta a un commit y avanza con cada commit nuevo.
 - Qué es **`HEAD`** y cómo te dice en qué rama estás.
 - A **crear ramas y cambiar** de una a otra con `git branch` y `git switch`, y por qué este curso no usa `git checkout`.
 - A ver el historial de **todas las ramas** con `git log --oneline --graph --all` y a **dibujarlo** con un diagrama `gitGraph` de Mermaid.
@@ -26,7 +26,7 @@ En [05.01 Git: fundamentos](01-git-fundamentos.md) aprendiste a guardar versione
 
 Imagina la Cafetería Aurora. Su carta está en un repositorio de Git, en un fichero `carta.md`, y lo que hay en él es lo que se imprime cada mañana. Ana, la encargada, quiere preparar la carta de postres, que tardará unos días en estar lista. Mientras tanto, la carta de siempre tiene que seguir funcionando: si un precio está mal, hay que corregirlo hoy, sin esperar a los postres.
 
-Si Ana trabajara en los postres directamente sobre la carta, cada commit a medias acabaría impreso, con productos que aún no se sirven. Y si lo hiciera en una copia de la carpeta (`carta-con-postres/`), volvería al problema de las versiones `final-final-bueno` que viste en 05.01.
+Si Ana trabajara en los postres directamente sobre la carta, cada commit a medias acabaría impreso, con productos que aún no se sirven. Y si lo hiciera en una copia de la carpeta (`carta-con-postres/`), volvería al problema de las versiones `final-final-bueno` que viste en [05.01, apartado 1.1](01-git-fundamentos.md#11-el-problema-informe-final-final-bueno).
 
 Una **rama** (*branch*) resuelve esto: es una **línea de trabajo independiente** dentro del mismo repositorio. Ana crea una rama para los postres y hace en ella todos los commits que quiera. La rama principal, `main`, no se entera: sigue igual, y se puede corregir mientras tanto. Cuando los postres están listos, Ana **fusiona** la rama con `main` y los cambios pasan a la carta de verdad.
 
@@ -36,13 +36,13 @@ Así trabajan casi todos los equipos:
 - **Cada tarea, en su propia rama.** Una función nueva, una corrección, un experimento. Si sale mal, se tira la rama y `main` no ha sufrido nada.
 - **Cuando la tarea está terminada, se fusiona con `main`.**
 
-> **📌 Nota:** la rama `main` es la que Git crea con el primer commit. Se llama así porque lo configuraste al instalar Git ([02.03, apartado 1.6](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash)) o en [05.01, apartado 1.4](01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres). En proyectos antiguos verás que se llama `master`: funciona igual.
+> **📌 Nota:** la rama `main` es la que Git crea con el primer commit ([05.01, apartado 1.4](01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres)). En proyectos antiguos verás que se llama `master`: funciona igual.
 
 ### 1.2. Qué es una rama por dentro
 
 Para entender las ramas hay que recordar una cosa de los commits que viste en [05.01, apartado 1.6](01-git-fundamentos.md#16-commit-una-foto-del-proyecto): cada commit apunta a su **padre**, el anterior, y así el historial es una cadena que llega hasta el primero, el `commit-raíz`, que no tiene padre.
 
-Con eso, una rama es algo muy sencillo: **un nombre que apunta a un commit**, el último de esa línea de trabajo. Cuando haces un commit nuevo estando en una rama, el nombre **avanza** solo hasta el commit nuevo. Por eso se dice que una rama es una **etiqueta móvil**.
+Con eso, una rama es algo muy sencillo: **un nombre que apunta a un commit**, el último de esa línea de trabajo. Cuando haces un commit nuevo estando en una rama, el nombre **avanza** solo hasta el commit nuevo. Es como un marcapáginas que avanza solo a medida que escribes.
 
 Crear una rama, por tanto, **no copia ningún fichero**: solo crea un nombre nuevo que apunta al mismo commit que la rama en la que estás. Es instantáneo, aunque el proyecto tenga miles de ficheros.
 
@@ -115,7 +115,7 @@ Cómo se lee:
 - **Las líneas `|` y `/`** son las ramas: aquí, `/` dice que la línea de la derecha salió del commit `506ce93`. Desde él, cada rama ha hecho un commit por su cuenta.
 - **Entre paréntesis**, qué nombres apuntan a cada commit: `(HEAD -> main)` es la rama `main`, y la flecha dice que es la actual; `(horario-verano)`, la otra rama. Las etiquetas salen igual, como `(tag: v1.0.0)` (las verás en el [apartado 1.15](#115-etiquetas-y-versionado-semántico)).
 
-> **📌 Nota:** en tu equipo, si el historial no cabe en la pantalla, Git lo abre en el paginador `less`: avanzas con las flechas y sales con <kbd>Q</kbd> ([03.01, apartado 1.9](../fase-03-herramientas/01-terminal-lo-basico.md#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail)). Además, en tu terminal los nombres de las ramas salen en colores.
+> **📌 Nota:** en tu ordenador, si el historial no cabe en la pantalla, Git lo abre en el paginador `less`: avanzas con las flechas y sales con <kbd>Q</kbd> ([03.01, apartado 1.9](../fase-03-herramientas/01-terminal-lo-basico.md#19-ver-qué-hay-dentro-de-un-fichero-cat-less-head-y-tail)). Además, en tu terminal los nombres de las ramas salen en colores.
 
 ### 1.6. Fusionar con avance rápido
 
@@ -126,7 +126,7 @@ git switch main          # vas a la rama que recibe
 git merge postres        # le traes lo de postres
 ```
 
-Hay dos casos. El primero es el más sencillo: desde que creaste la rama, **en `main` no ha pasado nada**. Entonces no hay nada que combinar: los commits de `postres` ya parten del último de `main`, así que a Git le basta con **mover la etiqueta `main` hacia delante**, hasta el último commit de `postres`. Se llama **avance rápido** (en inglés, *fast-forward*), y Git lo dice con esa palabra: `Fast-forward`.
+Hay dos casos. El primero es el más sencillo: desde que creaste la rama, **en `main` no ha pasado nada**. Entonces no hay nada que combinar: los commits de `postres` ya parten del último de `main`, así que a Git le basta con **mover el nombre `main` hacia delante**, hasta el último commit de `postres`. Se llama **avance rápido** (en inglés, *fast-forward*), y Git lo dice con esa palabra: `Fast-forward`.
 
 ```mermaid
 flowchart LR
@@ -148,7 +148,7 @@ En texto: antes de fusionar, `main` apunta a «Primera carta» y `postres` al co
 
 ### 1.7. Fusión de tres vías y el commit de fusión
 
-El segundo caso: mientras trabajabas en tu rama, **`main` también ha avanzado**. En la cafetería, alguien añade el zumo de naranja a la carta en `main` mientras Ana prepara el horario de verano en su rama. Ahora hay dos líneas con commits distintos, y mover la etiqueta ya no basta: se perdería lo de una de las dos.
+El segundo caso: mientras trabajabas en tu rama, **`main` también ha avanzado**. En la cafetería, alguien añade el zumo de naranja a la carta en `main` mientras Ana prepara el horario de verano en su rama. Ahora hay dos líneas con commits distintos, y mover el nombre `main` hacia delante ya no basta: se perdería lo de una de las dos.
 
 Git hace entonces una **fusión de tres vías** (*three-way merge*). Compara **tres versiones**:
 
@@ -173,7 +173,7 @@ En texto: las dos ramas salen de «Primera versión» y cada una hace un commit.
 
 La orden es la misma, `git merge`; es Git quien decide si basta con un avance rápido o hace falta una fusión de tres vías. Hay una diferencia práctica: el commit de fusión necesita un **mensaje**, y Git propone uno, `Merge branch 'horario-verano'` («fusiona la rama horario-verano»).
 
-- **En tu equipo**, `git merge` abre el **editor de Git** con ese mensaje, para que lo aceptes o lo cambies ([05.01, apartado 1.4](01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres); si te aparece Vim, [05.01, error típico 3.4](01-git-fundamentos.md#34-se-abre-un-editor-y-no-sabes-salir)). Al cerrar el editor, la fusión termina.
+- **En tu ordenador**, `git merge` abre el **editor de Git** con ese mensaje, para que lo aceptes o lo cambies ([05.01, apartado 1.4](01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres); si te aparece Vim, [05.01, error típico 3.4](01-git-fundamentos.md#34-se-abre-un-editor-y-no-sabes-salir)). Al cerrar el editor, la fusión termina.
 - **Con `--no-edit`**, Git acepta el mensaje propuesto sin abrir el editor: `git merge --no-edit horario-verano`. Es lo que hacen las sesiones de este módulo.
 - **Con `-m`**, escribes tú el mensaje, como en `git commit`: `git merge -m "Junta el horario de verano" horario-verano`.
 
@@ -196,7 +196,7 @@ Se escribe **contando la historia en orden**, con muy pocas palabras:
 | `merge nombre` | Fusiona `nombre` en la rama actual: dibuja el commit de fusión |
 | `commit tag: "v1.0.0"` | Un commit con una etiqueta (también vale en `merge`) |
 
-El diagrama del apartado anterior, que es el historial del [ejemplo 2.3](#23-fusión-de-tres-vías), línea a línea (para dibujar el gráfico de la terminal, se lee **de abajo arriba** y se cuenta la historia en orden):
+El diagrama del apartado anterior, que es el historial del [ejemplo 2.3](#23-fusión-de-tres-vías), línea a línea. Para pasar a Mermaid el gráfico de la terminal, se lee **de abajo arriba** y se cuenta la historia en orden:
 
 ```text
 gitGraph
@@ -238,7 +238,7 @@ Hay que tener claras tres cosas:
 - **Solo afecta a las líneas en conflicto.** El resto de la fusión ya está hecho: lo que solo cambió una rama, Git lo ha juntado solo.
 - **Lo resuelves tú, con criterio.** Muchas veces la buena es una de las dos versiones; otras, una mezcla de las dos. Para decidir hay que entender qué quería hacer cada cambio, y a veces preguntar a quien lo hizo.
 
-> **📌 Nota:** «las mismas líneas» incluye las **pegadas**: si una rama cambia una línea y la otra añade algo justo debajo, Git suele tratarlo como una sola zona y también da conflicto (te pasará en el [ejercicio 4](#ejercicio-4--una-urgencia-a-mitad-de-trabajo)). Con al menos una línea sin tocar entre los dos cambios, los junta solo.
+> **📌 Nota:** «las mismas líneas» incluye las **pegadas**: si una rama cambia una línea y la otra añade algo justo debajo, Git lo trata como una sola zona y también da conflicto (te pasará en el [ejercicio 4](#ejercicio-4--una-urgencia-a-mitad-de-trabajo), y lo verás junto al caso contrario en el [ejercicio 5](#ejercicio-5--avance-rápido-tres-vías-o-conflicto)). Con al menos una línea sin tocar entre los dos cambios, los junta solo.
 
 > **📌 Nota:** también hay conflicto cuando una rama **cambia** un fichero y la otra lo **borra**, o cuando las dos cambian un fichero **binario** (una imagen), que Git no puede comparar por líneas. Se resuelven con la misma idea: decides tú qué versión queda.
 
@@ -276,7 +276,7 @@ Cuando `git merge` acaba en conflicto, Git te deja **a mitad de la fusión**: ha
 3. **Deja el fichero como debe quedar**, **sin ningún marcador**: ni `<<<<<<<`, ni `=======`, ni `>>>>>>>`.
 4. **Comprueba** que el fichero está bien: que no queda ningún marcador y, si es un programa, que funciona.
 5. **Márcalo como resuelto** con `git add fichero`. En medio de una fusión, `git add` significa «este conflicto ya está resuelto».
-6. **Termina la fusión** con un commit. Como en el apartado 1.7, Git ya tiene preparado el mensaje (`Merge branch 'precios-2027'`): con **`git commit --no-edit`** lo acepta sin abrir el editor. Un `git commit` a secas lo abriría en tu equipo, igual que `git merge`.
+6. **Termina la fusión** con un commit. Como en el apartado 1.7, Git ya tiene preparado el mensaje (`Merge branch 'precios-2027'`): con **`git commit --no-edit`** lo acepta sin abrir el editor. Un `git commit` a secas lo abriría en tu ordenador, igual que `git merge`.
 
 Si hay varios ficheros con conflicto, repites los pasos 1 a 5 con cada uno y haces un solo commit al final.
 
@@ -592,7 +592,7 @@ $ cat carta.md
 
 ### 2.4. Un conflicto: provocarlo y leerlo
 
-**Situación real:** la carta va a cambiar de precios en 2027. Lucía prepara los nuevos en la rama `precios-2027` y sube el café con leche a 1,60 €. Mientras, en `main`, Ana lo sube a 1,55 € y añade el zumo. Las dos han cambiado **la misma línea**.
+**Situación real:** la carta va a cambiar de precios en 2027. Lucía prepara los nuevos en la rama `precios-2027` y sube el café con leche a 1,60 €. Mientras, en `main`, Ana lo sube a 1,55 € y añade el zumo. Las dos han cambiado **la misma línea**. (Desde este ejemplo, la carta va en un fichero de texto sin formato, `carta.txt`.)
 
 **En tu terminal** (`sesion-1.txt`):
 
@@ -694,7 +694,7 @@ Fusión automática falló; arregle los conflictos y luego realice un commit con
 
 ### 2.6. Resolver el conflicto
 
-**Situación real:** la dueña ha decidido: el café con leche, a 1,60 €. Ana deja la línea así, **sin marcadores**, y termina la fusión. En tu equipo lo harías editando `carta.txt` en VS Code; aquí se escribe el fichero entero con `printf`, en dos órdenes para que no sean tan largas.
+**Situación real:** la dueña ha decidido: el café con leche, a 1,60 €. Ana deja la línea así, **sin marcadores**, y termina la fusión. En tu ordenador lo harías editando `carta.txt` en VS Code; aquí se escribe el fichero entero con `printf`, en dos órdenes para que no sean tan largas.
 
 **En tu terminal** (`sesion-3.txt`):
 
@@ -783,7 +783,7 @@ $ git branch
 - **`-d` se niega**: la rama tiene un commit (`1c57c2b`) que no está en `main`, y borrarla lo perdería. El error y sus pistas (`hint`) salen en inglés, sin traducir ([05.01, apartado 2](01-git-fundamentos.md#2-ejemplos-de-código)). Dicen: «la rama no está fusionada del todo; si estás seguro de que quieres borrarla, ejecuta `git branch -D experimento`»; la última línea explica cómo dejar de ver esa pista.
 - **`-D` la borra sin preguntar.** Aquí es lo que se quería; en otro caso, habrías perdido el trabajo de la rama.
 
-> **📌 Nota:** si borras con `-D` una rama por error, Git aún guarda sus commits un tiempo, y se pueden recuperar con el identificador que dice el mensaje (`era 1c57c2b`): `git switch -c experimento 1c57c2b` vuelve a crear la rama en ese commit. Por eso conviene no cerrar la terminal hasta estar seguro.
+> **📌 Nota:** si borras con `-D` una rama por error, Git aún guarda sus commits un tiempo, y se pueden recuperar con el identificador que dice el mensaje (`era 1c57c2b`) o, si ya no lo tienes a la vista, buscándolo con `git reflog` ([05.01, apartado 1.13](01-git-fundamentos.md#113-deshacer-cambios)): `git switch -c experimento 1c57c2b` vuelve a crear la rama en ese commit.
 
 ### 2.8. Apartar cambios con git stash
 
@@ -870,6 +870,8 @@ $ git stash list
 - **Ya se puede cambiar de rama**, y en `ofertas` la carta tiene la oferta del desayuno y no el bocadillo.
 - **Primero se vuelve a la rama donde estabas** (`main`), y después `git stash pop`. Si lo hicieras en `ofertas`, los cambios del bocadillo caerían en la rama equivocada.
 - **Todo vuelve como estaba**, el bocadillo en `carta.txt` y `notas.txt`, y `Descartado refs/stash@{0}` dice que `pop` lo ha sacado del almacén: `git stash list` ya no enseña nada.
+- **El error de `git switch` dice `checkout`** aunque uses `switch`: por dentro hacen lo mismo.
+- **`On main`** (en `git stash push` y `git stash list`) sale sin traducir ([05.01, apartado 2](01-git-fundamentos.md#2-ejemplos-de-código)): «en `main`», la rama donde estabas al apartar.
 
 ### 2.9. Etiquetar una versión
 
@@ -938,7 +940,7 @@ Por favor realiza un commit con los cambios o un stash antes de cambiar de rama.
 Abortando
 ```
 
-**Por qué ocurre:** tienes cambios sin confirmar en un fichero que es distinto en la otra rama. Para cambiar, Git tendría que sustituir el fichero por el de la otra rama, y tus cambios se perderían. Te protege. (Si el fichero es igual en las dos ramas, Git sí te deja cambiar, y tus cambios te acompañan.) El mensaje dice `checkout` aunque uses `switch`: por dentro, las dos órdenes hacen lo mismo.
+**Por qué ocurre:** tienes cambios sin confirmar en un fichero que es distinto en la otra rama. Para cambiar, Git tendría que sustituir el fichero por el de la otra rama, y tus cambios se perderían. Te protege. (Si el fichero es igual en las dos ramas, Git sí te deja cambiar, y tus cambios te acompañan.)
 
 **Cómo se arregla:** lo que dice el mensaje. Si el trabajo está en un estado razonable, haz un commit; si está a medias, `git stash push -u` y, al volver, `git stash pop` ([ejemplo 2.8](#28-apartar-cambios-con-git-stash)). Y si son cambios que no quieres, deséchalos con `git restore` ([05.01, apartado 1.13](01-git-fundamentos.md#113-deshacer-cambios)).
 
@@ -1012,16 +1014,32 @@ Cambiado a rama 'main'
 
 **Qué pasa:** cambias o fusionas una rama y Git dice que no existe. Con una rama `postres`, si escribes `postre`:
 
+**En tu terminal** (`sesion.txt`):
+
 ```text
+$ mkdir cafeteria && cd cafeteria && git init
+Inicializado repositorio Git vacío en /home/alumno/cafeteria/.git/
+$ echo 'Café solo: 1,20 €' > carta.txt
+$ git add carta.txt
+$ git commit -m "Primera carta"
+[main (commit-raíz) fc4dea2] Primera carta
+ 1 file changed, 1 insertion(+)
+ create mode 100644 carta.txt
+$ git branch postres
 $ git switch postre
 fatal: referencia inválida: postre
 $ git merge postre
 merge: postre - no es nada que se pueda fusionar
+$ git branch
+* main
+  postres
 ```
+
+📁 **Código:** [`codigo/02-ramas-y-conflictos/ejemplos/3.6-nombre-mal-escrito/`](codigo/02-ramas-y-conflictos/ejemplos/3.6-nombre-mal-escrito/)
 
 **Por qué ocurre:** la rama se llama `postres` y se ha escrito `postre`. Para Git, un nombre que no conoce es una «referencia inválida»: no sabe a qué commit lleva.
 
-**Cómo se arregla:** mira el nombre exacto con `git branch` y vuelve a escribirlo. Mejor aún, usa el autocompletado: en Git Bash (y en muchas otras terminales), escribe `git switch pos` y pulsa <kbd>Tab</kbd>, y se completa el nombre de la rama.
+**Cómo se arregla:** mira el nombre exacto con `git branch`, como al final de la sesión, y vuelve a escribirlo. Mejor aún, usa el autocompletado: en Git Bash (y en muchas otras terminales), escribe `git switch pos` y pulsa <kbd>Tab</kbd>, y se completa el nombre de la rama.
 
 ### 3.7. Ramas que viven demasiado
 
@@ -1140,7 +1158,7 @@ $ git log --oneline --graph --all
 
 #### Ejercicio 2 · Lee el gráfico
 
-**Situación real:** te unes al club de montaña, que guarda sus rutas en un repositorio. Antes de tocar nada, miras el historial:
+**Situación real:** te unes al club de montaña, que guarda sus rutas en un repositorio. Antes de tocar nada, miras el historial con `git log --oneline --graph --all`:
 
 ```text
 * 1e37943 (HEAD -> main) Añade las fechas de marzo
@@ -1431,12 +1449,13 @@ $ git stash list
 
 #### Ejercicio 5 · Avance rápido, tres vías o conflicto
 
-**Situación real:** en una librería guardan los precios en `precios.txt` (una categoría por línea: novela, cómic, poesía, ensayo, viajes…) y el horario en `horario.txt`. Estos son cuatro momentos de su historia. Para cada uno, **predice** qué hará `git merge` (estando en `main`): ¿avance rápido, fusión de tres vías sin conflicto o conflicto? Razona por qué.
+**Situación real:** en una librería guardan los precios en `precios.txt` (una categoría por línea: novela, cómic, poesía, ensayo, viajes…) y el horario en `horario.txt`. Estos son cinco momentos de su historia. Para cada uno, **predice** qué hará `git merge` (estando en `main`): ¿avance rápido, fusión de tres vías sin conflicto o conflicto? Razona por qué.
 
 - **Caso A.** Se crea la rama `caso-a`, se añaden en ella los libros infantiles al final de `precios.txt` y se fusiona. En `main` no ha pasado nada mientras.
 - **Caso B.** En la rama `caso-b` se añade el horario del sábado en `horario.txt`. Mientras, en `main`, se añade el teatro al final de `precios.txt`.
 - **Caso C.** En la rama `caso-c` se sube el precio de la novela (la primera línea de `precios.txt`). Mientras, en `main`, se sube el del teatro (la última línea del mismo fichero).
 - **Caso D.** En la rama `caso-d` se sube el cómic a 13 €. Mientras, en `main`, se sube el mismo cómic a 14 €.
+- **Caso E.** En la rama `caso-e` se añaden los libros de cocina al final de `precios.txt`, justo debajo del teatro. Mientras, en `main`, se sube el precio del teatro.
 
 <details>
 <summary>Pista 1</summary>
@@ -1448,7 +1467,7 @@ Primero, para cada caso: ¿ha avanzado `main` mientras tanto? Si no, ya sabes la
 <details>
 <summary>Pista 2</summary>
 
-Si las dos ramas han avanzado, la pregunta es: ¿han cambiado **las mismas líneas**? Mira la tabla del [apartado 1.9](#19-qué-es-un-conflicto-y-por-qué-ocurre). Que sea el mismo fichero no basta para un conflicto.
+Si las dos ramas han avanzado, la pregunta es: ¿han cambiado **las mismas líneas**? Mira la tabla del [apartado 1.9](#19-qué-es-un-conflicto-y-por-qué-ocurre). Que sea el mismo fichero no basta para un conflicto; pero si las líneas están **pegadas**, lee la nota que va detrás de la tabla.
 
 </details>
 
@@ -1459,16 +1478,201 @@ Si las dos ramas han avanzado, la pregunta es: ¿han cambiado **las mismas líne
 
 | Caso | Qué pasa | Por qué |
 |---|---|---|
-| A | **Avance rápido** | `main` no ha avanzado desde que se creó la rama: basta con mover la etiqueta |
+| A | **Avance rápido** | `main` no ha avanzado desde que se creó la rama: basta con mover el nombre `main` hacia delante |
 | B | **Tres vías, sin conflicto** | Las dos ramas han avanzado, pero en ficheros distintos |
 | C | **Tres vías, sin conflicto** | El mismo fichero, pero líneas distintas y alejadas: Git junta los dos cambios |
 | D | **Conflicto** | Las dos ramas cambian la misma línea de forma distinta: 13 € o 14 € lo tiene que decidir una persona |
+| E | **Conflicto** | Líneas distintas, pero **pegadas**: la rama añade la cocina justo debajo del teatro, que `main` ha cambiado. Git las trata como una sola zona |
 
-**En la terminal se vería así:** en el A, `Fast-forward` y ningún commit nuevo; en el B y el C, `Merge made by the 'ort' strategy.` y un commit de fusión (en el C, precedido de `Auto-fusionando precios.txt`, porque Git ha tenido que combinar dos cambios en el mismo fichero); y en el D, `CONFLICTO (contenido)`, como en el [ejemplo 2.4](#24-un-conflicto-provocarlo-y-leerlo).
+**Compruébalo en la terminal.** Cada caso es una sesión, en el mismo repositorio y una detrás de otra. Los casos D y E dan conflicto, y la sesión los cancela con `git merge --abort` ([ejemplo 2.5](#25-cancelar-la-fusión-con-git-merge---abort)) para seguir con el siguiente.
+
+Caso A:
+
+**En tu terminal** (`sesion-1.txt`):
+
+```text
+$ mkdir libreria && cd libreria && git init
+Inicializado repositorio Git vacío en /home/alumno/libreria/.git/
+$ printf '%s\n' 'Novela: 20 €' 'Cómic: 12 €' 'Poesía: 15 €' 'Ensayo: 18 €' > precios.txt
+$ printf '%s\n' 'Viajes: 22 €' >> precios.txt
+$ echo 'De lunes a viernes, de 10:00 a 20:00' > horario.txt
+$ git add precios.txt horario.txt
+$ git commit -m "Precios y horario"
+[main (commit-raíz) ee36803] Precios y horario
+ 2 files changed, 6 insertions(+)
+ create mode 100644 horario.txt
+ create mode 100644 precios.txt
+$ git switch -c caso-a
+Cambiado a nueva rama 'caso-a'
+$ echo 'Infantil: 10 €' >> precios.txt
+$ git add precios.txt
+$ git commit -m "Añade los libros infantiles"
+[caso-a 95ace56] Añade los libros infantiles
+ 1 file changed, 1 insertion(+)
+$ git switch main
+Cambiado a rama 'main'
+$ git merge caso-a
+Actualizando ee36803..95ace56
+Fast-forward
+ precios.txt | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+📁 **Código:** [`codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/`](codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/)
+
+Caso B:
+
+**En tu terminal** (`sesion-2.txt`):
+
+```text
+$ cd libreria
+$ git switch -c caso-b
+Cambiado a nueva rama 'caso-b'
+$ echo 'Sábados, de 10:00 a 14:00' >> horario.txt
+$ git add horario.txt
+$ git commit -m "Añade el horario del sábado"
+[caso-b 72bfe03] Añade el horario del sábado
+ 1 file changed, 1 insertion(+)
+$ git switch main
+Cambiado a rama 'main'
+$ echo 'Teatro: 14 €' >> precios.txt
+$ git add precios.txt
+$ git commit -m "Añade el teatro"
+[main 283b1e5] Añade el teatro
+ 1 file changed, 1 insertion(+)
+$ git merge --no-edit caso-b
+Merge made by the 'ort' strategy.
+ horario.txt | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+📁 **Código:** [`codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/`](codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/)
+
+Caso C:
+
+**En tu terminal** (`sesion-3.txt`):
+
+```text
+$ cd libreria
+$ git switch -c caso-c
+Cambiado a nueva rama 'caso-c'
+$ printf '%s\n' 'Novela: 21 €' 'Cómic: 12 €' 'Poesía: 15 €' 'Ensayo: 18 €' > precios.txt
+$ printf '%s\n' 'Viajes: 22 €' 'Infantil: 10 €' 'Teatro: 14 €' >> precios.txt
+$ git add precios.txt
+$ git commit -m "Sube la novela"
+[caso-c 2db6e66] Sube la novela
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git switch main
+Cambiado a rama 'main'
+$ printf '%s\n' 'Novela: 20 €' 'Cómic: 12 €' 'Poesía: 15 €' 'Ensayo: 18 €' > precios.txt
+$ printf '%s\n' 'Viajes: 22 €' 'Infantil: 10 €' 'Teatro: 15 €' >> precios.txt
+$ git add precios.txt
+$ git commit -m "Sube el teatro"
+[main 4e6164e] Sube el teatro
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git merge --no-edit caso-c
+Auto-fusionando precios.txt
+Merge made by the 'ort' strategy.
+ precios.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ cat precios.txt
+Novela: 21 €
+Cómic: 12 €
+Poesía: 15 €
+Ensayo: 18 €
+Viajes: 22 €
+Infantil: 10 €
+Teatro: 15 €
+```
+
+📁 **Código:** [`codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/`](codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/)
+
+Caso D:
+
+**En tu terminal** (`sesion-4.txt`):
+
+```text
+$ cd libreria
+$ git switch -c caso-d
+Cambiado a nueva rama 'caso-d'
+$ printf '%s\n' 'Novela: 21 €' 'Cómic: 13 €' 'Poesía: 15 €' 'Ensayo: 18 €' > precios.txt
+$ printf '%s\n' 'Viajes: 22 €' 'Infantil: 10 €' 'Teatro: 15 €' >> precios.txt
+$ git add precios.txt
+$ git commit -m "Sube el cómic a 13 €"
+[caso-d b83018f] Sube el cómic a 13 €
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git switch main
+Cambiado a rama 'main'
+$ printf '%s\n' 'Novela: 21 €' 'Cómic: 14 €' 'Poesía: 15 €' 'Ensayo: 18 €' > precios.txt
+$ printf '%s\n' 'Viajes: 22 €' 'Infantil: 10 €' 'Teatro: 15 €' >> precios.txt
+$ git add precios.txt
+$ git commit -m "Sube el cómic a 14 €"
+[main 0a5b1ac] Sube el cómic a 14 €
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git merge --no-edit caso-d
+Auto-fusionando precios.txt
+CONFLICTO (contenido): Conflicto de fusión en precios.txt
+Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.
+$ git merge --abort
+```
+
+📁 **Código:** [`codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/`](codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/)
+
+Caso E:
+
+**En tu terminal** (`sesion-5.txt`):
+
+```text
+$ cd libreria
+$ git switch -c caso-e
+Cambiado a nueva rama 'caso-e'
+$ echo 'Cocina: 25 €' >> precios.txt
+$ git add precios.txt
+$ git commit -m "Añade los libros de cocina"
+[caso-e d0b00f6] Añade los libros de cocina
+ 1 file changed, 1 insertion(+)
+$ git switch main
+Cambiado a rama 'main'
+$ printf '%s\n' 'Novela: 21 €' 'Cómic: 14 €' 'Poesía: 15 €' 'Ensayo: 18 €' > precios.txt
+$ printf '%s\n' 'Viajes: 22 €' 'Infantil: 10 €' 'Teatro: 16 €' >> precios.txt
+$ git add precios.txt
+$ git commit -m "Sube otra vez el teatro"
+[main bac3ab5] Sube otra vez el teatro
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+$ git merge --no-edit caso-e
+Auto-fusionando precios.txt
+CONFLICTO (contenido): Conflicto de fusión en precios.txt
+Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.
+$ cat precios.txt
+Novela: 21 €
+Cómic: 14 €
+Poesía: 15 €
+Ensayo: 18 €
+Viajes: 22 €
+Infantil: 10 €
+<<<<<<< HEAD
+Teatro: 16 €
+=======
+Teatro: 15 €
+Cocina: 25 €
+>>>>>>> caso-e
+$ git merge --abort
+```
+
+📁 **Código:** [`codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/`](codigo/02-ramas-y-conflictos/ejercicios/ej05-avance-rapido-tres-vias-o-conflicto/)
+
+**En qué fijarte:**
+
+- **A:** `Fast-forward` y ningún commit nuevo: `main` solo avanza de `ee36803` a `95ace56`.
+- **B:** `Merge made by the 'ort' strategy.` y un commit de fusión, aunque no haya conflicto: las dos ramas habían avanzado.
+- **C:** antes del commit de fusión sale `Auto-fusionando precios.txt`, porque Git ha tenido que combinar dos cambios en el mismo fichero; y lo ha hecho solo: `cat` enseña la novela a 21 € y el teatro a 15 €.
+- **D:** `CONFLICTO (contenido)`, como en el [ejemplo 2.4](#24-un-conflicto-provocarlo-y-leerlo).
+- **E:** también conflicto, aunque ninguna línea la cambian las dos ramas. Mira lo que hay entre los marcadores: en el lado de `caso-e`, el teatro **sin cambiar** (15 €) y la cocina. Para Git, el cambio del teatro y la línea añadida justo debajo son una sola zona. En el caso C había líneas sin tocar entre los dos cambios, y los juntó solo.
 
 **Errores frecuentes al resolverlo:**
 
-- Creer que dos ramas que tocan **el mismo fichero** siempre dan conflicto (caso C): lo que importa son **las líneas**.
+- Creer que dos ramas que tocan **el mismo fichero** siempre dan conflicto (caso C): lo que importan son **las líneas**.
+- Creer que si no cambian **la misma línea** nunca hay conflicto (caso E): las líneas **pegadas** cuentan como una sola zona.
 - Creer que una fusión sin conflicto es siempre un avance rápido (caso B): si las dos ramas han avanzado, hay commit de fusión aunque no haya conflicto.
 
 </details>
@@ -1748,16 +1952,16 @@ gitGraph
    <details>
    <summary>Ver respuesta</summary>
 
-   Si la rama que recibe no ha avanzado desde que se creó la otra, Git solo mueve su etiqueta hacia delante: es el avance rápido, sin commit nuevo. Si las dos han avanzado, Git compara tres versiones (el antepasado común y la de cada rama) y crea un commit de fusión con dos padres. Lo tienes en [1.6. Fusionar con avance rápido](#16-fusionar-con-avance-rápido) y [1.7. Fusión de tres vías y el commit de fusión](#17-fusión-de-tres-vías-y-el-commit-de-fusión).
+   Si la rama que recibe no ha avanzado desde que se creó la otra, Git solo mueve el nombre de esa rama hacia delante: es el avance rápido, sin commit nuevo. Si las dos han avanzado, Git compara tres versiones (el antepasado común y la de cada rama) y crea un commit de fusión con dos padres. Lo tienes en [1.6. Fusionar con avance rápido](#16-fusionar-con-avance-rápido) y [1.7. Fusión de tres vías y el commit de fusión](#17-fusión-de-tres-vías-y-el-commit-de-fusión).
 
    </details>
 
-5. ¿Por qué las sesiones del módulo usan `git merge --no-edit`? ¿Qué pasaría en tu equipo sin esa opción?
+5. ¿Por qué las sesiones del módulo usan `git merge --no-edit`? ¿Qué pasaría en tu ordenador sin esa opción?
 
    <details>
    <summary>Ver respuesta</summary>
 
-   Porque una fusión de tres vías crea un commit, y su mensaje se escribe en el editor. Sin `--no-edit` (ni `-m`), en tu equipo Git abriría el editor que configuraste con el mensaje propuesto, y la fusión terminaría al cerrarlo. `--no-edit` acepta el mensaje propuesto sin abrirlo. Lo tienes en [1.7. Fusión de tres vías y el commit de fusión](#17-fusión-de-tres-vías-y-el-commit-de-fusión).
+   Porque una fusión de tres vías crea un commit, y su mensaje se escribe en el editor. Sin `--no-edit` (ni `-m`), en tu ordenador Git abriría el editor que configuraste con el mensaje propuesto, y la fusión terminaría al cerrarlo. `--no-edit` acepta el mensaje propuesto sin abrirlo. Lo tienes en [1.7. Fusión de tres vías y el commit de fusión](#17-fusión-de-tres-vías-y-el-commit-de-fusión).
 
    </details>
 

@@ -1,0 +1,12 @@
+mkdir libreria && cd libreria && git init
+printf '%s\n' 'Novela: 20 €' 'Cómic: 12 €' 'Poesía: 15 €' 'Ensayo: 18 €' > precios.txt
+printf '%s\n' 'Viajes: 22 €' >> precios.txt
+echo 'De lunes a viernes, de 10:00 a 20:00' > horario.txt
+git add precios.txt horario.txt
+git commit -m "Precios y horario"
+git switch -c caso-a
+echo 'Infantil: 10 €' >> precios.txt
+git add precios.txt
+git commit -m "Añade los libros infantiles"
+git switch main
+git merge caso-a
