@@ -24,15 +24,11 @@ En [04.03 JSON y YAML](03-json-y-yaml.md) has visto los dos formatos de datos qu
 
 ### 1.1. Los formatos que te quedan por conocer
 
-Un formato de datos es un acuerdo sobre **cómo se escriben los datos en un fichero de texto** para que otro programa (o una persona) los entienda. Todos los de este módulo son [texto plano](../fase-03-herramientas/03-editor-de-codigo.md#11-qué-es-un-editor-de-código): los puedes abrir con VS Code, con `cat` o con `head`.
+Ya sabes qué es un [formato de datos](03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos). Todos los de este módulo son [texto plano](../fase-03-herramientas/03-editor-de-codigo.md#11-qué-es-un-editor-de-código): los puedes abrir con VS Code, con `cat` o con `head`.
 
-| Formato | Para qué se usa sobre todo | En este módulo |
-|---|---|---|
-| **XML** | Documentos y datos con estructura de árbol, sobre todo en sistemas que lo exigen: facturas electrónicas, configuración de algunas herramientas, imágenes SVG | [1.2](#12-xml-un-lenguaje-de-marcas-para-datos) a [1.6](#16-dónde-verás-xml) |
-| **HTML** | Las páginas web | [1.7](#17-html-el-pariente-de-xml) |
-| **CSV** y **TSV** | Tablas: lo que sale de una hoja de cálculo o de una base de datos | [1.8](#18-csv-a-fondo-las-reglas) a [1.12](#112-tsv-separado-por-tabuladores) |
-| **`.properties`**, **INI** y **TOML** | Configuración de programas | [1.13](#113-ficheros-de-configuración-properties-ini-y-toml) |
-| **`.env`** | Variables de entorno y secretos de un proyecto | [1.14](#114-el-fichero-env-y-los-secretos) |
+- **XML** ([1.2](#12-xml-un-lenguaje-de-marcas-para-datos) a [1.6](#16-dónde-verás-xml)): datos con estructura de árbol, sobre todo en sistemas que lo exigen (facturas electrónicas, imágenes SVG); y **HTML**, el de las páginas web ([1.7](#17-html-el-pariente-de-xml)).
+- **CSV** y **TSV** ([1.8](#18-csv-a-fondo-las-reglas) a [1.12](#112-tsv-separado-por-tabuladores)): tablas, lo que sale de una hoja de cálculo o de una base de datos.
+- **`.properties`**, **INI** y **TOML** ([1.13](#113-ficheros-de-configuración-properties-ini-y-toml)): configuración de programas; y **`.env`** ([1.14](#114-el-fichero-env-y-los-secretos)), variables de entorno y secretos.
 
 Al final, en [1.15](#115-cuándo-usar-cada-formato), tienes una tabla para decidir cuál usar en cada caso.
 
@@ -76,7 +72,7 @@ Este es el catálogo de una librería en XML (lo tienes completo en el [ejemplo 
 | **Atributo** | `codigo="L-001"` | Un dato **dentro de la etiqueta de apertura**: un nombre, un `=` y el valor **siempre entre comillas** (dobles o simples) |
 | **Elemento raíz** | `<catalogo>` | El elemento que **contiene a todos los demás**. Solo puede haber **uno** |
 
-**Un árbol.** Los elementos van unos **dentro** de otros, y la sangría (los espacios del principio de cada línea) ayuda a verlo, aunque a XML le da igual: `catalogo` contiene dos `libro`; cada `libro` contiene `titulo`, `autor` y `precio`. Es el mismo árbol que el de las [carpetas de tu ordenador](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#13-el-árbol-de-carpetas), con el elemento raíz en lo más alto.
+**Un árbol.** Los elementos van unos **dentro** de otros, y la [sangría](02-markdown.md#16-listas) ayuda a verlo, aunque a XML le da igual: `catalogo` contiene dos `libro`; cada `libro` contiene `titulo`, `autor` y `precio`. Es el mismo árbol que el de las [carpetas de tu ordenador](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#13-el-árbol-de-carpetas), con el elemento raíz en lo más alto.
 
 ```mermaid
 flowchart TD
@@ -121,8 +117,6 @@ En el fichero pone `&amp;`, pero cualquier programa que lea el XML entiende «Co
 
 Es lo que en Markdown hacías con la barra invertida: [escapar](02-markdown.md#114-escapar-caracteres) un carácter para que no se confunda con una marca. Cada formato lo hace a su manera: XML, con entidades; JSON, con `\` ([04.03](03-json-y-yaml.md#16-las-reglas-estrictas-de-json)); y CSV, doblando las comillas ([apartado 1.9](#19-comillas-comillas-dobladas-y-saltos-de-línea-dentro)).
 
-> **📌 Nota:** si tienes un trozo largo lleno de `<` y `&` (por ejemplo, un fragmento de código), XML permite meterlo en una sección **CDATA**, que no se interpreta: `<![CDATA[ si a < b && c ]]>`. Lo verás poco; basta con que lo reconozcas.
-
 ### 1.5. Bien formado y válido
 
 Un XML puede estar bien de dos maneras distintas, y conviene no confundirlas:
@@ -148,8 +142,8 @@ Si un XML **no** está bien formado, **no es XML**: cualquier programa que lo le
 
 **¿Cómo sé si mi XML está bien formado?** Sin instalar nada:
 
-- **Ábrelo en el navegador** (arrástralo a una ventana de Firefox, Chrome o Edge). Si está bien formado, el navegador te enseña el árbol; si no, un mensaje de error que dice la **línea** (y normalmente la columna) del primer fallo.
-- **En VS Code**, el resaltado de sintaxis ([03.03, apartado 1.9](../fase-03-herramientas/03-editor-de-codigo.md#19-el-resaltado-de-sintaxis)) ya te da pistas, pero VS Code no comprueba XML por su cuenta. La extensión **XML** de **Red Hat** (unos 11 millones de instalaciones en el Marketplace, comprobado el 9 de noviembre de 2026) subraya los errores mientras escribes y también valida contra un esquema. Si la instalas, aplica los criterios de [03.03](../fase-03-herramientas/03-editor-de-codigo.md#110-extensiones-ampliar-el-editor-con-cuidado).
+- **Ábrelo en el navegador** (arrástralo a una ventana de Firefox, Chrome o Edge; en macOS, Safari puede enseñar solo el texto, sin el árbol). Si está bien formado, el navegador te enseña el árbol; si no, un mensaje de error que dice la **línea** (y normalmente la columna) del primer fallo.
+- **En VS Code**, el resaltado de sintaxis ([03.03, apartado 1.9](../fase-03-herramientas/03-editor-de-codigo.md#19-el-resaltado-de-sintaxis)) ya te da pistas, pero VS Code no comprueba XML por su cuenta. La extensión **XML** de **Red Hat** subraya los errores mientras escribes y también valida contra un esquema. Si la instalas, aplica los criterios de [03.03](../fase-03-herramientas/03-editor-de-codigo.md#110-extensiones-ampliar-el-editor-con-cuidado).
 
 ### 1.6. Dónde verás XML
 
@@ -157,12 +151,10 @@ Aunque no escribas XML a menudo, lo tienes alrededor:
 
 | Dónde | Qué es |
 |---|---|
-| **`pom.xml`** | La configuración de un proyecto de **Java** con Maven: qué librerías usa y cómo se construye. Lo verás si haces el curso de Java |
+| **`pom.xml`** | La configuración de un proyecto de **Java** con Maven: qué [bibliotecas](03-json-y-yaml.md#112-los-tipos-que-adivina-yaml-las-versiones-11-y-12) usa y cómo se construye. Lo verás si haces el curso de Java |
 | **Imágenes SVG** (`.svg`) | Un dibujo hecho de **texto**: cada línea, círculo o letra es un elemento XML. Por eso se pueden ampliar sin que se pixelen ([ejemplo 2.3](#23-una-imagen-que-es-texto-svg)) |
 | **RSS** | Los **canales de noticias y de pódcast**: la lista de episodios que lee tu aplicación de pódcast es un fichero XML |
 | **`.docx`, `.xlsx`, `.odt`** | Los documentos de Word, Excel o LibreOffice son, por dentro, un **fichero ZIP lleno de ficheros XML**. Por eso no son texto plano ([03.03, apartado 1.2](../fase-03-herramientas/03-editor-de-codigo.md#12-editor-procesador-de-textos-e-ide)): lo que hay dentro sí lo es, pero comprimido |
-| **Facturas electrónicas** | En España, el formato **Facturae** de las facturas a la Administración es XML con su esquema |
-| **Aplicaciones Android** | Las pantallas y la configuración de una aplicación de Android se describen en XML |
 
 ### 1.7. HTML, el pariente de XML
 
@@ -237,9 +229,11 @@ Se sigue llamando CSV, aunque no lleve comas. Consecuencias:
 
 Un CSV es texto, así que tiene una codificación, y no la dice en ningún sitio. Hoy lo normal es UTF-8, pero muchos programas de Windows han guardado tradicionalmente los CSV en [Windows-1252](01-texto-binario-y-codificacion.md#15-una-tabla-por-idioma-latin-1-y-windows-1252). El resultado es el [mojibake](01-texto-binario-y-codificacion.md#110-caracteres-estropeados-mojibake) de 04.01: tildes y eñes estropeadas («AlcalÃ¡» en lugar de «Alcalá») cuando un programa lee el fichero con la codificación que no es. Aquí, lo práctico:
 
-- **Al abrir un CSV en Excel**, no hagas doble clic: usa **Datos > Desde texto o CSV** (en la sección **Obtener y transformar datos**). Excel te enseña una vista previa y te deja elegir el **origen del fichero** (la codificación; para UTF-8, la que dice *UTF-8*) y el **delimitador** (el separador) antes de cargarlo. Si las tildes de la vista previa salen bien, está bien elegida.
+- **Al abrir un CSV en Excel**, no hagas doble clic: usa **Datos > Desde texto o CSV** (en el grupo **Obtener y transformar datos**). Excel te enseña una vista previa y te deja elegir el **Origen del archivo** (la codificación; para UTF-8, la que dice *UTF-8*) y el **Delimitador** (el separador) antes de cargarlo. Si las tildes de la vista previa salen bien, está bien elegida.
 - **LibreOffice Calc**, al abrir un CSV, te pregunta siempre el juego de caracteres y el separador.
-- **Al guardar desde Excel**, mira la lista de tipos de **Guardar como**: además del CSV de siempre, algunas versiones ofrecen un CSV en **UTF-8**. Si el CSV es para otro programa, elige ese.
+- **Al guardar desde Excel**, mira la lista de tipos de **Guardar como**: además del CSV de siempre, suele ofrecer un CSV en **UTF-8**. Ojo: lo suele guardar con BOM y con el separador de tu configuración regional (`;` en español). Si el CSV es para otro programa, compruébalo con `file` y `head` y, si hace falta, quita el BOM ([04.01, ejemplo 2.6](01-texto-binario-y-codificacion.md#26-encontrar-y-quitar-un-bom)).
+
+> **📌 Nota:** esto es Excel para Windows (los nombres, como en su ayuda en español, consultada el 16 de noviembre de 2026). En Excel para Mac, en Numbers o en LibreOffice los menús cambian, pero la idea es la misma: importar eligiendo codificación y separador en lugar de abrir con doble clic.
 
 ### 1.12. TSV: separado por tabuladores
 
@@ -249,7 +243,7 @@ Tiene una gran ventaja: **un tabulador casi nunca forma parte de un dato**. Los 
 
 Su inconveniente: el tabulador **no se ve**. En el editor parece un grupo de espacios, y si alguien lo cambia por espacios sin querer (algunos editores lo hacen), el fichero se rompe sin que se note.
 
-> **💡 Consejo:** en VS Code, la opción **View > Appearance > Render Whitespace** (con el paquete de español, en el menú **Ver > Apariencia**) dibuja los espacios como puntos y los tabuladores como flechas. Muy útil para revisar un TSV.
+> **💡 Consejo:** para revisar un TSV en VS Code, activa **Render Whitespace**, que dibuja los tabuladores como flechas ([04.03, error típico 3.5](03-json-y-yaml.md#35-un-tabulador-en-la-sangría)).
 
 ### 1.13. Ficheros de configuración: .properties, INI y TOML
 
@@ -274,7 +268,7 @@ La diferencia de los **tipos** se ve al leerlos: un programa que lee el INI del 
 
 ### 1.14. El fichero .env y los secretos
 
-Hay datos de configuración que **no se pueden compartir**: la contraseña de la base de datos, la clave de la pasarela de pago o de una API. A eso se le llama un **secreto**. Si un secreto acaba en un repositorio público de GitHub, cualquiera puede usarlo (y hay programas que recorren GitHub buscándolos).
+Hay datos de configuración que **no se pueden compartir**: la contraseña de la base de datos, la clave de la pasarela de pago o de una [API](03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos). A eso se le llama un **secreto**. Si un secreto acaba en un repositorio público de GitHub, cualquiera puede usarlo (y hay programas que recorren GitHub buscándolos).
 
 La costumbre para separarlos es el fichero **`.env`** (de *environment*, «entorno»): un fichero de texto en la carpeta del proyecto con una [variable de entorno](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#19-variables-de-entorno) por línea, en la forma `NOMBRE=valor`:
 
@@ -284,7 +278,7 @@ BASEDATOS_CONTRASENA=Rocinante-1605
 CORREO_CLAVE_API=k8Hq2Lw9Zt
 ```
 
-(Son inventados, claro.) Al arrancar, el programa (o una librería, o herramientas como Docker Compose) lee el `.env` y trata cada línea como una variable de entorno. Tampoco tiene una norma: cada herramienta lo lee con reglas parecidas (comentarios con `#`, comillas opcionales).
+(Son inventados, claro.) Al arrancar, el programa (o una biblioteca, o herramientas como Docker Compose) lee el `.env` y trata cada línea como una variable de entorno. Tampoco tiene una norma: cada herramienta lo lee con reglas parecidas (comentarios con `#`, comillas opcionales).
 
 Tres reglas que se cumplen siempre:
 
@@ -359,7 +353,7 @@ $ grep -c '<libro ' catalogo.xml
 - **Las piezas del [apartado 1.3](#13-las-piezas-de-un-xml)**: la declaración, el comentario, el elemento raíz `catalogo` con dos atributos, dos `libro` dentro, y el elemento vacío `<agotado/>` en el segundo.
 - **`grep` enseña el fichero tal cual**, con `&amp;`. Es un programa que lee XML (la web de la librería, el navegador) el que lo convierte en `&`.
 - **`grep -c '<libro '` cuenta los libros** porque cada uno empieza en su línea. Sirve para echar un vistazo, pero no para leer XML en serio: el mismo XML podría estar escrito en una sola línea y seguiría siendo correcto. Para trabajar con XML, los programas usan un **analizador** de XML, el que sabe sus reglas.
-- **Ábrelo en el navegador**: verás el árbol, con los elementos que se pueden plegar y desplegar.
+- **Ábrelo en el navegador** (con Firefox o Chrome): verás el árbol, con los elementos que se pueden plegar y desplegar.
 
 ### 2.2. Un ampersand sin escapar
 
@@ -378,7 +372,7 @@ $ grep -c '<libro ' catalogo.xml
 
 **En qué fijarte:**
 
-- **El fichero no está bien formado**: el `&` de la línea 4 va suelto. Ábrelo en el navegador: en lugar del árbol completo, verás un mensaje de error que señala la línea 4.
+- **El fichero no está bien formado**: el `&` de la línea 4 va suelto. Ábrelo en el navegador (con Firefox o Chrome): en lugar del árbol completo, verás un mensaje de error que señala la línea 4.
 - **No se lee nada**, ni siquiera lo que estaba bien: un programa que lo lea se para en el error. La web de la librería se quedaría sin catálogo por un solo carácter.
 - **El arreglo** es escribir `&amp;` ([error típico 3.1](#31-un--sin-escapar)).
 
@@ -588,7 +582,7 @@ CORREO_CLAVE_API=escribe-aqui-la-clave
 
 **Por qué ocurre:** en XML, `&` empieza una entidad (`&amp;`, `&lt;`…), y `<` empieza una etiqueta. Sueltos en el texto, rompen el fichero ([apartado 1.4](#14-caracteres-especiales-las-entidades)).
 
-**Cómo se arregla:** escribe `&amp;` en lugar de `&` y `&lt;` en lugar de `<`. Y si el XML lo genera un programa, que use una librería de XML, que escapa sola, en lugar de pegar textos.
+**Cómo se arregla:** escribe `&amp;` en lugar de `&` y `&lt;` en lugar de `<`. Y si el XML lo genera un programa, que use una biblioteca de XML, que escapa sola, en lugar de pegar textos.
 
 ### 3.2. Etiquetas mal cerradas
 
@@ -650,7 +644,7 @@ CORREO_CLAVE_API=escribe-aqui-la-clave
 
 **Por qué ocurre:** el programa ha leído el fichero con una codificación que no es la suya: un UTF-8 leído como Windows-1252 da lo primero, y un Windows-1252 leído como UTF-8, lo segundo ([04.01, apartado 1.10](01-texto-binario-y-codificacion.md#110-caracteres-estropeados-mojibake)).
 
-**Cómo se arregla:** al abrirlo, elige la codificación correcta en la ventana de importación (en Excel, el «origen del archivo»; en LibreOffice, el «juego de caracteres»), mirando que la vista previa salga bien. Si el fichero lo haces tú, guárdalo en UTF-8 y avisa a quien lo reciba.
+**Cómo se arregla:** al abrirlo, elige la codificación correcta en la ventana de importación (en Excel, **Origen del archivo**; en LibreOffice, el juego de caracteres), mirando que la vista previa salga bien. Si el fichero lo haces tú, guárdalo en UTF-8 y avisa a quien lo reciba.
 
 ### 3.7. Excel cambia tus datos sin avisar
 
@@ -705,7 +699,6 @@ Contesta:
 2. ¿Cuántos elementos tiene el pedido en total, contando el raíz? ¿Cuál es el elemento vacío?
 3. Haz una lista de los atributos, con el elemento al que pertenece cada uno y su valor.
 4. ¿Qué texto recibe el programa de la panadería cuando lee la nota?
-5. Si la panadería quisiera guardar el teléfono como elemento en lugar de como atributo, ¿cómo quedaría el cliente?
 
 <details>
 <summary>Pista 1</summary>
@@ -737,16 +730,6 @@ Para la nota, recuerda qué es `&amp;` ([apartado 1.4](#14-caracteres-especiales
    | segunda `linea` | `unidades` | `1` |
 
 4. **`Sin gluten & sin lactosa, por favor`**. En el fichero pone `&amp;`, pero es una entidad: el programa que lee el XML la cambia por `&`.
-5. El teléfono pasaría a ser un elemento dentro de `cliente`. Como `cliente` tiene ahora un texto (el nombre), habría que meter también el nombre en su propio elemento, para que no queden mezclados:
-
-   ```xml
-   <cliente>
-     <nombre>Sara Molina</nombre>
-     <telefono>600123456</telefono>
-   </cliente>
-   ```
-
-   Las dos formas son XML correcto. Cambiarla obligaría a cambiar también el programa que lo lee, que busca el teléfono en otro sitio: por eso un formato, una vez acordado, no se toca a la ligera.
 
 **Errores frecuentes al resolverlo:**
 
@@ -893,14 +876,13 @@ El último error está en la última línea: ¿cuántos elementos hay en lo más
 
 - Para la etiqueta de la línea 5, cualquiera de las dos vale (`Lugar` o `lugar`) si la de apertura y la de cierre son iguales; se ha elegido la minúscula para que todas las etiquetas sigan la misma costumbre.
 - Al envolver los dos clubes en `<clubes>`, todo lo de dentro baja un nivel, y se ha sangrado dos espacios más para que se vea el árbol. A XML le da igual la sangría; a quien lo lee, no.
-- La declaración se queda **la primera**, fuera del elemento raíz.
 - Si abres el fichero roto en el navegador, verás **solo el primer error** (el de la línea 3): un programa que lee XML se para en el primero. Al arreglarlo y volver a abrirlo, aparecerá el siguiente. Por eso conviene revisar el fichero entero con las reglas delante, en lugar de ir arreglando de error en error.
 
 **Errores frecuentes al resolverlo:**
 
 - Arreglar la línea 6 cerrando `</asistentes>` dos veces, o borrando una de las etiquetas.
 - Quitar el segundo club para que haya una sola raíz: el ejercicio pide conservar los dos datos.
-- Poner `<clubes>` antes de la declaración `<?xml … ?>`.
+- Poner `<clubes>` antes de la declaración `<?xml … ?>`: la declaración va siempre la primera.
 
 </details>
 
@@ -1140,7 +1122,7 @@ Cada persona, al descargar el proyecto, **copia `.env.example` como `.env`** (`c
 
 - **Los textos, entre comillas** (`"Librería Cervantes"`); los **números, sin ellas** y con **punto decimal** (`3.95`, no `3,95`, que en TOML es un error); el **sí**, `true`; los **idiomas**, una lista. Así el programa recibe cada dato con su tipo.
 - **Dos claves `puerto`**, una en `[tienda]` y otra en `[correo]`: no chocan, porque están en tablas distintas. Es una de las ventajas de agrupar.
-- **`gratis_desde = 30.00`** podría ser `30.0`; con dos decimales se lee como un importe. Lo que no conviene es `30`, que en TOML es un número entero, y los gastos un decimal: mejor que los dos importes sean del mismo tipo.
+- **`gratis_desde = 30.00`**, con decimales como `gastos`, para que los dos importes se escriban igual (en TOML, `30` a secas sería un número entero, de otro tipo).
 - **Los nombres de las variables del `.env`, en mayúsculas** y con guiones bajos, como las [variables de entorno](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#19-variables-de-entorno).
 - **El comentario del TOML** recuerda dónde están los secretos: quien abra el fichero buscando la contraseña sabrá que no está ahí, y por qué.
 
@@ -1166,7 +1148,7 @@ Cada persona, al descargar el proyecto, **copia `.env.example` como `.env`** (`c
 | Comentario | `<!-- texto -->` |
 | Entidades | `&lt;` `<` · `&amp;` `&` · `&gt;` `>` · `&quot;` `"` · `&apos;` `'` |
 
-**Bien formado:** un solo elemento raíz · toda etiqueta se cierra · en orden inverso · las mayúsculas cuentan · atributos entre comillas · ni `<` ni `&` sueltos. **Válido:** bien formado y, además, sigue su esquema (XSD o DTD). **Comprobarlo:** ábrelo en el navegador.
+**Bien formado:** un solo elemento raíz · toda etiqueta se cierra · en orden inverso · las mayúsculas cuentan · atributos entre comillas · ni `<` ni `&` sueltos. **Válido:** bien formado y, además, sigue su esquema (XSD o DTD). **Comprobarlo:** ábrelo en el navegador (Firefox o Chrome).
 
 ### CSV y TSV
 

@@ -581,7 +581,7 @@ Marca invisible al final de cada línea de un fichero de texto: Linux y macOS us
 
 ### Sangría
 
-Espacios al principio de una línea que muestran qué va dentro de qué; en YAML (y en algunos lenguajes) cambia el significado. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#110-mapas-listas-y-sangría).
+Espacios al principio de una línea que muestran qué va dentro de qué; en YAML (y en algunos lenguajes) cambia el significado. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#16-listas).
 
 ### Script
 
