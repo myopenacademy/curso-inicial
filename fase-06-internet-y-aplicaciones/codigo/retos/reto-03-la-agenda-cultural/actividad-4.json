@@ -1,0 +1,11 @@
+{
+  "id": 4,
+  "titulo": "Taller de encuadernación",
+  "fecha": "2026-11-24",
+  "hora": "18:00",
+  "lugar": "Biblioteca Municipal",
+  "precio": 0,
+  "plazas_libres": 6,
+  "inscripcion": "En la propia biblioteca, hasta completar plazas",
+  "edad_minima": 12
+}

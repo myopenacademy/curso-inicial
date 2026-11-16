@@ -150,7 +150,7 @@ Es el mismo «de dentro hacia fuera» de [06.01](01-redes.md#diagnóstico-de-no-
 
 ## Reto 2 · Las piezas de la web de citas de un taller de bicis
 
-**Situación real:** Fermín tiene **Bicis Ebro**, un taller de bicicletas en Logroño, y quiere que sus clientes pidan cita por internet. Su sobrina Sara, que acaba de terminar esta fase, le va a ayudar a pensarlo antes de que nadie escriba una línea de código. Esto es lo que quiere Fermín:
+**Situación real:** Fermín tiene **Bicis Ebro**, un taller de bicicletas en Logroño, y quiere que sus clientes pidan cita por internet. Su sobrina Leire, que acaba de terminar esta fase, le va a ayudar a pensarlo antes de que nadie escriba una línea de código. Esto es lo que quiere Fermín:
 
 - En la **web**, el cliente elige un servicio de la lista (revisión completa, cambio de cubierta, ajuste de frenos…), cada uno con su precio, y un día y una hora libres; escribe su nombre, su teléfono y su correo, y, si quiere, una nota sobre la avería.
 - En el taller, los mecánicos tienen una **tableta** con la lista de citas del día. Cuando terminan una bici, la marcan como **lista**.
@@ -379,7 +379,7 @@ Tu trabajo, con la terminal:
 6. Escribe a mano, en VS Code, el `resumen.json` para el programa del boletín.
 7. Sin ninguna orden: a Inés le han sugerido que, en vez de todo esto, le pregunte a un asistente de IA «qué actividades gratis hay esta semana en Valdeluz». ¿Qué le contestarías?
 
-**En tu ordenador**, sin el servidor de la agenda, haz los pasos 1 a 3 sobre una respuesta ya guardada. Inés le pidió a un compañero que guardara la respuesta entera a `GET /actividades?gratis=true` (con su línea de estado y sus cabeceras) en el fichero **`respuesta-guardada.txt`**, que está en la carpeta del reto: [`codigo/retos/reto-03-la-agenda-cultural/`](codigo/retos/reto-03-la-agenda-cultural/). Descárgala, abre la terminal en ella y, con órdenes de la terminal: comprueba en ella el código de estado, saca el cuerpo a `gratis.json` y cuenta y lista las actividades. Después escribe tu `resumen.json` (en la carpeta hay uno con la solución: no lo abras hasta terminar). Los pasos 4 y 5 necesitan el servidor: haz tus órdenes y compáralas con la solución, que dice lo que verías.
+**En tu ordenador**, sin el servidor de la agenda, haz los pasos 1 a 3 sobre una respuesta ya guardada. Inés le pidió a un compañero que guardara la respuesta entera a `GET /actividades?gratis=true` (con su línea de estado y sus cabeceras) en el fichero **`respuesta-guardada.txt`**, que está en la carpeta del reto: [`codigo/retos/reto-03-la-agenda-cultural/`](codigo/retos/reto-03-la-agenda-cultural/). Descárgala, abre la terminal en ella y, con órdenes de la terminal: comprueba en ella el código de estado, saca el cuerpo a `gratis.json` y cuenta y lista las actividades. Después escribe tu `resumen.json` (en la carpeta hay uno con la solución: no lo abras hasta terminar). Para el paso 4, en la carpeta está también la ficha de la actividad 4 ya guardada, **`actividad-4.json`** (la que deja `curl` en ese paso): saca de ella el dato de las plazas. Y el paso 5, si tienes internet, practícalo con la API de GitHub: pide `https://api.github.com/users/octocat/no-existe`, una dirección que no existe, guardándola en `no-existe.json` solo si existe, y comprueba que no se ha guardado nada.
 
 **Y si tienes internet** (opcional), practica el paso 2 con una API de verdad: guarda en `octocat.json` los datos de `octocat`, la cuenta de ejemplo de la documentación de GitHub, viendo solo el código, y saca de ese fichero cuántos repositorios públicos tiene.
 
@@ -461,6 +461,8 @@ $ grep titulo gratis.json
     "titulo": "Cuentacuentos en la plaza",
     "titulo": "Taller de encuadernación",
     "titulo": "Concierto de la banda municipal",
+$ grep plazas_libres actividad-4.json
+  "plazas_libres": 6,
 ```
 
 📁 **Código:** [`codigo/retos/reto-03-la-agenda-cultural/`](codigo/retos/reto-03-la-agenda-cultural/)
@@ -468,6 +470,19 @@ $ grep titulo gratis.json
 - **La línea de estado** dice `200 OK`: la respuesta guardada es buena, y se puede usar. Si dijera `404` o `503`, su cuerpo sería un mensaje de error, no la lista.
 - **La línea vacía es la 4**: `'^$'` busca las líneas sin nada entre el principio (`^`) y el final (`$`), y `grep -n` escribe el número de línea y, tras los dos puntos, la línea, que aquí no tiene nada. El cuerpo empieza en la 5, y `tail -n +5` lo saca entero a `gratis.json`: el **mismo fichero** que deja `curl -s -o` con el servidor. A partir de ahí, las mismas órdenes y los mismos resultados.
 - **Si guardas tú una respuesta con `curl -i -o`**, sus líneas de cabecera llevan `\r` y la línea vacía no está vacía para `grep '^$'`: quítalos antes con `tr -d '\r'`, como en la sesión del servidor.
+- **El paso 4** sale igual que con el servidor: `actividad-4.json` es el fichero que deja `curl -s -o` en ese paso.
+
+**El paso 5, con la API de GitHub.** Una salida **de ejemplo**, del 16 de noviembre de 2026:
+
+```text
+$ curl -s -f -o no-existe.json https://api.github.com/users/octocat/no-existe
+$ echo $?
+22
+$ ls no-existe.json
+ls: no se puede acceder a 'no-existe.json': No existe el archivo o el directorio
+```
+
+Lo mismo que con la actividad 9: GitHub responde `404` porque esa ruta no existe, y con `-f`, `curl` no escribe el cuerpo, termina con el código **22** y no crea el fichero. (El mensaje de `ls` es el de un Linux en español; en tu sistema puede salir con otras palabras, o en inglés.)
 
 **Paso 6, el `resumen.json`:**
 

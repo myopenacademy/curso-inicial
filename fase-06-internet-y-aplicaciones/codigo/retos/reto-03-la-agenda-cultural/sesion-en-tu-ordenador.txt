@@ -3,3 +3,4 @@ grep -n '^$' respuesta-guardada.txt
 tail -n +5 respuesta-guardada.txt > gratis.json
 grep -c '"id"' gratis.json
 grep titulo gratis.json
+grep plazas_libres actividad-4.json
