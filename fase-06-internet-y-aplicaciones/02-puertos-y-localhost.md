@@ -55,7 +55,7 @@ Para hablar con un programa de otro ordenador hacen falta las dos cosas: **la IP
 
 Quién usa cada número lo apunta un registro público, el de la **IANA** (la organización que reparte los números de internet). Los del **0 al 1023** son los «bien conocidos», los de los servicios de siempre (la web, SSH, el correo); los de más arriba los piden programas concretos o los usa el propio sistema (según el RFC 6335, comprobado el 16 de noviembre de 2026). Los que tienes que reconocer:
 
-| Puerto | Quién lo usa | Ya lo conoces de… |
+| Puerto | Quién lo usa | Dónde lo ves |
 |---|---|---|
 | **80** | La web sin cifrar (HTTP) | [06.03](03-la-web-http-y-apis.md) |
 | **443** | La web cifrada (HTTPS); también Git cuando usas direcciones `https://` | [05.03, HTTPS](../fase-05-git-y-github/03-github.md#14-cómo-sabe-github-que-eres-tú-https) |
@@ -87,7 +87,7 @@ Cuando el cliente y el servidor están **en el mismo ordenador**, el mensaje no 
 
 - **`127.0.0.1`** en IPv4 (de hecho, todas las que empiezan por `127.` son de este tipo, pero se usa siempre esa).
 - **`::1`** en IPv6.
-- **`localhost`**, el **nombre** de las dos: tu ordenador lo traduce a `127.0.0.1` o a `::1` sin preguntar a ningún DNS.
+- **`localhost`**, el **nombre** de las dos: tu ordenador lo traduce a `127.0.0.1` o a `::1` sin preguntar a ningún DNS. Cuál de las dos usa primero depende del sistema y del programa.
 
 Lo que mandas a esa dirección vuelve a entrar en tu propio ordenador sin tocar la red. Por eso:
 
@@ -137,8 +137,8 @@ Cómo se elige depende de cada herramienta: suele ser una opción al arrancarla 
 
 El [cortafuegos](01-redes.md#114-el-cortafuegos) de tu ordenador bloquea las conexiones que entran sin que nadie las haya pedido. Por eso, la primera vez que un programa quiere **recibir conexiones de la red**, puede pararlo y preguntarte:
 
-- **En Windows**, según la documentación de Microsoft (a 16 de noviembre de 2026), la primera vez que un programa sin permiso intenta recibir conexiones, **abre una ventana** para que lo permitas o lo bloquees. Si dices que no o la cierras, crea reglas de **bloqueo**, y la ventana **no vuelve a salir**: para cambiarlo hay que ir a la configuración del cortafuegos. La ventana distingue las **redes privadas** de las **públicas**, los [perfiles de red](01-redes.md#114-el-cortafuegos) de Windows.
-- **En macOS**, si tienes el cortafuegos activado, se configura en los ajustes del sistema, donde se añaden o se quitan las aplicaciones que pueden recibir conexiones; puede preguntarte la primera vez.
+- **En Windows**, según la documentación de Microsoft (a 16 de noviembre de 2026), la primera vez que un programa sin permiso intenta recibir conexiones, **abre una ventana** para que lo permitas o lo bloquees. Si dices que no o la cierras, crea reglas de **bloqueo**, y la ventana **no vuelve a salir**: para cambiarlo hay que ir a la configuración del cortafuegos. La ventana distingue las **redes privadas** de las **públicas**, los [perfiles de red](01-redes.md#114-el-cortafuegos) de Windows. Permitirlo pide permiso de administrador: en un ordenador del trabajo o del centro de estudios en el que no lo eres, Windows crea reglas de bloqueo elijas lo que elijas, y quien lo administra es quien puede abrirlo.
+- **En macOS**, si tienes el cortafuegos activado (**Ajustes del Sistema > Red > Firewall**), te pregunta la primera vez si permites o deniegas que la aplicación reciba conexiones; mientras no contestas, se deniegan, según la guía de Apple en español (a 16 de noviembre de 2026). En esos mismos ajustes se añaden o se quitan las aplicaciones que pueden recibir conexiones.
 - **En Linux**, lo normal en un ordenador personal es que no salga ninguna ventana.
 
 **Qué contestar:** si es **tu** servidor de desarrollo (o una herramienta que acabas de instalar para tu curso) y quieres probarlo desde el móvil, permítelo **solo en redes privadas**. Si no lo reconoces, no lo permitas. Y si solo lo vas a usar desde tu ordenador, con `localhost`, no te hace falta abrirlo a la red.
@@ -160,7 +160,7 @@ El primero es de un servidor escrito en JavaScript (Node.js), en inglés; el seg
 Las causas, de más a menos frecuente:
 
 1. **El mismo servidor sigue en marcha** en otra terminal, en otra ventana del editor o en segundo plano: lo arrancaste antes y no lo paraste.
-2. **Otro programa** usa ese puerto (otra aplicación de otro curso, una base de datos, una herramienta instalada).
+2. **Otro programa** usa ese puerto (otra aplicación de otro curso, una base de datos, una herramienta instalada). Uno conocido: en macOS, el **receptor de AirPlay** (lo que deja que otros aparatos de Apple manden imagen o sonido a tu Mac) usa el 5000 y el 7000, según la lista de puertos de Apple, y `lsof` lo enseña a tu nombre aunque sea del sistema. No lo pares: usa otro puerto (o desactiva el receptor de AirPlay en los ajustes del sistema, si no lo usas).
 3. **Un servidor que acaba de cerrarse** a veces tarda unos segundos en soltar el puerto: espera un momento y vuelve a probar.
 
 Las salidas: **parar el que lo ocupa** (si es tuyo y no lo necesitas) o **arrancar el tuyo en otro puerto** (cambiando su configuración). Para decidir, primero hay que saber quién es.
@@ -196,7 +196,7 @@ node    4242 lucia  21u  IPv4  52731      0t0  TCP 127.0.0.1:8080 (LISTEN)
 
 Aquí las columnas son **`COMMAND`** (el programa), **`PID`**, **`USER`** (de quién es) y **`NAME`** (dirección y puerto). Si no sale nada, no hay nadie escuchando en el 8080. En macOS la orden es la misma y las columnas se llaman igual.
 
-En **Windows**, `netstat -ano | grep 8080` enseña una línea por cada conexión del puerto 8080: busca la que está **escuchando** y cuya dirección local acaba en `:8080`; el **último número** de la línea es el PID. La salida de `netstat` en Windows tiene otro aspecto y depende del idioma del sistema, así que aquí no se muestra.
+En **Windows**, `netstat -ano | grep 8080` enseña una línea por cada conexión del puerto 8080: busca la que está **escuchando** (la palabra sale en el idioma de tu Windows) y cuya dirección local acaba en `:8080`; el **último número** de la línea es el PID. La salida de `netstat` en Windows tiene otro aspecto y depende del idioma del sistema, así que aquí no se muestra; si alguna letra con tilde sale cambiada por `�`, es lo que cuenta la nota para Git Bash de [06.01](01-redes.md#115-ping-me-oyes).
 
 > **📌 Nota:** `netstat` también existe en Linux y macOS, pero en muchos Linux ya no viene instalado (`ss` lo sustituye) y en macOS sus opciones son otras. Por eso, aquí, `ss` para Linux, `lsof` para macOS y `netstat` solo para Windows.
 
@@ -214,14 +214,14 @@ Después, comprueba que el puerto ha quedado libre (repite `ss` o `lsof`: ya no 
 
 ### 1.12. ¿Responde alguien? Comprobarlo con curl
 
-**`curl`** es un programa de la terminal que hace de **cliente**: se conecta a una dirección, pide algo y te enseña lo que le responden. Viene con macOS y con casi todos los Linux, y Git Bash trae el suyo (con Git for Windows). En [06.03](03-la-web-http-y-apis.md) lo usarás a fondo para hablar con la web y con las API; aquí basta con saber usarlo para una pregunta: **¿hay un servidor respondiendo en esta dirección?**
+**`curl`** es un programa de la terminal que hace de **cliente**: se conecta a una dirección, pide algo y te enseña lo que le responden. Viene con macOS y con casi todos los Linux (si `curl --version` dice que no existe, instálalo con el gestor de paquetes de tu distribución; en Ubuntu, `sudo apt install curl`), y Git Bash trae el suyo (con Git for Windows). En [06.03](03-la-web-http-y-apis.md) lo usarás a fondo para hablar con la web y con las API; aquí basta con saber usarlo para una pregunta: **¿hay un servidor respondiendo en esta dirección?**
 
 ```bash
 curl http://localhost:8080/
 ```
 
 - **Si hay un servidor**, `curl` escribe lo que responde: el texto o la página que manda.
-- **Si no hay nadie escuchando**, `curl` escribe un error y termina con el **código de salida 7**, que según su manual quiere decir *Failed to connect to host*: «no se ha podido conectar». Es lo que viste en el [apartado 1.4](#14-escuchar-en-un-puerto): conexión rechazada. El mensaje es como este (de ejemplo: el número de milisegundos cambia cada vez):
+- **Si no hay nadie escuchando**, `curl` escribe un error y termina con el **código de salida 7**, que según su manual quiere decir *Failed to connect to host*: «no se ha podido conectar». Es lo que viste en el [apartado 1.4](#14-escuchar-en-un-puerto): conexión rechazada. El mensaje es como este (de ejemplo: el número de milisegundos cambia cada vez; en Windows, `curl` tarda un par de segundos en rendirse, y verás un número de unos 2000):
 
 ```text
 curl: (7) Failed to connect to localhost port 8080 after 0 ms: Could not connect to server
@@ -262,7 +262,8 @@ $ curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/
 
 **En qué fijarte:**
 
-- **`localhost` y `127.0.0.1` llegan al mismo sitio**: el mismo servidor, en el mismo ordenador. `localhost` es solo el nombre ([apartado 1.5](#15-localhost-tu-propio-ordenador)). Con `http://[::1]:8080/`, la dirección IPv6, también llegaría (en la terminal, entre comillas simples, para que los corchetes no se tomen como un [comodín](../glosario.md#comodín)).
+- **`localhost` y `127.0.0.1` llegan aquí al mismo sitio**: el mismo servidor, en el mismo ordenador. `localhost` es solo el nombre ([apartado 1.5](#15-localhost-tu-propio-ordenador)). Este servidor escucha en las dos direcciones de tu ordenador, la IPv4 y la IPv6, así que con `http://[::1]:8080/` también llegaría (en la terminal, entre comillas simples, para que los corchetes no se tomen como un [comodín](../glosario.md#comodín)).
+- **Pero no siempre es así:** muchos servidores de desarrollo escuchan **solo en una** de las dos. Si `localhost` funciona y `127.0.0.1` no (o al revés), es eso. Usa la dirección que el servidor dice al arrancar, o `localhost`, que el navegador y `curl` prueban con las dos.
 - **Sin opciones, `curl` escribe la respuesta**: el texto que manda el servidor. Una web de verdad mandaría una página entera, con mucho más.
 - **Con `-s -o /dev/null -w '%{http_code}\n'`**, solo el número: `200`, «todo bien».
 
@@ -319,7 +320,7 @@ Panadería Sol: la tienda, en pruebas
 
 ### 2.4. El puerto ya está en uso
 
-**Situación real:** Sergio cierra el editor sin parar su aplicación (que escucha en el 8080 y había arrancado desde la terminal del editor). Por la tarde la vuelve a arrancar en otra terminal y sale el error. Esta salida es **de ejemplo** (la terminal del curso no tiene ningún programa que escuche; los PID serán otros), en Linux:
+**Situación real:** Héctor arrancó por la mañana su aplicación (que escucha en el 8080) en una terminal, y la dejó escondida detrás de otras ventanas. Por la tarde la vuelve a arrancar en otra terminal y sale el error. Esta salida es **de ejemplo** (la terminal del curso no tiene ningún programa que escuche; los PID serán otros), en Linux:
 
 ```text
 $ ss -ltnp | grep 8080
@@ -412,7 +413,7 @@ $ curl -s -o /dev/null -w '%{http_code}\n' https://api.github.com:443/users/octo
 - **Para tus servidores al terminar**, con <kbd>Ctrl</kbd>+<kbd>C</kbd> en su terminal. Antes de cerrar el editor o la terminal, mira si hay alguno en marcha.
 - **`localhost` por defecto; `0.0.0.0` solo cuando lo necesites**, en casa, y lo devuelves a `localhost` al terminar.
 - **En el cortafuegos, permite solo lo que reconoces**, y solo en redes privadas.
-- **Antes de parar un proceso, mira de quién es** (`USER` en `lsof`, o si `ss` dice su nombre). Si no es tuyo, cambia tu puerto.
+- **Antes de parar un proceso, mira de quién es** (`USER` en `lsof`, o si `ss` dice su nombre). Si no es tuyo, **o no sabes qué programa es**, cambia tu puerto.
 - **Para saber si responde un servidor, `curl -s -o /dev/null -w '%{http_code}\n'`** y el código de salida: un número dice más que un mensaje largo.
 - **Puertos altos para tus pruebas** (del 1024 en adelante): no necesitan administrador ([apartado 1.4](#14-escuchar-en-un-puerto)).
 
@@ -664,7 +665,7 @@ Responden 1 de 3 puertos
 - **`for puerto in "$@"`** repite el cuerpo una vez por cada puerto.
 - **`codigo=$(curl …)`** guarda el número que escribe `curl`. Aquí el `-w` va **sin `\n`**: no hace falta salto de línea dentro de una variable.
 - **`000`** es «nadie ha respondido»; cualquier otro, que hay un servidor. El contador `responden` se suma con `$((…))`.
-- La salida de arriba es la de la terminal del curso, con un servidor de prueba en el 8080. **En tu ordenador**, lo normal es que los tres digan «no responde nadie»; cuando arranques tu primer servidor, verás el suyo.
+- La salida de arriba es la de la terminal del curso, con un servidor de prueba en el 8080. **En tu ordenador**, lo normal es que los tres digan «no responde nadie» (en Windows, cada uno tarda un par de segundos); cuando arranques tu primer servidor, verás el suyo.
 
 **Errores frecuentes al resolverlo:** usar `curl` sin `-s` dentro del script (el mensaje de error de cada puerto sin servidor ensucia la salida) y olvidar las comillas de `"http://localhost:$puerto/"`. Funciona con bash 3.2, la de macOS.
 
@@ -672,7 +673,7 @@ Responden 1 de 3 puertos
 
 #### Ejercicio 6 · La web de la panadería en el móvil
 
-Ana quiere ver la tienda de la Panadería Sol en el móvil antes de enseñársela a su socia. En el portátil, `http://localhost:8080` funciona. Su portátil tiene la IP `192.168.1.20` en la wifi de casa, y el móvil está en la misma wifi. Al arrancar, su aplicación dice que escucha en `127.0.0.1:8080`.
+Ana quiere ver la tienda de la Panadería Sol en el móvil antes de enseñársela a su socia. Para la tienda se ha comprado un portátil con Windows, con la IP `192.168.1.20` en la wifi de casa, y en él `http://localhost:8080` funciona. El móvil está en la misma wifi. Al arrancar, su aplicación dice que escucha en `127.0.0.1:8080`.
 
 Explica, en orden: qué escribe en el móvil y por qué no sirve `localhost`; qué tiene que cambiar en su aplicación; qué le preguntará Windows y qué debe contestar; cómo comprueba desde el portátil que el cambio ha funcionado; y qué hace al terminar.
 
@@ -696,7 +697,7 @@ Explica, en orden: qué escribe en el móvil y por qué no sirve `localhost`; qu
 1. **En el móvil, `http://192.168.1.20:8080`**: la IP del portátil en la wifi y el puerto. `localhost` en el móvil es **el propio móvil**, que no tiene ninguna tienda escuchando.
 2. **En la aplicación**, que escuche en **`0.0.0.0`** en lugar de `127.0.0.1` (con la opción o la línea de configuración que diga su documentación), y arrancarla de nuevo. Al arrancar, debe decir `0.0.0.0:8080` (o algo como «en todas las direcciones»).
 3. **Windows**, la primera vez, abrirá la ventana del cortafuegos ([apartado 1.8](#18-el-cortafuegos-pregunta)): debe **permitirlo solo en redes privadas** (la de casa). Si dice que no, el móvil seguirá sin llegar y la ventana no volverá a salir: tendría que cambiarlo en la configuración del cortafuegos.
-4. **Comprobarlo desde el portátil** con `ss -ltnp | grep 8080` (en Linux) o `netstat -ano | grep 8080` (en Windows): ahora la dirección local es `0.0.0.0:8080`. Y con `curl -s -o /dev/null -w '%{http_code}\n' http://192.168.1.20:8080/`, que debe dar un código de tres cifras, no `000`.
+4. **Comprobarlo desde el portátil** con `ss -ltnp | grep 8080` (en Linux) o `netstat -ano | grep 8080` (en Windows): ahora la dirección local es `0.0.0.0:8080`. Y con `curl -s -o /dev/null -w '%{http_code}\n' http://192.168.1.20:8080/`, que debe dar un código de tres cifras, no `000`: así sabe que el servidor ya atiende por la IP de la red. Pero esa prueba sale y entra en el mismo portátil, sin pasar por el cortafuegos: **la prueba de verdad es abrir la dirección en el móvil**.
 5. **Al terminar**, volver a dejarla en `localhost`, sobre todo antes de llevarse el portátil a otra red ([error típico 3.5](#35-abrir-tu-aplicación-a-cualquier-red)).
 
 **Explicación:** para que el móvil llegue hacen falta tres cosas a la vez: la **dirección correcta** (la IP del portátil, no `localhost`), que el servidor **escuche para la red** (`0.0.0.0`) y que el **cortafuegos** deje pasar. Si falla una, el móvil no conecta, y el mensaje no dice cuál: por eso conviene comprobarlas en orden.
