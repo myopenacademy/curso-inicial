@@ -19,7 +19,7 @@ Van de menor a mayor dificultad, y el último es el más completo. Son **opciona
 | Q-04 | Manchego añejo | 26,75 | 15 |
 | Q-05 | Tetilla gallega | 14,20 | 6,4 |
 
-El fichero está en la carpeta del reto: [`codigo/retos/reto-01-catalogo-de-la-queseria/`](codigo/retos/reto-01-catalogo-de-la-queseria/). No está en UTF-8 a propósito: por eso la carpeta lleva un `debe-fallar.txt`.
+El fichero está en la carpeta del reto: [`codigo/retos/reto-01-catalogo-de-la-queseria/`](codigo/retos/reto-01-catalogo-de-la-queseria/). No está en UTF-8 a propósito: por eso la carpeta lleva un `codificacion.txt`, que le dice al comprobador del curso en qué codificación está.
 
 Desde la terminal, y sin tocar el original:
 

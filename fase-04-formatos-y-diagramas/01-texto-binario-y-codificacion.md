@@ -387,7 +387,7 @@ $ od -c pedido-latin1.txt | head -n 1
 
 ### 2.5. Pasar un CSV de Windows-1252 a UTF-8
 
-**Situación real:** una tienda de Logroño te pasa `clientes.csv`, exportado de su programa de facturación, que es antiguo y guarda en Windows-1252. Lo quieres en UTF-8 para trabajar con él. (El fichero está en Windows-1252 a propósito: por eso su carpeta lleva un `debe-fallar.txt`, que le dice al comprobador del curso que no es UTF-8.)
+**Situación real:** una tienda de Logroño te pasa `clientes.csv`, exportado de su programa de facturación, que es antiguo y guarda en Windows-1252. Lo quieres en UTF-8 para trabajar con él. (El fichero está en Windows-1252 a propósito: por eso su carpeta lleva un `codificacion.txt`, que le dice al comprobador del curso en qué codificación está.)
 
 **En tu terminal** (`sesion.txt`):
 
@@ -835,7 +835,7 @@ Eres la nueva tesorera del Club de Montaña Cumbres, de Huesca. El programa anti
 
 Averigua qué le pasa al fichero y déjalo en `socios-utf8.csv` cumpliendo las reglas del curso (**UTF-8 sin BOM y LF**): comprueba también sus saltos de línea, que con un programa de Windows nunca se sabe. Al final, comprueba que `grep` ya encuentra lo que buscas.
 
-El fichero está en la carpeta del ejercicio: [`codigo/01-texto-binario-y-codificacion/ejercicios/ej06-socios-del-club-de-montana/`](codigo/01-texto-binario-y-codificacion/ejercicios/ej06-socios-del-club-de-montana/). No está en UTF-8 a propósito: por eso la carpeta lleva un `debe-fallar.txt`.
+El fichero está en la carpeta del ejercicio: [`codigo/01-texto-binario-y-codificacion/ejercicios/ej06-socios-del-club-de-montana/`](codigo/01-texto-binario-y-codificacion/ejercicios/ej06-socios-del-club-de-montana/). No está en UTF-8 a propósito: por eso la carpeta lleva un `codificacion.txt`, que le dice al comprobador del curso en qué codificación está.
 
 <details>
 <summary>Pista 1</summary>
