@@ -1,0 +1,4 @@
+grep -n "^## " diario.md
+grep -c "Duda:" diario.md
+grep "Duda:" diario.md | grep -v "resuelta"
+grep "Duda:" diario.md | grep -v "resuelta" | wc -l

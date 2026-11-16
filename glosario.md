@@ -687,6 +687,14 @@ Lo que envía el cliente: método, ruta, versión, cabeceras y, a veces, un cuer
 
 Número que identifica a cada proceso en marcha (process identifier). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#112-procesos-verlos-y-pararlos).
 
+### Práctica de recuperación
+
+Estudiar intentando recordar sin mirar (preguntas de repaso, chuleta tapada, repetir un ejercicio); fija lo aprendido mejor que releer. Lo explica [07.01 Cómo estudiar con estos cursos](fase-07-aprender-a-aprender/01-como-estudiar.md#18-lo-que-funciona-al-estudiar).
+
+### Práctica espaciada
+
+Repartir el estudio de un tema en varias sesiones separadas en el tiempo, en vez de concentrarlo en una. Lo explica [07.01 Cómo estudiar con estos cursos](fase-07-aprender-a-aprender/01-como-estudiar.md#19-sesiones-cortas-con-descansos-y-repartidas).
+
 ### Procesador
 
 Pieza que ejecuta las instrucciones de los programas (CPU). Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#14-el-procesador-velocidad-y-núcleos).
@@ -816,6 +824,10 @@ Lo que devuelve el servidor: línea de estado con su código, cabeceras y, a vec
 ### REST
 
 Estilo para organizar una API web: recursos con su dirección, la acción en el método y el resultado en el código de estado. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#112-rest-recursos-y-métodos).
+
+### Reto
+
+Ejercicio opcional del final de cada fase que mezcla varios módulos; sin seguimiento y sin bloquear nada. Lo explica [07.01 Cómo estudiar con estos cursos](fase-07-aprender-a-aprender/01-como-estudiar.md#15-los-retos-de-cada-fase).
 
 ### Revisión de código
 

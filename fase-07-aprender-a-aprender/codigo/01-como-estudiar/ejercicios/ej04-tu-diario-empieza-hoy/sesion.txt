@@ -1,0 +1,12 @@
+mkdir diario-curso && cd diario-curso && git init
+echo "# Mi diario del curso" > diario.md
+echo >> diario.md
+echo "## Hoy · 07.01 Cómo estudiar con estos cursos" >> diario.md
+echo >> diario.md
+echo "- **Qué he aprendido:** intentar el ejercicio antes de abrir la solución." >> diario.md
+echo "- **Duda:** ¿cada cuánto conviene repasar un módulo?" >> diario.md
+cat diario.md
+git add diario.md
+git commit -m "Empieza el diario: 07.01"
+git status
+git log --oneline

@@ -1,0 +1,6 @@
+mkdir mi-diario && cd mi-diario && git init
+printf '# Diario de lo aprendido\n' > diario.md
+cat ../entrada-1.md >> diario.md
+cat diario.md
+git add diario.md
+git commit -m "Diario: 03.01, primera sesión"

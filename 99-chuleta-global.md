@@ -38,6 +38,8 @@
   - [06.04 Qué es una base de datos](#0604-qué-es-una-base-de-datos)
   - [06.05 Las piezas de una aplicación](#0605-las-piezas-de-una-aplicación)
   - [06.06 Qué es la IA y cómo funciona por dentro](#0606-qué-es-la-ia-y-cómo-funciona-por-dentro)
+- **Fase 07 — Aprender a aprender**
+  - [07.01 Cómo estudiar con estos cursos](#0701-cómo-estudiar-con-estos-cursos)
 
 ---
 
@@ -1751,6 +1753,59 @@ Si se te escapa un secreto: **cámbialo**.
 | Calidad | Suele ser la más alta | Depende del tamaño |
 | Privacidad | Los datos salen | Los datos no salen (si el modelo se ejecuta en tu equipo) |
 | Necesitas | Internet y cuenta | Memoria, disco y paciencia |
+
+---
+
+## Fase 07 — Aprender a aprender
+
+---
+
+### 07.01 Cómo estudiar con estos cursos
+
+📖 Módulo completo: [fase-07-aprender-a-aprender/01-como-estudiar.md](fase-07-aprender-a-aprender/01-como-estudiar.md)
+
+#### Las partes de un módulo
+
+| Parte | Para qué |
+|---|---|
+| Cabecera | Qué saber antes, tiempo y nivel (Núcleo o Ampliación) |
+| Teoría y ejemplos | Entender y repetir, tecleando |
+| Errores típicos | Cuando algo falla |
+| Ejercicios | Cuatro niveles; pistas y solución plegadas |
+| Chuleta | Consultar rápido |
+| Preguntas de repaso | Ponerte a prueba sin mirar |
+
+#### Las piezas del curso
+
+| Fichero | Para qué |
+|---|---|
+| `00-indice.md` | Todas las fases y módulos |
+| `ROADMAP.md` | En qué orden y qué es imprescindible |
+| `99-chuleta-global.md` | Todas las chuletas juntas |
+| `glosario.md` | Los términos, común a toda la academia |
+| `retos.md` de cada fase | Retos opcionales, sin seguimiento |
+
+#### Cómo estudiar
+
+- Intenta, luego las pistas, al final la solución.
+- Ponte a prueba en vez de releer.
+- Poco y a menudo, con descansos; empieza cada sesión repasando.
+- Teclea los ejemplos.
+
+#### El diario
+
+```text
+## Día · NN.NN Módulo
+- **Qué he aprendido:** …
+- **Qué me ha costado:** …
+- **Duda:** …
+```
+
+```bash
+git add diario.md && git commit -m "Diario: …"   # un commit por sesión
+grep -n "Duda:" diario.md                        # todas las dudas
+grep "Duda:" diario.md | grep -v "resuelta"      # las pendientes
+```
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

@@ -967,8 +967,32 @@
           "id": "inicial.como-estudiar",
           "fichero": "fase-07-aprender-a-aprender/01-como-estudiar.md",
           "titulo": "Cómo estudiar con estos cursos",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.como-estudiar.donde-lo-busco",
+              "titulo": "¿Dónde lo busco?"
+            },
+            {
+              "id": "inicial.como-estudiar.lee-la-cabecera-de-un-modulo",
+              "titulo": "Lee la cabecera de un módulo"
+            },
+            {
+              "id": "inicial.como-estudiar.lo-que-funciona-y-lo-que-solo-lo-parece",
+              "titulo": "Lo que funciona y lo que solo lo parece"
+            },
+            {
+              "id": "inicial.como-estudiar.tu-diario-empieza-hoy",
+              "titulo": "Tu diario empieza hoy"
+            },
+            {
+              "id": "inicial.como-estudiar.las-dudas-pendientes",
+              "titulo": "Las dudas pendientes"
+            },
+            {
+              "id": "inicial.como-estudiar.me-salto-la-fase-5",
+              "titulo": "¿Me salto la fase 5?"
+            }
+          ]
         },
         {
           "id": "inicial.organizar-tu-trabajo",
