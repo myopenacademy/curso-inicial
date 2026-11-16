@@ -319,6 +319,10 @@ Práctica en la que un servidor ejecuta todas las pruebas automáticamente cada 
 
 Programa que lee el código fuente y lo ejecuta instrucción a instrucción, cada vez que se pone en marcha. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#17-lenguajes-compilados-e-interpretados).
 
+### Issue
+
+Aviso de un fallo o de una tarea pendiente en un proyecto de GitHub, con sus comentarios; se ve en la fase 5. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#11-qué-es-markdown).
+
 ## J
 
 ### JSON

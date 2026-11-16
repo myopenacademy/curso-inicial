@@ -30,4 +30,4 @@ La profesora, Carmen, avisa de que la clase **empieza a las 18:00**, no a las 18
 
 ---
 
-*Apuntes de Lucía. Si ves algún error, díselo.*
+*Apuntes de Paula. Si ves algún error, díselo.*

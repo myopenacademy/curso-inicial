@@ -44,7 +44,7 @@ Lo creó **John Gruber** en **2004**, con las ideas de Aaron Swartz sobre el dis
 
 **Dónde lo vas a encontrar:**
 
-- En **GitHub** y en cualquier servicio parecido: el `README.md` que presenta cada proyecto ([apartado 1.16](#116-el-fichero-readme)), la documentación, los comentarios de las *issues*.
+- En **GitHub** y en cualquier servicio parecido: el `README.md` que presenta cada proyecto ([apartado 1.16](#116-el-fichero-readme)), la documentación, los comentarios de las *issues* (los avisos de fallos y tareas pendientes de un proyecto en GitHub; las verás en la fase 5).
 - En **los cursos de esta academia**: cada módulo es un fichero `.md`.
 - En la **documentación** de muchísimos programas y en aplicaciones de notas (como Obsidian o Joplin).
 - En los **asistentes de IA**, que suelen contestar en Markdown: por eso sus respuestas traen títulos, listas y bloques de código.
@@ -201,7 +201,7 @@ Una extensión de **GFM** muy útil: si un elemento de una lista sin orden empie
 
 Así se escriben las listas de pendientes de un proyecto: en el README (lo que ya funciona y lo que falta), en una *issue* de GitHub (fase 5) o en tus propios apuntes. En una *issue* o un comentario de GitHub, además, las casillas se pueden marcar con un clic.
 
-> **📌 Nota:** fuera de GitHub, una lista de tareas puede verse como una lista normal, con el `[ ]` como texto. Le pasa, por ejemplo, a la academia de este curso, que hoy no dibuja las casillas: por eso el curso solo enseña listas de tareas dentro de bloques de código. Aun así, la lista sigue entendiéndose.
+> **📌 Nota:** fuera de GitHub, una lista de tareas puede verse como una lista normal, con el `[ ]` como texto. Le pasa, por ejemplo, a la academia de este curso, que hoy no dibuja las casillas. Aun así, la lista sigue entendiéndose.
 
 ### 1.8. Enlaces
 
@@ -317,7 +317,7 @@ Lo que es código (una orden, el nombre de un fichero, un trozo de un programa) 
 Para ver dónde estás, escribe `pwd`. Los apuntes están en `notas_de_clase.md`.
 ```
 
-Dentro de las comillas invertidas, los asteriscos y los guiones bajos son caracteres normales: `notas_de_clase.md` sale tal cual. Si el código lleva él mismo una comilla invertida, se encierra entre **dos**, con espacios: ``` `` usa `ls` `` ```.
+Dentro de las comillas invertidas, los asteriscos y los guiones bajos son caracteres normales: `notas_de_clase.md` sale tal cual.
 
 **Bloques de código**: para varias líneas, se encierran entre dos líneas con **tres comillas invertidas** (la valla de apertura y la de cierre). Detrás de las de apertura se escribe **el lenguaje**, para que quien lo dibuje le ponga los colores de su [resaltado de sintaxis](../fase-03-herramientas/03-editor-de-codigo.md#19-el-resaltado-de-sintaxis):
 
@@ -403,7 +403,7 @@ Se arregla **escapando** el carácter: escribiendo una **barra invertida** (`\`)
 | `Plazas limitadas\*` | Plazas limitadas\* |
 | `1986\. Un gran año.` | 1986\. Un gran año. (sin la barra, al principio de la línea sería una lista numerada que empieza en el 1986) |
 
-Se puede escapar cualquier signo de puntuación del teclado (`*`, `_`, `#`, `-`, `+`, `.`, `!`, `[`, `]`, `(`, `)`, `|`, la propia `\`, la comilla invertida…). Escapar uno que no hacía falta no estropea nada.
+Se puede escapar cualquier signo de puntuación de ASCII (`*`, `_`, `#`, `-`, `+`, `.`, `!`, `[`, `]`, `(`, `)`, `|`, la propia `\`, la comilla invertida…); delante de otros, como `¿` o `€`, la barra se vería. Escapar uno de ASCII que no hacía falta no estropea nada.
 
 > **💡 Consejo:** si es código, un nombre de fichero o una orden, no escapes: ponlo **entre comillas invertidas** (`` `5*3` ``), que además se lee mejor.
 
@@ -440,9 +440,9 @@ Fíjate en las **líneas en blanco**: después de `<summary>…</summary>` y ant
 
 Un **README** («léeme») es el fichero que **presenta un proyecto**: lo primero que lee quien llega a él. Casi siempre se llama **`README.md`** (en mayúsculas, por costumbre, para que destaque) y está en la carpeta principal del proyecto.
 
-GitHub lo muestra **solo**, debajo de la lista de ficheros, en la página principal de cada repositorio: es la portada del proyecto. (Si hay más de uno, elige el de la carpeta oculta `.github`, después el de la carpeta principal y después el de `docs`, según su documentación consultada el 9 de noviembre de 2026.)
+GitHub lo muestra **solo**, debajo de la lista de ficheros, en la página principal de cada repositorio: es la portada del proyecto.
 
-Según esa misma documentación, un README suele contar:
+Según la documentación de GitHub (consultada el 9 de noviembre de 2026), un README suele contar:
 
 1. **Qué hace** el proyecto, en una o dos frases, justo debajo del título.
 2. **Por qué es útil**: a quién le sirve.
@@ -454,7 +454,7 @@ A eso se suele añadir una **captura** o un dibujo (con su texto alternativo), u
 
 > **💡 Consejo:** escribe el README **para alguien que no sabe nada de tu proyecto**: tu yo de dentro de seis meses, alguien que lo encuentra en GitHub o quien lee tu portfolio. Si no entiende en diez segundos qué es, lo cerrará.
 
-Es habitual encontrar al lado otros ficheros en Markdown con nombres en mayúsculas: `CONTRIBUTING.md` (cómo colaborar), `CHANGELOG.md` (qué cambia en cada versión)… Este mismo curso los tiene. Escribirás el README de tu propio proyecto en el [proyecto final](../fase-08-proyecto-final/01-primer-repositorio.md), y los subirás a GitHub en la [fase 5](../fase-05-git-y-github/03-github.md).
+Es habitual encontrar al lado otros ficheros en Markdown con nombres en mayúsculas: `CONTRIBUTING.md` (cómo colaborar), `CHANGELOG.md` (qué cambia en cada versión)… Este mismo curso los tiene. En la [fase 5](../fase-05-git-y-github/03-github.md) aprenderás a subirlos a GitHub, y en el [proyecto final](../fase-08-proyecto-final/01-primer-repositorio.md) escribirás el README de tu propio proyecto.
 
 ### 1.17. Markdown en VS Code
 
@@ -479,7 +479,7 @@ Los ejemplos de este módulo son **ficheros Markdown**, cada uno en su carpeta (
 
 ### 2.1. Los apuntes de una clase
 
-**Situación real:** Lucía va a una escuela de cocina y toma los apuntes de cada clase en Markdown: así los lee en cualquier editor y los puede pasar a sus compañeros.
+**Situación real:** Paula va a una escuela de cocina y toma los apuntes de cada clase en Markdown: así los lee en cualquier editor y los puede pasar a sus compañeros.
 
 ```markdown
 # Clase 3: masas básicas
@@ -514,7 +514,7 @@ La profesora, Carmen, avisa de que la clase **empieza a las 18:00**, no a las 18
 
 ---
 
-*Apuntes de Lucía. Si ves algún error, díselo.*
+*Apuntes de Paula. Si ves algún error, díselo.*
 ```
 
 📁 **Código:** [`codigo/02-markdown/ejemplos/2.1-apuntes-de-clase/`](codigo/02-markdown/ejemplos/2.1-apuntes-de-clase/)
@@ -675,7 +675,7 @@ La cuota es de 20 € al mes.
 
 📁 **Código:** [`codigo/02-markdown/ejemplos/3.3-ancla-que-no-existe/`](codigo/02-markdown/ejemplos/3.3-ancla-que-no-existe/)
 
-**Por qué ocurre:** el ancla está mal escrita. GitHub **conserva las tildes**, así que el ancla de «Cómo hacerse socio» es `#cómo-hacerse-socio`, y `#como-hacerse-socio` no lleva a ningún título. Los fallos más habituales: quitar las tildes, dejar mayúsculas o puntos (`#1.2-clases`) o haber cambiado el título después de escribir el enlace ([apartado 1.9](#19-anclas-enlazar-a-un-título)).
+**Por qué ocurre:** el ancla está mal escrita. GitHub **conserva las tildes**, así que el ancla de «Cómo hacerse socio» es `#cómo-hacerse-socio`, y `#como-hacerse-socio` no lleva a ningún título. Los fallos más habituales: quitar las tildes, dejar puntos (`#1.2-clases`), dejar mayúsculas (el ancla generada va en minúsculas y muchos visores no la encuentran con mayúscula; alguno, como GitHub, puede perdonarlo, pero no hay que fiarse) o haber cambiado el título después de escribir el enlace ([apartado 1.9](#19-anclas-enlazar-a-un-título)).
 
 **Cómo se arregla:** escribe el ancla con las reglas del apartado 1.9: `[Cómo hacerse socio](#cómo-hacerse-socio)`. Para no fallar, deja que VS Code te proponga los títulos al escribir `#` dentro del paréntesis, y activa `markdown.validate.enabled` para que te subraye los enlaces rotos ([apartado 1.17](#117-markdown-en-vs-code)).
 
@@ -923,7 +923,7 @@ Temporada 2026-2027. Inscripciones abiertas hasta el **30 de noviembre**.
 **Explicación:**
 
 - **Cuatro columnas en todas las filas**, también en la del baloncesto, gracias a las barras escapadas. Sin escapar, esa fila tendría seis celdas y GitHub tiraría dos: el precio y la hora del baloncesto desaparecerían.
-- **`\*` en la nota**: sin la barra, `* Plazas limitadas.` sería una lista de un elemento.
+- **`\*` en la nota**: sin la barra, `* Plazas limitadas.` sería una lista de un elemento. En `Zumba\*` el asterisco, solo y sin pareja, se vería igual sin la barra; con ella no hay duda de que no es una marca.
 - **La lista de tareas** se verá con casillas en GitHub; en la vista previa de VS Code puede salir como una lista normal ([apartado 1.17](#117-markdown-en-vs-code)).
 
 **Errores frecuentes al resolverlo:**
@@ -1101,7 +1101,7 @@ Dos de los errores están en la misma línea, la de la imagen. Y fíjate en el f
 | 1 | Título | `#Huerto…` sin espacio: no es un título ([3.1](#31-el-título-que-no-es-título)) | `# Huerto del barrio` |
 | 2 | Imagen | Sin texto alternativo ([1.10](#110-imágenes-y-texto-alternativo)) | Describirla |
 | 3 | Imagen | `img/Logo.svg`, pero el fichero es `img/logo.svg`: en GitHub no se ve ([3.4](#34-rutas-que-solo-funcionan-en-tu-ordenador)) | `img/logo.svg` |
-| 4 | Índice | `#Cómo-apuntarse` con mayúscula: las anclas van en minúsculas ([3.3](#33-un-enlace-a-un-ancla-que-no-existe)) | `#cómo-apuntarse` |
+| 4 | Índice | `#Cómo-apuntarse` con mayúscula: el ancla generada va en minúsculas, y muchos visores no la encuentran (alguno, como GitHub, puede perdonarlo, pero no hay que fiarse; [3.3](#33-un-enlace-a-un-ancla-que-no-existe)) | `#cómo-apuntarse` |
 | 5 | Cómo apuntarse | `2*3 … 5*12`: los asteriscos se convierten en cursiva ([3.7](#37-asteriscos-y-guiones-bajos-que-se-comen-el-texto)) | `2\*3` y `5\*12` |
 | 6 | Tabla | La fila del martes tiene cuatro celdas: Inés desaparece ([3.6](#36-una-tabla-con-celdas-de-más-o-sin-fila-separadora)) | `Rosa e Inés` en la misma celda |
 | 7 | Final | El bloque de `bash` no se cierra ([3.5](#35-un-bloque-de-código-sin-cerrar)) | Tres comillas invertidas al final |
@@ -1139,7 +1139,7 @@ cat turnos.txt
 
 📁 **Código:** [`codigo/02-markdown/ejercicios/ej04-readme-arreglado/`](codigo/02-markdown/ejercicios/ej04-readme-arreglado/)
 
-**Explicación:** fíjate en que **tres de los siete errores no saltan a la vista**: en Windows o macOS, `img/Logo.svg` encuentra la imagen y en tu ordenador se ve; el ancla con mayúscula no da ningún error, simplemente no lleva a su sitio, y la cuarta celda de la tabla desaparece sin avisar. Por eso conviene activar la comprobación de enlaces de VS Code y revisar el resultado en GitHub.
+**Explicación:** fíjate en que **tres de los siete errores no saltan a la vista**: en Windows o macOS, `img/Logo.svg` encuentra la imagen y en tu ordenador se ve; el ancla con mayúscula no da ningún error y, según el visor, no lleva a su sitio, y la cuarta celda de la tabla desaparece sin avisar. Por eso conviene activar la comprobación de enlaces de VS Code y revisar el resultado en GitHub.
 
 **Errores frecuentes al resolverlo:**
 
@@ -1311,7 +1311,7 @@ No hay un único README bueno: si el tuyo tiene las mismas partes, en un orden p
 
 ### Un README tiene
 
-Título · qué es (una frase) · captura · qué hace · requisitos · instalación · uso · estado · cómo colaborar · licencia.
+Título · qué hace y por qué es útil (una o dos frases) · captura · índice · cómo empezar (instalación y uso) · estado · dónde pedir ayuda · quién lo mantiene y cómo colaborar · licencia.
 
 ## 7. Preguntas de repaso
 
