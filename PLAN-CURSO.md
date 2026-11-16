@@ -153,7 +153,9 @@ Verificadas en la documentación oficial el 8 de noviembre de 2026. En el texto 
 | Visual Studio Code | 1.145 (4 de noviembre de 2026; con la actualización 1.145.2) | code.visualstudio.com/updates |
 | Bash | 5.3 (5 de julio de 2025) | ftp.gnu.org/gnu/bash |
 
-VS Code saca versión cada mes: en el texto se dice «la versión de noviembre de 2026 (1.145)» y se explica que se actualiza solo. Las del resto de fases (Mermaid, `curl`, etc.) se verifican al escribir cada fase.
+VS Code saca versión cada mes: en el texto se dice «la versión de noviembre de 2026 (1.145)» y se explica que se actualiza solo.
+
+**Cuándo se revisan las versiones** (decidido por el autor el 16 de noviembre de 2026): antes de publicar la 1.0 y cuando cambie la versión menor de una herramienta, no por cada parche. Por eso las salidas de Git siguen siendo de la **2.56.0** (la de la terminal del kit), aunque el 26 de octubre de 2026 salió la 2.56.1; la cabecera de los módulos de la fase 5 lo dice: «Git 2.56; salidas de la 2.56.0; la más reciente, la 2.56.1», con fecha. Las del resto de fases (Mermaid, `curl`, etc.) se verifican al escribir cada fase.
 
 ## 8. Qué se verifica y retos de cada fase
 
