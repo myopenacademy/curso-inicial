@@ -1,0 +1,6 @@
+{
+  "puerto": 3000,
+  "rutas": [
+    {"metodo": "GET", "ruta": "/", "estado": 200, "cuerpo": "Vivero Los Olivos: la tienda, en pruebas\n"}
+  ]
+}

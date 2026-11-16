@@ -1,0 +1,3 @@
+grep puerto config.yaml
+curl -s -w '%{http_code}\n' http://localhost:8080/
+curl http://localhost:3000/

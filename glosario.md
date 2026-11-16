@@ -271,6 +271,10 @@ Error por el que el programa funciona sin quejarse, pero da un resultado equivoc
 
 Escribir un carácter especial de otra forma para que no se tome por una marca del formato: \* en Markdown, \" en JSON, &amp; en XML, "" en CSV. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#114-escapar-caracteres).
 
+### Escuchar (en un puerto)
+
+Lo que hace un servidor: esperar conexiones en un puerto; en cada puerto y dirección solo puede escuchar un programa a la vez. Lo explica [06.02 Puertos y localhost: tu ordenador como servidor](fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md#14-escuchar-en-un-puerto).
+
 ### Estado
 
 El valor que tienen las variables de un programa en cada momento. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#14-imperativo-y-estructurado).
@@ -451,6 +455,10 @@ Fichero (LICENSE) que dice con qué condiciones se puede usar el código de un p
 
 Dato que guarda varios valores en orden; cada uno se coge por su posición, empezando en la 0: ventas[0]. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#listas-y-datos-con-partes).
 
+### Localhost
+
+Nombre de tu propio ordenador (127.0.0.1 en IPv4, ::1 en IPv6): lo que mandas ahí no sale a la red. Lo explica [06.02 Puertos y localhost: tu ordenador como servidor](fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md#15-localhost-tu-propio-ordenador).
+
 ## M
 
 ### Máquina virtual
@@ -606,6 +614,10 @@ Prueba que comprueba una pieza pequeña sola, como un subalgoritmo. Lo explica [
 ### Pseudocódigo
 
 Forma de escribir algoritmos a medio camino entre el lenguaje natural y un lenguaje de programación, con palabras normales y una estructura fija. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#15-pseudocódigo).
+
+### Puerto
+
+Número (de 0 a 65535) que indica a qué programa de un equipo va un mensaje de la red: la IP lleva al equipo y el puerto, al programa. Lo explica [06.02 Puertos y localhost: tu ordenador como servidor](fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md#11-una-dirección-ip-no-basta-el-puerto).
 
 ### Pull request
 

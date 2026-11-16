@@ -780,8 +780,36 @@
           "id": "inicial.puertos-y-localhost",
           "fichero": "fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md",
           "titulo": "Puertos y localhost: tu ordenador como servidor",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.puertos-y-localhost.lee-las-direcciones",
+              "titulo": "Lee las direcciones"
+            },
+            {
+              "id": "inicial.puertos-y-localhost.hay-alguien-en-el-8080",
+              "titulo": "Hay alguien en el 8080"
+            },
+            {
+              "id": "inicial.puertos-y-localhost.el-puerto-de-la-configuracion",
+              "titulo": "El puerto de la configuración"
+            },
+            {
+              "id": "inicial.puertos-y-localhost.lee-la-lista-de-ss",
+              "titulo": "Lee la lista de ss"
+            },
+            {
+              "id": "inicial.puertos-y-localhost.un-script-que-comprueba-puertos",
+              "titulo": "Un script que comprueba puertos"
+            },
+            {
+              "id": "inicial.puertos-y-localhost.la-web-de-la-panaderia-en-el-movil",
+              "titulo": "La web de la panadería en el móvil"
+            },
+            {
+              "id": "inicial.puertos-y-localhost.el-lunes-de-sergio",
+              "titulo": "El lunes de Sergio"
+            }
+          ]
         },
         {
           "id": "inicial.la-web-http-y-apis",

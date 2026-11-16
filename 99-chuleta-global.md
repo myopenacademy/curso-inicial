@@ -33,6 +33,7 @@
   - [05.03 GitHub](#0503-github)
 - **Fase 06 — Internet y aplicaciones**
   - [06.01 Redes: IP, router, DNS y cortafuegos](#0601-redes-ip-router-dns-y-cortafuegos)
+  - [06.02 Puertos y localhost: tu ordenador como servidor](#0602-puertos-y-localhost-tu-ordenador-como-servidor)
 
 ---
 
@@ -1471,6 +1472,53 @@ gitGraph
 3. ¿Se llega a internet con una dirección, sin DNS? `ping -c 4` a una dirección conocida.
 4. ¿Contesta el DNS? `nslookup example.com`.
 5. ¿Les pasa a los demás equipos? Si sí, router o proveedor.
+
+---
+
+### 06.02 Puertos y localhost: tu ordenador como servidor
+
+📖 Módulo completo: [fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md](fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md)
+
+#### Conceptos clave
+
+| Concepto | En una línea |
+|---|---|
+| **Puerto** | Número del 0 al 65535 que dice a qué programa de un ordenador va un mensaje |
+| **IP y puerto** | La dirección completa de un programa: `192.0.2.10:443`; en IPv6, `[2001:db8::1]:443` |
+| **Escuchar** | Lo que hace un servidor: esperar conexiones en un puerto |
+| **`localhost`** | Tu propio ordenador: `127.0.0.1` en IPv4, `::1` en IPv6. Funciona sin red y nadie de fuera lo ve |
+| **`localhost:8080`** | El programa del puerto 8080 de tu ordenador: tu servidor de desarrollo |
+| **`0.0.0.0`** | «Todas mis direcciones»: el servidor acepta conexiones de la red. No se escribe en el navegador |
+| **Puerto en uso** | `EADDRINUSE`, *address already in use*: otro programa escucha ya en ese puerto |
+
+#### Puertos que verás siempre
+
+| Puerto | Para qué |
+|---|---|
+| 80 / 443 | Web con HTTP / con HTTPS (los de por defecto de `http://` y `https://`) |
+| 22 | SSH (y Git con direcciones `git@…`) |
+| 5432 / 3306 | PostgreSQL / MySQL |
+| 8080, 3000, 8000, 5000, 5173… | Servidores de desarrollo, por costumbre |
+| Por debajo de 1024 | En Linux, solo con administrador |
+
+#### Órdenes
+
+| Para | Orden |
+|---|---|
+| ¿Responde un servidor? Solo el código | `curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/` |
+| Ver la respuesta | `curl http://localhost:8080/` |
+| Código de salida de `curl` | `echo $?`: `0` conectó · `7` nadie escucha · `35` falló el cifrado (¿`https` a un servidor `http`?) |
+| Quién escucha (Linux) | `ss -ltnp` · `ss -ltnp \| grep 8080` |
+| Quién escucha en el 8080 (macOS) | `lsof -nP -iTCP:8080 -sTCP:LISTEN` |
+| Quién escucha (Windows, en Git Bash) | `netstat -ano \| grep 8080` (el último número, el PID) |
+| Parar tu servidor | <kbd>Ctrl</kbd>+<kbd>C</kbd> en su terminal · `kill PID` · Windows: Administrador de tareas, Detalles |
+
+#### Cuando no conecta
+
+1. ¿Está arrancado? Mira su terminal.
+2. ¿En qué puerto y en qué dirección dice que escucha?
+3. ¿Es `http` y no `https`?
+4. Desde otro aparato: ¿IP del ordenador (no `localhost`), servidor en `0.0.0.0` y cortafuegos en redes privadas?
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

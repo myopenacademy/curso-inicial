@@ -1,0 +1,4 @@
+# Configuración de la tienda en línea del Vivero Los Olivos, en el ordenador de Víctor
+tienda:
+  nombre: Vivero Los Olivos
+  puerto: 3000

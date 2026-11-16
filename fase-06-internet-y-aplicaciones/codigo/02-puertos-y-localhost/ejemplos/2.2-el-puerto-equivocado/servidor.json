@@ -1,0 +1,6 @@
+{
+  "puerto": 3000,
+  "rutas": [
+    {"metodo": "GET", "ruta": "/", "estado": 200, "cuerpo": "Club de lectura Entre Líneas: la web, en pruebas\n"}
+  ]
+}

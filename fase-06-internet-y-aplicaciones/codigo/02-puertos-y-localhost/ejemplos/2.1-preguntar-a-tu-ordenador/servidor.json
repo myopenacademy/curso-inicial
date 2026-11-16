@@ -1,0 +1,6 @@
+{
+  "puerto": 8080,
+  "rutas": [
+    {"metodo": "GET", "ruta": "/", "estado": 200, "cuerpo": "Panadería Sol: la tienda, en pruebas\n"}
+  ]
+}

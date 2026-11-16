@@ -1,0 +1,4 @@
+curl -s -w '%{http_code}\n' http://localhost:8080/
+echo $?
+curl -s -w '%{http_code}\n' http://localhost:3000/
+echo $?
