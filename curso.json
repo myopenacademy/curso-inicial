@@ -885,8 +885,36 @@
           "id": "inicial.piezas-de-una-aplicacion",
           "fichero": "fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md",
           "titulo": "Las piezas de una aplicación",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.piezas-de-una-aplicacion.frontend-backend-base-de-datos-o-servicio-externo",
+              "titulo": "Frontend, backend, base de datos o servicio externo"
+            },
+            {
+              "id": "inicial.piezas-de-una-aplicacion.ordena-lo-que-pasa-al-pulsar-reservar",
+              "titulo": "Ordena lo que pasa al pulsar Reservar"
+            },
+            {
+              "id": "inicial.piezas-de-una-aplicacion.dibuja-las-piezas-de-la-biblioteca",
+              "titulo": "Dibuja las piezas de la biblioteca"
+            },
+            {
+              "id": "inicial.piezas-de-una-aplicacion.lee-la-respuesta-del-gimnasio",
+              "titulo": "Lee la respuesta del gimnasio"
+            },
+            {
+              "id": "inicial.piezas-de-una-aplicacion.funciona-en-el-portatil-y-no-en-internet",
+              "titulo": "Funciona en el portátil y no en internet"
+            },
+            {
+              "id": "inicial.piezas-de-una-aplicacion.que-hace-falta-para-publicarla",
+              "titulo": "Qué hace falta para publicarla"
+            },
+            {
+              "id": "inicial.piezas-de-una-aplicacion.la-fruteria-de-teresa-vende-por-internet",
+              "titulo": "La frutería de Teresa vende por internet"
+            }
+          ]
         },
         {
           "id": "inicial.que-es-la-ia",

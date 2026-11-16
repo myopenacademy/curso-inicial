@@ -65,6 +65,10 @@ Dato con nombre y valor entre comillas dentro de la etiqueta de apertura de un e
 
 ## B
 
+### Backend
+
+Parte de una aplicación que no se ve: el programa del servidor que comprueba, calcula, guarda y habla con la base de datos y los servicios de otros. Lo explica [06.05 Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#13-el-backend-la-parte-que-manda).
+
 ### Base de datos
 
 Conjunto de datos organizados para guardarlos y consultarlos, gestionado por un programa, el motor o SGBD. Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#13-base-de-datos-y-motor).
@@ -229,6 +233,10 @@ Herramienta que ejecuta un programa bajo su control para detenerlo en puntos de 
 
 Encontrar dónde está un error y corregirlo, después de que una prueba haya descubierto que existe. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#12-qué-es-probar-un-programa).
 
+### Desplegar
+
+Llevar una aplicación desde el ordenador de quien la hace a los servidores donde la usan los demás, y dejarla funcionando (en inglés, deploy). Lo explica [06.05 Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#110-qué-es-desplegar-servidor-dominio-y-hosting).
+
 ### Diagrama de bloques
 
 Diagrama que dibuja las piezas de un sistema como cajas y sus conexiones como flechas; también se llama diagrama de arquitectura. Lo explica [04.05 Diagramas y Mermaid](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#12-tres-diagramas-para-empezar).
@@ -290,6 +298,10 @@ Cada dirección de una API con su método, como GET /libros. Lo explica [06.03 L
 ### Entidad (XML)
 
 Código entre `&` y `;` que representa un carácter especial en XML y HTML (y en las etiquetas de Mermaid): `&lt;` es `<`, `&amp;` es `&`. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#14-caracteres-especiales-las-entidades).
+
+### Entorno
+
+Cada copia de una aplicación con su configuración y sus datos: desarrollo (quien programa, datos inventados), pruebas y producción. Lo explica [06.05 Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#111-entornos-desarrollo-pruebas-y-producción).
 
 ### Entrada estándar
 
@@ -377,6 +389,10 @@ Copia de un repositorio ajeno en tu cuenta, para proponer cambios al original (u
 
 Reglas para escribir datos como texto de modo que otro programa los pueda leer: JSON, YAML, CSV, XML… Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
 
+### Frontend
+
+Parte de una aplicación que ve y usa la persona (pantallas, botones, formularios); funciona en su navegador o su móvil. Lo explica [06.05 Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#12-el-frontend-la-parte-que-ves).
+
 ### Fusionar (merge)
 
 Incorporar a una rama los cambios de otra, con git merge, desde la rama que los recibe: con un avance rápido o con un commit de fusión. Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#16-fusionar-con-avance-rápido).
@@ -428,6 +444,10 @@ Cada una de las líneas de trabajo independientes que avanzan a la vez dentro de
 ### Historial de órdenes
 
 Las órdenes que ya has escrito en la terminal, que se recuperan con las flechas o se buscan con Ctrl+R. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#113-trucos-que-ahorran-tiempo).
+
+### Hosting
+
+Servicio de una empresa que mantiene tu web o tu aplicación en sus servidores, encendidos y conectados (en español, alojamiento). Lo explica [06.05 Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#110-qué-es-desplegar-servidor-dominio-y-hosting).
 
 ### HTML
 
@@ -511,6 +531,10 @@ Dato que guarda varios valores en orden; cada uno se coge por su posición, empe
 
 Nombre de tu propio ordenador (127.0.0.1 en IPv4, ::1 en IPv6): lo que mandas ahí no sale a la red. Lo explica [06.02 Puertos y localhost: tu ordenador como servidor](fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md#15-localhost-tu-propio-ordenador).
 
+### Lógica de negocio
+
+Las reglas propias de una aplicación (precios, plazas, quién puede hacer qué); su sitio es el backend. Lo explica [06.05 Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#13-el-backend-la-parte-que-manda).
+
 ## M
 
 ### Máquina virtual
@@ -533,6 +557,10 @@ Herramienta gratuita y de código abierto que dibuja diagramas a partir de un te
 
 Lo que la petición quiere hacer: GET leer, POST crear, PUT sustituir, PATCH cambiar una parte, DELETE borrar. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#15-los-métodos-qué-quieres-hacer).
 
+### Microservicios
+
+Forma de organizar el backend en varios programas pequeños, cada uno con una tarea, que se hablan por sus API. Lo explica [06.05 Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#18-un-programa-entero-o-varios-que-se-hablan).
+
 ### Mínimo privilegio
 
 Principio de seguridad: cada usuario y cada programa, con los permisos justos para su tarea y ni uno más. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
@@ -540,6 +568,10 @@ Principio de seguridad: cada usuario y cada programa, con los permisos justos pa
 ### Mojibake
 
 Caracteres estropeados («Ã±», «�») por leer un texto con una codificación distinta de la que se usó al escribirlo. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#110-caracteres-estropeados-mojibake).
+
+### Monolito
+
+Aplicación cuyo backend es un solo programa que lo hace todo. Lo explica [06.05 Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#18-un-programa-entero-o-varios-que-se-hablan).
 
 ## N
 
@@ -630,6 +662,10 @@ Pieza que ejecuta las instrucciones de los programas (CPU). Lo explica [02.01 C�
 ### Proceso
 
 Un programa en ejecución: cargado en memoria y usando el procesador. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#18-programas-y-procesos).
+
+### Producción
+
+El entorno de verdad de una aplicación, con usuarios y datos reales; no se toca para probar. Lo explica [06.05 Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#111-entornos-desarrollo-pruebas-y-producción).
 
 ### Programa
 

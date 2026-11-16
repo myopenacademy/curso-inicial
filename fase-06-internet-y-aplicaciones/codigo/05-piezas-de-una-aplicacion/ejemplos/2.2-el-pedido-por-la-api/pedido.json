@@ -1,0 +1,9 @@
+{
+  "cliente": "luis.moreno@example.com",
+  "recoger_en_tienda": true,
+  "dia_de_recogida": "2026-11-20",
+  "productos": [
+    { "producto_id": 12, "cantidad": 2 },
+    { "producto_id": 7, "cantidad": 2 }
+  ]
+}

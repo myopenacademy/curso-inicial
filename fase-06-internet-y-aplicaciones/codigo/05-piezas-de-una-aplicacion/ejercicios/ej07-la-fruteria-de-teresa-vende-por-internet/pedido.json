@@ -1,0 +1,12 @@
+{
+  "cliente": "marta.gil@example.com",
+  "entrega": {
+    "direccion": "Calle Mayor 14, 2.º B",
+    "codigo_postal": "50001",
+    "franja": "18:00-20:00"
+  },
+  "productos": [
+    { "producto_id": 3, "kilos": 1.5 },
+    { "producto_id": 8, "kilos": 2 }
+  ]
+}

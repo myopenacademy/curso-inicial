@@ -36,6 +36,7 @@
   - [06.02 Puertos y localhost: tu ordenador como servidor](#0602-puertos-y-localhost-tu-ordenador-como-servidor)
   - [06.03 La web: HTTP, peticiones, respuestas y APIs](#0603-la-web-http-peticiones-respuestas-y-apis)
   - [06.04 Qué es una base de datos](#0604-qué-es-una-base-de-datos)
+  - [06.05 Las piezas de una aplicación](#0605-las-piezas-de-una-aplicación)
 
 ---
 
@@ -1639,6 +1640,55 @@ erDiagram
 **Dónde vive:** embebida (dentro de la aplicación, un fichero: SQLite) · cliente-servidor (un programa aparte, por la red: PostgreSQL en el 5432, MySQL en el 3306).
 
 **Para elegir:** si dudas, relacional · si ya hay una, esa · datos de una persona en su dispositivo, embebida · NoSQL para un problema concreto, además de la relacional · configuración e informes, ficheros.
+
+---
+
+### 06.05 Las piezas de una aplicación
+
+📖 Módulo completo: [fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md)
+
+#### Las piezas
+
+| Pieza | Qué es | Dónde está |
+|---|---|---|
+| **Frontend** | Lo que ve y usa la persona: pantallas, botones, formularios | En su navegador o su móvil |
+| **Backend** | El programa que decide: comprueba, calcula, guarda, cobra | En un servidor |
+| **Base de datos** | La memoria de la aplicación | En un servidor; solo habla con el backend |
+| **API** | El acuerdo para pedir y contestar entre programas | Entre frontend y backend, y entre el backend y los servicios externos |
+| **Servicio externo** | Lo que hace otra empresa: pagos, correo, mapas, inicio de sesión | En sus servidores; se usa por su API |
+
+#### Quién habla con quién
+
+```text
+Persona → Frontend → (API) → Backend → Base de datos
+                                     → Servicios externos
+```
+
+#### Publicar una aplicación
+
+| Palabra | Qué es |
+|---|---|
+| **Desplegar** | Llevar la aplicación a los servidores donde la usan los demás y dejarla funcionando |
+| **Servidor** | El ordenador donde funcionan el backend y la base de datos |
+| **Dominio** | El nombre que lleva al servidor (`panaderia-sol.example`) |
+| **Hosting** | Empresa o servicio que te deja tu web o tu aplicación en sus servidores |
+| **Nube** | Ordenadores de otra empresa que se alquilan, a menudo con servicios ya montados |
+| **Web estática** | Solo ficheros, iguales para todos; sin backend (GitHub Pages) |
+
+#### Entornos
+
+| Entorno | Datos | Para qué |
+|---|---|---|
+| **Desarrollo** | Inventados | Programar y probar mientras se hace |
+| **Pruebas** | Inventados | Comprobar todo junto antes de publicar |
+| **Producción** | Reales | Los usuarios de verdad. No se toca para probar |
+
+#### Reglas de oro
+
+- **¿Tiene que recordar o decidir algo?** Si no, web estática.
+- **El frontend enseña; el backend decide.**
+- **Solo el backend** habla con la base de datos y guarda los secretos.
+- **Lo que cambia entre entornos, en la configuración**, no en el código.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)
