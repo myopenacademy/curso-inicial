@@ -115,6 +115,8 @@ Los pasos, según la documentación oficial (`code.visualstudio.com/docs/setup`,
 
 1. Entra en `code.visualstudio.com` y descarga el instalador para Windows. Elige el **instalador de usuario** (*User Installer*) de tu arquitectura, que es el que la documentación recomienda para la mayoría: no necesita permisos de administrador y es el que mejor se actualiza.
 2. Ábrelo y acepta las opciones que trae marcadas. Entre ellas está la de **añadir VS Code al PATH** (*Add to PATH*), que permite abrirlo desde la terminal con la orden `code`. Déjala marcada.
+
+   Puede que el instalador te enseñe también una página **GitHub Copilot CLI**. Según la documentación de VS Code (a 16 de noviembre de 2026), ofrece preparar la orden `copilot`, la herramienta de GitHub Copilot para la terminal: es un producto aparte de GitHub, con sus propias condiciones, y necesita una suscripción a GitHub Copilot. **No hace falta para este curso**, y lo que elijas en esa página no cambia nada de lo que harás en él.
 3. Al terminar, ábrelo desde el menú de inicio para comprobar que arranca.
 
 **En macOS:**
