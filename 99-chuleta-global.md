@@ -1253,14 +1253,14 @@ git config --global --list
 
 | Quiero… | Orden | ¿Pierdo algo? |
 |---|---|---|
-| Descartar los cambios de un fichero | `git restore f` | **Sí** |
+| Descartar los cambios sin preparar de un fichero (vuelve a como está en el área de preparación) | `git restore f` | **Sí** |
 | Sacar un fichero del área de preparación | `git restore --staged f` | No |
 | Cambiar el mensaje del último commit | `git commit --amend -m "…"` | No (lo sustituye) |
 | Añadir algo olvidado al último commit | `git add f` y `git commit --amend --no-edit` | No (lo sustituye) |
 | Anular un commit, aunque esté compartido | `git revert --no-edit id` | No |
 | Dejar de vigilar un fichero sin borrarlo | `git rm --cached f` | No |
 
-**Regla de oro:** `--amend`, solo con lo no compartido. **`reset --hard`**, no: borra lo que no está en un commit.
+**Regla de oro:** `--amend`, solo con lo no compartido. **`reset --hard`**, no: borra los cambios de los ficheros vigilados que no están en un commit.
 
 #### .gitignore
 
@@ -1270,13 +1270,15 @@ git config --global --list
 | `*.log` | Esa extensión, en cualquier carpeta |
 | `dist/` | Esa carpeta y todo lo que tiene |
 | `/notas.txt` | Solo el de la carpeta principal |
-| `!fichero` | Excepción: este no |
+| `!fichero` | Excepción: este no (no funciona si está ignorada su carpeta) |
 
 `git check-ignore -v f`: qué línea lo ignora. Lo que ya está en Git no se ignora: `git rm --cached f`.
 
-#### Si se abre Vim
+#### Si se abre Vim o nano
 
-<kbd>Esc</kbd> y `:q!` + <kbd>Intro</kbd> (salir sin guardar) · <kbd>Esc</kbd> y `:wq` + <kbd>Intro</kbd> (guardar y salir).
+Vim: <kbd>Esc</kbd> y `:q!` + <kbd>Intro</kbd> (salir sin guardar) · <kbd>Esc</kbd> y `:wq` + <kbd>Intro</kbd> (guardar y salir).
+
+nano (atajos con `^` abajo): <kbd>Ctrl</kbd>+<kbd>X</kbd>; si pregunta si guardar, <kbd>N</kbd> (cancelar) o <kbd>S</kbd> e <kbd>Intro</kbd> (hacer el commit).
 
 ---
 
@@ -1373,7 +1375,7 @@ gitGraph
 | `git push -u origin rama` | Sube una rama por primera vez y la vincula |
 | `git push` | Sube los commits nuevos de la rama actual |
 | `git clone DIRECCIÓN [carpeta]` | Descarga un repositorio entero, ya conectado como `origin` |
-| `git fetch` · `git fetch upstream` | Renueva la foto del remoto, sin tocar tus ficheros |
+| `git fetch` · `git fetch upstream` | Renueva la copia del remoto, sin tocar tus ficheros |
 | `git pull` · `git pull --no-rebase` | Baja y fusiona · baja y fusiona aunque las ramas hayan divergido |
 | `git branch -a` · `git branch -vv` | Ramas, también las del remoto · con su rama vinculada |
 | `git push origin --delete rama` | Borra una rama del remoto |
@@ -1383,8 +1385,8 @@ gitGraph
 
 | Forma | Dirección | Cómo |
 |---|---|---|
-| HTTPS + Git Credential Manager | `https://github.com/usuario/repo.git` | El navegador, la primera vez (en Windows, viene con Git) |
-| HTTPS + *token* | `https://github.com/usuario/repo.git` | El *token* donde Git pide la contraseña (Settings > Developer settings > Personal access tokens) |
+| HTTPS + Git Credential Manager | `https://github.com/usuario/repo.git` | Una ventana para iniciar sesión, la primera vez (mejor la del navegador; en Windows, viene con Git) |
+| HTTPS + *token* | `https://github.com/usuario/repo.git` | Tu usuario y, donde Git pide la contraseña, el *token* (Settings > Developer settings > Personal access tokens; de grano fino, con *Contents* de escritura) |
 | SSH | `git@github.com:usuario/repo.git` | `ssh-keygen -t ed25519 -C "correo"` → el `.pub` en Settings > SSH and GPG keys → `ssh -T git@github.com` |
 
 #### En la web de GitHub

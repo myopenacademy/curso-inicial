@@ -66,7 +66,7 @@ Git es **distribuido**: cada persona que trabaja en un proyecto tiene en su orde
 
 > **💡 Consejo:** la referencia oficial de Git es el libro **Pro Git**, gratuito y traducido al español, en la web de Git: `git-scm.com/book/es/v2` (a 16 de noviembre de 2026). Si algo de este módulo te sabe a poco, sus capítulos 1 y 2 son el siguiente paso.
 
-Todo lo que hace Git se pide desde la terminal con la orden **`git`** seguida de una palabra que dice qué quieres hacer: `git init`, `git status`, `git commit`… A esa palabra se le suele llamar **subcomando** o, simplemente, «la orden de Git». Las que aprenderás aquí son una docena, y con ellas se hace casi todo el trabajo diario.
+Todo lo que hace Git se pide desde la terminal con la orden **`git`** seguida de una palabra que dice qué quieres hacer: `git init`, `git status`, `git commit`… Las que aprenderás aquí son una docena, y con ellas se hace casi todo el trabajo diario.
 
 ### 1.4. Antes de empezar: decirle a Git quién eres
 
@@ -94,7 +94,7 @@ Sin este ajuste, Git 2.56 llama a la rama inicial **`master`**; según su docume
 **El editor.** Algunas órdenes de Git necesitan que escribas un texto más largo, y para eso **abren un editor** y esperan a que lo cierres. Lo verás en el [apartado 1.9](#19-el-ciclo-de-cada-día-status-add-commit-y-log): si haces un commit sin escribir el mensaje en la misma orden, Git abre el editor para que lo escribas allí. ¿Cuál abre?
 
 - **En Windows**, el que elegiste en el instalador de Git for Windows: si seguiste [02.03, 1.6](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash), **VS Code**.
-- **En macOS y Linux**, el que tenga configurado el sistema y, si no hay ninguno, el que se eligió al preparar Git, que según su documentación suele ser **vi** (hoy, casi siempre su versión moderna, **Vim**). Vim funciona dentro de la terminal y desconcierta mucho la primera vez: no se sale de él con ninguna tecla conocida. En algunos sistemas sale otro editor de terminal, como **nano**.
+- **En macOS y Linux**, el que tenga configurado el sistema y, si no hay ninguno, el que se eligió al preparar Git, que según su documentación suele ser **vi** (hoy, casi siempre su versión moderna, **Vim**). Vim funciona dentro de la terminal y desconcierta mucho la primera vez: no se sale de él con ninguna tecla conocida. En algunos sistemas, como Debian o Ubuntu, puede salir otro editor de terminal, **nano**, más sencillo.
 
 Para que Git use VS Code en cualquier sistema:
 
@@ -104,11 +104,11 @@ git config --global core.editor "code --wait"
 
 La orden `code` es la que abre VS Code desde la terminal ([03.03, 1.13](../fase-03-herramientas/03-editor-de-codigo.md#113-abrir-vs-code-desde-la-terminal)), y **`--wait`** le dice que **espere** a que cierres la pestaña antes de devolverle el control a Git. Sin `--wait`, VS Code se abriría, Git no esperaría y se encontraría el mensaje vacío.
 
-> **⚠️ Si se te abre Vim sin querer:** pulsa <kbd>Esc</kbd> (así Vim deja de escribir lo que tecleas como texto), escribe `:q!` y pulsa <kbd>Intro</kbd>: sale **sin guardar**. Si no habías escrito nada, también vale `:q`. Si lo que quieres es **guardar** el mensaje que escribiste y salir, es `:wq` y <kbd>Intro</kbd>. (Si lo que se abre tiene abajo una lista de atajos que empiezan por `^`, es nano: <kbd>Ctrl</kbd>+<kbd>X</kbd> sale y te pregunta si quieres guardar.) Lo cuenta el [error típico 3.4](#34-se-abre-un-editor-y-no-sabes-salir).
+> **⚠️ Si se te abre Vim sin querer:** pulsa <kbd>Esc</kbd> (así Vim deja de escribir lo que tecleas como texto), escribe `:q!` y pulsa <kbd>Intro</kbd>: sale **sin guardar**. Si no habías escrito nada, también vale `:q`. Si lo que quieres es **guardar** el mensaje que escribiste y salir, es `:wq` y <kbd>Intro</kbd>. Si abajo ves atajos con `^` (`^X Salir`), es nano: <kbd>Ctrl</kbd>+<kbd>X</kbd>; si pregunta si guardar, <kbd>N</kbd> para cancelar o <kbd>S</kbd> e <kbd>Intro</kbd> para hacer el commit. Lo cuenta el [error típico 3.4](#34-se-abre-un-editor-y-no-sabes-salir).
 
 Para ver toda tu configuración, **`git config --global --list`**; y para ver un solo valor, `git config user.name`. Si te equivocas al escribir algo, vuelve a dar la orden con el valor bueno: el nuevo sustituye al anterior.
 
-**Sin `--global`**, dentro de un repositorio, el ajuste vale **solo para ese repositorio** (Git lo guarda en su carpeta `.git`) y manda sobre el global. Casi nunca lo necesitarás; en [05.03](03-github.md#22-clonar-luis-se-une-al-club) lo usarás para que dos personas «compartan» un mismo ordenador y cada una firme sus commits.
+**Sin `--global`**, dentro de un repositorio, el ajuste vale **solo para ese repositorio** (Git lo guarda en su carpeta `.git`) y manda sobre el global. Casi nunca lo necesitarás; en [05.03](03-github.md#22-clonar-luis-se-une-al-club) lo usa Luis para que sus commits salgan a su nombre en un ordenador donde la identidad global es la de Ana.
 
 > **📌 Nota:** en la terminal del curso, la identidad ya viene configurada como «Ana García <ana@example.com>» y la rama inicial como `main`. Por eso, en los ejemplos, los commits salen a nombre de Ana. En los tuyos saldrá el tuyo.
 
@@ -300,7 +300,7 @@ Para decírselo a Git se escribe un fichero llamado exactamente **`.gitignore`**
 | `*.ext` | Todos los ficheros con esa extensión, en cualquier carpeta (el `*` es el [comodín](../fase-03-herramientas/01-terminal-lo-basico.md#114-comodines-y-comillas) de la terminal) | `*.log` |
 | `nombre/` | Solo **carpetas** con ese nombre, con todo lo que tengan dentro | `dist/` |
 | `/nombre` | Solo el que está en la carpeta principal del proyecto, no en las subcarpetas | `/notas.txt` |
-| `!patrón` | Una **excepción**: esto **no** se ignora, aunque lo ignore una línea anterior | `!importante.log` |
+| `!patrón` | Una **excepción**: esto **no** se ignora, aunque lo ignore una línea anterior (no funciona si está ignorada la carpeta que lo contiene) | `!importante.log` |
 | `# texto` | Un comentario | `# Secretos` |
 
 (Según la documentación de `gitignore`, a 16 de noviembre de 2026; tiene más reglas, como `**` para «cualquier número de carpetas», que de momento no necesitas.)
@@ -317,14 +317,14 @@ Git permite deshacer casi todo, pero cada situación tiene su orden. Esta tabla 
 
 | Situación | Orden | ¿Se pierde algo? |
 |---|---|---|
-| He cambiado un fichero y quiero **descartar** el cambio: que vuelva a estar como en el último commit | `git restore fichero` | **Sí**: el cambio descartado no estaba en ningún commit y desaparece |
+| He cambiado un fichero y quiero **descartar** los cambios **sin preparar**: que vuelva a estar como en el área de preparación (si no había hecho `git add`, como en el último commit) | `git restore fichero` | **Sí**: el cambio descartado no estaba en ningún commit y desaparece |
 | He preparado un fichero con `git add` y quiero **sacarlo** del área de preparación, sin perder el cambio | `git restore --staged fichero` | No: el cambio sigue en el fichero |
 | Acabo de hacer un commit y quiero **corregir su mensaje** o **añadirle** algo que se me olvidó | `git commit --amend -m "mensaje"` (o `--no-edit` para dejar el mensaje) | No, pero **sustituye** el último commit por otro nuevo |
 | Quiero **anular** un commit antiguo, que puede que ya tengan otros | `git revert identificador` | No: crea un commit **nuevo** que hace lo contrario |
 
 **La regla de oro:** `commit --amend` **reescribe la historia**: el commit de antes desaparece y aparece otro, con otro identificador. Solo se usa con commits que **todavía no has compartido** con nadie. Si un commit ya lo tienen otras personas (en GitHub, por ejemplo), se anula con `revert`, que no borra nada: añade un commit al final, y la historia de todos sigue encajando ([error típico 3.9](#39-cambiar-un-commit-que-ya-has-compartido)).
 
-Verás en internet otra orden para deshacer, **`git reset`**, que mueve la historia hacia atrás y hace desaparecer commits. Con la opción **`--hard`** borra además los cambios de tu carpeta que no estuvieran en un commit, **sin preguntar y sin papelera**. Es de las pocas órdenes de Git con las que se pierde trabajo de verdad, así que en este curso no la vas a necesitar: con `restore`, `--amend` y `revert` tienes todo lo que hace falta al empezar.
+Verás en internet otra orden para deshacer, **`git reset`**, que mueve la historia hacia atrás y hace desaparecer commits. Con la opción **`--hard`** borra además los cambios de los ficheros que Git vigila que no estuvieran en un commit (los ficheros nuevos sin seguimiento se quedan), **sin preguntar y sin papelera**. Es de las pocas órdenes de Git con las que se pierde trabajo de verdad, así que en este curso no la vas a necesitar: con `restore`, `--amend` y `revert` tienes todo lo que hace falta al empezar.
 
 > **📌 Nota:** Git apunta en un registro, el **reflog** (`git reflog`), por dónde has ido pasando, así que un commit que «ha desaparecido» por un `reset` o un `--amend` todavía se puede recuperar durante un tiempo. Es una red de emergencia, no una forma de trabajar: si algún día la necesitas, busca ayuda antes de tocar nada más.
 
@@ -340,7 +340,7 @@ Para renombrar o borrar un fichero que Git ya vigila, usa las órdenes de Git en
 | `git rm fichero` | Borra el fichero del disco **y** prepara el borrado: `D  fichero` |
 | `git rm --cached fichero` | Lo quita **solo de Git**: el fichero se queda en tu disco, sin seguimiento ([apartado 1.12](#112-lo-que-no-va-en-git-gitignore)) |
 
-En los tres casos, el cambio queda preparado y falta el commit. (Si usas `mv` o `rm` normales, tampoco pasa nada: `git status` lo verá y lo preparas con `git add`. Las de Git te ahorran ese paso.)
+En los tres casos, el cambio queda preparado y falta el commit (tienes `git mv` al final del [ejemplo 2.6](#26-ignorar-ficheros-con-gitignore)). Si usas `mv` o `rm` normales, tampoco pasa nada: `git status` lo verá y lo preparas con `git add` (tras un `mv`, de los dos nombres, o `git add .`). Las de Git te ahorran ese paso.
 
 Que un fichero se borre no significa que se pierda: sigue en los commits anteriores, y lo puedes recuperar de ahí.
 
@@ -363,13 +363,13 @@ Muchos equipos siguen además una convención para la primera línea, **Conventi
 
 ### 1.16. Un recordatorio: los saltos de línea
 
-En [03.04](../fase-03-herramientas/04-errores-y-depuracion.md#32-un-script-con-los-saltos-de-línea-de-windows) viste que Windows termina las líneas con **CRLF** y Linux y macOS con **LF**, y que un script con CRLF falla en bash. Git for Windows viene preparado para **convertir** los saltos de línea (la pantalla *Configuring the line ending conversions* del instalador, que dejaste como venía en [02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash)), y por eso a veces, al hacer `git add`, avisa de lo que hará (salida de Git 2.56.0 con esa conversión activada):
+En [03.04](../fase-03-herramientas/04-errores-y-depuracion.md#32-un-script-con-los-saltos-de-línea-de-windows) viste que Windows termina las líneas con **CRLF** y Linux y macOS con **LF**, y que un script con CRLF falla en bash. Git for Windows viene preparado para **convertir** los saltos de línea (la pantalla *Configuring the line ending conversions* del instalador, que dejaste como venía en [02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash)), y por eso avisa de lo que hará (salida de Git 2.56.0 con esa conversión activada):
 
 ```text
-advertencia: en la copia de trabajo de 'b.txt', LF será reemplazado con CRLF la próxima vez que Git la toque
+advertencia: en la copia de trabajo de 'bizcocho.txt', LF será reemplazado con CRLF la próxima vez que Git la toque
 ```
 
-Es solo un **aviso**, no un error. Para no depender de cómo tenga configurado Git cada persona, el proyecto puede llevar en su carpeta principal un fichero **`.gitattributes`** que fije los saltos de línea, con su commit como cualquier otro. El de este curso dice que todo se guarde y se saque con LF: `* text=auto eol=lf`.
+En Git Bash lo verás en casi todos los `git add`, `git diff` y `git stash` de esta fase, uno por fichero. No sale en las salidas del curso; ignóralo: es solo un **aviso**, no un error. Para no depender de cómo tenga configurado Git cada persona, el proyecto puede llevar en su carpeta principal un fichero **`.gitattributes`** que fije los saltos de línea, con su commit como cualquier otro. El de este curso dice que todo se guarde y se saque con LF: `* text=auto eol=lf`.
 
 ### 1.17. Git en VS Code
 
@@ -383,7 +383,22 @@ Todos los ejemplos son reales y los puedes repetir: descarga la carpeta de cada 
 
 Algunos ejemplos van en **varias sesiones seguidas** (`sesion-1.txt`, `sesion-2.txt`…): hazlas en orden, porque cada una sigue donde lo dejó la anterior. Puedes cerrar la terminal entre una y otra; por eso cada sesión, menos la primera, empieza con su `cd`.
 
-> **📌 Nota:** **Git en español** mezcla palabras: dice «confirmar» y «commit», «archivos» y «área de stage». Algunas cosas **no las traduce** y salen en inglés en cualquier Git: las fechas (`Thu Jan 15`), el resumen de cada commit (`1 file changed, 1 insertion(+)`, «1 fichero cambiado, 1 línea añadida»), muchas pistas que empiezan por `hint:` y algún mensaje suelto. Y su traducción tiene alguna **errata** (un paréntesis sin cerrar, una tilde que falta, una palabra mal escrita). Los módulos de esta fase las dejan tal cual, porque es lo que verás en tu pantalla, y te dicen qué significan. Si tu Git habla inglés, las órdenes son las mismas.
+> **📌 Nota:** **Git en español** mezcla palabras: dice «confirmar» y «commit», «archivos» y «área de stage». Algunas cosas **no las traduce** y salen en inglés en cualquier Git: las fechas (`Thu Jan 15`), el resumen de cada commit (`1 file changed, 1 insertion(+)`, «1 fichero cambiado, 1 línea añadida»), muchas pistas que empiezan por `hint:` y algún mensaje suelto. Y su traducción tiene alguna **errata** (un paréntesis sin cerrar, una tilde que falta, una palabra mal escrita). Los módulos de esta fase las dejan tal cual, porque es lo que verás en tu pantalla, y te dicen qué significan. Si tu Git habla inglés, las órdenes son las mismas: Git usa el idioma del sistema, y en macOS puede salirte en inglés.
+
+Estos son los mensajes que comenta la fase, en los dos idiomas (salidas de Git 2.56.0), por si te salen en inglés:
+
+| En español | En inglés |
+|---|---|
+| `En la rama main` | `On branch main` |
+| `nada para hacer commit, el árbol de trabajo está limpio` | `nothing to commit, working tree clean` |
+| `Tu rama está adelantada a 'origin/main' por 1 commit.` | `Your branch is ahead of 'origin/main' by 1 commit.` |
+| `Tu rama está detrás de 'origin/main' por 1 commit, y puede ser avanzada rápido.` | `Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.` |
+| `Tu rama y 'origin/main' han divergido,` | `Your branch and 'origin/main' have diverged,` |
+| `CONFLICTO (contenido): Conflicto de fusión en precios.txt` | `CONFLICT (content): Merge conflict in precios.txt` |
+| `Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.` | `Automatic merge failed; fix conflicts and then commit the result.` |
+| `! [rejected]        main -> main (fetch first)` | Igual: no se traduce |
+| `fatal: Necesita especificar cómo reconciliar las ramas divergentes.` | `fatal: Need to specify how to reconcile divergent branches.` |
+| `fatal: rehusando fusionar historias no relacionadas` | `fatal: refusing to merge unrelated histories` |
 
 ### 2.1. Configurar Git
 
@@ -674,7 +689,7 @@ $ git diff --stat
 
 ### 2.6. Ignorar ficheros con .gitignore
 
-**Situación real:** Olmo hace la web de su tienda de cerámica. En la carpeta tiene la página, un `.env` con la clave de la pasarela de pago (que nunca debe ir a Git), el registro del servidor y una carpeta `salida/` con informes que genera su programa. Antes del primer commit, escribe el `.gitignore`.
+**Situación real:** Olmo hace la web de su tienda de cerámica. En la carpeta tiene la página, un `.env` con la clave de la pasarela de pago (que nunca debe ir a Git), el registro del servidor y una carpeta `salida/` con informes que genera su programa. Antes del primer commit, escribe el `.gitignore`. Después, decide llamar `inicio.html` a la portada.
 
 **En tu terminal** (`sesion.txt`):
 
@@ -716,6 +731,13 @@ $ git commit -m "Primera versión de la tienda"
  2 files changed, 9 insertions(+)
  create mode 100644 .gitignore
  create mode 100644 index.html
+$ git mv index.html inicio.html
+$ git status --short
+R  index.html -> inicio.html
+$ git commit -m "Renombra la portada a inicio.html"
+[main 0fb379c] Renombra la portada a inicio.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename index.html => inicio.html (100%)
 ```
 
 📁 **Código:** [`codigo/01-git-fundamentos/ejemplos/2.6-gitignore/`](codigo/01-git-fundamentos/ejemplos/2.6-gitignore/)
@@ -726,6 +748,7 @@ $ git commit -m "Primera versión de la tienda"
 - **Con `.gitignore`**, `git status --short` solo enseña lo que debe ir a Git: la página y el propio `.gitignore`. Lo ignorado ni aparece.
 - **`git check-ignore -v`** dice, para cada fichero, qué regla lo ignora: el fichero (`.gitignore`), el número de línea, el patrón y, separado, el fichero ignorado. `salida/informe.txt` lo ignora la línea 8, `salida/`, porque está dentro de esa carpeta.
 - Ahora **`git add .`** es seguro: solo añade los dos ficheros que tocan. El commit guarda también el `.gitignore`, para que quien descargue el proyecto ignore lo mismo.
+- **`git mv`** renombra el fichero y deja el cambio preparado (`R`, de *renamed*, «renombrado»): solo falta el commit, que Git resume como `rename index.html => inicio.html (100%)` (el contenido es idéntico).
 
 ### 2.7. Descartar cambios: restore y restore --staged
 
@@ -785,7 +808,7 @@ index 7d56d56..1e99039 100644
 
 **En qué fijarte:**
 
-- **`git restore bizcocho.txt`** deja el fichero como en el último commit: el kilo de sal ha desaparecido y `git status` dice que no hay nada pendiente. **No pide confirmación** y el cambio descartado no se puede recuperar: no estaba en ningún commit.
+- **`git restore bizcocho.txt`** deja el fichero como está en el área de preparación, que, sin `git add`, es como en el último commit: el kilo de sal ha desaparecido y `git status` dice que no hay nada pendiente. **No pide confirmación** y el cambio descartado no se puede recuperar: no estaba en ningún commit.
 - **`git restore --staged`** hace algo muy distinto: saca el cambio del área de preparación (`M ` pasa a ` M`), pero **el cambio sigue en el fichero**, como enseña el último `git diff`. No se pierde nada.
 - La línea `@@ -3,3 +3,4 @@ Bizcocho de yogur` lleva al final el principio del fichero: es una pista que da Git para que sepas por dónde va el cambio.
 
@@ -986,14 +1009,15 @@ nada para hacer commit, el árbol de trabajo está limpio
 
 ### 3.4. Se abre un editor y no sabes salir
 
-**Qué pasa:** escribes `git commit` sin `-m` (o una orden que necesita un texto, como `git revert` sin `--no-edit`) y la terminal se llena de líneas que empiezan por `#`, con una columna de `~` a la izquierda. Escribes y salen letras raras, o nada. No sabes cómo volver.
+**Qué pasa:** escribes `git commit` sin `-m` (o una orden que necesita un texto, como `git revert` sin `--no-edit`) y la terminal se llena de líneas que empiezan por `#`, con una columna de `~` a la izquierda (o con una lista de atajos abajo). Escribes y salen letras raras, o nada. No sabes cómo volver.
 
-**Por qué ocurre:** Git ha abierto el editor para que escribas el mensaje, y no tienes configurado uno que conozcas: en macOS y Linux puede ser **Vim**, que funciona dentro de la terminal y tiene sus propias teclas ([apartado 1.4](#14-antes-de-empezar-decirle-a-git-quién-eres)). Las líneas que empiezan por `#` son instrucciones de Git y no entran en el mensaje.
+**Por qué ocurre:** Git ha abierto el editor para que escribas el mensaje, y no tienes configurado uno que conozcas: en macOS y Linux puede ser **Vim**, que funciona dentro de la terminal y tiene sus propias teclas, o **nano** ([apartado 1.4](#14-antes-de-empezar-decirle-a-git-quién-eres)). Las líneas que empiezan por `#` son instrucciones de Git y no entran en el mensaje.
 
 **Cómo se arregla:**
 
 - **Para salir sin guardar:** <kbd>Esc</kbd>, después `:q!` y <kbd>Intro</kbd>. El mensaje se queda vacío y Git cancela el commit; no se pierde ningún cambio de tus ficheros. Repite el commit con `-m "mensaje"`.
 - **Para guardar lo que has escrito y salir:** <kbd>Esc</kbd>, después `:wq` y <kbd>Intro</kbd>. Git hace el commit con ese mensaje.
+- **Si abajo ves atajos con `^` (`^X Salir`), es nano:** <kbd>Ctrl</kbd>+<kbd>X</kbd>; si pregunta si guardar, <kbd>N</kbd> para cancelar o <kbd>S</kbd> e <kbd>Intro</kbd> para hacer el commit.
 - **Para que no vuelva a pasar:** `git config --global core.editor "code --wait"`, y Git abrirá VS Code. Si se abre VS Code y la terminal se queda esperando, es lo normal: escribe el mensaje en la pestaña, guarda y **cierra la pestaña**; entonces Git sigue.
 
 ### 3.5. Meter un secreto en un commit
@@ -1002,7 +1026,7 @@ nada para hacer commit, el árbol de trabajo está limpio
 
 **Por qué ocurre:** `git add .` añade **todo** lo que no esté ignorado, y no había `.gitignore` (o le faltaba esa línea).
 
-**Cómo se evita:** escribe el `.gitignore` **antes** del primer commit ([ejemplo 2.6](#26-ignorar-ficheros-con-gitignore)) y mira siempre `git status` antes de `git add .` y `git diff --staged` antes de `git commit`. Si ya ha pasado y el commit no está compartido, `git rm --cached` y `--amend` lo sacan de ese commit. Si se compartió, el secreto **ya no es secreto**: hay que cambiarlo ([ejercicio 6](#ejercicio-6--una-contraseña-dentro-del-repositorio)).
+**Cómo se arregla (y cómo se evita):** escribe el `.gitignore` **antes** del primer commit ([ejemplo 2.6](#26-ignorar-ficheros-con-gitignore)) y mira siempre `git status` antes de `git add .` y `git diff --staged` antes de `git commit`. Si ha entrado en el **último** commit y no lo has compartido, `git rm --cached` y `git commit --amend` lo sacan de ese commit. Si entró antes, sigue en la historia: cámbialo ([ejercicio 6](#ejercicio-6--una-contraseña-dentro-del-repositorio)). Y si se compartió, el secreto **ya no es secreto**: hay que cambiarlo también.
 
 ### 3.6. Lo añado al .gitignore y Git sigue viéndolo
 
@@ -1012,13 +1036,15 @@ nada para hacer commit, el árbol de trabajo está limpio
 
 **Cómo se arregla:** `git rm --cached config.ini` (lo quita de Git y lo deja en tu disco) y un commit. Desde ese momento, el `.gitignore` sí lo ignora. Lo tienes paso a paso en el [ejercicio 6](#ejercicio-6--una-contraseña-dentro-del-repositorio).
 
+> **⚠️ Ojo:** cuando otra persona traiga este commit, Git borrará `config.ini` de su carpeta, porque para Git es un borrado. Avisa antes al equipo para que guarde una copia, o que lo recree a partir de un fichero de ejemplo (como el `config.ejemplo.ini` del ejercicio 6).
+
 ### 3.7. Perder trabajo con restore o reset --hard
 
 **Qué pasa:** haces `git restore fichero` (o un `git reset --hard` copiado de internet) y desaparecen horas de cambios.
 
-**Por qué ocurre:** esas órdenes descartan lo que **no está en ningún commit**, y lo hacen sin preguntar. Git solo puede devolverte lo que guardaste en un commit.
+**Por qué ocurre:** esas órdenes descartan lo que **no está en ningún commit** (`git restore`, los cambios sin preparar; `git reset --hard`, todos los de los ficheros que Git vigila; los ficheros nuevos sin seguimiento se quedan), y lo hacen sin preguntar. Git solo puede devolverte lo que guardaste en un commit.
 
-**Cómo se evita:** antes de descartar, mira qué vas a perder con `git status` y `git diff`. Si dudas, haz antes un commit: lo que está en un commit es muy difícil de perder (y, si lo pierdes por un `reset`, el [reflog](#113-deshacer-cambios) todavía puede encontrarlo). La pregunta antes de descartar es siempre la misma: «¿hay algo aquí que no esté en un commit y que quiera conservar?».
+**Cómo se arregla (y cómo se evita):** antes de descartar, mira qué vas a perder con `git status` y `git diff`. Si dudas, haz antes un commit: lo que está en un commit es muy difícil de perder (y, si lo pierdes por un `reset`, el [reflog](#113-deshacer-cambios) todavía puede encontrarlo). La pregunta antes de descartar es siempre la misma: «¿hay algo aquí que no esté en un commit y que quiera conservar?».
 
 ### 3.8. Crear el repositorio en la carpeta equivocada
 
@@ -1026,7 +1052,7 @@ nada para hacer commit, el árbol de trabajo está limpio
 
 **Por qué ocurre:** el repositorio es la carpeta donde haces `git init` **con todo lo que tiene dentro**, y cualquier carpeta de debajo cree que pertenece a él.
 
-**Cómo se arregla:** si te ha pasado en una carpeta que no debía ser un repositorio, borra **solo** su carpeta `.git` (`ls -a` para verla; `rm -r .git` en esa carpeta, comprobando antes con `pwd` dónde estás). Tus ficheros no se tocan. Y desde ahora: una carpeta por proyecto, y `git init` dentro de ella.
+**Cómo se arregla:** si te ha pasado en una carpeta que no debía ser un repositorio, borra **solo** su carpeta `.git` (`ls -a` para verla) con `rm -rf .git` (la `f` evita que pregunte por cada fichero de Git, que son de solo lectura). Antes, comprueba con `pwd` que estás en la carpeta correcta: esta orden no tiene vuelta atrás. Tus ficheros no se tocan. Y desde ahora: una carpeta por proyecto, y `git init` dentro de ella.
 
 ### 3.9. Cambiar un commit que ya has compartido
 
@@ -1034,7 +1060,7 @@ nada para hacer commit, el árbol de trabajo está limpio
 
 **Por qué ocurre:** `--amend` **sustituye** el commit por otro con otro identificador ([ejemplo 2.8](#28-corregir-el-último-commit-commit---amend)). Para quien ya tenía el viejo, la historia ya no encaja.
 
-**Cómo se evita:** la regla de oro del [apartado 1.13](#113-deshacer-cambios): `--amend`, solo con lo que nadie más tiene; para lo compartido, `revert`. Lo verás en la práctica en [05.03](03-github.md).
+**Cómo se arregla (y cómo se evita):** la regla de oro del [apartado 1.13](#113-deshacer-cambios): `--amend`, solo con lo que nadie más tiene; para lo compartido, `revert`. Por qué el remoto rechaza la historia cambiada lo verás en [05.03, 1.9](03-github.md#19-cuando-el-remoto-tiene-algo-que-tú-no-tienes).
 
 ## 4. Buenas prácticas
 
@@ -1672,6 +1698,7 @@ contrasena = Padel-2026-Norte
 - Tras **`git rm --cached`**, `config.ini` sale como `D ` (borrado) **para Git**, pero `ls` demuestra que sigue en la carpeta: la aplicación funciona igual.
 - `git status` dice que todo está limpio aunque `config.ini` existe: el `.gitignore` lo ignora. Ya no puede volver a entrar por despiste.
 - `config.ejemplo.ini` sí está en Git, con `contrasena = CAMBIAME`.
+- **Ojo:** cuando otra persona traiga este commit, Git borrará `config.ini` de su carpeta, porque para Git es un borrado. Avisa antes al equipo para que guarde una copia, o que lo recree a partir de `config.ejemplo.ini`.
 
 **Punto 4: no está resuelto del todo.** La última orden lo demuestra: **la contraseña sigue en el primer commit**, y cualquiera con acceso al repositorio puede verla con `git show`. Quitar un fichero de Git solo lo quita **desde ese commit en adelante**. Lo que hay que hacer:
 
@@ -1728,14 +1755,14 @@ git config --global --list
 
 | Quiero… | Orden | ¿Pierdo algo? |
 |---|---|---|
-| Descartar los cambios de un fichero | `git restore f` | **Sí** |
+| Descartar los cambios sin preparar de un fichero (vuelve a como está en el área de preparación) | `git restore f` | **Sí** |
 | Sacar un fichero del área de preparación | `git restore --staged f` | No |
 | Cambiar el mensaje del último commit | `git commit --amend -m "…"` | No (lo sustituye) |
 | Añadir algo olvidado al último commit | `git add f` y `git commit --amend --no-edit` | No (lo sustituye) |
 | Anular un commit, aunque esté compartido | `git revert --no-edit id` | No |
 | Dejar de vigilar un fichero sin borrarlo | `git rm --cached f` | No |
 
-**Regla de oro:** `--amend`, solo con lo no compartido. **`reset --hard`**, no: borra lo que no está en un commit.
+**Regla de oro:** `--amend`, solo con lo no compartido. **`reset --hard`**, no: borra los cambios de los ficheros vigilados que no están en un commit.
 
 ### .gitignore
 
@@ -1745,13 +1772,15 @@ git config --global --list
 | `*.log` | Esa extensión, en cualquier carpeta |
 | `dist/` | Esa carpeta y todo lo que tiene |
 | `/notas.txt` | Solo el de la carpeta principal |
-| `!fichero` | Excepción: este no |
+| `!fichero` | Excepción: este no (no funciona si está ignorada su carpeta) |
 
 `git check-ignore -v f`: qué línea lo ignora. Lo que ya está en Git no se ignora: `git rm --cached f`.
 
-### Si se abre Vim
+### Si se abre Vim o nano
 
-<kbd>Esc</kbd> y `:q!` + <kbd>Intro</kbd> (salir sin guardar) · <kbd>Esc</kbd> y `:wq` + <kbd>Intro</kbd> (guardar y salir).
+Vim: <kbd>Esc</kbd> y `:q!` + <kbd>Intro</kbd> (salir sin guardar) · <kbd>Esc</kbd> y `:wq` + <kbd>Intro</kbd> (guardar y salir).
+
+nano (atajos con `^` abajo): <kbd>Ctrl</kbd>+<kbd>X</kbd>; si pregunta si guardar, <kbd>N</kbd> (cancelar) o <kbd>S</kbd> e <kbd>Intro</kbd> (hacer el commit).
 
 ## 7. Preguntas de repaso
 
@@ -1760,7 +1789,7 @@ git config --global --list
    <details>
    <summary>Ver respuesta</summary>
 
-   Git es el programa que guarda la historia de un proyecto en tu ordenador, y funciona sin internet. GitHub es una web donde se guardan copias de repositorios de Git para compartirlos y colaborar. Puedes usar Git sin GitHub, pero no al revés. Lo tienes en [1.3. Git, y GitHub, que no es lo mismo](#13-git-y-github-que-no-es-lo-mismo).
+   Git es el programa que guarda la historia de un proyecto en tu ordenador, y funciona sin internet. GitHub es una web donde se guardan copias de repositorios de Git para compartirlos y colaborar. Puedes usar Git sin GitHub. Lo tienes en [1.3. Git, y GitHub, que no es lo mismo](#13-git-y-github-que-no-es-lo-mismo).
 
    </details>
 
@@ -1832,7 +1861,7 @@ git config --global --list
    <details>
    <summary>Ver respuesta</summary>
 
-   `git restore fichero` descarta el cambio y deja el fichero como en el último commit: el cambio se pierde. `git restore --staged fichero` solo lo saca del área de preparación: el cambio sigue en el fichero. Lo tienes en [1.13. Deshacer cambios](#113-deshacer-cambios).
+   `git restore fichero` descarta los cambios sin preparar y deja el fichero como en el área de preparación (si no habías hecho `git add`, como en el último commit): el cambio se pierde. `git restore --staged fichero` solo lo saca del área de preparación: el cambio sigue en el fichero. Lo tienes en [1.13. Deshacer cambios](#113-deshacer-cambios).
 
    </details>
 
@@ -1850,7 +1879,7 @@ git config --global --list
     <details>
     <summary>Ver respuesta</summary>
 
-    Es el editor que Git abre para que escribas el mensaje; en macOS y Linux puede ser Vim. Para salir sin guardar, <kbd>Esc</kbd>, `:q!` e <kbd>Intro</kbd> (Git cancela el commit); para guardar y salir, `:wq`. Para que Git abra VS Code, `git config --global core.editor "code --wait"`. Lo tienes en [3.4. Se abre un editor y no sabes salir](#34-se-abre-un-editor-y-no-sabes-salir).
+    Es el editor que Git abre para que escribas el mensaje; en macOS y Linux puede ser Vim (o nano, si ves atajos con `^` abajo: se sale con <kbd>Ctrl</kbd>+<kbd>X</kbd>). Para salir sin guardar, <kbd>Esc</kbd>, `:q!` e <kbd>Intro</kbd> (Git cancela el commit); para guardar y salir, `:wq`. Para que Git abra VS Code, `git config --global core.editor "code --wait"`. Lo tienes en [3.4. Se abre un editor y no sabes salir](#34-se-abre-un-editor-y-no-sabes-salir).
 
     </details>
 

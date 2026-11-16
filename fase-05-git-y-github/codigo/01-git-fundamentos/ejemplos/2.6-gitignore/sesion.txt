@@ -11,3 +11,6 @@ git check-ignore -v .env servidor.log salida/informe.txt
 git add .
 git status --short
 git commit -m "Primera versión de la tienda"
+git mv index.html inicio.html
+git status --short
+git commit -m "Renombra la portada a inicio.html"
