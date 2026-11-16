@@ -59,5 +59,5 @@ Ninguna sale de mi casa ni dice dónde vivo.
 
 ## Licencia
 
-El código de este proyecto tiene licencia MIT: puedes usarlo y cambiarlo, siempre que mantengas
-el aviso de autoría. Está en [LICENSE](LICENSE).
+Este proyecto (el código, los datos y el texto) tiene licencia MIT: puedes usarlo y cambiarlo,
+siempre que mantengas el aviso de autoría y el texto de la licencia. Está en [LICENSE](LICENSE).

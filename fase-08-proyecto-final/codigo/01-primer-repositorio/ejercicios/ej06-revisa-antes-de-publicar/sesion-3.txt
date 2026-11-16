@@ -1,7 +1,10 @@
 mkdir rutas-a-pie-nuevo && cd rutas-a-pie-nuevo && git init
+git config user.name "TU-USUARIO"
+git config user.email "ID+TU-USUARIO@users.noreply.github.com"
 cp -r ../corregido/. .
 git add .
 git commit -m "Primera versión de la web, revisada"
 git grep -n -i -e casa -e calle -e 600
 git log -p | grep -c -i -e casa -e calle -e lola
+git log --format='%an <%ae>' | sort -u
 grep -n 'site.data' index.md

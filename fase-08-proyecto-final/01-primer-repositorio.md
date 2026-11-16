@@ -32,7 +32,7 @@ Al terminar este módulo tendrás **un repositorio tuyo en GitHub**, público, q
 - Tiene su **historial en Git**, con un commit por paso ([fase 5](../fase-05-git-y-github/01-git-fundamentos.md)).
 - Está **publicado en internet con GitHub Pages**: una web con tus datos, en una dirección que puedes mandar a quien quieras.
 
-El proyecto modelo de este módulo es el que ya planificaste en el [ejercicio 6 de 07.02](../fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#ejercicio-6--el-tablero-de-tu-proyecto-final): **«Mis rutas en bici»**, una web con las rutas que Ana hace en bici los fines de semana. Ana es la misma de los ejemplos de la fase 5. Tu proyecto tendrá otro tema; la forma será la misma. En las direcciones de GitHub de este módulo, `TU-USUARIO` ocupa el sitio del usuario de GitHub (el de Ana, el de cada persona de los ejercicios o el tuyo), como en [05.03, ejemplo 2.7](../fase-05-git-y-github/03-github.md#27-conectarte-a-github-de-verdad).
+El proyecto modelo de este módulo es el de la solución del [ejercicio 6 de 07.02](../fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#ejercicio-6--el-tablero-de-tu-proyecto-final), **«Mis rutas en bici»**, y ahora lo hace Ana: una web con las rutas que hace en bici los fines de semana. Ana es la misma de los ejemplos de la fase 5. Tu proyecto tendrá otro tema; la forma será la misma. En las direcciones de GitHub de este módulo, `TU-USUARIO` ocupa el sitio del usuario de GitHub (el de Ana, el de cada persona de los ejercicios o el tuyo), como en [05.03, ejemplo 2.7](../fase-05-git-y-github/03-github.md#27-conectarte-a-github-de-verdad).
 
 **Cuándo está terminado.** Igual que cada tarea tiene su [criterio de hecho](../fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#13-cuándo-está-hecha-una-tarea), el proyecto entero tiene el suyo. Es la **lista de entrega**, y el proyecto está terminado cuando se cumplen todas sus condiciones:
 
@@ -43,11 +43,10 @@ El proyecto modelo de este módulo es el que ya planificaste en el [ejercicio 6 
 5. El **README** dice qué es, cómo verlo y cómo está organizado, tiene el **diagrama** (que GitHub dibuja) con su frase en texto, la sección **«Cómo lo hice»** y la licencia.
 6. Hay un fichero **`LICENSE`**.
 7. El **historial** tiene un commit por paso, con mensajes que dicen qué cambia.
-8. Has hecho la **revisión final**: ningún secreto ni dato personal en ningún commit, todos los enlaces funcionan y otra persona ha abierto la web.
+8. Has hecho la **revisión final**: ningún secreto ni dato personal en ningún commit (tampoco tu correo personal como autor), todos los enlaces funcionan y otra persona ha abierto la web.
+9. Tu **perfil de GitHub** enlaza al proyecto ([apartado 1.13](#113-tu-perfil-y-tu-portfolio)).
 
-Y, como remate, tu **perfil de GitHub** enlaza al proyecto ([apartado 1.13](#113-tu-perfil-y-tu-portfolio)).
-
-> **📌 Nota:** necesitas una **cuenta de GitHub** ([05.03, apartado 1.3](../fase-05-git-y-github/03-github.md#13-tu-cuenta-de-github)) y conectar Git con ella ([05.03, ejemplo 2.7](../fase-05-git-y-github/03-github.md#27-conectarte-a-github-de-verdad)). Lo que pasa en la web de GitHub (el tablero, activar Pages, la página publicada) no se puede comprobar en el curso: va como **salida de ejemplo**, según la documentación de GitHub a 16 de noviembre de 2026. Las pantallas de GitHub cambian a menudo; si algo no está donde dice el módulo, búscalo en la ayuda de GitHub ([07.03](../fase-07-aprender-a-aprender/03-buscar-ayuda.md)).
+> **📌 Nota:** necesitas una **cuenta de GitHub** ([05.03, apartado 1.3](../fase-05-git-y-github/03-github.md#13-tu-cuenta-de-github)), que Git firme tus commits con la dirección de correo que te da GitHub y no con la tuya (lo explica ese mismo apartado; compruébalo con `git config user.email` antes del primer commit del proyecto) y conectar Git con ella ([05.03, ejemplo 2.7](../fase-05-git-y-github/03-github.md#27-conectarte-a-github-de-verdad)). Lo que pasa en la web de GitHub (el tablero, activar Pages, la página publicada) no se puede comprobar en el curso: va como **salida de ejemplo**, según la documentación de GitHub a 16 de noviembre de 2026. Las pantallas de GitHub cambian a menudo; si algo no está donde dice el módulo, búscalo en la ayuda de GitHub ([07.03](../fase-07-aprender-a-aprender/03-buscar-ayuda.md)).
 
 ### 1.2. Elegir el tema y el alcance
 
@@ -94,7 +93,7 @@ git commit -m "Añade las cinco primeras rutas" -m "Closes #3"
 
 Úsalo solo cuando **el commit cumple el criterio de hecho** de la tarea. Si el criterio se comprueba en la web («se ve en la página publicada», «abre desde otro aparato»), el commit no basta: subes el cambio, compruebas la web y cierras la *issue* tú a mano.
 
-**En `main` o en una rama.** Como en este proyecto trabajas sola o solo, las tareas pequeñas puedes hacerlas con commits directamente en `main`. Pero haz **al menos una en una rama** que después fusionas en `main`, como en [05.02](../fase-05-git-y-github/02-ramas-y-conflictos.md#14-crear-ramas-y-cambiar-de-una-a-otra): la que más se presta es la que cambia la portada de la web. GitHub Pages publica lo que hay en `main`, así que, mientras trabajas en la rama, la web sigue como estaba; solo cambia cuando fusionas y subes. Es lo que hace Ana con la tarea 4 en el [ejemplo 2.4](#24-el-historial-tarea-a-tarea).
+**En `main` o en una rama.** Como en este proyecto trabajas sola o solo, las tareas pequeñas puedes hacerlas con commits directamente en `main`. Pero te recomendamos hacer **al menos una en una rama** que después fusionas en `main` (no es una condición de la lista de entrega, pero es como trabajarás en equipo), como en [05.02](../fase-05-git-y-github/02-ramas-y-conflictos.md#14-crear-ramas-y-cambiar-de-una-a-otra): la que más se presta es la que cambia la portada de la web. GitHub Pages publica lo que hay en `main`, así que, mientras trabajas en la rama, la web sigue como estaba; solo cambia cuando fusionas y subes. Es lo que hace Ana con la tarea 4 en el [ejemplo 2.4](#24-el-historial-tarea-a-tarea).
 
 > **📌 Nota:** si quieres seguir [GitHub Flow](../fase-05-git-y-github/03-github.md#113-github-flow) entero, también puedes subir esa rama a GitHub, abrir una *pull request* y fusionarla allí, como en [05.03, ejemplo 2.5](../fase-05-git-y-github/03-github.md#25-una-rama-para-una-pull-request). Es opcional en este proyecto; el tablero se mueve igual.
 
@@ -163,13 +162,7 @@ En texto: subes tus commits con `git push`; GitHub Pages toma los ficheros del r
 
 > **📌 Nota:** Jekyll **no lo instalas tú**: funciona en los servidores de GitHub. Se puede instalar en tu ordenador para ver la web antes de subirla, pero necesita Ruby y más pasos, y para este proyecto no hace falta. Al subir un cambio, tardará unos minutos en verse ([apartado 1.7](#17-activar-github-pages)).
 
-**Lo que Jekyll publica y lo que no.** No todo lo que hay en el repositorio acaba en la web. Según la documentación de GitHub (a 16 de noviembre de 2026), Jekyll **no publica** los ficheros y carpetas cuyo nombre:
-
-- empieza por **guion bajo** (`_`): `_config.yml` y `_data` son para Jekyll, no para los visitantes;
-- empieza por **punto** (`.`): `.gitignore`, `.github`…;
-- empieza por almohadilla (`#`) o termina en `~` (copias que dejan algunos editores);
-
-ni lo que está en las carpetas `node_modules` y `vendor` (de otros programas), ni lo que tú le digas en la opción `exclude` de `_config.yml`. Lo demás (tus `.md`, imágenes, ficheros sueltos) se publica.
+**Lo que Jekyll publica y lo que no.** No todo lo que hay en el repositorio acaba en la web. Según la documentación de GitHub (a 16 de noviembre de 2026), Jekyll **no publica**, entre otros, los ficheros y carpetas cuyo nombre empieza por **guion bajo** (`_config.yml` y `_data` son para Jekyll, no para los visitantes) o por **punto** (`.gitignore`), ni lo que tú le digas en la opción `exclude` de `_config.yml`. Lo demás (tus `.md`, imágenes, ficheros sueltos) se publica.
 
 **Los ficheros de Jekyll en tu proyecto:**
 
@@ -187,7 +180,7 @@ title: Mis rutas en bici
 ---
 ```
 
-`title` es el título de la página, el que sale en la pestaña del navegador.
+`title` es el título de la página. El diseño lo usa en la pestaña del navegador; en la portada, junto con la descripción de `_config.yml` (en la de Ana, «Mis rutas en bici | Las rutas en bici que hago los fines de semana»). Ponle el **mismo** título que en `_config.yml`: si son distintos, el diseño escribe además el título de la web encima del tuyo, y la portada sale con dos títulos.
 
 **El aspecto.** La web sale con un **tema**, un diseño ya hecho: letra, márgenes, colores. En la prueba de este módulo, sin elegir ninguno, la web salió con un diseño sencillo, y para este proyecto basta; la documentación de GitHub explica cómo elegir un tema si quieres.
 
@@ -213,7 +206,7 @@ https://TU-USUARIO.github.io/mis-rutas-en-bici/
 
 Para encontrarla, en la misma página **Settings > Pages** hay un botón **Visit site** que la abre.
 
-**Cuánto tarda.** Según la documentación de GitHub, después de cada `git push` **pueden pasar hasta 10 minutos** hasta que el cambio se vea en la web. Si al cabo de una hora no ha cambiado, algo ha fallado al construirla ([error típico 3.3](#33-un-json-roto-y-la-web-que-no-cambia)).
+**Cuánto tarda.** Según la documentación de GitHub, después de cada `git push` **pueden pasar hasta 10 minutos** hasta que el cambio se vea en la web. Si a los 10 minutos no ha cambiado, no esperes más: abre la pestaña **Actions** del repositorio, donde queda el registro de cada publicación (la página **Settings > Pages** enlaza a la última). Si la construcción ha fallado, lo verás allí ([error típico 3.3](#33-un-json-roto-y-la-web-que-no-cambia)).
 
 **Público.** Con una cuenta gratuita (GitHub Free), el repositorio tiene que ser **público** para usar GitHub Pages. Y, según su documentación, la web de GitHub Pages es **pública en internet**, aunque el repositorio fuera privado (con los planes que lo permiten). Por eso todo lo de la revisión del [apartado 1.12](#112-revisar-antes-de-publicar) importa tanto.
 
@@ -240,8 +233,8 @@ Así es la parte de la portada de Ana que enseña las rutas:
 
 Léelo así:
 
-1. **`{% for ruta in site.data.rutas %}`**: «para cada ruta de `rutas.json`…». Es el [`PARA cada … DE … HACER`](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#19-repetición) del pseudocódigo: `site.data.rutas` es la lista del fichero, y `ruta` es el nombre que le das a cada elemento mientras lo recorres (podrías llamarlo `r` o `cada_ruta`; `ruta` se entiende mejor).
-2. **La línea del medio** es lo que se repite, una vez por ruta: una línea de una lista de Markdown, con texto fijo («km», «dificultad», «Sale de:») y huecos. Cada hueco `{{ ruta.CLAVE }}` se rellena con el valor de esa clave en el objeto de la ruta.
+1. **`{% for ruta in site.data.rutas %}`**: «para cada ruta de `rutas.json`…». Es el [`PARA cada … DE … HACER`](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#19-repetición) del pseudocódigo: `site.data.rutas` es la lista del fichero, y `ruta` es el nombre que le das a cada elemento mientras lo recorres (podrías llamarlo `r` o `cadaRuta`; `ruta` se entiende mejor).
+2. **La línea del medio** es lo que se repite, una vez por ruta: una línea de una lista de Markdown, con texto fijo («km», «dificultad», «Sale de:») y huecos. Cada hueco `{{ ruta.CLAVE }}` se rellena con el valor de esa clave en el objeto de la ruta (es el `pedido.libros` del [pseudocódigo](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#13-los-datos-de-un-algoritmo): `ruta.km` se lee «los km de la ruta»).
 3. **`{% endfor %}`** marca dónde termina lo que se repite.
 
 Con las cinco rutas, Jekyll escribe cinco líneas, cada una con los datos de una ruta, y después las convierte en una lista de la web. Para cambiar cómo se ve cada ruta, cambias el texto de la línea del medio; para añadir una ruta, solo tocas el JSON.
@@ -256,7 +249,7 @@ Con las cinco rutas, Jekyll escribe cinco líneas, cada una con los datos de una
 
 El diagrama explica **cómo está hecho** el proyecto, así que su sitio es el README: es para quien mira el repositorio, no para quien visita la web. Y hay otra razón: **GitHub dibuja los diagramas de Mermaid** en los ficheros Markdown del repositorio ([04.05, 1.10](../fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#110-dónde-se-dibuja-github-la-academia-y-vs-code)), pero en la web de GitHub Pages **no se ven dibujados**.
 
-Según la documentación de GitHub (a 16 de noviembre de 2026), los diagramas de Mermaid se dibujan en las *issues*, las discusiones, las *pull requests*, las wikis y los ficheros Markdown que ves en GitHub; GitHub Pages no figura en esa lista (la documentación no dice expresamente que no los dibuje). Y es lo que pasa al probarlo: Jekyll convierte el bloque `mermaid` en un **bloque de código**, y en la web se ve el texto del diagrama, sin dibujar (lo comprobamos para este módulo con la misma versión de Jekyll que usa GitHub Pages, la 3.10.0, el 16 de noviembre de 2026).
+Según la documentación de GitHub (a 16 de noviembre de 2026), los diagramas de Mermaid se dibujan en las *issues*, las discusiones, las *pull requests*, las wikis y los ficheros Markdown que ves en GitHub; GitHub Pages no está en esa lista. Y al probarlo (con Jekyll 3.10.0, la versión de GitHub Pages, el 16 de noviembre de 2026), Jekyll convierte el bloque `mermaid` en un **bloque de código**: en la web se ve el texto del diagrama, sin dibujar.
 
 Por eso Ana pone el diagrama en el README y, desde la web, **lo enlaza**: un enlace a la sección del README en GitHub, con su [ancla](../glosario.md#ancla):
 
@@ -291,9 +284,9 @@ No es una confesión ni una lista de excusas: quien la lee ve a alguien que sabe
 
 ### 1.11. La licencia
 
-Sin licencia, tu repositorio se puede ver, pero nadie puede legalmente reutilizar lo que hay en él ([05.03, 1.14](../fase-05-git-y-github/03-github.md#114-el-escaparate-readme-licencia-y-perfil)). Para un proyecto como este, lo habitual es la **MIT**, la misma que usa el código de este curso: cualquiera puede usar, copiar y cambiar tu código, siempre que mantenga el aviso con tu nombre, y tú no respondes de lo que hagan con él.
+Sin licencia, tu repositorio se puede ver, pero nadie puede legalmente reutilizar lo que hay en él ([05.03, 1.14](../fase-05-git-y-github/03-github.md#114-el-escaparate-readme-licencia-y-perfil)). Para un proyecto como este, lo habitual es la **MIT**, la misma que usa el código de este curso: cualquiera puede usar, copiar y cambiar tu código, siempre que conserve el aviso con tu nombre **y el texto de la licencia**, y tú no respondes de lo que hagan con él.
 
-El texto de la licencia **no se escribe**: se copia entero, cambiando solo el año y tu nombre. Puedes sacarlo de la web `https://choosealicense.com` (la creó GitHub) o dejar que GitHub lo ponga por ti al crear el repositorio (en el formulario de **New repository**). Ana lo copió, y su fichero `LICENSE` empieza así:
+El texto de la licencia **no se escribe**: se copia entero, cambiando solo el año y el nombre del autor. Ese nombre puede ser el tuyo o, si prefieres que no salga, tu usuario de GitHub: con él también se sabe que el trabajo es tuyo ([apartado 1.13](#113-tu-perfil-y-tu-portfolio)). Saca el texto de la web `https://choosealicense.com` (la creó GitHub), pégalo en un fichero `LICENSE` y súbelo con un commit. El formulario de **New repository** también ofrece añadir la licencia, pero entonces el repositorio de GitHub ya no nace vacío y tu primer `git push` se rechazaría ([05.03, error típico 3.4](../fase-05-git-y-github/03-github.md#34-crear-el-repositorio-de-github-con-un-readme)): en este proyecto, no lo marques. Ana copió el texto y firma con su nombre, porque quiere que salga. Su fichero `LICENSE` empieza así:
 
 ```text
 MIT License
@@ -315,11 +308,16 @@ La última tarea del tablero es la **revisión**: comprobar, con calma y con la 
 | Que no hay nada sin subir | `git status`: «Tu rama está actualizada con 'origin/main'» y el árbol limpio |
 | Que no hay **secretos ni datos personales** en los ficheros de hoy | `git grep -n -i` con las palabras que te preocupen (`casa`, `calle`, tu apellido, `contraseña`…), y leer los resultados uno a uno |
 | Que no los hay **en el historial** | `git log -p` y buscar en él (`git log -p \| grep -i …`); un fichero borrado sigue en los commits de antes ([07.05, 1.15](../fase-07-aprender-a-aprender/05-seguridad-basica.md#115-si-se-escapa-un-secreto)) |
+| **Quién firma** los commits | `git log --format='%an <%ae>' \| sort -u`: el nombre (`%an`) y el correo (`%ae`) del autor de cada commit, cada pareja una sola vez (`sort -u` ordena y quita las repetidas, como `sort \| uniq`). Cada commit los guarda, sacados de tu `git config` ([05.01, 1.4](../fase-05-git-y-github/01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres)), y en un repositorio público los lee cualquiera: tiene que salir la dirección que te da GitHub, no tu correo personal |
 | Que el JSON es válido | VS Code, sin marcas rojas |
 | Que el README se ve bien | En GitHub: el diagrama dibujado y los enlaces, uno a uno |
 | Que la web funciona | La dirección de Pages, con **todos los datos**, en tu ordenador y **en otro aparato** (un móvil, el de otra persona) |
 
-Si encuentras un secreto en el historial, cámbialo (la contraseña o la clave) antes que nada. Si encuentras **datos personales en el historial** y el repositorio todavía no es público y nadie lo ha clonado, lo más sencillo es **empezar un repositorio nuevo** con los ficheros ya corregidos, sin ese historial, como se dijo en 05.03. Si ya era público, cuenta con que alguien ha podido verlo.
+**`git grep`** es el `grep` de [03.02](../fase-03-herramientas/02-terminal-sacarle-partido.md#16-los-filtros-grep-sort-uniq-wc-cut-head-y-tail), pero busca solo en los ficheros que sigue Git, que son los que subirán a GitHub. Con `-e` delante de cada palabra buscas varias a la vez: `git grep -n -i -e casa -e calle` enseña las líneas que tienen «casa» **o** «calle», con su número de línea (`-n`) y sin mirar mayúsculas (`-i`).
+
+Si encuentras un secreto en el historial, cámbialo (la contraseña o la clave) antes que nada. Si encuentras **datos personales en el historial** y el repositorio todavía no es público y nadie lo ha clonado, lo más sencillo es **empezar un repositorio nuevo** con los ficheros ya corregidos, sin ese historial, como se dijo en el [ejercicio 5 de 05.03](../fase-05-git-y-github/03-github.md#ejercicio-5--antes-de-hacer-público-el-repositorio-de-la-protectora). Si ya era público, cuenta con que alguien ha podido verlo.
+
+**Si en los autores sale tu correo personal**, depende de si ya lo has subido. Si aún no has hecho ningún `git push`, pon en Git la dirección que te da GitHub ([05.03, 1.3](../fase-05-git-y-github/03-github.md#13-tu-cuenta-de-github)) y empieza el historial de nuevo, como Jorge en el [ejercicio 6](#ejercicio-6--revisa-el-repositorio-de-jorge-antes-de-publicarlo): el cambio de configuración solo vale para los commits nuevos. Si ya lo has subido, ese correo se ha podido ver; cambia la configuración para los commits que vengan, y ten en cuenta que quitarlo de los antiguos obliga a reescribir el historial que ya está en GitHub, algo que no se ve en este curso. Por eso conviene mirarlo **antes del primer `git push`**.
 
 > **⚠️ Cuidado:** buscar con `grep` encuentra **palabras**, no **problemas**. Lee lo que encuentra (que «casa» salga en «ninguna sale de mi casa» está bien) y piensa en lo que no busca: una foto, un número de teléfono escrito de otra forma… La herramienta ayuda; la revisión es tuya.
 
@@ -333,7 +331,7 @@ Un buen README de perfil es **corto**:
 - **Tu proyecto**, con dos enlaces: el repositorio y la web.
 - **Cómo hablar contigo** sin dar tus datos: por las *issues* de tus repositorios, por ejemplo.
 
-Y tiene las mismas reglas de privacidad que el proyecto: ni tu dirección, ni tu teléfono, ni tu correo personal, ni datos de nadie más. Tu nombre, solo si quieres que salga (puedes presentarte con tu usuario).
+Y tiene las mismas reglas de privacidad que el proyecto: ni tu dirección, ni tu teléfono, ni tu correo personal, ni datos de nadie más. Tu nombre, solo si quieres que salga (puedes presentarte con tu usuario, y lo mismo vale para la `LICENSE` y para el nombre de tus commits).
 
 **El portfolio crece.** Este es tu primer proyecto; cada curso que hagas después tendrá el suyo, y todos irán al mismo sitio: tu perfil. Fija los mejores arriba (GitHub deja elegir qué repositorios se enseñan primero en el perfil) y mantén al día su README. Un portfolio no tiene que ser grande: tiene que estar **terminado, explicado y publicado**, como este.
 
@@ -341,7 +339,7 @@ Y tiene las mismas reglas de privacidad que el proyecto: ni tu dirección, ni tu
 
 Con este proyecto terminas **Fundamentos para programar**. Ya sabes lo que todos los cursos de la academia dan por sabido: qué es programar, tu ordenador, la terminal, el editor, los formatos de datos, Git y GitHub, cómo funcionan internet y las aplicaciones, y cómo estudiar y usar la IA. Lo que falta es **un lenguaje**.
 
-Cuál, depende de lo que quieras construir. Lo viste en [06.05, 1.12](../fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#112-qué-curso-enseña-cada-pieza): si te atrae **lo que se ve** (páginas, aplicaciones web), empieza por el frontend; si te atrae **lo que decide y guarda** (el programa del servidor, su API), por el backend, con Java o con Python. Después vendrán la base de datos, el despliegue o Git a fondo.
+Cuál, depende de lo que quieras construir. Lo viste en [06.05, 1.12](../fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#112-qué-curso-enseña-cada-pieza): si te atrae **lo que se ve** (páginas, aplicaciones web), empieza por el frontend; si te atrae **lo que decide y guarda** (el programa del servidor, su API), por el backend, con Java o con Python. Después vendrán la base de datos, el despliegue o Git a fondo. Qué cursos hay ya publicados lo dice el catálogo de la academia; a 16 de noviembre de 2026, todavía no hay ninguno. Mientras llega el tuyo, el párrafo de abajo te dice qué hacer con lo que ya tienes.
 
 Y tu proyecto puede **crecer con lo que aprendas**: con HTML y CSS, le darás el aspecto que quieras; con JavaScript, filtrarás las rutas por dificultad; con un backend y una base de datos, tus amigos podrán apuntar las suyas. Esa es la mejor forma de usar un portfolio: **volver a tus proyectos** con lo que sabes ahora.
 
@@ -511,7 +509,7 @@ La web se construye sola a partir de los datos de las rutas. El diagrama que lo 
 README del repositorio, porque GitHub Pages no dibuja los diagramas de Mermaid.
 ```
 
-> **📌 Nota:** el curso **no ejecuta Jekyll** al verificar sus ejemplos, así que esta página es una salida de ejemplo. Se ha sacado construyendo la web con las versiones que usa GitHub Pages (Jekyll 3.10.0, el 16 de noviembre de 2026). En tu navegador se verá con el diseño del tema: la letra, los márgenes y los colores serán otros, y los nombres de las rutas, en negrita. El texto será el mismo.
+> **📌 Nota:** el curso **no ejecuta Jekyll** al verificar sus ejemplos, así que esta página es una salida de ejemplo. Se ha sacado construyendo la web con las versiones que usa GitHub Pages (Jekyll 3.10.0, el 16 de noviembre de 2026). En tu navegador se verá con el diseño del tema: la letra, los márgenes y los colores serán otros, y los nombres de las rutas, en negrita. El texto será el mismo, aunque es probable que al final de la página salga además una línea en inglés, «This site is open source. Improve this page.»: según el código del diseño (a 16 de noviembre de 2026), la añade cuando el repositorio es público y tiene licencia, y en la prueba no salió porque la web se construyó fuera de GitHub. Su enlace abre el fichero para editarlo en la web de GitHub; si lo usas, recuerda el [error típico 3.7](#37-el-push-rechazado-después-de-editar-en-la-web-de-github).
 
 **Lo que fabrica Jekyll.** Por dentro, la página es HTML ([06.03](../fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#11-qué-pasa-cuando-abres-una-web)). Si en el navegador miras su código fuente (<kbd>Ctrl</kbd>+<kbd>U</kbd> en Chrome, Edge y Firefox en Windows y Linux; en macOS, el atajo cambia según el navegador), la parte de las rutas empieza así (**salida de ejemplo**, de la misma construcción; recortada):
 
@@ -532,7 +530,7 @@ No hace falta que entiendas cada etiqueta: fíjate en que **ya no hay ni rastro 
 **En qué fijarte:**
 
 - **La línea del bucle se ha repetido cinco veces**, una por ruta, y cada hueco se ha rellenado con su dato. Las marcas `{% … %}` no se ven en la página.
-- **El título de la página** (`# Mis rutas en bici`) lo escribe Ana en el Markdown; el `title` de la cabecera es el de la pestaña del navegador.
+- **El título de la página** (`# Mis rutas en bici`) lo escribe Ana en el Markdown; el `title` de la cabecera es el que usa la pestaña del navegador, y es el mismo que el de `_config.yml`, como pide el [apartado 1.6](#16-cómo-publica-github-pages-jekyll-en-una-idea).
 - **El enlace** lleva a la sección «Cómo está hecha» del README en GitHub, donde el diagrama sí se dibuja. Es una dirección completa (`https://github.com/…`), porque el README no está en la web.
 
 ### 2.3. El README, con su diagrama y Cómo lo hice
@@ -601,8 +599,8 @@ Ninguna sale de mi casa ni dice dónde vivo.
 
 ## Licencia
 
-El código de este proyecto tiene licencia MIT: puedes usarlo y cambiarlo, siempre que mantengas
-el aviso de autoría. Está en [LICENSE](LICENSE).
+Este proyecto (el código, los datos y el texto) tiene licencia MIT: puedes usarlo y cambiarlo,
+siempre que mantengas el aviso de autoría y el texto de la licencia. Está en [LICENSE](LICENSE).
 ````
 
 📁 **Código:** [`codigo/01-primer-repositorio/ejemplos/2.1-mis-rutas-en-bici/`](codigo/01-primer-repositorio/ejemplos/2.1-mis-rutas-en-bici/)
@@ -655,9 +653,9 @@ Todo                              In Progress              Done
 #7 Revisar el proyecto…
 ```
 
-`#3` en el texto de una *issue* es un enlace a la *issue* 3, que GitHub pone solo. Desde aquí, cada tarjeta irá pasando a «In Progress» cuando Ana empiece la tarea, y a «Done» cuando se cierre su *issue* (sola, si la cierra un commit, por la automatización que viene activada en GitHub Projects: [07.02, 1.8](../fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#18-github-projects)).
+`#3` en el texto de una *issue* es un enlace a la *issue* 3, que GitHub pone solo. Desde aquí, cada tarjeta irá pasando a «In Progress» cuando Ana empiece la tarea, y a «Done» en cuanto se cierre su *issue*, la cierre un commit o Ana a mano: la mueve sola la automatización que viene activada en GitHub Projects ([07.02, 1.8](../fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#18-github-projects)).
 
-Aquí lo haces en tu carpeta, con un remoto de prácticas que hace de GitHub ([05.03, 1.8](../fase-05-git-y-github/03-github.md#18-un-github-de-prácticas-en-tu-ordenador)). Descarga la carpeta del ejemplo (su enlace «📁 Código»), abre la terminal en ella y escribe las órdenes de cada sesión, en orden. Cada sesión empieza en la carpeta del ejemplo; por eso, desde la segunda, empiezan con un `cd`. Recuerda que los identificadores de los commits, sus fechas y su autor serán distintos en tu equipo, y también los **hilos** y la **velocidad** de `git push` ([05.03, apartado 2](../fase-05-git-y-github/03-github.md#2-ejemplos-de-código)).
+Aquí lo haces en tu carpeta, con un remoto de prácticas que hace de GitHub ([05.03, 1.8](../fase-05-git-y-github/03-github.md#18-un-github-de-prácticas-en-tu-ordenador)). Descarga la carpeta del ejemplo (su enlace «📁 Código»), abre la terminal en ella y escribe las órdenes de cada sesión, en orden. Cada sesión empieza en la carpeta del ejemplo; por eso, desde la segunda, empiezan con un `cd`. Recuerda que los identificadores de los commits, sus fechas y su autor serán distintos en tu equipo, y también los **hilos** y la **velocidad** de `git push` ([05.03, apartado 2](../fase-05-git-y-github/03-github.md#2-ejemplos-de-código)). En la terminal del curso, los commits salen a nombre de la identidad de prueba, `Ana García <ana@example.com>` ([05.01, 1.4](../fase-05-git-y-github/01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres)); en su ordenador, Ana ya tiene en Git la dirección de correo que le da GitHub ([05.03, 1.3](../fase-05-git-y-github/03-github.md#13-tu-cuenta-de-github)), y tú también deberías tenerla antes del primer commit de tu proyecto.
 
 **Tarea 1: el repositorio con su README mínimo.** Ana crea el remoto y su repositorio, escribe un README de una frase, copia el `.gitignore` y la licencia, hace el primer commit y lo sube. El commit cumple el criterio de la tarea 1, así que lleva `Closes #1`.
 
@@ -797,17 +795,17 @@ $ cd mis-rutas-en-bici
 $ cp ../terminado/README.md .
 $ git add README.md
 $ git commit -m "Completa el README con el diagrama y Cómo lo hice"
-[main 5d6683b] Completa el README con el diagrama y Cómo lo hice
+[main 8fe7990] Completa el README con el diagrama y Cómo lo hice
  1 file changed, 61 insertions(+), 1 deletion(-)
 $ git push
 Enumerando objetos: 5, listo.
 Contando objetos: 100% (5/5), listo.
 Compresión delta usando hasta 16 hilos
 Comprimiendo objetos: 100% (3/3), listo.
-Escribiendo objetos: 100% (3/3), 1.60 KiB | 1.60 MiB/s, listo.
+Escribiendo objetos: 100% (3/3), 1.62 KiB | 1.62 MiB/s, listo.
 Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
 To ../github/mis-rutas-en-bici.git
-   3d37c8b..5d6683b  main -> main
+   3d37c8b..8fe7990  main -> main
 ```
 
 📁 **Código:** [`codigo/01-primer-repositorio/ejemplos/2.1-mis-rutas-en-bici/`](codigo/01-primer-repositorio/ejemplos/2.1-mis-rutas-en-bici/)
@@ -835,7 +833,7 @@ _config.yml
 _data/rutas.json
 index.md
 $ git log --oneline --graph
-* 5d6683b (HEAD -> main, origin/main) Completa el README con el diagrama y Cómo lo hice
+* 8fe7990 (HEAD -> main, origin/main) Completa el README con el diagrama y Cómo lo hice
 *   3d37c8b Merge branch 'rutas-en-la-web'
 |\
 | * d161d75 Enseña las rutas en la portada
@@ -847,6 +845,8 @@ $ git grep -n -i -e casa -e calle -e contraseña
 README.md:45:Ninguna sale de mi casa ni dice dónde vivo.
 $ git log -p | grep -c -i -e calle -e contraseña
 0
+$ git log --format='%an <%ae>' | sort -u
+Ana García <ana@example.com>
 ```
 
 📁 **Código:** [`codigo/01-primer-repositorio/ejemplos/2.1-mis-rutas-en-bici/`](codigo/01-primer-repositorio/ejemplos/2.1-mis-rutas-en-bici/)
@@ -857,7 +857,8 @@ $ git log -p | grep -c -i -e calle -e contraseña
 - **`git ls-files`**: seis ficheros, todos con su papel en la tabla del README. Ninguna nota personal, ninguna copia, ninguna foto.
 - **`git log --oneline --graph`** ([05.02, apartado 1.5](../fase-05-git-y-github/02-ramas-y-conflictos.md#15-ver-todas-las-ramas-git-log---oneline---graph---all)): un commit por paso, con mensajes que dicen qué cambia, y la tarea 4 en su rama, que sale y vuelve a `main` en el commit de fusión. Quien lea el historial entiende cómo se hizo el proyecto.
 - **`git grep`** busca en los ficheros que sigue Git, y encuentra «casa» en una línea: la del README que dice que ninguna ruta sale de su casa. Ana la lee y está bien. Por eso no basta con buscar: hay que **leer lo que sale**.
-- **`git log -p | grep -c`** cuenta las líneas de todo el historial (con los cambios de cada commit) que tienen esas palabras: `0`. Ningún commit antiguo tuvo una calle o una contraseña.
+- **`git log -p | grep -c`** cuenta las líneas de todo el historial (con los cambios de cada commit) que tienen esas palabras: `0`. Ningún commit antiguo tuvo una calle o una contraseña. (Sin «casa», que ya sabe que sale en la frase del README: la contaría y no diría nada nuevo.)
+- **`git log --format='%an <%ae>' | sort -u`** enseña quién firma los commits: una sola persona. Aquí sale la identidad de prueba de la terminal del curso (`example.com` es un dominio reservado para ejemplos); en el repositorio de verdad de Ana sale su dirección `…@users.noreply.github.com`, y en el tuyo tiene que salir la tuya, no tu correo personal.
 
 El resto de la revisión no es de la terminal: Ana abre el README en GitHub (el diagrama se dibuja, los enlaces funcionan) y la web en su ordenador y en el móvil de su amiga. Todo bien: cierra la *issue* `#7`. Con las siete en **Done**, el proyecto está terminado.
 
@@ -874,7 +875,7 @@ El resto de la revisión no es de la terminal: Ana abre el README en GitHub (el 
 - **Aún no ha dado tiempo**: la primera publicación y cada cambio pueden tardar hasta 10 minutos.
 - **La dirección está mal escrita**: el usuario o el nombre del repositorio, letra a letra.
 
-**Cómo se arregla:** revisa **Settings > Pages** (rama `main`, carpeta `/ (root)`), comprueba con `git ls-files` que `index.md` está en la raíz y se llama así, en minúsculas, y espera unos minutos. Para la dirección exacta, usa el botón **Visit site** de esa misma página en lugar de escribirla a mano.
+**Cómo se arregla:** revisa **Settings > Pages** (rama `main`, carpeta `/ (root)`), comprueba con `git ls-files` que `index.md` está en la raíz y se llama así, en minúsculas, y espera unos minutos. Si `git ls-files` lo da con otro nombre (`Index.md`), cámbialo **con Git**, con `git mv Index.md index.md` ([05.01, 1.14](../fase-05-git-y-github/01-git-fundamentos.md#114-renombrar-y-borrar-git-mv-y-git-rm)), y después commit y `git push`; no con el Explorador de archivos ni con el Finder. En Windows y macOS, el sistema no suele distinguir mayúsculas de minúsculas en los nombres, y puede que Git no vea un cambio que solo toca mayúsculas; en GitHub, que sí las distingue, el fichero seguiría mal. Para la dirección exacta, usa el botón **Visit site** de esa misma página en lugar de escribirla a mano.
 
 ### 3.2. Los datos no salen en la web
 
@@ -885,7 +886,7 @@ El resto de la revisión no es de la terminal: Ana abre el README en GitHub (el 
 - **No sale ninguna línea:** el nombre del fichero y el de `site.data` no coinciden (`site.data.ruta` con un fichero `rutas.json`), o el fichero no está en `_data` (está en `data`, sin guion bajo, o en la raíz).
 - **Salen las líneas, con huecos vacíos:** las claves no coinciden (`{{ ruta.kilometros }}` con la clave `km`), o se ha cambiado el nombre del elemento en una parte (`{% for ruta in … %}` con `{{ r.nombre }}`).
 
-**Cómo se arregla:** compara letra a letra, con el JSON y la plantilla abiertos a la vez en el editor: el nombre del fichero con lo que va detrás de `site.data.`; cada clave del JSON con lo que va detrás de `ruta.`. Mayúsculas y minúsculas cuentan.
+**Cómo se arregla:** compara letra a letra, con el JSON y la plantilla abiertos a la vez en el editor: el nombre del fichero con lo que va detrás de `site.data.`; cada clave del JSON con lo que va detrás de `ruta.`. Mayúsculas y minúsculas cuentan. Si el fallo está en el nombre de un fichero (`Rutas.json`), cámbialo con `git mv`, como en el [error típico 3.1](#31-la-dirección-de-pages-da-un-error-404).
 
 ### 3.3. Un JSON roto y la web que no cambia
 
@@ -917,7 +918,7 @@ El resto de la revisión no es de la terminal: Ana abre el README en GitHub (el 
 
 **Por qué ocurre:** los datos salen de tu vida real, y lo natural es escribirlos tal cual. Y `git add .` añade todo lo que hay en la carpeta, sin preguntar.
 
-**Cómo se arregla:** antes del primer `git push`, la revisión del [apartado 1.12](#112-revisar-antes-de-publicar). Si el dato ya está en un commit, no basta con borrarlo en otro commit: sigue en el historial. Si nadie ha clonado aún el repositorio, empieza uno nuevo con los ficheros corregidos; si ya era público, cuenta con que se ha podido ver. Y para que no vuelva a pasar: añade los ficheros uno a uno (`git add rutas.json`) o revisa `git status` antes de cada commit, y guarda tus notas personales **fuera** de la carpeta del proyecto.
+**Cómo se arregla:** antes del primer `git push`, la revisión del [apartado 1.12](#112-revisar-antes-de-publicar). Si el dato ya está en un commit, no basta con borrarlo en otro commit: sigue en el historial. Si nadie ha clonado aún el repositorio, empieza uno nuevo con los ficheros corregidos; si ya era público, cuenta con que se ha podido ver. Y para que no vuelva a pasar: añade los ficheros uno a uno (`git add _data/rutas.json`) o revisa `git status` antes de cada commit, y guarda tus notas personales **fuera** de la carpeta del proyecto.
 
 ### 3.7. El push rechazado después de editar en la web de GitHub
 
@@ -933,25 +934,25 @@ El resto de la revisión no es de la terminal: Ana abre el README en GitHub (el 
 
 **Por qué ocurre:** el commit llevaba `Closes #4`, y la *issue* se cerró sola al subirlo, sin que nadie mirara la web. O se cerró a mano «porque el commit ya estaba».
 
-**Cómo se arregla:** vuelve a abrir la *issue* (tiene un botón para reabrirla), arregla lo que falle y ciérrala cuando se cumpla su criterio. Y la próxima vez, `Closes` solo en los commits que cumplen el criterio por sí solos; lo que se comprueba en la web, se cierra después de mirarla ([apartado 1.3](#13-planificar-con-issues-y-un-tablero)).
+**Cómo se arregla:** vuelve a abrir la *issue* (tiene un botón para reabrirla) y **mueve tú su tarjeta** a **In Progress**: la automatización que viene activada solo mueve a **Done** lo que se cierra, y la tarjeta no vuelve sola. Arregla lo que falle y cierra la *issue* cuando se cumpla su criterio. Y la próxima vez, `Closes` solo en los commits que cumplen el criterio por sí solos; lo que se comprueba en la web, se cierra después de mirarla ([apartado 1.3](#13-planificar-con-issues-y-un-tablero)).
 
 ## 4. Buenas prácticas
 
 - **Decide el alcance antes de empezar**, y apunta las ideas que no caben para la próxima versión, en vez de meterlas todas ahora.
 - **Publica pronto**: activa GitHub Pages con una página de prueba en la tarea 2, cuando aún no hay nada que perder.
-- **Un commit por paso**, con un mensaje que diga qué cambia, y **al menos una tarea en una rama**, fusionada después en `main`. Usa `Closes #N` solo cuando el commit cumple el criterio de hecho; lo que se comprueba en la web, ciérralo a mano después de comprobarlo.
+- **Un commit por paso**, con un mensaje que diga qué cambia, y, si puedes, **al menos una tarea en una rama**, fusionada después en `main`. Usa `Closes #N` solo cuando el commit cumple el criterio de hecho; lo que se comprueba en la web, ciérralo a mano después de comprobarlo.
 - **Los datos en un sitio y la presentación en otro**: para cambiar una ruta, solo tocas el JSON.
 - **Valida el JSON** en VS Code antes de cada commit.
 - **El diagrama, en el README**, con su frase en texto; desde la web, un enlace a él.
 - **Enlaces relativos** entre ficheros del repositorio; **direcciones completas** desde la web hacia GitHub.
-- **Ningún dato personal**, tuyo o de otros, en ningún fichero ni en ningún commit: el repositorio y la web son públicos.
+- **Ningún dato personal**, tuyo o de otros, en ningún fichero ni en ningún commit, tampoco en su autor: el repositorio y la web son públicos. Antes del primer commit, pon en Git la dirección de correo que te da GitHub.
 - **Cuenta en «Cómo lo hice»** qué hiciste tú, en qué te ayudó la IA y cómo lo comprobaste.
 - **Revisa antes de darlo por terminado**, con la terminal y con otro aparato. Y pide a otra persona que abra la web.
 - **Termina**: un proyecto pequeño publicado vale más que uno grande a medias.
 
 ## 5. Ejercicios prácticos resueltos
 
-Los ejercicios 1 a 6 preparan cada pieza con proyectos de otras personas; los dos del caso real son **tu proyecto** y **tu perfil**, y se llevan la mayor parte del tiempo del módulo. Si quieres, haz los primeros ya con el tema de tu proyecto en la cabeza.
+Los ejercicios 1 a 6 preparan cada pieza con proyectos de otras personas; los dos del caso real son **tu proyecto** y **tu perfil**, y se llevan buena parte del tiempo del módulo. Si quieres, haz los primeros ya con el tema de tu proyecto en la cabeza.
 
 ### 🟢 Básico
 
@@ -1052,7 +1053,7 @@ discos
 
 **Errores frecuentes al resolverlo:**
 
-- Dejar `portada.md` o `config.yml` con su nombre: la web saldría vacía o sin título, sin ningún error que lo explique.
+- Dejar `portada.md` o `config.yml` con su nombre. Sin `index.md`, GitHub Pages usaría el README como portada, y los discos no saldrían en ella; sin `_config.yml`, la web tomaría por título el nombre del repositorio (y `config.yml` se publicaría como un fichero más). Nada de eso da un error que lo explique.
 - Meter `notas.txt` en el `.gitignore` y dejarlo en la carpeta. Funciona, pero un fichero con datos de otras personas está mejor fuera del proyecto: un descuido con el `.gitignore` y se sube.
 
 </details>
@@ -1211,7 +1212,7 @@ Mi colección de vinilos, del más antiguo al más reciente.
 **En qué fijarte:**
 
 - **El orden de la página es el del JSON.** «Del más antiguo al más reciente» es verdad porque Pablo los escribió en ese orden en `discos.json`.
-- **El `if` va en la misma línea** que el resto. Si lo pusieras en otra línea, el texto de los favoritos quedaría en una línea aparte, y Markdown lo mostraría de otra forma.
+- **El `if` va en la misma línea** que el resto. Si lo pusieras en otra línea, el salto de línea también llegaría a la página, y la lista no saldría como esperas.
 
 **Errores frecuentes al resolverlo:**
 
@@ -1336,6 +1337,8 @@ $ git commit -m "Quita mis notas"
 
 📁 **Código:** [`codigo/01-primer-repositorio/ejercicios/ej06-revisa-antes-de-publicar/`](codigo/01-primer-repositorio/ejercicios/ej06-revisa-antes-de-publicar/)
 
+`cp -r ../de-jorge/. .` copia **lo que hay dentro** de `de-jorge` (también los ficheros ocultos, por el `/.`) en la carpeta actual (el último `.`).
+
 Revísalo con la terminal, con la lista del [apartado 1.12](#112-revisar-antes-de-publicar), y responde:
 
 1. ¿Qué hay en el repositorio que **no debe** publicarse, en los ficheros de hoy o en el historial?
@@ -1390,7 +1393,7 @@ rutas.json
 | Qué | Dónde | Por qué |
 |---|---|---|
 | «Mi casa, calle del Olmo 14» | `_data/rutas.json`, línea 5 (`git grep`) | Dice **dónde vive Jorge**, en un fichero que se publicaría en el repositorio y en la web |
-| El teléfono de Lola | `notas.txt`, en el **primer commit** | Jorge lo borró en el segundo commit (`git ls-files` ya no lo lista), pero **sigue en el historial**: `git show HEAD~1:notas.txt` lo enseña. Al subir el repositorio se suben todos los commits. Y es un dato de **otra persona** |
+| El teléfono de Lola | `notas.txt`, en el **primer commit** | Jorge lo borró en el segundo commit (`git ls-files` ya no lo lista), pero **sigue en el historial**: `git show HEAD~1:notas.txt` lo enseña (`HEAD~1` es el commit anterior al último). Al subir el repositorio se suben todos los commits. Y es un dato de **otra persona** |
 
 **2. Por qué no salen las rutas:** `index.md` recorre `site.data.ruta`, pero el fichero se llama `rutas.json`, así que los datos son `site.data.rutas`. Jekyll no encuentra `ruta`, no da ningún error y no repite ninguna línea ([error típico 3.2](#32-los-datos-no-salen-en-la-web)). La web saldría con el título y nada más.
 
@@ -1399,22 +1402,24 @@ rutas.json
 **4. Qué hacer, en orden:**
 
 1. **Corregir los datos**: la ruta que sale de su casa, desde un sitio público (el aparcamiento del arroyo, la plaza…). Que ninguna ruta diga dónde vive.
-2. **Empezar el historial de nuevo**, porque el teléfono de Lola está en un commit. Como el repositorio aún no está en GitHub y nadie lo ha clonado, es lo más sencillo: un repositorio nuevo, en otra carpeta, con los ficheros ya corregidos y sin `notas.txt`, que se queda fuera del proyecto.
+2. **Empezar el historial de nuevo**, porque el teléfono de Lola está en un commit. Como el repositorio aún no está en GitHub y nadie lo ha clonado, es lo más sencillo: un repositorio nuevo, en otra carpeta, con los ficheros ya corregidos y sin `notas.txt`, que se queda fuera del proyecto. Y, antes de su primer commit, que Git firme con su usuario y con la dirección de correo que le da GitHub ([05.03, 1.3](../fase-05-git-y-github/03-github.md#13-tu-cuenta-de-github)), no con su correo personal.
 3. **Arreglar `index.md`**: `site.data.rutas`.
 4. **Añadir lo que falta**: `LICENSE`, `.gitignore`, `_config.yml` y el README completo.
-5. **Repetir la revisión** (`git ls-files`, `git grep`, `git log -p`) en el repositorio nuevo, y solo entonces crear el de GitHub y subirlo.
+5. **Repetir la revisión** (`git ls-files`, `git grep`, `git log -p` y quién firma los commits) en el repositorio nuevo, y solo entonces crear el de GitHub y subirlo.
 
-Jorge lo hace así. Tiene los ficheros corregidos en la carpeta `corregido/` (en la carpeta del ejercicio): las rutas con salidas públicas, `index.md` con `site.data.rutas`, y lo que faltaba. Crea el repositorio nuevo **en otra carpeta**, sin tocar el viejo, y repite la revisión:
+Jorge lo hace así. Tiene los ficheros corregidos en la carpeta `corregido/` (en la carpeta del ejercicio): las rutas con salidas públicas, `index.md` con `site.data.rutas`, y lo que faltaba. Crea el repositorio nuevo **en otra carpeta**, sin tocar el viejo; antes del commit, le dice a Git quién es solo para ese repositorio (`git config` sin `--global`, [05.01, 1.4](../fase-05-git-y-github/01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres)), con su usuario y su dirección de GitHub (en la sesión, `TU-USUARIO` ocupa el sitio de su usuario, e `ID`, el del número de su cuenta que lleva esa dirección); y repite la revisión:
 
 **En tu terminal** (`sesion-3.txt`):
 
 ```text
 $ mkdir rutas-a-pie-nuevo && cd rutas-a-pie-nuevo && git init
 Inicializado repositorio Git vacío en /home/alumno/rutas-a-pie-nuevo/.git/
+$ git config user.name "TU-USUARIO"
+$ git config user.email "ID+TU-USUARIO@users.noreply.github.com"
 $ cp -r ../corregido/. .
 $ git add .
 $ git commit -m "Primera versión de la web, revisada"
-[main (commit-raíz) 832d61d] Primera versión de la web, revisada
+[main (commit-raíz) ec389d3] Primera versión de la web, revisada
  6 files changed, 98 insertions(+)
  create mode 100644 .gitignore
  create mode 100644 LICENSE
@@ -1425,13 +1430,15 @@ $ git commit -m "Primera versión de la web, revisada"
 $ git grep -n -i -e casa -e calle -e 600
 $ git log -p | grep -c -i -e casa -e calle -e lola
 0
+$ git log --format='%an <%ae>' | sort -u
+TU-USUARIO <ID+TU-USUARIO@users.noreply.github.com>
 $ grep -n 'site.data' index.md
 9:{% for ruta in site.data.rutas %}
 ```
 
 📁 **Código:** [`codigo/01-primer-repositorio/ejercicios/ej06-revisa-antes-de-publicar/`](codigo/01-primer-repositorio/ejercicios/ej06-revisa-antes-de-publicar/)
 
-Un solo commit, con seis ficheros y ninguno de más. `git grep` no encuentra nada en los ficheros de hoy (ni «casa», ni «calle», ni el principio del teléfono), y en todo el historial del repositorio nuevo, tampoco: `0`. Y la plantilla ya recorre `site.data.rutas`. Ahora sí puede crear el repositorio en GitHub y subirlo. La carpeta vieja, `rutas-a-pie`, la puede borrar cuando haya comprobado que la nueva tiene todo lo que necesita.
+Un solo commit, con seis ficheros y ninguno de más. `git grep` no encuentra nada en los ficheros de hoy (ni «casa», ni «calle», ni el principio del teléfono), y en todo el historial del repositorio nuevo, tampoco: `0`. El único autor es su usuario, con la dirección de GitHub. Y la plantilla ya recorre `site.data.rutas`. Ahora sí puede crear el repositorio en GitHub y subirlo. La carpeta vieja, `rutas-a-pie`, la puede borrar cuando haya comprobado que la nueva tiene todo lo que necesita.
 
 > **⚠️ Cuidado:** si el repositorio **ya** hubiera estado en GitHub, público, borrarlo y empezar de nuevo no quitaría el teléfono de Lola de quien ya lo hubiera visto o clonado. Lo justo sería contárselo a Lola. Por eso la revisión se hace **antes** del primer `git push`.
 
@@ -1450,12 +1457,12 @@ Un solo commit, con seis ficheros y ninguno de más. `git grep` no encuentra nad
 Es el momento: haz **tu proyecto final**, con el tema que elegiste en el [ejercicio 6 de 07.02](../fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#ejercicio-6--el-tablero-de-tu-proyecto-final) (o con otro, si has cambiado de idea). Sigue los pasos del módulo:
 
 1. **Tema y alcance**: escribe en una frase qué es, y qué entra y qué no ([apartado 1.2](#12-elegir-el-tema-y-el-alcance)).
-2. **Repositorio y tablero**: crea el repositorio público y vacío en GitHub, tus *issues* con su criterio de hecho y el tablero ([apartado 1.3](#13-planificar-con-issues-y-un-tablero)).
-3. **Trabaja tarea a tarea**, con un commit por paso, al menos una tarea en una rama que fusionas en `main` y la web publicada desde la tarea 2, como Ana en el [ejemplo 2.4](#24-el-historial-tarea-a-tarea).
+2. **Repositorio y tablero**: crea el repositorio público y vacío en GitHub, tus *issues* con su criterio de hecho y el tablero ([apartado 1.3](#13-planificar-con-issues-y-un-tablero)). Antes del primer commit, comprueba con `git config user.email` que Git firmará con la dirección de correo que te da GitHub ([05.03, 1.3](../fase-05-git-y-github/03-github.md#13-tu-cuenta-de-github)). Para conectar tu carpeta con GitHub, copia la dirección del repositorio de su página y úsala como en [05.03, ejemplo 2.7](../fase-05-git-y-github/03-github.md#27-conectarte-a-github-de-verdad): `git remote add origin https://github.com/TU-USUARIO/TU-REPOSITORIO.git` (HTTPS, lo recomendado en Windows) o `git remote add origin git@github.com:TU-USUARIO/TU-REPOSITORIO.git` (SSH), y después `git push -u origin main`; no la ruta `../github/…` de las sesiones, que es el remoto de prácticas. Si `git branch` dice `master` en lugar de `main`, te faltó el ajuste de [05.01, 1.4](../fase-05-git-y-github/01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres): `git branch -m main` le cambia el nombre a la rama en la que estás; hazlo antes del `push`.
+3. **Trabaja tarea a tarea**, con un commit por paso, la web publicada desde la tarea 2 y, si puedes, al menos una tarea en una rama que fusionas en `main`, como Ana en el [ejemplo 2.4](#24-el-historial-tarea-a-tarea).
 4. **Revisa** con la lista del [apartado 1.12](#112-revisar-antes-de-publicar).
 5. **Comprueba la lista de entrega** del [apartado 1.1](#11-qué-vas-a-construir-y-cuándo-está-terminado), punto por punto.
 
-**Cómo repartir el tiempo.** Este ejercicio se lleva la mayor parte de las 6 horas del módulo. Un reparto que funciona, en sesiones cortas como las de [07.01](../fase-07-aprender-a-aprender/01-como-estudiar.md#19-sesiones-cortas-con-descansos-y-repartidas):
+**Cómo repartir el tiempo.** Este ejercicio se lleva buena parte de las 6 horas del módulo. Un reparto que funciona, en sesiones cortas como las de [07.01](../fase-07-aprender-a-aprender/01-como-estudiar.md#19-sesiones-cortas-con-descansos-y-repartidas):
 
 | Sesión | Qué haces | Tareas |
 |---|---|---|
@@ -1499,13 +1506,13 @@ Tu proyecto es tuyo y no tiene una solución única: la solución modelo es el d
 - [x] El README dice qué es, cómo verla y cómo está organizado, con el diagrama (que GitHub dibuja),
       su frase en texto, «Cómo lo hice» y la licencia
 - [x] Hay un fichero LICENSE (MIT)
-- [x] El historial tiene un commit por paso, con mensajes claros, y la tarea 4 en su rama, fusionada
-- [x] Revisión hecha: nada sin subir, ningún secreto ni dato personal en el historial,
-      enlaces probados y la web abierta en el móvil de una amiga
+- [x] El historial tiene un commit por paso, con mensajes claros
+- [x] Revisión hecha: nada sin subir, ningún secreto ni dato personal en el historial ni en los
+      autores de los commits, enlaces probados y la web abierta en el móvil de una amiga
 - [x] Mi README de perfil enlaza al proyecto
 ```
 
-Puedes guardarla como una *issue* más del tablero («Entrega del proyecto»), con las casillas: GitHub las dibuja y puedes marcarlas con un clic.
+Puedes guardarla como una *issue* más del tablero («Entrega del proyecto»), con las casillas: GitHub las dibuja y puedes marcarlas con un clic. La tarea 4 en su rama no es una casilla: es la recomendación del [apartado 1.3](#13-planificar-con-issues-y-un-tablero), y Ana la siguió.
 
 **Lo que suele pasar la primera vez,** y cómo seguir:
 
@@ -1527,7 +1534,7 @@ Puedes guardarla como una *issue* más del tablero («Entrega del proyecto»), c
 
 #### Ejercicio 8 · Tu README de perfil
 
-Con tu proyecto publicado, prepara tu **README de perfil** ([apartado 1.13](#113-tu-perfil-y-tu-portfolio)): crea en GitHub el repositorio público con **el mismo nombre que tu usuario**, con un `README.md` que diga quién eres (sin datos personales), qué estás aprendiendo, y que enlace a tu proyecto y a su web. Después, abre tu perfil (`https://github.com/TU-USUARIO`) y comprueba que aparece.
+Con tu proyecto publicado, prepara tu **README de perfil** ([apartado 1.13](#113-tu-perfil-y-tu-portfolio)): crea en GitHub el repositorio público con **el mismo nombre que tu usuario** (aquí sí activa **Add README** al crearlo: no vas a subir nada desde tu ordenador, y puedes escribirlo en la propia web con **Edit README**, según la documentación de GitHub a 16 de noviembre de 2026), con un `README.md` que diga quién eres (sin datos personales), qué estás aprendiendo, y que enlace a tu proyecto y a su web. Después, abre tu perfil (`https://github.com/TU-USUARIO`) y comprueba que aparece.
 
 <details>
 <summary>Pista 1</summary>
@@ -1581,7 +1588,7 @@ Mi proyecto
 
 **En qué fijarte:**
 
-- **Ningún dato personal**: ni ciudad, ni correo, ni teléfono. Para hablar con ella, las *issues*, que son públicas y no dan sus datos.
+- **Ningún dato personal**: ni ciudad, ni correo, ni teléfono. Para hablar con ella, las *issues*, que son públicas y no dan sus datos. Y, como lo escribe en la web de GitHub con **Keep my email addresses private** marcada, sus commits llevan la dirección de GitHub, no su correo ([05.03, 1.3](../fase-05-git-y-github/03-github.md#13-tu-cuenta-de-github)).
 - **Dos enlaces al proyecto**: el repositorio (para quien quiera ver cómo está hecho) y la web (para quien quiera verlo funcionando).
 - **Corto y al día**: cuando haga su siguiente proyecto, añadirá una línea, y cambiará «Qué estoy aprendiendo».
 
@@ -1590,6 +1597,8 @@ Mi proyecto
 - Llamar al repositorio de otra forma (`perfil`, `about-me`): solo funciona con el nombre exacto de tu usuario.
 - Dejarlo privado: el README de perfil solo aparece si el repositorio es público.
 - Llenarlo de insignias, contadores y estadísticas antes de tener nada que enseñar. Lo que importa es el enlace a tu proyecto.
+
+Con tu proyecto publicado y tu perfil al día, has terminado **Fundamentos para programar**. Vuelve al [apartado 1.14](#114-y-ahora-qué-curso-sigue) para elegir por dónde seguir.
 
 </details>
 
@@ -1604,14 +1613,15 @@ Mi proyecto
 5. **README**: qué es, cómo verlo, cómo está organizado, **diagrama** con su frase, **«Cómo lo hice»**, licencia.
 6. Fichero **`LICENSE`**.
 7. **Historial** con un commit por paso.
-8. **Revisión** hecha, y tu **perfil** enlaza al proyecto.
+8. **Revisión** hecha, también de quién firma los commits.
+9. Tu **perfil** enlaza al proyecto.
 
 ### Los ficheros del proyecto
 
 ```text
 mi-proyecto
 ├── .gitignore         ← lo que Git no guarda (.DS_Store, Thumbs.db, _site/)
-├── LICENSE            ← MIT: se copia entera, con el año y tu nombre
+├── LICENSE            ← MIT: se copia entera, con el año y tu nombre (o tu usuario)
 ├── README.md          ← portada del repositorio; aquí va el diagrama
 ├── _config.yml        ← título, descripción, idioma, exclude
 ├── index.md           ← portada de la web, con su cabecera YAML
@@ -1626,17 +1636,17 @@ mi-proyecto
 | Activar | **Settings > Pages** → **Deploy from a branch** → rama `main`, carpeta `/ (root)` → **Save** |
 | Portada | `index.md`, `index.html` o `README.md`, en lo más alto de la carpeta publicada |
 | Dirección | `https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/` (botón **Visit site**) |
-| Tras un `git push` | Hasta 10 minutos para verse |
+| Tras un `git push` | Hasta 10 minutos para verse; si no, mira **Actions** |
 | Si falla la construcción | Un correo a tu dirección principal; el detalle, en **Actions** |
 | Con GitHub Free | Solo en repositorios públicos |
-| Lo que Jekyll no publica | Lo que empieza por `_`, `.` o `#`, lo que acaba en `~`, `node_modules`, `vendor` y lo de `exclude` |
+| Lo que Jekyll no publica | Entre otros, lo que empieza por `_` o por `.`, y lo de `exclude` |
 | Mermaid | No figura entre los sitios donde GitHub lo dibuja, y Jekyll lo deja como código: el diagrama, en el README |
 
 ### Rellenar huecos (Liquid, en Jekyll)
 
 ```markdown
 ---
-title: Título de la pestaña
+title: Título de la página (el mismo que en _config.yml)
 ---
 
 {% for cosa in site.data.datos %}
@@ -1658,10 +1668,13 @@ title: Título de la pestaña
 | `git grep -n -i palabra` | Buscar en los ficheros de hoy |
 | `git log -p \| grep -i palabra` | Buscar en todo el historial |
 | `git show HEAD~1:fichero` | Un fichero como estaba un commit antes |
+| `git config user.email` | El correo con el que firmarán tus commits: el que te da GitHub |
+| `git log --format='%an <%ae>' \| sort -u` | Quién firma los commits, con su correo |
+| `git mv Index.md index.md` | Cambiar un nombre (también solo de mayúsculas) para que Git lo vea |
 
 ### README de perfil
 
-Repositorio **público** que se llama **como tu usuario**, con `README.md` en la raíz: quién eres, qué aprendes, tu proyecto (repositorio y web), cómo hablar contigo. Sin datos personales.
+Repositorio **público** que se llama **como tu usuario** (créalo con **Add README** y escríbelo en la web), con `README.md` en la raíz: quién eres, qué aprendes, tu proyecto (repositorio y web), cómo hablar contigo. Sin datos personales.
 
 ## 7. Preguntas de repaso
 
@@ -1670,7 +1683,7 @@ Repositorio **público** que se llama **como tu usuario**, con `README.md` en la
    <details>
    <summary>Ver respuesta</summary>
 
-   Cuando se cumplen todas: repositorio público con buen nombre; una *issue* por tarea en un tablero, todas cerradas; datos en un JSON válido en `_data`, sin datos personales; la web de GitHub Pages abre desde otro aparato y enseña los datos; README con qué es, cómo verlo, organización, diagrama con su frase, «Cómo lo hice» y licencia; fichero `LICENSE`; un commit por paso; y la revisión hecha. Lo tienes en [1.1. Qué vas a construir y cuándo está terminado](#11-qué-vas-a-construir-y-cuándo-está-terminado).
+   Cuando se cumplen todas: repositorio público con buen nombre; una *issue* por tarea en un tablero, todas cerradas; datos en un JSON válido en `_data`, sin datos personales; la web de GitHub Pages abre desde otro aparato y enseña los datos; README con qué es, cómo verlo, organización, diagrama con su frase, «Cómo lo hice» y licencia; fichero `LICENSE`; un commit por paso; la revisión hecha; y tu perfil enlaza al proyecto. Lo tienes en [1.1. Qué vas a construir y cuándo está terminado](#11-qué-vas-a-construir-y-cuándo-está-terminado).
 
    </details>
 
@@ -1742,7 +1755,7 @@ Repositorio **público** que se llama **como tu usuario**, con `README.md` en la
    <details>
    <summary>Ver respuesta</summary>
 
-   No: `git ls-files` dice qué hay **hoy**. Un fichero borrado sigue en los commits de antes, y al subir el repositorio se suben todos. Hay que buscar también en el historial (`git log -p`, `git log --oneline -- fichero`), además de leer lo que encuentra `git grep` en los ficheros de hoy, y abrir la web en otro aparato. Lo tienes en [1.12. Revisar antes de publicar](#112-revisar-antes-de-publicar) y en el [ejercicio 6](#ejercicio-6--revisa-el-repositorio-de-jorge-antes-de-publicarlo).
+   No: `git ls-files` dice qué hay **hoy**. Un fichero borrado sigue en los commits de antes, y al subir el repositorio se suben todos. Hay que buscar también en el historial (`git log -p`, `git log --oneline -- fichero`), además de leer lo que encuentra `git grep` en los ficheros de hoy, mirar quién firma los commits (`git log --format='%an <%ae>' | sort -u`: tiene que salir la dirección que te da GitHub, no tu correo personal) y abrir la web en otro aparato. Lo tienes en [1.12. Revisar antes de publicar](#112-revisar-antes-de-publicar) y en el [ejercicio 6](#ejercicio-6--revisa-el-repositorio-de-jorge-antes-de-publicarlo).
 
    </details>
 
@@ -1760,7 +1773,7 @@ Repositorio **público** que se llama **como tu usuario**, con `README.md` en la
     <details>
     <summary>Ver respuesta</summary>
 
-    Para que otros puedan usar, copiar y cambiar tu código legalmente, siempre que mantengan el aviso con tu nombre; sin licencia, se puede ver pero no reutilizar. El texto no se escribe: se copia entero (de choosealicense.com o del formulario de GitHub al crear el repositorio), cambiando solo el año y el nombre. Lo tienes en [1.11. La licencia](#111-la-licencia).
+    Para que otros puedan usar, copiar y cambiar tu código legalmente, siempre que conserven el aviso con tu nombre y el texto de la licencia; sin licencia, se puede ver pero no reutilizar. El texto no se escribe: se copia entero de choosealicense.com, cambiando solo el año y el nombre (el tuyo o tu usuario de GitHub), y se sube con un commit. En este proyecto no se marca en el formulario de GitHub, porque el repositorio ya no nacería vacío. Lo tienes en [1.11. La licencia](#111-la-licencia).
 
     </details>
 

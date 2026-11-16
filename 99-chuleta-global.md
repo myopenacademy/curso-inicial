@@ -1409,6 +1409,7 @@ gitGraph
 | Para | Dónde |
 |---|---|
 | Crear un repositorio | **+ > New repository** (vacío si ya lo tienes en tu ordenador) |
+| Que tus commits no enseñen tu correo | **Settings > Emails > Keep my email addresses private** (y **Block command line pushes that expose my email**); en Git, `git config --global user.email` con la dirección `…@users.noreply.github.com` |
 | Abrir una *pull request* | Aviso **Compare & pull request** tras subir una rama |
 | Revisar | **Files changed**; al terminar, **Comment**, **Approve** o **Request changes** |
 | Fusionar | **Merge pull request**, **Squash and merge** o **Rebase and merge** |
@@ -2047,14 +2048,15 @@ Entre `://` y la primera `/`, **desde el final**. `envios.paqueteria-veloz.examp
 5. **README**: qué es, cómo verlo, cómo está organizado, **diagrama** con su frase, **«Cómo lo hice»**, licencia.
 6. Fichero **`LICENSE`**.
 7. **Historial** con un commit por paso.
-8. **Revisión** hecha, y tu **perfil** enlaza al proyecto.
+8. **Revisión** hecha, también de quién firma los commits.
+9. Tu **perfil** enlaza al proyecto.
 
 #### Los ficheros del proyecto
 
 ```text
 mi-proyecto
 ├── .gitignore         ← lo que Git no guarda (.DS_Store, Thumbs.db, _site/)
-├── LICENSE            ← MIT: se copia entera, con el año y tu nombre
+├── LICENSE            ← MIT: se copia entera, con el año y tu nombre (o tu usuario)
 ├── README.md          ← portada del repositorio; aquí va el diagrama
 ├── _config.yml        ← título, descripción, idioma, exclude
 ├── index.md           ← portada de la web, con su cabecera YAML
@@ -2069,17 +2071,17 @@ mi-proyecto
 | Activar | **Settings > Pages** → **Deploy from a branch** → rama `main`, carpeta `/ (root)` → **Save** |
 | Portada | `index.md`, `index.html` o `README.md`, en lo más alto de la carpeta publicada |
 | Dirección | `https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/` (botón **Visit site**) |
-| Tras un `git push` | Hasta 10 minutos para verse |
+| Tras un `git push` | Hasta 10 minutos para verse; si no, mira **Actions** |
 | Si falla la construcción | Un correo a tu dirección principal; el detalle, en **Actions** |
 | Con GitHub Free | Solo en repositorios públicos |
-| Lo que Jekyll no publica | Lo que empieza por `_`, `.` o `#`, lo que acaba en `~`, `node_modules`, `vendor` y lo de `exclude` |
+| Lo que Jekyll no publica | Entre otros, lo que empieza por `_` o por `.`, y lo de `exclude` |
 | Mermaid | No figura entre los sitios donde GitHub lo dibuja, y Jekyll lo deja como código: el diagrama, en el README |
 
 #### Rellenar huecos (Liquid, en Jekyll)
 
 ```markdown
 ---
-title: Título de la pestaña
+title: Título de la página (el mismo que en _config.yml)
 ---
 
 {% for cosa in site.data.datos %}
@@ -2101,10 +2103,13 @@ title: Título de la pestaña
 | `git grep -n -i palabra` | Buscar en los ficheros de hoy |
 | `git log -p \| grep -i palabra` | Buscar en todo el historial |
 | `git show HEAD~1:fichero` | Un fichero como estaba un commit antes |
+| `git config user.email` | El correo con el que firmarán tus commits: el que te da GitHub |
+| `git log --format='%an <%ae>' \| sort -u` | Quién firma los commits, con su correo |
+| `git mv Index.md index.md` | Cambiar un nombre (también solo de mayúsculas) para que Git lo vea |
 
 #### README de perfil
 
-Repositorio **público** que se llama **como tu usuario**, con `README.md` en la raíz: quién eres, qué aprendes, tu proyecto (repositorio y web), cómo hablar contigo. Sin datos personales.
+Repositorio **público** que se llama **como tu usuario** (créalo con **Add README** y escríbelo en la web), con `README.md` en la raíz: quién eres, qué aprendes, tu proyecto (repositorio y web), cómo hablar contigo. Sin datos personales.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)
