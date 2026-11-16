@@ -1029,8 +1029,28 @@
           "id": "inicial.buscar-ayuda",
           "fichero": "fase-07-aprender-a-aprender/03-buscar-ayuda.md",
           "titulo": "Buscar ayuda",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.buscar-ayuda.tutorial-guia-o-referencia",
+              "titulo": "Tutorial, guía o referencia"
+            },
+            {
+              "id": "inicial.buscar-ayuda.escribe-la-busqueda",
+              "titulo": "Escribe la búsqueda"
+            },
+            {
+              "id": "inicial.buscar-ayuda.sirve-esta-respuesta-para-tu-version",
+              "titulo": "Sirve esta respuesta para tu versión"
+            },
+            {
+              "id": "inicial.buscar-ayuda.arregla-la-pregunta-de-adrian",
+              "titulo": "Arregla la pregunta de Adrián"
+            },
+            {
+              "id": "inicial.buscar-ayuda.la-pregunta-del-club-de-ajedrez",
+              "titulo": "La pregunta del club de ajedrez"
+            }
+          ]
         },
         {
           "id": "inicial.programar-con-asistentes-de-ia",

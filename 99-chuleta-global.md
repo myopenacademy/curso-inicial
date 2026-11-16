@@ -41,6 +41,7 @@
 - **Fase 07 — Aprender a aprender**
   - [07.01 Cómo estudiar con estos cursos](#0701-cómo-estudiar-con-estos-cursos)
   - [07.02 Organizar tu trabajo](#0702-organizar-tu-trabajo)
+  - [07.03 Buscar ayuda](#0703-buscar-ayuda)
 
 ---
 
@@ -1867,6 +1868,42 @@ La cabecera YAML es lo **primero** del fichero, entre dos líneas `---`.
 #### Otras herramientas
 
 Trello, Notion y Jira (tableros); Scrum (trabajo en *sprints* de un mes o menos).
+
+---
+
+### 07.03 Buscar ayuda
+
+📖 Módulo completo: [fase-07-aprender-a-aprender/03-buscar-ayuda.md](fase-07-aprender-a-aprender/03-buscar-ayuda.md)
+
+#### Operadores (a 16 de noviembre de 2026)
+
+| Operador | Para qué | Dónde |
+|---|---|---|
+| `"frase exacta"` | Esa frase, tal cual | Google, Bing y DuckDuckGo |
+| `-palabra` | Quitarla | Los tres |
+| `site:dominio` | Solo ese sitio | Los tres |
+| `filetype:pdf` | Solo ese tipo de fichero | Los tres |
+| `before:` / `after:` | Actualizadas antes o después de una fecha | Google |
+
+Sin espacio después de los dos puntos.
+
+#### Una buena pregunta
+
+1. Título que resume el problema concreto.
+2. Contexto: qué intentas.
+3. Ejemplo mínimo, completo y reproducible, como texto.
+4. Qué esperas y qué obtienes; el mensaje de error exacto.
+5. Qué has probado.
+6. Versiones y sistema (`--version`, `uname -s`).
+7. Nada privado.
+
+#### Dónde preguntar
+
+| Sitio | Para qué |
+|---|---|
+| *Issues* | Fallos del proyecto (busca antes, también en las cerradas) |
+| Discussions | Dudas e ideas sobre el proyecto |
+| Foro (Stack Overflow, en inglés; Stack Overflow en español) | Dudas que no son de un proyecto concreto |
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

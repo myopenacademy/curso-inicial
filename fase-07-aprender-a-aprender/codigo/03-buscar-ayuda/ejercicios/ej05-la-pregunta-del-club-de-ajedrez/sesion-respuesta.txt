@@ -1,0 +1,2 @@
+grep --help | grep -e '-c,' -e '-o,'
+printf 'peón e4 peón d4\ncaballo f3\n' | grep -o peón | wc -l

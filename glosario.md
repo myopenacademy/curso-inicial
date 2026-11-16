@@ -285,6 +285,10 @@ Otro nombre de la carpeta, el habitual en inglés (directory) y en mucha documen
 
 Sistema que convierte nombres de dominio, como example.com, en direcciones IP. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#111-dns-de-nombres-a-números).
 
+### Documentación oficial
+
+La que publica quien hace la herramienta; la fuente más fiable, y de una versión concreta. Lo explica [07.03 Buscar ayuda](fase-07-aprender-a-aprender/03-buscar-ayuda.md#12-la-documentación-oficial).
+
 ### Dominio
 
 Nombre de una web o un servicio en internet (example.com); es la parte de la dirección que va antes de la primera /, y se lee desde el final. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#13-descarga-siempre-de-la-web-oficial).
@@ -302,6 +306,10 @@ Cualquier cosa que hace una función además de devolver su resultado, como camb
 ### Ejecutar
 
 Poner en marcha un programa para que el ordenador siga sus instrucciones. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#14-qué-es-un-programa).
+
+### Ejemplo mínimo reproducible
+
+Lo más pequeño que sigue dando un fallo, completo y probado, para pedir ayuda (en inglés, minimal, reproducible example). Lo explica [07.03 Buscar ayuda](fase-07-aprender-a-aprender/03-buscar-ayuda.md#19-el-ejemplo-mínimo-que-reproduce-el-fallo).
 
 ### Elemento (XML)
 
@@ -647,6 +655,10 @@ Parte de una orden, que empieza por guion (-l, --help), que cambia cómo trabaja
 
 Símbolo o palabra que indica una operación en una expresión: +, MOD, ≥, Y… Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#14-expresiones-y-operadores).
 
+### Operador de búsqueda
+
+Marca que afina una búsqueda en un buscador: comillas, -, site:, filetype:… Lo explica [07.03 Buscar ayuda](fase-07-aprender-a-aprender/03-buscar-ayuda.md#15-buscar-mejor-los-operadores).
+
 ### Operadores lógicos
 
 Y, O y NO: combinan condiciones; su resultado se resume en la tabla de verdad. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#operadores-lógicos).
@@ -814,6 +826,10 @@ Cambiar adónde va (o de dónde viene) un canal de una orden: la salida a un fic
 ### Refactorizar
 
 Cambiar cómo está escrito el código sin cambiar lo que hace. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
+
+### Referencia (documentación)
+
+Parte de la documentación que describe con exactitud cada orden, opción y valor; se consulta, no se lee entera. Lo explica [07.03 Buscar ayuda](fase-07-aprender-a-aprender/03-buscar-ayuda.md#13-tutorial-guía-y-referencia).
 
 ### Registro
 
