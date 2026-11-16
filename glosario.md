@@ -119,6 +119,10 @@ Grupo de 8 bits; la unidad con la que se miden ficheros, memoria y discos. Lo ex
 
 Dato con nombre y valor que acompaña a una petición o a una respuesta, como Content-Type. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#18-las-cabeceras-más-habituales).
 
+### Cabecera YAML (front matter)
+
+Líneas de YAML entre dos líneas --- al principio de un fichero Markdown, con datos sobre él (en una plantilla de issue, su nombre y su descripción). Lo explica [07.02 Organizar tu trabajo](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#17-plantillas-de-issue).
+
 ### Caché
 
 Copia guardada de algo (una respuesta del DNS, una página, un dato consultado) para no tener que volver a pedirlo o calcularlo. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#112-cómo-se-resuelve-un-nombre).
@@ -222,6 +226,10 @@ Sistema que guarda la historia de un proyecto (qué cambió, quién, cuándo y p
 ### Cortafuegos
 
 Programa o aparato que decide qué conexiones pasan y cuáles no, según unas reglas (en inglés, firewall). Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#114-el-cortafuegos).
+
+### Criterio de hecho
+
+Condiciones comprobables, decididas antes de empezar, que dicen cuándo una tarea está terminada. Lo explica [07.02 Organizar tu trabajo](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#13-cuándo-está-hecha-una-tarea).
 
 ### CSV
 
@@ -525,6 +533,12 @@ Aviso de un fallo o de una tarea pendiente en un proyecto de GitHub, con sus com
 
 Formato de datos estricto, con objetos entre llaves y listas entre corchetes; el habitual para intercambiar datos entre programas y en las API. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#13-json-el-formato-para-intercambiar-datos).
 
+## K
+
+### Kanban
+
+Forma de organizar el trabajo con un tablero de columnas (Por hacer, En curso, Hecho) y una tarjeta por tarea, limitando el trabajo en curso. Lo explica [07.02 Organizar tu trabajo](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#14-el-tablero-kanban).
+
 ## L
 
 ### Latin-1
@@ -542,6 +556,10 @@ Idioma pensado para que las personas escriban instrucciones que después se trad
 ### Licencia
 
 Fichero (LICENSE) que dice con qué condiciones se puede usar el código de un proyecto; sin ella, nadie puede reutilizarlo legalmente. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#114-el-escaparate-readme-licencia-y-perfil).
+
+### Límite de trabajo en curso (WIP)
+
+Número máximo de tareas empezadas y sin terminar a la vez; en el límite, no se empieza nada hasta terminar algo. Lo explica [07.02 Organizar tu trabajo](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#15-limitar-el-trabajo-en-curso).
 
 ### Lista
 
@@ -686,6 +704,10 @@ Lo que envía el cliente: método, ruta, versión, cabeceras y, a veces, un cuer
 ### PID
 
 Número que identifica a cada proceso en marcha (process identifier). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#112-procesos-verlos-y-pararlos).
+
+### Plantilla de issue
+
+Fichero .md de .github/ISSUE_TEMPLATE, con su cabecera YAML, con los apartados que rellena quien abre una issue en GitHub. Lo explica [07.02 Organizar tu trabajo](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#17-plantillas-de-issue).
 
 ### Práctica de recuperación
 
@@ -874,6 +896,10 @@ Espacios al principio de una línea que muestran qué va dentro de qué; en YAML
 ### Script
 
 Fichero de texto con órdenes que se ejecutan una detrás de otra, como un pequeño programa escrito en el lenguaje de la terminal. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#114-tu-primer-script).
+
+### Scrum
+
+Forma de organizar un equipo en ciclos de duración fija (sprints) de un mes o menos, con reuniones y papeles definidos en la Guía de Scrum. Lo explica [07.02 Organizar tu trabajo](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#19-otras-herramientas-y-otras-formas-de-trabajar).
 
 ### Secreto
 

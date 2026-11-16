@@ -40,6 +40,7 @@
   - [06.06 Qué es la IA y cómo funciona por dentro](#0606-qué-es-la-ia-y-cómo-funciona-por-dentro)
 - **Fase 07 — Aprender a aprender**
   - [07.01 Cómo estudiar con estos cursos](#0701-cómo-estudiar-con-estos-cursos)
+  - [07.02 Organizar tu trabajo](#0702-organizar-tu-trabajo)
 
 ---
 
@@ -1806,6 +1807,66 @@ git add diario.md && git commit -m "Diario: …"   # un commit por sesión
 grep -n "Duda:" diario.md                        # todas las dudas
 grep "Duda:" diario.md | grep -v "resuelta"      # las pendientes
 ```
+
+---
+
+### 07.02 Organizar tu trabajo
+
+📖 Módulo completo: [fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md)
+
+#### Tareas
+
+| Una buena tarea… | Ejemplo |
+|---|---|
+| Empieza por un verbo y dice qué resultado deja | «Escribir el horario de ensayos» |
+| Cabe en una o dos sesiones | Si lleva una semana, divídela |
+| Deja algo que se puede enseñar | Una página, un fichero, un commit |
+| No lleva «y» | «Escribir A y hacer B» son dos tareas |
+| Tiene su criterio de hecho, escrito antes | Condiciones que se comprueban con un sí o un no |
+
+#### Tablero Kanban
+
+- Columnas: **Por hacer** (en orden de prioridad) → **En curso** → **Hecho**.
+- Una tarjeta por tarea. A «Hecho», solo cuando se cumple su criterio.
+- **Límite de trabajo en curso** (WIP): trabajando solo, 1 o 2. Si estás en el límite, no empiezas nada: terminas algo.
+- Lo nuevo entra en «Por hacer»; si corre prisa, arriba.
+
+#### Una buena issue
+
+- Título con lo que hay que hacer (o lo que falla).
+- Contexto: por qué hace falta.
+- Criterio de hecho en casillas (`- [ ]`).
+- Una sola cosa por *issue*.
+- Si es un fallo: qué pasó, qué esperabas, pasos para que vuelva a pasar y dónde.
+
+#### Plantilla de issue (GitHub, a 16 de noviembre de 2026)
+
+```text
+.github/ISSUE_TEMPLATE/tarea.md     ← en la rama por defecto (main)
+```
+
+```markdown
+---
+name: Tarea                  # obligatoria: nombre en la lista (más de 3 caracteres)
+about: Para qué es           # obligatoria
+title: "Tarea: "             # opcional: principio del título
+labels: enhancement          # opcional
+assignees: usuario           # opcional
+---
+```
+
+La cabecera YAML es lo **primero** del fichero, entre dos líneas `---`.
+
+#### GitHub Projects (según su documentación, a 16 de noviembre de 2026)
+
+- Perfil → **Projects** → **New project** → **Board**.
+- Vistas: tabla, tablero y hoja de ruta. Columnas según **Status** (Todo, In Progress, Done…).
+- **Set column limit**: avisa, no impide.
+- Vienen activadas: cerrar una *issue* o *pull request*, o fusionar una *pull request*, la pasa a **Done**.
+
+#### Otras herramientas
+
+Trello, Notion y Jira (tableros); Scrum (trabajo en *sprints* de un mes o menos).
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

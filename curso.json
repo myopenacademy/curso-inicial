@@ -998,8 +998,32 @@
           "id": "inicial.organizar-tu-trabajo",
           "fichero": "fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md",
           "titulo": "Organizar tu trabajo",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.organizar-tu-trabajo.tareas-que-se-pueden-terminar",
+              "titulo": "Tareas que se pueden terminar"
+            },
+            {
+              "id": "inicial.organizar-tu-trabajo.cuando-esta-hecha",
+              "titulo": "Cuándo está hecha"
+            },
+            {
+              "id": "inicial.organizar-tu-trabajo.mueve-las-tarjetas",
+              "titulo": "Mueve las tarjetas"
+            },
+            {
+              "id": "inicial.organizar-tu-trabajo.mejora-una-issue",
+              "titulo": "Mejora una issue"
+            },
+            {
+              "id": "inicial.organizar-tu-trabajo.una-plantilla-para-avisar-de-un-fallo",
+              "titulo": "Una plantilla para avisar de un fallo"
+            },
+            {
+              "id": "inicial.organizar-tu-trabajo.el-tablero-de-tu-proyecto-final",
+              "titulo": "El tablero de tu proyecto final"
+            }
+          ]
         },
         {
           "id": "inicial.buscar-ayuda",

@@ -1,0 +1,4 @@
+ls
+ls .github
+find .github -type f
+head -n 6 .github/ISSUE_TEMPLATE/tarea.md

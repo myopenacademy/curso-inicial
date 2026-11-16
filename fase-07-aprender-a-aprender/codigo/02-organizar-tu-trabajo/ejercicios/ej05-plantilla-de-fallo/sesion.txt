@@ -1,0 +1,6 @@
+mkdir web-del-coro && cp -r .github web-del-coro/ && cd web-del-coro && git init
+git status --short
+git add .
+git status --short
+git commit -m "Añade la plantilla para avisar de un fallo"
+git ls-files
