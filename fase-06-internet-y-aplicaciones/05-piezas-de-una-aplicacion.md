@@ -267,6 +267,7 @@ En texto: (1) Luis pulsa «Pagar»; (2) el frontend manda el pedido al backend c
 - **Luis solo habla con el frontend, y el frontend solo con el backend.** Todo lo demás (base de datos, pasarela, correo) lo mueve el backend.
 - **El precio lo saca el backend de la base de datos** (pasos 3 y 4), no del navegador.
 - **El pedido se guarda antes de cobrar** (paso 5) y se marca como pagado después (paso 8): si la pasarela fallase a mitad, la panadería sabría que hay un pedido sin pagar, en vez de un cobro sin pedido.
+- **El pago está simplificado.** En la práctica, Luis suele escribir la tarjeta en una página o un recuadro de la propia pasarela ([apartado 1.6](#16-servicios-de-otros-pagos-correo-mapas)); el backend no la ve, solo recibe «aceptado» o «rechazado».
 - **`201 Created`** es el código de estado de HTTP para «he creado lo que pedías» ([06.03, apartado 1.7](03-la-web-http-y-apis.md#17-los-códigos-de-estado)). En una API, la respuesta suele traer además lo que se ha creado, como en el ejemplo siguiente.
 - **Todo pasa en un par de segundos.** Para Luis es un clic; por dentro son once mensajes entre seis participantes.
 
@@ -288,7 +289,7 @@ En texto: (1) Luis pulsa «Pagar»; (2) el frontend manda el pedido al backend c
 
 📁 **Código:** [`codigo/05-piezas-de-una-aplicacion/ejemplos/2.2-el-pedido-por-la-api/`](codigo/05-piezas-de-una-aplicacion/ejemplos/2.2-el-pedido-por-la-api/)
 
-Y esto es lo que contesta el backend cuando ha creado el pedido (antes de cobrarlo):
+Y este es el pedido tal como queda en el paso 5, recién creado y antes de cobrarlo; la respuesta del paso 10 es igual, con `"estado": "pagado"`:
 
 ```json
 {
@@ -496,7 +497,7 @@ Empieza por Carmen y termina por Carmen. En medio, recuerda que el backend **com
 
 **Errores frecuentes al resolverlo:**
 
-- Poner A antes de D: guardar y luego mirar si había plaza. Con la última plaza y dos socias reservando a la vez, la clase acabaría con más gente de la que cabe.
+- Poner A antes de D: guardar y luego mirar si había plaza; si no la había, ya está guardada una reserva que no cabe. (Y aun en el orden correcto, si dos socias reservan la última plaza en el mismo instante, hace falta que el motor lo impida con una transacción o una regla: es el problema de «Varios a la vez» de [06.04](04-que-es-una-base-de-datos.md#12-los-límites-de-un-fichero-y-de-una-hoja-de-cálculo).)
 - Poner B justo después de C: el frontend no puede confirmar nada hasta que el backend le conteste.
 
 </details>
@@ -505,7 +506,7 @@ Empieza por Carmen y termina por Carmen. En medio, recuerda que el backend **com
 
 #### Ejercicio 3 · Dibuja las piezas de la biblioteca
 
-La biblioteca municipal de Teruel quiere que sus socios reserven libros por internet. Habrá una **web** y una **app del móvil**; las dos hablarán con un **backend** en un servidor del ayuntamiento, que guardará los socios, los libros y las reservas en una **base de datos** y mandará un aviso por **correo** (con un servicio externo) cuando el libro esté listo para recoger. No se cobra nada.
+La Biblioteca Municipal de Valdeluz quiere que sus socios reserven libros por internet. Habrá una **web** y una **app del móvil**; las dos hablarán con un **backend** en un servidor del ayuntamiento, que guardará los socios, los libros y las reservas en una **base de datos** y mandará un aviso por **correo** (con un servicio externo) cuando el libro esté listo para recoger. No se cobra nada.
 
 Dibuja un diagrama de bloques en Mermaid con las piezas, agrupadas según dónde están, y flechas con verbos.
 
