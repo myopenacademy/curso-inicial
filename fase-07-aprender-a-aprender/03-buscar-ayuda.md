@@ -82,7 +82,7 @@ Un **operador de búsqueda** es una marca que le das al buscador para afinar lo 
 | Qué quieres | Cómo se escribe | Google | Bing | DuckDuckGo |
 |---|---|---|---|---|
 | Una frase **exacta** | `"carpeta de trabajo"` | Sí | Sí | Sí |
-| **Quitar** una palabra | `jaguar -coche` | Sí | Sí | Sí |
+| **Quitar** una palabra | `jaguar -coche` | Sí | Sí | Casi: según su ayuda, da **menos** resultados con esa palabra |
 | Solo **un sitio** | `site:git-scm.com rebase` | Sí | Sí | Sí |
 | Solo **un tipo de fichero** | `filetype:pdf markdown` | Sí | Sí | Sí (`pdf`, `doc(x)`, `xls(x)`, `ppt(x)` y `html`) |
 | Páginas **actualizadas antes o después** de una fecha | `git switch after:2025` | Sí: `before:` y `after:`, con un año o una fecha (`2025/11/01`) | No lo documenta | No lo documenta |
@@ -169,7 +169,8 @@ Linux
 **En qué fijarte:**
 
 - Casi todas las herramientas dicen su versión con `--version`. La de `sort` dice además **de qué paquete es** (GNU coreutils), que es lo que hay que buscar en su documentación.
-- `uname -s` dice el nombre del sistema (en la terminal del curso, `Linux`). En Git Bash y en macOS dice otra cosa, la que corresponde a cada uno; añade además en tu pregunta qué sistema usas (por ejemplo, «Git Bash en Windows 11»).
+- `uname -s` dice el nombre del sistema: en la terminal del curso, `Linux`; en macOS, `Darwin`; en Git Bash, algo que empieza por `MINGW64_NT` o parecido (y que puede decir «10.0» también en Windows 11). Por eso conviene escribir además, con palabras, qué sistema usas: «Git Bash en Windows 11», «macOS 15».
+- En **macOS**, tu terminal es **zsh**, no bash ([02.03, 1.7](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#17-instalar-git-en-macos)): pon `zsh --version`. `bash --version` te daría la versión de una bash que trae el sistema, pero no es la que usas.
 - En **macOS**, las órdenes son de otra familia (las de BSD, [03.01, 1.12](../fase-03-herramientas/01-terminal-lo-basico.md#112-pedir-ayuda---help-y-man)), y alguna no entiende `--version`. Si se queja, dilo así en tu pregunta: «el `sort` que trae macOS» y la versión de macOS. Eso ya avisa a quien te lea de que no es el de GNU.
 
 ### 2.2. Del problema al ejemplo mínimo
@@ -445,7 +446,7 @@ Repasa las siete partes del [apartado 1.8](#18-cómo-hacer-una-buena-pregunta), 
 
 - **El título** no dice nada: «git no funciona» le pasa a todo el mundo alguna vez. Las mayúsculas y las exclamaciones no ayudan.
 - **El error, en una captura**: hay que copiarlo como texto ([error típico 3.1](#31-una-captura-de-pantalla-en-lugar-del-texto)).
-- **Datos privados**: la ruta lleva su nombre y el de su empresa, y la dirección del repositorio **lleva una contraseña dentro** (lo que va entre `:` y `@`). Esa contraseña, aunque borre el mensaje, **hay que cambiarla ya** ([error típico 3.2](#32-pegar-datos-privados)).
+- **Datos privados**: la ruta lleva su nombre y el de su empresa, y la dirección del repositorio **lleva un secreto dentro** (lo que va entre `:` y `@`). En GitHub, eso es un [*token*](../fase-05-git-y-github/03-github.md#14-cómo-sabe-github-que-eres-tú-https), porque GitHub no acepta ahí la contraseña de la cuenta. Aunque borre el mensaje, **hay que anular ese *token* ya** en los ajustes de GitHub y crear otro ([error típico 3.2](#32-pegar-datos-privados) y [07.05, apartado 1.15](05-seguridad-basica.md#115-si-se-escapa-un-secreto)). Cambiar la contraseña de la cuenta no basta.
 - **«He probado de todo»** no dice qué. **«La última versión»** tampoco: hay que dar el número.
 - **No dice qué órdenes ha escrito** ni qué esperaba.
 
@@ -485,11 +486,11 @@ fatal: no es un repositorio git (ni ninguno de los directorios superiores): .git
 
 📁 **Código:** [`codigo/03-buscar-ayuda/ejercicios/ej04-arregla-la-pregunta-de-adrian/`](codigo/03-buscar-ayuda/ejercicios/ej04-arregla-la-pregunta-de-adrian/)
 
-**Por qué así:** el título cuenta el problema; los pasos permiten repetirlo; el error va como texto; lo probado lleva su resultado; y no queda nada privado (ni la ruta con su nombre y su empresa ni la contraseña). Y fíjate en el premio escondido del [apartado 1.9](#19-el-ejemplo-mínimo-que-reproduce-el-fallo): al escribir «sale una carpeta nueva», la respuesta está casi a la vista. `git clone` crea el repositorio **dentro** de esa carpeta nueva, y Adrián sigue en la de arriba: le falta un `cd web-de-prueba` antes del `git status`. Es el error típico 3.1 de [05.01](../fase-05-git-y-github/01-git-fundamentos.md#31-no-es-un-repositorio-git).
+**Por qué así:** el título cuenta el problema; los pasos permiten repetirlo; el error va como texto; lo probado lleva su resultado; y no queda nada privado (ni la ruta con su nombre y su empresa ni el *token*). Y fíjate en el premio escondido del [apartado 1.9](#19-el-ejemplo-mínimo-que-reproduce-el-fallo): al escribir «sale una carpeta nueva», la respuesta está casi a la vista. `git clone` crea el repositorio **dentro** de esa carpeta nueva, y Adrián sigue en la de arriba: le falta un `cd web-de-prueba` antes del `git status`. Es el error típico 3.1 de [05.01](../fase-05-git-y-github/01-git-fundamentos.md#31-no-es-un-repositorio-git).
 
 **Errores frecuentes al resolverlo:**
 
-- Quitar la contraseña de la dirección y pensar que ya está: la contraseña **se ha publicado** y hay que cambiarla.
+- Quitar el *token* de la dirección y pensar que ya está: **se ha publicado**, y hay que anularlo en GitHub.
 - Dejar «la última versión»: dentro de un año, nadie sabrá cuál era.
 
 </details>
@@ -519,6 +520,8 @@ Prepara todo lo necesario para pedir ayuda en un foro:
 
 Para el paso 4: la referencia más cercana es `grep --help`. Puedes buscar en ella con otro `grep`, con `-e` delante de cada patrón que empieza por guion.
 
+En macOS, `grep --help` solo enseña una línea de uso: la referencia es `man grep`. Dentro, pulsa <kbd>/</kbd>, escribe `-c` y <kbd>Intro</kbd> para saltar a la opción, y <kbd>Q</kbd> para salir.
+
 </details>
 
 <details>
@@ -537,7 +540,7 @@ $ printf 'peón e4 peón d4\ncaballo f3\n' | grep -c peón
 
 Hay dos `peón` y dice `1`: el fallo se reproduce, sin el fichero y sin los teléfonos de nadie.
 
-**2. Las versiones**, como en el [ejemplo 2.1](#21-las-versiones-de-tus-herramientas), pero de `grep`: `grep --version | head -n 1`, `bash --version | head -n 1` y `uname -s`. La primera línea de `grep --version` dice qué `grep` es y su número de versión; pon en la pregunta lo que te salga a ti.
+**2. Las versiones**, como en el [ejemplo 2.1](#21-las-versiones-de-tus-herramientas), pero de `grep`: `grep --version | head -n 1`, `bash --version | head -n 1` (en macOS, `zsh --version`) y `uname -s`. La primera línea de `grep --version` dice qué `grep` es y su número de versión; pon en la pregunta lo que te salga a ti.
 
 **3. La pregunta**, con las partes del [apartado 1.8](#18-cómo-hacer-una-buena-pregunta), como la del [ejemplo 2.3](#23-una-buena-pregunta-en-markdown): de título, «grep -c cuenta 1 cuando la palabra aparece dos veces en la línea»; el contexto (cuenta palabras en un fichero de jugadas, con varias por línea); el ejemplo mínimo en un bloque de código; **espero** `2` y **obtengo** `1`, sin mensaje de error; lo que ha probado (con la palabra en dos líneas distintas sí cuenta 2, y la búsqueda `grep -c "cuenta mal"` solo trae otros problemas); las versiones del paso 2; y nada privado: ni el fichero, ni los nombres, ni los teléfonos.
 
@@ -554,6 +557,8 @@ $ printf 'peón e4 peón d4\ncaballo f3\n' | grep -o peón | wc -l
 ```
 
 📁 **Código:** [`codigo/03-buscar-ayuda/ejercicios/ej05-la-pregunta-del-club-de-ajedrez/`](codigo/03-buscar-ayuda/ejercicios/ej05-la-pregunta-del-club-de-ajedrez/)
+
+En Git Bash, esas dos líneas salen en inglés; en macOS, búscalas en `man grep`.
 
 La referencia lo explica todo: `-c` cuenta **líneas** que coinciden, no apariciones. `-o` escribe **cada aparición** en su propia línea, y `wc -l` las cuenta. Con su ejemplo da `2`, lo esperado. Ahora sí, Samuel lo usa con su fichero.
 
@@ -573,7 +578,7 @@ La referencia lo explica todo: `-c` cuenta **líneas** que coinciden, no aparici
 | Operador | Para qué | Dónde |
 |---|---|---|
 | `"frase exacta"` | Esa frase, tal cual | Google, Bing y DuckDuckGo |
-| `-palabra` | Quitarla | Los tres |
+| `-palabra` | Quitarla (en DuckDuckGo, da menos resultados con ella) | Los tres |
 | `site:dominio` | Solo ese sitio | Los tres |
 | `filetype:pdf` | Solo ese tipo de fichero | Los tres |
 | `before:` / `after:` | Actualizadas antes o después de una fecha | Google |
