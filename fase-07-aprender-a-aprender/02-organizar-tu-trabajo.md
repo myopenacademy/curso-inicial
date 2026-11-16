@@ -177,6 +177,8 @@ Las claves de la cabecera, según la documentación de GitHub (consultada el 16 
 | `labels` | Las *labels* que se ponen solas a la *issue* | No |
 | `assignees` | Las personas a las que se asigna sola | No |
 
+(Hay alguna clave más, como `type`, para los tipos de *issue* de las organizaciones; no la necesitas.)
+
 > **⚠️ Cuidado:** la cabecera es YAML de verdad, así que valen las reglas de [04.03](../fase-04-formatos-y-diagramas/03-json-y-yaml.md#110-mapas-listas-y-sangría): `clave: valor`, con un espacio después de los dos puntos. Un título que termina en espacio, como `"Tarea: "`, va entre comillas para que el espacio no se pierda. Si la cabecera está mal escrita o falta `name` o `about`, la plantilla no funciona como esperas.
 
 Dos cosas más que verás en otros repositorios, y que no necesitas ahora:
@@ -209,7 +211,7 @@ GitHub Projects no es la única forma de llevar un tablero. Para reconocerlas cu
 
 Todas tienen lo mismo en el fondo: **tarjetas, columnas y reglas**. La herramienta importa mucho menos que las costumbres de este módulo; con una hoja de papel bien llevada se trabaja mejor que con una herramienta llena de tarjetas que nadie mira.
 
-Y una palabra que oirás mucho: **Scrum**. Es otra forma de organizar a un equipo, en la que el trabajo se hace en ciclos de duración fija, de un mes o menos, llamados **sprints**, con unas reuniones y unos papeles definidos en la Guía de Scrum (versión de noviembre de 2020). Lo verás en los cursos que lo necesiten; para tu trabajo de ahora, un tablero Kanban es todo lo que hace falta.
+Y una palabra que oirás mucho: **Scrum**. Es otra forma de organizar a un equipo, en la que el trabajo se hace en ciclos de duración fija, de un mes o menos, llamados **sprints**, con unas reuniones y unos papeles definidos en la Guía de Scrum (versión de noviembre de 2020, consultada el 16 de noviembre de 2026). Lo verás en los cursos que lo necesiten; para tu trabajo de ahora, un tablero Kanban es todo lo que hace falta.
 
 ## 2. Ejemplos de código
 
@@ -325,7 +327,7 @@ labels: enhancement
 
 📁 **Código:** [`codigo/02-organizar-tu-trabajo/ejemplos/2.3-plantilla-de-tarea/`](codigo/02-organizar-tu-trabajo/ejemplos/2.3-plantilla-de-tarea/)
 
-> **📌 Nota:** si descargas la carpeta del ejemplo, en el explorador de archivos tampoco verás `.github` hasta que actives que se muestren los ficheros ocultos ([02.02, apartado 1.15](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos)). En el explorador de VS Code, sí aparece.
+> **📌 Nota:** si descargas la carpeta del ejemplo, en el Finder de macOS y en el explorador de archivos de Linux tampoco verás `.github` hasta que actives que se muestren los ficheros ocultos ([02.02, apartado 1.15](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos)). En el Explorador de archivos de Windows sí aparece, porque allí el punto no oculta nada. En el explorador de VS Code, aparece siempre.
 
 **En qué fijarte:**
 
@@ -568,7 +570,7 @@ Una tarea que espera a otra persona sigue ocupando su sitio en «En curso». ¿Q
 
 1. **Lunes:** «Escribir Quiénes somos» pasa a «Hecho». Queda un hueco en «En curso», y Celia coge **la primera** de «Por hacer»: «Añadir la galería de fotos».
 2. **Martes:** está en el límite (la galería y la hora del ensayo), así que **no empieza la lista de canciones**. La apunta en «Por hacer» y, como corre prisa, la pone **la primera**. Le dice a Gael cuándo podrá empezarla: en cuanto termine la galería o se resuelva la hora.
-3. **Miércoles:** la tarea de la hora lleva días esperando. No la saca del tablero ni empieza otra para «aprovechar el hueco»: **escribe otra vez a Marisa** (o la llama). Una tarea atascada se resuelve, no se esconde.
+3. **Miércoles:** la tarea de la hora lleva días esperando. No la saca del tablero ni empieza otra «mientras espera»: **escribe otra vez a Marisa** (o la llama). Una tarea atascada se resuelve, no se esconde.
 4. **Jueves:** corrige la hora, comprueba el criterio y la pasa a «Hecho». Entra en «En curso» la primera de «Por hacer», que ahora es la lista de canciones.
 
 Así queda el tablero el jueves (suponiendo que la galería aún no está terminada):
@@ -670,6 +672,8 @@ Después, en la terminal, crea un repositorio nuevo, copia en él la carpeta `.g
 <summary>Pista 1</summary>
 
 Parte de la plantilla de tareas del [ejemplo 2.3](#23-una-plantilla-de-issue-para-las-tareas): cambia la cabecera y los apartados. La ruta tiene que ser `.github/ISSUE_TEMPLATE/fallo.md`.
+
+Una carpeta cuyo nombre empieza por punto es más fácil de crear desde la terminal, con `mkdir -p .github/ISSUE_TEMPLATE` (`-p` crea también la de dentro), o desde el explorador de VS Code. Algunos exploradores de archivos, como el Finder de macOS, no dejan poner un nombre que empiece por punto.
 
 </details>
 
@@ -875,7 +879,7 @@ Trello, Notion y Jira (tableros); Scrum (trabajo en *sprints* de un mes o menos)
 
 ## 7. Preguntas de repaso
 
-1. ¿Qué tres preguntas le harías a una tarea para saber si está bien escrita?
+1. ¿Qué preguntas le harías a una tarea para saber si está bien escrita?
 
    <details>
    <summary>Ver respuesta</summary>
