@@ -34,13 +34,6 @@ Los ficheros se dividen en dos grandes familias:
 - Un **fichero de texto** es aquel en el que **cada byte (o cada grupo de bytes) es un carácter**: letras, números, signos, espacios y saltos de línea. Es el [texto plano](../fase-03-herramientas/03-editor-de-codigo.md#11-qué-es-un-editor-de-código) que ya conoces: código fuente, scripts, configuración, CSV, Markdown, JSON… Lo puedes abrir con cualquier editor y leerlo.
 - Un **fichero binario** es **todo lo demás**: sus bytes no son caracteres, sino datos con el formato propio de un programa. Fotos (`.png`, `.jpg`), sonido (`.mp3`), vídeo, documentos de oficina (`.docx`, `.pdf`), ficheros comprimidos (`.zip`) y programas ya compilados (`.exe`). Para leerlos hace falta **el programa que entiende ese formato**.
 
-| | Fichero de texto | Fichero binario |
-|---|---|---|
-| **Qué son sus bytes** | Caracteres, según una tabla (la codificación) | Datos con el formato de un programa |
-| **Ejemplos** | `.txt`, `.md`, `.csv`, `.json`, `.sh`, `.html` | `.png`, `.jpg`, `.mp3`, `.pdf`, `.docx`, `.zip`, `.exe` |
-| **Se abre con** | Cualquier editor de código | El programa de su formato |
-| **En el editor se ve** | Texto que se entiende | Símbolos sin sentido |
-
 > **📌 Nota:** un `.docx` de Word **es binario**, aunque por dentro tenga texto: es un fichero comprimido (como un `.zip`) con el texto, el formato y las imágenes. Por eso no sirve para programar ([03.03](../fase-03-herramientas/03-editor-de-codigo.md#12-editor-procesador-de-textos-e-ide)).
 
 **Por qué te importa.** Casi todo lo que vas a escribir como programador son ficheros de texto, y las herramientas del programador están hechas para ellos: la terminal (`cat`, `grep`, `wc`…), el editor y, en la fase 5, Git. Con un binario, esas herramientas no sirven de mucho: `cat` llenaría la pantalla de símbolos raros y `grep` no encontraría nada útil.
@@ -61,7 +54,7 @@ logo.png:  PNG image data, 16 x 16, 8-bit/color RGB, non-interlaced
 
 Lo verás entero en el [ejemplo 2.1](#21-qué-hay-dentro-de-cada-fichero).
 
-> **📌 Nota:** `file` **adivina**: con los binarios acierta casi siempre, porque tienen firma; con el texto reconoce ASCII y UTF-8, pero con las tablas de un byte del [apartado 1.5](#15-una-tabla-por-idioma-latin-1-y-windows-1252) solo puede decir algo como `ISO-8859 text` o `Non-ISO extended-ASCII text`, que **no es la codificación, sino una pista** (y cambia de un sistema a otro). Sus respuestas están **en inglés** (no las traduce) y pueden cambiar un poco de una versión a otra. `file` viene en Linux y macOS, y normalmente también en **Git Bash**; si en tu equipo responde «orden no encontrada», no te preocupes: la barra de estado de VS Code te dice la codificación de un fichero de texto ([apartado 1.13](#113-la-codificación-en-vs-code)).
+> **📌 Nota:** `file` **adivina**. Con los binarios acierta casi siempre, porque tienen firma; con el texto reconoce ASCII y UTF-8, pero con las tablas de un byte del [apartado 1.5](#15-una-tabla-por-idioma-latin-1-y-windows-1252) solo da una **pista** (`ISO-8859 text`…), no la codificación. Responde **en inglés**, y sus palabras cambian un poco de un sistema a otro (en macOS, por ejemplo): fíjate en si dice texto o imagen, y qué codificación. Viene en Linux, macOS y, normalmente, en Git Bash; si en tu equipo no está, la barra de estado de VS Code te dice la codificación ([apartado 1.13](#113-la-codificación-en-vs-code)).
 
 ### 1.4. ASCII: los primeros 128 caracteres
 
@@ -127,7 +120,7 @@ Tres ideas importantes:
 
 UTF-8 es hoy **la codificación de casi todo**: de las páginas web (el 99,1 % de las webs cuya codificación se conoce, según W3Techs a 9 de noviembre de 2026), de Linux y macOS, de Git, de JSON y de lo que vas a escribir en este curso. Windows también la usa cada vez más, aunque arrastra programas antiguos con Windows-1252.
 
-> **📌 Nota:** hay otras codificaciones de Unicode, como **UTF-16**, que usan por dentro Windows, Java o JavaScript. No te las vas a encontrar en ficheros de texto normales; si un día te topas con una, `file` te lo dirá.
+> **📌 Nota:** hay otras codificaciones de Unicode, como **UTF-16**. Es raro encontrarlas en ficheros de texto, salvo en Windows (por ejemplo, lo que guarda Windows PowerShell con `>`); si te topas con una, `file` te lo dirá.
 
 ### 1.8. Caracteres y bytes: wc -m y wc -c
 
@@ -146,7 +139,7 @@ En un fichero con solo ASCII, los dos números coinciden. Cada `ñ` o vocal con 
 
 Un editor te enseña el texto ya traducido a letras. Para ver **los bytes de verdad**, la terminal tiene **`od`** (de *octal dump*, «volcado en octal»), que existe en Linux, macOS y Git Bash. Dos formas de usarlo:
 
-- **`od -c fichero`**: enseña cada byte como un carácter si es ASCII y, si no, como su número en **octal** (base 8). Los invisibles salen con una barra: `\n` es el salto de línea (LF), `\r` el retorno de carro (CR) y `\0` un byte a cero.
+- **`od -c fichero`**: enseña cada byte como un carácter si es un carácter visible de ASCII; los invisibles más comunes, con una barra (`\n` es el salto de línea, LF; `\r`, el retorno de carro, CR; `\t`, el tabulador, y `\0`, un byte a cero); y el resto, como su número en **octal** (base 8).
 - **`od -t x1 fichero`**: enseña cada byte (`1`) en **hexadecimal** (`x`), la forma más habitual de escribir bytes.
 
 ```text
@@ -157,7 +150,7 @@ $ od -c saludo.txt
 
 Cómo se lee: la primera columna es la **posición** del primer byte de esa línea, también en octal (`0000016` en octal es 14: el fichero ocupa 14 bytes); no necesitas calcularla. Detrás, un byte por casilla. La `ñ` de `Begoña` no es una casilla, sino **dos**, `303 261`: son sus dos bytes de UTF-8 (los mismos `c3 b1` de la tabla de 1.7, escritos en octal). Lo tienes completo en el [ejemplo 2.3](#23-los-bytes-de-un-saludo).
 
-> **📌 Nota:** en macOS, `od` es otra versión (la de BSD) y puede espaciar las columnas de otra forma. Los bytes son los mismos.
+> **📌 Nota:** en macOS, `od` es la versión de BSD: con la terminal en UTF-8, `od -c` puede escribir la letra (`ñ`) seguida de `**` en lugar de sus números, también en los ejemplos y ejercicios de este módulo. Para ver los números, `LC_ALL=C od -c fichero`, o `od -t x1`, que en todos los sistemas da los bytes en hexadecimal.
 
 ### 1.10. Caracteres estropeados: mojibake
 
@@ -166,12 +159,6 @@ Cuando un programa lee un texto **con una tabla distinta de la que se usó al es
 **1. Un texto UTF-8 leído como Latin-1 o Windows-1252: «Ã±».** La `ñ` en UTF-8 son dos bytes, `c3 b1`. Un programa que cree que cada byte es un carácter de Latin-1 los lee por separado: `c3` es `Ã` y `b1` es `±`. Así que cada `ñ` se convierte en **`Ã±`**, cada `é` en **`Ã©`**, cada `á` en **`Ã¡`**… Si ves una `Ã` donde debería haber una letra con tilde, el texto estaba bien en UTF-8 y lo han leído mal.
 
 **2. Un texto Latin-1 o Windows-1252 leído como UTF-8: «�».** La `ñ` en Latin-1 es un solo byte, `f1`. Pero en UTF-8 ese byte suelto **no es válido**: los bytes por encima de 127 siempre van en grupos con una forma concreta. El programa no sabe qué carácter es, y pone en su lugar el **carácter de sustitución**, **`�`** (un rombo con una interrogación, `U+FFFD`). Algunos programas ponen un `?` normal, que es lo que viste en la consola de [01.01](../fase-01-que-es-programar/01-que-es-programar.md#35-las-tildes-y-las-eñes-salen-mal-en-la-consola).
-
-| Lo que ves | Qué pasó | Qué hay en el fichero |
-|---|---|---|
-| `EspaÃ±a`, `cafÃ©` | Un texto **UTF-8** leído como Latin-1 o Windows-1252 | UTF-8 correcto |
-| `Espa�a`, `caf�` (o `Espa?a`) | Un texto **Latin-1 o Windows-1252** leído como UTF-8 | Latin-1 o Windows-1252 |
-| `EspaÃƒÂ±a` | Un texto UTF-8 leído mal **y guardado así**, y otra vez lo mismo | Un fichero estropeado dos veces |
 
 > **💡 Consejo:** lo importante es la **pista**: la `Ã` delata que el fichero está en UTF-8 y lo lee un programa que espera otra cosa; el `�`, que el fichero **no** está en UTF-8. Saber eso te dice qué tienes que arreglar: el programa que lee, o el fichero.
 
@@ -209,11 +196,11 @@ Por ejemplo, para pasar a UTF-8 un CSV que te han dado en Windows-1252:
 iconv -f WINDOWS-1252 -t UTF-8 clientes.csv > clientes-utf8.csv
 ```
 
-Si el fichero tiene bytes que **no son válidos** en la codificación de origen que le has dicho, `iconv` se para con un error que dice en qué posición está el primer byte malo. Es una buena señal: te avisa de que te has equivocado de origen ([error típico 3.4](#34-decirle-a-iconv-la-codificación-equivocada)).
+Si el fichero tiene bytes que **no son válidos** en la codificación de origen que le has dicho, el `iconv` de Linux y de Git Bash se para con un error que dice en qué posición está el primer byte malo. Es una buena señal: te avisa de que te has equivocado de origen ([error típico 3.4](#34-decirle-a-iconv-la-codificación-equivocada)).
 
 > **⚠️ Cuidado:** no escribas nunca `iconv … datos.csv > datos.csv`: el `>` vacía el fichero **antes** de que `iconv` lo lea, y lo pierdes. Es el mismo problema del [error típico 3.2 de 03.02](../fase-03-herramientas/02-terminal-sacarle-partido.md#32-leer-y-escribir-el-mismo-fichero-en-una-orden). Escribe siempre en un fichero nuevo.
 
-> **📌 Nota:** el `iconv` de Linux (y el de la terminal de este curso) es el de la biblioteca **glibc**; el de macOS es **otra versión**, así que sus mensajes de error pueden ser distintos y algún nombre de codificación poco habitual puede cambiar. Los nombres de este módulo (`UTF-8`, `WINDOWS-1252`, `LATIN1`) son de los más comunes; si alguno no lo acepta, búscalo con `iconv -l`.
+> **📌 Nota:** el `iconv` de Linux (y el de la terminal de este curso) es el de la biblioteca **glibc**; el de macOS es **otra versión**, así que sus mensajes y su forma de reaccionar a un byte no válido pueden ser distintos (si no da error, compruébalo igual con `file` y `cat`), y algún nombre de codificación poco habitual puede cambiar. Los nombres de este módulo (`UTF-8`, `WINDOWS-1252`, `LATIN1`) son de los más comunes; si alguno no lo acepta, búscalo con `iconv -l`.
 
 ### 1.13. La codificación en VS Code
 
@@ -225,8 +212,6 @@ En [03.03](../fase-03-herramientas/03-editor-de-codigo.md#115-lo-que-verás-más
   - **Guardar con** escribe el fichero **en otra codificación**. Eso sí lo cambia: es la forma de convertirlo desde el editor.
 
 El orden para pasar a UTF-8 un fichero que está en Windows-1252 es, por tanto: **primero «Volver a abrir» con Windows-1252** (para leerlo bien) y **después «Guardar con» UTF-8**. Al revés estropearías el texto.
-
-> **📌 Nota:** VS Code abre los ficheros como UTF-8 si no le dices otra cosa. Por eso un fichero en Windows-1252 se ve con `�` en VS Code: es el caso 2 del [apartado 1.10](#110-caracteres-estropeados-mojibake).
 
 ### 1.14. Los saltos de línea también son bytes
 
@@ -247,27 +232,15 @@ Todos los ejemplos son reales y los puedes repetir: descarga la carpeta de cada 
 
 ### 2.1. Qué hay dentro de cada fichero
 
-**Situación real:** en la carpeta de una panadería hay cuatro ficheros: una lista de la compra, unas notas, un script y el logotipo. Vas a preguntarle a `file` qué es cada uno y a comprobar que la extensión no cambia nada.
-
-El script es este:
-
-```bash
-#!/usr/bin/env bash
-# Saluda a quien lo ejecuta
-echo "Hola"
-```
-
-📁 **Código:** [`codigo/01-texto-binario-y-codificacion/ejemplos/2.1-que-hay-dentro/`](codigo/01-texto-binario-y-codificacion/ejemplos/2.1-que-hay-dentro/)
-
-**Salida:**
-
-```text
-Hola
-```
+**Situación real:** en la carpeta de una panadería hay cuatro ficheros: una lista de la compra, unas notas, un script y el logotipo. Vas a ver el script con `cat`, a preguntarle a `file` qué es cada uno y a comprobar que la extensión no cambia nada.
 
 **En tu terminal** (`sesion.txt`):
 
 ```text
+$ cat saludo.sh
+#!/usr/bin/env bash
+# Saluda a quien lo ejecuta
+echo "Hola"
 $ file lista.txt notas.txt saludo.sh logo.png
 lista.txt: ASCII text
 notas.txt: Unicode text, UTF-8 text
@@ -288,8 +261,6 @@ logo.txt: PNG image data, 16 x 16, 8-bit/color RGB, non-interlaced
 - **`saludo.sh` es un `Bourne-Again shell script`** (un script de bash). `file` lo sabe por la primera línea, `#!/usr/bin/env bash`, no por el `.sh`. Su `executable` quiere decir que tiene esa primera línea, no que tenga el permiso de ejecución.
 - **`logo.png` es una imagen PNG** de 16 por 16 píxeles. `od -c` enseña su firma: los bytes `P N G` al principio, detrás de un primer byte que no es ASCII (`211`). Todo PNG empieza así.
 - **`logo.txt`** es una copia con otro nombre, y **`file` sigue diciendo que es un PNG**: la extensión no cambia el contenido.
-
-> **📌 Nota:** en macOS, `file` puede describir algunos ficheros con otras palabras (por ejemplo, el de texto UTF-8). Lo importante es si dice texto o imagen, y qué codificación.
 
 ### 2.2. Caracteres y bytes
 
@@ -349,7 +320,7 @@ $ od -c windows.txt
 
 **En qué fijarte:**
 
-- **Cada casilla es un byte.** En `od -c`, los ASCII salen como su letra (el espacio sale como un hueco); los demás, como un número en octal.
+- **Cada casilla es un byte.** En `od -c`, los caracteres visibles de ASCII salen como su letra (el espacio, como un hueco); el salto de línea, como `\n`; los demás, como un número en octal.
 - **La `ñ` son dos casillas**: `303 261` en octal, que son `c3 b1` en hexadecimal (`od -t x1`). Son los dos bytes de UTF-8 de la tabla del apartado 1.7.
 - **Con `od -t x1` lo ves todo en hexadecimal**: `48` es la `H`, `20` es el espacio, `0a` es el salto de línea.
 - **La última línea de `od`** es solo la posición final, en octal: `0000016` son 14 bytes (12 caracteres, uno de ellos de dos bytes, y el salto de línea).
@@ -417,11 +388,9 @@ $ wc -c clientes.csv clientes-utf8.csv
 - **`file` ya dice `UTF-8 text`**, y `cat` lo enseña bien: la conversión era la buena.
 - **El fichero nuevo ocupa 11 bytes más**: hay 11 letras con tilde o eñe, y cada una pasa de un byte a dos. Es una comprobación rápida de que la conversión ha hecho algo.
 
-> **📌 Nota:** en macOS, `file` puede llamar de otra forma a un fichero en Windows-1252, y `wc` alinea los números de otra manera. En Git Bash, como en Linux.
-
 ### 2.6. Encontrar y quitar un BOM
 
-**Situación real:** Lucía te pasa la lista de teléfonos de su equipo, guardada en UTF-8 por un programa de Windows que le ha puesto BOM. Vas a encontrarlo y a quitarlo.
+**Situación real:** Rocío te pasa la lista de teléfonos de su equipo, guardada en UTF-8 por un programa de Windows que le ha puesto BOM. Vas a encontrarlo y a quitarlo.
 
 **En tu terminal** (`sesion.txt`):
 
@@ -491,7 +460,7 @@ $ echo $?
 
 📁 **Código:** [`codigo/01-texto-binario-y-codificacion/ejemplos/2.5-convertir-con-iconv/`](codigo/01-texto-binario-y-codificacion/ejemplos/2.5-convertir-con-iconv/)
 
-El mensaje («secuencia de entrada ilegal en la posición 17») sale en inglés aunque la terminal esté en español: la traducción de `iconv` no lo incluye. La posición 17 es la `í` de `María`, el primer byte que no es UTF-8 válido. Y el [código de salida](../glosario.md#código-de-salida) es 1: ha fallado.
+El mensaje («secuencia de entrada ilegal en la posición 17») sale en inglés aunque la terminal esté en español: la traducción de `iconv` no lo incluye. La posición 17 es la `í` de `María`, el primer byte que no es UTF-8 válido. Y el [código de salida](../glosario.md#código-de-salida) es 1: ha fallado. (En macOS, `iconv` puede reaccionar de otra forma: [nota del apartado 1.12](#112-convertir-de-una-codificación-a-otra-iconv).)
 
 **Cómo se arregla:** averigua la codificación de verdad (preguntar a quien te lo pasó, mirar los bytes con `od`, abrirlo en VS Code con **Reopen with Encoding**; `file` solo da una pista) y repite con el `-f` correcto. Borra el fichero a medias que ha quedado.
 
@@ -499,7 +468,7 @@ El mensaje («secuencia de entrada ilegal en la posición 17») sale en inglés 
 
 **Qué pasa:** conviertes a UTF-8 un fichero que ya estaba en UTF-8 (o lo conviertes dos veces sin darte cuenta) y aparecen `Ã±` y `Ã©` **dentro del fichero**.
 
-**Por qué ocurre:** `iconv -f WINDOWS-1252` lee los dos bytes de cada `ñ` como si fueran dos caracteres de Windows-1252 y los guarda como dos caracteres en UTF-8. No da error, porque en Windows-1252 casi cualquier byte es válido: el resultado es el mojibake del [ejemplo 2.4](#24-así-se-estropean-las-eñes), pero guardado.
+**Por qué ocurre:** `iconv -f WINDOWS-1252` lee los dos bytes de cada `ñ` como si fueran dos caracteres de Windows-1252 y los guarda como dos caracteres en UTF-8. Normalmente no da error, porque en Windows-1252 casi cualquier byte es válido (con `Á` o `Í` sí puede pararse): el resultado es el mojibake del [ejemplo 2.4](#24-así-se-estropean-las-eñes), pero guardado.
 
 **Cómo se arregla:** **mira antes de convertir**: si `file` ya dice `UTF-8 text`, no hay nada que hacer. Y conviertes siempre a un fichero nuevo, así que el original sigue ahí: borra el fichero estropeado y vuelve a empezar desde el original.
 
@@ -507,19 +476,11 @@ El mensaje («secuencia de entrada ilegal en la posición 17») sale en inglés 
 
 ### 4.1. UTF-8 sin BOM y LF, siempre
 
-Todo fichero de texto que crees: en **UTF-8**, **sin BOM** y con **saltos de línea LF**. Es lo que esperan Linux, macOS, Git, la web, JSON y bash, y lo que usa este curso. VS Code ya lo hace si lo preparaste como en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#21-preparar-vs-code-para-el-curso): fíjate en que la barra de estado diga `UTF-8` y `LF`.
+Todo fichero de texto que crees: en **UTF-8**, **sin BOM** y con **saltos de línea LF**. Es lo que esperan Linux, macOS, Git, la web, JSON y bash, y lo que usa este curso. VS Code ya lo hace si lo preparaste como en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#21-preparar-vs-code-para-el-curso): fíjate en que la barra de estado diga `UTF-8` y `LF`. Y con los datos de otros, **pregunta en qué codificación están** (`file` no distingue Latin-1 de Windows-1252 e `iconv` no adivina); cuando los des tú, **dilo**: «el CSV va en UTF-8».
 
-### 4.2. Mira antes de tocar
+### 4.2. Mira antes, convierte a un fichero nuevo y comprueba
 
-Antes de convertir o de «arreglar» un fichero, averigua qué tiene: `file` para una pista de la codificación (y el BOM), `od -c | head` para los bytes y la barra de estado de VS Code. Recuerda las pistas: la `Ã` dice que el fichero es UTF-8 y lo lee mal un programa; el `�`, que el fichero no es UTF-8.
-
-### 4.3. Convierte una vez, a un fichero nuevo, y comprueba
-
-`iconv` siempre a **otro fichero**, nunca encima del original. Después, **comprueba** el resultado: `file` debe decir `UTF-8 text`, `cat` debe enseñar bien las eñes y, si sabes cuántas letras con tilde hay, `wc -c` debe haber crecido en esa cantidad. Solo entonces sustituyes el original, si hace falta.
-
-### 4.4. Cuando recibas datos, pregunta la codificación
-
-`file` no distingue Latin-1 de Windows-1252 (solo da una pista), y `iconv` no adivina la codificación. Si te pasan un fichero de otro programa o de otra empresa, **pregunta en qué codificación está** (o mira si su documentación lo dice). Y cuando seas tú quien da datos, **dilo**: «el CSV va en UTF-8».
+Antes de convertir o de «arreglar» un fichero, averigua qué tiene: `file` para una pista de la codificación (y el BOM), `od -c | head` para los bytes y la barra de estado de VS Code. Después, `iconv` siempre a **otro fichero**, nunca encima del original, y **comprueba** el resultado: `file` debe decir `UTF-8 text`, `cat` debe enseñar bien las eñes y, si sabes cuántas letras con tilde hay, `wc -c` debe haber crecido en esa cantidad. Solo entonces sustituyes el original, si hace falta.
 
 ## 5. Ejercicios prácticos resueltos
 
@@ -920,8 +881,8 @@ Paso a paso:
 |---|---|
 | `file f` | Qué contiene `f`, sin mirar la extensión: si es texto, una pista de su codificación (y si tiene BOM) |
 | `wc -c f` / `wc -m f` | Bytes / caracteres (`-m`, solo con la terminal en UTF-8) |
-| `od -c f` | Los bytes, como caracteres o en octal |
-| `od -t x1 f` | Los bytes, en hexadecimal |
+| `od -c f` | Los bytes, como caracteres o en octal (en macOS, `LC_ALL=C od -c f`) |
+| `od -t x1 f` | Los bytes, en hexadecimal (igual en todos los sistemas) |
 | `iconv -f WINDOWS-1252 -t UTF-8 f > f-utf8` | Convierte a UTF-8, en un fichero nuevo |
 | `tail -c +4 f > f-sin-bom` | Quita los 3 bytes del BOM (solo si lo tiene) |
 | `tr -d '\r' < f > f-lf` | Pasa de CRLF a LF |
@@ -1006,7 +967,7 @@ Paso a paso:
    <details>
    <summary>Ver respuesta</summary>
 
-   `iconv -f WINDOWS-1252 -t UTF-8 datos.csv > datos-utf8.csv`, y después compruebas con `file` y `cat` que es UTF-8 y que las tildes salen bien. Nunca redirigir al mismo fichero (`> datos.csv`), porque se vacía antes de leerlo; y nunca convertir un fichero que ya está en UTF-8. Lo tienes en [1.12. Convertir de una codificación a otra: iconv](#112-convertir-de-una-codificación-a-otra-iconv).
+   `iconv -f WINDOWS-1252 -t UTF-8 datos.csv > datos-utf8.csv`, y después compruebas con `file` y `cat` que es UTF-8 y que las tildes salen bien. Nunca redirigir al mismo fichero (`> datos.csv`), porque se vacía antes de leerlo; y nunca convertir un fichero que ya está en UTF-8 ([error típico 3.5](#35-convertir-dos-veces-el-mismo-fichero)). Lo tienes en [1.12. Convertir de una codificación a otra: iconv](#112-convertir-de-una-codificación-a-otra-iconv).
 
    </details>
 
