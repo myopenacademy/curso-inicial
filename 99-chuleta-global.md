@@ -43,6 +43,7 @@
   - [07.02 Organizar tu trabajo](#0702-organizar-tu-trabajo)
   - [07.03 Buscar ayuda](#0703-buscar-ayuda)
   - [07.04 Programar con asistentes de IA](#0704-programar-con-asistentes-de-ia)
+  - [07.05 Seguridad básica](#0705-seguridad-básica)
 
 ---
 
@@ -1963,6 +1964,67 @@ Lee cada orden antes de aprobarla. Con lupa: lo que borra (`rm`), lo que pide `s
 3. Nunca pegues contraseñas, claves ni datos personales en un chat de IA.
 4. En el proyecto final puedes usarla, pero debes entender y poder explicar todo lo que entregues. Cuéntalo en el README, en una sección «Cómo lo hice».
 5. Las soluciones del curso ya están plegadas: mira antes la tuya.
+
+---
+
+### 07.05 Seguridad básica
+
+📖 Módulo completo: [fase-07-aprender-a-aprender/05-seguridad-basica.md](fase-07-aprender-a-aprender/05-seguridad-basica.md)
+
+#### Conceptos clave
+
+| Concepto | En una línea |
+|---|---|
+| **Frase de contraseña** | Contraseña hecha de varias palabras al azar: larga, difícil de adivinar y fácil de recordar |
+| **Gestor de contraseñas** | Programa que genera, guarda cifradas y rellena tus contraseñas detrás de una contraseña maestra |
+| **Hash (huella)** | Número de tamaño fijo calculado a partir de unos datos; cambia por completo con cualquier cambio y no se puede deshacer |
+| **Cifrar** | Convertir datos en algo ilegible para quien no tenga la clave |
+| **Sal** | Valor aleatorio, distinto para cada usuario, que se mezcla con la contraseña antes de calcular su huella |
+| **Filtración** | Los datos de una web, en manos de quien no debe |
+| **Doble factor (2FA)** | Pedir dos pruebas de tipos distintos: algo que sabes y algo que tienes (o que eres) |
+| **Códigos de recuperación** | Códigos de un solo uso para entrar si pierdes el segundo factor |
+| ***Passkey*** | Par de claves ligado a una web, que sustituye a la contraseña y no funciona en una web falsa |
+| ***Phishing*** | Mensaje que se hace pasar por alguien de confianza para que pulses, des un dato o instales algo |
+| **Vulnerabilidad** | Fallo de un programa que permite a otro hacer lo que no debería; se corrige actualizando |
+| **Firma digital** | Lo que solo puede hacer quien tiene la clave privada y cualquiera comprueba con la pública |
+
+#### Contraseñas (NIST SP 800-63B-4, a 16 de noviembre de 2026)
+
+| Sí | No |
+|---|---|
+| Larga: 15 caracteres o más (8 con doble factor) | Reglas de símbolos obligatorios |
+| Única en cada sitio, generada por el gestor | Cambiarla cada pocos meses sin motivo |
+| Cambiarla ya si hay filtración o sospecha | Datos personales, palabras sueltas, las de las listas |
+
+#### sha256sum
+
+| Para | Orden |
+|---|---|
+| La huella de un fichero | `sha256sum fichero` (en macOS, `shasum -a 256 fichero`) |
+| La huella de un texto, sin salto de línea | `printf '%s' "texto" \| sha256sum` |
+| Comprobar una lista de huellas | `sha256sum -c SHA256SUMS` |
+
+#### Leer un dominio
+
+Entre `://` y la primera `/`, **desde el final**. `envios.paqueteria-veloz.example` es de `paqueteria-veloz.example`; `paqueteria-veloz.example.pagos.invalid`, no.
+
+#### Secretos en un proyecto
+
+```text
+1. .gitignore con .env* y !.env.example, antes del primer commit
+2. git check-ignore -v .env      ¿lo ignora? ¿qué línea?
+3. git status --short            antes de cada git add .
+4. cp .env.example .env          y los valores de verdad, en el .env
+```
+
+#### Si se escapa un secreto, en orden
+
+1. **Anúlalo o cámbialo ya.**
+2. Crea uno nuevo y ponlo en su sitio.
+3. Mira si alguien lo ha usado.
+4. Quítalo de donde se escapó (`git rm --cached`, `.gitignore`, borrar el mensaje).
+5. Avisa.
+6. Limpiar el historial: opcional, y nunca en lugar del paso 1.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

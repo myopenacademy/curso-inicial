@@ -1091,8 +1091,36 @@
           "id": "inicial.seguridad-basica",
           "fichero": "fase-07-aprender-a-aprender/05-seguridad-basica.md",
           "titulo": "Seguridad básica",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.seguridad-basica.que-contrasena-elegirias",
+              "titulo": "Qué contraseña elegirías"
+            },
+            {
+              "id": "inicial.seguridad-basica.de-quien-es-cada-enlace",
+              "titulo": "De quién es cada enlace"
+            },
+            {
+              "id": "inicial.seguridad-basica.comprueba-los-ficheros-del-concierto",
+              "titulo": "Comprueba los ficheros del concierto"
+            },
+            {
+              "id": "inicial.seguridad-basica.el-doble-factor-de-la-tesorera",
+              "titulo": "El doble factor de la tesorera"
+            },
+            {
+              "id": "inicial.seguridad-basica.las-contrasenas-de-una-tienda-filtrada",
+              "titulo": "Las contraseñas de una tienda filtrada"
+            },
+            {
+              "id": "inicial.seguridad-basica.un-gitignore-para-varios-ficheros-env",
+              "titulo": "Un .gitignore para varios ficheros .env"
+            },
+            {
+              "id": "inicial.seguridad-basica.se-ha-escapado-la-clave-del-boletin",
+              "titulo": "Se ha escapado la clave del boletín"
+            }
+          ]
         }
       ]
     },

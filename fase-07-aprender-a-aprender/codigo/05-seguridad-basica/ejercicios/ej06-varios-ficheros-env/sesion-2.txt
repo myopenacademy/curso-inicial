@@ -1,0 +1,8 @@
+cd agenda-coro
+printf '.env*\n!.env.example\n' > .gitignore
+cat .gitignore
+git check-ignore -v .env .env.produccion .env.example
+git status --short
+git add .
+git commit -m "Primer commit, sin secretos: .gitignore y .env.example"
+git ls-files

@@ -1,0 +1,10 @@
+mkdir boletin && cd boletin && git init
+printf '.env\n' > .gitignore
+cp ../.env.example .
+printf 'CORREO_USUARIO=boletin@coroalameda.example\nCORREO_CLAVE=clave-de-prueba-123\n' > .env
+ls -a
+git check-ignore -v .env
+git status --short
+git add .
+git commit -m "Empieza el boletín del coro, con .gitignore y .env.example"
+git ls-files

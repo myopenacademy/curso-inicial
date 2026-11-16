@@ -1,0 +1,5 @@
+printf 'hola' | sha256sum
+printf 'hola' | sha256sum
+printf 'Hola' | sha256sum
+printf 'Ensayo del Coro Alameda: martes y jueves, a las 19:30' | sha256sum
+echo 'hola' | sha256sum

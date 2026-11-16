@@ -1,0 +1,7 @@
+ls
+cat SHA256SUMS
+sha256sum tarifa-2027.csv
+sha256sum -c SHA256SUMS
+echo 'Rosa roja,0.10' >> tarifa-2027.csv
+sha256sum -c SHA256SUMS
+echo $?

@@ -1,0 +1,6 @@
+mkdir agenda-coro && cd agenda-coro && git init
+printf 'AGENDA_CLAVE=escribe-aqui-la-clave\n' > .env.example
+printf 'AGENDA_CLAVE=clave-de-prueba-123\n' > .env
+printf 'AGENDA_CLAVE=clave-de-prueba-456\n' > .env.produccion
+printf '.env\n' > .gitignore
+git status --short

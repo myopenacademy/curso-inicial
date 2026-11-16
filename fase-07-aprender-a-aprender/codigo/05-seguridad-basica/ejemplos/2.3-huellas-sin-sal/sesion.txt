@@ -1,0 +1,4 @@
+cat filtrada.txt
+cut -d: -f2 filtrada.txt | sort | uniq -d
+printf '123456' | sha256sum
+grep 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92 filtrada.txt

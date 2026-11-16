@@ -155,6 +155,10 @@ Ejemplo concreto que dice qué datos se dan (entrada) y qué debe salir (salida 
 
 Caso de prueba con un valor justo en la frontera entre dos grupos de datos, o al lado de ella. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos).
 
+### Cifrar
+
+Convertir unos datos en algo ilegible para quien no tenga la clave; se deshace con la clave. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#14-qué-es-un-hash).
+
 ### Clave de API
 
 Secreto que identifica a quien usa una API; va en una cabecera y nunca en el código ni en Git. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#115-las-claves-de-una-api-fuera-del-código).
@@ -293,6 +297,10 @@ Otro nombre de la carpeta, el habitual en inglés (directory) y en mucha documen
 
 Sistema que convierte nombres de dominio, como example.com, en direcciones IP. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#111-dns-de-nombres-a-números).
 
+### Doble factor (2FA)
+
+Pedir dos pruebas de tipos distintos para entrar: algo que sabes (la contraseña) y algo que tienes o que eres. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#17-el-doble-factor).
+
 ### Documentación oficial
 
 La que publica quien hace la herramienta; la fuente más fiable, y de una versión concreta. Lo explica [07.03 Buscar ayuda](fase-07-aprender-a-aprender/03-buscar-ayuda.md#12-la-documentación-oficial).
@@ -417,6 +425,10 @@ Fichero cuyos bytes son caracteres según una codificación; se lee con cualquie
 
 Fichero que el explorador no muestra; en Linux y macOS, el que empieza por punto. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos).
 
+### Firma digital
+
+Lo que solo puede hacer quien tiene una clave privada y cualquiera comprueba con la pública; así se firman los certificados. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#112-cómo-se-protegen-los-datos-que-viajan-el-certificado-por-dentro).
+
 ### Fork
 
 Copia de un repositorio ajeno en tu cuenta, para proponer cambios al original (upstream) con pull requests. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#112-forks-contribuir-a-proyectos-ajenos).
@@ -424,6 +436,10 @@ Copia de un repositorio ajeno en tu cuenta, para proponer cambios al original (u
 ### Formato de datos
 
 Reglas para escribir datos como texto de modo que otro programa los pueda leer: JSON, YAML, CSV, XML… Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
+
+### Frase de contraseña
+
+Contraseña hecha de varias palabras al azar: larga, difícil de adivinar y fácil de recordar. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#13-frases-de-contraseña-y-gestor-de-contraseñas).
 
 ### Frontend
 
@@ -434,6 +450,10 @@ Parte de una aplicación que ve y usa la persona (pantallas, botones, formulario
 Incorporar a una rama los cambios de otra, con git merge, desde la rama que los recibe: con un avance rápido o con un commit de fusión. Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#16-fusionar-con-avance-rápido).
 
 ## G
+
+### Gestor de contraseñas
+
+Programa que genera, guarda cifradas y rellena tus contraseñas detrás de una sola contraseña maestra. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#13-frases-de-contraseña-y-gestor-de-contraseñas).
 
 ### Gestor de paquetes
 
@@ -464,6 +484,10 @@ Flujo de trabajo con ramas: rama, commits, pull request, revisión, fusión y bo
 Servicio de GitHub que publica una web estática desde un repositorio. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#115-lo-que-verás-más-adelante-pages-actions-y-gh).
 
 ## H
+
+### Hash
+
+Huella de tamaño fijo calculada a partir de unos datos (SHA-256); cambia por completo con cualquier cambio y no se puede deshacer. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#14-qué-es-un-hash).
 
 ### HEAD
 
@@ -701,6 +725,10 @@ Ejecutar varias tareas literalmente al mismo tiempo, en varios núcleos del proc
 
 Dato que recibe un subalgoritmo al llamarlo, en el mismo orden en que se pasa entre paréntesis. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#111-subalgoritmos).
 
+### Passkey
+
+Llave de acceso: par de claves ligado a una web que sustituye a la contraseña y no funciona en una web falsa. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#18-códigos-de-recuperación-y-passkeys).
+
 ### PATH
 
 Variable de entorno con la lista ordenada de carpetas donde el sistema busca los programas. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#110-el-path-dónde-busca-el-sistema-los-programas).
@@ -724,6 +752,10 @@ Lo que se le escribe a un asistente de IA (en inglés, prompt); una buena tiene 
 ### Petición HTTP
 
 Lo que envía el cliente: método, ruta, versión, cabeceras y, a veces, un cuerpo. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#14-la-petición).
+
+### Phishing
+
+Mensaje que se hace pasar por alguien de confianza para que pulses un enlace, des un dato o instales algo. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#19-phishing-el-engaño-que-llega-por-mensaje).
 
 ### PID
 
@@ -905,6 +937,10 @@ Ruta que se cuenta desde la carpeta actual, sin empezar en la raíz. Lo explica 
 
 ## S
 
+### Sal
+
+Valor aleatorio, distinto para cada usuario, que se mezcla con la contraseña antes de calcular su huella. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#15-cómo-guarda-una-web-tu-contraseña).
+
 ### Salida de error
 
 Canal aparte por el que una orden escribe sus mensajes de error y sus avisos (stderr); por defecto, a la pantalla. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#11-los-tres-canales-de-una-orden).
@@ -1062,6 +1098,10 @@ Todo el texto que un modelo de lenguaje tiene en cuenta en una petición, inclui
 ### Versionado semántico
 
 Norma para numerar versiones como MAYOR.MENOR.PARCHE según el cambio sea incompatible, nuevo y compatible, o una corrección (SemVer). Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#115-etiquetas-y-versionado-semántico).
+
+### Vulnerabilidad
+
+Fallo de un programa que permite a otro hacer lo que no debería; se corrige actualizando. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#110-actualizaciones-y-descargas-oficiales).
 
 ## W
 

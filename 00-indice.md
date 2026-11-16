@@ -1,7 +1,7 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 29 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** 30 de 31 módulos (los demás aparecen como «Pendiente»)
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
@@ -17,10 +17,10 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos · ~11 h
 - [Fase 05 — Git y GitHub](#fase-05--git-y-github) · 3 módulos · ~8,5 h
 - [Fase 06 — Internet y aplicaciones](#fase-06--internet-y-aplicaciones) · 6 módulos · ~12 h
-- [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos · ~5,5 h
+- [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos · ~7,5 h
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
-**Tiempo de los módulos disponibles:** ~64 horas.
+**Tiempo de los módulos disponibles:** ~66 horas.
 
 ---
 
@@ -111,7 +111,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Fase 07 — Aprender a aprender
 
-**Carpeta:** [`fase-07-aprender-a-aprender/`](fase-07-aprender-a-aprender/) · **Tiempo:** ~5,5 h
+**Carpeta:** [`fase-07-aprender-a-aprender/`](fase-07-aprender-a-aprender/) · **Tiempo:** ~7,5 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
@@ -119,7 +119,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 | 07.02 | [Organizar tu trabajo](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md) | Básico · Núcleo | 1,5 h | ✅ Disponible |
 | 07.03 | [Buscar ayuda](fase-07-aprender-a-aprender/03-buscar-ayuda.md) | Básico · Núcleo | 1 h | ✅ Disponible |
 | 07.04 | [Programar con asistentes de IA](fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md) | Básico · Núcleo | 2 h | ✅ Disponible |
-| 07.05 | Seguridad básica | — | — | Pendiente |
+| 07.05 | [Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md) | Básico · Núcleo | 2 h | ✅ Disponible |
 | | Retos de la fase | | | Pendiente |
 
 ---
