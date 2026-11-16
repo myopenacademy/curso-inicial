@@ -52,7 +52,7 @@ La otra regla, tan importante como la longitud: **una contraseña distinta para 
 
 Recordar una contraseña larga y distinta para cada uno de tus cincuenta sitios es imposible. Hay dos herramientas que lo resuelven, y se usan juntas.
 
-**Una frase de contraseña** (*passphrase*) es una contraseña hecha de **varias palabras al azar**: `tejado-lunes-cereza-faro-nube`. Tiene 29 caracteres, se recuerda con una imagen («un faro con un tejado, un lunes, con una cereza y una nube») y es muchísimo más difícil de adivinar que `K7#pz!Qm2v`, que nadie recuerda. La clave está en **al azar**: las palabras no deben formar una frase conocida ni tener que ver contigo. (Esta, como todas las del curso, ya está publicada: no la uses.)
+**Una frase de contraseña** (*passphrase*) es una contraseña hecha de **varias palabras al azar**: `tejado-lunes-cereza-faro-nube`. Se recuerda con una imagen («un faro con un tejado, un lunes, con una cereza y una nube») y es más o menos igual de difícil de adivinar que `K7#pz!Qm2v`, que nadie recuerda. Lo que la hace fuerte no son sus 29 caracteres: quien ataca sabe que son palabras y prueba combinaciones de palabras, no letra a letra. La hacen fuerte **cinco palabras elegidas al azar de una lista de miles**. Y la clave está en **al azar**: no las elijas tú (a todos nos salen las mismas), sino con el generador de frases de tu gestor de contraseñas o con dados y una lista de palabras; nada de una frase con sentido, una frase conocida o algo que tenga que ver contigo. Su ventaja sobre `K7#pz!Qm2v` es que **se recuerda**. (Esta, como todas las del curso, ya está publicada: no la uses.)
 
 **Un gestor de contraseñas** es un programa que **guarda todas tus contraseñas cifradas** (ilegibles sin la clave: [apartado 1.4](#14-qué-es-un-hash)) detrás de **una sola contraseña maestra**. Lo que hace por ti:
 
@@ -60,7 +60,7 @@ Recordar una contraseña larga y distinta para cada uno de tus cincuenta sitios 
 - **La rellena** cuando entras en la web. Y aquí hay un regalo de seguridad: el gestor la rellena **solo en el dominio donde la guardaste**. En una web falsa que imita a la de verdad, no la ofrece, y eso es una alarma ([apartado 1.9](#19-phishing-el-engaño-que-llega-por-mensaje)).
 - **Te avisa**, en muchos casos, si una de tus contraseñas está repetida o aparece en una filtración conocida.
 
-Los hay en los navegadores, en los sistemas operativos y como aplicaciones aparte, gratuitos y de pago; este curso no recomienda ninguno en concreto. El INCIBE lo aconseja («Para tener más seguras y controladas tus contraseñas es muy útil usar un gestor de contraseñas», a 16 de noviembre de 2026). Lo que importa al elegir: que sea de una empresa o un proyecto conocidos, que lo descargues de su web oficial y que admita el doble factor.
+Los hay en los navegadores, en algunos sistemas operativos (como los de Apple) y como aplicaciones aparte, gratuitos y de pago; este curso no recomienda ninguno en concreto. El INCIBE lo aconseja («Para tener más seguras y controladas tus contraseñas es muy útil usar un gestor de contraseñas», a 16 de noviembre de 2026). Lo que importa al elegir: que sea de una empresa o un proyecto conocidos, que lo descargues de su web oficial y que admita el doble factor.
 
 Tu **contraseña maestra** es la única que tienes que recordar, así que hazla bien: una **frase de contraseña** larga, que no uses en ningún otro sitio, y protegida además con el doble factor. Las pocas contraseñas que tienes que teclear de memoria (la de entrar en tu ordenador, la maestra) son frases; todas las demás, las genera el gestor.
 
@@ -90,9 +90,9 @@ La más usada hoy es **SHA-256** (*Secure Hash Algorithm*, de 256 bits: 64 carac
 | Para qué | Guardar o enviar datos en un formato | Comprobar que algo no ha cambiado; guardar contraseñas (con cuidado: [apartado 1.5](#15-cómo-guarda-una-web-tu-contraseña)) | Que solo lo lea quien deba |
 | Ejemplo | UTF-8, Base64 | SHA-256 | Lo que viaja por HTTPS, tu gestor de contraseñas |
 
-> **⚠️ Cuidado:** codificar **no protege nada**. Si alguna vez ves una contraseña «escondida» en Base64 (un texto como `QnJ1bm8xOTkw`), cualquiera la lee en un segundo con una orden: no hay ninguna clave.
+> **⚠️ Cuidado:** codificar **no protege nada**. Si alguna vez ves una contraseña «escondida» en Base64 (una forma de escribir cualquier dato solo con letras, números y algún signo; por ejemplo, `QnJ1bm8xOTkw`), cualquiera la lee en un segundo con una orden: no hay ninguna clave.
 
-**En los sistemas del curso:** `sha256sum` viene en Linux y en Git Bash. En macOS se usa normalmente `shasum -a 256 fichero`, que calcula la misma huella.
+**En los sistemas del curso:** `sha256sum` viene en Linux y en Git Bash. En macOS se usa normalmente `shasum -a 256 fichero`, que calcula la misma huella; si tu macOS trae también `sha256sum`, vale igual.
 
 ### 1.5. Cómo guarda una web tu contraseña
 
@@ -110,7 +110,7 @@ Lo correcto, según la guía de OWASP (*Open Worldwide Application Security Proj
 
 Cómo se programa eso es cosa del curso de cada lenguaje (se usa una biblioteca, nunca un algoritmo inventado). Lo que te llevas de aquí, como usuario:
 
-- Una web bien hecha **no puede enviarte tu contraseña** si la olvidas: no la tiene. Te envía un enlace para crear otra. Si una web te manda por correo tu contraseña de siempre, la guarda mal: no repitas esa contraseña en ningún otro sitio (que ya no deberías).
+- Una web bien hecha **no puede enviarte tu contraseña** si la olvidas: no la tiene. Te envía un enlace para crear otra. Si una web te manda por correo tu contraseña de siempre, la guarda mal: no uses esa contraseña en ningún otro sitio (ni esa ni ninguna: cada sitio, la suya).
 - Aun guardada bien, una contraseña **corta o común** se adivina antes que una larga: el algoritmo lento ayuda, pero no hace milagros con `123456`.
 
 ### 1.6. Filtraciones: qué hacer cuando le pasa a una web
@@ -145,7 +145,7 @@ Las formas más comunes, de menos a más segura:
 | Forma | Cómo funciona | Cuidado con |
 |---|---|---|
 | **Código por SMS** | La web te manda un código de un solo uso al móvil | Se puede interceptar, por ejemplo, si alguien consigue un duplicado de tu tarjeta SIM. El NIST lo considera una opción «restringida» (SP 800-63B-4) |
-| **Aplicación de códigos** | Una aplicación del móvil enseña un código de 6 cifras que cambia cada 30 segundos. Al activarlo, la web y la aplicación se quedan con un mismo secreto (lo pasa un código QR), y los dos calculan el código a partir de ese secreto y la hora, sin conexión | El código se puede dar por error en una web falsa si lo tecleas rápido ([apartado 1.9](#19-phishing-el-engaño-que-llega-por-mensaje)) |
+| **Aplicación de códigos** | Una aplicación del móvil enseña un código de 6 cifras que cambia cada 30 segundos. Al activarlo, la web y la aplicación se quedan con un mismo secreto (lo pasa un código QR), y los dos calculan el código a partir de ese secreto y la hora, sin conexión | No está ligado a la web: si escribes el código en una web falsa, quien la controla lo usa al momento en la de verdad. Antes de escribirlo, mira el dominio ([apartado 1.9](#19-phishing-el-engaño-que-llega-por-mensaje)) |
 | **Llave de seguridad o *passkey*** | Tu dispositivo demuestra quién eres con un par de claves ([apartado 1.8](#18-códigos-de-recuperación-y-passkeys)) | Es la más segura: no funciona en una web falsa |
 
 Cualquiera de las tres es **mucho mejor que ninguna**. Activa el doble factor, como mínimo, en tu **correo** (la llave de todo lo demás), en tu **gestor de contraseñas**, en **GitHub** y en tu **banco**. El INCIBE también lo aconseja: «Siempre que sea posible en un servicio online, configura la autenticación de dos factores» (a 16 de noviembre de 2026).
@@ -157,6 +157,7 @@ Cualquiera de las tres es **mucho mejor que ninguna**. Activa el doble factor, c
 **Códigos de recuperación.** Si el segundo factor es tu móvil, ¿qué pasa si lo pierdes? Al activar el doble factor, casi todas las webs te dan unos **códigos de recuperación**: unos pocos códigos largos, cada uno de **un solo uso**, que te dejan entrar sin el móvil. Trátalos como una contraseña:
 
 - **Guárdalos** al activarlos, en tu gestor de contraseñas o impresos en un sitio seguro de casa. Sin ellos y sin el móvil, recuperar la cuenta puede ser muy difícil, o imposible.
+- **Los del gestor de contraseñas y los de tu correo, nunca dentro del gestor.** Si pierdes el móvil, no podrías abrir el gestor para leerlos (y el gestor se recupera por el correo). Esos, impresos o escritos a mano, en un sitio seguro de casa. Los de las demás cuentas sí pueden ir en el gestor.
 - **No los guardes junto a la contraseña de esa misma cuenta en un sitio desprotegido** (un fichero `claves.txt` en el escritorio): quien encuentre los dos tiene la cuenta entera.
 - Cuando gastes uno, queda tachado. Si gastas casi todos, la web te deja generar otros.
 
@@ -184,7 +185,7 @@ La última es la que no engaña. Ya sabes de [02.03](../fase-02-tu-ordenador/03-
 | Enlace | ¿Es suyo? | Por qué |
 |---|---|---|
 | `https://paqueteria-veloz.example/seguimiento` | **Sí** | El dominio es `paqueteria-veloz.example` |
-| `https://envios.paqueteria-veloz.example/pago` | **Sí** | Es una parte (un subdominio) de `paqueteria-veloz.example`: termina igual |
+| `https://envios.paqueteria-veloz.example/pago` | **Sí** | Es una parte (un subdominio) de `paqueteria-veloz.example`: termina en **`.paqueteria-veloz.example`**, con el punto delante |
 | `https://paqueteria-veloz.example.pagos-pendientes.invalid/pago` | **No** | El dominio es `pagos-pendientes.invalid`: lo de delante lo puede poner quien quiera |
 | `https://paqueteria-ve1oz.example/pago` | **No** | Un `1` en lugar de la `l`: otro dominio, de otra persona |
 | `https://paqueteria-veloz-envios.example/pago` | **No** | Se parece, pero es otro dominio |
@@ -234,7 +235,7 @@ Si algo sale mal, el daño se queda en lo poco que podía tocar.
 | Te protege de | Que otro equipo de la red entre en el tuyo | Instalar o abrir algo dañino |
 | No te protege de | Lo que tú descargas y abres | Que entregues tu contraseña en una web falsa |
 
-Windows y macOS traen los dos de serie. Windows trae el antivirus Microsoft Defender Antivirus y el Firewall de Windows, que viene activado (según Microsoft Learn, consultado el 16 de noviembre de 2026); macOS trae un antivirus, XProtect, y un cortafuegos que se configura en los Ajustes del Sistema (según la guía de seguridad de plataformas de Apple, consultada el 16 de noviembre de 2026). Mantenlos **activados y actualizados**. Y ninguno de los dos sustituye a las costumbres de este módulo: ni el mejor antivirus impide que escribas tu contraseña en una web de *phishing*.
+Windows y macOS traen los dos de serie. Windows trae el antivirus Microsoft Defender Antivirus y el Firewall de Windows, que viene activado (según Microsoft Learn, consultado el 16 de noviembre de 2026); macOS trae un antivirus, XProtect (según la guía de seguridad de plataformas de Apple), y un cortafuegos: **comprueba que está activado** en el menú Apple > Ajustes del Sistema > Red > Firewall, como explica la ayuda del Mac, «Bloquear las conexiones al Mac con un cortafuegos» (las dos, consultadas el 16 de noviembre de 2026). Mantenlos **activados y actualizados**. Y ninguno de los dos sustituye a las costumbres de este módulo: ni el mejor antivirus impide que escribas tu contraseña en una web de *phishing*.
 
 ### 1.12. Cómo se protegen los datos que viajan: el certificado por dentro
 
@@ -267,7 +268,7 @@ Ya sabes qué es un [secreto](../glosario.md#secreto) y cómo se separa de la co
 
 | Secreto | Dónde se guarda |
 |---|---|
-| Tus contraseñas, tus *tokens* personales, tus códigos de recuperación | En tu **gestor de contraseñas** |
+| Tus contraseñas, tus *tokens* personales, tus códigos de recuperación | En tu **gestor de contraseñas** (menos los códigos de recuperación del propio gestor y los del correo: en papel, en casa) |
 | Los secretos de un proyecto en tu ordenador (la clave del correo, la de una API de pruebas) | En el **`.env`** del proyecto, ignorado por Git **desde el primer commit** ([ejemplo 2.4](#24-un-proyecto-con-secretos-desde-el-primer-commit)) |
 | Los de la aplicación ya publicada | En la **configuración del servidor o del servicio** donde se publica: los servicios de alojamiento y de integración continua tienen un sitio para guardar secretos, separado del código. Lo verás en tus cursos |
 | Tu clave privada SSH | En tu ordenador, en `~/.ssh`, y **nunca sale de él** ([05.03](../fase-05-git-y-github/03-github.md#15-ssh-un-par-de-claves)) |
@@ -302,7 +303,7 @@ En el [caso real de 04.04](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md
 
 Un secreto se **escapa** cuando lo ha podido ver quien no debía: subido a GitHub, pegado en un chat, en una captura, en un portátil perdido. Ya lo viste en la práctica en [05.01, ejercicio 6](../fase-05-git-y-github/01-git-fundamentos.md#ejercicio-6--una-contraseña-dentro-del-repositorio) (un `config.ini` con una contraseña en el historial) y en [05.03, error típico 3.6](../fase-05-git-y-github/03-github.md#36-subir-un-secreto-a-github) y [ejercicio 5](../fase-05-git-y-github/03-github.md#ejercicio-5--antes-de-hacer-público-el-repositorio-de-la-protectora) (antes de publicar el repositorio de la protectora). Aquí va el plan completo, **en orden**:
 
-1. **Anúlalo o cámbialo ya.** En la web del servicio, anula la clave o el *token* (la palabra que verás es *revoke*, «revocar»), o cambia la contraseña. Es **lo único que de verdad lo arregla**: desde ese momento, el que se ha escapado no sirve. Hazlo **antes** que nada, aunque solo haya estado a la vista un minuto: hay programas que recorren GitHub buscando claves y las encuentran en minutos.
+1. **Anúlalo o cámbialo ya.** En la web del servicio, anula la clave o el *token* (la palabra que verás es *revoke*, «revocar»), o cambia la contraseña. Es **lo único que de verdad lo arregla**: desde ese momento, el que se ha escapado no sirve. Hazlo **antes** que nada, aunque solo haya estado a la vista un minuto: hay programas que recorren GitHub sin parar buscando claves, así que cuenta con que ya la han visto.
 2. **Crea uno nuevo** y ponlo donde debe estar: el `.env` de cada persona, la configuración del servidor. Si lo usa más gente, dáselo por un [canal seguro](#114-pasar-un-secreto-por-un-canal-seguro).
 3. **Mira si alguien lo ha usado.** Muchos servicios enseñan un registro de actividad (accesos, peticiones, gastos). Si ves algo raro, avisa al servicio.
 4. **Arregla la causa**: quita el fichero del seguimiento de Git y añádelo al `.gitignore` (como en [05.01, ejercicio 6](../fase-05-git-y-github/01-git-fundamentos.md#ejercicio-6--una-contraseña-dentro-del-repositorio)), o borra el mensaje del chat.
@@ -334,7 +335,7 @@ $ echo 'hola' | sha256sum
 
 📁 **Código:** [`codigo/05-seguridad-basica/ejemplos/2.1-la-huella-de-un-texto/`](codigo/05-seguridad-basica/ejemplos/2.1-la-huella-de-un-texto/)
 
-Cada línea de `sha256sum` es la huella, dos espacios y el nombre de lo que ha resumido; el `-` quiere decir «lo que me ha llegado por la entrada», porque no le has dado un fichero. Fíjate en las cuatro propiedades del [apartado 1.4](#14-qué-es-un-hash):
+Cada línea de `sha256sum` es la huella, dos espacios y el nombre de lo que ha resumido; el `-` quiere decir «lo que me ha llegado por la entrada», porque no le has dado un fichero. (En Git Bash puede salir un `*` pegado delante del nombre, en lugar del segundo espacio: la huella es la misma.) Fíjate en las cuatro propiedades del [apartado 1.4](#14-qué-es-un-hash):
 
 - **Siempre la misma:** `hola` da la misma huella las dos veces. En tu ordenador, también: haz la prueba y compara.
 - **Efecto avalancha:** `Hola`, con una sola letra distinta, da una huella que no se parece en nada.
@@ -377,7 +378,7 @@ Si no coincide, **no uses el fichero**: vuelve a descargarlo de la web oficial y
 
 ### 2.3. Por qué un hash rápido y sin sal no protege
 
-La tienda de discos Vinilo Azul (inventada) guardaba las contraseñas de sus clientes como en el ejemplo anterior: la huella SHA-256 de cada una, sin sal. Alguien se llevó la tabla. Así se vería desde fuera:
+La tienda de discos Vinilo Azul (inventada) guardaba las contraseñas de sus clientes como en el [ejemplo 2.1](#21-la-huella-de-un-texto): la huella SHA-256 de cada una, sin sal. Alguien se llevó la tabla. Así se vería desde fuera:
 
 **En tu terminal** (`sesion.txt`):
 
@@ -401,7 +402,7 @@ coral:8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
 Con los [filtros de 03.02](../fase-03-herramientas/02-terminal-sacarle-partido.md#16-los-filtros-grep-sort-uniq-wc-cut-head-y-tail):
 
 - `cut -d: -f2` se queda con las huellas; `sort | uniq -d` enseña las que están **repetidas**. Sin abrir ninguna, ya se sabe que dos clientes tienen la misma contraseña. Sin sal, eso se ve a simple vista.
-- Y no hace falta deshacer la huella: basta **probar**. La contraseña más común del mundo, `123456`, da justo esa huella, y `grep` dice de quién es. Con una lista de miles de contraseñas comunes y un SHA-256 tan rápido, se prueban todas en un momento.
+- Y no hace falta deshacer la huella: basta **probar**. Una de las contraseñas más usadas, `123456`, da justo esa huella, y `grep` dice de quién es. Con una lista de miles de contraseñas comunes y un SHA-256 tan rápido, se prueban todas en un momento.
 - Dimas, con su frase de contraseña de cinco palabras al azar, no aparece en ninguna lista: su huella sigue sin decir nada.
 
 Con un algoritmo lento y sal ([apartado 1.5](#15-cómo-guarda-una-web-tu-contraseña)), Aroa y Coral tendrían huellas distintas, y probar cada contraseña costaría muchísimo más, y una vez **por cada cliente**.
@@ -542,7 +543,7 @@ Celia no pulsa. Abre la aplicación de la paquetería, como siempre, busca su en
 - **Una contraseña distinta para cada sitio**, larga y generada por un **gestor de contraseñas**; de memoria, solo unas pocas **frases de contraseña**.
 - **No cambies las contraseñas por cambiar**; cámbialas **ya** si hay una filtración o una sospecha.
 - **Doble factor** en el correo, el gestor de contraseñas, GitHub y el banco, como mínimo; mejor con una aplicación o una llave que por SMS. Y ***passkeys*** donde te las ofrezcan.
-- **Guarda los códigos de recuperación** fuera del móvil, en cuanto actives el doble factor.
+- **Guarda los códigos de recuperación** fuera del móvil, en cuanto actives el doble factor; los del gestor y los del correo, en papel.
 - **Lee el dominio** antes de pulsar un enlace o escribir una contraseña; si el gestor no rellena, para.
 - **Nunca des un código, una contraseña ni los datos de la tarjeta** a quien te los pide por mensaje o por teléfono.
 - **Actualiza** el sistema y los programas, y descarga solo de la **web oficial**; comprueba la huella cuando la publiquen.
@@ -613,7 +614,7 @@ Y una más: el enlace 3 abre una web idéntica a la del coro, con su candado. ¿
 <details>
 <summary>Pista 1</summary>
 
-Busca la primera `/` después de `https://`. El dominio es lo que va justo antes, y se lee **desde el final**. Para ser del coro, tiene que terminar exactamente en `coroalameda.example`.
+Busca la primera `/` después de `https://`. El dominio es lo que va justo antes, y se lee **desde el final**. Para ser del coro, tiene que ser exactamente `coroalameda.example` o terminar en **`.coroalameda.example`**, con el punto delante: `micoroalameda.example` sería otro dominio.
 
 </details>
 
@@ -625,7 +626,7 @@ Busca la primera `/` después de `https://`. El dominio es lo que va justo antes
 | # | Lo que hay antes de la primera `/` | ¿Del coro? | Por qué |
 |---|---|---|---|
 | 1 | `coroalameda.example` | **Sí** | Es su dominio |
-| 2 | `socios.coroalameda.example` | **Sí** | Termina en `coroalameda.example`: es una parte de su web |
+| 2 | `socios.coroalameda.example` | **Sí** | Termina en `.coroalameda.example`, con el punto: es una parte de su web |
 | 3 | `coroalameda.example.cuotas-socios.invalid` | **No** | Termina en `cuotas-socios.invalid`. El nombre del coro va delante para engañar |
 | 4 | `coro-alameda.example` | **No** | Con un guion es **otro** dominio, aunque se parezca |
 | 5 | `www.coroalameda.example` | **Sí** | `www` es una parte más de su web |
@@ -709,7 +710,7 @@ Celia es la tesorera del Coro Alameda. Gestiona el correo del coro, la cuenta de
 
 1. En el banco solo le ofrecen códigos por SMS. ¿Merece la pena activarlo, o mejor esperar a algo más seguro?
 2. Para el correo y GitHub puede elegir entre SMS, una aplicación de códigos y una llave de seguridad. ¿Qué le recomiendas?
-3. Al activarlo, GitHub le da diez códigos de recuperación. Pensaba guardarlos en una nota del móvil. ¿Buena idea?
+3. Al activarlo, GitHub le da una lista de códigos de recuperación. Pensaba guardarlos en una nota del móvil. ¿Buena idea?
 4. Un día le llega una notificación de «¿Eres tú quien intenta entrar en el correo?» mientras está en el ensayo, sin el ordenador. ¿Qué hace?
 5. Otro socio le pregunta para qué sirve todo esto si su contraseña ya es larga y única. ¿Qué le contesta?
 
@@ -724,8 +725,8 @@ Repasa la tabla de formas del doble factor ([apartado 1.7](#17-el-doble-factor))
 <summary>Ver solución</summary>
 
 1. **Sí, que lo active ya.** El SMS es la forma menos segura, pero es **mucho mejor que nada**: con él, la contraseña sola ya no basta. Si un día el banco ofrece otra forma, que cambie.
-2. **La aplicación de códigos o, mejor aún, la llave de seguridad** (o una *passkey*, si se la ofrecen): la llave no funciona en una web falsa. Como el correo es la llave de todo lo demás, merece la mejor opción disponible.
-3. **No.** Si pierde el móvil, pierde a la vez el segundo factor y los códigos para recuperarlo. Mejor en su gestor de contraseñas (si no está solo en ese móvil) o impresos y guardados en casa.
+2. **La aplicación de códigos y, además, la llave de seguridad** (o una *passkey*, si se la ofrecen): la llave no funciona en una web falsa. En GitHub, la aplicación de códigos (o el SMS) va primero, y la llave o la *passkey* se añaden después, como otro método (según su documentación, a 16 de noviembre de 2026). Como el correo es la llave de todo lo demás, merece la mejor opción disponible.
+3. **No.** Si pierde el móvil, pierde a la vez el segundo factor y los códigos para recuperarlo. Los de GitHub pueden ir en su gestor de contraseñas (si puede abrirlo sin ese móvil) o impresos y guardados en casa. Los del correo y los del propio gestor, en papel: si no, perder el móvil la dejaría fuera de todo.
 4. **No la aprueba.** Si no está entrando ella, alguien tiene su contraseña. La rechaza y, en cuanto pueda, cambia la contraseña del correo y revisa las sesiones abiertas.
 5. Que una contraseña buena **también se roba**: en una web de *phishing* o en una filtración de un sitio que la guardaba mal. El doble factor es lo que protege **cuando la contraseña ya no es secreta**, y eso no depende de lo buena que sea.
 
@@ -756,7 +757,7 @@ Para cada contraseña de la lista, calcula su huella (sin salto de línea) y bus
 <details>
 <summary>Pista 2</summary>
 
-`sha256sum` escribe la huella, dos espacios y un `-`. Con `cut -d' ' -f1` te quedas solo con la huella. Y `grep ":$huella\$"` busca las líneas que terminan (`$`) en `:` y esa huella.
+`sha256sum` escribe la huella, dos espacios y un `-` (en Git Bash puede salir `*-` en lugar del segundo espacio). Con `cut -d' ' -f1` te quedas solo con la huella, en los dos casos. Y `grep ":$huella\$"` busca las líneas que terminan (`$`) en `:` y esa huella.
 
 </details>
 
@@ -798,8 +799,8 @@ fausto usa «vinilo»
 **2. Los que no aparecen** (Blas, Dimas y Gema) no usan una contraseña de **esta** lista. Pero no están igual de a salvo:
 
 - **Blas** (`Blas1990`, aunque tú no lo sabes) usa su nombre y un año: está en listas más grandes, o se adivina probando nombres y años.
-- **Gema** usa una de 10 caracteres aleatorios (`K7#pz!Qm2v`). No está en ninguna lista, pero con un SHA-256 tan rápido se pueden probar **todas** las combinaciones de esa longitud con equipos potentes. Es corta.
-- **Dimas** usa una frase de cinco palabras al azar: ni está en listas ni se puede probar todo. Es la única tranquila.
+- **Gema** usa una de 10 caracteres aleatorios (`K7#pz!Qm2v`). No está en ninguna lista, y probar **todas** las combinaciones de 10 caracteres es un trabajo enorme, incluso con un SHA-256 rápido. Está bastante a salvo de este ataque, pero es corta para ir sin doble factor ([apartado 1.2](#12-contraseñas-largas-y-únicas)) y difícil de recordar.
+- **Dimas** usa una frase de cinco palabras elegidas al azar: tampoco está en listas, y probar todas las combinaciones de cinco palabras de una lista de miles cuesta parecido ([apartado 1.3](#13-frases-de-contraseña-y-gestor-de-contraseñas)). Su ventaja sobre la de Gema es que se recuerda sin apuntarla.
 
 Aun así, **los ocho deberían cambiarla**: su contraseña ha salido de la tienda, y si la repiten en otro sitio, también.
 
@@ -807,13 +808,14 @@ Aun así, **los ocho deberían cambiarla**: su contraseña ha salido de la tiend
 
 - Aroa y Coral tendrían **huellas distintas**: no se vería que comparten contraseña.
 - No se podría calcular una vez la huella de `123456` y buscarla: habría que calcularla **para cada usuario**, con su sal.
-- Y cada cálculo sería lentísimo comparado con un SHA-256. Probar diez contraseñas no costaría nada, pero probar millones, sí: Dimas y probablemente Gema estarían a salvo. Las de la lista corta (`123456`, `qwerty`) seguirían cayendo: **ningún algoritmo salva una contraseña común**.
+- Y cada cálculo sería lentísimo comparado con un SHA-256. Probar diez contraseñas no costaría nada, pero probar millones, sí: Dimas y Gema, que ya eran difíciles de encontrar, lo serían todavía más. Las de la lista corta (`123456`, `qwerty`) seguirían cayendo: **ningún algoritmo salva una contraseña común**.
 
 **Errores frecuentes al resolverlo:**
 
 - Usar `echo "$contrasena" | sha256sum`: la huella incluye el salto de línea y no encuentra a nadie.
 - Buscar con `grep "$huella"` sin anclar: aquí funciona, pero `":$huella\$"` busca justo la huella entera al final de la línea, que es lo correcto.
 - Pensar que quien no aparece está a salvo: solo no está en **esta** lista.
+- En macOS, si no tienes `sha256sum`, cámbialo en el script por `shasum -a 256`, que escribe la huella de la misma forma.
 
 </details>
 
@@ -893,7 +895,7 @@ $ git ls-files
 
 - `git check-ignore -v` da una línea por fichero: `.env` y `.env.produccion` los ignora la línea 1 (`.env*`). Para `.env.example`, la línea que lo decide es la 2, **`!.env.example`**: el `!` quiere decir que esa línea lo **saca** de los ignorados. Así que `.env.example` **no** está ignorado.
 - `git status` lo confirma: solo `.env.example` y `.gitignore`. Después del commit, `git ls-files` dice lo mismo.
-- Es el mismo patrón que usa el `.gitignore` de este curso. (Tu identificador de commit será otro.)
+- El `.gitignore` de este curso hace lo mismo con tres líneas (`.env`, `.env.*` y `!.env.example`). (Tu identificador de commit será otro.)
 
 **Errores frecuentes al resolverlo:**
 
@@ -1001,7 +1003,7 @@ Para la segunda parte, piensa en el [apartado 1.14](#114-pasar-un-secreto-por-un
 
 ### Leer un dominio
 
-Entre `://` y la primera `/`, **desde el final**. `envios.paqueteria-veloz.example` es de `paqueteria-veloz.example`; `paqueteria-veloz.example.pagos.invalid`, no.
+Entre `://` y la primera `/`, **desde el final**. `envios.paqueteria-veloz.example` es de `paqueteria-veloz.example` (termina en `.paqueteria-veloz.example`, con el punto); `paqueteria-veloz.example.pagos.invalid`, no; `mipaqueteria-veloz.example`, tampoco: sin el punto, es otro dominio.
 
 ### Secretos en un proyecto
 
