@@ -77,7 +77,7 @@ git config --global user.name "Lucía Martín"
 git config --global user.email "lucia@example.com"
 ```
 
-Escribe **tu** nombre y **tu** correo. El nombre puede llevar espacios y tildes (por eso va entre comillas). El correo conviene que sea el mismo que usarás en GitHub ([05.03](03-github.md)), para que GitHub reconozca tus versiones como tuyas.
+Escribe **tu** nombre y **tu** correo. El nombre puede llevar espacios y tildes (por eso va entre comillas). El correo conviene que sea el mismo que usarás en GitHub ([05.03](03-github.md)), para que GitHub reconozca tus versiones como tuyas. Ten en cuenta que ese correo irá **en cada commit**, y que si algún día subes el repositorio a un sitio público, cualquiera podrá verlo; en [05.03, apartado 1.3](03-github.md#13-tu-cuenta-de-github) verás cómo usar para eso el que te da GitHub.
 
 `--global` quiere decir «para todos mis proyectos de este ordenador». Git lo guarda en un fichero de configuración de tu carpeta personal, **`~/.gitconfig`**, que es un [fichero oculto](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos) con el formato INI que viste en [04.04](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#113-ficheros-de-configuración-properties-ini-y-toml): secciones entre corchetes y `nombre = valor` debajo. Lo verás en el [ejemplo 2.1](#21-configurar-git).
 

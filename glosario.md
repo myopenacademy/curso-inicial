@@ -293,6 +293,10 @@ Las diferencias entre dos versiones de un fichero de texto, línea a línea: con
 
 Número que identifica a un equipo dentro de una red: cuatro números en IPv4 (192.168.1.37) o grupos hexadecimales en IPv6 (2001:db8::25). Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#15-la-dirección-ip).
 
+### Dirección noreply de GitHub
+
+Dirección de correo que GitHub da a cada cuenta (`ID+usuario@users.noreply.github.com`) para firmar los commits sin publicar tu correo personal. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#13-tu-cuenta-de-github).
+
 ### Directorio
 
 Otro nombre de la carpeta, el habitual en inglés (directory) y en mucha documentación. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#12-cómo-se-escribe-una-orden).

@@ -77,6 +77,15 @@ Lo que te da la cuenta **gratuita** (el plan **GitHub Free**), según la documen
 
 > **📌 Nota:** según su documentación (a 16 de noviembre de 2026), GitHub pide la **verificación en dos pasos** (*two-factor authentication*, 2FA) a quienes suben código y la recomienda a todo el mundo: además de la contraseña, un código de una aplicación del móvil o una llave de seguridad. Actívala en cuanto puedas. Qué es y por qué protege tanto lo verás en [Seguridad básica](../fase-07-aprender-a-aprender/05-seguridad-basica.md), en la fase 7.
 
+**Tu correo, a la vista.** Cada commit lleva el nombre y el correo que pusiste en Git ([05.01, 1.4](01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres)), y en un repositorio público los puede leer cualquiera que lo clone. Para no publicar tu correo, GitHub te da una dirección que no es un buzón tuyo: según su documentación (a 16 de noviembre de 2026), tiene la forma `ID+TU-USUARIO@users.noreply.github.com`, donde `ID` es un número de tu cuenta. Antes del **primer `git push`** a GitHub:
+
+1. En la foto de tu perfil, **Settings**; en el apartado **Access** de la barra lateral, **Emails**.
+2. Marca **Keep my email addresses private**. Así, lo que hagas en la web de GitHub (editar un fichero, fusionar una *pull request*) se firma con esa dirección. Tu dirección completa, con su número, la encontrarás en esa misma página.
+3. Marca también **Block command line pushes that expose my email**: GitHub rechazará un `git push` si el último commit lleva como autor un correo privado de tu cuenta.
+4. Dile a Git que firme con ella, con `git config --global user.email "ID+TU-USUARIO@users.noreply.github.com"` (con tu dirección), y compruébalo con `git config --global user.email`.
+
+El cambio solo vale para los commits que hagas desde entonces: los de antes conservan el correo que tenían. Con el nombre pasa lo mismo: si prefieres que no salga el tuyo, pon tu usuario de GitHub en `user.name`.
+
 **Crear un repositorio en GitHub** se hace desde la web (a 16 de noviembre de 2026): el icono **+** de arriba a la derecha, **New repository**; eliges el dueño (**Owner**: tu cuenta), el nombre (**Repository name**: letras sin tildes, cifras, `.`, `-` y `_`), una descripción si quieres, si es público o privado, y **Create repository**. El formulario ofrece además crear el repositorio con un README, un `.gitignore` y una licencia. **Si ya tienes el repositorio en tu ordenador, no marques nada de eso**: el de GitHub tiene que nacer **vacío**, para recibir tu historial tal cual (verás lo que pasa si no en el [error típico 3.4](#34-crear-el-repositorio-de-github-con-un-readme)).
 
 > **📌 Nota:** la web de GitHub está **en inglés**, y sus menús cambian de sitio de vez en cuando. Los nombres de este módulo son los de su documentación a 16 de noviembre de 2026; si no encuentras uno, búscalo en `https://docs.github.com`, que siempre está al día.
@@ -738,6 +747,8 @@ $ git log --oneline --graph
 ### 2.7. Conectarte a GitHub de verdad
 
 Este ejemplo **no se puede comprobar** en la terminal del curso (no tiene GitHub ni internet, y `ssh-keygen` da cada vez una clave distinta): sus salidas son **de ejemplo**, a 16 de noviembre de 2026. Hazlo en tu ordenador cuando tengas tu cuenta.
+
+Antes del primer `git push`, comprueba con `git config user.email` que Git firmará con la dirección que te da GitHub ([apartado 1.3](#13-tu-cuenta-de-github)): lo que subas a un repositorio público lo verá cualquiera.
 
 **Opción A: HTTPS (lo recomendado en Windows).** Crea en la web un repositorio **vacío** ([apartado 1.3](#13-tu-cuenta-de-github)) y copia su dirección HTTPS. En la carpeta de tu repositorio:
 
@@ -1534,6 +1545,7 @@ CLAVE_CORREO=gatitos2026
 | Para | Dónde |
 |---|---|
 | Crear un repositorio | **+ > New repository** (vacío si ya lo tienes en tu ordenador) |
+| Que tus commits no enseñen tu correo | **Settings > Emails > Keep my email addresses private** (y **Block command line pushes that expose my email**); en Git, `git config --global user.email` con la dirección `…@users.noreply.github.com` |
 | Abrir una *pull request* | Aviso **Compare & pull request** tras subir una rama |
 | Revisar | **Files changed**; al terminar, **Comment**, **Approve** o **Request changes** |
 | Fusionar | **Merge pull request**, **Squash and merge** o **Rebase and merge** |
