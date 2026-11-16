@@ -27,6 +27,10 @@ Leer un texto escrito en un formato (JSON, YAML…) y convertirlo en datos que u
 
 Identificador de un título que se genera a partir de su texto y permite enlazar a esa sección (#cómo-hacerse-socio). Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#19-anclas-enlazar-a-un-título).
 
+### API
+
+La puerta por la que un programa le pide datos o servicios a otro, por ejemplo a un servidor; se ve a fondo en la fase 6. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
+
 ### Argumento
 
 Lo que se escribe detrás del nombre de una orden (o de un script) para decirle sobre qué trabajar: un fichero, una carpeta, un texto. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#12-cómo-se-escribe-una-orden).
@@ -60,6 +64,10 @@ Dato con nombre y valor entre comillas dentro de la etiqueta de apertura de un e
 ### Bash
 
 Lenguaje de órdenes de la terminal de Linux, de Git Bash y de casi todos los servidores. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
+
+### Biblioteca
+
+Código ya hecho que un programa usa para una tarea concreta (leer YAML, trabajar con fechas…); en inglés, library, que a veces se traduce mal como «librería». Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#112-los-tipos-que-adivina-yaml-las-versiones-11-y-12).
 
 ### BOM
 

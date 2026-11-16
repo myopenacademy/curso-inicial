@@ -34,6 +34,8 @@ Para eso están **JSON** y **YAML**, los dos formatos más usados para datos est
 | **Configurar** un programa o una herramienta (lo escribe una persona) | YAML (y a veces JSON) | Los servicios que arranca Docker, los pasos de GitHub Actions |
 | **Guardar datos** en un fichero para leerlos después | JSON (y a veces YAML) | Las preferencias de un programa, una copia de seguridad de unas reservas |
 
+Una **API** es la puerta por la que un programa le pide datos o servicios a otro, por ejemplo a un servidor; la verás en la fase 6.
+
 > **📌 Nota:** convertir los datos de la memoria en texto para guardarlos o enviarlos se llama **serializar**, y hacer lo contrario, leer un texto y convertirlo en datos, **analizar** o *parsear* (del inglés *parse*). El programa que lo lee se llama **analizador** o *parser*. No hace falta que te aprendas las palabras; sí la idea: **quien lee un JSON o un YAML es un programa**, y un programa no adivina lo que querías decir. Si el texto no sigue las reglas, no lo lee.
 
 ### 1.2. Las tres piezas: valores, listas y objetos
@@ -44,7 +46,7 @@ Los datos estructurados se construyen siempre con **tres piezas**. Ya las conoce
 |---|---|---|---|---|
 | **Valor suelto** | Un dato de un [tipo](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#tipos-de-datos): un texto, un número, verdadero o falso | `"Huesca"`, `1987`, `VERDADERO` | Valor (texto, número, booleano, `null`) | Escalar |
 | **Lista** | Varios valores **en orden** | `[1250, 980, 1430]` | Array (lista) | Secuencia (lista) |
-| **Objeto** | Un dato **con partes con nombre**: cada parte es un par **clave: valor** | `pedido.libros` | Objeto | Mapa |
+| **Objeto** | Un dato **con partes con nombre**: cada parte es un par **clave: valor** | Un dato con partes (`pedido`, con su código, sus libros…; se lee `pedido.libros`) | Objeto | Mapa |
 
 Un **par clave-valor** es un nombre (la **clave**) y el dato que le corresponde (el **valor**): `"ciudad": "Huesca"` dice que la parte llamada `ciudad` vale `"Huesca"`. Es como una ficha de papel con casillas: la etiqueta de la casilla es la clave y lo que escribes dentro, el valor.
 
@@ -157,7 +159,7 @@ JSON es **muy estricto**, y a propósito: como lo leen programas de todo tipo, c
 | Números con **punto** decimal y **sin ceros delante** | `12,50`, `012` | `12.50`, `12` (o `"012"` si es un texto) |
 | `true`, `false` y `null`, **en minúsculas** | `True`, `NULL` | `true`, `null` |
 | Dentro de un texto, la comilla doble y la barra invertida se **escapan** con `\` | `"dijo "hola""` | `"dijo \"hola\""` |
-| **Un solo valor** de primer nivel: todo va dentro de un objeto o de una lista | `{"a": 1} {"b": 2}` | `[{"a": 1}, {"b": 2}]` |
+| **Un solo valor** de primer nivel: si hay varios datos, van dentro de un objeto o de una lista | `{"a": 1} {"b": 2}` | `[{"a": 1}, {"b": 2}]` |
 
 Sobre la penúltima fila, [escapar](02-markdown.md#114-escapar-caracteres) en JSON se hace también con la barra invertida: dentro de un texto, `\"` es una comilla doble, `\\` es una barra invertida y `\n` es un salto de línea. Por eso una ruta de Windows en JSON se escribe `"C:\\Users\\ana"`: cada barra, doblada.
 
@@ -328,7 +330,7 @@ En JSON, el tipo de cada valor se ve en cómo está escrito: con comillas, texto
 | `null`, `~` o nada detrás de los dos puntos | Nulo |
 | `"1987"`, `"true"`, `"null"` | Texto: las comillas mandan |
 
-El problema viene cuando un **texto parece otra cosa**. Y aquí importan las versiones: la **YAML 1.1** adivinaba mucho más que la **1.2**. Esto es lo que pasa con unos valores reales, probado el 9 de noviembre de 2026 con PyYAML 6.0.3 (un lector muy usado, de Python, que sigue la 1.1) y con la biblioteca `yaml` 2.8.3 (de JavaScript, que sigue la 1.2):
+El problema viene cuando un **texto parece otra cosa**. Y aquí importan las versiones: la **YAML 1.1** adivinaba mucho más que la **1.2**. Esto es lo que pasa con unos valores reales, probado el 9 de noviembre de 2026 con dos **bibliotecas** (código ya hecho que un programa usa para una tarea concreta; aquí, leer YAML): PyYAML 6.0.3, muy usada en Python, que sigue la 1.1, y `yaml` 2.8.3, de JavaScript, que sigue la 1.2:
 
 | Escrito sin comillas | Querías el texto | Con YAML 1.1 | Con YAML 1.2 |
 |---|---|---|---|
@@ -371,7 +373,7 @@ Aquí hay una diferencia importante con JSON: **VS Code, de serie, no comprueba 
 
 Lo que sí hace de serie, y ayuda mucho: en los ficheros YAML, la tecla <kbd>Tab</kbd> **escribe espacios** (dos), no un tabulador. Los tabuladores se cuelan sobre todo al **copiar y pegar** desde otro sitio.
 
-Para que VS Code compruebe los YAML como comprueba los JSON, hace falta una **extensión**: la de YAML de **Red Hat**, que ya viste recomendada en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#111-extensiones-útiles-para-este-curso). Antes de instalarla, aplica los criterios de [03.03, apartado 1.10](../fase-03-herramientas/03-editor-de-codigo.md#110-extensiones-ampliar-el-editor-con-cuidado). En el Marketplace oficial, a 9 de noviembre de 2026: se llama **YAML**, la publica **Red Hat** (`redhat.com`) y tiene unos **29,9 millones** de instalaciones. Según su página, «detecta si el fichero entero es YAML válido», y además autocompleta y comprueba ficheros conocidos.
+Para que VS Code compruebe los YAML como comprueba los JSON, hace falta una **extensión**: la de YAML de **Red Hat**, que ya viste recomendada en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#111-extensiones-útiles-para-este-curso). Antes de instalarla, aplica los criterios de [03.03, apartado 1.10](../fase-03-herramientas/03-editor-de-codigo.md#110-extensiones-ampliar-el-editor-con-cuidado). En el Marketplace se llama **YAML** y la publica **Red Hat** (`redhat.com`). Según su página (a 9 de noviembre de 2026), «detecta si el fichero entero es YAML válido», y además autocompleta y comprueba ficheros conocidos.
 
 Con la extensión, los errores salen igual que en JSON: subrayados en rojo y en el panel **Problems**. Sus mensajes vienen **en inglés** (no tiene traducción al español). Los más habituales, comprobados con el lector que usa la extensión el 9 de noviembre de 2026:
 
@@ -385,7 +387,7 @@ Con la extensión, los errores salen igual que en JSON: subrayados en rojo y en 
 
 > **⚠️ Cuidado:** la extensión lee los ficheros como **YAML 1.2** salvo que cambies su ajuste `yaml.yamlVersion` (según su documentación, a 9 de noviembre de 2026). Así que **no te avisará** de que `pais: NO` sería `false` para un programa que lea con la 1.1: para ella, es un texto correcto. Las trampas del [apartado 1.12](#112-los-tipos-que-adivina-yaml-las-versiones-11-y-12) se evitan con comillas, no con el editor.
 
-> **📌 Nota:** fuera del editor existen programas de terminal para comprobar y consultar JSON y YAML, como `jq` (para JSON) o `yq` (para YAML). No vienen con Git Bash ni con macOS, y para este curso no los necesitas: con VS Code tienes bastante.
+> **📌 Nota:** fuera del editor existen programas de terminal para comprobar y consultar JSON y YAML, como `jq` (para JSON) o `yq` (para YAML). No vienen con Git Bash (algunas versiones recientes de macOS pueden traer `jq`, pero no `yq`), y para este curso no los necesitas: con VS Code tienes bastante.
 
 ### 1.15. El mismo dato en JSON y en YAML
 
@@ -544,7 +546,7 @@ $ grep -c carnet club-compacto.json
 - **Son el mismo dato:** las mismas claves y los mismos valores. Solo cambian los espacios y los saltos de línea, que en JSON no cuentan ([apartado 1.7](#17-los-espacios-y-el-orden)).
 - **`wc -l`** cuenta líneas: 27 la formateada y 1 la compacta. **`wc -c`** cuenta bytes: la compacta ocupa alrededor de una cuarta parte menos (411 frente a 553). Con un fichero de miles de socios, esa diferencia es la que hace que los servidores manden el JSON compacto.
 - **Un JSON es texto**: `head`, `grep` y el resto de los filtros de [03.02](../fase-03-herramientas/02-terminal-sacarle-partido.md#16-los-filtros-grep-sort-uniq-wc-cut-head-y-tail) funcionan con él.
-- **Pero `grep` trabaja por líneas**: en la versión formateada encuentra los dos carnets, cada uno en su línea; en la compacta, `grep -c` dice **1**, porque todo el fichero es una sola línea. Para mirar un JSON compacto, mejor ábrelo en VS Code y dale formato (<kbd>Mayús</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> en Windows).
+- **Pero `grep` trabaja por líneas**: en la versión formateada encuentra los dos carnets, cada uno en su línea; en la compacta, `grep -c` dice **1**, porque todo el fichero es una sola línea. Para mirar un JSON compacto, mejor ábrelo en VS Code y dale formato (**Format Document**, [apartado 1.7](#17-los-espacios-y-el-orden)).
 
 ### 2.4. El mismo club en YAML
 
@@ -813,7 +815,7 @@ El caso contrario, **olvidar el espacio después de los dos puntos**, no siempre
 nombre:Lucía
 ```
 
-Esto se lee sin problemas… como **un texto suelto**, `"nombre:Lucía"`, no como una clave con su valor. Si hay más líneas debajo, el fichero falla; si no, el programa recibirá algo que no esperaba. Mira siempre que haya un espacio detrás de los dos puntos.
+Esto se lee sin problemas… como **un texto suelto**, `"nombre:Lucía"`, no como una clave con su valor. Si la línea de debajo es una clave bien escrita (con su espacio), el fichero falla; si también le falta el espacio, se junta todo en un solo texto, sin error (comprobado con PyYAML el 16 de noviembre de 2026). Mira siempre que haya un espacio detrás de los dos puntos.
 
 ### 3.8. YAML cambia el tipo de un valor
 
@@ -1050,7 +1052,7 @@ Fíjate en el error de la línea 6: el aviso sale **en la columna del `40`**, no
 
 - Encontrar tres y dar el fichero por bueno: después de corregir, **comprueba otra vez** en el panel **Problems**, hasta que diga 0.
 - «Arreglar» `2,40` como `"2,40"`: el fichero se lee, pero el precio pasa a ser un texto y el programa no podrá sumarlo.
-- Quitar la coma de la línea 7 en lugar de la de la 10. La de la línea 7 es la que cierra la lista y no tiene coma detrás, porque es el último elemento: está bien.
+- Quitar la coma de la línea 8 (`],`) en lugar de la de la 10: esa coma separa la lista `lineas` de la clave `pagado` y está bien. La línea 7, el último elemento de la lista, ya va sin coma.
 
 </details>
 
@@ -1293,7 +1295,7 @@ Ahora `inscritos` es una lista de dos mapas, cada uno con su `nombre` y su `fede
 
 Elena lleva la Casa Rural El Roble, en el Pirineo, y apunta las reservas en una libreta. Quiere pasarlas a una aplicación de reservas, que las importa en **JSON**, y guardar además una copia en **YAML** que pueda leer y corregir ella misma, con algún comentario. Estas son las de diciembre:
 
-- **R-0107**: Elena Torres, teléfono 612 345 678. Llega el 5 de diciembre de 2026, 2 noches, 4 personas, sin mascota. Ha pedido desayuno y leña. Sin comentarios.
+- **R-0107**: Carmen Torres, teléfono 612 345 678. Llega el 5 de diciembre de 2026, 2 noches, 4 personas, sin mascota. Ha pedido desayuno y leña. Sin comentarios.
 - **R-0108**: Pablo Navarro, teléfono 698 765 432. Llega el 19 de diciembre de 2026, 3 noches, 2 personas, con mascota. No ha pedido extras. Comentario: «Llegarán tarde, hacia las 22:00».
 
 1. Escribe `reservas.json`: un objeto con el nombre de la casa (`casa`) y una lista `reservas`, con un objeto por reserva. Decide las claves y los tipos.
@@ -1311,13 +1313,6 @@ Antes de escribir, decide el tipo de cada dato: ¿con cuáles se calcula (noches
 <summary>Pista 2</summary>
 
 En el YAML, piensa en los teléfonos, las fechas y la hora del comentario de Pablo. Repasa los apartados [1.11](#111-comentarios-comillas-y-textos-largos) y [1.12](#112-los-tipos-que-adivina-yaml-las-versiones-11-y-12).
-
-</details>
-
-<details>
-<summary>Pista 3</summary>
-
-Para comprobar que los dos ficheros dicen lo mismo, ponlos uno al lado del otro en VS Code (arrastra la pestaña de uno hasta el borde derecho del editor) y recórrelos clave a clave.
 
 </details>
 
@@ -1344,7 +1339,7 @@ Para comprobar que los dos ficheros dicen lo mismo, ponlos uno al lado del otro 
   "reservas": [
     {
       "codigo": "R-0107",
-      "huesped": "Elena Torres",
+      "huesped": "Carmen Torres",
       "telefono": "612345678",
       "llegada": "2026-12-05",
       "noches": 2,
@@ -1377,7 +1372,7 @@ Para comprobar que los dos ficheros dicen lo mismo, ponlos uno al lado del otro 
 casa: Casa Rural El Roble
 reservas:
   - codigo: R-0107
-    huesped: Elena Torres
+    huesped: Carmen Torres
     telefono: "612345678"    # texto: nadie suma teléfonos
     llegada: "2026-12-05"    # entre comillas, para que sea texto
     noches: 2
@@ -1404,8 +1399,8 @@ Se ha comprobado que los dos ficheros **se leen como el mismo dato**.
 
 - **Los teléfonos**, sin comillas, serían números: en YAML van entre comillas. (En JSON ya eran texto, porque llevaban comillas.)
 - **Las fechas**, sin comillas, serían fechas para un lector de YAML 1.1, un tipo que JSON no tiene, y los dos ficheros ya no dirían lo mismo ([apartado 1.12](#112-los-tipos-que-adivina-yaml-las-versiones-11-y-12)): entre comillas.
-- **El comentario de Pablo** lleva `22:00`. Detrás de los dos puntos no hay espacio, así que no rompería el fichero, pero el texto empieza por una palabra normal y lleva una coma y dos puntos: con comillas no hay ninguna duda, y no cuestan nada.
-- **Las extras de Pablo**, `[]`, y no vacío: vacío sería `null`, y la aplicación esperaría una lista que pueda recorrer.
+- **El comentario de Pablo** lleva `22:00`: sin espacio detrás de los dos puntos no rompería el fichero, pero con comillas no hay ninguna duda, y no cuestan nada.
+- **Los extras de Pablo**, `[]`, y no vacío: vacío sería `null`, y la aplicación esperaría una lista que pueda recorrer.
 - `R-0107` no necesita comillas: empieza por una letra.
 
 **Por qué los dos formatos:** el JSON es para la aplicación, que lo importa (intercambio de datos); el YAML es para Elena, que lo lee, lo corrige y lo comenta (escrito por una persona). Es el reparto del [apartado 1.15](#115-el-mismo-dato-en-json-y-en-yaml).
@@ -1414,7 +1409,7 @@ Se ha comprobado que los dos ficheros **se leen como el mismo dato**.
 
 - Escribir el teléfono con espacios, `"612 345 678"`: no es un error, pero dificulta buscarlo y compararlo. Decide un formato y úsalo en todas las reservas.
 - Escribir `"noches": "2"`: la aplicación no podría multiplicar las noches por el precio.
-- Poner `"comentario": ""` en la reserva de Elena: dice «hay un comentario vacío», no «no hay comentario».
+- Poner `"comentario": ""` en la reserva de Carmen: dice «hay un comentario vacío», no «no hay comentario».
 - Que cada reserva tenga claves distintas (`mascota` en una y `animales` en otra): la aplicación buscaría una clave que no existe.
 - En el YAML, olvidar las comillas de las fechas: el fichero se lee, pero no es el mismo dato que el JSON.
 
@@ -1426,15 +1421,6 @@ Se ha comprobado que los dos ficheros **se leen como el mismo dato**.
 
 | Concepto | En una línea |
 |---|---|
-| **Formato de datos** | Reglas para escribir datos como texto y que otro programa los pueda leer |
-| **Dato estructurado** | Un dato con partes, que pueden tener partes: se describe con valores, listas y objetos |
-| **Par clave-valor** | Un nombre (la clave) y el dato que le corresponde (el valor): `"ciudad": "Huesca"` |
-| **Objeto (JSON) / mapa (YAML)** | Un grupo de pares clave-valor; el orden de las claves no importa |
-| **Lista** | Valores en orden; el orden sí importa |
-| **Anidar** | Meter una lista o un objeto dentro de otro |
-| **`null`** | «Este dato no existe»: distinto de `""`, de `0` y de `[]` |
-| **JSON** | Formato estricto, para intercambiar datos entre programas (las API) |
-| **YAML** | Formato con sangría y comentarios, para la configuración que escriben personas |
 | **YAML 1.1 / 1.2** | La 1.1 lee `yes`, `no`, `on` y `off` como booleanos; la 1.2, solo `true` y `false` |
 | **JSON with Comments** | Variante de JSON con comentarios que usa VS Code en su `settings.json` |
 

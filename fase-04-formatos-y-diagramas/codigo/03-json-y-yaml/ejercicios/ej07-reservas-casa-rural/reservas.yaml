@@ -2,7 +2,7 @@
 casa: Casa Rural El Roble
 reservas:
   - codigo: R-0107
-    huesped: Elena Torres
+    huesped: Carmen Torres
     telefono: "612345678"    # texto: nadie suma teléfonos
     llegada: "2026-12-05"    # entre comillas, para que sea texto
     noches: 2
