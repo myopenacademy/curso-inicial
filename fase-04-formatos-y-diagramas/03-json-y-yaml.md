@@ -1,6 +1,6 @@
 # 04.03 JSON y YAML
 
-> **Versiones:** JSON según el RFC 8259 y ECMA-404 (2.ª edición), los dos de diciembre de 2017 · YAML 1.2.2 (1 de octubre de 2021) y YAML 1.1 (2005) · Visual Studio Code 1.145; comprobado el 9 de noviembre de 2026
+> **Versiones:** JSON según el RFC 8259 y ECMA-404 (2.ª edición), los dos de diciembre de 2017 · YAML 1.2.2 (1 de octubre de 2021) y YAML 1.1 (2005), comprobados el 9 de noviembre de 2026 · Visual Studio Code 1.146 (a 16 de noviembre de 2026)
 > **Conviene saber antes:** [03.03 El editor de código](../fase-03-herramientas/03-editor-de-codigo.md) · [01.02 Algoritmos y pseudocódigo, tipos de datos](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#tipos-de-datos) · [01.02 Algoritmos y pseudocódigo, listas y datos con partes](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#listas-y-datos-con-partes)
 > **Tiempo estimado:** 2,5 horas
 > **Nivel:** Básico · Núcleo

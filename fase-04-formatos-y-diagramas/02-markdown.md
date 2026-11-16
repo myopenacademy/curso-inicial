@@ -1,6 +1,6 @@
 # 04.02 Markdown
 
-> **Versiones:** CommonMark 0.31.2 y GitHub Flavored Markdown 0.29-gfm, comprobadas el 9 de noviembre de 2026 · Visual Studio Code 1.145
+> **Versiones:** CommonMark 0.31.2 y GitHub Flavored Markdown 0.29-gfm, comprobadas el 9 de noviembre de 2026 · Visual Studio Code 1.146 (a 16 de noviembre de 2026)
 > **Conviene saber antes:** [03.03 El editor de código](../fase-03-herramientas/03-editor-de-codigo.md) · [02.02 Archivos, carpetas y rutas, 1.9](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#19-la-carpeta-actual-y-las-rutas-relativas)
 > **Tiempo estimado:** 2,5 horas
 > **Nivel:** Básico · Núcleo
@@ -458,7 +458,7 @@ Es habitual encontrar al lado otros ficheros en Markdown con nombres en mayúscu
 
 ### 1.17. Markdown en VS Code
 
-VS Code entiende Markdown sin instalar nada (lo viste en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#111-extensiones-útiles-para-este-curso)). Lo que te hará falta (VS Code 1.145, según su documentación, consultada el 9 de noviembre de 2026):
+VS Code entiende Markdown sin instalar nada (lo viste en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#111-extensiones-útiles-para-este-curso)). Lo que te hará falta (VS Code 1.146, según su documentación, consultada el 16 de noviembre de 2026):
 
 | Para | Cómo |
 |---|---|

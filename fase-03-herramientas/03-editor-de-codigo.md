@@ -1,6 +1,6 @@
 # 03.03 El editor de código
 
-> **Versiones:** Visual Studio Code 1.145, verificada el 8 de noviembre de 2026
+> **Versiones:** Visual Studio Code 1.146 (a 16 de noviembre de 2026)
 > **Conviene saber antes:** [03.01 La terminal: lo básico](01-terminal-lo-basico.md) · [02.03 Instalar programas, variables de entorno y PATH](../fase-02-tu-ordenador/03-instalar-programas-y-path.md)
 > **Tiempo estimado:** 1,5 horas
 > **Nivel:** Básico · Núcleo
@@ -57,7 +57,7 @@ Este curso usa **Visual Studio Code** (VS Code), que ya instalaste en [02.03](..
 
 **No es el único.** Hay otros editores muy buenos: Sublime Text, Zed, Notepad++ (solo en Windows), Vim o Neovim (que funcionan dentro de la terminal), VSCodium (una versión de VS Code sin las partes propias de Microsoft)… Todo lo que vas a aprender aquí (abrir una carpeta, guardar, buscar y reemplazar, extensiones, atajos) existe en casi todos, con otros nombres. Si ya usas otro y te gusta, puedes seguir el curso con él; solo tendrás que buscar dónde está cada cosa.
 
-> **📌 Nota:** VS Code saca una versión nueva **cada mes** y se actualiza solo. La de noviembre de 2026 es la **1.145** (verificada el 8 de noviembre de 2026). Si tu versión es otra, algún menú puede haber cambiado de sitio; lo que explica este módulo es lo básico, que cambia muy poco.
+> **📌 Nota:** VS Code saca una versión nueva **cada semana** y se actualiza solo. A 16 de noviembre de 2026, la más reciente es la **1.146**. Si tu versión es otra, algún menú puede haber cambiado de sitio; lo que explica este módulo es lo básico, que cambia muy poco.
 
 **En qué idioma lo verás.** VS Code viene **en inglés**. Si tu sistema está en español, la primera vez suele ofrecerte instalar el **paquete de idioma español** para tener los menús en español (lo verás en el [apartado 1.11](#111-extensiones-útiles-para-este-curso)). Por eso, en este módulo, cada menú y cada opción aparecen con su nombre en inglés y, entre paréntesis, el que verás con el paquete de español: **File > Open Folder…** (**Archivo > Abrir carpeta…**). Los nombres en español se han comprobado en la traducción oficial de VS Code el 9 de noviembre de 2026.
 
@@ -74,7 +74,7 @@ Un proyecto casi nunca es un solo fichero: es una **carpeta** con ficheros y sub
 - **La terminal integrada se abre en esa carpeta**: es tu [carpeta actual](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#19-la-carpeta-actual-y-las-rutas-relativas), así que las rutas relativas del proyecto funcionan.
 - **Las herramientas** que verás después (Git, los programas de tu curso) saben que todo eso es un proyecto.
 
-Cómo se abre una carpeta (VS Code 1.145, a 9 de noviembre de 2026):
+Cómo se abre una carpeta (VS Code 1.146, a 16 de noviembre de 2026):
 
 - Desde el menú: **File > Open Folder…** (**Archivo > Abrir carpeta…**), y eliges la carpeta.
 - Desde la terminal, con `code .` ([apartado 1.13](#113-abrir-vs-code-desde-la-terminal)).
@@ -288,12 +288,12 @@ Así se ve en la terminal (es un ejemplo: el número de versión y el resto camb
 
 ```text
 $ code --version
-1.145.2
-…
+1.146.0
+69047191fc427f2f92828279aae1d90d8eeda7ab
 x64
 ```
 
-**En qué fijarte:** la primera línea es la **versión** (aquí, la 1.145.2, una actualización de la 1.145); la segunda, que aquí se ha sustituido por `…`, es un código largo de letras y números que identifica esa versión exacta; y la tercera, la [arquitectura](../fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#110-32-y-64-bits-x86-64-y-arm) (`x64` o `arm64`). Si sale una versión, `code` está en el PATH. Si sale «command not found» (u «orden no encontrada»), ve al [error típico 3.6](#36-la-orden-code-no-se-encuentra).
+**En qué fijarte:** la primera línea es la **versión** (aquí, la 1.146.0, la 1.146 sin actualizaciones: cada actualización sube el último número, 1.146.1, 1.146.2…); la segunda es un código largo de letras y números que identifica esa versión exacta; y la tercera, la [arquitectura](../fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#110-32-y-64-bits-x86-64-y-arm) (`x64` o `arm64`). Si sale una versión, `code` está en el PATH. Si sale «command not found» (u «orden no encontrada»), ve al [error típico 3.6](#36-la-orden-code-no-se-encuentra).
 
 ### 1.14. Los atajos de teclado esenciales
 

@@ -1,6 +1,6 @@
 # 02.03 Instalar programas, variables de entorno y PATH
 
-> **Versiones:** Git 2.56.0, Git for Windows 2.56.0(4) y Visual Studio Code 1.145, verificadas el 8 de noviembre de 2026
+> **Versiones:** Git 2.56; salidas de la 2.56.0; la más reciente, la 2.56.1 · Git for Windows: pasos y salidas de la 2.56.0(4); la más reciente, la 2.56.1, del 10 de noviembre de 2026 · Visual Studio Code 1.146 (a 16 de noviembre de 2026)
 > **Conviene saber antes:** [02.01 Cómo funciona un ordenador](01-como-funciona-un-ordenador.md) · [02.02 Archivos, carpetas y rutas](02-archivos-carpetas-y-rutas.md)
 > **Tiempo estimado:** 2,5 horas
 > **Nivel:** Básico · Núcleo
@@ -60,7 +60,7 @@ Cada sistema tiene el suyo. Esta es la orden que instala Git con cada uno, tal c
 
 No tienes que entender cada parte de esas órdenes, ni teclearlas ahora: aprenderás a moverte por la terminal en la fase 3. Fíjate solo en la idea: **nombre del gestor, la palabra `install` y el nombre del paquete**. En Linux, `sudo` delante significa «haz esto como administrador»: te pedirá tu contraseña (al escribirla no se ve nada en pantalla, ni asteriscos; es normal).
 
-> **📌 Nota:** la web de Git avisa de que el paquete `Git.Git` de winget **no lo mantiene el proyecto Git for Windows** y puede ir algo por detrás de la última versión oficial; y que, en general, los paquetes de los gestores los preparan terceros. Es normal: los gestores de paquetes publican las versiones nuevas con un poco de retraso. Por ejemplo, el Git que instala apt en Ubuntu 26.04 es el 2.53.0 (comprobado el 8 de noviembre de 2026), cuando la última versión de Git es la 2.56.0. Para este curso, cualquiera de las dos te sirve.
+> **📌 Nota:** la web de Git avisa de que el paquete `Git.Git` de winget **no lo mantiene el proyecto Git for Windows** y puede ir algo por detrás de la última versión oficial; y que, en general, los paquetes de los gestores los preparan terceros. Es normal: los gestores de paquetes publican las versiones nuevas con un poco de retraso. Por ejemplo, el Git que instala apt en Ubuntu 26.04 es el 2.53.0, cuando la última versión de Git es la 2.56.1 (comprobado el 16 de noviembre de 2026). Para este curso, cualquiera de las dos te sirve.
 
 ### 1.3. Descarga siempre de la web oficial
 
@@ -107,7 +107,7 @@ Fíjate en dos cosas de la tabla:
 
 Lo instalas antes que Git por un motivo práctico: así, en Windows, el instalador de Git ya lo encuentra y puedes elegirlo como editor de Git (lo verás en el [apartado 1.6](#16-instalar-git-en-windows-git-for-windows-y-git-bash)).
 
-Saca versión nueva cada mes. La de noviembre de 2026 es la **1.145** (verificada el 8 de noviembre de 2026), y se **actualiza sola**: no te preocupes si cuando lo instales la versión es otra.
+Saca versión nueva cada semana. A 16 de noviembre de 2026, la más reciente es la **1.146**, y se **actualiza sola**: no te preocupes si cuando lo instales la versión es otra.
 
 Los pasos, según la documentación oficial (`code.visualstudio.com/docs/setup`, a 8 de noviembre de 2026):
 
@@ -123,7 +123,7 @@ Los pasos, según la documentación oficial (`code.visualstudio.com/docs/setup`,
 2. Abre el fichero `.dmg` descargado y **arrastra Visual Studio Code a la carpeta `Aplicaciones`**. Si lo abres desde la carpeta de descargas sin moverlo, funcionará, pero no se actualizará bien.
 3. Ábrelo desde `Aplicaciones` (o desde Launchpad). La primera vez, macOS te preguntará si quieres abrir una aplicación descargada de internet: confirma.
 
-En macOS, la orden `code` de la terminal **no** se instala sola: se añade desde el propio VS Code con una orden que se llama *Shell Command: Install 'code' command in PATH*. No la necesitas todavía: la verás en «El editor de código».
+En macOS, la orden `code` de la terminal **no** se instala sola: se añade desde el propio VS Code con una orden que se llama *Shell Command: Install 'code' and optionally 'copilot' commands in PATH* (a 16 de noviembre de 2026). No la necesitas todavía: la verás en «El editor de código».
 
 **En Linux (Ubuntu, Debian…):**
 
