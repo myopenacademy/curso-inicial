@@ -2,8 +2,6 @@
 
 El curso inicial de **MyOpenAcademy**: lo que conviene saber antes de cualquier otro curso. Qué es programar, tu ordenador por dentro, la terminal y el editor, los formatos de datos, Git y GitHub, cómo funcionan internet y las aplicaciones, y cómo estudiar y usar la IA. Termina con un proyecto tuyo publicado en internet. Es un curso de **MyOpenAcademy**, la academia de programación libre y gratuita: se puede leer aquí, en GitHub, o instalar en la academia.
 
-**En construcción.**
-
 ## A quién va dirigido
 
 A cualquiera que quiera aprender a programar y empiece **desde cero**: no da nada por sabido. Al terminar, entiendes qué es programar y cómo se piensa un algoritmo, manejas tu ordenador, la terminal, el editor, Git y GitHub, lees y escribes los formatos de datos más usados, sabes cómo funcionan internet y las aplicaciones, y tienes **un repositorio propio publicado en GitHub Pages**. Con eso puedes empezar cualquier otro curso de la academia.
@@ -25,17 +23,21 @@ Nada. Es el primer curso de la academia.
 
 ## Versiones
 
-Verificadas el 8 de noviembre de 2026:
+Revisadas en sus fuentes oficiales el 16 de noviembre de 2026, para la versión 1.0 del curso:
 
 | Herramienta | Versión |
 |---|---|
-| Git | 2.56.0 |
-| Git for Windows (incluye Git Bash) | 2.56.0(4) |
-| Visual Studio Code | 1.145 |
+| Git | 2.56; las salidas son de la 2.56.0 (la más reciente, la 2.56.1) |
+| Git for Windows (incluye Git Bash) | Pasos y salidas de la 2.56.0(4); la más reciente, la 2.56.1 |
+| Visual Studio Code | 1.146 (saca versión cada semana y se actualiza solo) |
 | Bash | 5.3 (los ejemplos funcionan también con el bash 3.2 de macOS) |
 | curl | 8.18.0 en las salidas (la más reciente, la 8.23.0, del 14 de octubre de 2026) |
+| Mermaid | 12.2.0, la que usa la academia (la más reciente, la 12.3.0) |
+| GitHub Pages | github-pages 232, con Jekyll 3.10.0 y Liquid 4.0.4 |
 
-Las salidas de Git del curso son de la 2.56.0; a 16 de noviembre de 2026, la más reciente es la 2.56.1 (las versiones se revisan antes de cada versión del curso, no por cada parche). Lo que se dice de GitHub sigue su documentación a 16 de noviembre de 2026. Las salidas de `curl` (fase 6) son de la 8.18.0, comprobada en curl.se el 16 de noviembre de 2026. Las de las fases siguientes se añaden al escribirlas.
+Las versiones se revisan antes de cada versión del curso y cuando cambia la versión menor de una herramienta, no por cada parche. Lo que se dice de GitHub sigue su documentación a 16 de noviembre de 2026.
+
+**macOS, sin probar en un Mac de verdad.** Todo el código se verifica en Linux, en una terminal con Docker. El curso avisa de las diferencias que conoce con macOS y con Git Bash en Windows, pero no se ha probado en un Mac. Si lo sigues en macOS o en Windows y algo no sale como dice, cuéntalo en una *issue* ([`CONTRIBUTING.md`](CONTRIBUTING.md)).
 
 ## Requisitos
 
