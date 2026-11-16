@@ -867,7 +867,7 @@ Las tres asignaciones de `precio` terminan en el mismo sitio: la escritura del p
 
 **Razonamiento:** cada instrucción del pseudocódigo es un nodo con su forma ([apartado 1.5](#15-diagramas-de-flujo-dirección-y-formas)); cada `SI` es un rombo con dos flechas, «Sí» y «No» ([apartado 1.6](#16-flechas-y-textos-en-las-flechas)); y los caminos se juntan donde el pseudocódigo sigue después del `FIN SI`.
 
-````text
+````markdown
 ```mermaid
 flowchart TD
     inicio(["Inicio"]) --> leer[/"Leer edad y esMiercoles"/]
@@ -882,6 +882,8 @@ flowchart TD
     escribir --> fin(["Fin"])
 ```
 ````
+
+📁 **Código:** [`codigo/05-diagramas-y-mermaid/ejercicios/ej03-del-pseudocodigo-al-diagrama/`](codigo/05-diagramas-y-mermaid/ejercicios/ej03-del-pseudocodigo-al-diagrama/)
 
 ```mermaid
 flowchart TD
