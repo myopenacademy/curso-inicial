@@ -1,0 +1,9 @@
+cd jorge
+git push
+git pull --no-rebase --no-edit
+cat precios.txt
+printf 'Revisión: 35 €\nCámara: 14 € (cámara aparte)\nFrenos: 10 €\n' > precios.txt
+git add precios.txt
+git commit --no-edit
+git push
+git log --oneline --graph

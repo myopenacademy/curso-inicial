@@ -1,0 +1,24 @@
+# Preparación: el remoto, el repositorio de Jorge y el clon de Sara
+mkdir github
+git init --bare github/taller.git
+mkdir jorge && cd jorge && git init
+git config user.name "Jorge Ruiz"
+git config user.email jorge@example.com
+printf 'Revisión: 35 €\nCámara: 12 €\nFrenos: 10 €\n' > precios.txt
+git add precios.txt
+git commit -m "Lista de precios"
+git remote add origin ../github/taller.git
+git push -u origin main
+cd ..
+mkdir sara && cd sara && git clone ../github/taller.git
+cd taller
+git config user.name "Sara Gil"
+git config user.email sara@example.com
+printf 'Revisión: 35 €\nCámara: 12 € (cámara aparte)\nFrenos: 10 €\n' > precios.txt
+git add precios.txt
+git commit -m "Aclara que la cámara se cobra aparte"
+git push
+cd ../../jorge
+printf 'Revisión: 35 €\nCámara: 14 €\nFrenos: 10 €\n' > precios.txt
+git add precios.txt
+git commit -m "Sube el cambio de cámara a 14 €"

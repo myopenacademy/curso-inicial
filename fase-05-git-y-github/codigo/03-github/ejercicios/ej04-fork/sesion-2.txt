@@ -1,0 +1,14 @@
+mkdir yo && cd yo && git clone ../github/tu/recetario.git
+cd recetario
+git remote add upstream ../../github/maria/recetario.git
+git remote -v
+git switch -c errata
+printf '# Recetario\n\nGazpacho: tomate, pepino, ajo, aceite y vinagre.\n' > README.md
+git add README.md
+git commit -m "Corrige una errata en el gazpacho"
+git push -u origin errata
+git switch main
+git fetch upstream
+git merge upstream/main
+git push
+git log --oneline --all

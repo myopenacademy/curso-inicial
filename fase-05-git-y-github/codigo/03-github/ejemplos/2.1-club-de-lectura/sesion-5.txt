@@ -1,0 +1,7 @@
+cd ana/club-lectura
+git switch -c lugar
+echo "Lugar: biblioteca municipal, sala 2." >> README.md
+git add README.md
+git commit -m "Añade el lugar de las reuniones"
+git push -u origin lugar
+git branch -vv

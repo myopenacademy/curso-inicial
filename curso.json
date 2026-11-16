@@ -706,8 +706,28 @@
           "id": "inicial.github",
           "fichero": "fase-05-git-y-github/03-github.md",
           "titulo": "GitHub",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.github.sube-un-repositorio-y-compruebalo-clonandolo",
+              "titulo": "Sube un repositorio y compruébalo clonándolo"
+            },
+            {
+              "id": "inicial.github.el-push-rechazado-del-taller-de-bicis",
+              "titulo": "El push rechazado del taller de bicis"
+            },
+            {
+              "id": "inicial.github.revisa-una-pull-request",
+              "titulo": "Revisa una pull request"
+            },
+            {
+              "id": "inicial.github.corrige-una-errata-en-un-proyecto-ajeno",
+              "titulo": "Corrige una errata en un proyecto ajeno"
+            },
+            {
+              "id": "inicial.github.antes-de-hacer-publico-el-repositorio-de-la-protectora",
+              "titulo": "Antes de hacer público el repositorio de la protectora"
+            }
+          ]
         }
       ]
     },

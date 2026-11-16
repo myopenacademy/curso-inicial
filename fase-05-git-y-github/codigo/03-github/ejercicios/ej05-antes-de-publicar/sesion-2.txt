@@ -1,0 +1,7 @@
+cd huellas
+git status
+git ls-files
+ls
+git log --oneline
+git log --oneline -- .env
+git show 5e4cc21:.env

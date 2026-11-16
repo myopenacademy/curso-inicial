@@ -1,0 +1,18 @@
+cd luis/club-lectura
+echo "- Marzo: Marianela" >> lecturas.md
+git add lecturas.md
+git commit -m "Añade la lectura de marzo"
+git push
+cd ../../ana/club-lectura
+echo "Nos reunimos el primer jueves de cada mes." >> README.md
+git add README.md
+git commit -m "Añade cuándo nos reunimos"
+git status
+git push
+git fetch
+git status
+git pull
+git pull --no-rebase --no-edit
+git log --oneline --graph
+git push
+git status

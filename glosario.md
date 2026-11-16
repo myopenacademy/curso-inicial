@@ -115,6 +115,10 @@ Ejemplo concreto que dice qué datos se dan (entrada) y qué debe salir (salida 
 
 Caso de prueba con un valor justo en la frontera entre dos grupos de datos, o al lado de ella. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos).
 
+### Clave SSH
+
+Par de ficheros (la clave pública, que se da al servidor, y la privada, que no sale de tu ordenador) para conectarse a un servidor sin contraseña. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#15-ssh-un-par-de-claves).
+
 ### Codificación de caracteres
 
 Tabla que asocia cada letra o símbolo con un número; si un programa y la consola usan tablas distintas, las tildes salen mal. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#14-ascii-los-primeros-128-caracteres).
@@ -297,6 +301,10 @@ Fichero cuyos bytes son caracteres según una codificación; se lee con cualquie
 
 Fichero que el explorador no muestra; en Linux y macOS, el que empieza por punto. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos).
 
+### Fork
+
+Copia de un repositorio ajeno en tu cuenta, para proponer cambios al original (upstream) con pull requests. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#112-forks-contribuir-a-proyectos-ajenos).
+
 ### Formato de datos
 
 Reglas para escribir datos como texto de modo que otro programa los pueda leer: JSON, YAML, CSV, XML… Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
@@ -319,9 +327,21 @@ El sistema de control de versiones más usado; distribuido: cada persona tiene e
 
 Terminal con bash que trae Git for Windows; la del curso en Windows. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
 
+### GitHub
+
+Servicio de internet que guarda repositorios de Git y añade herramientas para colaborar (pull requests, issues, Pages); hay otros, como GitLab o Codeberg. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#12-github-y-otros-servicios).
+
 ### GitHub Flavored Markdown (GFM)
 
 El Markdown de GitHub: CommonMark (la especificación de base) más tablas, listas de tareas, tachado, autoenlaces y un filtro de HTML peligroso. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#12-un-estándar-y-varios-sabores-commonmark-y-gfm).
+
+### GitHub Flow
+
+Flujo de trabajo con ramas: rama, commits, pull request, revisión, fusión y borrar la rama; main siempre funciona. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#113-github-flow).
+
+### GitHub Pages
+
+Servicio de GitHub que publica una web estática desde un repositorio. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#115-lo-que-verás-más-adelante-pages-actions-y-gh).
 
 ## H
 
@@ -369,7 +389,7 @@ Programa que lee el código fuente y lo ejecuta instrucción a instrucción, cad
 
 ### Issue
 
-Aviso de un fallo o de una tarea pendiente en un proyecto de GitHub, con sus comentarios; se ve en la fase 5. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#11-qué-es-markdown).
+Aviso de un fallo o de una tarea pendiente en un proyecto de GitHub, con sus comentarios. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#111-issues-y-tableros).
 
 ## J
 
@@ -390,6 +410,10 @@ Texto con marcas que dicen qué es cada parte (un título, una lista, un enlace)
 ### Lenguaje de programación
 
 Idioma pensado para que las personas escriban instrucciones que después se traducen a código máquina. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#15-lenguajes-de-programación).
+
+### Licencia
+
+Fichero (LICENSE) que dice con qué condiciones se puede usar el código de un proyecto; sin ella, nadie puede reutilizarlo legalmente. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#114-el-escaparate-readme-licencia-y-perfil).
 
 ### Lista
 
@@ -547,6 +571,10 @@ Prueba que comprueba una pieza pequeña sola, como un subalgoritmo. Lo explica [
 
 Forma de escribir algoritmos a medio camino entre el lenguaje natural y un lenguaje de programación, con palabras normales y una estructura fija. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#15-pseudocódigo).
 
+### Pull request
+
+Propuesta de fusionar los cambios de una rama, para que otras personas los revisen antes; en GitLab, merge request. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#110-pull-requests-y-revisión).
+
 ### Punto de parada
 
 Marca en una línea de un programa en la que el depurador lo detiene, justo antes de ejecutarla (breakpoint). Lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#112-el-depurador-puntos-de-parada-y-paso-a-paso).
@@ -589,6 +617,10 @@ Error en algo que antes funcionaba y que se ha estropeado al cambiar otra cosa. 
 
 Carpeta cuya historia guarda Git, en su subcarpeta oculta .git; se crea con git init. Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#15-repositorio-una-carpeta-con-memoria).
 
+### Repositorio remoto
+
+Copia de un repositorio en otro sitio (normalmente un servidor) con la que el tuyo se sincroniza con push, fetch y pull. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#11-un-repositorio-en-otro-sitio).
+
 ### Reproducir un error
 
 Conseguir que un error ocurra cuando uno quiere, con unos datos y unos pasos concretos; primer paso para depurar. Lo explica [03.04 Errores y depuración](fase-03-herramientas/04-errores-y-depuracion.md#13-reproducir-el-error).
@@ -596,6 +628,10 @@ Conseguir que un error ocurra cuando uno quiere, con unos datos y unos pasos con
 ### Resaltado de sintaxis
 
 Colores que pone el editor a cada parte del código según el lenguaje del fichero. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#19-el-resaltado-de-sintaxis).
+
+### Revisión de código
+
+Lectura de los cambios de otra persona, antes de fusionarlos, para encontrar errores y proponer mejoras. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#110-pull-requests-y-revisión).
 
 ### RFC
 
@@ -688,6 +724,10 @@ Texto hecho solo de caracteres, sin formato (negritas, tamaños, imágenes); es 
 ### Tipo de dato
 
 Clase de valor que guarda un dato (entero, real, texto o lógico) y que decide qué operaciones admite. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#tipos-de-datos).
+
+### Token de acceso personal
+
+Contraseña especial, con permisos limitados y caducidad, que se usa con Git por HTTPS en lugar de la contraseña de la cuenta. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#14-cómo-sabe-github-que-eres-tú-https).
 
 ### TOML
 

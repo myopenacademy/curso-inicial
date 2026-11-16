@@ -1,0 +1,12 @@
+mkdir github
+git init --bare github/club-lectura.git
+ls github/club-lectura.git
+mkdir -p ana/club-lectura && cd ana/club-lectura && git init
+printf '# Club de lectura Las Hojas\n\nLecturas y reuniones del club.\n' > README.md
+printf '# Lecturas\n\n- Enero: El camino\n' > lecturas.md
+git add README.md lecturas.md
+git commit -m "Primeras notas del club"
+git remote add origin ../../github/club-lectura.git
+git remote -v
+git push -u origin main
+git status

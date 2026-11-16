@@ -1,0 +1,11 @@
+cd luis/club-lectura
+echo "- Febrero: Nada" >> lecturas.md
+git add lecturas.md
+git commit -m "Añade la lectura de febrero"
+git push
+cd ../../ana/club-lectura
+git status
+git fetch
+git status
+git pull
+cat lecturas.md

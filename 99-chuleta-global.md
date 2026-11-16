@@ -30,6 +30,7 @@
 - **Fase 05 — Git y GitHub**
   - [05.01 Git: fundamentos](#0501-git-fundamentos)
   - [05.02 Ramas y conflictos](#0502-ramas-y-conflictos)
+  - [05.03 GitHub](#0503-github)
 
 ---
 
@@ -1355,6 +1356,48 @@ gitGraph
 #### Para reconocerlos
 
 `git checkout rama` = `git switch rama` (antigua) · `git rebase` reaplica tus commits encima de otra rama y reescribe el historial (nunca con lo compartido) · `git cherry-pick` copia un commit concreto.
+
+---
+
+### 05.03 GitHub
+
+📖 Módulo completo: [fase-05-git-y-github/03-github.md](fase-05-git-y-github/03-github.md)
+
+#### Órdenes de los remotos
+
+| Orden | Qué hace |
+|---|---|
+| `git init --bare carpeta.git` | Crea un repositorio vacío, sin directorio de trabajo (un remoto de prácticas) |
+| `git remote add origin DIRECCIÓN` | Conecta con un remoto llamado `origin` |
+| `git remote -v` | Lista los remotos y sus direcciones |
+| `git push -u origin rama` | Sube una rama por primera vez y la vincula |
+| `git push` | Sube los commits nuevos de la rama actual |
+| `git clone DIRECCIÓN [carpeta]` | Descarga un repositorio entero, ya conectado como `origin` |
+| `git fetch` · `git fetch upstream` | Renueva la foto del remoto, sin tocar tus ficheros |
+| `git pull` · `git pull --no-rebase` | Baja y fusiona · baja y fusiona aunque las ramas hayan divergido |
+| `git branch -a` · `git branch -vv` | Ramas, también las del remoto · con su rama vinculada |
+| `git push origin --delete rama` | Borra una rama del remoto |
+| `git config --global pull.rebase false` | Que `git pull` fusione siempre, sin preguntar |
+
+#### Conectarte a GitHub (a 16 de noviembre de 2026)
+
+| Forma | Dirección | Cómo |
+|---|---|---|
+| HTTPS + Git Credential Manager | `https://github.com/usuario/repo.git` | El navegador, la primera vez (en Windows, viene con Git) |
+| HTTPS + *token* | `https://github.com/usuario/repo.git` | El *token* donde Git pide la contraseña (Settings > Developer settings > Personal access tokens) |
+| SSH | `git@github.com:usuario/repo.git` | `ssh-keygen -t ed25519 -C "correo"` → el `.pub` en Settings > SSH and GPG keys → `ssh -T git@github.com` |
+
+#### En la web de GitHub
+
+| Para | Dónde |
+|---|---|
+| Crear un repositorio | **+ > New repository** (vacío si ya lo tienes en tu ordenador) |
+| Abrir una *pull request* | Aviso **Compare & pull request** tras subir una rama |
+| Revisar | **Files changed**; al terminar, **Comment**, **Approve** o **Request changes** |
+| Fusionar | **Merge pull request**, **Squash and merge** o **Rebase and merge** |
+| Cerrar una *issue* al fusionar | `Closes #N` (o `fixes`, `resolves`…) en la descripción |
+| Hacer un *fork* · ponerlo al día | **Fork** · **Sync fork > Update branch** |
+| README de perfil | Repositorio público con tu nombre de usuario y un `README.md` |
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

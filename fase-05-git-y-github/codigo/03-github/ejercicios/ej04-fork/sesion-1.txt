@@ -1,0 +1,18 @@
+# Preparación: el repositorio de María en «GitHub», tu fork y una receta nueva de María
+mkdir -p github/maria github/tu
+git init --bare github/maria/recetario.git
+mkdir maria && cd maria && git init
+git config user.name "María Soto"
+git config user.email maria@example.com
+printf '# Recetario\n\nGazpacho: tomate, pepino, ajo, aceite y vinagr.\n' > README.md
+git add README.md
+git commit -m "Añade el gazpacho"
+git remote add origin ../github/maria/recetario.git
+git push -u origin main
+cd ..
+git clone --bare github/maria/recetario.git github/tu/recetario.git
+cd maria
+echo "Salmorejo: tomate, pan, ajo, aceite y sal." >> README.md
+git add README.md
+git commit -m "Añade el salmorejo"
+git push

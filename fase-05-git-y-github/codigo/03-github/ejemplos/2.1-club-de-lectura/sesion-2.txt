@@ -1,0 +1,8 @@
+mkdir luis && cd luis && git clone ../github/club-lectura.git
+cd club-lectura
+ls
+git log --oneline
+git remote -v
+git branch -a
+git config user.name "Luis Pérez"
+git config user.email luis@example.com

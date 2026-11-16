@@ -1,7 +1,7 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 18 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** 19 de 31 módulos (los demás aparecen como «Pendiente»)
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
@@ -15,12 +15,12 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 02 — Tu ordenador por dentro](#fase-02--tu-ordenador-por-dentro) · 3 módulos · ~7 h
 - [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos · ~9,5 h
 - [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos · ~11 h
-- [Fase 05 — Git y GitHub](#fase-05--git-y-github) · 3 módulos · ~6 h
+- [Fase 05 — Git y GitHub](#fase-05--git-y-github) · 3 módulos · ~8,5 h
 - [Fase 06 — Internet y aplicaciones](#fase-06--internet-y-aplicaciones) · 6 módulos
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
-**Tiempo de los módulos disponibles:** ~44 horas.
+**Tiempo de los módulos disponibles:** ~46,5 horas.
 
 ---
 
@@ -82,13 +82,13 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Fase 05 — Git y GitHub
 
-**Carpeta:** [`fase-05-git-y-github/`](fase-05-git-y-github/) · **Tiempo:** ~6 h
+**Carpeta:** [`fase-05-git-y-github/`](fase-05-git-y-github/) · **Tiempo:** ~8,5 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
 | 05.01 | [Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md) | Básico · Núcleo | 3 h | ✅ Disponible |
 | 05.02 | [Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md) | Básico · Núcleo | 3 h | ✅ Disponible |
-| 05.03 | GitHub | — | — | Pendiente |
+| 05.03 | [GitHub](fase-05-git-y-github/03-github.md) | Básico · Núcleo | 2,5 h | ✅ Disponible |
 | | Retos de la fase | | | Pendiente |
 
 ---

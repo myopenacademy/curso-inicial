@@ -1,0 +1,14 @@
+mkdir remoto
+git init --bare remoto/recetas.git
+mkdir recetas && cd recetas && git init
+printf '# Recetas de la abuela Carmen\n\n- Tortilla de patatas\n' > README.md
+git add README.md
+git commit -m "Primera receta"
+git remote add origin ../remoto/recetas.git
+git push -u origin main
+git status
+cd ..
+git clone remoto/recetas.git copia
+cd copia
+ls
+git log --oneline

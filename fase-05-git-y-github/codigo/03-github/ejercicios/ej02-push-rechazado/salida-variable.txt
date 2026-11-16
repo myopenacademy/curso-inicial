@@ -1,0 +1,3 @@
+# Lo que cambia en cada equipo: los hilos del procesador y la velocidad al copiar
+hasta \d+ hilos
+\d+(?:\.\d+)? (?:[KMG]iB|bytes?)/s

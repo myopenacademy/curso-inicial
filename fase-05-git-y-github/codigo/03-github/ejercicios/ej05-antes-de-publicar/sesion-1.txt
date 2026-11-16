@@ -1,0 +1,13 @@
+# Preparación: el repositorio de la protectora, tal como te lo pasan
+mkdir huellas && cd huellas && git init
+printf '# Protectora Huellas\n\nWeb de adopciones de la protectora.\n' > README.md
+printf 'CLAVE_CORREO=gatitos2026\n' > .env
+git add README.md .env
+git commit -m "Primera versión de la web"
+printf '# En adopción\n\n- Lola, galga, 3 años\n- Tizón, gato, 1 año\n' > adopciones.md
+git add adopciones.md
+git commit -m "Añade la lista de adopciones"
+git rm --cached .env
+echo ".env" > .gitignore
+git add .gitignore
+git commit -m "Deja de seguir el fichero .env"
