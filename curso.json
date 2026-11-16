@@ -1128,8 +1128,40 @@
           "id": "inicial.primer-repositorio",
           "fichero": "fase-08-proyecto-final/01-primer-repositorio.md",
           "titulo": "Tu primer repositorio",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.primer-repositorio.cinco-ideas-y-su-alcance",
+              "titulo": "Cinco ideas y su alcance"
+            },
+            {
+              "id": "inicial.primer-repositorio.las-carpetas-de-la-web-de-los-discos",
+              "titulo": "Las carpetas de la web de los discos"
+            },
+            {
+              "id": "inicial.primer-repositorio.los-datos-de-los-discos-en-json",
+              "titulo": "Los datos de los discos en JSON"
+            },
+            {
+              "id": "inicial.primer-repositorio.la-pagina-que-ensena-los-discos",
+              "titulo": "La página que enseña los discos"
+            },
+            {
+              "id": "inicial.primer-repositorio.el-readme-de-los-discos",
+              "titulo": "El README de los discos"
+            },
+            {
+              "id": "inicial.primer-repositorio.revisa-el-repositorio-de-jorge-antes-de-publicarlo",
+              "titulo": "Revisa el repositorio de Jorge antes de publicarlo"
+            },
+            {
+              "id": "inicial.primer-repositorio.tu-proyecto-de-principio-a-fin",
+              "titulo": "Tu proyecto, de principio a fin"
+            },
+            {
+              "id": "inicial.primer-repositorio.tu-readme-de-perfil",
+              "titulo": "Tu README de perfil"
+            }
+          ]
         }
       ]
     }

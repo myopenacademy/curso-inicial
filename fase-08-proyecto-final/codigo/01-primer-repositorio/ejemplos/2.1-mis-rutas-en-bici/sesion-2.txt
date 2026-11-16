@@ -1,0 +1,7 @@
+cd mis-rutas-en-bici
+printf -- '---\ntitle: Mis rutas en bici\n---\n\n' > index.md
+printf '# Mis rutas en bici\n\nPágina en obras.\n' >> index.md
+cp ../terminado/_config.yml .
+git add index.md _config.yml
+git commit -m "Añade una página de prueba para GitHub Pages"
+git push

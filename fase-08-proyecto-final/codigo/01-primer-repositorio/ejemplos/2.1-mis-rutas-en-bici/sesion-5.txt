@@ -1,0 +1,6 @@
+cd mis-rutas-en-bici
+git status
+git ls-files
+git log --oneline --graph
+git grep -n -i -e casa -e calle -e contraseña
+git log -p | grep -c -i -e calle -e contraseña

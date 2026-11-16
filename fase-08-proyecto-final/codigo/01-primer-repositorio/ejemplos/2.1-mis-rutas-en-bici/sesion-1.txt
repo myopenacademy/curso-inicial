@@ -1,0 +1,9 @@
+mkdir github
+git init --bare github/mis-rutas-en-bici.git
+mkdir mis-rutas-en-bici && cd mis-rutas-en-bici && git init
+printf '# Mis rutas en bici\n\nLas rutas en bici que hago los fines de semana.\n' > README.md
+cp ../terminado/.gitignore ../terminado/LICENSE .
+git add README.md .gitignore LICENSE
+git commit -m "Crea el repositorio con su README mínimo" -m "Closes #1"
+git remote add origin ../github/mis-rutas-en-bici.git
+git push -u origin main

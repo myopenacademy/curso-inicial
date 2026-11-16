@@ -1,0 +1,14 @@
+cd mis-rutas-en-bici
+mkdir _data
+cp ../terminado/_data/rutas.json _data/
+git add _data/rutas.json
+git commit -m "Añade las cinco primeras rutas" -m "Closes #3"
+git switch -c rutas-en-la-web
+cp ../terminado/index.md .
+git diff --stat
+git add index.md
+git commit -m "Enseña las rutas en la portada"
+git switch main
+git merge --no-ff --no-edit rutas-en-la-web
+git branch -d rutas-en-la-web
+git push

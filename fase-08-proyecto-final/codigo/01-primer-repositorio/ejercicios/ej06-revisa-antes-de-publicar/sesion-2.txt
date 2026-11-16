@@ -1,0 +1,8 @@
+cd rutas-a-pie
+ls
+git ls-files
+git grep -n -i -e casa -e calle
+git log --oneline -- notas.txt
+git show HEAD~1:notas.txt
+grep -n 'site.data' index.md
+ls _data

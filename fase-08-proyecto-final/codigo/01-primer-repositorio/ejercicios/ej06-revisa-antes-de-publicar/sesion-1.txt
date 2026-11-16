@@ -1,0 +1,6 @@
+mkdir rutas-a-pie && cd rutas-a-pie && git init
+cp -r ../de-jorge/. .
+git add .
+git commit -m "Primera versión de la web"
+git rm -q notas.txt
+git commit -m "Quita mis notas"

@@ -1,7 +1,7 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 30 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** los 31 módulos
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
@@ -18,9 +18,9 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 05 — Git y GitHub](#fase-05--git-y-github) · 3 módulos · ~8,5 h
 - [Fase 06 — Internet y aplicaciones](#fase-06--internet-y-aplicaciones) · 6 módulos · ~12 h
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos · ~7,5 h
-- [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
+- [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo · ~6 h
 
-**Tiempo de los módulos disponibles:** ~66 horas.
+**Tiempo de los módulos disponibles:** ~72 horas.
 
 ---
 
@@ -126,11 +126,11 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Fase 08 — Proyecto final
 
-**Carpeta:** `fase-08-proyecto-final/` (todavía no existe)
+**Carpeta:** [`fase-08-proyecto-final/`](fase-08-proyecto-final/) · **Tiempo:** ~6 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
-| 08.01 | 🎯 Tu primer repositorio | — | — | Pendiente |
+| 08.01 | 🎯 [Tu primer repositorio](fase-08-proyecto-final/01-primer-repositorio.md) | Básico · Núcleo | 6 h | ✅ Disponible |
 
 🎯 El proyecto final del curso, para tu portfolio.
 

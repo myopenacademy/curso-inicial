@@ -1,0 +1,6 @@
+# Ficheros que crea el sistema operativo
+.DS_Store
+Thumbs.db
+
+# La web construida, si algún día la pruebas con Jekyll en tu ordenador
+_site/

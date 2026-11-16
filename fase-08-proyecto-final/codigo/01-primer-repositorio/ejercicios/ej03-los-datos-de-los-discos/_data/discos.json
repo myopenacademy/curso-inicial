@@ -1,0 +1,32 @@
+[
+  {
+    "titulo": "Brisa de levante",
+    "grupo": "Los Búhos del Páramo",
+    "anio": 1971,
+    "favorito": true
+  },
+  {
+    "titulo": "La noche del faro",
+    "grupo": "Lola Marín",
+    "anio": 1979,
+    "favorito": true
+  },
+  {
+    "titulo": "Ciudad de neón",
+    "grupo": "Ruido Polar",
+    "anio": 1986,
+    "favorito": false
+  },
+  {
+    "titulo": "Mapas de papel",
+    "grupo": "La Orquesta Invisible",
+    "anio": 2008,
+    "favorito": false
+  },
+  {
+    "titulo": "Raíz y viento",
+    "grupo": "Candela Ríos",
+    "anio": 2018,
+    "favorito": true
+  }
+]

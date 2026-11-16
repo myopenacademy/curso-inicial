@@ -15,6 +15,10 @@ Cuenta de usuario que puede cambiar lo que afecta a todo el sistema, como instal
 
 Asistente de IA que, con una tarea, lee y cambia ficheros y ejecuta órdenes por su cuenta hasta que cree que ha terminado; hay que revisar todo lo que hace. Lo explica [07.04 Programar con asistentes de IA](fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md#12-tres-tipos-de-asistente).
 
+### Alcance
+
+Lo que entra en un proyecto y lo que no, decidido antes de empezar. Lo explica [08.01 Tu primer repositorio](fase-08-proyecto-final/01-primer-repositorio.md#12-elegir-el-tema-y-el-alcance).
+
 ### Algoritmo
 
 Secuencia ordenada, finita y precisa de pasos que resuelve un problema; no depende de ningún lenguaje. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#13-qué-es-un-algoritmo).
@@ -451,6 +455,10 @@ Incorporar a una rama los cambios de otra, con git merge, desde la rama que los 
 
 ## G
 
+### Generador de sitios estáticos
+
+Programa que fabrica las páginas HTML de una web a partir de Markdown, datos y plantillas (Jekyll, Hugo…). Lo explica [08.01 Tu primer repositorio](fase-08-proyecto-final/01-primer-repositorio.md#16-cómo-publica-github-pages-jekyll-en-una-idea).
+
 ### Gestor de contraseñas
 
 Programa que genera, guarda cifradas y rellena tus contraseñas detrás de una sola contraseña maestra. Lo explica [07.05 Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md#13-frases-de-contraseña-y-gestor-de-contraseñas).
@@ -569,6 +577,10 @@ Aviso de un fallo o de una tarea pendiente en un proyecto de GitHub, con sus com
 
 ## J
 
+### Jekyll
+
+Generador de sitios estáticos que usa GitHub Pages para construir la web al publicar desde una rama. Lo explica [08.01 Tu primer repositorio](fase-08-proyecto-final/01-primer-repositorio.md#16-cómo-publica-github-pages-jekyll-en-una-idea).
+
 ### JSON
 
 Formato de datos estricto, con objetos entre llaves y listas entre corchetes; el habitual para intercambiar datos entre programas y en las API. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#13-json-el-formato-para-intercambiar-datos).
@@ -600,6 +612,10 @@ Fichero (LICENSE) que dice con qué condiciones se puede usar el código de un p
 ### Límite de trabajo en curso (WIP)
 
 Número máximo de tareas empezadas y sin terminar a la vez; en el límite, no se empieza nada hasta terminar algo. Lo explica [07.02 Organizar tu trabajo](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#15-limitar-el-trabajo-en-curso).
+
+### Liquid
+
+Lenguaje de plantillas de Jekyll: `{{ … }}` para un hueco con un dato y `{% … %}` para una instrucción. Lo explica [08.01 Tu primer repositorio](fase-08-proyecto-final/01-primer-repositorio.md#18-enseñar-los-datos-en-la-web-rellenar-huecos).
 
 ### Lista
 
@@ -761,9 +777,17 @@ Mensaje que se hace pasar por alguien de confianza para que pulses un enlace, de
 
 Número que identifica a cada proceso en marcha (process identifier). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#112-procesos-verlos-y-pararlos).
 
+### Plantilla (web)
+
+Texto con huecos que un programa rellena con datos para fabricar una página. Lo explica [08.01 Tu primer repositorio](fase-08-proyecto-final/01-primer-repositorio.md#18-enseñar-los-datos-en-la-web-rellenar-huecos).
+
 ### Plantilla de issue
 
 Fichero .md de .github/ISSUE_TEMPLATE, con su cabecera YAML, con los apartados que rellena quien abre una issue en GitHub. Lo explica [07.02 Organizar tu trabajo](fase-07-aprender-a-aprender/02-organizar-tu-trabajo.md#17-plantillas-de-issue).
+
+### Portfolio
+
+Conjunto de trabajos propios, publicados, que enseñas para que se vea lo que sabes hacer. Lo explica [08.01 Tu primer repositorio](fase-08-proyecto-final/01-primer-repositorio.md#11-qué-vas-a-construir-y-cuándo-está-terminado).
 
 ### Práctica de recuperación
 
@@ -858,6 +882,10 @@ Línea de trabajo independiente dentro de un repositorio; por dentro, un nombre 
 ### README
 
 Fichero (normalmente README.md) que presenta un proyecto: qué es, cómo se usa y cómo se instala; GitHub lo muestra en la portada del repositorio. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#116-el-fichero-readme).
+
+### README de perfil
+
+README.md de un repositorio público con el mismo nombre que tu usuario, que GitHub enseña en tu perfil. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#114-el-escaparate-readme-licencia-y-perfil).
 
 ### Rebase
 

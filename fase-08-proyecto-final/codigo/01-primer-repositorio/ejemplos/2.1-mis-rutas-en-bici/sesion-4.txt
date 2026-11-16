@@ -1,0 +1,5 @@
+cd mis-rutas-en-bici
+cp ../terminado/README.md .
+git add README.md
+git commit -m "Completa el README con el diagrama y Cómo lo hice"
+git push

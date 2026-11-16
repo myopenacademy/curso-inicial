@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Vía verde del río",
+    "km": 24,
+    "dificultad": "fácil",
+    "salida": "Estación de tren"
+  },
+  {
+    "nombre": "Camino de los molinos",
+    "km": 31,
+    "dificultad": "media",
+    "salida": "Estación de tren"
+  },
+  {
+    "nombre": "Vuelta al embalse",
+    "km": 38,
+    "dificultad": "media",
+    "salida": "Plaza Mayor"
+  },
+  {
+    "nombre": "Subida al mirador",
+    "km": 16,
+    "dificultad": "difícil",
+    "salida": "Polideportivo municipal"
+  },
+  {
+    "nombre": "Ruta de los pinares",
+    "km": 52,
+    "dificultad": "difícil",
+    "salida": "Plaza Mayor"
+  }
+]

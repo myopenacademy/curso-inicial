@@ -44,6 +44,8 @@
   - [07.03 Buscar ayuda](#0703-buscar-ayuda)
   - [07.04 Programar con asistentes de IA](#0704-programar-con-asistentes-de-ia)
   - [07.05 Seguridad básica](#0705-seguridad-básica)
+- **Fase 08 — Proyecto final**
+  - [08.01 Tu primer repositorio](#0801-tu-primer-repositorio)
 
 ---
 
@@ -2025,6 +2027,84 @@ Entre `://` y la primera `/`, **desde el final**. `envios.paqueteria-veloz.examp
 4. Quítalo de donde se escapó (`git rm --cached`, `.gitignore`, borrar el mensaje).
 5. Avisa.
 6. Limpiar el historial: opcional, y nunca en lugar del paso 1.
+
+---
+
+## Fase 08 — Proyecto final
+
+---
+
+### 08.01 Tu primer repositorio
+
+📖 Módulo completo: [fase-08-proyecto-final/01-primer-repositorio.md](fase-08-proyecto-final/01-primer-repositorio.md)
+
+#### La lista de entrega
+
+1. Repositorio **público**, con un nombre que dice qué es.
+2. Una *issue* por tarea, con su criterio de hecho, en un **tablero**; todas cerradas.
+3. Datos en **`_data/…json`**, válidos y sin datos personales.
+4. **Web de GitHub Pages** que abre desde otro aparato y enseña todos los datos.
+5. **README**: qué es, cómo verlo, cómo está organizado, **diagrama** con su frase, **«Cómo lo hice»**, licencia.
+6. Fichero **`LICENSE`**.
+7. **Historial** con un commit por paso.
+8. **Revisión** hecha, y tu **perfil** enlaza al proyecto.
+
+#### Los ficheros del proyecto
+
+```text
+mi-proyecto
+├── .gitignore         ← lo que Git no guarda (.DS_Store, Thumbs.db, _site/)
+├── LICENSE            ← MIT: se copia entera, con el año y tu nombre
+├── README.md          ← portada del repositorio; aquí va el diagrama
+├── _config.yml        ← título, descripción, idioma, exclude
+├── index.md           ← portada de la web, con su cabecera YAML
+└── _data
+    └── datos.json     ← en las plantillas, site.data.datos
+```
+
+#### GitHub Pages (según su documentación, a 16 de noviembre de 2026)
+
+| Qué | Cómo |
+|---|---|
+| Activar | **Settings > Pages** → **Deploy from a branch** → rama `main`, carpeta `/ (root)` → **Save** |
+| Portada | `index.md`, `index.html` o `README.md`, en lo más alto de la carpeta publicada |
+| Dirección | `https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/` (botón **Visit site**) |
+| Tras un `git push` | Hasta 10 minutos para verse |
+| Si falla la construcción | Un correo a tu dirección principal; el detalle, en **Actions** |
+| Con GitHub Free | Solo en repositorios públicos |
+| Lo que Jekyll no publica | Lo que empieza por `_`, `.` o `#`, lo que acaba en `~`, `node_modules`, `vendor` y lo de `exclude` |
+| Mermaid | No figura entre los sitios donde GitHub lo dibuja, y Jekyll lo deja como código: el diagrama, en el README |
+
+#### Rellenar huecos (Liquid, en Jekyll)
+
+```markdown
+---
+title: Título de la pestaña
+---
+
+{% for cosa in site.data.datos %}
+- **{{ cosa.nombre }}**: {{ cosa.otra_clave }}{% if cosa.favorita %} (favorita){% endif %}
+{% endfor %}
+```
+
+- `{{ … }}`: un hueco, se rellena con un dato. `{% … %}`: una instrucción, no se ve.
+- `site.data.datos` ← `_data/datos.json`. `cosa.nombre` ← la clave `nombre`. Letra a letra.
+- Un nombre que no existe **no da error**: sale vacío.
+
+#### Git en el proyecto
+
+| Orden | Para qué |
+|---|---|
+| `git commit -m "Qué cambia" -m "Closes #3"` | Commit que cierra la *issue* 3 al llegar a `main` en GitHub |
+| `git switch -c rama` … `git switch main` y `git merge --no-ff --no-edit rama` | Una tarea en su rama, fusionada después en `main` |
+| `git ls-files` | Qué ficheros guarda Git (y subirán a GitHub) |
+| `git grep -n -i palabra` | Buscar en los ficheros de hoy |
+| `git log -p \| grep -i palabra` | Buscar en todo el historial |
+| `git show HEAD~1:fichero` | Un fichero como estaba un commit antes |
+
+#### README de perfil
+
+Repositorio **público** que se llama **como tu usuario**, con `README.md` en la raíz: quién eres, qué aprendes, tu proyecto (repositorio y web), cómo hablar contigo. Sin datos personales.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

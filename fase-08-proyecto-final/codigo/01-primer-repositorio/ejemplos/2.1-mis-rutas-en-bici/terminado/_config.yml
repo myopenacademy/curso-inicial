@@ -1,0 +1,9 @@
+# Configuración de la web: la lee Jekyll al construirla en GitHub Pages
+title: Mis rutas en bici
+description: Las rutas en bici que hago los fines de semana
+lang: es
+
+# Lo que no se publica en la web (sigue en el repositorio)
+exclude:
+  - README.md
+  - LICENSE
