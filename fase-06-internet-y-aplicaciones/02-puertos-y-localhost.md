@@ -430,7 +430,7 @@ Para cada dirección, di a qué ordenador va (si es el tuyo o uno de fuera), a q
 3. `203.0.113.5:22`
 4. `http://127.0.0.1:3000`
 5. `[2001:db8::1]:443`
-6. `git@github.com:ana-garcia/club-lectura.git`
+6. `git@github.com:TU-USUARIO/club-lectura.git` (con `TU-USUARIO`, el usuario de GitHub de quien guarda ahí su repositorio)
 
 <details>
 <summary>Pista 1</summary>
@@ -456,7 +456,7 @@ La última es una dirección de un remoto de Git de [05.03](../fase-05-git-y-git
 | `203.0.113.5:22` | De fuera | 22 | Un servidor **SSH** |
 | `http://127.0.0.1:3000` | **El tuyo** (`127.0.0.1` es `localhost`) | 3000 | Un servidor de desarrollo, sin cifrar |
 | `[2001:db8::1]:443` | De fuera, con IPv6 (los corchetes separan la dirección de su puerto) | 443 | Un servidor web con HTTPS |
-| `git@github.com:ana-garcia/…` | De fuera, `github.com` | **22**, el de SSH | El servidor SSH de GitHub |
+| `git@github.com:TU-USUARIO/…` | De fuera, `github.com` | **22**, el de SSH | El servidor SSH de GitHub |
 
 **Explicación:**
 

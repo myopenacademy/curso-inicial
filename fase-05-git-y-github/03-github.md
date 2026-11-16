@@ -66,7 +66,7 @@ Las órdenes de Git (`push`, `pull`, `clone`…) son **exactamente las mismas** 
 
 ### 1.3. Tu cuenta de GitHub
 
-Para guardar repositorios en GitHub necesitas una **cuenta**, que se crea en `https://github.com` con un correo, una contraseña y un **nombre de usuario**. Elige ese nombre con calma: forma parte de la dirección de todos tus repositorios (`https://github.com/tu-usuario/tu-repositorio`) y de tu perfil, que verá cualquiera a quien enseñes tu trabajo. Algo como `ana-garcia` o `agarcia-dev` mejor que `xXanaXx92`.
+Para guardar repositorios en GitHub necesitas una **cuenta**, que se crea en `https://github.com` con un correo, una contraseña y un **nombre de usuario**. Elige ese nombre con calma: forma parte de la dirección de todos tus repositorios (`https://github.com/tu-usuario/tu-repositorio`) y de tu perfil, que verá cualquiera a quien enseñes tu trabajo. Mejor algo sencillo, como tu nombre y tu apellido unidos por un guion, que un apodo lleno de letras y números sueltos.
 
 Lo que te da la cuenta **gratuita** (el plan **GitHub Free**), según la documentación de GitHub a 16 de noviembre de 2026:
 
@@ -96,7 +96,7 @@ Cualquiera puede **leer** un repositorio público, pero para **subir** commits G
 
 Lo primero, y lo que más confunde: **la contraseña de tu cuenta no sirve para Git**. Según la documentación de GitHub (a 16 de noviembre de 2026), la autenticación de Git con contraseña **se eliminó** y se cambió por métodos más seguros. Si Git te pide una contraseña y escribes la de tu cuenta, fallará ([error típico 3.1](#31-la-contraseña-de-tu-cuenta-no-vale)).
 
-Con **HTTPS**, la dirección del remoto es como la de una web: `https://github.com/ana-garcia/club-lectura.git`. Para demostrar quién eres, dos caminos:
+Con **HTTPS**, la dirección del remoto es como la de una web: `https://github.com/TU-USUARIO/club-lectura.git` (en este módulo, `TU-USUARIO` ocupa el sitio de tu usuario de GitHub, o del de Ana en sus ejemplos). Para demostrar quién eres, dos caminos:
 
 - **Git Credential Manager** (gestor de credenciales de Git). Es un programa que, la primera vez que Git necesita autenticarse, **abre una ventana para iniciar sesión en GitHub** (si te ofrece varias formas, elige la del navegador) para que entres y des permiso; después guarda la credencial de forma segura y no te la vuelve a pedir. En **Windows ya lo tienes**: viene con Git for Windows, y es la opción que dejaste marcada en el instalador ([02.03, apartado 1.6](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash)). En **macOS y Linux** se instala aparte, según la documentación de GitHub (en macOS, con Homebrew).
 - **Un *token* de acceso personal** (*personal access token*). Es una especie de contraseña larga que generas en la web de GitHub, con los permisos justos y una fecha de caducidad, y que escribes **donde Git te pide la contraseña**. Se crea en la foto de tu perfil, **Settings > Developer settings > Personal access tokens** (a 16 de noviembre de 2026). Hay dos tipos: los ***fine-grained*** («de grano fino»), que solo dan acceso a los repositorios que elijas, y los ***classic*** («clásicos»), que dan acceso a todos. GitHub recomienda los primeros. Para hacer `push`, el de grano fino necesita en ese repositorio el permiso **Contents** con escritura. Cuando Git te lo pida, en **Username** va tu usuario de GitHub, y en **Password**, el *token*. Si no tienes un gestor de credenciales (lo normal en Linux si no instalas Git Credential Manager), Git te los pedirá en cada `push`. En macOS se suelen guardar en el **Llavero**; si guardaste uno equivocado, búscalo como `github.com` en la aplicación **Acceso a Llaveros** (*Keychain Access*) y bórralo (docs.github.com, *Updating credentials from the macOS Keychain*, a 16 de noviembre de 2026).
@@ -112,7 +112,7 @@ Con **HTTPS**, la dirección del remoto es como la de una web: `https://github.c
 - La **clave pública** (fichero que acaba en `.pub`) es la **cerradura**: se la das a GitHub, y puedes dársela a quien quieras.
 - La **clave privada** (el mismo nombre, sin `.pub`) es la **llave**: se queda en tu ordenador y **no sale nunca de él**.
 
-Cuando te conectas, GitHub comprueba que tienes la llave que abre la cerradura que le diste, sin que la llave viaje por internet. Con SSH, la dirección del remoto se escribe de otra forma: `git@github.com:ana-garcia/club-lectura.git`.
+Cuando te conectas, GitHub comprueba que tienes la llave que abre la cerradura que le diste, sin que la llave viaje por internet. Con SSH, la dirección del remoto se escribe de otra forma: `git@github.com:TU-USUARIO/club-lectura.git`.
 
 Los pasos, según la documentación de GitHub a 16 de noviembre de 2026 (los harás de verdad en el [ejemplo 2.7](#27-conectarte-a-github-de-verdad)):
 
@@ -128,8 +128,8 @@ Tu repositorio guarda una lista de **remotos**: cada uno con un **nombre** corto
 
 | Forma | Ejemplo | Cuándo |
 |---|---|---|
-| **HTTPS** | `https://github.com/ana-garcia/club-lectura.git` | GitHub con Git Credential Manager o con *token* |
-| **SSH** | `git@github.com:ana-garcia/club-lectura.git` | GitHub con claves SSH |
+| **HTTPS** | `https://github.com/TU-USUARIO/club-lectura.git` | GitHub con Git Credential Manager o con *token* |
+| **SSH** | `git@github.com:TU-USUARIO/club-lectura.git` | GitHub con claves SSH |
 | **Una ruta** de tu disco | `../../github/club-lectura.git` | Un remoto en tu propio ordenador (lo usa este módulo para practicar: [apartado 1.8](#18-un-github-de-prácticas-en-tu-ordenador)) |
 
 Las dos primeras apuntan **al mismo repositorio** de GitHub: solo cambia cómo te autenticas. El `.git` del final es opcional en GitHub, pero es lo que te da su web al copiar la dirección.
@@ -297,7 +297,7 @@ En el [proyecto final](../fase-08-proyecto-final/01-primer-repositorio.md#13-pla
 
 **Tu perfil.** Tu página de GitHub (`https://github.com/tu-usuario`) muestra tus repositorios públicos y tu actividad, y mucha gente la mira para conocer tu trabajo. Puedes añadirle una presentación: el **README de perfil**. Según la documentación de GitHub (a 16 de noviembre de 2026), aparece en tu perfil si:
 
-1. Creas un repositorio con **el mismo nombre que tu usuario** (si eres `ana-garcia`, el repositorio `ana-garcia`).
+1. Creas un repositorio con **el mismo nombre que tu usuario** (si tu usuario es `TU-USUARIO`, el repositorio se llama también `TU-USUARIO`, y su dirección es `https://github.com/TU-USUARIO/TU-USUARIO`).
 2. Es **público**.
 3. Tiene un fichero **`README.md` en su raíz**.
 4. Ese `README.md` tiene algo escrito.
@@ -383,7 +383,7 @@ nada para hacer commit, el árbol de trabajo está limpio
 - **`git push -u origin main`** escribe primero cómo prepara y envía los commits (enumerar, comprimir, escribir; no hace falta que lo entiendas) y después lo importante: **`* [new branch] main -> main`**, que la rama `main` se ha creado en el remoto, y **«rama 'main' configurada para rastrear 'origin/main'»**, que ha quedado vinculada. Desde ahora, en esta rama, basta con `git push` y `git pull`.
 - **`git status`** ya compara con el remoto: «Tu rama está actualizada con 'origin/main'».
 
-**Con GitHub de verdad,** la orden sería la misma con su dirección (`git remote add origin https://github.com/ana-garcia/club-lectura.git`), la primera vez se abriría el navegador para autenticarte ([apartado 1.4](#14-cómo-sabe-github-que-eres-tú-https)) y saldrían líneas parecidas (más al clonar o bajar por red, y las `remote:` de GitHub, en inglés) con `To https://github.com/ana-garcia/club-lectura.git`. Lo verás en el [ejemplo 2.7](#27-conectarte-a-github-de-verdad).
+**Con GitHub de verdad,** la orden sería la misma con su dirección (`git remote add origin https://github.com/TU-USUARIO/club-lectura.git`), la primera vez se abriría el navegador para autenticarte ([apartado 1.4](#14-cómo-sabe-github-que-eres-tú-https)) y saldrían líneas parecidas (más al clonar o bajar por red, y las `remote:` de GitHub, en inglés) con `To https://github.com/TU-USUARIO/club-lectura.git`. Lo verás en el [ejemplo 2.7](#27-conectarte-a-github-de-verdad).
 
 ### 2.2. Clonar: Luis se une al club
 
@@ -644,9 +644,9 @@ $ git branch -vv
 ```text
 remote:
 remote: Create a pull request for 'lugar' on GitHub by visiting:
-remote:      https://github.com/ana-garcia/club-lectura/pull/new/lugar
+remote:      https://github.com/TU-USUARIO/club-lectura/pull/new/lugar
 remote:
-To https://github.com/ana-garcia/club-lectura.git
+To https://github.com/TU-USUARIO/club-lectura.git
  * [new branch]      lugar -> lugar
 ```
 
