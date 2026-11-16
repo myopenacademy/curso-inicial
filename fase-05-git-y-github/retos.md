@@ -1,14 +1,14 @@
 # Retos de la fase 05 — Git y GitHub
 
-> **Versiones:** Git 2.56; salidas de la 2.56.0; la más reciente, la 2.56.1 (a 16 de noviembre de 2026)
-> **Conviene saber antes:** los módulos de la fase.
+> **Versiones:** Git 2.56; salidas de la 2.56.0; la más reciente, la 2.56.1 (a 16 de noviembre de 2026) · GitHub, según su documentación a 16 de noviembre de 2026
+> **Conviene saber antes:** [05.01 Git: fundamentos](01-git-fundamentos.md) · [05.02 Ramas y conflictos](02-ramas-y-conflictos.md) · [05.03 GitHub](03-github.md)
 > **Tiempo estimado:** 2,5 horas
 
 Estos retos mezclan lo que has aprendido en los tres módulos de la fase: guardar y deshacer cambios con Git ([05.01](01-git-fundamentos.md)), trabajar con ramas y resolver conflictos ([05.02](02-ramas-y-conflictos.md)) y compartir un repositorio con otras personas a través de un remoto ([05.03](03-github.md)).
 
-Van de menor a mayor dificultad, y el último es el más completo. Son **opcionales**: sirven para afianzar lo aprendido y no bloquean nada. Se hacen **en tu terminal**: copia a tu carpeta personal la carpeta del reto **entera** (la tienes en los enlaces «📁 Código»), abre una terminal en ella y trabaja ahí. Cada reto crea sus repositorios en carpetas nuevas dentro de esa carpeta, así que, si lo estropeas, borra lo que hayas creado (o vuelve a copiar la carpeta) y empieza otra vez. Abre las pistas solo si te atascas y, si tu solución es distinta de la propuesta, comprueba que deja el mismo historial y los mismos ficheros: puede estar igual de bien.
+Van de menor a mayor dificultad, y el último es el más completo. Son **opcionales**: sirven para afianzar lo aprendido y no bloquean nada. Se hacen **en tu terminal**: descarga la carpeta de cada reto (su enlace «📁 Código»), abre la terminal en ella y trabaja ahí. Cada reto crea sus repositorios en carpetas nuevas dentro de esa carpeta, así que, si lo estropeas, borra lo que hayas creado (o vuelve a copiar la carpeta) y empieza otra vez. Abre las pistas solo si te atascas y, si tu solución es distinta de la propuesta, comprueba que deja el mismo historial y los mismos ficheros: puede estar igual de bien.
 
-Recuerda que los identificadores de tus commits, sus fechas y su autor serán distintos de los del curso ([el aviso de 02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#22-un-aviso-sobre-las-salidas-de-la-terminal)), y que en las salidas de `git push`, `git pull` y `git fetch` cambiarán además los hilos y la velocidad ([05.03, apartado 2](03-github.md#2-ejemplos-de-código)). Como en los módulos, todo se hace sin abrir el editor de Git: los commits llevan su `-m`, y las fusiones y las anulaciones, `--no-edit`.
+Recuerda que los identificadores de tus commits, sus fechas y su autor serán distintos de los del curso ([el aviso de 02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#22-un-aviso-sobre-las-salidas-de-la-terminal)), y que en las salidas de `git push`, `git pull` y `git fetch` cambiarán además los hilos y la velocidad y, según tu sistema y tu versión de Git, algún detalle más: en Windows las rutas salen como `C:/Users/tu-nombre/…`; con un Git más antiguo (el de Apple o el de tu distribución), alguna línea de `push` o `fetch` y algunas pistas `hint:` pueden ser distintas o faltar; el orden de `ls` también puede cambiar ([05.03, apartado 2](03-github.md#2-ejemplos-de-código)). En Git Bash verás además el aviso de los saltos de línea en casi todos los `git add`, `git diff` y `git stash`, uno por fichero: no sale en las salidas del curso; ignóralo ([05.01, apartado 1.16](01-git-fundamentos.md#116-un-recordatorio-los-saltos-de-línea)). Como en los módulos, todo se hace sin abrir el editor de Git: los commits llevan su `-m`, y las fusiones y las anulaciones, `--no-edit`.
 
 ## Reto 1 · El horario del gimnasio
 
@@ -415,10 +415,10 @@ nada para hacer commit, el árbol de trabajo está limpio
 
 **Explicación, paso a paso:**
 
-1. **El primer `git status` dice «actualizada»**, pero no lo está: compara con la foto del remoto que tenía Nuria, que es de antes del `push` de Tomás ([05.03, error típico 3.5](03-github.md#35-creer-que-git-status-sabe-lo-último)).
+1. **El primer `git status` dice «actualizada»**, pero no lo está: compara con la copia del remoto que tenía Nuria, que es de antes del `push` de Tomás ([05.03, error típico 3.5](03-github.md#35-creer-que-git-status-sabe-lo-último)).
 2. **`git pull` hace la mitad**: trae el commit de Tomás (las líneas `remote:` y `78443a2..75ede30 main -> origin/main`), pero al ir a actualizar `riego.txt` se para: los cambios locales de ese fichero «serán sobrescritos al fusionar», así que **aborta** sin tocar nada. Te propone confirmar (hacer un commit) o guardar tus cambios. («aguárdalos» es una errata de la traducción de Git, [05.01, apartado 2](01-git-fundamentos.md#2-ejemplos-de-código): quiere decir «guárdalos».)
 3. **`git stash push -u -m …`** aparta las dos cosas, el cambio de `riego.txt` y el fichero nuevo, con un nombre que dice qué es. La traducción mezcla español e inglés («On main»: [05.01, apartado 2](01-git-fundamentos.md#2-ejemplos-de-código)).
-4. **Ahora `git status` sí sabe** que vas un commit por detrás, porque el `git pull` fallido ya había renovado la foto. Y la carpeta está limpia.
+4. **Ahora `git status` sí sabe** que vas un commit por detrás, porque el `git pull` fallido ya había renovado la copia. Y la carpeta está limpia.
 5. **El segundo `git pull`** es un avance rápido: llega el lunes de Lola.
 6. **`git stash pop`** devuelve tu trabajo encima. `Auto-fusionando riego.txt`: Git ha juntado tu sábado con el lunes de Lola, que están en zonas distintas del fichero. `semillas.txt` vuelve como fichero sin seguimiento, y `Descartado refs/stash@{0}` dice que el almacén se ha vaciado.
 7. **`cat riego.txt`** lo confirma: Lola el lunes y Nuria el sábado.
@@ -574,7 +574,7 @@ Orden para Hugo: `git switch main`, `git pull`, `git switch sabado`, `git merge 
 <details>
 <summary>Pista 3</summary>
 
-Elena no tiene la rama de Hugo en su repositorio, pero `git fetch` le trae la foto, `origin/sabado`. Para borrar una rama del remoto: `git push origin --delete` ([05.03, ejemplo 2.6](03-github.md#26-después-de-fusionar-la-pull-request)).
+Elena no tiene la rama de Hugo en su repositorio, pero `git fetch` le trae la copia, `origin/sabado`. Para borrar una rama del remoto: `git push origin --delete` ([05.03, ejemplo 2.6](03-github.md#26-después-de-fusionar-la-pull-request)).
 
 </details>
 
@@ -634,7 +634,7 @@ Entradas: 5 €, en taquilla
 
 📁 **Código:** [`codigo/retos/reto-03-una-pull-request-con-conflictos/`](codigo/retos/reto-03-una-pull-request-con-conflictos/)
 
-- **`git switch main` dice «actualizada»**, y es la foto vieja otra vez: el `git pull` de después trae la fusión de Elena (`a701984..ddcd965`) con un avance rápido, porque Hugo nunca hizo commits en `main`.
+- **`git switch main` dice «actualizada»**, y es la copia vieja otra vez: el `git pull` de después trae la fusión de Elena (`a701984..ddcd965`) con un avance rápido, porque Hugo nunca hizo commits en `main`.
 - **El gráfico** enseña las dos *pull requests* saliendo de `Primera función`: la de Elena, ya fusionada en `main` (`ddcd965`), y la de Hugo, `sabado`, con sus dos commits.
 - **`git merge main`, estando en `sabado`**, trae `main` a la rama. Las dos cambiaron la línea del estreno: conflicto. Arriba (`HEAD`), lo de Hugo, la segunda función; abajo (`main`), lo de Elena, la sala nueva. La línea de las entradas, que nadie tocó, queda fuera de los marcadores.
 
@@ -765,7 +765,7 @@ nada para hacer commit, el árbol de trabajo está limpio
 
 - **`git fetch` de Elena** trae la rama de Hugo como `origin/sabado` (`* [nueva rama]`), sin tocar sus ficheros.
 - **La fusión de Elena no da conflicto**: Hugo ya lo resolvió en su rama, que contiene todo lo de `main`. Por eso sus cambios entran limpios: la línea de las funciones y el fichero nuevo `reparto.md`. Ese es el sentido de resolver en la rama.
-- **En el repositorio de Hugo, `git switch main`** vuelve a decir «actualizada» con una foto vieja; el `git pull` trae la fusión de Elena con un avance rápido.
+- **En el repositorio de Hugo, `git switch main`** vuelve a decir «actualizada» con una copia vieja; el `git pull` trae la fusión de Elena con un avance rápido.
 - **`git branch -d sabado`** deja borrar la rama, porque ya está fusionada, y **`git push origin --delete sabado`** la borra del remoto (`- [deleted]`).
 - **El historial final** tiene tres commits de fusión, y se lee de abajo arriba:
   - `a701984`, la primera función, de la que salen las dos *pull requests*;
