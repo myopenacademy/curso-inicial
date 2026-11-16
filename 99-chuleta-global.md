@@ -926,8 +926,8 @@ Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
 |---|---|
 | `file f` | Qué contiene `f`, sin mirar la extensión: si es texto, una pista de su codificación (y si tiene BOM) |
 | `wc -c f` / `wc -m f` | Bytes / caracteres (`-m`, solo con la terminal en UTF-8) |
-| `od -c f` | Los bytes, como caracteres o en octal |
-| `od -t x1 f` | Los bytes, en hexadecimal |
+| `od -c f` | Los bytes, como caracteres o en octal (en macOS, `LC_ALL=C od -c f`) |
+| `od -t x1 f` | Los bytes, en hexadecimal (igual en todos los sistemas) |
 | `iconv -f WINDOWS-1252 -t UTF-8 f > f-utf8` | Convierte a UTF-8, en un fichero nuevo |
 | `tail -c +4 f > f-sin-bom` | Quita los 3 bytes del BOM (solo si lo tiene) |
 | `tr -d '\r' < f > f-lf` | Pasa de CRLF a LF |
@@ -1006,7 +1006,7 @@ Y si te atascas: el **patito de goma**, una pausa, buscar el mensaje.
 
 #### Un README tiene
 
-Título · qué es (una frase) · captura · qué hace · requisitos · instalación · uso · estado · cómo colaborar · licencia.
+Título · qué hace y por qué es útil (una o dos frases) · captura · índice · cómo empezar (instalación y uso) · estado · dónde pedir ayuda · quién lo mantiene y cómo colaborar · licencia.
 
 ---
 
@@ -1018,15 +1018,6 @@ Título · qué es (una frase) · captura · qué hace · requisitos · instalac
 
 | Concepto | En una línea |
 |---|---|
-| **Formato de datos** | Reglas para escribir datos como texto y que otro programa los pueda leer |
-| **Dato estructurado** | Un dato con partes, que pueden tener partes: se describe con valores, listas y objetos |
-| **Par clave-valor** | Un nombre (la clave) y el dato que le corresponde (el valor): `"ciudad": "Huesca"` |
-| **Objeto (JSON) / mapa (YAML)** | Un grupo de pares clave-valor; el orden de las claves no importa |
-| **Lista** | Valores en orden; el orden sí importa |
-| **Anidar** | Meter una lista o un objeto dentro de otro |
-| **`null`** | «Este dato no existe»: distinto de `""`, de `0` y de `[]` |
-| **JSON** | Formato estricto, para intercambiar datos entre programas (las API) |
-| **YAML** | Formato con sangría y comentarios, para la configuración que escriben personas |
 | **YAML 1.1 / 1.2** | La 1.1 lee `yes`, `no`, `on` y `off` como booleanos; la 1.2, solo `true` y `false` |
 | **JSON with Comments** | Variante de JSON con comentarios que usa VS Code en su `settings.json` |
 
@@ -1104,7 +1095,7 @@ otro_documento: true
 | Comentario | `<!-- texto -->` |
 | Entidades | `&lt;` `<` · `&amp;` `&` · `&gt;` `>` · `&quot;` `"` · `&apos;` `'` |
 
-**Bien formado:** un solo elemento raíz · toda etiqueta se cierra · en orden inverso · las mayúsculas cuentan · atributos entre comillas · ni `<` ni `&` sueltos. **Válido:** bien formado y, además, sigue su esquema (XSD o DTD). **Comprobarlo:** ábrelo en el navegador.
+**Bien formado:** un solo elemento raíz · toda etiqueta se cierra · en orden inverso · las mayúsculas cuentan · atributos entre comillas · ni `<` ni `&` sueltos. **Válido:** bien formado y, además, sigue su esquema (XSD o DTD). **Comprobarlo:** ábrelo en el navegador (Firefox o Chrome).
 
 #### CSV y TSV
 
@@ -1202,14 +1193,14 @@ sequenceDiagram
 
 | Para | Escribe |
 |---|---|
-| Paréntesis, comas, dos puntos… en un diagrama de flujo | La etiqueta entre comillas: `A["Pagar (con tarjeta)"]` |
+| Paréntesis, corchetes, llaves… (y, por costumbre, cualquier etiqueta) en un diagrama de flujo | La etiqueta entre comillas: `A["Pagar (con tarjeta)"]` |
 | `"` `<` `>` `&` dentro de una etiqueta | `&quot;` `&lt;` `&gt;` `&amp;` |
 | Un salto de línea | `<br/>` |
 | Un nodo final | `fin`, nunca `end` |
 
 #### Dónde se ve
 
-GitHub (ficheros `.md`, *issues*, *pull requests*), la academia, la vista previa de VS Code (desde la 1.121, sin extensiones) y el editor en línea `https://mermaid.live`, para probar.
+GitHub (ficheros `.md` e *issues*), la academia, la vista previa de VS Code (desde la 1.121, sin extensiones) y el editor en línea `https://mermaid.live`, para probar.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

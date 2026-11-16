@@ -1,6 +1,6 @@
 # 04.05 Diagramas y Mermaid
 
-> **Versiones:** Mermaid 12.2.0 (la que usa la academia) y 10.9.8; la última publicada es la 12.3.0 (comprobado el 9 de noviembre de 2026)
+> **Versiones:** Mermaid 12.2.0 (la que usa la academia) y 10.9.8 (una antigua, como la que aún usan algunos sitios); la última publicada es la 12.3.0 (comprobado el 9 de noviembre de 2026)
 > **Conviene saber antes:** [01.02 Algoritmos y pseudocódigo, 1.12](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#112-diagramas-de-flujo) · [04.02 Markdown](02-markdown.md)
 > **Tiempo estimado:** 2,5 horas
 > **Nivel:** Básico · Núcleo
@@ -82,7 +82,7 @@ A cambio, **tú no decides dónde va cada caja**: Mermaid las coloca a su manera
 
 > **📌 Nota:** todos los diagramas de este curso están escritos así. Si alguna vez lees el curso en un sitio que no entiende Mermaid, verás el texto en lugar del dibujo; con lo que aprendas en este módulo, también se entiende.
 
-**Versiones.** Mermaid saca versiones a menudo. A 9 de noviembre de 2026, la última es la **12.3.0** (del 3 de noviembre de 2026), y la academia dibuja los diagramas con la **12.2.0**. Cada sitio usa la suya, y no siempre la última: lo que está en este módulo funciona en todas las versiones recientes (se ha comprobado con la 12.2.0 y con la 10.9.8, mucho más antigua).
+**Versiones.** Mermaid saca versiones a menudo. A 9 de noviembre de 2026, la última es la **12.3.0** (del 3 de noviembre de 2026), y la academia dibuja los diagramas con la **12.2.0**. Cada sitio usa la suya, y no siempre la última: lo que está en este módulo funciona en todas las versiones recientes (se ha comprobado con la 12.2.0 y con la 10.9.8, mucho más antigua, como la que aún usan algunos sitios).
 
 ### 1.4. Tu primer diagrama
 
@@ -118,7 +118,7 @@ Fíjate en las dos piezas de cada caja (lo que Mermaid llama **nodo**):
 
 La etiqueta se escribe **solo la primera vez** que aparece el nodo; después basta con su identificador (`saludo --> fin`). Si un identificador aparece sin etiqueta la primera vez, Mermaid usa el propio identificador como texto: `A --> B` dibuja dos cajas, «A» y «B».
 
-> **💡 Consejo:** pon las etiquetas **siempre entre comillas dobles**, como en el ejemplo. Sin comillas también funciona mientras el texto sea sencillo, pero con un paréntesis, una coma o unos dos puntos el diagrama se rompe ([apartado 1.9](#19-caracteres-especiales-en-las-etiquetas)). Con comillas, nunca te pasará.
+> **💡 Consejo:** pon las etiquetas **siempre entre comillas dobles**, como en el ejemplo. Sin comillas también funciona mientras el texto sea sencillo, pero con un paréntesis, unos corchetes o unas llaves el diagrama se rompe ([apartado 1.9](#19-caracteres-especiales-en-las-etiquetas)). Con comillas, nunca te pasará.
 
 ### 1.5. Diagramas de flujo: dirección y formas
 
@@ -163,7 +163,7 @@ Las flechas unen dos nodos. Estas son las que vas a usar:
     stock -->|Sí| enviar
 ```
 
-En este curso se usa la primera (`-- Sí -->`), que se lee como una frase. Con las flechas de puntos, el texto va entre los puntos: `A -. "si lo pide" .-> B`.
+En este curso se usa la primera (`-- Sí -->`), que se lee como una frase. El texto de una flecha también admite comillas: `-- "pide páginas" -->`; úsalas si lleva paréntesis. Con las flechas de puntos, el texto va entre los puntos: `A -. "si lo pide" .-> B`.
 
 **Encadenar.** Puedes escribir varios pasos seguidos en una línea: `A --> B --> C`. Es cómodo para los tramos sin decisiones.
 
@@ -208,7 +208,7 @@ En un diagrama de bloques es muy útil **agrupar** las piezas que están en el m
 
 Todo lo que va entre `subgraph` y `end` se dibuja dentro de un recuadro con ese título. Las flechas pueden entrar y salir del grupo con normalidad.
 
-La web de la panadería de Ana (la de [02.02](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#21-un-árbol-real-la-web-de-una-panadería)) ya tiene tienda en línea. Así se ven sus piezas:
+La web de la Panadería Sol, la que hacía Ana en [02.02](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#21-un-árbol-real-la-web-de-una-panadería), ya tiene tienda en línea. Así se ven sus piezas:
 
 ````text
 ```mermaid
@@ -340,14 +340,14 @@ flowchart TD
     A[Pagar (con tarjeta)] --> B[Fin]
 ```
 
-La solución es la del consejo del [apartado 1.4](#14-tu-primer-diagrama): **la etiqueta entre comillas dobles**. Dentro de las comillas, Mermaid ya no mira qué caracteres hay:
+La solución es la del consejo del [apartado 1.4](#14-tu-primer-diagrama): **la etiqueta entre comillas dobles**. Dentro de las comillas, Mermaid ya no lee paréntesis, corchetes ni llaves como formas (salvo las comillas y lo que parezca HTML, que se ve a continuación):
 
 ```text
 flowchart TD
     A["Pagar (con tarjeta)"] --> B["Fin"]
 ```
 
-Queda un caso: ¿y si la etiqueta lleva **comillas dobles**? No las puedes escribir tal cual, porque cerrarían la etiqueta. Se escriben con una [entidad](04-xml-csv-y-otros.md#14-caracteres-especiales-las-entidades), como en XML y HTML: `&quot;` para las comillas dobles. Por el mismo motivo, hay otras tres para los símbolos que podrían confundirse con HTML:
+Quedan dos casos. ¿Y si la etiqueta lleva **comillas dobles**? No las puedes escribir tal cual, porque cerrarían la etiqueta. Se escriben con una [entidad](04-xml-csv-y-otros.md#14-caracteres-especiales-las-entidades), como en XML y HTML: `&quot;` para las comillas dobles. Y dentro de las comillas Mermaid sigue leyendo HTML: un `<` pegado a una letra parece el principio de una etiqueta, y `"x<y"` se dibuja como `x`, sin avisar. Por eso hay otras tres entidades para los símbolos que podrían confundirse con HTML:
 
 | Para que se vea | Escribe |
 |---|---|
@@ -376,13 +376,11 @@ En texto: si el cliente escribe «urgente» y el total pasa de 50 €, envío gr
 
 Un bloque `mermaid` es solo texto. Que se vea como dibujo depende de **quién enseña el fichero Markdown**:
 
-- **GitHub** lo dibuja en los ficheros Markdown (como el `README.md` de un repositorio), en las *issues*, en las *pull requests*, en las discusiones y en las wikis (según su documentación, consultada el 9 de noviembre de 2026). Lo verás en la fase 5.
+- **GitHub** lo dibuja en los ficheros Markdown (como el `README.md` de un repositorio), en las [*issues*](02-markdown.md#11-qué-es-markdown), en las discusiones y en las wikis (según su documentación, consultada el 9 de noviembre de 2026). Lo verás en la fase 5.
 - **La academia** dibuja los diagramas de todos sus cursos, con la versión 12.2.0 de Mermaid.
-- **VS Code** los dibuja en la **vista previa de Markdown** desde su versión 1.121, del 20 de mayo de 2026: antes hacía falta una extensión, *Markdown Preview Mermaid Support*, que se ha incorporado al propio editor (según las notas de la versión 1.121 y la documentación de VS Code, consultadas el 9 de noviembre de 2026). Con la versión del curso, la 1.145, no necesitas instalar nada: abre el `.md` y la vista previa con <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd> (en macOS, <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd>), como viste en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#111-extensiones-útiles-para-este-curso). En la vista previa, puedes acercar y alejar los diagramas grandes.
+- **VS Code** los dibuja en la **vista previa de Markdown** desde su versión 1.121, del 20 de mayo de 2026: antes hacía falta una extensión, *Markdown Preview Mermaid Support*, que se ha incorporado al propio editor (según las notas de la versión 1.121 y la documentación de VS Code, consultadas el 9 de noviembre de 2026). Con la versión del curso, la 1.145, no necesitas instalar nada: abre el `.md` y la vista previa con <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd> (en macOS, <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd>), como viste en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#111-extensiones-útiles-para-este-curso).
 
 Donde no se entiende Mermaid (un editor de texto sencillo, el Bloc de notas, un visor de Markdown antiguo), se ve el **texto del bloque**, sin dibujar. No es un error: es lo que hay dentro del fichero.
-
-> **💡 Consejo:** para saber qué versión de Mermaid usa GitHub, su documentación propone escribir un bloque `mermaid` con una sola línea, `info`: en lugar de un diagrama, GitHub muestra la versión. Es útil cuando un diagrama se ve en un sitio y en otro no.
 
 **Un diagrama roto no avisa.** Si el código tiene un error, GitHub, la academia o VS Code enseñan en su lugar un mensaje de error de Mermaid (o, según el sitio, nada). Nadie te avisa al guardar ni al subir el fichero. Por eso, **mira siempre el diagrama dibujado** antes de darlo por bueno: en la vista previa de VS Code o en el editor en línea, que es el siguiente apartado.
 
@@ -538,7 +536,7 @@ En texto: la app del móvil y la web del club, que usa el socio, mandan las rese
 
 ### 2.3. Un diagrama de secuencia: pagar con tarjeta en la panadería
 
-**Situación real:** en la tienda en línea de la panadería ([apartado 1.7](#17-agrupar-con-subgraph-diagramas-de-bloques)), Ana quiere entender qué pasa al pagar. Su cliente, Luis, pulsa «Pagar»; la web le pide a la pasarela de pago que cobre; la pasarela consulta al banco de Luis, que acepta o rechaza el pago; y la web le dice a Luis cómo ha ido. Si el pago se acepta, además, la web guarda el pedido como pagado.
+**Situación real:** en la tienda en línea de la Panadería Sol ([apartado 1.7](#17-agrupar-con-subgraph-diagramas-de-bloques)), Ana quiere entender qué pasa al pagar. Su cliente, Luis, pulsa «Pagar»; la web le pide a la pasarela de pago que cobre; la pasarela consulta al banco de Luis, que acepta o rechaza el pago; y la web le dice a Luis cómo ha ido. Si el pago se acepta, además, la web guarda el pedido como pagado.
 
 Es una **conversación entre participantes** en orden: diagrama de secuencia, con un `alt` para los dos finales posibles.
 
@@ -638,7 +636,7 @@ un correo con el día de recogida; si no, vuelve a pagar.
 **En qué fijarte:**
 
 - **El diagrama va dentro de una sección** con su título y un párrafo que lo presenta: el diagrama ayuda al texto, no lo sustituye.
-- **Debajo, la misma idea en texto** («En texto: …»). Así lo entiende quien lea el README donde no se dibuja Mermaid, y quien no puede ver la imagen (por ejemplo, una persona ciega que usa un lector de pantalla).
+- **Debajo, la misma idea en texto** («En texto: …»). Así lo entiende quien lea el README donde no se dibuja Mermaid, y quien no puede ver la imagen (por ejemplo, una persona ciega que usa un [lector de pantalla](02-markdown.md#110-imágenes-y-texto-alternativo)).
 - **El bucle**: si no se cobra, la flecha vuelve a «Paga con tarjeta». Es la flecha que vuelve hacia arriba de [01.02](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#112-diagramas-de-flujo).
 - Es un Markdown normal: títulos, párrafos, una tabla… y un bloque `mermaid` más.
 
@@ -860,7 +858,7 @@ Haz primero la lista de nodos con su forma: un inicio, una lectura (paralelogram
 <details>
 <summary>Pista 2</summary>
 
-Las tres asignaciones de `precio` terminan en el mismo sitio: la escritura del precio. Hacen falta tres flechas hacia ese nodo. Y ojo con los signos: `<` no es especial dentro de unas comillas.
+Las tres asignaciones de `precio` terminan en el mismo sitio: la escritura del precio. Hacen falta tres flechas hacia ese nodo. Y ojo con los signos: el `<` se escribe `&lt;`, también dentro de unas comillas ([apartado 1.9](#19-caracteres-especiales-en-las-etiquetas)).
 
 </details>
 
@@ -873,7 +871,7 @@ Las tres asignaciones de `precio` terminan en el mismo sitio: la escritura del p
 ```mermaid
 flowchart TD
     inicio(["Inicio"]) --> leer[/"Leer edad y esMiercoles"/]
-    leer --> nino{"¿edad < 12?"}
+    leer --> nino{"¿edad &lt; 12?"}
     nino -- Sí --> infantil["precio ← 5"]
     nino -- No --> miercoles{"¿esMiercoles?"}
     miercoles -- Sí --> espectador["precio ← 6"]
@@ -888,7 +886,7 @@ flowchart TD
 ```mermaid
 flowchart TD
     inicio(["Inicio"]) --> leer[/"Leer edad y esMiercoles"/]
-    leer --> nino{"¿edad < 12?"}
+    leer --> nino{"¿edad &lt; 12?"}
     nino -- Sí --> infantil["precio ← 5"]
     nino -- No --> miercoles{"¿esMiercoles?"}
     miercoles -- Sí --> espectador["precio ← 6"]
@@ -906,7 +904,8 @@ En texto: se leen la edad y si es miércoles; si la edad es menor de 12, el prec
 **Errores frecuentes al resolverlo:**
 
 - Escribir el identificador con ñ (`niño`): Mermaid lo acepta (comprobado con la 12.2.0 y la 10.9.8), pero el curso escribe los identificadores sin tildes ni eñes, como los [nombres del pseudocódigo](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#cómo-se-nombran). En las etiquetas, en cambio, escribe con todas sus letras.
-- Escribir las etiquetas sin comillas: `nino{¿edad < 12?}` puede funcionar, pero el día que pongas un paréntesis se romperá.
+- Escribir las etiquetas sin comillas: `nino{¿edad &lt; 12?}` puede funcionar, pero el día que pongas un paréntesis se romperá.
+- Escribir el `<` tal cual: aquí se vería bien, porque va seguido de un espacio, pero pegado a una letra (`edad<limite`) Mermaid se comería el resto de la etiqueta sin avisar.
 - Olvidar una de las tres flechas hacia `escribir`: ese camino se quedaría colgado, sin llegar al fin.
 
 </details>
@@ -1265,14 +1264,14 @@ sequenceDiagram
 
 | Para | Escribe |
 |---|---|
-| Paréntesis, comas, dos puntos… en un diagrama de flujo | La etiqueta entre comillas: `A["Pagar (con tarjeta)"]` |
+| Paréntesis, corchetes, llaves… (y, por costumbre, cualquier etiqueta) en un diagrama de flujo | La etiqueta entre comillas: `A["Pagar (con tarjeta)"]` |
 | `"` `<` `>` `&` dentro de una etiqueta | `&quot;` `&lt;` `&gt;` `&amp;` |
 | Un salto de línea | `<br/>` |
 | Un nodo final | `fin`, nunca `end` |
 
 ### Dónde se ve
 
-GitHub (ficheros `.md`, *issues*, *pull requests*), la academia, la vista previa de VS Code (desde la 1.121, sin extensiones) y el editor en línea `https://mermaid.live`, para probar.
+GitHub (ficheros `.md` e *issues*), la academia, la vista previa de VS Code (desde la 1.121, sin extensiones) y el editor en línea `https://mermaid.live`, para probar.
 
 ## 7. Preguntas de repaso
 
