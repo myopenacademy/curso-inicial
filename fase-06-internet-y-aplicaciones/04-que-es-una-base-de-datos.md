@@ -50,7 +50,7 @@ Dos palabras que se usan casi como sinónimos, pero que no son lo mismo:
 - Una **base de datos** es un **conjunto de datos organizados** para guardarlos y consultarlos: los socios, las pistas y las reservas del club; los clientes, los productos y los pedidos de una tienda.
 - Un **sistema gestor de bases de datos** (**SGBD**; en inglés, *DBMS*, *Database Management System*) es el **programa** que guarda esos datos y atiende a quien se los pide. Se le llama también **motor de base de datos**, o simplemente **motor**. PostgreSQL, MySQL o SQLite son motores. Un mismo motor puede tener muchas bases de datos: la del club, la de la tienda…
 
-Una comparación: la base de datos es el **archivo** de una oficina, con todos los expedientes ordenados; el motor es el **archivero**. Tú nunca entras en el archivo a buscar papeles: se los pides al archivero, que sabe dónde está cada expediente, no deja guardar uno mal rellenado y atiende a varias personas a la vez sin que se pisen. Tu programa hace lo mismo: no toca los ficheros donde se guardan los datos, **se los pide al motor**.
+Una comparación: la base de datos es el **almacén** de una tienda, con todo ordenado en sus estanterías; el motor es el **encargado** del almacén. Tú nunca entras a buscar las cajas: se las pides al encargado, que sabe dónde está cada cosa, no deja guardar nada mal etiquetado y atiende a varias personas a la vez sin que se pisen. Tu programa hace lo mismo: no toca los ficheros donde se guardan los datos, **se los pide al motor**.
 
 En el día a día se dice «la base de datos» para las dos cosas: «la base de datos no responde» quiere decir que el motor no responde. En este módulo también, salvo cuando la diferencia importa.
 
@@ -96,6 +96,8 @@ Se parece mucho a un CSV con su cabecera, y de hecho una tabla se exporta a CSV 
 - **Cada casilla guarda un solo dato.** Un número, un texto, una fecha. Si un socio tiene dos teléfonos, no se escriben los dos en la misma casilla ([error típico 3.3](#33-varios-datos-en-una-sola-columna)).
 - **El orden de las filas no significa nada.** El motor puede devolverlas en el orden que le venga mejor; si quieres un orden, lo pides.
 
+> **📌 Nota:** cuánto de estricto es cada motor cambia. PostgreSQL rechaza una fecha mal escrita; **SQLite**, en cambio, por defecto deja guardar casi cualquier valor en cualquier columna, y no comprueba las claves foráneas ([apartado 1.7](#17-relacionar-tablas-la-clave-foránea)) si no se le pide (según su documentación, consultada el 16 de noviembre de 2026). Cuando uses un motor, mira en su documentación qué reglas comprueba y cuáles hay que activar.
+
 > **📌 Nota:** los nombres de las tablas y las columnas se suelen escribir **sin tildes ni espacios** (`fecha_alta`, `telefono`), como los nombres de los ficheros del curso: así funcionan igual en todos los motores y en todos los lenguajes. Muchos proyectos los escriben en inglés (`members`, `phone`); lo que importa es que todo el proyecto siga la misma regla.
 
 ### 1.6. La clave primaria
@@ -138,7 +140,7 @@ La reserva 1 dice `socio_id` 2 y `pista_id` 1: Raúl Medina ha reservado la pist
 
 ¿Por qué no escribir el nombre y el teléfono del socio en cada reserva, y así está todo junto? Porque Raúl tiene muchas reservas: si cambia de teléfono, habría que cambiarlo en todas, y basta con olvidar una para que la base de datos diga dos cosas distintas ([error típico 3.2](#32-repetir-los-mismos-datos-en-muchas-filas)). Con la clave foránea, el teléfono de Raúl está **en un solo sitio**.
 
-Y aquí está la regla más útil del motor: si `socio_id` se declara como clave foránea, **el motor no deja guardar una reserva de un socio que no existe**, ni borrar un socio que todavía tiene reservas (a menos que se le diga qué hacer con ellas). En un CSV, nadie lo impide ([ejemplo 2.5](#25-lo-que-un-csv-acepta-y-una-base-de-datos-no)).
+Y aquí está la regla más útil del motor: si `socio_id` se declara como clave foránea, **el motor no deja guardar una reserva de un socio que no existe**, ni borrar un socio que todavía tiene reservas (a menos que se le diga qué hacer con ellas). En algunos motores, como SQLite, hay que activar antes esa comprobación ([nota del apartado 1.5](#15-tablas-filas-y-columnas)). En un CSV, nadie lo impide ([ejemplo 2.5](#25-lo-que-un-csv-acepta-y-una-base-de-datos-no)).
 
 Hay tres formas de relacionarse dos tablas:
 
@@ -206,10 +208,9 @@ Los símbolos se llaman **notación pata de gallo** (*crow's foot*), por el `{`,
 
 Para hablar con un motor relacional (crear tablas, guardar filas, hacer preguntas) se usa **SQL** (*Structured Query Language*, «lenguaje estructurado de consultas»; se dice «ese-cu-ele» o, a la inglesa, «sícuel»). Ya viste una consulta en [01.04, ejemplo 2.5](../fase-01-que-es-programar/04-paradigmas-de-programacion.md#25-estilo-declarativo): la de los pedidos a la península.
 
-Tres cosas que conviene saber de SQL antes de tu curso:
+Dos cosas que conviene saber de SQL antes de tu curso:
 
 - **Es declarativo** ([01.04, 1.7](../fase-01-que-es-programar/04-paradigmas-de-programacion.md#17-declarativo)): dices **qué** datos quieres («las reservas del 21 de noviembre, con el nombre del socio y de la pista») y el motor decide **cómo** buscarlos. Lo que tú harás a mano en el [ejemplo 2.2](#22-tres-tablas-relacionadas-seguir-la-pista-a-mano), con cinco órdenes y mirando los números, en SQL es una sola consulta.
-- **Es una norma internacional**, la ISO/IEC 9075, que se revisa de vez en cuando; la última versión es de 2023 y se llama **SQL:2023** (según la documentación de PostgreSQL, consultada el 16 de noviembre de 2026).
 - **Cada motor tiene su dialecto.** Lo básico es igual en todos, pero cada uno añade cosas propias y muestra los resultados y los errores a su manera. Lo que aprendas con uno te sirve casi entero para los demás.
 
 En este curso no vas a escribir SQL: se aprende en el curso de tu lenguaje y en el curso «SQL y bases de datos» de la academia. Lo que importa ahora es que sepas qué es cuando lo veas: el idioma en que los programas le hablan a una base de datos relacional.
@@ -447,9 +448,9 @@ $ grep ',,' reservas.csv
 **En qué fijarte:**
 
 - **La primera orden** saca la columna `id`, la ordena y deja las repetidas: **el `3` está dos veces**. Una clave primaria repetida; el motor la habría rechazado ([apartado 1.6](#16-la-clave-primaria)).
-- **La segunda** enseña los socios que aparecen en las reservas, sin repetir. Entre ellos está el **9**, y el club solo tiene los socios 1 a 4: es una reserva de un socio que no existe. Una clave foránea lo habría impedido ([apartado 1.7](#17-relacionar-tablas-la-clave-foránea)). La última línea, `socio_id`, es la cabecera, que también es una línea para `cut`.
+- **La segunda** enseña los socios que aparecen en las reservas, sin repetir. Entre ellos está el **9**, y en la tabla de socios no hay ningún socio 9: es una reserva de un socio que no existe. Una clave foránea lo habría impedido ([apartado 1.7](#17-relacionar-tablas-la-clave-foránea)). La última línea, `socio_id`, es la cabecera, que también es una línea para `cut`.
 - **La tercera** busca dos comas seguidas, un campo vacío: la reserva 5 **no tiene pista**. Si la columna es obligatoria, el motor no deja guardarla vacía.
-- **El cuarto error no lo encuentra ninguna orden**: la hora «por la tarde». En la base de datos, si la columna es de tipo hora, ese texto no cabe ([apartado 1.5](#15-tablas-filas-y-columnas)).
+- **El cuarto error no lo encuentra ninguna orden**: la hora «por la tarde». En la base de datos, si la columna es de tipo hora, un motor estricto no deja guardar ese texto ([apartado 1.5](#15-tablas-filas-y-columnas), con su nota).
 - **Has tenido que saber qué buscar.** Has encontrado estos errores porque sabías cuáles podía haber. Con una base de datos, las reglas se escriben **una vez**, al crear la tabla, y el motor las comprueba **siempre**, cada vez que alguien guarda algo.
 
 ## 3. Errores típicos
@@ -795,7 +796,7 @@ $ grep ',,' pedidos.csv
 - **La primera orden** encuentra el `id` repetido: **102**.
 - **La segunda** enseña los clientes usados en los pedidos; al compararlos con `clientes.csv`, sobra el **5**.
 - **La tercera** encuentra el campo vacío: el pedido **105**, sin fecha.
-- **«dos»** hay que verlo a ojo. En una base de datos, la columna `unidades` sería de tipo número, y el motor ni siquiera dejaría escribirlo.
+- **«dos»** hay que verlo a ojo. En una base de datos, la columna `unidades` sería de tipo número, y un motor estricto ni siquiera dejaría escribirlo (SQLite, por defecto, sí: [nota del apartado 1.5](#15-tablas-filas-y-columnas)).
 
 Y la pregunta de fondo: ¿cuál de los dos pedidos 102 es el bueno? Con el fichero, ya no se puede saber. Con una base de datos, el segundo no habría llegado a guardarse, y quien lo escribía habría visto el error en ese momento.
 
@@ -904,7 +905,7 @@ En texto: un cliente encarga cero o más pedidos, y cada pedido es de exactament
 **Por qué así:**
 
 - **Cada dato, en un solo sitio.** Si Rosa cambia de teléfono, se cambia una fila de `clientes`, y todos sus pedidos ven el nuevo, porque solo guardan su número. (Con la dirección hay un matiz: la de **entrega** de cada pedido no debería cambiar si Rosa se muda; lo verás en el [ejercicio 6](#ejercicio-6--un-pedido-como-documento).)
-- **`cliente_id` es la clave foránea**: el motor no dejaría guardar un pedido de un cliente que no existe.
+- **`cliente_id` es la clave foránea**: el motor no dejaría guardar un pedido de un cliente que no existe (en SQLite, con esa comprobación activada).
 - **El precio es un número** con decimales (`decimal`, en el diagrama), escrito con **punto**, como en la [norma del CSV](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#110-el-csv-en-españa-punto-y-coma-y-coma-decimal); el teléfono, en cambio, es texto.
 - **Los pedidos de Rosa** son ahora el 1 y el 3, los que tienen `cliente_id` 1.
 
@@ -1050,7 +1051,7 @@ Hay necesidades con más de una respuesta razonable. Lo que cuenta es el porqué
 
 **Relaciones:** uno a muchos (un socio, muchas reservas) · uno a uno · muchos a muchos (con una tabla intermedia).
 
-**SQL:** el lenguaje de las bases de datos relacionales; declarativo; norma ISO/IEC 9075 (SQL:2023); cada motor, su dialecto.
+**SQL:** el lenguaje de las bases de datos relacionales; declarativo; cada motor, su dialecto.
 
 ### Diagrama entidad-relación en Mermaid
 
@@ -1098,7 +1099,7 @@ erDiagram
    <details>
    <summary>Ver respuesta</summary>
 
-   La base de datos son los datos organizados; el SGBD (el motor) es el programa que los guarda y atiende a quien los pide, como el archivo y el archivero de una oficina. En el día a día se dice «la base de datos» para las dos cosas. Lo tienes en [1.3. Base de datos y motor](#13-base-de-datos-y-motor).
+   La base de datos son los datos organizados; el SGBD (el motor) es el programa que los guarda y atiende a quien los pide, como el almacén de una tienda y su encargado. En el día a día se dice «la base de datos» para las dos cosas. Lo tienes en [1.3. Base de datos y motor](#13-base-de-datos-y-motor).
 
    </details>
 
@@ -1125,7 +1126,7 @@ erDiagram
    <details>
    <summary>Ver respuesta</summary>
 
-   Una clave foránea: una columna que apunta a la clave primaria de la tabla de socios. Gracias a ella, el motor no deja guardar una reserva de un socio que no existe ni borrar un socio que tiene reservas. Lo tienes en [1.7. Relacionar tablas: la clave foránea](#17-relacionar-tablas-la-clave-foránea).
+   Una clave foránea: una columna que apunta a la clave primaria de la tabla de socios. Gracias a ella, el motor no deja guardar una reserva de un socio que no existe ni borrar un socio que tiene reservas (en algunos motores, como SQLite, hay que activar antes esa comprobación). Lo tienes en [1.7. Relacionar tablas: la clave foránea](#17-relacionar-tablas-la-clave-foránea).
 
    </details>
 
