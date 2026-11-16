@@ -395,7 +395,7 @@ Mermaid tiene un **editor en línea oficial**, el **Mermaid Live Editor**, en `h
 
 Es la forma más rápida de **probar** un diagrama o de **encontrar un error**: copias el código, lo pegas y miras. Cuando funciona, lo vuelves a copiar a tu fichero Markdown.
 
-> **⚠️ Cuidado:** un enlace para compartir lleva **dentro el diagrama entero**: quien tenga el enlace lo puede ver. No pongas en un diagrama que vayas a compartir así nada privado (nombres de clientes, direcciones de servidores internos, contraseñas). Las normas de seguridad las verás en «Seguridad básica» (fase 7).
+> **⚠️ Cuidado:** un enlace para compartir lleva **dentro el diagrama entero**: quien tenga el enlace lo puede ver. No pongas en un diagrama que vayas a compartir así nada privado (nombres de clientes, direcciones de servidores internos, contraseñas). Las normas de seguridad las verás en [Seguridad básica](../fase-07-aprender-a-aprender/05-seguridad-basica.md#113-los-secretos-dónde-se-guardan) (fase 7).
 
 > **📌 Nota:** el editor en línea suele usar una versión de Mermaid más nueva que GitHub o la academia. Casi nunca importa, pero algo muy nuevo puede verse en el editor y no en otro sitio ([apartado 1.12](#112-más-tipos-de-diagramas-uml-y-otras-notaciones)).
 

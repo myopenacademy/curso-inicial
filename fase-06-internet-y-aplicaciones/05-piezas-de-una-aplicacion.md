@@ -102,7 +102,7 @@ Hay cosas que casi ninguna aplicación hace por su cuenta, porque son difíciles
 
 Ahora ya sabes qué era la **pasarela de pago** del diagrama de [04.05](../fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#23-un-diagrama-de-secuencia-pagar-con-tarjeta-en-la-panadería): un servicio externo que se pone entre la tienda y el banco del cliente. Muchas tiendas ni siquiera llegan a ver el número de la tarjeta: lo normal es que el cliente lo escriba en una página o un recuadro de la propia pasarela, y la tienda solo recibe el aviso de «pago aceptado» o «pago rechazado».
 
-Para usar la API de un servicio externo, el backend necesita una **clave** que le da ese servicio: es la prueba de que es la panadería quien pide cobrar. Esa clave es un [secreto](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#114-el-fichero-env-y-los-secretos): vive en el servidor, en la configuración, nunca en el código ni en el frontend (lo verás a fondo en la fase 7).
+Para usar la API de un servicio externo, el backend necesita una **clave** que le da ese servicio: es la prueba de que es la panadería quien pide cobrar. Esa clave es un [secreto](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#114-el-fichero-env-y-los-secretos): vive en el servidor, en la configuración, nunca en el código ni en el frontend (lo verás a fondo en [Seguridad básica](../fase-07-aprender-a-aprender/05-seguridad-basica.md#113-los-secretos-dónde-se-guardan), en la fase 7).
 
 ### 1.7. El mapa completo de una tienda en línea
 
@@ -373,7 +373,7 @@ En texto: en desarrollo, el navegador de Ana habla con el backend que está escr
 
 **Por qué ocurre:** el frontend funciona en el dispositivo del usuario, que puede ver y cambiar todo lo que hay en él ([apartado 1.2](#12-el-frontend-la-parte-que-ves)). Lo que llega al backend puede no venir de tu página, o venir cambiado.
 
-**Cómo se arregla:** el backend **comprueba todo** y saca de la base de datos lo que importa (precios, existencias, permisos), como en el [ejemplo 2.2](#22-lo-que-viaja-por-la-api-el-pedido-en-json). Las comprobaciones del frontend («falta el correo») son para ayudar al usuario; las que protegen la aplicación, en el backend. Lo verás más a fondo en el módulo «Seguridad básica» (fase 7).
+**Cómo se arregla:** el backend **comprueba todo** y saca de la base de datos lo que importa (precios, existencias, permisos), como en el [ejemplo 2.2](#22-lo-que-viaja-por-la-api-el-pedido-en-json). Las comprobaciones del frontend («falta el correo») son para ayudar al usuario; las que protegen la aplicación, en el backend. Lo verás más a fondo en el módulo [Seguridad básica](../fase-07-aprender-a-aprender/05-seguridad-basica.md#111-mínimo-privilegio-cortafuegos-y-antivirus) (fase 7).
 
 ### 3.3. En mi ordenador funciona
 
@@ -397,7 +397,7 @@ En texto: en desarrollo, el navegador de Ana habla con el backend que está escr
 
 **Por qué ocurre:** todo lo que está en el frontend lo descarga cualquiera que visite la web ([apartado 1.2](#12-el-frontend-la-parte-que-ves)). Una clave en el frontend es una clave publicada.
 
-**Cómo se arregla:** las claves secretas viven **solo en el backend**, en su configuración ([apartado 1.6](#16-servicios-de-otros-pagos-correo-mapas)). Si una clave se ha publicado, hay que **anularla** en el servicio y pedir otra: borrarla de la página no sirve, porque alguien puede tenerla ya. Lo verás en «Seguridad básica» (fase 7).
+**Cómo se arregla:** las claves secretas viven **solo en el backend**, en su configuración ([apartado 1.6](#16-servicios-de-otros-pagos-correo-mapas)). Si una clave se ha publicado, hay que **anularla** en el servicio y pedir otra: borrarla de la página no sirve, porque alguien puede tenerla ya. Lo verás en [Seguridad básica](../fase-07-aprender-a-aprender/05-seguridad-basica.md#115-si-se-escapa-un-secreto) (fase 7).
 
 ## 4. Buenas prácticas
 
