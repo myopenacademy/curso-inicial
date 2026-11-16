@@ -424,7 +424,7 @@ Cómo podría haberse protegido Andrés:
 
 ### 2.6. Sortear la siguiente palabra
 
-**Situación real:** con el juguete del [ejemplo 2.1](#21-un-modelo-de-lenguaje-de-juguete), el cartel de Ana siempre dice lo mismo, porque `Elegir` coge siempre la más probable. A Rosa le aburre. Cambiamos `Elegir` para que **sortee**, como hacen los modelos de verdad ([apartado 1.11](#111-por-qué-no-responde-siempre-igual)).
+**Situación real:** con el juguete del [ejemplo 2.1](#21-un-modelo-de-lenguaje-de-juguete), el cartel de Ana siempre dice lo mismo, porque `Elegir` coge siempre la más probable. A Ana le aburre. Cambiamos `Elegir` para que **sortee**, como hacen los modelos de verdad ([apartado 1.11](#111-por-qué-no-responde-siempre-igual)).
 
 Con el principio «el pan», cada palabra se elige ahora por sorteo, con las probabilidades de la tabla. Estos son los textos posibles y la probabilidad de cada uno (se multiplican las probabilidades de cada paso):
 
