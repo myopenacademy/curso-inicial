@@ -43,6 +43,12 @@ Las versiones se revisan antes de cada versión del curso y cuando cambia la ver
 
 Un ordenador con Windows, macOS o Linux y conexión a internet. Lo que hay que instalar (Git, que en Windows trae Git Bash, y Visual Studio Code) se explica paso a paso en el módulo «Instalar programas, variables de entorno y PATH» (fase 2). La fase 1 no necesita instalar nada.
 
+## Cómo se ha hecho
+
+Este curso se ha escrito **con ayuda de inteligencia artificial**, y el autor lo ha revisado y aprobado fase a fase. Es lo mismo que el curso pide a sus alumnos en el proyecto final: usar la IA se puede, pero hay que entender, comprobar y contar lo que se entrega ([07.04, «Las cinco normas de la academia»](fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md#110-las-cinco-normas-de-la-academia)). Todo el código y las salidas se han ejecutado de verdad en la terminal del kit, y los datos que caducan se han comprobado en sus fuentes oficiales, con fecha.
+
+El registro del trabajo está en tres ficheros: [`PLAN-CURSO.md`](PLAN-CURSO.md) (las decisiones y el método), [`ESTADO.md`](ESTADO.md) (qué se hizo, cuándo y cómo se comprobó) y [`CLAUDE.md`](CLAUDE.md) (las instrucciones que sigue el asistente de IA). Algunos de sus enlaces llevan a documentos de planificación que están fuera de este repositorio.
+
 ## Licencia
 
 El texto, con [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es); el código, con MIT. Detalles en [`LICENSE`](LICENSE). Para proponer cambios, [`CONTRIBUTING.md`](CONTRIBUTING.md); qué cambia en cada versión, [`CHANGELOG.md`](CHANGELOG.md).
