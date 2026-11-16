@@ -57,7 +57,7 @@ En texto: le das la tarea al modelo; el modelo pide usar una herramienta (leer, 
 
 Fíjate en la palabra **cree**. Que crea que ha terminado no quiere decir que esté bien: el modelo sigue escribiendo lo más probable, también cuando decide que ya está.
 
-> **📌 Nota:** los asistentes que editan ficheros suelen **pedirte permiso** antes de cambiar un fichero o de ejecutar una orden, y casi todos dejan elegir qué acciones necesitan tu confirmación (la documentación de VS Code lo llama «permissions and approvals», consultada el 16 de noviembre de 2026). Ese permiso es tu oportunidad de revisar: lo verás en el [apartado 1.8](#18-revisar-lo-que-cambia-un-asistente-que-edita-ficheros).
+> **📌 Nota:** los asistentes que editan ficheros suelen **pedirte permiso** antes de cambiar un fichero o de ejecutar una orden, y casi todos dejan elegir qué acciones necesitan tu confirmación (la documentación de VS Code lo explica en «Manage approvals and permissions», consultada el 16 de noviembre de 2026). Ese permiso es tu oportunidad de revisar: lo verás en el [apartado 1.8](#18-revisar-lo-que-cambia-un-asistente-que-edita-ficheros).
 
 ### 1.3. En qué fallan los asistentes
 
@@ -66,16 +66,16 @@ Las [alucinaciones](../fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#19-las
 | Fallo | Qué pasa | Ejemplo |
 |---|---|---|
 | **Parece correcto y no lo es** | Se lee bien, funciona con el caso que pensaste… y falla con otro | Un script de notas que da «Suspenso» a un 5 ([ejemplo 2.2](#22-el-script-que-propuso-el-asistente)) |
-| **Casos límite olvidados** | Cubre el caso de manual; el cero, el vacío, el valor justo de la frontera o el dato imposible, no | Contar socios contando también la cabecera del CSV ([ejercicio 4](#ejercicio-4--probar-el-script-de-los-socios)) |
+| **Casos límite olvidados** | Cubre el caso de manual; el cero, el vacío, el valor justo de la frontera o el dato imposible, no | Un script que cuenta líneas y no tiene en cuenta el fichero vacío ni el que no existe (lo comprobarás en el [ejercicio 3](#ejercicio-3--probar-el-script-de-los-socios)) |
 | **Opciones u órdenes inventadas** | Usa una opción que «debería existir» porque se parece a otras que sí existen | El `wc -l --skip-empty` del [ejercicio 4 de 06.06](../fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#ejercicio-4--qué-hay-que-comprobar-en-esta-respuesta) |
 | **De otra época** | Aprendió de textos hasta su [fecha de corte](../fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#17-de-predecir-texto-a-conversar-cómo-se-entrena-un-asistente): te da la forma antigua de hacer algo, o una versión que ya no es la última | Te dice que instales una versión de un programa que ya no se usa |
-| **Pruebas que no prueban nada** | Si le pides los casos de prueba, a menudo saca la salida esperada de lo que hace su propio código, no del enunciado | El error de [01.03, 3.2](../fase-01-que-es-programar/03-probar-un-programa.md#32-sacar-la-salida-esperada-del-propio-programa), hecho por una máquina ([ejercicio 3](#ejercicio-3--los-casos-de-prueba-del-asistente)) |
+| **Pruebas que no prueban nada** | Si le pides los casos de prueba, a menudo saca la salida esperada de lo que hace su propio código, no del enunciado | El error de [01.03, 3.2](../fase-01-que-es-programar/03-probar-un-programa.md#32-sacar-la-salida-esperada-del-propio-programa), hecho por una máquina ([ejercicio 2](#ejercicio-2--los-casos-de-prueba-del-asistente)) |
 | **Hace más de lo que le pides** | Un asistente que edita ficheros «aprovecha» para cambiar otros ficheros, reordenar datos o borrar algo que no entendía | Le pides cambiar el README y cambia también una nota del CSV ([ejemplo 2.4](#24-revisar-con-git-lo-que-ha-cambiado)) |
 | **Te da la razón** | Si le dices «creo que el fallo está aquí», tiende a encontrarlo ahí, aunque no esté | Te confirma una explicación equivocada con mucha seguridad |
 | **Cambia la prueba para que pase** | Si una prueba falla, «arregla» la prueba en lugar del programa | El error de [01.03, 3.5](../fase-01-que-es-programar/03-probar-un-programa.md#35-cambiar-la-prueba-para-que-pase) |
 | **Fallos de seguridad** | Escribe una contraseña dentro del código o te propone una orden peligrosa | Una clave escrita en un script en lugar de en el [fichero `.env`](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#114-el-fichero-env-y-los-secretos) |
 
-> **⚠️ Cuidado con lo que te propone instalar:** si un asistente te dice que instales un programa, una extensión o una biblioteca, comprueba que existe en su **web oficial** y quién lo publica antes de instalar nada ([02.03, 1.3](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#13-descarga-siempre-de-la-web-oficial)). Un modelo puede inventarse un nombre que suena bien, y hay quien publica programas maliciosos justo con los nombres que los modelos suelen inventar.
+> **⚠️ Cuidado con lo que te propone instalar:** si un asistente te dice que instales un programa, una extensión o una biblioteca, comprueba que existe en su **web oficial** y quién lo publica antes de instalar nada ([02.03, 1.3](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#13-descarga-siempre-de-la-web-oficial)). Un modelo puede inventarse un nombre que suena bien, y nada impide que alguien publique un programa malicioso con ese mismo nombre, esperando a que otra persona lo instale.
 
 ### 1.4. La regla de oro: lo que entregas es tuyo
 
@@ -189,7 +189,7 @@ Pero un asistente puede ser un **profesor particular** excelente, disponible a c
 | Pídele que… | Ejemplo | No le pidas que… |
 |---|---|---|
 | **Te explique** un concepto, de otra forma o con otro ejemplo | «Explícame la diferencia entre `-gt` y `-ge` con un ejemplo de notas» | Te dé la solución del ejercicio antes de intentarlo |
-| **Te dé una pista**, sin la solución | «Estoy en el ejercicio 4; no me des la solución: ¿qué tipo de caso me estoy dejando?» | Escriba lo que tú no sabrías escribir y no entiendes |
+| **Te dé una pista**, sin la solución | «Estoy en un ejercicio de mi curso; no me des la solución: ¿qué tipo de caso me estoy dejando?» | Escriba lo que tú no sabrías escribir y no entiendes |
 | **Revise** tu solución cuando ya la tienes | «Esta es mi tabla de casos de prueba: ¿qué caso límite me falta? No me la rehagas» | Corrija tu trabajo sin decirte qué estaba mal |
 | **Te pregunte** a ti, como en un examen | «Hazme cinco preguntas sobre `git restore` y corrígeme las respuestas» | Te resuma un módulo para no leerlo |
 | **Te explique un error** que te sale | «¿Qué significa este error y qué puede causarlo?» ([03.04, 1.13](../fase-03-herramientas/04-errores-y-depuracion.md#113-buscar-ayuda-internet-y-la-ia)) | Lo arregle sin que entiendas qué pasaba |
@@ -216,7 +216,7 @@ Todo lo anterior se resume en **cinco normas** que valen para todos los cursos d
 
 4. **En el proyecto final puedes usarla**, pero debes entender y poder explicar todo lo que entregues. Cuéntalo en el README, en una sección «Cómo lo hice».
 
-   El [proyecto final](../fase-08-proyecto-final/01-primer-repositorio.md) (fase 8) es tuyo y va a tu portfolio: cualquiera que lo vea puede preguntarte por cualquier línea. En la sección «Cómo lo hice» cuentas, con sinceridad, qué hiciste tú, en qué te ayudó la IA y cómo lo comprobaste. No es una confesión: es lo que hace un profesional, y dice mucho de cómo trabajas. Verás una en el [ejercicio 7](#ejercicio-7--la-sección-cómo-lo-hice).
+   El [proyecto final](../fase-08-proyecto-final/01-primer-repositorio.md) (fase 8) es tuyo y va a tu portfolio: cualquiera que lo vea puede preguntarte por cualquier línea. En la sección «Cómo lo hice» cuentas, con sinceridad, qué hiciste tú, en qué te ayudó la IA y cómo lo comprobaste. No es una confesión: es lo que hace un profesional, y dice mucho de cómo trabajas. Verás una en el [ejercicio 6](#ejercicio-6--la-sección-cómo-lo-hice).
 
 5. **Las soluciones del curso ya están plegadas**: mira antes la tuya.
 
@@ -233,7 +233,7 @@ Todo lo anterior se resume en **cinco normas** que valen para todos los cursos d
 **Situación real:** Maite da clases en la Academia Brújula, una academia de repaso, y está aprendiendo bash. Quiere un script que convierta las notas de sus alumnos en calificaciones. Su primera petición fue esta:
 
 ```text
-Maite:     haz un script de notas
+Maite:      haz un script de notas
 ```
 
 Una petición así obliga al modelo a imaginarse todo: qué lenguaje, qué notas (¿de 0 a 10?, ¿con decimales?), qué calificaciones (¿las de España?, ¿letras como A, B, C?), qué hacer con un 11. Escribirá lo más probable, y lo más probable puede no ser lo que Maite necesita.
@@ -241,7 +241,7 @@ Una petición así obliga al modelo a imaginarse todo: qué lenguaje, qué notas
 Su segunda petición, con las cinco partes del [apartado 1.5](#15-pedir-bien):
 
 ```text
-Maite:     Estoy aprendiendo bash. Uso Git Bash en Windows, y el script tiene que
+Maite:      Estoy aprendiendo bash. Uso Git Bash en Windows, y el script tiene que
             funcionar también en el Mac de la academia.
 
             Quiero un script, nota.sh, que reciba una nota entera de 0 a 10 como
@@ -321,7 +321,7 @@ Su tabla de casos de prueba, con lo que ha salido:
 | 7 | Nota imposible por arriba | 11 | Aviso de nota no válida | Sobresaliente | ❌ |
 | 8 | Nota imposible por abajo | −2 | Aviso de nota no válida | Suspenso | ❌ |
 
-**Qué demuestra:** con los tres casos «de manual», el script pasa y cualquiera lo daría por bueno. Los fallos están **todos** en los límites y en los datos no válidos, justo donde dice [01.03](../fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos) que se concentran. Las tres primeras filas son el error de `>` frente a `≥` (`-gt` es «mayor que»: un 5 no es mayor que 5); las dos últimas, que nadie le dijo al asistente qué hacer con una nota imposible, y no lo hizo.
+**Qué demuestra:** con los tres casos «de manual», el script pasa y cualquiera lo daría por bueno. Los fallos están **todos** en los límites y en los datos no válidos, justo donde dice [01.03](../fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos) que se concentran. Las filas 4, 5 y 6 son el error de `>` frente a `≥` (`-gt` es «mayor que»: un 5 no es mayor que 5); la 7 y la 8, que nadie le dijo al asistente qué hacer con una nota imposible, y no lo hizo.
 
 ### 2.3. La versión revisada
 
@@ -402,6 +402,8 @@ Uso: bash nota.sh NOTA (un número entero de 0 a 10)
 
 En la sesión, el trabajo del asistente se **simula** copiando los ficheros tal como los dejó (están en la carpeta `propuesta/` del ejemplo); en tu ordenador, los habría cambiado él.
 
+> **📌 Nota:** los nombres y las notas del ejemplo son inventados. Con datos de verdad de personas (y más si son menores), no abras la carpeta con un asistente que edita ficheros: puede leerlos y enviarlos con el resto (norma 3). Trabaja con un `notas.csv` de prueba, con datos inventados, y deja el de verdad fuera del proyecto.
+
 **En tu terminal** (`sesion.txt`):
 
 ```text
@@ -457,7 +459,7 @@ eaf3c68 (HEAD -> main) Explica cómo se usa en el README
 
 1. **Un commit antes de empezar**: la foto a la que volver.
 2. **`git status --short`** dice que ha cambiado **dos** ficheros, `README.md` y `notas.csv`, aunque el resumen del asistente solo hablaba del README.
-3. **`git diff`** enseña qué líneas: en el README, el apartado nuevo, que es lo que se pidió. En `notas.csv`, **la nota de Carla ha pasado de 4 a 5**. Nadie lo pidió, y es un dato de verdad: un suspenso convertido en aprobado. Quizá el asistente «corrigió» lo que le pareció un error; da igual por qué: no se le pidió.
+3. **`git diff`** enseña qué líneas: en el README, el apartado nuevo, que es lo que se pidió. En `notas.csv`, **la nota de Carla ha pasado de 4 a 5**. Nadie lo pidió, y con datos de verdad sería un suspenso convertido en aprobado. Quizá el asistente «corrigió» lo que le pareció un error; da igual por qué: no se le pidió.
 4. **`git restore notas.csv`** deshace ese cambio, y `git status` confirma que solo queda el del README.
 5. **Un commit pequeño** con lo que sí se pidió.
 
@@ -467,31 +469,27 @@ eaf3c68 (HEAD -> main) Explica cómo se usa en el README
 
 ### 2.5. La IA como profesor
 
-**Situación real:** Ulises está haciendo el ejercicio 4 de este módulo y se ha atascado: no entiende por qué el script de los socios da un número de más. En vez de pedirle la solución, le pide ayuda **como a un profesor**. La conversación es **ilustrativa**:
+**Situación real:** Ulises ha escrito su propio `nota.sh`, como el de Maite del [ejemplo 2.3](#23-la-versión-revisada), y le falla con una nota escrita en letra. En vez de pedirle la solución, le pide ayuda **como a un profesor**. La conversación es **ilustrativa**:
 
 ```text
-Ulises:      Estoy aprendiendo bash con un curso. En un ejercicio, este script
-            cuenta mal los socios de un CSV: con 3 socios dice 4.
+Ulises:     Estoy aprendiendo bash con un curso. Mi script de notas escribe
+            «Suspenso» si le paso «siete», y antes salen varios errores de
+            «se esperaba un entero». No me des el script corregido: dame solo
+            una pista de por qué pasa.
 
-                echo "Socios: $(wc -l < "$1")"
+Asistente:  Una pista: mira qué espera -ge a cada lado. Si todas las
+            comparaciones fallan, ¿qué parte del if se ejecuta?
 
-            No me des el script corregido: dame solo una pista de dónde está
-            el problema.
+Ulises:     ¡El else! Con «siete» no se cumple ninguna condición y acaba en
+            Suspenso. Tengo que comprobar antes que es un número. ¿Voy bien?
 
-Asistente:  Una pista: piensa en qué cuenta exactamente «wc -l» y mira la primera
-            línea de tu fichero CSV. ¿Es un socio?
-
-Ulises:      ¡La cabecera! wc -l cuenta todas las líneas, también la de los
-            nombres de las columnas. ¿Voy bien?
-
-Asistente:  Sí, ese es el problema principal. Ahora piensa cómo contar todas las
-            líneas menos la primera. Y una pregunta más para tu tabla de casos:
-            ¿qué debería salir con un CSV que solo tiene la cabecera?
+Asistente:  Sí. Y una pregunta para tu tabla de casos: ¿qué debería salir
+            con 7.5?
 ```
 
-**Qué demuestra:** Ulises da el contexto (aprende bash, es un ejercicio), pega **solo** la línea que importa y pide **una pista**, no la solución. El asistente le hace pensar, y Ulises encuentra el error él solo. Además le sale un caso de prueba nuevo, el CSV vacío. Es la norma 1 en acción: ha usado la IA, y ha aprendido.
+**Qué demuestra:** Ulises da el contexto (aprende bash), cuenta lo que pasa con el mensaje que sale y pide **una pista**, no la solución. El asistente le hace pensar, y Ulises encuentra el error él solo. Además le sale un caso de prueba nuevo, la nota con decimales. Es la norma 1 en acción: ha usado la IA, y ha aprendido.
 
-Fíjate también en lo que **no** ha hecho: no ha pegado el CSV con los nombres de los socios. Para entender el problema no hacía falta (norma 3).
+Fíjate también en lo que **no** ha hecho: no ha pegado el `notas.csv` con los nombres de los alumnos. Para entender el problema no hacía falta (norma 3).
 
 ### 2.6. Un fichero de contexto del proyecto
 
@@ -526,7 +524,7 @@ Con la tabla de casos de prueba de `casos.md`: 0, 4, 5, 6, 7, 8, 9, 10, -1 y 11.
 
 ## Lo que no debes hacer
 
-- No cambies `notas.csv`: son las notas de verdad.
+- No cambies `notas.csv`: los datos no se tocan si no te lo pido.
 - No cambies los casos de prueba para que pasen.
 - Si no estás seguro de algo, dilo y pregúntame.
 ```
@@ -551,7 +549,7 @@ Un fichero así también sirve para las personas: si mañana alguien se une al p
 
 **Por qué ocurre:** el ejercicio era para que aprendieras a resolverlo, y lo ha resuelto otro. Tienes la solución, pero no lo que la solución tenía que enseñarte ([apartado 1.9](#19-usar-la-ia-como-profesor)).
 
-**Cómo se arregla:** intenta cada ejercicio tú primero (norma 1). Si te atascas, abre las pistas del curso, y si aún así no sale, pídele a la IA **una pista o una explicación**, no la solución. Y al terminar, compara con la solución del curso (norma 5).
+**Cómo se arregla:** intenta cada ejercicio tú primero (norma 1). Si te atascas, abre las pistas del curso, y si aun así no sale, pídele a la IA **una pista o una explicación**, no la solución. Y al terminar, compara con la solución del curso (norma 5).
 
 ### 3.2. Aceptar lo que no entiendes
 
@@ -671,50 +669,9 @@ Para cada parte, pregúntate: si yo fuera el asistente y solo tuviera esta frase
 
 </details>
 
-#### Ejercicio 2 · Profesor o solucionador
-
-Estas son peticiones de alumnos de la academia a un asistente de IA. Para cada una, di si cumple la **norma 1** (usar la IA como profesor) o no, y si no la cumple, reescríbela para que sí:
-
-1. «Este es el enunciado del ejercicio 3 de Git: haz los commits que pide y dame las órdenes.»
-2. «He hecho esta tabla de casos de prueba para el script de la piscina. No me la corrijas: dime solo si me falta algún tipo de caso.»
-3. «No entiendo qué es el área de preparación de Git. Explícamelo con un ejemplo de la vida real, sin órdenes.»
-4. «Resúmeme el módulo de JSON para no tener que leerlo.»
-5. «Mi script falla con este error: `línea 7: [: siete: se esperaba un entero`. ¿Qué significa y qué puede causarlo?»
-6. «Corrígeme este script y devuélvemelo arreglado.»
-
-<details>
-<summary>Pista 1</summary>
-
-La pregunta clave: después de la respuesta, ¿habrás tenido que pensar tú, o te la habrá dado hecha? Repasa la tabla del [apartado 1.9](#19-usar-la-ia-como-profesor).
-
-</details>
-
-<details>
-<summary>Ver solución</summary>
-
-**Razonamiento:** cumple la norma 1 lo que te hace pensar a ti (explicar, dar pistas, revisar lo que ya has hecho); no la cumple lo que te da el trabajo hecho ([apartado 1.9](#19-usar-la-ia-como-profesor)).
-
-| # | ¿Cumple? | Por qué | Cómo reescribirla |
-|---|---|---|---|
-| 1 | **No** | Le pide el ejercicio hecho | «Estoy en un ejercicio de Git y no sé qué orden va después de `git add`. Dame una pista, sin la orden» |
-| 2 | **Sí** | Revisa algo que el alumno ya ha hecho, y le pide una pista, no la tabla | — |
-| 3 | **Sí** | Pide una explicación de un concepto, de otra forma | — |
-| 4 | **No** | El resumen sustituye al estudio; además, puede dejarse u inventarse cosas | «He leído el módulo de JSON. Hazme cinco preguntas sobre él y corrígeme las respuestas» |
-| 5 | **Sí** | Pide que le explique un error ([03.04, 1.13](../fase-03-herramientas/04-errores-y-depuracion.md#113-buscar-ayuda-internet-y-la-ia)), con el mensaje exacto | — |
-| 6 | **No** | Le da el script arreglado sin que sepa qué estaba mal | «Este script falla con esta entrada. Explícame por qué falla; lo arreglo yo» |
-
-**Lo importante:** la misma herramienta sirve para aprender o para no aprender; lo decide la petición. Fíjate en que las reescritas no prohíben usar la IA: cambian **qué** le pides.
-
-**Errores frecuentes al resolverlo:**
-
-- Pensar que la 5 no cumple «porque le pide ayuda con un error». Entender un error es aprender; lo que no cumple es pedirle que lo arregle sin entenderlo.
-- Pensar que la 4 está bien «porque solo es un resumen». Un resumen no te hace pensar, y puede dejarse justo lo que necesitabas.
-
-</details>
-
 ### 🟡 Intermedio
 
-#### Ejercicio 3 · Los casos de prueba del asistente
+#### Ejercicio 2 · Los casos de prueba del asistente
 
 Ramiro trabaja en la Autoescuela Rotonda y quiere un programa que diga si un alumno aprueba el examen teórico de prueba que hacen en clase: son **30 preguntas** y se aprueba con **3 fallos como máximo**. Le pidió a un asistente el algoritmo **y** sus casos de prueba. Este es el algoritmo (en pseudocódigo) y la tabla que le dio (es un ejemplo **ilustrativo**):
 
@@ -808,7 +765,7 @@ Para los casos que faltan, repasa los tres tipos de [01.03, 1.4](../fase-01-que-
 
 </details>
 
-#### Ejercicio 4 · Probar el script de los socios
+#### Ejercicio 3 · Probar el script de los socios
 
 Samuel lleva el Club de Ajedrez Enroque y le pidió a un asistente un script que contara los socios del fichero `socios.csv`. Esto es lo que le propuso (es un ejemplo **ilustrativo**, con fallos típicos):
 
@@ -820,7 +777,7 @@ Samuel lleva el Club de Ajedrez Enroque y le pidió a un asistente un script que
 echo "Socios: $(wc -l < "$1")"
 ```
 
-📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej04-probar-el-script-de-los-socios/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej04-probar-el-script-de-los-socios/)
+📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej03-probar-el-script-de-los-socios/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej03-probar-el-script-de-los-socios/)
 
 En la carpeta del ejercicio tienes tres ficheros para probarlo:
 
@@ -835,7 +792,7 @@ En la carpeta del ejercicio tienes tres ficheros para probarlo:
 <details>
 <summary>Pista 1</summary>
 
-`wc -l` cuenta los **saltos de línea** del fichero ([03.02, 1.6](../fase-03-herramientas/02-terminal-sacarle-partido.md#16-los-filtros-grep-sort-uniq-wc-cut-head-y-tail)). ¿Cuántos tiene cada uno de los tres ficheros? Ojo con el último.
+En [03.02, 1.6](../fase-03-herramientas/02-terminal-sacarle-partido.md#16-los-filtros-grep-sort-uniq-wc-cut-head-y-tail) viste que `wc -l` cuenta las líneas. En realidad, cuenta los **saltos de línea**: una última línea sin salto no la cuenta. ¿Cuántos saltos tiene cada uno de los tres ficheros? Ojo con el último.
 
 </details>
 
@@ -876,7 +833,7 @@ socios.sh: línea 5: no-existe.csv: No existe el archivo o el directorio
 Socios: 
 ```
 
-📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej04-probar-el-script-de-los-socios/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej04-probar-el-script-de-los-socios/)
+📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej03-probar-el-script-de-los-socios/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej03-probar-el-script-de-los-socios/)
 
 | Nº | Salida esperada | Salida obtenida | ¿Pasa? | Por qué |
 |---|---|---|---|---|
@@ -915,7 +872,7 @@ socios=$(tail -n +2 "$fichero" | grep -c .)
 echo "Socios: $socios"
 ```
 
-📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej04-probar-el-script-de-los-socios/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej04-probar-el-script-de-los-socios/)
+📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej03-probar-el-script-de-los-socios/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej03-probar-el-script-de-los-socios/)
 
 **En tu terminal** (`sesion-revisado.txt`):
 
@@ -930,7 +887,7 @@ $ bash socios-revisado.sh no-existe.csv
 No existe el fichero no-existe.csv
 ```
 
-📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej04-probar-el-script-de-los-socios/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej04-probar-el-script-de-los-socios/)
+📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej03-probar-el-script-de-los-socios/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej03-probar-el-script-de-los-socios/)
 
 Pasan los cuatro casos. Fíjate en que `grep -c .` tampoco cuenta las líneas vacías, si las hubiera: una línea en blanco al final del CSV no es un socio.
 
@@ -946,7 +903,7 @@ Pasan los cuatro casos. Fíjate en que `grep -c .` tampoco cuenta las líneas va
 
 ### 🔴 Avanzado
 
-#### Ejercicio 5 · Las órdenes que quiere ejecutar el asistente
+#### Ejercicio 4 · Las órdenes que quiere ejecutar el asistente
 
 Jimena le ha pedido a un asistente que edita ficheros: «Ordena las fotos de la carpeta `excursion` en subcarpetas por mes». Mientras trabaja, el asistente le pide permiso para ejecutar estas órdenes, una a una. Para cada una, di si la aprobarías, la rechazarías o preguntarías antes, y por qué:
 
@@ -982,7 +939,7 @@ Para cada orden, hazte tres preguntas: ¿la entiendo? ¿Hace falta para lo que p
 |---|---|---|
 | 1 | **Aprobar** | Solo lista la carpeta: no cambia nada, y el asistente necesita saber qué fotos hay |
 | 2 | **Aprobar** | Crea las carpetas de los meses, que es lo que se pidió. Si sobran, se borran sin pérdida |
-| 3 | **Aprobar**, mirando la ruta | Mueve una foto a su mes. Comprueba que el destino es una carpeta que existe: si no, `mv` la renombraría |
+| 3 | **Aprobar**, mirando la ruta | Mueve una foto a su mes. La `/` del final es una buena costumbre: si la carpeta no existiera, `mv` daría un error en vez de renombrar la foto como `2026-10` |
 | 4 | **Rechazar** | No tiene nada que ver con ordenar fotos. Con `sudo` y `-R`, da a **todo el mundo** permiso para leer, escribir y ejecutar **toda tu carpeta personal**. Es lo contrario del [mínimo privilegio](../fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo) |
 | 5 | **Rechazar** (y preguntar) | Borra **todo** lo que hay en la carpeta, sin papelera. Quizá quería limpiar algo tras mover las fotos, pero si alguna no se había movido, se pierde. Pregúntale qué pretende |
 | 6 | **Preguntar o hacerlo tú** | Antes de un commit, mira tú `git status` y `git diff`, como en el [ejemplo 2.4](#24-revisar-con-git-lo-que-ha-cambiado). El commit lo apruebas cuando hayas revisado qué entra |
@@ -999,9 +956,9 @@ Para cada orden, hazte tres preguntas: ¿la entiendo? ¿Hace falta para lo que p
 
 </details>
 
-#### Ejercicio 6 · El contexto del club de ajedrez
+#### Ejercicio 5 · El contexto del club de ajedrez
 
-Samuel, el del [ejercicio 4](#ejercicio-4--probar-el-script-de-los-socios), está haciendo la web del Club de Ajedrez Enroque y usa un asistente varias veces por semana. Escribe su **fichero de contexto**, `contexto.md`, con los apartados del [apartado 1.6](#16-el-contexto-de-tu-proyecto-escrito-una-vez). Lo que sabes del proyecto:
+Samuel, el del [ejercicio 3](#ejercicio-3--probar-el-script-de-los-socios), está haciendo la web del Club de Ajedrez Enroque y usa un asistente varias veces por semana. Escribe su **fichero de contexto**, `contexto.md`, con los apartados del [apartado 1.6](#16-el-contexto-de-tu-proyecto-escrito-una-vez). Lo que sabes del proyecto:
 
 - La web son ficheros Markdown publicados en GitHub Pages: `index.md` (la portada, con el horario y cómo apuntarse) y `torneos.md` (el calendario de torneos).
 - En el proyecto está también `socios.csv`, con el nombre, la categoría y la fecha de alta de cada socio, que **no** se publica.
@@ -1057,7 +1014,7 @@ La web del club, hecha con ficheros Markdown y publicada en GitHub Pages:
 - Si no sabes algo del club (fechas, precios, horarios), pregúntamelo: no lo inventes.
 ```
 
-📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej06-el-contexto-del-club-de-ajedrez/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej06-el-contexto-del-club-de-ajedrez/)
+📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej05-el-contexto-del-club-de-ajedrez/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej05-el-contexto-del-club-de-ajedrez/)
 
 **En qué fijarte:**
 
@@ -1076,11 +1033,11 @@ La web del club, hecha con ficheros Markdown y publicada en GitHub Pages:
 
 ### 🏆 Caso real
 
-#### Ejercicio 7 · La sección Cómo lo hice
+#### Ejercicio 6 · La sección Cómo lo hice
 
 Hernán ha terminado su primer proyecto para el portfolio: un **recetario familiar** en Markdown, en GitHub, con una carpeta por tipo de plato, un índice y una tabla de tiempos de cocina. Así lo cuenta él:
 
-> «Elegí las recetas y escribí el texto de cada una. No sabía hacer tablas en Markdown, así que le pedí a un asistente que me lo explicara, y la tabla de tiempos la escribí yo. Le pedí ideas para organizar el índice y me quedé con una, cambiándola un poco. También le pedí un `.gitignore` para no subir las fotos originales, que son enormes; lo revisé línea a línea y quité dos líneas que no necesitaba, y comprobé con `git check-ignore` que las fotos no se suben. Al revisar el índice vi que tenía un enlace a una receta de croquetas que no existe: se la había inventado el asistente. Desde entonces compruebo cada enlace. Ah, y al principio le pegué la receta de mi abuela con su nombre completo y su dirección, porque venía en la ficha.»
+> «Elegí las recetas, las organicé en una carpeta por tipo de plato y escribí el texto de cada una. No sabía hacer tablas en Markdown, así que le pedí a un asistente que me lo explicara, y la tabla de tiempos la escribí yo. Le pedí ideas para organizar el índice y me quedé con una, cambiándola un poco. También le pedí un `.gitignore` para no subir las fotos originales, que son enormes; lo revisé línea a línea y quité dos líneas que no necesitaba, y comprobé con `git check-ignore` que las fotos no se suben. Al revisar el índice vi que tenía un enlace a una receta de croquetas que no existe: se la había inventado el asistente. Desde entonces compruebo cada enlace. Ah, y al principio le pegué la receta de mi abuela con su nombre completo y su dirección, porque venía en la ficha.»
 
 1. Repasa la historia de Hernán con las **cinco normas** del [apartado 1.10](#110-las-cinco-normas-de-la-academia): ¿cuáles ha cumplido y cuál no?
 2. Escribe el `README.md` del proyecto con un apartado «Cómo se usa» (el índice está en `index.md`) y la sección **«Cómo lo hice»**: qué hizo él, en qué le ayudó la IA, cómo lo comprobó y qué aprendió.
@@ -1140,7 +1097,7 @@ Abre `index.md`: desde ahí se llega a todas las recetas.
   entonces compruebo cada enlace que me propone.
 ```
 
-📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej07-la-seccion-como-lo-hice/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej07-la-seccion-como-lo-hice/)
+📁 **Código:** [`codigo/04-programar-con-asistentes-de-ia/ejercicios/ej06-la-seccion-como-lo-hice/`](codigo/04-programar-con-asistentes-de-ia/ejercicios/ej06-la-seccion-como-lo-hice/)
 
 Fíjate en que no dice «lo hizo todo la IA» ni «no usé IA»: dice **qué** hizo cada uno. Y la parte de «Lo que aprendí» es la que más dice de cómo trabaja Hernán: encontró un error del asistente porque comprobaba.
 
@@ -1262,7 +1219,7 @@ Lee cada orden antes de aprobarla. Con lupa: lo que borra (`rm`), lo que pide `s
    <details>
    <summary>Ver respuesta</summary>
 
-   Porque si el código y las pruebas vienen del asistente, pueden equivocarse a la vez (la salida esperada sacada de su propio código) y pasar todas. Tus casos, con la salida esperada sacada del enunciado, son una comprobación independiente, y pensarlos antes te obliga a entender el problema. Lo tienes en [1.7. Comprobar siempre, con tus casos de prueba](#17-comprobar-siempre-con-tus-casos-de-prueba) y en el [ejercicio 3](#ejercicio-3--los-casos-de-prueba-del-asistente).
+   Porque si el código y las pruebas vienen del asistente, pueden equivocarse a la vez (la salida esperada sacada de su propio código) y pasar todas. Tus casos, con la salida esperada sacada del enunciado, son una comprobación independiente, y pensarlos antes te obliga a entender el problema. Lo tienes en [1.7. Comprobar siempre, con tus casos de prueba](#17-comprobar-siempre-con-tus-casos-de-prueba) y en el [ejercicio 2](#ejercicio-2--los-casos-de-prueba-del-asistente).
 
    </details>
 
@@ -1307,7 +1264,7 @@ Lee cada orden antes de aprobarla. Con lupa: lo que borra (`rm`), lo que pide `s
     <details>
     <summary>Ver respuesta</summary>
 
-    Qué hiciste tú, en qué te ayudó la IA (en concreto), cómo lo comprobaste y, si quieres, qué aprendiste. No es una confesión: muestra que sabes usar las herramientas y explicar tu trabajo. Lo tienes en [1.10. Las cinco normas de la academia](#110-las-cinco-normas-de-la-academia) y en el [ejercicio 7](#ejercicio-7--la-sección-cómo-lo-hice).
+    Qué hiciste tú, en qué te ayudó la IA (en concreto), cómo lo comprobaste y, si quieres, qué aprendiste. No es una confesión: muestra que sabes usar las herramientas y explicar tu trabajo. Lo tienes en [1.10. Las cinco normas de la academia](#110-las-cinco-normas-de-la-academia) y en el [ejercicio 6](#ejercicio-6--la-sección-cómo-lo-hice).
 
     </details>
 

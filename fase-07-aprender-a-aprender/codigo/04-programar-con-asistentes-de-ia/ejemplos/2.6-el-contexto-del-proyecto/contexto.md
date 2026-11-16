@@ -26,6 +26,6 @@ Con la tabla de casos de prueba de `casos.md`: 0, 4, 5, 6, 7, 8, 9, 10, -1 y 11.
 
 ## Lo que no debes hacer
 
-- No cambies `notas.csv`: son las notas de verdad.
+- No cambies `notas.csv`: los datos no se tocan si no te lo pido.
 - No cambies los casos de prueba para que pasen.
 - Si no estás seguro de algo, dilo y pregúntame.

@@ -1882,7 +1882,7 @@ Trello, Notion y Jira (tableros); Scrum (trabajo en *sprints* de un mes o menos)
 | Operador | Para qué | Dónde |
 |---|---|---|
 | `"frase exacta"` | Esa frase, tal cual | Google, Bing y DuckDuckGo |
-| `-palabra` | Quitarla | Los tres |
+| `-palabra` | Quitarla (en DuckDuckGo, da menos resultados con ella) | Los tres |
 | `site:dominio` | Solo ese sitio | Los tres |
 | `filetype:pdf` | Solo ese tipo de fichero | Los tres |
 | `before:` / `after:` | Actualizadas antes o después de una fecha | Google |
@@ -2006,7 +2006,7 @@ Lee cada orden antes de aprobarla. Con lupa: lo que borra (`rm`), lo que pide `s
 
 #### Leer un dominio
 
-Entre `://` y la primera `/`, **desde el final**. `envios.paqueteria-veloz.example` es de `paqueteria-veloz.example`; `paqueteria-veloz.example.pagos.invalid`, no.
+Entre `://` y la primera `/`, **desde el final**. `envios.paqueteria-veloz.example` es de `paqueteria-veloz.example` (termina en `.paqueteria-veloz.example`, con el punto); `paqueteria-veloz.example.pagos.invalid`, no; `mipaqueteria-veloz.example`, tampoco: sin el punto, es otro dominio.
 
 #### Secretos en un proyecto
 
