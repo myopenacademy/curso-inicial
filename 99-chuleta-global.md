@@ -37,6 +37,7 @@
   - [06.03 La web: HTTP, peticiones, respuestas y APIs](#0603-la-web-http-peticiones-respuestas-y-apis)
   - [06.04 Qué es una base de datos](#0604-qué-es-una-base-de-datos)
   - [06.05 Las piezas de una aplicación](#0605-las-piezas-de-una-aplicación)
+  - [06.06 Qué es la IA y cómo funciona por dentro](#0606-qué-es-la-ia-y-cómo-funciona-por-dentro)
 
 ---
 
@@ -1689,6 +1690,64 @@ Persona → Frontend → (API) → Backend → Base de datos
 - **El frontend enseña; el backend decide.**
 - **Solo el backend** habla con la base de datos y guarda los secretos.
 - **Lo que cambia entre entornos, en la configuración**, no en el código.
+
+---
+
+### 06.06 Qué es la IA y cómo funciona por dentro
+
+📖 Módulo completo: [fase-06-internet-y-aplicaciones/06-que-es-la-ia.md](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md)
+
+#### Los términos
+
+| Término | Qué es |
+|---|---|
+| Inteligencia artificial (IA) | Programas que hacen tareas que necesitaban la inteligencia de una persona |
+| Aprendizaje automático | Aprender de ejemplos en lugar de escribir las reglas a mano |
+| Modelo | El resultado del aprendizaje: muchísimos números (parámetros) que convierten una entrada en una salida |
+| Entrenamiento | Ajustar los parámetros con ejemplos; lo hace quien crea el modelo |
+| Uso (inferencia) | Darle una entrada al modelo ya entrenado; no aprende nada nuevo |
+| Aprendizaje profundo | Aprendizaje automático con redes neuronales de muchas capas |
+| IA generativa | La que crea contenido nuevo: texto, imágenes, audio, código |
+| Modelo de lenguaje (LLM) | Predice el siguiente token de un texto, en bucle |
+| Token | Trozo de texto con el que trabaja el modelo: palabra, parte de palabra o signo |
+| Fecha de corte | Hasta cuándo son los textos con los que aprendió; de lo posterior no sabe nada |
+| Alucinación | Respuesta que suena segura y es falsa |
+| Contexto (ventana de contexto) | Todo lo que el modelo tiene delante en una petición; su única memoria |
+| Temperatura | Cuánto se aleja el sorteo de lo más probable |
+| Pesos abiertos | Modelos que se pueden descargar y ejecutar en tu ordenador |
+
+#### Cómo funciona un modelo de lenguaje
+
+```text
+REPETIR
+    probabilidades ← PredecirSiguiente(texto)
+    token ← Elegir(probabilidades)        // la más probable o un sorteo
+    texto ← texto + token
+HASTA QUE token = "fin"
+```
+
+#### Comprobar siempre
+
+- Cifras, fechas, nombres, versiones, opciones de órdenes y enlaces: en la fuente oficial.
+- Código y órdenes: con tus casos de prueba o ejecutándolos.
+- Cuentas: con una herramienta que calcule.
+- Lo reciente: el modelo no lo sabe.
+
+#### Nunca pegues
+
+- Contraseñas, claves, tokens de acceso, ficheros `.env`.
+- Datos personales, tuyos o de otros.
+- Datos de tu trabajo o de tus clientes sin permiso.
+
+Si se te escapa un secreto: **cámbialo**.
+
+#### Nube o local
+
+| | Nube | Local |
+|---|---|---|
+| Calidad | La más alta | Depende del tamaño |
+| Privacidad | Los datos salen | Los datos no salen |
+| Necesitas | Internet y cuenta | Memoria, disco y paciencia |
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

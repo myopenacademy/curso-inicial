@@ -19,6 +19,10 @@ Secuencia ordenada, finita y precisa de pasos que resuelve un problema; no depen
 
 Pieza que guarda los datos de forma permanente (SSD o disco duro); se conserva al apagar. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#16-el-almacenamiento-ssd-y-disco-duro).
 
+### Alucinación
+
+Respuesta de un modelo de IA que suena segura y es falsa. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#19-las-alucinaciones).
+
 ### Analizar (parsear)
 
 Leer un texto escrito en un formato (JSON, YAML…) y convertirlo en datos que un programa puede usar; lo hace un analizador o parser. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
@@ -30,6 +34,10 @@ Identificador de un título que se genera a partir de su texto y permite enlazar
 ### API
 
 La puerta por la que un programa le pide datos o servicios a otro, por ejemplo a un servidor por HTTP (una API web). Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#111-qué-es-una-api-web).
+
+### Aprendizaje automático
+
+Forma de hacer programas en la que, en lugar de escribir las reglas, se ajusta un modelo a partir de muchos ejemplos. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#12-el-aprendizaje-automático-aprender-de-ejemplos).
 
 ### Área de preparación
 
@@ -353,6 +361,10 @@ Complemento que se instala en un editor como VS Code para añadirle funciones; t
 
 ## F
 
+### Fecha de corte
+
+Fecha hasta la que llegan los textos con los que se entrenó un modelo; de lo posterior no sabe nada. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#17-de-predecir-texto-a-conversar-cómo-se-entrena-un-asistente).
+
 ### Fichero
 
 Conjunto de datos guardado en el disco con un nombre (también, archivo). Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#11-ficheros-donde-se-guardan-los-datos).
@@ -463,6 +475,10 @@ HTTP dentro de una conexión cifrada con TLS, en la que el servidor demuestra qu
 
 ## I
 
+### IA generativa
+
+IA que crea contenido nuevo (texto, imágenes, audio, código) en lugar de solo clasificar o predecir un dato. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#14-cajas-dentro-de-cajas-de-la-ia-a-la-ia-generativa).
+
 ### IDE
 
 Entorno de desarrollo integrado: editor de código con todo lo necesario para trabajar en un lenguaje concreto (ejecutar, probar, depurar). Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#12-editor-procesador-de-textos-e-ide).
@@ -482,6 +498,10 @@ Copiar los ficheros de un programa en su sitio, avisar al sistema de que existe 
 ### Integración continua
 
 Práctica en la que un servidor ejecuta todas las pruebas automáticamente cada vez que alguien sube un cambio. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
+
+### Inteligencia artificial (IA)
+
+Parte de la informática que construye programas capaces de hacer tareas que necesitaban la inteligencia de una persona: entender un texto, reconocer una imagen, conversar. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#11-programas-que-aprenden-en-vez-de-seguir-reglas).
 
 ### Intérprete
 
@@ -565,6 +585,14 @@ Forma de organizar el backend en varios programas pequeños, cada uno con una ta
 
 Principio de seguridad: cada usuario y cada programa, con los permisos justos para su tarea y ni uno más. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
 
+### Modelo (IA)
+
+Resultado del entrenamiento: muchísimos números (parámetros) que, con el programa que los usa, convierten una entrada en una salida. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#12-el-aprendizaje-automático-aprender-de-ejemplos).
+
+### Modelo de lenguaje (LLM)
+
+Modelo de IA entrenado con muchísimo texto para predecir el siguiente token; repitiendo esa predicción escribe respuestas enteras. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#15-un-modelo-de-lenguaje-predice-la-siguiente-palabra).
+
 ### Mojibake
 
 Caracteres estropeados («Ã±», «�») por leer un texto con una codificación distinta de la que se usó al escribirlo. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#110-caracteres-estropeados-mojibake).
@@ -646,6 +674,10 @@ Técnica de depuración: explicar el código línea a línea, en voz alta, para 
 ### Permisos
 
 Lo que cada usuario puede hacer con un fichero o una carpeta: leer (r), escribir (w) y ejecutar (x). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#110-permisos-quién-puede-leer-escribir-y-ejecutar).
+
+### Pesos abiertos
+
+Modelos de IA cuyos parámetros se publican para que cualquiera los descargue y los ejecute, según su licencia. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#113-en-la-nube-o-en-tu-ordenador).
 
 ### Petición HTTP
 
@@ -877,6 +909,10 @@ Protocolo que garantiza que los datos llegan enteros y en orden, a cambio de alg
 
 Desarrollo guiado por pruebas: avanzar en ciclos de rojo (una prueba que falla), verde (lo mínimo para que pase) y refactorizar. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#112-ideas-que-verás-en-tu-curso).
 
+### Temperatura
+
+Ajuste que decide cuánto se aleja un modelo de lenguaje de lo más probable al elegir cada token: baja, respuestas previsibles; alta, más variedad. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#111-por-qué-no-responde-siempre-igual).
+
 ### Terminal
 
 Ventana en la que se escriben órdenes y el ordenador contesta con texto. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
@@ -896,6 +932,10 @@ Texto hecho solo de caracteres, sin formato (negritas, tamaños, imágenes); es 
 ### Tipo de dato
 
 Clase de valor que guarda un dato (entero, real, texto o lógico) y que decide qué operaciones admite. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#tipos-de-datos).
+
+### Token (IA)
+
+Trozo de texto con el que trabaja un modelo de lenguaje (una palabra, parte de una palabra o un signo). No es el token de acceso de GitHub. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#16-los-tokens-los-trozos-con-los-que-trabaja).
 
 ### Token de acceso personal
 
@@ -948,6 +988,10 @@ Espacio con nombre donde se guarda un dato que puede cambiar mientras se ejecuta
 ### Variable de entorno
 
 Dato con nombre que guarda el sistema operativo y que pueden consultar todos los programas. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#19-variables-de-entorno).
+
+### Ventana de contexto
+
+Todo el texto que un modelo de lenguaje tiene en cuenta en una petición, incluida su respuesta; lo que no está ahí no existe para él. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#110-el-contexto-la-memoria-de-trabajo-del-modelo).
 
 ### Versionado semántico
 

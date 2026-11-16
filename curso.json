@@ -920,8 +920,40 @@
           "id": "inicial.que-es-la-ia",
           "fichero": "fase-06-internet-y-aplicaciones/06-que-es-la-ia.md",
           "titulo": "Qué es la IA y cómo funciona por dentro",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.que-es-la-ia.reglas-o-aprendizaje-automatico",
+              "titulo": "Reglas o aprendizaje automático"
+            },
+            {
+              "id": "inicial.que-es-la-ia.la-siguiente-palabra-en-el-club-de-lectura",
+              "titulo": "La siguiente palabra en el club de lectura"
+            },
+            {
+              "id": "inicial.que-es-la-ia.por-que-el-asistente-se-olvido-de-lucia",
+              "titulo": "Por qué el asistente se olvidó de Lucía"
+            },
+            {
+              "id": "inicial.que-es-la-ia.que-hay-que-comprobar-en-esta-respuesta",
+              "titulo": "Qué hay que comprobar en esta respuesta"
+            },
+            {
+              "id": "inicial.que-es-la-ia.la-conversacion-que-no-cabe",
+              "titulo": "La conversación que no cabe"
+            },
+            {
+              "id": "inicial.que-es-la-ia.mas-o-menos-sorteo-para-cada-tarea",
+              "titulo": "Más o menos sorteo para cada tarea"
+            },
+            {
+              "id": "inicial.que-es-la-ia.limpiar-un-mensaje-antes-de-pegarlo",
+              "titulo": "Limpiar un mensaje antes de pegarlo"
+            },
+            {
+              "id": "inicial.que-es-la-ia.la-asesoria-que-quiere-usar-ia",
+              "titulo": "La asesoría que quiere usar IA"
+            }
+          ]
         }
       ]
     },

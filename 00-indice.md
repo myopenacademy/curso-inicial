@@ -1,7 +1,7 @@
 # Índice — Fundamentos para programar
 
 > **8 fases · 31 módulos**
-> **Disponibles:** 24 de 31 módulos (los demás aparecen como «Pendiente»)
+> **Disponibles:** 25 de 31 módulos (los demás aparecen como «Pendiente»)
 
 Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.
 
@@ -16,11 +16,11 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 - [Fase 03 — Herramientas del programador](#fase-03--herramientas-del-programador) · 4 módulos · ~9,5 h
 - [Fase 04 — Formatos y diagramas](#fase-04--formatos-y-diagramas) · 5 módulos · ~11 h
 - [Fase 05 — Git y GitHub](#fase-05--git-y-github) · 3 módulos · ~8,5 h
-- [Fase 06 — Internet y aplicaciones](#fase-06--internet-y-aplicaciones) · 6 módulos · ~10 h
+- [Fase 06 — Internet y aplicaciones](#fase-06--internet-y-aplicaciones) · 6 módulos · ~12 h
 - [Fase 07 — Aprender a aprender](#fase-07--aprender-a-aprender) · 5 módulos
 - [Fase 08 — Proyecto final](#fase-08--proyecto-final) · 1 módulo
 
-**Tiempo de los módulos disponibles:** ~56,5 horas.
+**Tiempo de los módulos disponibles:** ~58,5 horas.
 
 ---
 
@@ -95,7 +95,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 
 ## Fase 06 — Internet y aplicaciones
 
-**Carpeta:** [`fase-06-internet-y-aplicaciones/`](fase-06-internet-y-aplicaciones/) · **Tiempo:** ~10 h
+**Carpeta:** [`fase-06-internet-y-aplicaciones/`](fase-06-internet-y-aplicaciones/) · **Tiempo:** ~12 h
 
 | # | Módulo | Nivel | Tiempo | Estado |
 |---|---|---|---|---|
@@ -104,7 +104,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 | 06.03 | [La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md) | Básico · Núcleo | 2,5 h | ✅ Disponible |
 | 06.04 | [Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md) | Básico · Ampliación | 2 h | ✅ Disponible |
 | 06.05 | [Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md) | Básico · Núcleo | 1,5 h | ✅ Disponible |
-| 06.06 | Qué es la IA y cómo funciona por dentro | — | — | Pendiente |
+| 06.06 | [Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md) | Básico · Núcleo | 2 h | ✅ Disponible |
 | | Retos de la fase | | | Pendiente |
 
 ---
