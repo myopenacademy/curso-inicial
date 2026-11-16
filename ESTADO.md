@@ -125,7 +125,7 @@ Desde el 8 de noviembre de 2026, `FORMATO.md` 7.1 fija los ficheros de verificac
 
 En la terminal del kit: fechas de commit fijas que avanzan (el primero, 15 de enero de 2026 a las 10:00; cada uno, un minuto después; un commit que falla no cuenta; otras fechas con `GIT_AUTHOR_DATE` y `GIT_COMMITTER_DATE` en la propia orden), identidad «Ana García <ana@example.com>» y rama `main` salvo `git config` en la sesión. Git no traduce las fechas («Date: Thu Jan 15 10:00:00 2026 +0100») ni el resumen («1 file changed, 1 insertion(+)»): se muestran tal cual. Sin paginador en el kit; en el equipo del alumno una salida larga se abre en `less` (se sale con `q`): decirlo en el texto. **Sesiones encadenadas** (`sesion-1.txt`, `sesion-2.txt`…) para lo que el alumno hace seguido, y **cada repositorio en una carpeta nueva creada en la sesión** (`mkdir … && cd … && git init`), porque los `sesion*.txt` van en el ZIP del alumno: ver `PLAN-CURSO.md`, apartado 2.
 
-**Fase 6 (`curl`):** al decidir sus ejercicios, decir al kit qué API necesitan (rutas, respuestas, códigos de estado) para su servidor local.
+**Fase 6 (`curl`):** al decidir sus ejercicios, decir al kit qué API necesitan (rutas, respuestas, códigos de estado) para su servidor local. **Precisiones de la raíz (16 de noviembre de 2026):** (1) nada de `python3 -m http.server` en las sesiones (Python no se da por instalado en el equipo del alumno); (2) las respuestas del servidor del kit no llevan `Date` ni `Server`: el texto dice que las de un servidor real traen más cabeceras. Qué hace el alumno en su equipo sin el servidor del kit se decide al escribir la fase 6.
 
 ### Comprobadores de formatos (fase 4, desde el 8 de noviembre de 2026)
 
