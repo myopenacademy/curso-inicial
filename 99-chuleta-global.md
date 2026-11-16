@@ -42,6 +42,7 @@
   - [07.01 Cómo estudiar con estos cursos](#0701-cómo-estudiar-con-estos-cursos)
   - [07.02 Organizar tu trabajo](#0702-organizar-tu-trabajo)
   - [07.03 Buscar ayuda](#0703-buscar-ayuda)
+  - [07.04 Programar con asistentes de IA](#0704-programar-con-asistentes-de-ia)
 
 ---
 
@@ -1904,6 +1905,64 @@ Sin espacio después de los dos puntos.
 | *Issues* | Fallos del proyecto (busca antes, también en las cerradas) |
 | Discussions | Dudas e ideas sobre el proyecto |
 | Foro (Stack Overflow, en inglés; Stack Overflow en español) | Dudas que no son de un proyecto concreto |
+
+---
+
+### 07.04 Programar con asistentes de IA
+
+📖 Módulo completo: [fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md](fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md)
+
+#### Los tres tipos de asistente
+
+| Tipo | Qué hace | Qué revisas |
+|---|---|---|
+| Chat | Contesta en una conversación | Todo, antes de copiarlo |
+| Autocompletado | Propone el resto de la línea mientras escribes | Cada sugerencia, antes de aceptarla |
+| Asistente que edita ficheros (agente) | Lee, cambia ficheros y ejecuta órdenes por su cuenta | Cada orden que pide y todo lo que cambia (`git diff`) |
+
+#### Una petición con cinco partes
+
+| Parte | Qué le dices |
+|---|---|
+| Contexto | Qué haces, con qué herramientas, qué nivel tienes |
+| Objetivo | Qué quieres conseguir, en concreto |
+| Límites | Las reglas y lo que no debe hacer |
+| Un ejemplo | Una entrada con la salida que esperas |
+| Formato de la respuesta | Cómo quieres que te conteste |
+
+Y además: divide la tarea, dale los datos, dale permiso para no saber, y si se tuerce, conversación nueva.
+
+#### Comprobar siempre
+
+1. Tus casos de prueba **antes** de pedir nada: normales, límite y no válidos, con la salida esperada sacada del enunciado.
+2. Ejecútalo con tus casos; preguntarle «¿está bien?» no es comprobar.
+3. ¿Hace lo que pedí, y solo eso? ¿Existe todo lo que usa? ¿Funciona en mi sistema? ¿Hay algo peligroso? ¿Lo entiendo entero?
+
+#### Con un asistente que edita ficheros
+
+```bash
+git add . && git commit -m "Antes de la tarea"   # la foto a la que volver
+# ... trabaja el asistente ...
+git status --short    # qué ficheros ha tocado
+git diff              # qué líneas ha cambiado
+git restore fichero   # deshace lo que no pediste
+```
+
+Lee cada orden antes de aprobarla. Con lupa: lo que borra (`rm`), lo que pide `sudo`, lo que descarga y ejecuta (`curl … | bash`) y lo que envía fuera (`git push --force`).
+
+#### La IA como profesor
+
+- Sí: explícame, dame una pista, revisa lo mío, hazme preguntas, explícame este error.
+- No: hazme el ejercicio, resúmeme el módulo, arréglalo sin decirme qué pasaba.
+- La prueba: ¿podría hacerlo yo solo, sin el chat?
+
+#### Las cinco normas de la academia
+
+1. Intenta cada ejercicio tú primero. Usa la IA como profesor: que te explique, te dé pistas o revise tu solución, no que la haga por ti.
+2. Comprueba siempre lo que te dé, con casos de prueba.
+3. Nunca pegues contraseñas, claves ni datos personales en un chat de IA.
+4. En el proyecto final puedes usarla, pero debes entender y poder explicar todo lo que entregues. Cuéntalo en el README, en una sección «Cómo lo hice».
+5. Las soluciones del curso ya están plegadas: mira antes la tuya.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

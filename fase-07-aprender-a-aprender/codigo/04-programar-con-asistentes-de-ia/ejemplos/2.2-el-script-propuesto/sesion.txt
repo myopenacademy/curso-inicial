@@ -1,0 +1,8 @@
+bash nota.sh 3
+bash nota.sh 6
+bash nota.sh 10
+bash nota.sh 5
+bash nota.sh 7
+bash nota.sh 9
+bash nota.sh 11
+bash nota.sh -2

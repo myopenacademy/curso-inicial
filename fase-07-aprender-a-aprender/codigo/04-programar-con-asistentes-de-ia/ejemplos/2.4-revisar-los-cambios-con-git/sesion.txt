@@ -1,0 +1,11 @@
+mkdir notas && cd notas && git init
+cp ../README.md ../notas.csv .
+git add . && git commit -m "Notas del primer examen"
+# Aquí trabaja el asistente: para simularlo, copiamos los ficheros que dejó cambiados
+cp ../propuesta/README.md ../propuesta/notas.csv .
+git status --short
+git diff
+git restore notas.csv
+git status --short
+git add README.md && git commit -m "Explica cómo se usa en el README"
+git log --oneline

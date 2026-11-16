@@ -11,6 +11,10 @@
 
 Cuenta de usuario que puede cambiar lo que afecta a todo el sistema, como instalar programas para todos; el sistema le pide confirmación antes. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#17-el-sistema-operativo).
 
+### Agente (IA)
+
+Asistente de IA que, con una tarea, lee y cambia ficheros y ejecuta órdenes por su cuenta hasta que cree que ha terminado; hay que revisar todo lo que hace. Lo explica [07.04 Programar con asistentes de IA](fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md#12-tres-tipos-de-asistente).
+
 ### Algoritmo
 
 Secuencia ordenada, finita y precisa de pasos que resuelve un problema; no depende de ningún lenguaje. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#13-qué-es-un-algoritmo).
@@ -62,6 +66,10 @@ Instrucción de una prueba automática que afirma que algo debe ser cierto (por 
 ### Asignar
 
 Guardar un valor en una variable; en pseudocódigo se escribe con la flecha ←. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#variables).
+
+### Asistente de programación
+
+Programa que usa un modelo de lenguaje para ayudarte a escribir, entender y cambiar código: chat, autocompletado en el editor o asistente que edita ficheros. Lo explica [07.04 Programar con asistentes de IA](fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md#11-qué-es-un-asistente-de-programación).
 
 ### Atajo de teclado
 
@@ -708,6 +716,10 @@ Lo que cada usuario puede hacer con un fichero o una carpeta: leer (r), escribir
 ### Pesos abiertos
 
 Modelos de IA cuyos parámetros se publican para que cualquiera los descargue y los ejecute, según su licencia. Lo explica [06.06 Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md#113-en-la-nube-o-en-tu-ordenador).
+
+### Petición (a una IA)
+
+Lo que se le escribe a un asistente de IA (en inglés, prompt); una buena tiene contexto, objetivo, límites, un ejemplo y el formato de la respuesta. Lo explica [07.04 Programar con asistentes de IA](fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md#15-pedir-bien).
 
 ### Petición HTTP
 

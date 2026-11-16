@@ -1,0 +1,4 @@
+bash socios.sh socios.csv
+bash socios.sh vacio.csv
+bash socios.sh sin-salto.csv
+bash socios.sh no-existe.csv
