@@ -1,0 +1,8 @@
+{
+  "puerto": 3000,
+  "rutas": [
+    {"metodo": "GET", "ruta": "/", "estado": 200, "cuerpo": "Escuela de Música Allegro: la web, en pruebas\n"},
+    {"metodo": "GET", "ruta": "/matricula", "estado": 200, "cuerpo": "Matrícula del curso 2026-2027: abierta hasta el 30 de noviembre\n"},
+    {"metodo": "GET", "ruta": "/horarios", "estado": 503, "cuerpo": {"error": "El servicio de calendario no responde"}}
+  ]
+}

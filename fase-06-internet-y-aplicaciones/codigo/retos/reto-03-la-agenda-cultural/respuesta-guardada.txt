@@ -1,0 +1,33 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 571
+
+[
+  {
+    "id": 2,
+    "titulo": "Cuentacuentos en la plaza",
+    "fecha": "2026-11-21",
+    "hora": "12:00",
+    "lugar": "Plaza Mayor",
+    "precio": 0,
+    "plazas_libres": null
+  },
+  {
+    "id": 4,
+    "titulo": "Taller de encuadernación",
+    "fecha": "2026-11-24",
+    "hora": "18:00",
+    "lugar": "Biblioteca Municipal",
+    "precio": 0,
+    "plazas_libres": 6
+  },
+  {
+    "id": 5,
+    "titulo": "Concierto de la banda municipal",
+    "fecha": "2026-11-27",
+    "hora": "19:30",
+    "lugar": "Teatro Principal",
+    "precio": 0,
+    "plazas_libres": 120
+  }
+]

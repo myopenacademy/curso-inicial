@@ -1,0 +1,32 @@
+{
+  "desde": "2026-11-21",
+  "hasta": "2026-11-27",
+  "origen": "/actividades?gratis=true",
+  "total": 3,
+  "actividades": [
+    {
+      "id": 2,
+      "titulo": "Cuentacuentos en la plaza",
+      "fecha": "2026-11-21",
+      "hora": "12:00",
+      "lugar": "Plaza Mayor",
+      "plazas_libres": null
+    },
+    {
+      "id": 4,
+      "titulo": "Taller de encuadernación",
+      "fecha": "2026-11-24",
+      "hora": "18:00",
+      "lugar": "Biblioteca Municipal",
+      "plazas_libres": 6
+    },
+    {
+      "id": 5,
+      "titulo": "Concierto de la banda municipal",
+      "fecha": "2026-11-27",
+      "hora": "19:30",
+      "lugar": "Teatro Principal",
+      "plazas_libres": 120
+    }
+  ]
+}

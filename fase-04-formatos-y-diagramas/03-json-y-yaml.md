@@ -34,7 +34,7 @@ Para eso están **JSON** y **YAML**, los dos formatos más usados para datos est
 | **Configurar** un programa o una herramienta (lo escribe una persona) | YAML (y a veces JSON) | Los servicios que arranca Docker, los pasos de GitHub Actions |
 | **Guardar datos** en un fichero para leerlos después | JSON (y a veces YAML) | Las preferencias de un programa, una copia de seguridad de unas reservas |
 
-Una **API** es la puerta por la que un programa le pide datos o servicios a otro, por ejemplo a un servidor; la verás en la fase 6.
+Una **API** es la puerta por la que un programa le pide datos o servicios a otro, por ejemplo a un servidor; la verás en [06.03 La web: HTTP, peticiones, respuestas y APIs](../fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#111-qué-es-una-api-web).
 
 > **📌 Nota:** convertir los datos de la memoria en texto para guardarlos o enviarlos se llama **serializar**, y hacer lo contrario, leer un texto y convertirlo en datos, **analizar** o *parsear* (del inglés *parse*). El programa que lo lee se llama **analizador** o *parser*. No hace falta que te aprendas las palabras; sí la idea: **quien lee un JSON o un YAML es un programa**, y un programa no adivina lo que querías decir. Si el texto no sigue las reglas, no lo lee.
 
@@ -424,7 +424,7 @@ No te hace falta saber qué significa cada línea de estos ficheros (te lo ense�
 | Fichero | Formato | Qué es |
 |---|---|---|
 | `package.json` | JSON | La ficha de un proyecto de JavaScript: su nombre, su versión y los paquetes que necesita. VS Code conoce su forma y te propone las claves mientras escribes |
-| La respuesta de una API | JSON | Lo que contesta un servidor cuando un programa le pide datos (fase 6) |
+| La respuesta de una API | JSON | Lo que contesta un servidor cuando un programa le pide datos ([06.03](../fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#111-qué-es-una-api-web)) |
 | `compose.yaml` (o `docker-compose.yml`) | YAML | Los servicios que arranca Docker Compose: la aplicación, la base de datos… |
 | `.github/workflows/*.yml` | YAML | Los flujos de trabajo de GitHub Actions: lo que se ejecuta solo cada vez que subes un cambio (la [integración continua](../fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas)) |
 | `curso.json` | JSON | Sin ir más lejos, la ficha de este curso: la academia lo lee para saber qué fases, módulos y ejercicios tiene |

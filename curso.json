@@ -735,7 +735,6 @@
       "carpeta": "fase-06-internet-y-aplicaciones",
       "titulo": "Internet y aplicaciones",
       "retos": "fase-06-internet-y-aplicaciones/retos.md",
-      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.redes",

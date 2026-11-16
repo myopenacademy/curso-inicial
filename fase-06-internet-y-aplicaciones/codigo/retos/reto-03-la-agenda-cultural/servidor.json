@@ -1,0 +1,33 @@
+{
+  "puerto": 8080,
+  "rutas": [
+    {
+      "metodo": "GET",
+      "ruta": "/actividades?gratis=true",
+      "estado": 200,
+      "cuerpo": [
+        {"id": 2, "titulo": "Cuentacuentos en la plaza", "fecha": "2026-11-21", "hora": "12:00", "lugar": "Plaza Mayor", "precio": 0, "plazas_libres": null},
+        {"id": 4, "titulo": "Taller de encuadernación", "fecha": "2026-11-24", "hora": "18:00", "lugar": "Biblioteca Municipal", "precio": 0, "plazas_libres": 6},
+        {"id": 5, "titulo": "Concierto de la banda municipal", "fecha": "2026-11-27", "hora": "19:30", "lugar": "Teatro Principal", "precio": 0, "plazas_libres": 120}
+      ]
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/actividades",
+      "estado": 200,
+      "cuerpo": [
+        {"id": 1, "titulo": "Visita guiada a Santa María", "fecha": "2026-11-21", "hora": "11:00", "lugar": "Iglesia de Santa María", "precio": 4.5, "plazas_libres": 12},
+        {"id": 2, "titulo": "Cuentacuentos en la plaza", "fecha": "2026-11-21", "hora": "12:00", "lugar": "Plaza Mayor", "precio": 0, "plazas_libres": null},
+        {"id": 3, "titulo": "Cine de autor: ciclo de otoño", "fecha": "2026-11-23", "hora": "20:00", "lugar": "Filmoteca municipal", "precio": 3, "plazas_libres": 45},
+        {"id": 4, "titulo": "Taller de encuadernación", "fecha": "2026-11-24", "hora": "18:00", "lugar": "Biblioteca Municipal", "precio": 0, "plazas_libres": 6},
+        {"id": 5, "titulo": "Concierto de la banda municipal", "fecha": "2026-11-27", "hora": "19:30", "lugar": "Teatro Principal", "precio": 0, "plazas_libres": 120}
+      ]
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/actividades/4",
+      "estado": 200,
+      "cuerpo": {"id": 4, "titulo": "Taller de encuadernación", "fecha": "2026-11-24", "hora": "18:00", "lugar": "Biblioteca Municipal", "precio": 0, "plazas_libres": 6, "inscripcion": "En la propia biblioteca, hasta completar plazas", "edad_minima": 12}
+    }
+  ]
+}

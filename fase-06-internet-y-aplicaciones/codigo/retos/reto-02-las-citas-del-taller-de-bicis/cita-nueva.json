@@ -1,0 +1,11 @@
+{
+  "cliente": {
+    "nombre": "Nerea Ruiz",
+    "telefono": "600123456",
+    "correo": "nerea.ruiz@example.com"
+  },
+  "servicio_id": 2,
+  "fecha": "2026-11-23",
+  "hora": "10:30",
+  "notas": "La rueda de atrás pierde aire"
+}

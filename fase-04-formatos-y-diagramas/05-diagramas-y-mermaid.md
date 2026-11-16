@@ -244,7 +244,7 @@ flowchart LR
 
 En texto: el navegador del cliente, en su ordenador o su móvil, pide páginas y hace pedidos a la web de la panadería; la web, en el servidor de la panadería, guarda y lee los pedidos en una base de datos y cobra a través de la pasarela de pago del banco, que está fuera.
 
-No hace falta que sepas todavía qué es exactamente un servidor o una pasarela de pago: lo verás en la fase 6. Lo que importa aquí es la forma: **cajas para las piezas, flechas con verbos para lo que hacen y recuadros para decir dónde está cada cosa**.
+No hace falta que sepas todavía qué es exactamente un servidor o una pasarela de pago: lo verás en [06.01 Redes](../fase-06-internet-y-aplicaciones/01-redes.md#13-cliente-y-servidor) y en [06.05 Las piezas de una aplicación](../fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#16-servicios-de-otros-pagos-correo-mapas). Lo que importa aquí es la forma: **cajas para las piezas, flechas con verbos para lo que hacen y recuadros para decir dónde está cada cosa**.
 
 > **⚠️ Cuidado:** cada `subgraph` se cierra con su `end`. Si se te olvida, el diagrama entero deja de dibujarse ([error típico 3.6](#36-un-bloque-sin-su-end)).
 

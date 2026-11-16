@@ -105,7 +105,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 | 06.04 | [Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md) | Básico · Ampliación | 2 h | ✅ Disponible |
 | 06.05 | [Las piezas de una aplicación](fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md) | Básico · Núcleo | 1,5 h | ✅ Disponible |
 | 06.06 | [Qué es la IA y cómo funciona por dentro](fase-06-internet-y-aplicaciones/06-que-es-la-ia.md) | Básico · Núcleo | 2 h | ✅ Disponible |
-| | Retos de la fase | | | Pendiente |
+| | [Retos de la fase](fase-06-internet-y-aplicaciones/retos.md) | | | ✅ Disponible |
 
 ---
 

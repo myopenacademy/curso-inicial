@@ -467,7 +467,7 @@ WHERE destino = 'peninsula' AND importe >= 5000;
 
 **Fíjate en que:** aquí no hay **ningún** paso. No dices cómo recorrer la tabla, ni en qué orden, ni dónde guardar el total: solo describes el resultado que quieres. El motor de la base de datos decide cómo obtenerlo, y puede hacerlo de forma muy eficiente aunque haya millones de pedidos.
 
-> **📌 Nota:** esta consulta se ha comprobado con una base de datos SQLite real con los mismos cinco pedidos. Qué es una base de datos lo verás en el módulo «Qué es una base de datos» (fase 6).
+> **📌 Nota:** esta consulta se ha comprobado con una base de datos SQLite real con los mismos cinco pedidos. Qué es una base de datos lo verás en [06.04 Qué es una base de datos](../fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md).
 
 ### 2.6. Comparación de los cuatro estilos
 

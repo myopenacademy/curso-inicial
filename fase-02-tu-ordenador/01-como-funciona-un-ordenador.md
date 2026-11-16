@@ -235,7 +235,7 @@ Cómo averiguar tus dos datos lo tienes en el [apartado 2.5](#25-averiguar-qué-
 
 ### 1.11. La nube: el ordenador de otro
 
-Oirás muchísimo «está en la nube» o «guárdalo en la nube». La nube no es nada misterioso: son **ordenadores de otra empresa**, en un centro de datos, a los que accedes por internet. Tienen las mismas piezas que el tuyo (procesador, memoria, almacenamiento, sistema operativo, casi siempre Linux), solo que son muchos más y los mantienen otros. Cuando guardas una foto «en la nube», se copia del almacenamiento de tu móvil al de esos ordenadores. Cómo funciona por dentro lo verás en la fase 6.
+Oirás muchísimo «está en la nube» o «guárdalo en la nube». La nube no es nada misterioso: son **ordenadores de otra empresa**, en un centro de datos, a los que accedes por internet. Tienen las mismas piezas que el tuyo (procesador, memoria, almacenamiento, sistema operativo, casi siempre Linux), solo que son muchos más y los mantienen otros. Cuando guardas una foto «en la nube», se copia del almacenamiento de tu móvil al de esos ordenadores. Dónde encaja en una aplicación lo verás en [06.05 Las piezas de una aplicación](../fase-06-internet-y-aplicaciones/05-piezas-de-una-aplicacion.md#19-dónde-vive-cada-pieza-tu-ordenador-un-servidor-o-la-nube).
 
 ## 2. Ejemplos de código
 

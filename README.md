@@ -19,7 +19,7 @@ Nada. Es el primer curso de la academia.
 - Empieza por el **[índice](00-indice.md)** o por la **[ruta de aprendizaje](ROADMAP.md)**. Cada módulo tiene teoría, ejemplos, errores típicos, buenas prácticas, ejercicios resueltos en cuatro niveles, una chuleta y preguntas de repaso.
 - Puedes seguirlo **en orden** o entrar **por libre** a cualquier módulo: cada uno dice al principio qué conviene saber antes. Las fases 1, 2, 3, 5 y 8 son imprescindibles; la 4, la 6 y la 7, recomendadas.
 - Intenta cada ejercicio antes de abrir la solución. Los **retos** del final de cada fase son opcionales.
-- El código de los ejemplos y soluciones está en la carpeta `codigo/` de cada fase. Algunas carpetas llevan ficheros como `entrada.txt`, `sesion.txt`, `salida-variable.txt`, `debe-fallar.txt` o `codificacion.txt`: sirven para comprobar automáticamente que el código del curso funciona, y puedes ignorarlos.
+- El código de los ejemplos y soluciones está en la carpeta `codigo/` de cada fase. Algunas carpetas llevan ficheros como `entrada.txt`, `sesion.txt`, `salida-variable.txt`, `debe-fallar.txt`, `codificacion.txt` o `servidor.json`: sirven para comprobar automáticamente que el código del curso funciona, y puedes ignorarlos.
 - Para repasar, la **[chuleta global](99-chuleta-global.md)**, y para los términos, el **[glosario](glosario.md)**, que comparten todos los cursos de la academia.
 
 ## Versiones
@@ -32,8 +32,9 @@ Verificadas el 8 de noviembre de 2026:
 | Git for Windows (incluye Git Bash) | 2.56.0(4) |
 | Visual Studio Code | 1.145 |
 | Bash | 5.3 (los ejemplos funcionan también con el bash 3.2 de macOS) |
+| curl | 8.18.0 en las salidas (la más reciente, la 8.23.0, del 14 de octubre de 2026) |
 
-Las salidas de Git del curso son de la 2.56.0; a 16 de noviembre de 2026, la más reciente es la 2.56.1 (las versiones se revisan antes de cada versión del curso, no por cada parche). Lo que se dice de GitHub sigue su documentación a 16 de noviembre de 2026. Las de las fases siguientes se añaden al escribirlas.
+Las salidas de Git del curso son de la 2.56.0; a 16 de noviembre de 2026, la más reciente es la 2.56.1 (las versiones se revisan antes de cada versión del curso, no por cada parche). Lo que se dice de GitHub sigue su documentación a 16 de noviembre de 2026. Las salidas de `curl` (fase 6) son de la 8.18.0, comprobada en curl.se el 16 de noviembre de 2026. Las de las fases siguientes se añaden al escribirlas.
 
 ## Requisitos
 

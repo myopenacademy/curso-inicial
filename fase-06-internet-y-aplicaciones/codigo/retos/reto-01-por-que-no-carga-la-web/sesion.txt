@@ -1,0 +1,6 @@
+curl -s -w '%{http_code}\n' http://localhost:8080/
+echo $?
+curl -s -w '%{http_code}\n' http://localhost:3000/
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:3000/matriculas
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:3000/matricula
+curl -i http://localhost:3000/horarios

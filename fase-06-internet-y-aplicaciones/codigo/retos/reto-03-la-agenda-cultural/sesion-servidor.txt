@@ -1,0 +1,11 @@
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/actividades
+curl -s -o gratis.json -w '%{http_code}\n' 'http://localhost:8080/actividades?gratis=true'
+grep -c '"id"' gratis.json
+grep titulo gratis.json
+curl -s -o actividad-4.json -w '%{http_code}\n' http://localhost:8080/actividades/4
+grep plazas_libres actividad-4.json
+curl -s -f -o actividad-9.json http://localhost:8080/actividades/9
+echo $?
+ls actividad-9.json
+curl -s -i 'http://localhost:8080/actividades?gratis=true' | tr -d '\r' > respuesta.txt
+diff respuesta.txt respuesta-guardada.txt
