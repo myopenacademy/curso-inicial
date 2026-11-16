@@ -1,0 +1,9 @@
+# Crear el repositorio con el .gitignore que propuso el asistente
+mkdir perseidas && cd perseidas && git init
+cp -r ../.github ../.env.example ../README.md .
+printf 'CIELO_API_URL=https://api.cielo.example/v1\nCIELO_CLAVE=clave-de-prueba-123\n' > .env
+printf '.env*\n!.env.example\nlogs/\n' > .gitignore
+printf '2026-11-14 20:00 Previsión: despejado\n' > cielo.log
+ls -a
+git check-ignore -v .env .env.example cielo.log
+git status --short

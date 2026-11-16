@@ -351,7 +351,7 @@ Se lee: «`grep`, opcionalmente una o varias opciones, **obligatoriamente** lo q
 - **En Git Bash**, la orden `man` **no viene incluida** (a 9 de noviembre de 2026): usa `--help`. Para Git, `git help` seguido de una orden abre su manual en el navegador.
 - **Las órdenes propias de bash** (como `cd`, `pwd` o `echo`) son parte de bash, y su ayuda sale con `help` y la orden (`help cd`). En Linux, `cd` no tiene página del manual. `man pwd` y `man echo` sí abren una, pero es la de un programa aparte con el mismo nombre, no la de la orden de bash, que puede tener opciones distintas. `help` es de bash: en zsh, la terminal de macOS, no existe, y la ayuda de sus órdenes propias está en su manual, `man zshbuiltins`.
 
-> **💡 Consejo:** el manual está en inglés casi siempre. No pasa nada: lo que buscas suele ser una opción, y la descripción es corta. Y si no te aclaras, la documentación de internet y la IA ayudan; lo verás en el módulo «Buscar ayuda» (fase 7). Pero mira primero la ayuda de tu terminal (`--help` o `man`): es la fuente más directa y no se equivoca de versión.
+> **💡 Consejo:** el manual está en inglés casi siempre. No pasa nada: lo que buscas suele ser una opción, y la descripción es corta. Y si no te aclaras, la documentación de internet y la IA ayudan; lo verás en el módulo [Buscar ayuda](../fase-07-aprender-a-aprender/03-buscar-ayuda.md) (fase 7). Pero mira primero la ayuda de tu terminal (`--help` o `man`): es la fuente más directa y no se equivoca de versión.
 
 ### 1.13. Trucos que ahorran tiempo
 

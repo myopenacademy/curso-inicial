@@ -120,7 +120,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 | 07.03 | [Buscar ayuda](fase-07-aprender-a-aprender/03-buscar-ayuda.md) | Básico · Núcleo | 1 h | ✅ Disponible |
 | 07.04 | [Programar con asistentes de IA](fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md) | Básico · Núcleo | 2 h | ✅ Disponible |
 | 07.05 | [Seguridad básica](fase-07-aprender-a-aprender/05-seguridad-basica.md) | Básico · Núcleo | 2 h | ✅ Disponible |
-| | Retos de la fase | | | Pendiente |
+| | [Retos de la fase](fase-07-aprender-a-aprender/retos.md) | | | ✅ Disponible |
 
 ---
 

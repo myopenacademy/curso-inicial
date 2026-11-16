@@ -19,6 +19,7 @@ Nada. Es el primer curso de la academia.
 - Empieza por el **[índice](00-indice.md)** o por la **[ruta de aprendizaje](ROADMAP.md)**. Cada módulo tiene teoría, ejemplos, errores típicos, buenas prácticas, ejercicios resueltos en cuatro niveles, una chuleta y preguntas de repaso.
 - Puedes seguirlo **en orden** o entrar **por libre** a cualquier módulo: cada uno dice al principio qué conviene saber antes. Las fases 1, 2, 3, 5 y 8 son imprescindibles; la 4, la 6 y la 7, recomendadas.
 - Intenta cada ejercicio antes de abrir la solución. Los **retos** del final de cada fase son opcionales.
+- Si quieres saber cómo sacarle partido antes de empezar, lee **[Cómo estudiar con estos cursos](fase-07-aprender-a-aprender/01-como-estudiar.md)** (fase 7): puedes hacerlo el primer día.
 - El código de los ejemplos y soluciones está en la carpeta `codigo/` de cada fase. Algunas carpetas llevan ficheros como `entrada.txt`, `sesion.txt`, `salida-variable.txt`, `debe-fallar.txt`, `codificacion.txt` o `servidor.json`: sirven para comprobar automáticamente que el código del curso funciona, y puedes ignorarlos.
 - Para repasar, la **[chuleta global](99-chuleta-global.md)**, y para los términos, el **[glosario](glosario.md)**, que comparten todos los cursos de la academia.
 

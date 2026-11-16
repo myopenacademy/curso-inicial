@@ -1,0 +1,13 @@
+# Arreglar el .gitignore, comprobarlo todo y hacer el primer commit
+cd perseidas
+printf '.env*\n!.env.example\n*.log\n' > .gitignore
+cat .gitignore
+git check-ignore -v .env .env.local .env.example cielo.log
+git check-ignore -v README.md .github/ISSUE_TEMPLATE/observacion.md
+echo $?
+git status --short
+git add .
+git status --short
+git commit -m "Empieza la web: .gitignore, .env.example, README y plantilla de issue"
+git ls-files
+head -n 6 .github/ISSUE_TEMPLATE/observacion.md

@@ -1,7 +1,7 @@
 # 🗺️ Ruta de Fundamentos para programar
 
 > Esta es la ruta de aprendizaje del curso. Cada fase es una carpeta (`fase-NN-…`).
-> Si estudias en MyOpenAcademy, tu avance se guarda solo; si sigues el curso desde GitHub o tu editor, puedes marcar aquí cada fase con `[x]` al terminarla.
+> Si estudias en MyOpenAcademy, tu avance lo marcas tú, y la academia lo guarda; si sigues el curso desde GitHub o tu editor, puedes marcar aquí cada fase con `[x]` al terminarla.
 
 ## Mapa del recorrido
 

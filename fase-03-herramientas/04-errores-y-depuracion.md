@@ -233,9 +233,9 @@ Si después de leer el mensaje y aislar el problema sigues sin entenderlo, no er
 - **Prueba en inglés** si en español no sale nada: hay muchas más respuestas. Busca el mensaje que verías en inglés (`No such file or directory`).
 - **Comprueba la fecha y la versión** de las respuestas: una de hace diez años puede no servir para tu versión.
 
-Cómo buscar bien, leer documentación y preguntar en foros lo verás a fondo en el módulo «Buscar ayuda» (fase 7).
+Cómo buscar bien, leer documentación y preguntar en foros lo verás a fondo en el módulo [Buscar ayuda](../fase-07-aprender-a-aprender/03-buscar-ayuda.md) (fase 7).
 
-Un **asistente de IA** también puede ayudarte mucho: le pegas el mensaje y le pides que te lo **explique** («¿qué significa este error y qué puede causarlo?»). Úsalo como profesor, no como quien lo arregla por ti, y **comprueba siempre** lo que te diga con tus casos de prueba: puede equivocarse con total seguridad. Y **nunca pegues** contraseñas, claves ni datos personales: revisa el mensaje y el código antes de enviarlos. Cómo trabajar bien con estos asistentes lo verás en el módulo «Programar con asistentes de IA» (fase 7).
+Un **asistente de IA** también puede ayudarte mucho: le pegas el mensaje y le pides que te lo **explique** («¿qué significa este error y qué puede causarlo?»). Úsalo como profesor, no como quien lo arregla por ti, y **comprueba siempre** lo que te diga con tus casos de prueba: puede equivocarse con total seguridad. Y **nunca pegues** contraseñas, claves ni datos personales: revisa el mensaje y el código antes de enviarlos. Cómo trabajar bien con estos asistentes lo verás en el módulo [Programar con asistentes de IA](../fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md) (fase 7).
 
 ## 2. Ejemplos de código
 

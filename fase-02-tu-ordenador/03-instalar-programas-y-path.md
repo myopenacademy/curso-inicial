@@ -83,7 +83,7 @@ Cómo saber que estás en la web oficial:
 - **Desconfía de los parecidos**: `git-scm.com.descargas-gratis.net` **no** es `git-scm.com`. Lo que cuenta es el final del dominio, justo antes de la primera `/`.
 - **Si dudas, entra por la documentación**: la web oficial suele ser la que enlaza la página del proyecto en Wikipedia o en su repositorio de código.
 
-Esta costumbre te va a acompañar siempre: es una de las bases de la seguridad de quien programa, y la ampliarás en el módulo «Seguridad básica» (fase 7).
+Esta costumbre te va a acompañar siempre: es una de las bases de la seguridad de quien programa, y la ampliarás en el módulo [Seguridad básica](../fase-07-aprender-a-aprender/05-seguridad-basica.md#110-actualizaciones-y-descargas-oficiales) (fase 7).
 
 ### 1.4. El instalador que le toca a tu ordenador
 

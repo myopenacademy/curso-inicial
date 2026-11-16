@@ -696,7 +696,7 @@ Otras herramientas dicen lo mismo con otras palabras; muchas lo escriben en clar
 - **Cuando un caso falle, haz su traza.** No cambies cosas a ciegas: busca el paso exacto donde el valor se tuerce.
 - **Después de cada cambio, vuelve a pasar todas las pruebas**, para que no se cuele ninguna regresión.
 - **Guarda las pruebas.** Una tabla de casos de prueba escrita (o unas pruebas automáticas) sirve el día de mañana, cuando cambies el programa. Una prueba que solo hiciste de cabeza se pierde.
-- **Comprueba también lo que te dé otra persona o una IA.** Un algoritmo que te pasan, o que te sugiere un asistente de IA, se prueba igual que el tuyo: con tu propia tabla de casos. Es una de las normas de uso de la IA de la academia, que verás en el módulo «Programar con asistentes de IA» (fase 7).
+- **Comprueba también lo que te dé otra persona o una IA.** Un algoritmo que te pasan, o que te sugiere un asistente de IA, se prueba igual que el tuyo: con tu propia tabla de casos. Es una de las normas de uso de la IA de la academia, que verás en el módulo [Programar con asistentes de IA](../fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md#110-las-cinco-normas-de-la-academia) (fase 7).
 - **Lee los mensajes de error con calma y en orden:** cuántas fallan, cuál, dónde, esperado y obtenido.
 
 ## 5. Ejercicios prácticos resueltos

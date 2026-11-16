@@ -961,7 +961,6 @@
       "carpeta": "fase-07-aprender-a-aprender",
       "titulo": "Aprender a aprender",
       "retos": "fase-07-aprender-a-aprender/retos.md",
-      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.como-estudiar",

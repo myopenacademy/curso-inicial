@@ -1,0 +1,11 @@
+# Preparar el reto y revisar el repositorio de Ramón
+bash preparar.sh
+cd recordatorios
+git status --short
+ls -a
+git check-ignore -v .env
+echo $?
+git ls-files
+grep -i -n clave *
+git log --oneline -- avisar.sh
+git show 8980ceb

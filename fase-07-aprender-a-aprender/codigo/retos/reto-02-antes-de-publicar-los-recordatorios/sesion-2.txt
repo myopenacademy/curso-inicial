@@ -1,0 +1,11 @@
+# Arreglar el .gitignore, comprobarlo y añadir el .env.example
+cd recordatorios
+git mv .gitignore.txt .gitignore
+printf '*.log\nsocios.csv\n' >> .gitignore
+cat .gitignore
+git check-ignore -v .env envios.log socios.csv
+printf 'CLAVE_SMS=escribe-aqui-la-clave\n' > .env.example
+git status --short
+git add .
+git commit -m "Arregla el .gitignore y añade el .env.example"
+git ls-files

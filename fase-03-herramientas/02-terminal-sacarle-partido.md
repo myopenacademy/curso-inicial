@@ -330,7 +330,7 @@ Cuando **de verdad** necesitas hacer algo como administrador (instalar un progra
 - **Para «arreglar» un «Permiso denegado» que no entiendes.** Primero averigua por qué te lo niega (`ls -l`). Si es un fichero tuyo, el arreglo es otro (por ejemplo, `chmod +x`). Si lo «arreglas» con `sudo`, a menudo creas ficheros que son de `root`, y después tu usuario ya no puede tocarlos.
 - **Con una orden que has copiado de internet y no entiendes.** Con `sudo`, esa orden puede hacer **cualquier cosa** en tu ordenador. Es como darle las llaves de casa a un desconocido (lo mismo que viste con los [instaladores](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#13-descarga-siempre-de-la-web-oficial)).
 
-La idea de fondo tiene nombre: **mínimo privilegio**. Cada usuario y cada programa, con los permisos justos para su tarea y ni uno más. Si algo sale mal (un error tuyo, un programa malicioso), el daño se queda en lo poco que podía tocar. Lo verás de nuevo en «Seguridad básica» (fase 7).
+La idea de fondo tiene nombre: **mínimo privilegio**. Cada usuario y cada programa, con los permisos justos para su tarea y ni uno más. Si algo sale mal (un error tuyo, un programa malicioso), el daño se queda en lo poco que podía tocar. Lo verás de nuevo en [Seguridad básica](../fase-07-aprender-a-aprender/05-seguridad-basica.md#111-mínimo-privilegio-cortafuegos-y-antivirus) (fase 7).
 
 ### 1.12. Procesos: verlos y pararlos
 
