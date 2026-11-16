@@ -26,7 +26,7 @@ Desde la terminal, y sin tocar el original:
 1. Averigua qué codificación tiene (sabes de dónde viene, y `file` te dará una pista) y pásalo a UTF-8 en `catalogo-utf8.csv`, comprobando que la conversión ha salido bien.
 2. Antes de cambiar los separadores, comprueba que ningún producto lleva una coma en el nombre (enseguida verás por qué importa).
 3. Deja en `catalogo.csv` la versión que pide el mercado: comas y punto decimal.
-4. Comprueba el resultado: su codificación y que la tercera columna son los precios, enteros.
+4. Comprueba el resultado: su codificación y que la tercera columna son los precios completos, sin partir.
 
 <details>
 <summary>Pista 1</summary>
@@ -52,7 +52,7 @@ Piensa en el orden: si primero cambias los puntos y comas por comas, ¿cómo dis
 <details>
 <summary>Ver solución</summary>
 
-**Razonamiento:** dos problemas distintos, cada uno con su herramienta. La codificación se arregla con `iconv`, como en [04.01](01-texto-binario-y-codificacion.md#ejercicio-6--los-socios-del-club-de-montaña). Los separadores y los decimales se arreglan cambiando caracteres: cada `,` por `.` y cada `;` por `,`. Eso es seguro **solo si no hay comas en otro sitio**, por eso se comprueba antes. Y cada paso deja un fichero nuevo y se comprueba ([04.01, buena práctica 4.3](01-texto-binario-y-codificacion.md#43-convierte-una-vez-a-un-fichero-nuevo-y-comprueba)).
+**Razonamiento:** dos problemas distintos, cada uno con su herramienta. La codificación se arregla con `iconv`, como en [04.01](01-texto-binario-y-codificacion.md#ejercicio-6--los-socios-del-club-de-montaña). Los separadores y los decimales se arreglan cambiando caracteres: cada `,` por `.` y cada `;` por `,`. Eso es seguro **solo si no hay comas en otro sitio**, por eso se comprueba antes. Y cada paso deja un fichero nuevo y se comprueba ([04.01, buena práctica 4.2](01-texto-binario-y-codificacion.md#42-mira-antes-convierte-a-un-fichero-nuevo-y-comprueba)).
 
 **En tu terminal** (`sesion.txt`):
 
@@ -95,17 +95,17 @@ precio_kg
 - **`file` dice `ISO-8859`**: una tabla de un byte, sin decir cuál (y en otro sistema puede describirlo con otras palabras). Es solo una **pista**; lo que sabes es que viene de un programa de Windows, así que lo probable es Windows-1252 ([04.01, ejemplo 2.5](01-texto-binario-y-codificacion.md#25-pasar-un-csv-de-windows-1252-a-utf-8)). Lo **confirma** la conversión: después de `iconv`, `cat` enseña bien «Idiazábal» y «añejo».
 - **El `0` de `grep -c`**: ningún nombre de producto lleva comas, así que **todas** las comas del fichero son decimales. Por eso se pueden cambiar todas por puntos sin miedo.
 - **`tr ',;' '.,'`** cambia, en una sola pasada, cada `,` por `.` y cada `;` por `,`. Como lo hace a la vez, una coma que acaba de nacer de un punto y coma no se vuelve a cambiar por un punto.
-- **La comprobación final**, con el separador de la norma: `cut -d ','` saca la tercera columna y salen los precios **enteros**, con su punto. Con la coma decimal, ese mismo `cut` los habría partido por la mitad ([04.04, ejemplo 2.5](04-xml-csv-y-otros.md#25-punto-y-coma-y-tabuladores-el-mismo-listado)).
+- **La comprobación final**, con el separador de la norma: `cut -d ','` saca la tercera columna y salen los precios **completos**, con su punto. Con la coma decimal, ese mismo `cut` los habría partido por la mitad ([04.04, ejemplo 2.5](04-xml-csv-y-otros.md#25-punto-y-coma-y-tabuladores-el-mismo-listado)).
 - **Tres ficheros, tres pasos**: el original no se toca, y si algo sale mal, se repite desde el paso que falló.
 
 > **📌 Nota:** en macOS, `file` puede describir los ficheros con otras palabras. `iconv`, `tr` y `cut` hacen lo mismo en Linux, macOS y Git Bash.
 
-**¿Y si un producto llevara una coma?** Por ejemplo, `Q-06;Queso de cabra, en aceite;18,40;5`. Entonces `grep -c` daría `1`, y `tr` convertiría esa coma en un punto: «Queso de cabra. en aceite», **sin avisar**. Ese campo necesitaría comillas en el CSV nuevo (`"Queso de cabra, en aceite"`, [04.04, apartado 1.9](04-xml-csv-y-otros.md#19-comillas-comillas-dobladas-y-saltos-de-línea-dentro)), y `tr` no sabe ponerlas. Para eso, mejor una hoja de cálculo: importar con el punto y coma y volver a guardar con comas ([04.04, apartado 1.11](04-xml-csv-y-otros.md#111-la-codificación-y-excel)).
+**¿Y si un producto llevara una coma?** Por ejemplo, `Q-06;Queso de cabra, en aceite;18,40;5`. Entonces `grep -c` daría `1`, y `tr` convertiría esa coma en un punto: «Queso de cabra. en aceite», **sin avisar**. Ese campo necesitaría comillas en el CSV nuevo (`"Queso de cabra, en aceite"`, [04.04, apartado 1.9](04-xml-csv-y-otros.md#19-comillas-comillas-dobladas-y-saltos-de-línea-dentro)), y `tr` no sabe ponerlas. Para eso, mejor una hoja de cálculo que, al guardar, deje elegir la coma y UTF-8, como LibreOffice Calc: importar con el punto y coma y volver a guardar con comas ([04.04, apartado 1.11](04-xml-csv-y-otros.md#111-la-codificación-y-excel)). Excel en español no sirve tan bien, porque toma el separador de la configuración regional ([04.04, apartado 1.10](04-xml-csv-y-otros.md#110-el-csv-en-españa-punto-y-coma-y-coma-decimal)).
 
 **Errores frecuentes al resolverlo:**
 
 - Cambiar los separadores en dos pasos y en el orden equivocado: `tr ';' ','` primero deja comas de dos clases mezcladas, y el `tr ',' '.'` de después las convierte **todas** en puntos. (Al revés, primero las comas y después los puntos y comas, sí funciona. Con VS Code y **Reemplazar** pasa igual: el orden importa.)
-- Usar `tr` antes de `iconv`, sobre el fichero en Windows-1252: aquí funcionaría, porque `,` y `;` son los mismos bytes en las dos codificaciones, pero mezcla dos problemas. Uno cada vez, comprobando entre medias.
+- Usar `tr` antes de `iconv`, sobre el fichero en Windows-1252: aquí funcionaría en Linux y Git Bash, porque `,` y `;` son los mismos bytes en las dos codificaciones (en macOS, `tr` puede negarse con «Illegal byte sequence»), pero mezcla dos problemas. Uno cada vez, comprobando entre medias.
 - Escribir `tr ',;' '.,' catalogo-utf8.csv`, con el fichero como argumento: `tr` no lee ficheros, solo su entrada, y se queja.
 - Saltarse la comprobación de las comas: con estos datos sale bien, pero el día que llegue un producto con coma, el catálogo se estropeará sin que nadie lo vea.
 - Convertir sobre el mismo fichero (`… > catalogo-tpv.csv`): lo vaciarías ([04.01, apartado 1.12](01-texto-binario-y-codificacion.md#112-convertir-de-una-codificación-a-otra-iconv)).
@@ -328,7 +328,7 @@ Haz, en la carpeta del CSV:
 1. Una tabla (en papel o donde quieras) con el **tipo** que tendrá cada columna, y por qué.
 2. `pedidos.json`, con las reglas del programa de envíos.
 3. `pedidos.yaml`, con **exactamente los mismos datos** y un comentario al principio que diga qué es y de dónde sale.
-4. `README.md`, que documente el repositorio: un título y un párrafo que diga qué es; un índice con enlaces a sus secciones; una tabla con los tres ficheros y para qué sirve cada uno; un **diagrama de flujo** de dónde sale cada fichero y quién lo usa, con su frase «En texto: …»; las reglas de conversión de cada columna; y cómo se comprueba que los tres dicen lo mismo.
+4. `README.md`, que documente el repositorio: un título y un párrafo que diga qué es; un índice con enlaces a sus secciones; una tabla con los tres ficheros y para qué sirve cada uno; un **diagrama de bloques** (`flowchart LR`, [04.05, apartado 1.2](05-diagramas-y-mermaid.md#12-tres-diagramas-para-empezar)) de dónde sale cada fichero y quién lo usa, con su frase «En texto: …»; las reglas de conversión de cada columna; y cómo se comprueba que los tres dicen lo mismo.
 5. Las comprobaciones: que el JSON y el YAML son válidos, que dicen lo mismo y que no se ha perdido ningún pedido. Con VS Code y con la terminal, sin programas que no vengan con Git Bash.
 
 <details>
@@ -355,7 +355,7 @@ Para el YAML, traduce el JSON símbolo a símbolo ([04.03, apartado 1.15](03-jso
 <details>
 <summary>Pista 4</summary>
 
-Para el diagrama, cinco cajas: la tienda, los tres ficheros y los dos que los usan. Un `subgraph` puede agrupar los ficheros del repositorio ([04.05, apartado 1.7](05-diagramas-y-mermaid.md#17-agrupar-con-subgraph-diagramas-de-bloques)), y las flechas pueden llevar texto. Para contar los pedidos en la terminal, busca con `grep -c` una línea que salga una vez por pedido en cada fichero.
+Para el diagrama, seis cajas: la tienda, los tres ficheros y los dos que los usan. Un `subgraph` puede agrupar los ficheros del repositorio ([04.05, apartado 1.7](05-diagramas-y-mermaid.md#17-agrupar-con-subgraph-diagramas-de-bloques)), y las flechas pueden llevar texto. Para contar los pedidos en la terminal, busca con `grep -c` una línea que salga una vez por pedido en cada fichero.
 
 </details>
 
@@ -533,13 +533,13 @@ Los tres dicen lo mismo.
 
 ```mermaid
 flowchart LR
-    tienda["Tienda en línea"] -- exporta --> csv
+    tienda["Tienda en línea"] -- "exporta" --> csv
     subgraph repo["Este repositorio"]
-        csv["pedidos.csv"] -- se convierte a mano --> json["pedidos.json"]
-        csv -- se convierte a mano --> yaml["pedidos.yaml"]
+        csv["pedidos.csv"] -- "se convierte a mano" --> json["pedidos.json"]
+        csv -- "se convierte a mano" --> yaml["pedidos.yaml"]
     end
-    json -- lo importa --> envios["Programa de la empresa de envíos"]
-    yaml -- lo leen y lo comentan --> taller["Taller"]
+    json -- "lo importa" --> envios["Programa de la empresa de envíos"]
+    yaml -- "lo leen y lo comentan" --> taller["Taller"]
 ```
 
 En texto: la tienda en línea exporta `pedidos.csv`; de él se sacan a mano `pedidos.json`, que importa el programa de
@@ -592,13 +592,13 @@ Así se ve el diagrama:
 
 ```mermaid
 flowchart LR
-    tienda["Tienda en línea"] -- exporta --> csv
+    tienda["Tienda en línea"] -- "exporta" --> csv
     subgraph repo["Este repositorio"]
-        csv["pedidos.csv"] -- se convierte a mano --> json["pedidos.json"]
-        csv -- se convierte a mano --> yaml["pedidos.yaml"]
+        csv["pedidos.csv"] -- "se convierte a mano" --> json["pedidos.json"]
+        csv -- "se convierte a mano" --> yaml["pedidos.yaml"]
     end
-    json -- lo importa --> envios["Programa de la empresa de envíos"]
-    yaml -- lo leen y lo comentan --> taller["Taller"]
+    json -- "lo importa" --> envios["Programa de la empresa de envíos"]
+    yaml -- "lo leen y lo comentan" --> taller["Taller"]
 ```
 
 - **El README responde a tres preguntas**: qué hay (la tabla de ficheros), de dónde sale (el diagrama) y cómo se hace (las reglas y las comprobaciones). Con eso, cualquiera del taller puede convertir los pedidos de la semana que viene.

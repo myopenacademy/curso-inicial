@@ -21,13 +21,13 @@ Los tres dicen lo mismo.
 
 ```mermaid
 flowchart LR
-    tienda["Tienda en línea"] -- exporta --> csv
+    tienda["Tienda en línea"] -- "exporta" --> csv
     subgraph repo["Este repositorio"]
-        csv["pedidos.csv"] -- se convierte a mano --> json["pedidos.json"]
-        csv -- se convierte a mano --> yaml["pedidos.yaml"]
+        csv["pedidos.csv"] -- "se convierte a mano" --> json["pedidos.json"]
+        csv -- "se convierte a mano" --> yaml["pedidos.yaml"]
     end
-    json -- lo importa --> envios["Programa de la empresa de envíos"]
-    yaml -- lo leen y lo comentan --> taller["Taller"]
+    json -- "lo importa" --> envios["Programa de la empresa de envíos"]
+    yaml -- "lo leen y lo comentan" --> taller["Taller"]
 ```
 
 En texto: la tienda en línea exporta `pedidos.csv`; de él se sacan a mano `pedidos.json`, que importa el programa de
