@@ -110,7 +110,7 @@ Para ver toda tu configuración, **`git config --global --list`**; y para ver un
 
 **Sin `--global`**, dentro de un repositorio, el ajuste vale **solo para ese repositorio** (Git lo guarda en su carpeta `.git`) y manda sobre el global. Casi nunca lo necesitarás; en [05.03](03-github.md#22-clonar-luis-se-une-al-club) lo usa Luis para que sus commits salgan a su nombre en un ordenador donde la identidad global es la de Ana.
 
-> **📌 Nota:** en la terminal del curso, la identidad ya viene configurada como «Ana García <ana@example.com>» y la rama inicial como `main`. Por eso, en los ejemplos, los commits salen a nombre de Ana. En los tuyos saldrá el tuyo.
+> **📌 Nota:** en la terminal del curso, la identidad ya viene configurada como `Ana García <ana@example.com>` y la rama inicial como `main`. Por eso, en los ejemplos, los commits salen a nombre de Ana. En los tuyos saldrá el tuyo.
 
 ### 1.5. Repositorio: una carpeta con memoria
 
