@@ -961,10 +961,10 @@ Para cada orden, hazte tres preguntas: ¿la entiendo? ¿Hace falta para lo que p
 Samuel, el del [ejercicio 3](#ejercicio-3--probar-el-script-de-los-socios), está haciendo la web del Club de Ajedrez Enroque y usa un asistente varias veces por semana. Escribe su **fichero de contexto**, `contexto.md`, con los apartados del [apartado 1.6](#16-el-contexto-de-tu-proyecto-escrito-una-vez). Lo que sabes del proyecto:
 
 - La web son ficheros Markdown publicados en GitHub Pages: `index.md` (la portada, con el horario y cómo apuntarse) y `torneos.md` (el calendario de torneos).
-- En el proyecto está también `socios.csv`, con el nombre, la categoría y la fecha de alta de cada socio, que **no** se publica.
+- El listado de socios, `socios.csv` (nombre, categoría y fecha de alta de cada socio), **no está en el repositorio**: Samuel lo guarda en su ordenador, fuera de la carpeta de la web. Tiene datos de personas, y un repositorio público lo puede leer cualquiera, se publique en la web o no ([07.05](05-seguridad-basica.md)).
 - Samuel trabaja con VS Code y Git, y está aprendiendo.
 - Quiere todo en español de España, tuteando, y las fechas en formato año-mes-día.
-- La última vez, el asistente le puso en la portada los nombres de los socios juveniles, que vio en el CSV, y se inventó la fecha de un torneo.
+- La última vez, el asistente le puso en la portada los nombres de los socios juveniles, que vio en el CSV (entonces Samuel lo tenía dentro de la carpeta de la web; por eso lo sacó), y se inventó la fecha de un torneo.
 
 <details>
 <summary>Pista 1</summary>
@@ -989,7 +989,8 @@ La web del club, hecha con ficheros Markdown y publicada en GitHub Pages:
 
 - `index.md`: la portada, con el horario y cómo apuntarse.
 - `torneos.md`: el calendario de torneos.
-- `socios.csv`: el listado de socios (nombre, categoría, fecha de alta). No se publica.
+
+El listado de socios (nombre, categoría, fecha de alta) no está en el repositorio: tiene datos de personas y el repositorio es público.
 
 ## Con qué trabajo
 
@@ -1009,7 +1010,7 @@ La web del club, hecha con ficheros Markdown y publicada en GitHub Pages:
 
 ## Lo que no debes hacer
 
-- No toques `socios.csv` ni lo copies en ninguna página.
+- No me pidas el listado de socios ni pongas datos de socios en ninguna página.
 - No añadas herramientas ni programas nuevos sin preguntarme.
 - Si no sabes algo del club (fechas, precios, horarios), pregúntamelo: no lo inventes.
 ```
@@ -1018,8 +1019,8 @@ La web del club, hecha con ficheros Markdown y publicada en GitHub Pages:
 
 **En qué fijarte:**
 
-- **Los dos problemas de la última vez** tienen su línea: los nombres de los socios («Nada de datos personales…», «No toques `socios.csv`…») y la fecha inventada («pregúntamelo: no lo inventes»).
-- **No lleva ningún dato del CSV**: ni nombres, ni teléfonos, ni un ejemplo «real» de socio. Se describe qué columnas tiene, que es lo que el asistente necesita saber.
+- **Los dos problemas de la última vez** tienen su línea: los nombres de los socios («Nada de datos personales…», «No me pidas el listado de socios…») y la fecha inventada («pregúntamelo: no lo inventes»).
+- **No lleva ningún dato del CSV**: ni nombres, ni teléfonos, ni un ejemplo «real» de socio. Se describe qué columnas tiene y que no está en el repositorio, que es lo que el asistente necesita saber.
 - **«Cómo se comprueba»** da al asistente (y a Samuel) algo que revisar antes de dar una tarea por terminada.
 - **«Estoy aprendiendo: explícame…»** cambia el formato de todas las respuestas, y convierte al asistente en profesor (norma 1).
 

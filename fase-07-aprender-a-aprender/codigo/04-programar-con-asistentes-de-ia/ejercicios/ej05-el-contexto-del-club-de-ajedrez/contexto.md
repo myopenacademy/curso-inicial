@@ -8,7 +8,8 @@ La web del club, hecha con ficheros Markdown y publicada en GitHub Pages:
 
 - `index.md`: la portada, con el horario y cómo apuntarse.
 - `torneos.md`: el calendario de torneos.
-- `socios.csv`: el listado de socios (nombre, categoría, fecha de alta). No se publica.
+
+El listado de socios (nombre, categoría, fecha de alta) no está en el repositorio: tiene datos de personas y el repositorio es público.
 
 ## Con qué trabajo
 
@@ -28,6 +29,6 @@ La web del club, hecha con ficheros Markdown y publicada en GitHub Pages:
 
 ## Lo que no debes hacer
 
-- No toques `socios.csv` ni lo copies en ninguna página.
+- No me pidas el listado de socios ni pongas datos de socios en ninguna página.
 - No añadas herramientas ni programas nuevos sin preguntarme.
 - Si no sabes algo del club (fechas, precios, horarios), pregúntamelo: no lo inventes.
