@@ -1,0 +1,6 @@
+id,cliente_id,fecha,ramo,precio
+1,1,2026-11-10,Rosas rojas,35.00
+2,2,2026-11-10,Margaritas,18.50
+3,1,2026-11-12,Tulipanes,24.00
+4,3,2026-11-13,Rosas blancas,32.00
+5,2,2026-11-14,Girasoles,21.00

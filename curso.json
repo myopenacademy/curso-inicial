@@ -850,8 +850,36 @@
           "id": "inicial.que-es-una-base-de-datos",
           "fichero": "fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md",
           "titulo": "Qué es una base de datos",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.que-es-una-base-de-datos.las-piezas-de-la-tabla-de-una-veterinaria",
+              "titulo": "Las piezas de la tabla de una veterinaria"
+            },
+            {
+              "id": "inicial.que-es-una-base-de-datos.elige-la-clave-primaria",
+              "titulo": "Elige la clave primaria"
+            },
+            {
+              "id": "inicial.que-es-una-base-de-datos.sigue-la-relacion-a-mano",
+              "titulo": "Sigue la relación a mano"
+            },
+            {
+              "id": "inicial.que-es-una-base-de-datos.lo-que-una-base-de-datos-no-dejaria-pasar",
+              "titulo": "Lo que una base de datos no dejaría pasar"
+            },
+            {
+              "id": "inicial.que-es-una-base-de-datos.parte-la-hoja-de-la-floristeria-en-dos-tablas",
+              "titulo": "Parte la hoja de la floristería en dos tablas"
+            },
+            {
+              "id": "inicial.que-es-una-base-de-datos.un-pedido-como-documento",
+              "titulo": "Un pedido como documento"
+            },
+            {
+              "id": "inicial.que-es-una-base-de-datos.donde-guarda-sus-datos-el-gimnasio",
+              "titulo": "Dónde guarda sus datos el gimnasio"
+            }
+          ]
         },
         {
           "id": "inicial.piezas-de-una-aplicacion",

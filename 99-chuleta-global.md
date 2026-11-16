@@ -35,6 +35,7 @@
   - [06.01 Redes: IP, router, DNS y cortafuegos](#0601-redes-ip-router-dns-y-cortafuegos)
   - [06.02 Puertos y localhost: tu ordenador como servidor](#0602-puertos-y-localhost-tu-ordenador-como-servidor)
   - [06.03 La web: HTTP, peticiones, respuestas y APIs](#0603-la-web-http-peticiones-respuestas-y-apis)
+  - [06.04 Qué es una base de datos](#0604-qué-es-una-base-de-datos)
 
 ---
 
@@ -1578,6 +1579,66 @@ Códigos de salida de `curl`: 0, ha hablado con el servidor (aunque responda `40
 - La clave de una API, en `.env` y en una variable de entorno: nunca en el código ni en Git.
 - Pestaña **Red** del navegador: <kbd>F12</kbd> (en Firefox, también <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>E</kbd>).
 - Para practicar con una API real: `curl -i https://api.github.com/users/octocat` (60 peticiones por hora sin identificarte, a 16 de noviembre de 2026).
+
+---
+
+### 06.04 Qué es una base de datos
+
+📖 Módulo completo: [fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md)
+
+#### Base de datos y motor
+
+| Palabra | Qué es |
+|---|---|
+| **Base de datos** | Conjunto de datos organizados para guardarlos y consultarlos |
+| **Motor** (SGBD) | El programa que guarda los datos y atiende a quien los pide: PostgreSQL, MySQL, SQLite… |
+| **Transacción** | Varios cambios que se hacen todos o ninguno |
+
+**Lo que hace el motor por ti:** guardar · atender a muchos a la vez · responder preguntas · cumplir reglas · todo o nada · permisos · copias de seguridad.
+
+#### Relacional
+
+| Pieza | Qué es | Ejemplo |
+|---|---|---|
+| **Tabla** | Un tipo de cosa | `socios` |
+| **Fila** (registro) | Una cosa concreta | Raúl Medina |
+| **Columna** (campo) | Un dato de cada cosa, con su tipo | `fecha_alta`, fecha |
+| **Clave primaria** | Identifica cada fila; ni se repite ni está vacía | `id` |
+| **Clave foránea** | Apunta a la clave primaria de otra tabla | `socio_id` en `reservas` |
+
+**Relaciones:** uno a muchos (un socio, muchas reservas) · uno a uno · muchos a muchos (con una tabla intermedia).
+
+**SQL:** el lenguaje de las bases de datos relacionales; declarativo; norma ISO/IEC 9075 (SQL:2023); cada motor, su dialecto.
+
+#### Diagrama entidad-relación en Mermaid
+
+```text
+erDiagram
+    SOCIO ||--o{ RESERVA : "hace"
+    SOCIO {
+        int id PK
+        string nombre
+    }
+    RESERVA {
+        int id PK
+        int socio_id FK
+    }
+```
+
+`||` exactamente uno · `|o` cero o uno · `o{` cero o más · `|{` uno o más · `PK` clave primaria · `FK` clave foránea · la etiqueta, tras `:` y entre comillas, obligatoria · nombres sin tildes ni espacios.
+
+#### Tipos de bases de datos
+
+| Tipo | Guarda | Motores | Para |
+|---|---|---|---|
+| Relacional | Tablas relacionadas | PostgreSQL, MySQL, MariaDB, SQLite, Oracle Database, SQL Server | Casi todo |
+| Documental | Documentos tipo JSON | MongoDB | Forma muy variable |
+| Clave-valor | Clave → valor, en memoria | Redis | Sesiones, caché |
+| De grafos | Nodos y relaciones | Neo4j | Redes |
+
+**Dónde vive:** embebida (dentro de la aplicación, un fichero: SQLite) · cliente-servidor (un programa aparte, por la red: PostgreSQL en el 5432, MySQL en el 3306).
+
+**Para elegir:** si dudas, relacional · si ya hay una, esa · datos de una persona en su dispositivo, embebida · NoSQL para un problema concreto, además de la relacional · configuración e informes, ficheros.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

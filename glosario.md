@@ -65,6 +65,14 @@ Dato con nombre y valor entre comillas dentro de la etiqueta de apertura de un e
 
 ## B
 
+### Base de datos
+
+Conjunto de datos organizados para guardarlos y consultarlos, gestionado por un programa, el motor o SGBD. Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#13-base-de-datos-y-motor).
+
+### Base de datos relacional
+
+Base de datos que guarda los datos en tablas (filas y columnas) relacionadas por claves; se consulta con SQL. Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#15-tablas-filas-y-columnas).
+
 ### Bash
 
 Lenguaje de órdenes de la terminal de Linux, de Git Bash y de casi todos los servidores. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash).
@@ -126,6 +134,14 @@ Caso de prueba con un valor justo en la frontera entre dos grupos de datos, o al
 ### Clave de API
 
 Secreto que identifica a quien usa una API; va en una cabecera y nunca en el código ni en Git. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#115-las-claves-de-una-api-fuera-del-código).
+
+### Clave foránea
+
+Columna que apunta a la clave primaria de otra tabla y así relaciona las dos. Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#17-relacionar-tablas-la-clave-foránea).
+
+### Clave primaria
+
+Columna (o columnas) que identifica cada fila de una tabla; no se repite ni puede estar vacía. Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#16-la-clave-primaria).
 
 ### Clave SSH
 
@@ -224,6 +240,10 @@ Representación gráfica de un algoritmo o un proceso: cada paso es una figura y
 ### Diagrama de secuencia
 
 Diagrama que pone a cada participante en una columna y dibuja, de arriba abajo en el orden en que ocurren, los mensajes que se mandan. Lo explica [04.05 Diagramas y Mermaid](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#12-tres-diagramas-para-empezar).
+
+### Diagrama entidad-relación
+
+Diagrama de las tablas de una base de datos, con sus columnas y sus relaciones; en Mermaid, erDiagram. Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#18-dibujar-las-tablas-el-diagrama-entidad-relación).
 
 ### Diff
 
@@ -523,6 +543,10 @@ Caracteres estropeados («Ã±», «�») por leer un texto con una codificaci�
 
 ## N
 
+### NoSQL
+
+Bases de datos que no guardan tablas relacionadas, sino documentos, pares clave-valor, grafos… Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#110-no-todo-son-tablas-las-bases-de-datos-nosql).
+
 ### Nube
 
 Ordenadores de otra empresa, en un centro de datos, a los que se accede por internet. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#111-la-nube-el-ordenador-de-otro).
@@ -783,6 +807,10 @@ Convertir los datos de un programa en texto (o bytes) para guardarlos o enviarlo
 
 Programa que espera peticiones y las contesta; por extensión, el ordenador donde funciona. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#13-cliente-y-servidor).
 
+### SGBD (motor de base de datos)
+
+Programa que guarda los datos de una base de datos, hace cumplir sus reglas y atiende a quien los pide. Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#13-base-de-datos-y-motor).
+
 ### Shebang
 
 Primera línea de un script, que empieza por #! y dice con qué programa se ejecuta (#!/usr/bin/env bash). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#114-tu-primer-script).
@@ -790,6 +818,10 @@ Primera línea de un script, que empieza por #! y dice con qué programa se ejec
 ### Sistema operativo
 
 Programa que administra el ordenador y hace de intermediario entre el hardware y los demás programas: Windows, macOS, Linux. Lo explica [02.01 Cómo funciona un ordenador](fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#17-el-sistema-operativo).
+
+### SQL
+
+Lenguaje para crear, cambiar y consultar los datos de una base de datos relacional. Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#19-sql-el-idioma-de-las-bases-de-datos-relacionales).
 
 ### Subalgoritmo
 
@@ -836,6 +868,10 @@ Contraseña especial, con permisos limitados y caducidad, que se usa con Git por
 ### TOML
 
 Formato de configuración con secciones entre corchetes, clave = valor y tipos (textos entre comillas, números, listas); versión 1.1.0. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#113-ficheros-de-configuración-properties-ini-y-toml).
+
+### Transacción
+
+Grupo de cambios en una base de datos que se hacen todos o ninguno. Lo explica [06.04 Qué es una base de datos](fase-06-internet-y-aplicaciones/04-que-es-una-base-de-datos.md#14-lo-que-hace-el-motor-por-ti).
 
 ### Traza
 

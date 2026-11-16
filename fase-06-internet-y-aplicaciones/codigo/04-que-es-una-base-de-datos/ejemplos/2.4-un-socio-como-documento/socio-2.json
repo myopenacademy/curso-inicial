@@ -1,0 +1,10 @@
+{
+  "id": 2,
+  "nombre": "Raúl Medina",
+  "telefono": "600333444",
+  "fecha_alta": "2025-09-02",
+  "reservas": [
+    {"pista": "Central", "fecha": "2026-11-20", "hora": "18:00"},
+    {"pista": "Norte", "fecha": "2026-11-21", "hora": "18:00"}
+  ]
+}

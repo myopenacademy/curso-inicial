@@ -1,0 +1,6 @@
+id,nombre,especie,raza,fecha_nacimiento,cliente_id
+1,Luna,perro,mestizo,2019-04-12,3
+2,Misi,gato,europeo,2021-08-30,1
+3,Rocky,perro,bóxer,2017-11-02,3
+4,Kiwi,periquito,,2024-02-14,2
+5,Nala,gato,siamés,2022-06-21,4

@@ -1,0 +1,6 @@
+[
+  {"id": 1, "nombre": "Carmen Ortiz", "telefono": "600111222", "fecha_alta": "2025-03-10"},
+  {"id": 2, "nombre": "Raúl Medina", "telefono": "600333444", "fecha_alta": "2025-09-02"},
+  {"id": 3, "nombre": "Sofía Herrero", "telefono": "600555666", "fecha_alta": "2026-01-15"},
+  {"id": 4, "nombre": "Daniel Castro", "telefono": "600777888", "fecha_alta": "2026-02-20"}
+]

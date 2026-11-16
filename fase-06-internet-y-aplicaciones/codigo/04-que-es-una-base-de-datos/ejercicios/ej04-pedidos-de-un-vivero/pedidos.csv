@@ -1,0 +1,7 @@
+id,cliente_id,fecha,producto,unidades
+101,1,2026-11-02,Olivo pequeño,1
+102,3,2026-11-03,Maceta de barro,4
+103,5,2026-11-03,Lavanda,6
+102,2,2026-11-04,Romero,2
+104,2,2026-11-05,Sustrato universal,dos
+105,1,,Abono,1

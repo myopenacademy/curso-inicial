@@ -1,0 +1,5 @@
+grep 2026-11-21 reservas.csv
+grep '^4,' socios.csv
+grep '^2,' socios.csv
+grep '^1,' pistas.csv
+grep '^2,' pistas.csv

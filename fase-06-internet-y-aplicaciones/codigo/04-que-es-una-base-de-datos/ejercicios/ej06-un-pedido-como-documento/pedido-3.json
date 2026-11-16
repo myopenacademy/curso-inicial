@@ -1,0 +1,11 @@
+{
+  "id": 3,
+  "fecha": "2026-11-12",
+  "ramo": "Tulipanes",
+  "precio": 24.00,
+  "cliente": {
+    "nombre": "Rosa Iglesias",
+    "telefono": "622100200",
+    "direccion": "Calle Mayor 5"
+  }
+}
