@@ -1,6 +1,6 @@
 # 06.04 Qué es una base de datos
 
-> **Versiones:** Mermaid 12.2.0 (la que usa la academia) y 10.9.8, para los diagramas entidad-relación (comprobado el 16 de noviembre de 2026)
+> **Versiones:** Mermaid 12.3.0 (la que usa la academia) y 10.9.8, para los diagramas entidad-relación (comprobado el 16 de noviembre de 2026)
 > **Conviene saber antes:** [04.04 XML, CSV y otros, 1.8](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#18-csv-a-fondo-las-reglas) · [04.03 JSON y YAML, 1.2](../fase-04-formatos-y-diagramas/03-json-y-yaml.md#12-las-tres-piezas-valores-listas-y-objetos) · [03.02 La terminal: sacarle partido, 1.6](../fase-03-herramientas/02-terminal-sacarle-partido.md#16-los-filtros-grep-sort-uniq-wc-cut-head-y-tail) · [06.01 Redes: IP, router, DNS y cortafuegos, 1.3](01-redes.md#13-cliente-y-servidor)
 > **Tiempo estimado:** 2 horas
 > **Nivel:** Básico · Ampliación
@@ -202,7 +202,7 @@ Cómo se lee:
 
 Los símbolos se llaman **notación pata de gallo** (*crow's foot*), por el `{`, que dibuja tres líneas abiertas como una pata. No hace falta que te los aprendas: con este apartado como chuleta, puedes leer cualquier diagrama E-R que te encuentres.
 
-> **📌 Nota:** este diagrama se dibuja igual con Mermaid 12.2.0 y 10.9.8 (comprobado el 16 de noviembre de 2026). Los nombres de las cajas y de las columnas van **sin tildes ni espacios** (`SOCIO`, `fecha_alta`): según la documentación de Mermaid, los nombres con espacios necesitan comillas, y los de las columnas tienen reglas más estrictas. Las tildes sí valen en el nombre de la relación, entre comillas.
+> **📌 Nota:** este diagrama se dibuja igual con Mermaid 12.3.0 y 10.9.8 (comprobado el 16 de noviembre de 2026). Los nombres de las cajas y de las columnas van **sin tildes ni espacios** (`SOCIO`, `fecha_alta`): según la documentación de Mermaid, los nombres con espacios necesitan comillas, y los de las columnas tienen reglas más estrictas. Las tildes sí valen en el nombre de la relación, entre comillas.
 
 ### 1.9. SQL, el idioma de las bases de datos relacionales
 

@@ -1,6 +1,6 @@
 # 04.05 Diagramas y Mermaid
 
-> **Versiones:** Mermaid 12.2.0 (la que usa la academia) y 10.9.8 (una antigua, como la que aún usan algunos sitios); la última publicada es la 12.3.0 (comprobado el 9 de noviembre de 2026)
+> **Versiones:** Mermaid 12.3.0 (la que usa la academia, y la última publicada) y 10.9.8 (una antigua, como la que aún usan algunos sitios), comprobado el 16 de noviembre de 2026
 > **Conviene saber antes:** [01.02 Algoritmos y pseudocódigo, 1.12](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#112-diagramas-de-flujo) · [04.02 Markdown](02-markdown.md)
 > **Tiempo estimado:** 2,5 horas
 > **Nivel:** Básico · Núcleo
@@ -82,7 +82,7 @@ A cambio, **tú no decides dónde va cada caja**: Mermaid las coloca a su manera
 
 > **📌 Nota:** todos los diagramas de este curso están escritos así. Si alguna vez lees el curso en un sitio que no entiende Mermaid, verás el texto en lugar del dibujo; con lo que aprendas en este módulo, también se entiende.
 
-**Versiones.** Mermaid saca versiones a menudo. A 9 de noviembre de 2026, la última es la **12.3.0** (del 3 de noviembre de 2026), y la academia dibuja los diagramas con la **12.2.0**. Cada sitio usa la suya, y no siempre la última: lo que está en este módulo funciona en todas las versiones recientes (se ha comprobado con la 12.2.0 y con la 10.9.8, mucho más antigua, como la que aún usan algunos sitios).
+**Versiones.** Mermaid saca versiones a menudo. A 16 de noviembre de 2026, la última es la **12.3.0** (del 3 de noviembre de 2026), y es la que usa la academia para dibujar los diagramas. Cada sitio usa la suya, y no siempre la última: lo que está en este módulo funciona en todas las versiones recientes (se ha comprobado con la 12.3.0 y con la 10.9.8, mucho más antigua, como la que aún usan algunos sitios).
 
 ### 1.4. Tu primer diagrama
 
@@ -377,7 +377,7 @@ En texto: si el cliente escribe «urgente» y el total pasa de 50 €, envío gr
 Un bloque `mermaid` es solo texto. Que se vea como dibujo depende de **quién enseña el fichero Markdown**:
 
 - **GitHub** lo dibuja en los ficheros Markdown (como el `README.md` de un repositorio), en las [*issues*](02-markdown.md#11-qué-es-markdown), en las discusiones y en las wikis (según su documentación, consultada el 9 de noviembre de 2026). Lo verás en [05.03 GitHub](../fase-05-git-y-github/03-github.md).
-- **La academia** dibuja los diagramas de todos sus cursos, con la versión 12.2.0 de Mermaid.
+- **La academia** dibuja los diagramas de todos sus cursos, con la versión 12.3.0 de Mermaid (a 16 de noviembre de 2026).
 - **VS Code** los dibuja en la **vista previa de Markdown** desde su versión 1.121, del 20 de mayo de 2026: antes hacía falta una extensión, *Markdown Preview Mermaid Support*, que se ha incorporado al propio editor (según las notas de la versión 1.121 y la documentación de VS Code, consultadas el 9 de noviembre de 2026). Con la versión del curso, la 1.146 (a 16 de noviembre de 2026), no necesitas instalar nada: abre el `.md` y la vista previa con <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd> (en macOS, <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd>), como viste en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#111-extensiones-útiles-para-este-curso).
 
 Donde no se entiende Mermaid (un editor de texto sencillo, el Bloc de notas, un visor de Markdown antiguo), se ve el **texto del bloque**, sin dibujar. No es un error: es lo que hay dentro del fichero.
@@ -401,7 +401,7 @@ Es la forma más rápida de **probar** un diagrama o de **encontrar un error**: 
 
 ### 1.12. Más tipos de diagramas, UML y otras notaciones
 
-**Mermaid sabe hacer muchos más diagramas.** Cada tipo empieza por su palabra, igual que `flowchart` o `sequenceDiagram`. Estos son algunos que te encontrarás en otros cursos (todos se dibujan con Mermaid 12.2.0 y 10.9.8, comprobado el 9 de noviembre de 2026):
+**Mermaid sabe hacer muchos más diagramas.** Cada tipo empieza por su palabra, igual que `flowchart` o `sequenceDiagram`. Estos son algunos que te encontrarás en otros cursos (todos se dibujan con Mermaid 12.3.0 y 10.9.8, comprobado el 16 de noviembre de 2026):
 
 | Empieza por | Diagrama | Para qué |
 |---|---|---|
@@ -416,7 +416,7 @@ Es la forma más rápida de **probar** un diagrama o de **encontrar un error**: 
 
 No los aprendas ahora: cuando un curso los necesite, te los enseñará. Lo que importa es saber que existen y que se escriben igual, como texto dentro de un bloque `mermaid`.
 
-> **⚠️ Cuidado:** la documentación de Mermaid incluye también tipos **nuevos**, algunos marcados como *beta* (en pruebas). Pueden no dibujarse en las versiones que usan GitHub o la academia: por ejemplo, `architecture-beta` se dibuja con la 12.2.0 y no con la 10.9.8. Antes de usar un tipo nuevo, comprueba que se ve **donde lo vas a publicar**.
+> **⚠️ Cuidado:** la documentación de Mermaid incluye también tipos **nuevos**, algunos marcados como *beta* (en pruebas). Pueden no dibujarse en las versiones que usan GitHub o la academia: por ejemplo, `architecture-beta` se dibuja con la 12.3.0 y no con la 10.9.8. Antes de usar un tipo nuevo, comprueba que se ve **donde lo vas a publicar**.
 
 **UML.** En muchos cursos (sobre todo los de programación orientada a objetos) verás **UML** (*Unified Modeling Language*, «lenguaje unificado de modelado»): un lenguaje gráfico **estándar** para dibujar el diseño de un programa, con reglas precisas para cada símbolo. Lo mantiene el OMG (*Object Management Group*), y su versión vigente es la **2.5.1**, de diciembre de 2017 (según la web del OMG, consultada el 9 de noviembre de 2026). El diagrama de secuencia de este módulo es, de hecho, uno de los diagramas de UML, en versión sencilla; el de clases de la tabla, otro. No te hace falta aprender UML antes de tu curso: el que lo use te lo enseñará.
 
@@ -905,7 +905,7 @@ En texto: se leen la edad y si es miércoles; si la edad es menor de 12, el prec
 
 **Errores frecuentes al resolverlo:**
 
-- Escribir el identificador con ñ (`niño`): Mermaid lo acepta (comprobado con la 12.2.0 y la 10.9.8), pero el curso escribe los identificadores sin tildes ni eñes, como los [nombres del pseudocódigo](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#cómo-se-nombran). En las etiquetas, en cambio, escribe con todas sus letras.
+- Escribir el identificador con ñ (`niño`): Mermaid lo acepta (comprobado con la 12.3.0 y la 10.9.8), pero el curso escribe los identificadores sin tildes ni eñes, como los [nombres del pseudocódigo](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#cómo-se-nombran). En las etiquetas, en cambio, escribe con todas sus letras.
 - Escribir las etiquetas sin comillas: `nino{¿edad &lt; 12?}` puede funcionar, pero el día que pongas un paréntesis se romperá.
 - Escribir el `<` tal cual: aquí se vería bien, porque va seguido de un espacio, pero pegado a una letra (`edad<limite`) Mermaid se comería el resto de la etiqueta sin avisar.
 - Olvidar una de las tres flechas hacia `escribir`: ese camino se quedaría colgado, sin llegar al fin.

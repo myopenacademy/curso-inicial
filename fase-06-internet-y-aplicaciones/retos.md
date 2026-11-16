@@ -1,6 +1,6 @@
 # Retos de la fase 06 — Internet y aplicaciones
 
-> **Versiones:** curl 8.18.0 en las salidas, la de la terminal del curso (a 16 de noviembre de 2026) · Mermaid 12.2.0, la que usa la academia · API de GitHub, según su documentación a 16 de noviembre de 2026
+> **Versiones:** curl 8.18.0 en las salidas, la de la terminal del curso (a 16 de noviembre de 2026) · Mermaid 12.3.0, la que usa la academia · API de GitHub, según su documentación a 16 de noviembre de 2026
 > **Conviene saber antes:** [06.01 Redes](01-redes.md) · [06.02 Puertos y localhost](02-puertos-y-localhost.md) · [06.03 La web](03-la-web-http-y-apis.md) · [06.04 Qué es una base de datos](04-que-es-una-base-de-datos.md) · [06.05 Las piezas de una aplicación](05-piezas-de-una-aplicacion.md) · [06.06 Qué es la IA](06-que-es-la-ia.md)
 > **Tiempo estimado:** 2,5 horas
 

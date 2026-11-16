@@ -32,7 +32,7 @@ Revisadas en sus fuentes oficiales el 16 de noviembre de 2026, para la versión 
 | Visual Studio Code | 1.146 (saca versión cada semana y se actualiza solo) |
 | Bash | 5.3 (los ejemplos funcionan también con el bash 3.2 de macOS) |
 | curl | 8.18.0 en las salidas (la más reciente, la 8.23.0, del 14 de octubre de 2026) |
-| Mermaid | 12.2.0, la que usa la academia (la más reciente, la 12.3.0) |
+| Mermaid | 12.3.0, la que usa la academia y la más reciente |
 | GitHub Pages | github-pages 232, con Jekyll 3.10.0 y Liquid 4.0.4 |
 
 Las versiones se revisan antes de cada versión del curso y cuando cambia la versión menor de una herramienta, no por cada parche. Lo que se dice de GitHub sigue su documentación a 16 de noviembre de 2026.
