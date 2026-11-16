@@ -1,0 +1,6 @@
+# Preparar el reto y ver qué ha pasado
+bash preparar.sh
+cd gimnasio
+git log --oneline --graph --all
+git show 84dd498
+git show 2ae4cc4

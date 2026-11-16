@@ -376,7 +376,7 @@ En texto: si el cliente escribe «urgente» y el total pasa de 50 €, envío gr
 
 Un bloque `mermaid` es solo texto. Que se vea como dibujo depende de **quién enseña el fichero Markdown**:
 
-- **GitHub** lo dibuja en los ficheros Markdown (como el `README.md` de un repositorio), en las [*issues*](02-markdown.md#11-qué-es-markdown), en las discusiones y en las wikis (según su documentación, consultada el 9 de noviembre de 2026). Lo verás en la fase 5.
+- **GitHub** lo dibuja en los ficheros Markdown (como el `README.md` de un repositorio), en las [*issues*](02-markdown.md#11-qué-es-markdown), en las discusiones y en las wikis (según su documentación, consultada el 9 de noviembre de 2026). Lo verás en [05.03 GitHub](../fase-05-git-y-github/03-github.md).
 - **La academia** dibuja los diagramas de todos sus cursos, con la versión 12.2.0 de Mermaid.
 - **VS Code** los dibuja en la **vista previa de Markdown** desde su versión 1.121, del 20 de mayo de 2026: antes hacía falta una extensión, *Markdown Preview Mermaid Support*, que se ha incorporado al propio editor (según las notas de la versión 1.121 y la documentación de VS Code, consultadas el 9 de noviembre de 2026). Con la versión del curso, la 1.145, no necesitas instalar nada: abre el `.md` y la vista previa con <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd> (en macOS, <kbd>Cmd</kbd>+<kbd>Mayús</kbd>+<kbd>V</kbd>), como viste en [03.03](../fase-03-herramientas/03-editor-de-codigo.md#111-extensiones-útiles-para-este-curso).
 
@@ -408,7 +408,7 @@ Es la forma más rápida de **probar** un diagrama o de **encontrar un error**: 
 | `classDiagram` | De clases | Las clases de un programa orientado a objetos y sus relaciones ([paradigmas, 01.04](../fase-01-que-es-programar/04-paradigmas-de-programacion.md)) |
 | `erDiagram` | Entidad-relación | Las tablas de una base de datos y cómo se relacionan |
 | `stateDiagram-v2` | De estados | Por qué estados pasa algo: un pedido pendiente, pagado, enviado, entregado |
-| `gitGraph` | De Git | Las ramas y los commits de un repositorio (fase 5) |
+| `gitGraph` | De Git | Las ramas y los commits de un repositorio ([05.02](../fase-05-git-y-github/02-ramas-y-conflictos.md#18-dibujar-el-historial-con-mermaid)) |
 | `gantt` | De Gantt | Un calendario de tareas de un proyecto |
 | `pie` | De tarta | Un gráfico circular sencillo |
 | `mindmap` | Mapa mental | Ideas que salen de una central |

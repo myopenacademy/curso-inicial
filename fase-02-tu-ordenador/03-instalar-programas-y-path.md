@@ -136,7 +136,7 @@ En Linux, el `.deb` deja la orden `code` lista en la terminal.
 
 ### 1.6. Instalar Git en Windows: Git for Windows y Git Bash
 
-**Git** es la herramienta que guarda el historial de los cambios de un proyecto. La aprenderás en la fase 5; ahora solo la instalas. Pero en Windows, instalarla trae un regalo que vas a usar desde ya: **Git Bash**.
+**Git** es la herramienta que guarda el historial de los cambios de un proyecto. La aprenderás en la [fase 5](../fase-05-git-y-github/01-git-fundamentos.md); ahora solo la instalas. Pero en Windows, instalarla trae un regalo que vas a usar desde ya: **Git Bash**.
 
 En Windows, Git se instala con **Git for Windows**, que incluye dos cosas:
 
@@ -177,7 +177,7 @@ Al terminar, pulsa *Install*, espera y, en la última pantalla, pulsa *Finish*.
 **Por qué cambiar esas dos:**
 
 - **El editor.** Git, a veces, abre un editor para que escribas un mensaje. El que viene elegido es **Vim**, un editor muy potente que funciona dentro de la terminal, pero difícil para empezar (salir de él es un clásico de los principiantes). El propio instalador lo dice: Vim es el editor por defecto «solo por razones históricas» y recomienda cambiarlo por uno moderno. Como ya tienes VS Code, elige ese. Si no te aparece la opción de VS Code (por ejemplo, porque lo instalaste después), elige *Use Notepad as Git's default editor* (el Bloc de notas): se puede cambiar más adelante.
-- **La rama `main`.** Lo entenderás en la fase 5: una rama es una línea de trabajo dentro de un proyecto, y la primera se llama, según como esté configurado Git, `master` o `main`. Hoy casi todos los proyectos nuevos, GitHub incluido, usan `main`, y es lo que usa este curso. Si lo eliges aquí, tu Git ya lo hará así; si no, no pasa nada: en el módulo «Git: fundamentos» (fase 5) verás cómo configurarlo.
+- **La rama `main`.** Lo entenderás en la fase 5: una rama es una línea de trabajo dentro de un proyecto, y la primera se llama, según como esté configurado Git, `master` o `main`. Hoy casi todos los proyectos nuevos, GitHub incluido, usan `main`, y es lo que usa este curso. Si lo eliges aquí, tu Git ya lo hará así; si no, no pasa nada: en [05.01 Git: fundamentos](../fase-05-git-y-github/01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres) verás cómo configurarlo.
 
 > **⚠️ Cuidado:** en la pantalla del PATH, **no** elijas *Use Git from Git Bash only*. Con esa opción, Git solo funcionaría dentro de Git Bash: VS Code y otros programas no lo encontrarían. Por qué pasa esto lo entenderás en el [apartado 1.10](#110-el-path-dónde-busca-el-sistema-los-programas).
 

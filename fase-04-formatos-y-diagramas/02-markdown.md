@@ -1159,7 +1159,7 @@ Lo que tiene que contar:
 
 - **Qué es**: una aplicación web para reservar las pistas desde el móvil, sin llamar por teléfono.
 - **Qué hace**: muestra las horas libres de las cuatro pistas; deja reservar y cancelar hasta 24 horas antes; manda un recordatorio por correo el día anterior. Y cómo son las pistas: la 1 y la 2 son de cristal y tienen luz; la 3 y la 4, de muro y sin luz.
-- **Instalación**: descargar el repositorio con `git clone https://github.com/ejemplo/reservas-padel.git`, entrar en su carpeta con `cd reservas-padel` y abrir `index.html` en el navegador. (La orden `git clone` la verás en la fase 5; aquí solo tienes que escribirla.)
+- **Instalación**: descargar el repositorio con `git clone https://github.com/ejemplo/reservas-padel.git`, entrar en su carpeta con `cd reservas-padel` y abrir `index.html` en el navegador. (La orden `git clone` la verás en [05.03 GitHub](../fase-05-git-y-github/03-github.md); aquí solo tienes que escribirla.)
 - **Estado**: ya funcionan ver las horas libres y reservar y cancelar; faltan el recordatorio por correo y pagar la pista desde la aplicación.
 - **Cómo colaborar**: leer la guía para colaborar; las dudas, a `nerea@ejemplo.com`.
 - **Licencia**: MIT, con enlace al fichero.

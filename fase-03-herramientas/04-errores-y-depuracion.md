@@ -628,7 +628,7 @@ compras.txt
 - **En VS Code**, mira la barra de estado, abajo a la derecha: si dice `CRLF`, haz clic, elige `LF` (es la orden **Change End of Line Sequence**, **Cambiar secuencia de fin de línea**) y guarda.
 - **Para que no vuelva a pasar**, abre la configuración (<kbd>Ctrl</kbd>+<kbd>,</kbd>; en macOS, <kbd>Cmd</kbd>+<kbd>,</kbd>), busca `files.eol` y elige `\n`, que es LF. Desde entonces, los ficheros **nuevos** se crean con LF; los que ya tenías, cámbialos uno a uno en la barra de estado. Es uno de los pasos de [preparar VS Code para el curso](03-editor-de-codigo.md#21-preparar-vs-code-para-el-curso).
 - **Para comprobarlo en la terminal**, `cat -e`, que funciona igual en Linux, macOS y Git Bash: con CRLF verás `ls^M$`; con LF, `ls$`. Y para arreglar un fichero desde la terminal, `tr -d '\r' < roto.sh > bien.sh` quita los retornos de carro y deja el resultado en otro fichero, como en la sesión; funciona igual en los tres sistemas.
-- Si usas Git (lo verás en la fase 5), un fichero `.gitattributes` puede hacer que los scripts se guarden siempre con LF; el repositorio de este curso lo tiene.
+- Si usas Git (lo verás en la [fase 5](../fase-05-git-y-github/01-git-fundamentos.md)), un fichero `.gitattributes` puede hacer que los scripts se guarden siempre con LF; el repositorio de este curso lo tiene.
 
 ### 3.3. El script que funciona en un sitio y no en otro
 

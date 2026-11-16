@@ -1,0 +1,9 @@
+cd hugo/tramoya
+printf '# Grupo de teatro La Tramoya\n\nObra: Luces de bohemia\n' > funciones.md
+echo "Funciones: viernes 5 y sábado 6 de marzo, 20:00, Casa de Cultura" >> funciones.md
+echo "Entradas: 5 €, en taquilla" >> funciones.md
+grep -c '<<<<<<<' funciones.md
+git add funciones.md
+git commit --no-edit
+git push
+git log --oneline --graph --all

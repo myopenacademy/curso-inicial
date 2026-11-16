@@ -233,7 +233,7 @@ Para terminar la teoría, una idea realista de en qué consiste programar en el 
 - **Se lee mucho más código del que se escribe.** La mayor parte del tiempo trabajas sobre código que ya existe, escrito por otras personas (o por ti hace meses).
 - **Equivocarse es lo normal.** Los mensajes de error no son un fracaso: son el ordenador diciéndote qué no ha entendido. Aprender a leerlos con calma es una de las habilidades más valiosas que vas a desarrollar.
 - **Se prueba todo.** Un programa no está terminado cuando «parece que funciona», sino cuando se ha comprobado con casos normales y con casos raros.
-- **Se trabaja en equipo.** Con herramientas para guardar el historial del código y compartirlo (Git y GitHub, en la fase 5 de este curso) y revisando el trabajo de los compañeros.
+- **Se trabaja en equipo.** Con herramientas para guardar el historial del código y compartirlo (Git y GitHub, en la [fase 5](../fase-05-git-y-github/01-git-fundamentos.md) de este curso) y revisando el trabajo de los compañeros.
 - **Se usan herramientas de ayuda**, cada vez más los asistentes de inteligencia artificial. Bien usados, aceleran mucho; mal usados, te impiden aprender. Lo verás en el módulo «Programar con asistentes de IA» (fase 7).
 - **No hace falta ser un genio de las matemáticas.** Para la mayoría de los programas basta con las operaciones básicas. Lo que sí hace falta es **pensar con orden**, ser **paciente** y **fijarse en los detalles**.
 

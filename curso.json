@@ -638,7 +638,6 @@
       "carpeta": "fase-05-git-y-github",
       "titulo": "Git y GitHub",
       "retos": "fase-05-git-y-github/retos.md",
-      "retos_disponibles": false,
       "modulos": [
         {
           "id": "inicial.git-fundamentos",

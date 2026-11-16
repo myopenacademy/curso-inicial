@@ -1,0 +1,12 @@
+cd elena
+git fetch
+git merge --no-ff --no-edit origin/sabado
+git push
+cd ../hugo/tramoya
+git switch main
+git pull
+git branch -d sabado
+git push origin --delete sabado
+git log --oneline --graph --all
+cat funciones.md
+git status

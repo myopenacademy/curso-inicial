@@ -109,7 +109,7 @@ En texto: a la izquierda del todo, una columna estrecha de iconos (la barra de a
 
 | Parte (en inglés) | Nombre en español | Para qué sirve |
 |---|---|---|
-| **Activity Bar** | Barra de actividades | La columna de iconos de la izquierda. Cada icono cambia lo que se ve en la barra lateral: el explorador, la búsqueda, el control de versiones (Git, en la fase 5), las extensiones… |
+| **Activity Bar** | Barra de actividades | La columna de iconos de la izquierda. Cada icono cambia lo que se ve en la barra lateral: el explorador, la búsqueda, el control de versiones (Git, en [05.01](../fase-05-git-y-github/01-git-fundamentos.md#117-git-en-vs-code)), las extensiones… |
 | **Primary Side Bar** | Barra lateral principal | La columna que se abre al lado. Lo normal es que muestre el **explorador** (**Explorer**, **Explorador**): el árbol de carpetas y ficheros de la carpeta abierta, donde puedes crear, renombrar, mover y borrar ficheros |
 | **Editor** | Editor | La zona grande del centro, donde escribes. Cada fichero abierto tiene su **pestaña** arriba |
 | **Panel** | Panel | La zona de debajo del editor. Contiene, entre otras cosas, la **terminal integrada** ([apartado 1.12](#112-la-terminal-integrada)) |

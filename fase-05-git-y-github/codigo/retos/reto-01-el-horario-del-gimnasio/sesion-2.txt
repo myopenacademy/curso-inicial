@@ -1,0 +1,10 @@
+# Anular el commit malo, fusionar las tarifas y etiquetar la temporada 2027
+cd gimnasio
+git revert --no-edit 2ae4cc4
+cat horario.txt
+git merge --no-edit tarifas-2027
+git branch -d tarifas-2027
+git tag -a v1.1.0 -m "Temporada 2027"
+git log --oneline --graph --all
+cat tarifas.txt
+git status

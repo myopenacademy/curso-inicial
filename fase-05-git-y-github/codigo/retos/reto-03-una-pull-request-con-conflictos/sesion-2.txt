@@ -1,0 +1,7 @@
+cd hugo/tramoya
+git switch main
+git pull
+git switch sabado
+git log --oneline --graph --all
+git merge main
+cat funciones.md

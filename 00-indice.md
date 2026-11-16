@@ -89,7 +89,7 @@ Cada módulo indica su nivel, si es **núcleo** (imprescindible) o **ampliación
 | 05.01 | [Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md) | Básico · Núcleo | 3 h | ✅ Disponible |
 | 05.02 | [Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md) | Básico · Núcleo | 3 h | ✅ Disponible |
 | 05.03 | [GitHub](fase-05-git-y-github/03-github.md) | Básico · Núcleo | 2,5 h | ✅ Disponible |
-| | Retos de la fase | | | Pendiente |
+| | [Retos de la fase](fase-05-git-y-github/retos.md) | | | ✅ Disponible |
 
 ---
 

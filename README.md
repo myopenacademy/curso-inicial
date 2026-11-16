@@ -33,7 +33,7 @@ Verificadas el 8 de noviembre de 2026:
 | Visual Studio Code | 1.145 |
 | Bash | 5.3 (los ejemplos funcionan también con el bash 3.2 de macOS) |
 
-Las de las fases siguientes se añaden al escribirlas.
+Las salidas de Git del curso son de la 2.56.0; a 16 de noviembre de 2026, la más reciente es la 2.56.1 (las versiones se revisan antes de cada versión del curso, no por cada parche). Lo que se dice de GitHub sigue su documentación a 16 de noviembre de 2026. Las de las fases siguientes se añaden al escribirlas.
 
 ## Requisitos
 

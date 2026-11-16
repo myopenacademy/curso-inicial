@@ -240,7 +240,7 @@ flowchart LR
 
 En palabras: cada vez que cambias el programa, se ejecutan todas las pruebas; si pasan, sigues; si alguna falla, lees qué se esperaba y qué se obtuvo, arreglas el error y vuelves a ejecutarlas.
 
-En los equipos profesionales esto va un paso más allá: cada vez que alguien sube un cambio al repositorio común, un servidor ejecuta **todas** las pruebas automáticamente y avisa si alguna falla. Se llama **integración continua** (en inglés, *continuous integration* o CI). GitHub, que conocerás en la fase 5, lo ofrece con una herramienta llamada GitHub Actions.
+En los equipos profesionales esto va un paso más allá: cada vez que alguien sube un cambio al repositorio común, un servidor ejecuta **todas** las pruebas automáticamente y avisa si alguna falla. Se llama **integración continua** (en inglés, *continuous integration* o CI). GitHub, que conocerás en [05.03 GitHub](../fase-05-git-y-github/03-github.md), lo ofrece con una herramienta llamada GitHub Actions.
 
 > **📌 Nota:** cada lenguaje tiene sus propias herramientas para escribir pruebas automáticas: `unittest` o `pytest` en Python, JUnit en Java, el ejecutor de pruebas que trae Node.js para JavaScript… Cambia cómo se escriben, pero **la idea es siempre la misma**: entrada, salida esperada, salida obtenida, ¿coinciden? Las aprenderás en el curso de tu lenguaje. Aquí verás un ejemplo corto, en Python, para que reconozcas la idea.
 

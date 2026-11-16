@@ -1,0 +1,26 @@
+# Preparación: el remoto, el repositorio de Tomás y el clon de Nuria
+mkdir github
+git init --bare github/huerto.git
+mkdir tomas && cd tomas && git init
+git config user.name "Tomás Lezcano"
+git config user.email tomas@example.com
+printf 'Lunes: Tomás\nMartes: Nuria\nMiércoles: Tomás\n' > riego.txt
+printf 'Jueves: Nuria\nViernes: Tomás\n' >> riego.txt
+git add riego.txt
+git commit -m "Turnos de riego"
+git remote add origin ../github/huerto.git
+git push -u origin main
+cd ..
+mkdir nuria && cd nuria && git clone ../github/huerto.git
+cd huerto
+git config user.name "Nuria Pardo"
+git config user.email nuria@example.com
+cd ../../tomas
+printf 'Lunes: Lola\nMartes: Nuria\nMiércoles: Tomás\n' > riego.txt
+printf 'Jueves: Nuria\nViernes: Tomás\n' >> riego.txt
+git add riego.txt
+git commit -m "Lola se queda el turno de los lunes"
+git push
+cd ../nuria/huerto
+echo "Sábado: Nuria" >> riego.txt
+printf 'Tomates: Tomás\nLechugas: Nuria\n' > semillas.txt

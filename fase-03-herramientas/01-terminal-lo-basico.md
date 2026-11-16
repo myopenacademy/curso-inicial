@@ -275,7 +275,7 @@ Con **`-n`** y un número, `head` y `tail` escriben las líneas que quieras: `he
 
 En `less`, las letras se pulsan **en minúscula**, porque con la mayúscula algunas hacen otra cosa: <kbd>n</kbd> busca hacia delante y <kbd>Mayús</kbd>+<kbd>N</kbd>, hacia atrás. La <kbd>Q</kbd> de salir funciona de las dos formas. Las tienes todas en su manual, `man less`.
 
-> **⚠️ Cuidado:** la tecla más importante de `less` es <kbd>Q</kbd> (*quit*). Si un día la terminal no te deja escribir órdenes y abajo ves `:` o `(END)`, estás dentro de `less` (o de otro paginador): pulsa <kbd>Q</kbd>. Te pasará con Git, en la fase 5, que usa `less` para enseñarte el historial cuando no cabe en la pantalla.
+> **⚠️ Cuidado:** la tecla más importante de `less` es <kbd>Q</kbd> (*quit*). Si un día la terminal no te deja escribir órdenes y abajo ves `:` o `(END)`, estás dentro de `less` (o de otro paginador): pulsa <kbd>Q</kbd>. Te pasará con Git, en la [fase 5](../fase-05-git-y-github/01-git-fundamentos.md), que usa `less` para enseñarte el historial cuando no cabe en la pantalla.
 
 Estas órdenes son para ficheros de **texto**. Si haces `cat` de una imagen o un PDF, verás símbolos sin sentido (es un [fichero binario](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#114-la-extensión), lo verás en [04.01](../fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#12-ficheros-de-texto-y-ficheros-binarios)) y a veces la terminal se queda con caracteres raros. No se rompe nada: escribe `clear` ([apartado 1.13](#113-trucos-que-ahorran-tiempo)).
 

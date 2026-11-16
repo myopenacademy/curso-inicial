@@ -1,0 +1,43 @@
+# Preparación: el remoto, el repositorio de Elena y el clon de Hugo
+mkdir github
+git init --bare github/tramoya.git
+mkdir elena && cd elena && git init
+git config user.name "Elena Ríos"
+git config user.email elena@example.com
+printf '# Grupo de teatro La Tramoya\n\nObra: Luces de bohemia\n' > funciones.md
+echo "Estreno: viernes 5 de marzo, 20:00, salón del instituto" >> funciones.md
+echo "Entradas: 5 €, en taquilla" >> funciones.md
+git add funciones.md
+git commit -m "Primera función"
+git remote add origin ../github/tramoya.git
+git push -u origin main
+cd ..
+mkdir hugo && cd hugo && git clone ../github/tramoya.git
+cd tramoya
+git config user.name "Hugo Martín"
+git config user.email hugo@example.com
+# La pull request de Hugo: la función del sábado y el reparto
+git switch -c sabado
+printf '# Grupo de teatro La Tramoya\n\nObra: Luces de bohemia\n' > funciones.md
+echo "Funciones: viernes 5 y sábado 6 de marzo, 20:00, salón del instituto" >> funciones.md
+echo "Entradas: 5 €, en taquilla" >> funciones.md
+git add funciones.md
+git commit -m "Añade la función del sábado"
+printf 'Max Estrella: Hugo Martín\nDon Latino: Elena Ríos\n' > reparto.md
+git add reparto.md
+git commit -m "Añade el reparto"
+git push -u origin sabado
+# La pull request de Elena, aprobada y fusionada antes que la de Hugo
+cd ../../elena
+git switch -c cambio-de-sala
+printf '# Grupo de teatro La Tramoya\n\nObra: Luces de bohemia\n' > funciones.md
+echo "Estreno: viernes 5 de marzo, 20:00, Casa de Cultura" >> funciones.md
+echo "Entradas: 5 €, en taquilla" >> funciones.md
+git add funciones.md
+git commit -m "Lleva el estreno a la Casa de Cultura"
+git push -u origin cambio-de-sala
+git switch main
+git merge --no-ff --no-edit cambio-de-sala
+git push
+git branch -d cambio-de-sala
+git push origin --delete cambio-de-sala

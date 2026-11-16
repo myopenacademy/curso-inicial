@@ -1,0 +1,14 @@
+cd nuria/huerto
+git status
+git pull
+git stash push -u -m "Sábado y semillas, a medias"
+git status
+git pull
+git stash pop
+cat riego.txt
+echo "Calabacines: Lola" >> semillas.txt
+git add riego.txt semillas.txt
+git commit -m "Añade el turno del sábado y las semillas"
+git push
+git log --oneline --graph --all
+git status

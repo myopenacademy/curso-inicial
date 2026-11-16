@@ -224,7 +224,7 @@ Así que un fichero con CRLF ocupa un byte más por línea, y una orden como `gr
 
 ### 1.15. Los ficheros binarios y Git
 
-En la fase 5 vas a usar **Git**, que guarda la historia de tus ficheros. Te adelanto solo una idea: Git trabaja muy bien con **ficheros de texto**, porque puede comparar dos versiones **línea a línea** y enseñarte exactamente qué ha cambiado. Con un **binario** (una imagen, un `.docx`) no puede: solo sabe decir que el fichero ha cambiado, no qué. Es otra razón para guardar en texto (Markdown, CSV, JSON) todo lo que se pueda. Lo verás en «Git: fundamentos».
+En la fase 5 vas a usar **Git**, que guarda la historia de tus ficheros. Te adelanto solo una idea: Git trabaja muy bien con **ficheros de texto**, porque puede comparar dos versiones **línea a línea** y enseñarte exactamente qué ha cambiado. Con un **binario** (una imagen, un `.docx`) no puede: solo sabe decir que el fichero ha cambiado, no qué. Es otra razón para guardar en texto (Markdown, CSV, JSON) todo lo que se pueda. Lo verás en [05.01 Git: fundamentos](../fase-05-git-y-github/01-git-fundamentos.md#111-texto-y-binario-lo-que-git-sabe-comparar).
 
 ## 2. Ejemplos de código
 

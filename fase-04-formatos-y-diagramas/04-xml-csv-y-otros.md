@@ -282,7 +282,7 @@ CORREO_CLAVE_API=k8Hq2Lw9Zt
 
 Tres reglas que se cumplen siempre:
 
-1. **El `.env` no se sube nunca a Git.** Se pone en el fichero `.gitignore`, la lista de lo que Git no debe guardar, que aprenderás en la fase 5. (Como empieza por punto, es un [fichero oculto](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos): `ls` no lo enseña, `ls -a` sí.)
+1. **El `.env` no se sube nunca a Git.** Se pone en el fichero `.gitignore`, la lista de lo que Git no debe guardar, que aprenderás en [05.01 Git: fundamentos](../fase-05-git-y-github/01-git-fundamentos.md#112-lo-que-no-va-en-git-gitignore). (Como empieza por punto, es un [fichero oculto](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos): `ls` no lo enseña, `ls -a` sí.)
 2. **Lo que sí se sube es un `.env.example`**: las mismas variables, con valores de ejemplo, para que quien descargue el proyecto sepa cuáles tiene que rellenar en su `.env`.
 3. **En el fichero de configuración que se sube** (el TOML, el YAML…) va todo lo demás: lo que no es secreto.
 
