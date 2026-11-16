@@ -4,6 +4,8 @@
 
 ## Dónde estamos
 
+**16 de noviembre de 2026: arreglo para la academia en 05.01 (`9f55661`).** La línea 113 tenía `Ana García <ana@example.com>` fuera de código y CommonMark lo convertía en un enlace `mailto:`, que la academia no admite; ahora va entre comillas invertidas (único caso del curso, comprobado por la raíz). Verificado con `--commit`: fase 5, 5 bloques, 5 scripts y 66 sesiones, 0 errores y 0 avisos; `formato_academia.py` 0 errores. La academia repite la prueba de instalación desde `9f55661`. **Regla:** una dirección de correo entre `<` y `>` fuera de un bloque de código, siempre entre comillas invertidas.
+
 **16 de noviembre de 2026: fase 6 («Internet y aplicaciones») lanzada.** Lo propio de la fase, aprobado por el autor, en «Siguiente paso»; seis autores en paralelo.
 
 **16 de noviembre de 2026: fase 5 aprobada por el autor** tras la relectura de la raíz («segunda opinión bien aplicada»). Decisiones: (1) 05.02 se queda con 2.023 líneas y mantiene sus 3 h; (2) el permiso del *token* de grano fino se dice sin el rótulo de la web: «el permiso **Contents** con escritura» (quitado «(*Read and write*)» en 05.03; la chuleta ya no lo llevaba), commit `68de4b3`. Tiempos definitivos: 05.01, 3 h; 05.02, 3 h; 05.03, 2,5 h; retos, 2,5 h. **Verificación final del último commit (`68de4b3`) con `--commit`:** 5 bloques, 5 scripts y 66 sesiones de Git, 0 errores y 0 avisos; `formato_academia.py` 0 errores (12 avisos de lo aún no escrito). **Siguiente: fase 6, en una sesión nueva.**
