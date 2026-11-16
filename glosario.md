@@ -155,6 +155,10 @@ Gestionar varias tareas en curso en el mismo periodo de tiempo, aunque no avance
 
 Expresión que da VERDADERO o FALSO y decide qué camino sigue un algoritmo. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#18-selección).
 
+### Conflicto de fusión
+
+Lo que ocurre al fusionar cuando dos ramas han cambiado las mismas líneas de forma distinta; Git para y lo resuelve una persona. Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#19-qué-es-un-conflicto-y-por-qué-ocurre).
+
 ### Constante
 
 Dato con nombre cuyo valor no cambia durante todo el algoritmo. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#constantes).
@@ -243,6 +247,10 @@ Escribir un carácter especial de otra forma para que no se tome por una marca d
 
 El valor que tienen las variables de un programa en cada momento. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#14-imperativo-y-estructurado).
 
+### Etiqueta (Git)
+
+Nombre fijo para un commit concreto, normalmente una versión publicada (v1.0.0); a diferencia de una rama, no se mueve. Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#115-etiquetas-y-versionado-semántico).
+
 ### Evento
 
 Algo que ocurre (un clic, un mensaje, un pedido enviado) y a lo que reaccionan las partes del programa suscritas. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-otros-estilos-que-oirás-nombrar).
@@ -293,6 +301,10 @@ Fichero que el explorador no muestra; en Linux y macOS, el que empieza por punto
 
 Reglas para escribir datos como texto de modo que otro programa los pueda leer: JSON, YAML, CSV, XML… Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
 
+### Fusionar (merge)
+
+Incorporar a una rama los cambios de otra, con git merge, desde la rama que los recibe: con un avance rápido o con un commit de fusión. Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#16-fusionar-con-avance-rápido).
+
 ## G
 
 ### Gestor de paquetes
@@ -312,6 +324,10 @@ Terminal con bash que trae Git for Windows; la del curso en Windows. Lo explica 
 El Markdown de GitHub: CommonMark (la especificación de base) más tablas, listas de tareas, tachado, autoenlaces y un filtro de HTML peligroso. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#12-un-estándar-y-varios-sabores-commonmark-y-gfm).
 
 ## H
+
+### HEAD
+
+Lo que dice en qué rama (o, desacoplado, en qué commit) estás; aparece como HEAD -> main en el historial. Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#13-head-dónde-estás).
 
 ### Hilo
 
@@ -541,9 +557,17 @@ Marca en una línea de un programa en la que el depurador lo detiene, justo ante
 
 La carpeta de la que cuelga todo el árbol: / en Linux y macOS, una por unidad (C:\) en Windows. Lo explica [02.02 Archivos, carpetas y rutas](fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#14-dónde-empieza-el-árbol-la-raíz).
 
+### Rama
+
+Línea de trabajo independiente dentro de un repositorio; por dentro, un nombre que apunta a un commit y avanza con cada commit nuevo. Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#12-qué-es-una-rama-por-dentro).
+
 ### README
 
 Fichero (normalmente README.md) que presenta un proyecto: qué es, cómo se usa y cómo se instala; GitHub lo muestra en la portada del repositorio. Lo explica [04.02 Markdown](fase-04-formatos-y-diagramas/02-markdown.md#116-el-fichero-readme).
+
+### Rebase
+
+Forma de juntar trabajo que vuelve a aplicar los commits de una rama encima de otra, reescribiendo el historial; nunca con commits compartidos. Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#116-otras-formas-de-juntar-trabajo-rebase-y-cherry-pick).
 
 ### Redirigir
 
@@ -700,6 +724,10 @@ Espacio con nombre donde se guarda un dato que puede cambiar mientras se ejecuta
 ### Variable de entorno
 
 Dato con nombre que guarda el sistema operativo y que pueden consultar todos los programas. Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#19-variables-de-entorno).
+
+### Versionado semántico
+
+Norma para numerar versiones como MAYOR.MENOR.PARCHE según el cambio sea incompatible, nuevo y compatible, o una corrección (SemVer). Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#115-etiquetas-y-versionado-semántico).
 
 ## W
 

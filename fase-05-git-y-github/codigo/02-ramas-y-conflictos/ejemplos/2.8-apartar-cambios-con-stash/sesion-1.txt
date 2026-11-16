@@ -1,0 +1,13 @@
+mkdir cafeteria && cd cafeteria && git init
+printf '%s\n' 'Café solo: 1,20 €' 'Café con leche: 1,50 €' > carta.txt
+git add carta.txt
+git commit -m "Primera carta"
+git switch -c ofertas
+echo 'Oferta: café y tostada, 2,90 €' >> carta.txt
+git add carta.txt
+git commit -m "Añade la oferta del desayuno"
+git switch main
+echo 'Bocadillo: 4,00 €' >> carta.txt
+echo 'Preguntar precio del pan' > notas.txt
+git status --short
+git switch ofertas

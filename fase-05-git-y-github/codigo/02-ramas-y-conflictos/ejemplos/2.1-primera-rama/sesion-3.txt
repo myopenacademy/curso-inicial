@@ -1,0 +1,8 @@
+cd cafeteria
+git switch main
+git merge postres
+cat carta.md
+git log --oneline --graph --all
+git branch -d postres
+git branch
+git log --oneline --graph --all

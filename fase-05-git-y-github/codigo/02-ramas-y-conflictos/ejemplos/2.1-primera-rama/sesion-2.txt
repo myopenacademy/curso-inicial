@@ -1,0 +1,7 @@
+cd cafeteria
+git status
+git switch main
+cat carta.md
+git log --oneline --graph --all
+git switch postres
+cat carta.md

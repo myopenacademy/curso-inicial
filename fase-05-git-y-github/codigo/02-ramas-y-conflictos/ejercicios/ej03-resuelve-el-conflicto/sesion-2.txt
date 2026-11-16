@@ -1,0 +1,9 @@
+cd polideportivo
+printf '%s\n' 'Lunes: fútbol sala, 19:00' 'Miércoles: baloncesto y pádel, 20:00' > horario.txt
+echo 'Viernes: voleibol, 18:00' >> horario.txt
+cat horario.txt
+grep -c '<<<<<<<' horario.txt
+git add horario.txt
+git commit --no-edit
+git branch -d cambio-de-hora
+git log --oneline --graph --all

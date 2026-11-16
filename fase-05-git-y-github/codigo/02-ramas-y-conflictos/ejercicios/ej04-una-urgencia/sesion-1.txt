@@ -1,0 +1,8 @@
+mkdir ceramica && cd ceramica && git init
+printf '%s\n' 'Taza azul: 12 €' 'Plato llano: 15 €' 'Jarrón: 40 €' > catalogo.txt
+git add catalogo.txt
+git commit -m "Catálogo de otoño"
+git switch -c coleccion-invierno
+echo 'Cuenco de invierno: 18 €' >> catalogo.txt
+echo 'Foto del cuenco: pendiente' > fotos.txt
+git status --short

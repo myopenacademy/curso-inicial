@@ -1,0 +1,5 @@
+cd cafeteria
+git merge --abort
+git status
+cat carta.txt
+git merge precios-2027

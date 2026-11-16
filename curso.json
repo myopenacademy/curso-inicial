@@ -675,8 +675,32 @@
           "id": "inicial.ramas-y-conflictos",
           "fichero": "fase-05-git-y-github/02-ramas-y-conflictos.md",
           "titulo": "Ramas y conflictos",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.ramas-y-conflictos.tu-primera-rama",
+              "titulo": "Tu primera rama"
+            },
+            {
+              "id": "inicial.ramas-y-conflictos.lee-el-grafico",
+              "titulo": "Lee el gráfico"
+            },
+            {
+              "id": "inicial.ramas-y-conflictos.resuelve-el-conflicto",
+              "titulo": "Resuelve el conflicto"
+            },
+            {
+              "id": "inicial.ramas-y-conflictos.una-urgencia-a-mitad-de-trabajo",
+              "titulo": "Una urgencia a mitad de trabajo"
+            },
+            {
+              "id": "inicial.ramas-y-conflictos.avance-rapido-tres-vias-o-conflicto",
+              "titulo": "Avance rápido, tres vías o conflicto"
+            },
+            {
+              "id": "inicial.ramas-y-conflictos.la-carta-de-invierno",
+              "titulo": "La carta de invierno"
+            }
+          ]
         },
         {
           "id": "inicial.github",

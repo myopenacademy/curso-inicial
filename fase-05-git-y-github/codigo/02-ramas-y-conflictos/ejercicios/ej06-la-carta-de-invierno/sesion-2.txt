@@ -1,0 +1,17 @@
+cd aurora
+git switch -c carta-invierno
+printf '%s\n' 'Café solo: 1,20 €' 'Chocolate con churros: 3,80 €' 'Tostada: 2,00 €' > carta.txt
+git add carta.txt
+git commit -m "Cambia el chocolate por chocolate con churros"
+echo 'Sopa de cocido: 4,50 €' >> carta.txt
+git add carta.txt
+git commit -m "Añade la sopa de cocido"
+git switch main
+git switch -c arregla-precio
+printf '%s\n' 'Café solo: 1,20 €' 'Chocolate: 2,40 €' 'Tostada: 2,00 €' > carta.txt
+git add carta.txt
+git commit -m "Corrige el precio del chocolate"
+git switch main
+git merge arregla-precio
+git branch -d arregla-precio
+git log --oneline --graph --all

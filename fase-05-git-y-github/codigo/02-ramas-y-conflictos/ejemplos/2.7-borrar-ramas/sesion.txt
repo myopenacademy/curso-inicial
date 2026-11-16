@@ -1,0 +1,12 @@
+mkdir pruebas && cd pruebas && git init
+echo 'Café solo: 1,20 €' > carta.txt
+git add carta.txt
+git commit -m "Primera carta"
+git switch -c experimento
+echo 'Café con canela: 1,70 €' >> carta.txt
+git add carta.txt
+git commit -m "Prueba el café con canela"
+git switch main
+git branch -d experimento
+git branch -D experimento
+git branch

@@ -1,0 +1,3 @@
+cd aurora
+git merge carta-invierno
+cat carta.txt

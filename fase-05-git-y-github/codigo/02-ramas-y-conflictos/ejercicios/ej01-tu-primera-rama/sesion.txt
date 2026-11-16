@@ -1,0 +1,14 @@
+mkdir club-lectura && cd club-lectura && git init
+echo 'Enero: Nada, de Carmen Laforet' > lecturas.txt
+git add lecturas.txt
+git commit -m "Lectura de enero"
+git switch -c febrero
+echo 'Febrero: La casa de Bernarda Alba, de Federico García Lorca' >> lecturas.txt
+git add lecturas.txt
+git commit -m "Añade la lectura de febrero"
+git switch main
+cat lecturas.txt
+git merge febrero
+cat lecturas.txt
+git branch -d febrero
+git log --oneline --graph --all

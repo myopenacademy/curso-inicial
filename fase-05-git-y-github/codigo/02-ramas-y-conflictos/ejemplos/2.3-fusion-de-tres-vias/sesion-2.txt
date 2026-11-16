@@ -1,0 +1,6 @@
+cd cafeteria
+git merge --no-edit horario-verano
+git log --oneline --graph --all
+git log -1
+cat horario.md
+cat carta.md

@@ -1,0 +1,9 @@
+cd aurora
+printf '%s\n' 'Café solo: 1,20 €' 'Chocolate: 2,40 €' 'Chocolate con churros: 3,80 €' > carta.txt
+printf '%s\n' 'Tostada: 2,00 €' 'Sopa de cocido: 4,50 €' >> carta.txt
+grep -c '<<<<<<<' carta.txt
+git add carta.txt
+git commit --no-edit
+git branch -d carta-invierno
+git tag -a v1.1.0 -m "Carta de invierno"
+git log --oneline --graph --all

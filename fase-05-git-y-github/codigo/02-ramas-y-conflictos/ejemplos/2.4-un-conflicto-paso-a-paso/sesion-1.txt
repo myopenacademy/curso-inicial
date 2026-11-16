@@ -1,0 +1,17 @@
+mkdir cafeteria && cd cafeteria && git init
+printf '%s\n' 'Café solo: 1,20 €' 'Café con leche: 1,50 €' 'Tostada: 2,00 €' > carta.txt
+git add carta.txt
+git commit -m "Primera carta"
+git switch -c precios-2027
+printf '%s\n' 'Café solo: 1,20 €' 'Café con leche: 1,60 €' 'Tostada: 2,00 €' > carta.txt
+git add carta.txt
+git commit -m "Sube el café con leche a 1,60 €"
+git switch main
+printf '%s\n' 'Café solo: 1,20 €' 'Café con leche: 1,55 €' 'Tostada: 2,00 €' > carta.txt
+echo 'Zumo: 2,50 €' >> carta.txt
+git add carta.txt
+git commit -m "Sube el café con leche y añade el zumo"
+git log --oneline --graph --all
+git merge precios-2027
+git status
+cat carta.txt

@@ -1,0 +1,14 @@
+mkdir cafeteria && cd cafeteria && git init
+echo 'Café solo: 1,20 €' > carta.txt
+git add carta.txt
+git commit -m "Primera carta"
+echo 'Café con leche: 1,50 €' >> carta.txt
+git add carta.txt
+git commit -m "Añade el café con leche"
+git tag -a v1.0.0 -m "Carta de otoño"
+echo 'Chocolate caliente: 2,20 €' >> carta.txt
+git add carta.txt
+git commit -m "Añade el chocolate caliente"
+git tag
+git log --oneline
+git show --no-patch v1.0.0

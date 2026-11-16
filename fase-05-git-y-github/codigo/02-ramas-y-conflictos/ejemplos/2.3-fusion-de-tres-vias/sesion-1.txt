@@ -1,0 +1,15 @@
+mkdir cafeteria && cd cafeteria && git init
+echo '- Café solo: 1,20 €' > carta.md
+echo '- Café con leche: 1,50 €' >> carta.md
+echo 'De lunes a viernes, de 8:00 a 20:00.' > horario.md
+git add carta.md horario.md
+git commit -m "Primera versión"
+git switch -c horario-verano
+echo 'En agosto, de 9:00 a 14:00.' >> horario.md
+git add horario.md
+git commit -m "Añade el horario de agosto"
+git switch main
+echo '- Zumo de naranja: 2,50 €' >> carta.md
+git add carta.md
+git commit -m "Añade el zumo de naranja"
+git log --oneline --graph --all

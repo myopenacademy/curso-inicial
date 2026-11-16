@@ -1,0 +1,17 @@
+mkdir polideportivo && cd polideportivo && git init
+printf '%s\n' 'Lunes: fútbol sala, 19:00' 'Miércoles: baloncesto, 19:00' > horario.txt
+echo 'Viernes: voleibol, 18:00' >> horario.txt
+git add horario.txt
+git commit -m "Horario de otoño"
+git switch -c cambio-de-hora
+printf '%s\n' 'Lunes: fútbol sala, 19:00' 'Miércoles: baloncesto, 20:00' > horario.txt
+echo 'Viernes: voleibol, 18:00' >> horario.txt
+git add horario.txt
+git commit -m "Pasa el baloncesto a las 20:00"
+git switch main
+printf '%s\n' 'Lunes: fútbol sala, 19:00' 'Miércoles: baloncesto y pádel, 19:00' > horario.txt
+echo 'Viernes: voleibol, 18:00' >> horario.txt
+git add horario.txt
+git commit -m "Añade el pádel los miércoles"
+git merge cambio-de-hora
+cat horario.txt

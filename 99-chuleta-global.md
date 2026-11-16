@@ -29,6 +29,7 @@
   - [04.05 Diagramas y Mermaid](#0405-diagramas-y-mermaid)
 - **Fase 05 — Git y GitHub**
   - [05.01 Git: fundamentos](#0501-git-fundamentos)
+  - [05.02 Ramas y conflictos](#0502-ramas-y-conflictos)
 
 ---
 
@@ -1275,6 +1276,85 @@ git config --global --list
 #### Si se abre Vim
 
 <kbd>Esc</kbd> y `:q!` + <kbd>Intro</kbd> (salir sin guardar) · <kbd>Esc</kbd> y `:wq` + <kbd>Intro</kbd> (guardar y salir).
+
+---
+
+### 05.02 Ramas y conflictos
+
+📖 Módulo completo: [fase-05-git-y-github/02-ramas-y-conflictos.md](fase-05-git-y-github/02-ramas-y-conflictos.md)
+
+#### Ramas
+
+| Orden | Qué hace |
+|---|---|
+| `git branch` | Lista las ramas (`*` = la actual) |
+| `git switch -c rama` | Crea `rama` y cambia a ella |
+| `git switch rama` | Cambia a `rama` |
+| `git branch -d rama` | Borra una rama ya fusionada |
+| `git branch -D rama` | Borra una rama sin comprobar (se pierde lo no fusionado) |
+| `git log --oneline --graph --all` | Historial de todas las ramas, dibujado |
+| `git switch --detach v1.0.0` | Va a una versión para mirarla (`HEAD` desacoplado); se vuelve con `git switch main` |
+
+#### Fusionar
+
+| Orden | Qué hace |
+|---|---|
+| `git merge rama` | Trae `rama` a la rama actual (avance rápido o tres vías) |
+| `git merge --no-edit rama` | Igual, aceptando el mensaje del commit de fusión sin abrir el editor |
+| `git merge -m "mensaje" rama` | Igual, con tu mensaje |
+| `git merge --abort` | Cancela una fusión con conflictos: todo como antes |
+
+#### Resolver un conflicto
+
+1. `git status`: qué ficheros están `modificados por ambos`.
+2. Edita cada uno: deja lo que debe quedar y **quita los marcadores**.
+3. `grep -c '<<<<<<<' fichero` debe dar `0`.
+4. `git add fichero`.
+5. `git commit --no-edit`.
+
+| Marcador | Qué es |
+|---|---|
+| `<<<<<<< HEAD` | Empieza tu rama (la actual) |
+| `=======` | Separa las dos versiones |
+| `>>>>>>> rama` | Termina la rama que se fusiona |
+
+En VS Code: **Accept Current Change** (la tuya) · **Accept Incoming Change** (la otra) · **Accept Both Changes** (las dos) · **Compare Changes** · **Resolve in Merge Editor**.
+
+#### Apartar trabajo: stash
+
+| Orden | Qué hace |
+|---|---|
+| `git stash push -u -m "mensaje"` | Aparta todos los cambios, también los ficheros nuevos |
+| `git stash list` | Lista lo apartado |
+| `git stash pop` | Lo recupera y lo borra del almacén |
+| `git stash apply` · `git stash drop` | Lo recupera sin borrarlo · lo borra sin recuperarlo |
+
+#### Etiquetas y versiones
+
+| Orden | Qué hace |
+|---|---|
+| `git tag -a v1.0.0 -m "mensaje"` | Etiqueta anotada en el commit actual |
+| `git tag` | Lista las etiquetas |
+| `git show --no-patch v1.0.0` | La etiqueta y su commit, sin los cambios |
+
+**Versionado semántico, MAYOR.MENOR.PARCHE:** incompatible → MAYOR · nuevo y compatible → MENOR · corrección → PARCHE. Al subir una, las de la derecha a 0.
+
+#### gitGraph de Mermaid
+
+```text
+gitGraph
+    commit id: "Primera versión" tag: "v1.0.0"
+    branch rama
+    checkout rama
+    commit id: "Cambio en la rama"
+    checkout main
+    commit id: "Cambio en main"
+    merge rama id: "Fusión"
+```
+
+#### Para reconocerlos
+
+`git checkout rama` = `git switch rama` (antigua) · `git rebase` reaplica tus commits encima de otra rama y reescribe el historial (nunca con lo compartido) · `git cherry-pick` copia un commit concreto.
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)
