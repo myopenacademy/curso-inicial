@@ -124,6 +124,8 @@ El resto (`rw-r--r--`, el `1`, los dos `alumno`) son los **permisos**, el númer
 
 > **📌 Nota:** el texto de los mensajes y el formato de las fechas cambian de un sistema a otro: en macOS y en Git Bash, por ejemplo, muchos mensajes salen en inglés, y alguno puede salir con una parte en inglés aunque el sistema esté en español (como el de `mkdir` del [ejemplo 2.3](#23-crear-la-estructura-de-un-proyecto)). Fíjate en **lo que dicen**, no en las palabras exactas. Vale para todos los módulos de la fase.
 
+> **📌 Nota:** en **Git Bash**, `ls` añade una marca al final de algunos nombres: una `/` detrás de cada carpeta (`css/`, y con `-a`, `./` y `../`) y un `*` detrás de los ficheros que se pueden ejecutar, como los programas. Es porque Git for Windows trae `ls` configurado para que haga siempre `ls -F` (la opción `-F` pone esas marcas), y la terminal del curso no. Las marcas no forman parte del nombre: son las mismas carpetas y los mismos ficheros. Si quieres ver la lista sin ellas, como en el curso, escribe `command ls` (o `\ls`), que usa `ls` sin esa configuración. (Según el fichero `/etc/profile.d/aliases.sh` de Git for Windows, consultado en su código el 16 de noviembre de 2026.)
+
 **Los ficheros ocultos y las carpetas `.` y `..`.** Con `-a` aparecen los ficheros cuyo nombre empieza por punto, como `.gitignore` o `.bashrc`, y siempre dos más: `.` y `..`. Son las [carpetas especiales](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#110-las-carpetas-especiales-punto-y-punto-punto) «esta carpeta» y «la carpeta padre», que existen dentro de todas las carpetas. Ahí las tienes, de verdad.
 
 **Lo que cambia en tu sistema:**
