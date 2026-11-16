@@ -4,6 +4,8 @@
 
 ## Dónde estamos
 
+**16 de noviembre de 2026: fase 8 cerrada a falta de la segunda opinión de la raíz.** 08.01 «Tu primer repositorio» (`528a737`): 1.777 líneas, 8 ejercicios, revisión de conjunto hecha con las decisiones del autor (una tarea en la rama `rutas-en-la-web` fusionada con `--no-ff`; discos y grupos inventados; `TU-USUARIO`; tablero con los nombres de GitHub, Todo / In Progress / Done). Glosario: Alcance, Generador de sitios estáticos, Jekyll, Liquid, Plantilla (web), Portfolio y README de perfil (este, con el enlace a 05.03 1.14). Comprobaciones: `formato_academia.py`, 0 errores y 0 avisos (31 módulos disponibles, 219 ejercicios); Mermaid, 112 diagramas sin fallos; **`verificar_codigo.py --commit fase-08-proyecto-final`, 0 errores y 0 avisos** (kit `2641548`). Pendiente de decidir por el autor: si la rama entra en la lista de entrega del alumno; `--no-ff` o fusión normal; 07.02 ejercicio 6 dice «cada *pull request* la cierra con `Closes #N`» y 05.03 1.13 «aunque trabajes sola o solo, sigue GitHub Flow» (tensión con 08.01). Siguiente: segunda opinión de la raíz, prueba de instalación del curso entero en la academia y cierre del curso.
+
 **16 de noviembre de 2026: fase 8 lanzada** con lo propio de la fase aprobado por el autor («Siguiente paso»). Antes, **07.04, ejercicio 5, corregido** a petición del autor (`4af8ec0`): el listado de socios del club de ajedrez ya no está en el repositorio de la web (un CSV con datos de personas no va en un repositorio público, se publique en la web o no); verificado con `--commit` (fase 7: 0 errores y 0 avisos).
 
 **16 de noviembre de 2026: fase 7 aprobada por el autor (`44fa690`)**, tras la relectura de la raíz («bien aplicada, sin errores nuevos»). Decisiones: el ejercicio 2 de 07.01 se queda; «Firewall», como en la ayuda de Apple en español. Tiempos definitivos: 07.01, 1 h; 07.02, 1,5 h; 07.03, 1 h; 07.04, 2 h; 07.05, 2 h; retos, 2 h (7,5 horas de módulos más 2 de retos). **Siguiente: fase 8, en una sesión nueva.**
@@ -141,6 +143,7 @@ Si algo bloquea, dilo al autor: él pasa la información de una sesión a otra.
 | 2026-11-09 | Fase 3: módulos 03.01 a 03.04 y retos (dos, con bash), con revisión de conjunto y verificación completa con Docker (coreutils de GNU); un commit por módulo (`31d3455`, `6738edf`, `e160b28`, `d6ea83b`). |
 | 2026-11-09 | Fase 4: módulos 04.01 a 04.05 y retos (tres), con el método escrito en `PLAN-CURSO.md` 11, revisión de conjunto y verificación con `--commit`; un commit por módulo (`df15672` a `f4b7148`) y uno de retos (`b6cfa67`). |
 | 2026-11-16 | Fase 5: módulos 05.01 a 05.03 y retos (tres), con revisión de conjunto y verificación con Docker; un commit por módulo (`69184b7`, `dd2ca6a`, `547a812`) y uno de retos. |
+| 2026-11-16 | Fase 8: módulo 08.01 Tu primer repositorio (`528a737`), con revisión de conjunto y verificación con `--commit`. |
 | 2026-11-16 | 07.04, ejercicio 5: el listado de socios, fuera del repositorio público (`4af8ec0`), a petición del autor; verificado con `--commit`. |
 | 2026-11-16 | Fase 7 aprobada por el autor tal como quedó tras la segunda opinión (`44fa690`), después de la relectura de la raíz. |
 | 2026-11-16 | Fase 7: segunda opinión de la raíz aplicada por un editor nuevo (`f76f5e1` a `44fa690`) y verificada con `--commit`. |
