@@ -1,0 +1,17 @@
+mkdir github && git init --bare github/tienda.git
+mkdir web-de-github && cd web-de-github && git init
+echo "# tienda" > README.md
+git add README.md
+git commit -m "Initial commit"
+git push -q ../github/tienda.git main
+cd ..
+mkdir tienda && cd tienda && git init
+echo '<h1>Tienda</h1>' > index.html
+git add index.html
+git commit -m "Primera página"
+git remote add origin ../github/tienda.git
+git push -u origin main
+git pull --no-rebase origin main
+git pull --no-rebase --no-edit --allow-unrelated-histories origin main
+git push -q -u origin main
+git log --oneline --graph

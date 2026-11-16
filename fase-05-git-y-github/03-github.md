@@ -89,12 +89,12 @@ Lo primero, y lo que más confunde: **la contraseña de tu cuenta no sirve para 
 
 Con **HTTPS**, la dirección del remoto es como la de una web: `https://github.com/ana-garcia/club-lectura.git`. Para demostrar quién eres, dos caminos:
 
-- **Git Credential Manager** (gestor de credenciales de Git). Es un programa que, la primera vez que Git necesita autenticarse, **abre el navegador** para que entres en GitHub y des permiso; después guarda la credencial de forma segura y no te la vuelve a pedir. En **Windows ya lo tienes**: viene con Git for Windows, y es la opción que dejaste marcada en el instalador ([02.03, apartado 1.6](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash)). En **macOS y Linux** se instala aparte, según la documentación de GitHub (en macOS, con Homebrew).
-- **Un *token* de acceso personal** (*personal access token*). Es una especie de contraseña larga que generas en la web de GitHub, con los permisos justos y una fecha de caducidad, y que escribes **donde Git te pide la contraseña**. Se crea en la foto de tu perfil, **Settings > Developer settings > Personal access tokens** (a 16 de noviembre de 2026). Hay dos tipos: los ***fine-grained*** («de grano fino»), que solo dan acceso a los repositorios que elijas, y los ***classic*** («clásicos»), que dan acceso a todos. GitHub recomienda los primeros.
+- **Git Credential Manager** (gestor de credenciales de Git). Es un programa que, la primera vez que Git necesita autenticarse, **abre una ventana para iniciar sesión en GitHub** (si te ofrece varias formas, elige la del navegador) para que entres y des permiso; después guarda la credencial de forma segura y no te la vuelve a pedir. En **Windows ya lo tienes**: viene con Git for Windows, y es la opción que dejaste marcada en el instalador ([02.03, apartado 1.6](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash)). En **macOS y Linux** se instala aparte, según la documentación de GitHub (en macOS, con Homebrew).
+- **Un *token* de acceso personal** (*personal access token*). Es una especie de contraseña larga que generas en la web de GitHub, con los permisos justos y una fecha de caducidad, y que escribes **donde Git te pide la contraseña**. Se crea en la foto de tu perfil, **Settings > Developer settings > Personal access tokens** (a 16 de noviembre de 2026). Hay dos tipos: los ***fine-grained*** («de grano fino»), que solo dan acceso a los repositorios que elijas, y los ***classic*** («clásicos»), que dan acceso a todos. GitHub recomienda los primeros. Para hacer `push`, el de grano fino necesita en ese repositorio el permiso **Contents** con escritura (*Read and write*). Cuando Git te lo pida, en **Username** va tu usuario de GitHub, y en **Password**, el *token*. Si no tienes un gestor de credenciales (lo normal en Linux si no instalas Git Credential Manager), Git te los pedirá en cada `push`. En macOS se suelen guardar en el **Llavero**; si guardaste uno equivocado, búscalo como `github.com` en la aplicación **Acceso a Llaveros** (*Keychain Access*) y bórralo (docs.github.com, *Updating credentials from the macOS Keychain*, a 16 de noviembre de 2026).
 
 > **⚠️ Cuidado:** un *token* **es una contraseña**. No lo pegues en un fichero del proyecto, ni en un chat, ni en un mensaje de commit: quien lo tenga puede subir a tus repositorios. Si se te escapa, bórralo en GitHub y crea otro. Cómo se guardan los secretos lo verás a fondo en [Seguridad básica](../fase-07-aprender-a-aprender/05-seguridad-basica.md).
 
-**Qué te recomienda este curso:** en Windows, HTTPS con Git Credential Manager, que ya tienes y no te pide nada más que entrar en GitHub con el navegador. En macOS y Linux, SSH (el apartado siguiente), que se configura una vez y no necesita instalar nada.
+**Qué te recomienda este curso:** en Windows, HTTPS con Git Credential Manager, que ya tienes y no te pide nada más que entrar en GitHub. En macOS y Linux, SSH (el apartado siguiente), que se configura una vez y no necesita instalar nada.
 
 ### 1.5. SSH: un par de claves
 
@@ -139,20 +139,20 @@ Las dos primeras apuntan **al mismo repositorio** de GitHub: solo cambia cómo t
 | `git fetch` | **Descarga** los commits nuevos del remoto, **sin tocar** tus ficheros ni tus ramas |
 | `git pull` | **Descarga y fusiona**: un `git fetch` y después un `git merge` con la rama del remoto |
 
-**Las ramas de seguimiento.** Tu repositorio guarda, además de tus ramas, una **foto** de cómo estaban las ramas del remoto la última vez que hablaste con él. Se llaman con el nombre del remoto delante: **`origin/main`** es «la rama `main` de `origin`, según la última vez que miré». No las mueves tú: las actualizan `git fetch`, `git pull` y `git push`.
+**Las ramas de seguimiento.** Tu repositorio guarda, además de tus ramas, **su copia de lo último que supo del remoto**: dónde estaban las ramas del remoto la última vez que hablaste con él. Se llaman con el nombre del remoto delante: **`origin/main`** es «la rama `main` de `origin`, según la última vez que miré». No las mueves tú: las actualizan `git fetch`, `git pull` y `git push`.
 
-Esa foto explica algo que despista mucho: **`git status` compara tu rama con la foto, no con el remoto de verdad**. Si Luis ha subido algo hace cinco minutos y tú no has hecho `git fetch`, tu `git status` sigue diciendo «Tu rama está actualizada con 'origin/main'», porque tu foto es vieja. Lo verás pasar en el [ejemplo 2.3](#23-traer-los-cambios-de-los-demás-fetch-y-pull).
+Esa copia explica algo que despista mucho: **`git status` compara tu rama con la copia, no con el remoto de verdad**. Si Luis ha subido algo hace cinco minutos y tú no has hecho `git fetch`, tu `git status` sigue diciendo «Tu rama está actualizada con 'origin/main'», porque tu copia es vieja. Lo verás pasar en el [ejemplo 2.3](#23-traer-los-cambios-de-los-demás-fetch-y-pull).
 
-**Qué te dice `git status` comparando con la foto:**
+**Qué te dice `git status` comparando con esa copia:**
 
 | Mensaje (resumido) | Qué quiere decir | Qué haces |
 |---|---|---|
-| `Tu rama está actualizada con 'origin/main'` | Tienes lo mismo que la foto | Nada (y, si hace rato, un `git fetch` para renovar la foto) |
+| `Tu rama está actualizada con 'origin/main'` | Tienes lo mismo que la copia | Nada (y, si hace rato, un `git fetch` para renovar la copia) |
 | `Tu rama está adelantada a 'origin/main' por 1 commit` | Tienes commits que el remoto no tiene | `git push` |
 | `Tu rama está detrás de 'origin/main' por 1 commit, y puede ser avanzada rápido` | El remoto tiene commits que tú no tienes, y tú nada nuevo | `git pull`, que será un avance rápido |
 | `Tu rama y 'origin/main' han divergido` | Los dos tenéis commits que el otro no tiene | `git pull --no-rebase`, resolver si hay conflicto y `git push` ([apartado 1.9](#19-cuando-el-remoto-tiene-algo-que-tú-no-tienes)) |
 
-> **💡 Consejo:** `git fetch` es **inofensivo**: nunca cambia tus ficheros ni tus ramas, solo renueva la foto. Úsalo siempre que quieras saber si hay algo nuevo, y decide después si lo integras.
+> **💡 Consejo:** `git fetch` es **inofensivo**: nunca cambia tus ficheros ni tus ramas, solo renueva la copia. Úsalo siempre que quieras saber si hay algo nuevo, y decide después si lo integras.
 
 ### 1.8. Un GitHub de prácticas en tu ordenador
 
@@ -187,7 +187,7 @@ La solución es la de siempre en Git: **integrar primero el trabajo del otro** y
 2. Si los dos habéis cambiado las mismas líneas, hay un **conflicto**: se resuelve como en 05.02 (abres el fichero, decides, quitas los marcadores, `git add` y `git commit`).
 3. `git push`: ahora tu rama contiene lo del remoto y lo tuyo, y el remoto la acepta.
 
-**Por qué `--no-rebase`.** Si escribes `git pull` a secas con las ramas divergidas, Git se para y te pide que elijas **cómo** juntarlas: con una fusión (*merge*, lo que conoces) o con un *rebase* (que en [05.02](02-ramas-y-conflictos.md) viste solo como idea). `--no-rebase` le dice «fusiona». Lo verás en el [ejemplo 2.4](#24-cuando-alguien-ha-subido-antes-que-tú) y en el [error típico 3.3](#33-necesita-especificar-cómo-reconciliar-las-ramas-divergentes), donde está cómo dejarlo elegido para siempre.
+**Por qué `--no-rebase`.** Si escribes `git pull` a secas con las ramas divergidas, Git se para y te pide que elijas **cómo** juntarlas: con una fusión (*merge*, lo que conoces) o con un *rebase* (que en [05.02](02-ramas-y-conflictos.md) viste solo como idea). `--no-rebase` le dice «fusiona». (En Windows, con la opción del instalador como venía, no se para: fusiona directamente, como explica el [ejemplo 2.4](#24-cuando-alguien-ha-subido-antes-que-tú).) Lo verás en el [ejemplo 2.4](#24-cuando-alguien-ha-subido-antes-que-tú) y en el [error típico 3.3](#33-necesita-especificar-cómo-reconciliar-las-ramas-divergentes), donde está cómo dejarlo elegido para siempre.
 
 > **⚠️ Cuidado:** en internet verás que un `push` rechazado «se arregla» con **`git push --force`** (forzar). **No lo hagas.** `--force` le dice al remoto «olvida lo que tienes y quédate con lo mío», y **borra los commits de tus compañeros** que tú no tenías. Existe una variante menos peligrosa, `--force-with-lease`, que se niega si el remoto tiene algo que tú no has visto; la usarás, si acaso, en cursos posteriores, y siempre en ramas que solo usas tú.
 
@@ -228,7 +228,7 @@ Cada equipo elige la suya; para empezar, la primera es la que mejor se entiende,
 
 ### 1.11. Issues y tableros
 
-Una [*issue*](../glosario.md#issue) es, en GitHub, **un aviso de un fallo o de una tarea pendiente**: «el enlace del menú no funciona», «añadir el horario de verano». Tiene un número (`#12`), una descripción escrita en [Markdown](../fase-04-formatos-y-diagramas/02-markdown.md), comentarios, una persona asignada y **etiquetas** (*labels*) como `bug` (fallo) o `enhancement` (mejora). Es la lista de tareas del proyecto, a la vista de todo el equipo.
+Una [*issue*](../glosario.md#issue) es, en GitHub, **un aviso de un fallo o de una tarea pendiente**: «el enlace del menú no funciona», «añadir el horario de verano». Tiene un número (`#12`), una descripción escrita en [Markdown](../fase-04-formatos-y-diagramas/02-markdown.md), comentarios, una persona asignada y *labels* (marcas de colores; no tienen que ver con las etiquetas de versión de Git de [05.02](02-ramas-y-conflictos.md#115-etiquetas-y-versionado-semántico)) como `bug` (fallo) o `enhancement` (mejora). Es la lista de tareas del proyecto, a la vista de todo el equipo.
 
 Una *pull request* puede **cerrar una *issue* sola**: si su descripción incluye una de estas palabras seguida del número de la *issue*, la *issue* se cierra al fusionar la *pull request* en la rama principal (según la documentación de GitHub, a 16 de noviembre de 2026):
 
@@ -317,7 +317,7 @@ Los ejemplos de este apartado son **una sola historia en seis sesiones**, que se
 
 Descarga la carpeta del ejemplo (su enlace «📁 Código»), abre la terminal en ella y escribe las órdenes de cada sesión en orden. Cada sesión empieza en la carpeta del ejemplo, como si hubieras cerrado la terminal entre una y otra; por eso, desde la segunda, empiezan con un `cd`.
 
-Recuerda que los identificadores de los commits, las fechas y el autor de los tuyos serán distintos ([el aviso de 02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#22-un-aviso-sobre-las-salidas-de-la-terminal)). En las salidas de `git push` y `git fetch` cambiarán además dos cosas: cuántos **hilos** usa Git para comprimir (depende de tu procesador) y la **velocidad** a la que copia (`354.00 KiB/s`). Y donde aquí sale `/home/alumno`, a ti te saldrá tu carpeta personal.
+Recuerda que los identificadores de los commits, las fechas y el autor de los tuyos serán distintos ([el aviso de 02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#22-un-aviso-sobre-las-salidas-de-la-terminal)). En las salidas de `git push` y `git fetch` cambiarán además cuántos **hilos** usa Git para comprimir (depende de tu procesador) y la **velocidad** a la que copia (`354.00 KiB/s`); donde aquí sale `/home/alumno`, a ti te saldrá tu carpeta personal; y, según tu sistema y tu versión de Git, algún detalle más: en Windows las rutas salen como `C:/Users/tu-nombre/…`; con un Git más antiguo (el de Apple o el de tu distribución), alguna línea de `push` o `fetch` y algunas pistas `hint:` pueden ser distintas o faltar; el orden de `ls` también puede cambiar. En Git Bash verás además el aviso de los saltos de línea en casi todos los `git add`, uno por fichero ([05.01, apartado 1.16](01-git-fundamentos.md#116-un-recordatorio-los-saltos-de-línea)): no sale en las salidas del curso; ignóralo.
 
 ### 2.1. Subir un repositorio que ya tienes
 
@@ -366,17 +366,17 @@ nada para hacer commit, el árbol de trabajo está limpio
 
 **En qué fijarte:**
 
-- **El remoto vacío** no tiene ficheros del proyecto, solo las piezas de dentro de un `.git` (`HEAD`, `objects`, `refs`…). Así es lo que guarda GitHub.
+- **El remoto vacío** no tiene ficheros del proyecto, solo las piezas de dentro de un `.git` (`HEAD`, `objects`, `refs`…). Eso es lo que guarda GitHub en sus servidores.
 - **Cada repositorio, en su carpeta**: el remoto en `github/`, el de Ana en `ana/club-lectura/`. Desde la carpeta de Ana, el remoto está dos niveles más arriba: `../../github/club-lectura.git`, una [ruta relativa](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#19-la-carpeta-actual-y-las-rutas-relativas).
 - **`git remote -v`** sale dos veces: la dirección para bajar (*fetch*) y para subir (*push*). Casi siempre son la misma.
 - **`git push -u origin main`** escribe primero cómo prepara y envía los commits (enumerar, comprimir, escribir; no hace falta que lo entiendas) y después lo importante: **`* [new branch] main -> main`**, que la rama `main` se ha creado en el remoto, y **«rama 'main' configurada para rastrear 'origin/main'»**, que ha quedado vinculada. Desde ahora, en esta rama, basta con `git push` y `git pull`.
 - **`git status`** ya compara con el remoto: «Tu rama está actualizada con 'origin/main'».
 
-**Con GitHub de verdad,** la orden sería la misma con su dirección (`git remote add origin https://github.com/ana-garcia/club-lectura.git`), la primera vez se abriría el navegador para autenticarte ([apartado 1.4](#14-cómo-sabe-github-que-eres-tú-https)) y saldrían las mismas líneas con `To https://github.com/ana-garcia/club-lectura.git`. Lo verás en el [ejemplo 2.7](#27-conectarte-a-github-de-verdad).
+**Con GitHub de verdad,** la orden sería la misma con su dirección (`git remote add origin https://github.com/ana-garcia/club-lectura.git`), la primera vez se abriría el navegador para autenticarte ([apartado 1.4](#14-cómo-sabe-github-que-eres-tú-https)) y saldrían líneas parecidas (más al clonar o bajar por red, y las `remote:` de GitHub, en inglés) con `To https://github.com/ana-garcia/club-lectura.git`. Lo verás en el [ejemplo 2.7](#27-conectarte-a-github-de-verdad).
 
 ### 2.2. Clonar: Luis se une al club
 
-**Situación real:** Luis va a llevar las notas con Ana. No crea nada: **clona** el remoto, y tiene al momento el proyecto entero con su historial. Como Luis y Ana comparten ordenador en este ejemplo, Luis pone su nombre y su correo **solo en su repositorio** (`git config` sin `--global`: [05.01, apartado 1.4](01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres)): así sus commits saldrán a su nombre. En tu ordenador no te hace falta: ya tienes tu identidad global.
+**Situación real:** Luis va a llevar las notas con Ana. No crea nada: **clona** el remoto, y tiene al momento el proyecto entero con su historial. Como Luis y Ana comparten ordenador en este ejemplo, Luis pone su nombre y su correo **solo en su repositorio** (`git config` sin `--global`: [05.01, apartado 1.4](01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres)): así sus commits saldrán a su nombre. En tus proyectos no te hace falta: ya tienes tu identidad global.
 
 **En tu terminal** (`sesion-2.txt`):
 
@@ -405,8 +405,8 @@ $ git config user.email luis@example.com
 **En qué fijarte:**
 
 - **`git clone`** crea una carpeta con el nombre del repositorio (sin el `.git`), con los ficheros y **todo el historial**: el `git log` de Luis tiene el commit de Ana.
-- **El remoto ya está conectado** como `origin`, sin `git remote add`. Al clonar de una ruta, Git la guarda completa (`/home/alumno/luis/../github/…`); de GitHub, guardaría la dirección `https://…` tal cual.
-- **`git log`** muestra la foto del remoto (`origin/main`) en el mismo commit que `main`: Luis está al día.
+- **El remoto ya está conectado** como `origin`, sin `git remote add`. Al clonar de una ruta, Git la guarda completa (`/home/alumno/luis/../github/…`); de GitHub, guardaría la dirección `https://…` tal cual. Y al clonar por red salen más líneas: las `remote:` de GitHub, en inglés, y el progreso de la descarga (`Recibiendo objetos`, `Resolviendo deltas`).
+- **`git log`** muestra la copia del remoto (`origin/main`) en el mismo commit que `main`: Luis está al día.
 - **`git branch -a`** (*all*, «todas») enseña también las ramas de seguimiento, con `remotes/` delante. `origin/HEAD` dice cuál es la rama principal del remoto.
 
 ### 2.3. Traer los cambios de los demás: fetch y pull
@@ -468,8 +468,8 @@ $ cat lecturas.md
 **En qué fijarte:**
 
 - **El `push` de Luis** termina con `dcc251c..c73a464  main -> main`: la `main` del remoto ha pasado del commit `dcc251c` al `c73a464`.
-- **El primer `git status` de Ana miente**, sin querer: dice que está al día, porque compara con su foto, que es de antes del `push` de Luis ([apartado 1.7](#17-las-órdenes-de-los-remotos)).
-- **`git fetch`** renueva la foto: `origin/main` pasa a `c73a464`. Las líneas `remote:` son del remoto, que cuenta lo que envía (GitHub escribe lo mismo al bajar). Los ficheros de Ana **no han cambiado**.
+- **El primer `git status` de Ana miente**, sin querer: dice que está al día, porque compara con su copia, que es de antes del `push` de Luis ([apartado 1.7](#17-las-órdenes-de-los-remotos)).
+- **`git fetch`** renueva la copia: `origin/main` pasa a `c73a464`. Las líneas `remote:` son del remoto, que cuenta lo que envía (GitHub escribe líneas parecidas, en inglés, porque las escribe su servidor). Los ficheros de Ana **no han cambiado**.
 - **Ahora `git status` sí lo sabe**: Ana va un commit por detrás, y se puede «avanzar rápido» (*fast-forward*, el [avance rápido](02-ramas-y-conflictos.md#16-fusionar-con-avance-rápido) de 05.02), porque ella no tiene nada nuevo.
 - **`git pull`** fusiona: como es un avance rápido, no hay commit de fusión. Ya tiene la lectura de febrero.
 
@@ -579,13 +579,15 @@ nada para hacer commit, el árbol de trabajo está limpio
 
 **En qué fijarte:**
 
-- **«Adelantada por 1 commit»**: con su foto vieja, Ana cree que le basta con subir.
+- **«Adelantada por 1 commit»**: con su copia vieja, Ana cree que le basta con subir.
 - **El `push` se rechaza** (`! [rejected] … (fetch first)`): el remoto tiene un commit que Ana no tiene ([apartado 1.9](#19-cuando-el-remoto-tiene-algo-que-tú-no-tienes)). Las líneas `hint:` («pista») son consejos de Git, aquí en inglés, sin traducir ([05.01, apartado 2](01-git-fundamentos.md#2-ejemplos-de-código)).
 - **Tras el `git fetch`**, `git status` dice la verdad: las ramas **han divergido**, un commit cada una.
 - **`git pull` a secas se para** y explica las tres formas de juntar las ramas. No ha cambiado nada: solo pregunta.
 - **`git pull --no-rebase --no-edit`** elige la fusión. `--no-edit` acepta el mensaje que propone Git para el commit de fusión, sin abrir el editor (sin él, Git abriría [su editor](01-git-fundamentos.md#14-antes-de-empezar-decirle-a-git-quién-eres) para que lo puedas cambiar). Como Ana y Luis tocaron ficheros distintos, no hay conflicto.
 - **El gráfico** muestra la fusión de tres vías de [05.02](02-ramas-y-conflictos.md): el commit de Ana y el de Luis, juntos en `f2b05b2`. Con GitHub, el mensaje diría `Merge branch 'main' of https://github.com/…`.
 - **Ahora el `push` se acepta**, y todo queda al día.
+
+> **⚠️ En Windows:** si dejaste en el instalador la opción de `git pull` como venía ([02.03, apartado 1.6](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash)), tu Git ya tiene elegida la fusión: ese `git pull` no se para, fusiona y abre el editor con el mensaje `Merge branch 'main' of …`; guarda y cierra (o escribe desde el principio `git pull --no-rebase --no-edit`). Por eso allí no verás este mensaje.
 
 Si Ana y Luis hubieran cambiado la misma línea, el `git pull --no-rebase` habría acabado en un **conflicto**. Se resuelve como en 05.02, y después `git push`: lo harás en el [ejercicio 2](#ejercicio-2--el-push-rechazado-del-taller-de-bicis).
 
@@ -725,6 +727,7 @@ $ git log --oneline --graph
 **En qué fijarte:**
 
 - **El `git pull` de Luis** trae dos cosas: la `main` nueva (con la fusión de Ana del ejemplo 2.4) y la rama `lugar`, que no tenía (`* [nueva rama] lugar -> origin/lugar`).
+- **Luis no tiene una rama `lugar` propia**: tiene `origin/lugar`, que trajo el `git pull`, y se puede fusionar como cualquier rama. Por eso el mensaje dice `remote-tracking branch` (rama de seguimiento).
 - **La fusión de Luis** es lo que hace el botón **Merge pull request**: un commit de fusión en `main` con lo de la rama. En GitHub, ese commit lo crearía el propio GitHub en el remoto, con un mensaje que nombra la *pull request*.
 - **Ana vuelve a `main`**, que todavía no tiene el cambio, y lo trae con `git pull`.
 - **`git branch -d lugar`** borra la rama en su ordenador (Git deja, porque ya está fusionada) y **`git push origin --delete lugar`** la borra del remoto (`- [deleted]`). En GitHub, la página de la *pull request* fusionada tiene además un botón para borrar la rama.
@@ -741,7 +744,7 @@ git remote add origin https://github.com/TU-USUARIO/club-lectura.git
 git push -u origin main
 ```
 
-La primera vez, Git Credential Manager abre el navegador para que entres en GitHub y le des permiso; después, el `push` sigue como en el ejemplo 2.1, con `To https://github.com/TU-USUARIO/club-lectura.git`. Las siguientes veces ya no pide nada. Si en lugar del navegador Git te pide un usuario y una contraseña en la terminal, en la contraseña va un *token* ([apartado 1.4](#14-cómo-sabe-github-que-eres-tú-https)), no la de tu cuenta.
+La primera vez, Git Credential Manager abre una ventana para iniciar sesión en GitHub (si te ofrece varias formas, elige la del navegador) para que entres y le des permiso; después, el `push` sigue como en el ejemplo 2.1, con `To https://github.com/TU-USUARIO/club-lectura.git`. Las siguientes veces ya no pide nada. Si en lugar de esa ventana Git te pide un usuario y una contraseña en la terminal, en el usuario va tu usuario de GitHub y en la contraseña, un *token* ([apartado 1.4](#14-cómo-sabe-github-que-eres-tú-https)), no la de tu cuenta.
 
 **Opción B: SSH.** Genera tu par de claves, con el correo de tu cuenta de GitHub:
 
@@ -749,7 +752,7 @@ La primera vez, Git Credential Manager abre el navegador para que entres en GitH
 ssh-keygen -t ed25519 -C "ana@example.com"
 ```
 
-Te hace tres preguntas (en inglés: `ssh-keygen` no está traducido). A la primera, dónde guardar la clave, pulsa <kbd>Intro</kbd> para aceptar el sitio que propone. Las otras dos piden una **frase de contraseña** (*passphrase*) para proteger la clave privada, dos veces; si escribes una, mientras la tecleas no se ve nada (es normal, como con `sudo`). Al terminar, dice dónde ha guardado las dos claves, en inglés (`Your identification has been saved in …/.ssh/id_ed25519` y `Your public key has been saved in …/.ssh/id_ed25519.pub`), y enseña una huella (*fingerprint*) y un dibujo (*randomart*) que son distintos en cada clave. Lo importante: se han guardado **dos ficheros** en la carpeta oculta `.ssh` de tu carpeta personal, `id_ed25519` (la **privada**, que no sale de ahí) e `id_ed25519.pub` (la **pública**).
+Te hace tres preguntas (en inglés: `ssh-keygen` no está traducido). A la primera, dónde guardar la clave, pulsa <kbd>Intro</kbd> para aceptar el sitio que propone. Si te pregunta `Overwrite (y/n)?`, ya tienes una clave con ese nombre: contesta `n` y usa la que tienes (su `.pub` es lo que necesitas), o pide ayuda antes de sobrescribirla. Las otras dos piden una **frase de contraseña** (*passphrase*) para proteger la clave privada, dos veces; si escribes una, mientras la tecleas no se ve nada (es normal, como con `sudo`). Si pones frase, SSH te la pedirá cada vez que hables con GitHub, salvo que añadas la clave al agente de SSH; los pasos cambian en cada sistema y están en docs.github.com, *Generating a new SSH key and adding it to the ssh-agent* (a 16 de noviembre de 2026). Al terminar, dice dónde ha guardado las dos claves, en inglés (`Your identification has been saved in …/.ssh/id_ed25519` y `Your public key has been saved in …/.ssh/id_ed25519.pub`), y enseña una huella (*fingerprint*) y un dibujo (*randomart*) que son distintos en cada clave. Lo importante: se han guardado **dos ficheros** en la carpeta oculta `.ssh` de tu carpeta personal, `id_ed25519` (la **privada**, que no sale de ahí) e `id_ed25519.pub` (la **pública**).
 
 Para dársela a GitHub, mira el contenido de la pública con `cat ~/.ssh/id_ed25519.pub`: es **una sola línea** que empieza por `ssh-ed25519`, sigue con una ristra larga de letras y números y acaba con tu correo. Cópiala entera y pégala en **Settings > SSH and GPG keys > New SSH key** ([apartado 1.5](#15-ssh-un-par-de-claves)). Después, comprueba la conexión:
 
@@ -793,6 +796,8 @@ fatal: Necesita especificar cómo reconciliar las ramas divergentes.
 
 **Por qué ocurre:** tu rama y la del remoto tienen cada una commits que la otra no tiene, y Git no sabe si quieres juntarlas con una fusión o con un *rebase* (lo viste en el [ejemplo 2.4](#24-cuando-alguien-ha-subido-antes-que-tú)). No es un error de verdad: es una pregunta.
 
+En Windows, si dejaste en el instalador la opción de `git pull` como venía ([02.03, apartado 1.6](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#16-instalar-git-en-windows-git-for-windows-y-git-bash)), tu Git ya tiene elegida la fusión: ese `git pull` no se para, fusiona y abre el editor con el mensaje `Merge branch 'main' of …`; guarda y cierra (o escribe desde el principio `git pull --no-rebase --no-edit`). Por eso allí no verás este mensaje.
+
 **Cómo se arregla:** dilo en la orden, `git pull --no-rebase` (fusionar, lo que conoces). O díselo a Git una vez para todos tus repositorios, como propone su propio mensaje:
 
 ```bash
@@ -803,21 +808,76 @@ Desde entonces, `git pull` fusiona sin preguntar. Si tu equipo prefiere *rebase*
 
 ### 3.4. Crear el repositorio de GitHub con un README
 
-**Qué pasa:** creas el repositorio en la web marcando «Add a README» (o una licencia), y después quieres subir el que ya tenías en tu ordenador. El `push` se rechaza (`fetch first`), y el `git pull --no-rebase` termina con:
+**Qué pasa:** creas el repositorio en la web marcando «Add a README» (o una licencia), y después quieres subir el que ya tenías en tu ordenador. El `push` se rechaza (`fetch first`), y el `git pull --no-rebase origin main` termina con `fatal: rehusando fusionar historias no relacionadas`. En esta sesión, la carpeta `web-de-github` hace lo que haría GitHub al crear el repositorio con README: un primer commit en el remoto.
+
+**En tu terminal** (`sesion.txt`):
 
 ```text
+$ mkdir github && git init --bare github/tienda.git
+Inicializado repositorio Git vacío en /home/alumno/github/tienda.git/
+$ mkdir web-de-github && cd web-de-github && git init
+Inicializado repositorio Git vacío en /home/alumno/web-de-github/.git/
+$ echo "# tienda" > README.md
+$ git add README.md
+$ git commit -m "Initial commit"
+[main (commit-raíz) 4b1b84e] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+$ git push -q ../github/tienda.git main
+$ cd ..
+$ mkdir tienda && cd tienda && git init
+Inicializado repositorio Git vacío en /home/alumno/tienda/.git/
+$ echo '<h1>Tienda</h1>' > index.html
+$ git add index.html
+$ git commit -m "Primera página"
+[main (commit-raíz) 2b3f8ac] Primera página
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+$ git remote add origin ../github/tienda.git
+$ git push -u origin main
+To ../github/tienda.git
+ ! [rejected]        main -> main (fetch first)
+error: falló el empuje de algunas referencias a '../github/tienda.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+$ git pull --no-rebase origin main
+remote: Enumerando objetos: 3, listo.
+remote: Contando objetos: 100% (3/3), listo.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Desempaquetando objetos: 100% (3/3), 205 byte | 205.00 KiB/s, listo.
+Desde ../github/tienda
+ * branch            main       -> FETCH_HEAD
+ * [nueva rama]      main       -> origin/main
 fatal: rehusando fusionar historias no relacionadas
+$ git pull --no-rebase --no-edit --allow-unrelated-histories origin main
+Desde ../github/tienda
+ * branch            main       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+$ git push -q -u origin main
+$ git log --oneline --graph
+*   a1ebf4e (HEAD -> main, origin/main) Merge branch 'main' of ../github/tienda
+|\
+| * 4b1b84e Initial commit
+* 2b3f8ac Primera página
 ```
+
+📁 **Código:** [`codigo/03-github/ejemplos/3.4-github-con-readme/`](codigo/03-github/ejemplos/3.4-github-con-readme/)
 
 **Por qué ocurre:** al crearlo con README, GitHub hizo un primer commit en el remoto. Tu repositorio tiene su propio primer commit. Son **dos historias que no tienen ningún commit en común**, y Git se niega a juntarlas sin que se lo pidas, porque casi siempre es una equivocación.
 
-**Cómo se arregla:** lo mejor es no llegar ahí: si ya tienes el repositorio, créalo en GitHub **vacío**, sin marcar nada. Si ya te ha pasado y el repositorio de GitHub es nuevo, puedes borrarlo en la web y crearlo de nuevo vacío; o juntar las dos historias, diciéndoselo a Git con `git pull --no-rebase --allow-unrelated-histories origin main` (resuelve el conflicto si los dos tenéis un `README.md`) y después `git push -u origin main`.
+**Cómo se arregla:** lo mejor es no llegar ahí: si ya tienes el repositorio, créalo en GitHub **vacío**, sin marcar nada. Si ya te ha pasado y el repositorio de GitHub es nuevo, puedes borrarlo en la web y crearlo de nuevo vacío; o juntar las dos historias, diciéndoselo a Git con `git pull --no-rebase --allow-unrelated-histories origin main` (resuelve el conflicto si los dos tenéis un `README.md`) y después `git push -u origin main`, como al final de la sesión (`-q`, de *quiet*, «silencioso», solo quita las líneas de progreso).
 
 ### 3.5. Creer que git status sabe lo último
 
 **Qué pasa:** `git status` dice «Tu rama está actualizada con 'origin/main'», empiezas a trabajar, y al subir resulta que había commits nuevos y te toca resolver un conflicto que te podrías haber ahorrado.
 
-**Por qué ocurre:** `git status` compara con la **foto** que tienes del remoto (`origin/main`), no con el remoto de verdad. Si no has hecho `git fetch` (o `git pull`) desde hace rato, la foto es vieja ([ejemplo 2.3](#23-traer-los-cambios-de-los-demás-fetch-y-pull)).
+**Por qué ocurre:** `git status` compara con la **copia** que tienes del remoto (`origin/main`), no con el remoto de verdad. Si no has hecho `git fetch` (o `git pull`) desde hace rato, la copia es vieja ([ejemplo 2.3](#23-traer-los-cambios-de-los-demás-fetch-y-pull)).
 
 **Cómo se arregla:** antes de empezar una tarea, `git pull` (o `git fetch` y después `git status`, si solo quieres mirar).
 
@@ -825,7 +885,7 @@ fatal: rehusando fusionar historias no relacionadas
 
 **Qué pasa:** un fichero con una contraseña o una clave (un [`.env`](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#114-el-fichero-env-y-los-secretos), un *token*) acaba en un commit, y el repositorio se sube a GitHub. Lo borras en un commit nuevo y crees que ya está.
 
-**Por qué ocurre:** el secreto no estaba en el [`.gitignore`](01-git-fundamentos.md#112-lo-que-no-va-en-git-gitignore), o se añadió con un `git add .` sin mirar el `git status`. Y borrarlo después **no lo quita del historial**: cualquiera que clone el repositorio puede ver el commit antiguo. En un repositorio público, hay programas que recorren GitHub buscando claves y las encuentran en minutos.
+**Por qué ocurre:** el secreto no estaba en el [`.gitignore`](01-git-fundamentos.md#112-lo-que-no-va-en-git-gitignore), o se añadió con un `git add .` sin mirar el `git status`. Y borrarlo después **no lo quita del historial**: cualquiera que clone el repositorio puede ver el commit antiguo. En un repositorio público, hay programas que recorren GitHub buscando claves y las encuentran en minutos. GitHub puede **bloquear el `push`** si reconoce una clave de un servicio conocido (la protección de subida, *push protection*, activada por defecto para tu cuenta en los repositorios públicos, según su documentación a 16 de noviembre de 2026). No te fíes de ello: detecta solo algunos tipos de secreto, y una contraseña tuya no la reconoce.
 
 **Cómo se arregla:** **cambia el secreto ya** (la contraseña, el *token*, la clave): es la única forma de que el que se ha escapado deje de servir. Después, quítalo del seguimiento y añádelo al `.gitignore`. Lo comprobarás en el [ejercicio 5](#ejercicio-5--antes-de-hacer-público-el-repositorio-de-la-protectora), y lo verás a fondo en [Seguridad básica](../fase-07-aprender-a-aprender/05-seguridad-basica.md).
 
@@ -851,6 +911,8 @@ fatal: rehusando fusionar historias no relacionadas
 - Clonar un repositorio dentro de la carpeta de otro repositorio: cada repositorio, en su carpeta.
 
 ## 5. Ejercicios prácticos resueltos
+
+> **💡 Consejo:** intenta cada ejercicio **antes** de abrir las pistas y la solución. Los que llevan carpeta de código se hacen en tu terminal, con un remoto de prácticas en una carpeta nueva: si te equivocas, borra lo que hayas creado y empieza otra vez. Los demás son de **razonar**: escribe tu respuesta y compárala después.
 
 ### 🟢 Básico
 
@@ -934,7 +996,7 @@ $ git log --oneline
 
 **Errores frecuentes al resolverlo:**
 
-- Escribir `git push` a secas la primera vez: Git contesta «fatal: La rama actual main no tiene una rama upstream» (no está vinculada a ninguna rama del remoto) y propone `git push --set-upstream origin main`, que es lo mismo que `-u`.
+- Escribir `git push` a secas la primera vez: Git contesta «fatal: La rama actual main no tiene una rama upstream.» (no está vinculada a ninguna rama del remoto) y propone `git push --set-upstream origin main`, que es lo mismo que `-u`.
 - Clonar dentro de `recetas/`: tendrías un repositorio dentro de otro.
 
 </details>
@@ -943,7 +1005,7 @@ $ git log --oneline
 
 #### Ejercicio 2 · El push rechazado del taller de bicis
 
-**Situación real:** Jorge y Sara llevan la lista de precios de su taller de bicicletas, `precios.txt`, en un remoto compartido. Los dos han cambiado a la vez **la misma línea**, la del cambio de cámara: Sara ha aclarado que la cámara se cobra aparte, y lo ha subido; Jorge ha subido el precio a 14 €, y todavía no lo ha subido. La primera sesión lo prepara todo (cópiala tal cual):
+**Situación real:** Jorge y Sara llevan la lista de precios de su taller de bicicletas, `precios.txt`, en un remoto compartido. Los dos han cambiado a la vez **la misma línea**, la del cambio de cámara: Sara ha aclarado que la cámara se cobra aparte, y lo ha subido; Jorge ha cambiado el precio a 14 €, y todavía no lo ha enviado al remoto. La primera sesión lo prepara todo (cópiala tal cual):
 
 **En tu terminal** (`sesion-1.txt`):
 
@@ -1096,7 +1158,7 @@ $ git log --oneline --graph
 
 #### Ejercicio 3 · Revisa una pull request
 
-**Situación real:** en el repositorio del club de lectura, Luis abre una *pull request* con el título «cambios» y sin descripción. En **Files changed** se ve esto (las líneas con `-` se quitan y las de `+` se añaden):
+**Situación real:** en el repositorio del club de lectura, que es **público**, Luis abre una *pull request* con el título «cambios» y sin descripción. En **Files changed** se ve esto (las líneas que **empiezan** por `+` se añaden y las que empiezan por un espacio no cambian; el guion que va detrás es el de la lista de Markdown):
 
 ```diff
  # Lecturas
@@ -1137,7 +1199,7 @@ Mira tres cosas: si el cambio dice lo que el club decidió, si hay algún dato q
 
 **Comentario en la línea de la cuota:**
 
-> Mejor quitar esta línea. Por un lado, quedamos en que la cuota se paga en mano en la reunión. Por otro, un número de cuenta es un dato personal: el repositorio es público y quedaría en el historial para siempre aunque lo borremos después.
+> Hay que quitar esta línea. Por un lado, quedamos en que la cuota se paga en mano en la reunión. Por otro, un número de cuenta es un dato personal, y el número ya está en los commits de esta *pull request*: aunque lo quites con otro commit, se puede seguir viendo. Como el repositorio es público, considéralo expuesto (y cambia ese dato si es real).
 
 **Comentario general:**
 
@@ -1154,7 +1216,8 @@ Si Luis hace los cambios en la misma rama y los sube, la *pull request* se actua
 
 **Errores frecuentes al resolverlo:**
 
-- **Approve** «porque solo son unas líneas»: el número de cuenta acabaría en `main` y en el historial.
+- **Approve** «porque solo son unas líneas»: el número de cuenta acabaría también en `main`.
+- Creer que, si Luis lo quita con otro commit, el problema desaparece: GitHub conserva los commits de la rama de la *pull request*, aunque se borre la rama.
 - Un comentario como «esto está mal» sin decir qué ni por qué: a Luis no le sirve para arreglarlo.
 
 </details>
@@ -1361,7 +1424,7 @@ $ git commit -m "Deja de seguir el fichero .env"
 
 📁 **Código:** [`codigo/03-github/ejercicios/ej05-antes-de-publicar/`](codigo/03-github/ejercicios/ej05-antes-de-publicar/)
 
-(En tu equipo, el `.env` se queda en la carpeta, aunque Git ya no lo siga y `ls` no lo enseñe por ser un [fichero oculto](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos)).
+(En tu ordenador, el `.env` se queda en la carpeta, aunque Git ya no lo siga y `ls` no lo enseñe por ser un [fichero oculto](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md#115-ficheros-ocultos)).
 
 Haz una revisión con la terminal y responde:
 
@@ -1412,7 +1475,7 @@ CLAVE_CORREO=gatitos2026
 
 📁 **Código:** [`codigo/03-github/ejercicios/ej05-antes-de-publicar/`](codigo/03-github/ejercicios/ej05-antes-de-publicar/)
 
-**1. Los ficheros de hoy.** `git ls-files` dice que Git sigue `.gitignore`, `README.md` y `adopciones.md`. El `.env` ya no está, y el `.gitignore` impide que vuelva a entrar por descuido. Hasta aquí, bien.
+**1. Los ficheros de hoy.** `git ls-files` dice que Git sigue `.gitignore`, `README.md` y `adopciones.md`. El `.env` ya no está, y el `.gitignore` impide que vuelva a entrar por descuido. Hasta aquí, bien. (Ojo: cuando otra persona traiga el commit `f7394f4`, Git borrará `.env` de su carpeta, porque para Git es un borrado. Si el proyecto ya lo tiene alguien más, avísale antes para que guarde una copia, o que lo recree a partir de un `.env.example`.)
 
 **2. El historial.** `git log --oneline -- .env` enseña **dos commits** que tocaron `.env`: el que lo añadió (`5e4cc21`) y el que lo dejó de seguir (`f7394f4`). Y `git show 5e4cc21:.env` lo demuestra: **la clave del correo se puede leer**. Al subir el repositorio, se suben **todos los commits**, y cualquiera que lo clone podría hacer lo mismo. Dejar de seguir un fichero no lo borra del pasado ([error típico 3.6](#36-subir-un-secreto-a-github)).
 
@@ -1450,7 +1513,7 @@ CLAVE_CORREO=gatitos2026
 | `git push -u origin rama` | Sube una rama por primera vez y la vincula |
 | `git push` | Sube los commits nuevos de la rama actual |
 | `git clone DIRECCIÓN [carpeta]` | Descarga un repositorio entero, ya conectado como `origin` |
-| `git fetch` · `git fetch upstream` | Renueva la foto del remoto, sin tocar tus ficheros |
+| `git fetch` · `git fetch upstream` | Renueva la copia del remoto, sin tocar tus ficheros |
 | `git pull` · `git pull --no-rebase` | Baja y fusiona · baja y fusiona aunque las ramas hayan divergido |
 | `git branch -a` · `git branch -vv` | Ramas, también las del remoto · con su rama vinculada |
 | `git push origin --delete rama` | Borra una rama del remoto |
@@ -1460,8 +1523,8 @@ CLAVE_CORREO=gatitos2026
 
 | Forma | Dirección | Cómo |
 |---|---|---|
-| HTTPS + Git Credential Manager | `https://github.com/usuario/repo.git` | El navegador, la primera vez (en Windows, viene con Git) |
-| HTTPS + *token* | `https://github.com/usuario/repo.git` | El *token* donde Git pide la contraseña (Settings > Developer settings > Personal access tokens) |
+| HTTPS + Git Credential Manager | `https://github.com/usuario/repo.git` | Una ventana para iniciar sesión, la primera vez (mejor la del navegador; en Windows, viene con Git) |
+| HTTPS + *token* | `https://github.com/usuario/repo.git` | Tu usuario y, donde Git pide la contraseña, el *token* (Settings > Developer settings > Personal access tokens; de grano fino, con *Contents* de escritura) |
 | SSH | `git@github.com:usuario/repo.git` | `ssh-keygen -t ed25519 -C "correo"` → el `.pub` en Settings > SSH and GPG keys → `ssh -T git@github.com` |
 
 ### En la web de GitHub
@@ -1510,7 +1573,7 @@ CLAVE_CORREO=gatitos2026
    <details>
    <summary>Ver respuesta</summary>
 
-   Es la foto que guarda tu repositorio de la rama `main` del remoto, de la última vez que hablaste con él (`fetch`, `pull` o `push`). `git status` compara con esa foto, no con el remoto de verdad: si alguien ha subido después, no lo sabe hasta que haces `git fetch`. Lo tienes en [1.7. Las órdenes de los remotos](#17-las-órdenes-de-los-remotos).
+   Es la copia que guarda tu repositorio de la rama `main` del remoto, de la última vez que hablaste con él (`fetch`, `pull` o `push`). `git status` compara con esa copia, no con el remoto de verdad: si alguien ha subido después, no lo sabe hasta que haces `git fetch`. Lo tienes en [1.7. Las órdenes de los remotos](#17-las-órdenes-de-los-remotos).
 
    </details>
 
@@ -1519,7 +1582,7 @@ CLAVE_CORREO=gatitos2026
    <details>
    <summary>Ver respuesta</summary>
 
-   `git fetch` solo descarga los commits nuevos y renueva la foto (`origin/main`), sin tocar tus ficheros ni tus ramas. `git pull` hace un `fetch` y después fusiona la rama del remoto con la tuya. Lo tienes en [1.7. Las órdenes de los remotos](#17-las-órdenes-de-los-remotos).
+   `git fetch` solo descarga los commits nuevos y renueva la copia (`origin/main`), sin tocar tus ficheros ni tus ramas. `git pull` hace un `fetch` y después fusiona la rama del remoto con la tuya. Lo tienes en [1.7. Las órdenes de los remotos](#17-las-órdenes-de-los-remotos).
 
    </details>
 
