@@ -8,6 +8,14 @@ Qué cambia en cada versión del curso, de la más nueva a la más antigua. Cada
 
 ## Sin publicar
 
+- Nada todavía.
+
+## 1.0.0 — 16 de noviembre de 2026
+
+Primera versión publicada, para el pack base 1.0 de MyOpenAcademy: **8 fases, 31 módulos y 219 ejercicios**, con retos al final de las fases 1 a 7, el glosario común de la academia y un proyecto final para el portfolio (un repositorio propio publicado en GitHub Pages). Todo el código, verificado en la terminal del kit; versiones de las herramientas revisadas el 16 de noviembre de 2026 (Git 2.56, Visual Studio Code 1.146, bash 5.3, curl 8.18.0 en las salidas, Mermaid 12.3.0 y GitHub Pages con Jekyll 3.10.0).
+
+Cómo se hizo, fase a fase:
+
 - Decisiones, temario cerrado con identificadores y `curso.json` (8 de noviembre de 2026).
 - Fase 1, «Qué es programar»: cuatro módulos, retos y glosario de sus términos (8 de noviembre de 2026; aprobada por el autor).
 - Fase 2, «Tu ordenador por dentro»: tres módulos, dos retos y sus términos en el glosario (9 de noviembre de 2026; aprobada por el autor).

@@ -4,7 +4,7 @@
   "id": "inicial",
   "titulo": "Fundamentos para programar",
   "descripcion": "Lo que conviene saber antes de cualquier curso: qué es programar, tu ordenador, la terminal, Git y GitHub, los formatos de datos, internet y cómo aprender.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "idioma": "es",
   "repositorio": "https://github.com/myopenacademy/curso-inicial",
   "conviene_saber_antes": [],
