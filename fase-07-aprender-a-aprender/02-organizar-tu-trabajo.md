@@ -809,7 +809,7 @@ Un ejemplo con un tema concreto, **«Mis rutas en bici»**: una web con las ruta
 
 **3. Límite de trabajo en curso: 2.** Trabajando solo, una tarea principal y otra que puede estar esperando (por ejemplo, la 7 espera a que otra persona abra la web en su móvil). Con más, empezarías mucho y terminarías poco.
 
-**4. Plantilla:** la de tareas del [ejemplo 2.3](#23-una-plantilla-de-issue-para-las-tareas), cambiando el `about` («Algo que hay que hacer en Mis rutas en bici»). Con ella, cada tarea de la tabla es una *issue* con su criterio de hecho en casillas, y cada *pull request* la cierra con `Closes #N`.
+**4. Plantilla:** la de tareas del [ejemplo 2.3](#23-una-plantilla-de-issue-para-las-tareas), cambiando el `about` («Algo que hay que hacer en Mis rutas en bici»). Con ella, cada tarea de la tabla es una *issue* con su criterio de hecho en casillas. Para que se cierre sola, `Closes #N` vale en dos sitios, según la documentación de GitHub (a 16 de noviembre de 2026): en la **descripción de una *pull request***, al fusionarla en la rama principal, o en el **mensaje de un commit**, cuando ese commit llega a la rama principal. El [proyecto final](../fase-08-proyecto-final/01-primer-repositorio.md#13-planificar-con-issues-y-un-tablero) usa las dos.
 
 **Por qué así:** cada tarea deja algo que se puede enseñar, y ninguna es «hacer la web». Al terminar la 2 ya tienes algo publicado, y al terminar la 4, una web que funciona con tus datos: desde ahí, todo es mejorar algo que ya existe.
 

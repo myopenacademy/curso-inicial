@@ -278,6 +278,8 @@ La idea de fondo: **`main` siempre funciona**, porque nada entra en ella sin pas
 
 Aunque trabajes sola o solo, **sigue GitHub Flow en tus proyectos**: te acostumbra a trabajar en ramas, deja en el historial qué se hizo en cada tarea, y quien revise tu portfolio verá que sabes trabajar como en un equipo.
 
+En el [proyecto final](../fase-08-proyecto-final/01-primer-repositorio.md#13-planificar-con-issues-y-un-tablero) verás una forma más ligera para cuando trabajas sola o solo: las tareas pequeñas, con commits en `main`; al menos una, en una rama que después fusionas; y la *pull request* en GitHub, opcional.
+
 ### 1.14. El escaparate: README, licencia y perfil
 
 **El README.** Al entrar en un repositorio, GitHub muestra debajo de la lista de ficheros el `README.md` de su raíz, dibujado: es la **portada** del proyecto. Cómo se escribe uno bueno ya lo sabes de [04.02](../fase-04-formatos-y-diagramas/02-markdown.md#116-el-fichero-readme): qué es, cómo se usa, cómo se instala, dónde pedir ayuda y quién lo mantiene. GitHub entiende todo lo de GitHub Flavored Markdown (tablas, listas de tareas…) y **dibuja los diagramas de Mermaid** que pongas en él ([04.05](../fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#110-dónde-se-dibuja-github-la-academia-y-vs-code)). Los demás ficheros de Markdown del repositorio (`CONTRIBUTING.md`, `CHANGELOG.md`, cualquier `.md`) también se ven dibujados al abrirlos en la web. Para subirlos no hay nada especial: son ficheros como cualquier otro, que van con tus commits.
