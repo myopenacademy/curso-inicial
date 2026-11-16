@@ -4,7 +4,7 @@
 
 if [ $# -eq 0 ]; then
     echo "Uso: bash vigilar.sh DIRECCIÓN [DIRECCIÓN...]" >&2
-    exit 1
+    exit 2
 fi
 
 problemas=0

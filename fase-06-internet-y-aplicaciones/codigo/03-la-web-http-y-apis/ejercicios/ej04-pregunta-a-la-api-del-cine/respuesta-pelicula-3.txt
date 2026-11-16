@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 103
+
+{
+  "id": 3,
+  "titulo": "Campeones",
+  "minutos": 124,
+  "sesiones": [
+    "16:15",
+    "22:00"
+  ]
+}

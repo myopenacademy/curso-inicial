@@ -2,5 +2,5 @@ curl http://localhost:8080/peliculas
 curl -i http://localhost:8080/peliculas/3
 curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/peliculas/7
 curl -s -o cartelera.json http://localhost:8080/peliculas
-ls
+ls cartelera.json
 grep -c '"id"' cartelera.json

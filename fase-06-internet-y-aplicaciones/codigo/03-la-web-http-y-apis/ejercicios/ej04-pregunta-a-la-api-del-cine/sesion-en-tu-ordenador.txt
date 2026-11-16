@@ -1,0 +1,2 @@
+cat respuesta-pelicula-3.txt
+grep -c '"id"' cartelera.json

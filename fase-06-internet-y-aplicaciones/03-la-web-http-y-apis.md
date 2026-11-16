@@ -77,7 +77,7 @@ Dos detalles que te ahorrarán sustos:
 - **La ruta distingue mayúsculas y minúsculas** en casi todos los servidores (que suelen ser Linux, como viste en [02.02](../fase-02-tu-ordenador/02-archivos-carpetas-y-rutas.md)): `/Libros` y `/libros` son dos cosas distintas. El dominio, en cambio, no: `EXAMPLE.com` es `example.com`.
 - **Algunos caracteres no pueden ir tal cual.** Una URL solo admite letras sin tilde, números y unos pocos signos. Lo demás se escribe con `%` y un código: el espacio es `%20` y la «é», `%C3%A9`. Se llama **codificación por porcentaje**. Por eso, al copiar la dirección de una página de Wikipedia con tildes, a veces te sale llena de `%`. No tienes que aprendértelos: el navegador y los programas los ponen solos.
 
-> **📌 Nota:** los anclajes de este curso (`#13-json-el-formato-para-intercambiar-datos`) son fragmentos: por eso un enlace con `#` te lleva a un apartado concreto de la página.
+> **📌 Nota:** las [anclas](../glosario.md#ancla) de este curso (`#13-json-el-formato-para-intercambiar-datos`) son fragmentos: por eso un enlace con `#` te lleva a un apartado concreto de la página.
 
 ### 1.3. HTTP: pedir y responder con texto
 
@@ -133,7 +133,7 @@ Hay dos más que verás de vez en cuando: `HEAD` (como `GET`, pero el servidor r
 
 Dos ideas importantes:
 
-- **`GET` no debe cambiar nada.** Los navegadores, los buscadores y las [cachés](01-redes.md#112-cómo-se-resuelve-un-nombre) hacen `GET` sin preguntarte (al recargar, al adelantar páginas, al indexar la web). Si un `GET` borrara algo, lo borraría cualquiera que pasara por ahí.
+- **`GET` no debe cambiar nada.** Los navegadores, los buscadores y las cachés de la web (copias de las respuestas que guardan el navegador y otros servidores por el camino, como la [caché del DNS](01-redes.md#112-cómo-se-resuelve-un-nombre), pero de páginas) hacen `GET` sin preguntarte (al recargar, al adelantar páginas, al indexar la web). Si un `GET` borrara algo, lo borraría cualquiera que pasara por ahí.
 - **Al escribir una dirección en el navegador o pulsar un enlace, siempre es `GET`.** Los formularios pueden enviar `POST`. Para enviar `PUT`, `PATCH` o `DELETE` hace falta un programa: el código de la propia página, una aplicación o una herramienta como `curl` ([apartado 1.13](#113-curl-http-desde-la-terminal)).
 
 ### 1.6. La respuesta
@@ -236,7 +236,7 @@ Con `http`, la petición y la respuesta viajan **tal cual**: cualquiera que est�
 
 - **Nadie lo lee**: lo que viaja va cifrado. Quien está en medio ve con qué servidor hablas, pero no qué pides ni qué te responde.
 - **Nadie lo cambia** sin que se note.
-- **El servidor es quien dice ser.** Lo demuestra con un **certificado**, una especie de DNI digital firmado por una empresa en la que confía tu navegador. Si el certificado no es válido (caducado, de otro dominio…), el navegador te enseña una pantalla de aviso en lugar de la web.
+- **El servidor es quien dice ser.** Lo demuestra con un **certificado**, una especie de DNI digital firmado por una **autoridad de certificación**, una organización en la que confía tu navegador. Si el certificado no es válido (caducado, de otro dominio…), el navegador te enseña una pantalla de aviso en lugar de la web.
 
 El candado de la barra de direcciones quiere decir «esta conexión es HTTPS y el certificado es válido». **No quiere decir que la web sea de fiar**: una web falsa también puede tener su candado. Lo que identifica a una web es su **dominio**, como viste en [02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md#13-descarga-siempre-de-la-web-oficial).
 
@@ -250,8 +250,11 @@ Todo lo que acabas de leer lo puedes ver en tu navegador, con sus **herramientas
 
 | Navegador | Abrir las herramientas | Ir directo a la pestaña de red |
 |---|---|---|
-| Chrome (y Edge, que se basa en él) | <kbd>F12</kbd> o <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>I</kbd>; en macOS, <kbd>Cmd</kbd>+<kbd>Opción</kbd>+<kbd>I</kbd> | Pestaña **Network** (si el navegador está en español, puede salir como **Red**) |
+| Chrome (y Edge, que se basa en él) | <kbd>F12</kbd> o <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>I</kbd>; en macOS, <kbd>Cmd</kbd>+<kbd>Opción</kbd>+<kbd>I</kbd> | Pestaña **Network** |
 | Firefox | <kbd>F12</kbd> o <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>I</kbd>; en macOS, <kbd>Cmd</kbd>+<kbd>Opción</kbd>+<kbd>I</kbd> | <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>E</kbd>; en macOS, <kbd>Cmd</kbd>+<kbd>Opción</kbd>+<kbd>E</kbd> |
+| Safari (macOS) | Vienen ocultas. Primero, una vez: **Safari > Ajustes > Avanzado** y marca «Mostrar funciones para desarrolladores web» (según la guía de Apple en español). Después, las abres desde el menú **Desarrollo** que aparece arriba | Su pestaña de red |
+
+Con el navegador en español, los nombres de las pestañas pueden salir traducidos, y cambian de un navegador a otro (la de red, la de las cabeceras de cada petición…): busca la que enseña las peticiones.
 
 La pestaña **Red** muestra **una fila por cada petición** que hace la página mientras la tienes abierta (si la abres con la página ya cargada, recarga para verlas). En cada fila, el **método**, la **dirección**, el **código de estado**, el tipo, el tamaño y el tiempo que ha tardado. Si pulsas en una, ves sus **cabeceras** (las de la petición y las de la respuesta) y su **cuerpo**.
 
@@ -307,7 +310,7 @@ El navegador solo hace `GET` cuando escribes una dirección, y esconde las cabec
 
 - **En Linux** viene con casi todas las distribuciones (si no, se instala con su gestor de paquetes).
 - **En macOS** viene con el sistema.
-- **En Git Bash** viene con Git for Windows (sus notas de versión dicen cuál trae). Windows 10 y 11 traen además su propio `curl.exe`.
+- **En Git Bash** viene con Git for Windows (sus notas de versión dicen cuál trae: la 2.56.1, la última a 16 de noviembre de 2026, trae la 8.23.0). Windows 10 y 11 traen además su propio `curl.exe`. **Usa siempre Git Bash**: en PowerShell, `curl` puede ser el nombre de otra orden, que no funciona igual.
 
 Ya lo usaste en [06.02](02-puertos-y-localhost.md#112-responde-alguien-comprobarlo-con-curl) para saber si responde un servidor. Su versión la ves con `curl --version`, como hiciste con Git en [02.03](../fase-02-tu-ordenador/03-instalar-programas-y-path.md). Las salidas de este módulo son de la versión 8.18.0; la tuya puede ser otra, y lo que enseña el módulo funciona igual.
 
@@ -325,7 +328,7 @@ Ya lo usaste en [06.02](02-puertos-y-localhost.md#112-responde-alguien-comprobar
 
 Detalles que conviene saber de cada una (de la documentación de `curl`, `man curl`):
 
-- **`-i`** se llama en su forma larga `--show-headers` desde la versión 8.10.0; antes se llamaba `--include`, y los dos nombres funcionan.
+- **`-i`** se llama en su forma larga `--include`, que funciona en todas las versiones; desde la 8.10.0 se llama también `--show-headers`, que en versiones anteriores (como la 8.5.0 de Ubuntu 24.04, a 16 de noviembre de 2026) no existe, y algunos sistemas traen todavía una de ellas. Usa `-i` y no tendrás que pensarlo.
 - **La barra de progreso** sale cuando el cuerpo no va a la pantalla: si lo guardas con `-o` o lo pasas por una [tubería](../fase-03-herramientas/02-terminal-sacarle-partido.md#15-tuberías-la-salida-de-una-orden-es-la-entrada-de-otra). Por eso `-s` va casi siempre junto a `-o` o a una tubería ([error típico 3.5](#35-la-barra-de-progreso-que-aparece-al-guardar)).
 - **`-w`** escribe lo que le pides **después** del cuerpo. Con `-o /dev/null` y `-s` te quedas solo con el código, como en [06.02](02-puertos-y-localhost.md#112-responde-alguien-comprobarlo-con-curl): `000` si no responde nadie, y el código de salida de `curl` (7 o 35) dice por qué.
 - **`-d`** envía los datos con la cabecera `Content-Type: application/x-www-form-urlencoded`, la de los formularios. Si envías JSON, añade `-H 'Content-Type: application/json'`, para que el servidor sepa qué le llega. Con **`-d @fichero`**, los datos salen de ese fichero (quitando sus saltos de línea, que en un JSON no cambian nada): un JSON largo se escribe mejor en un fichero que en la orden.
@@ -361,7 +364,7 @@ Muchas API no se pueden usar sin identificarse: el servicio quiere saber quién 
 curl -H "Authorization: Bearer $CLAVE_TIEMPO" 'https://api.tiempo.example.com/prevision?ciudad=Zaragoza'
 ```
 
-(Cada API dice en su documentación en qué cabecera va: `Authorization` es la más común, y otras usan una suya, como `X-API-Key`.)
+(Cada API dice en su documentación en qué cabecera va: `Authorization` es la más común, y otras usan una suya, como `X-API-Key`. `Bearer`, «portador», es la palabra que esa cabecera pone delante de la clave: vale para quien la lleve.)
 
 Una clave de API es un [secreto](../glosario.md#secreto), igual que el *token* de GitHub de [05.03](../fase-05-git-y-github/03-github.md#14-cómo-sabe-github-que-eres-tú-https): **quien la tenga, es tú** para ese servicio, y lo que haga con ella (miles de peticiones, por ejemplo) te lo cobran o te lo bloquean a ti. Por eso:
 
@@ -400,7 +403,7 @@ La API de la biblioteca, tal como la describe su `servidor.json`:
 
 ### 2.1. Tu primera petición con curl
 
-**Situación real:** Lucía lleva la biblioteca de su barrio y un voluntario le ha preparado una API. Antes de nada, quiere comprobar que responde y ver la ficha de un libro.
+**Situación real:** Beatriz lleva la biblioteca de su barrio y un voluntario le ha preparado una API. Antes de nada, quiere comprobar que responde y ver la ficha de un libro.
 
 **En tu terminal** (`sesion.txt`):
 
@@ -437,7 +440,7 @@ Content-Length: 90
 
 ### 2.2. Una colección, un elemento y uno que no existe
 
-**Situación real:** Lucía quiere ver todos los libros, solo los que se pueden prestar y qué pasa si pide uno que no está.
+**Situación real:** Beatriz quiere ver todos los libros, solo los que se pueden prestar y qué pasa si pide uno que no está.
 
 **En tu terminal** (`sesion.txt`):
 
@@ -498,7 +501,7 @@ Content-Length: 45
 
 ### 2.3. Solo el código de estado
 
-**Situación real:** Lucía quiere comprobar rápido si unas direcciones responden bien, sin leer el cuerpo de cada una.
+**Situación real:** Beatriz quiere comprobar rápido si unas direcciones responden bien, sin leer el cuerpo de cada una.
 
 **En tu terminal** (`sesion.txt`):
 
@@ -521,7 +524,7 @@ $ curl -s -o /dev/null -w '%{http_code} %{content_type}\n' http://localhost:8080
 
 ### 2.4. Guardar la respuesta en un fichero
 
-**Situación real:** Lucía quiere guardar la lista de libros para trabajar con ella sin volver a pedirla, y guardar también una respuesta entera, con sus cabeceras, para enseñársela al voluntario.
+**Situación real:** Beatriz quiere guardar la lista de libros para trabajar con ella sin volver a pedirla, y guardar también una respuesta entera, con sus cabeceras, para enseñársela al voluntario.
 
 **En tu terminal** (`sesion.txt`):
 
@@ -552,7 +555,7 @@ HTTP/1.1 200 OK
 
 ### 2.5. Crear, cambiar y borrar
 
-**Situación real:** han donado *La Regenta* a la biblioteca. Lucía la da de alta, marca *Niebla* como prestado y prueba a borrarlo. Al final, por curiosidad, intenta borrar la colección entera.
+**Situación real:** han donado *La Regenta* a la biblioteca. Beatriz la da de alta, marca *Niebla* como prestado y prueba a borrarlo. Al final, por curiosidad, intenta borrar la colección entera.
 
 **En tu terminal** (`sesion.txt`):
 
@@ -772,7 +775,7 @@ $ echo '{"titulo": "Niebla"}'
 
 ## 5. Ejercicios prácticos resueltos
 
-> **💡 Consejo:** intenta cada ejercicio **antes** de abrir las pistas y la solución. Los que usan el servidor de prueba no los puedes ejecutar tal cual en tu ordenador: escribe las órdenes y **predice** la respuesta a partir de la descripción de la API (o de su `servidor.json`), y compara después con la salida de la solución, que está comprobada. Los ejercicios 3, 6 y 7 sí los puedes hacer en tu terminal.
+> **💡 Consejo:** intenta cada ejercicio **antes** de abrir las pistas y la solución. Los que usan el servidor de prueba no los puedes ejecutar tal cual en tu ordenador: escribe las órdenes y **predice** la respuesta a partir de la descripción de la API (o de su `servidor.json`), y compara después con la salida de la solución, que está comprobada. Los ejercicios 3, 6 y 7 sí los puedes hacer en tu terminal, y el 4, en parte, con las respuestas guardadas de su carpeta.
 
 ### 🟢 Básico
 
@@ -964,7 +967,7 @@ Content-Type: application/json
 | Método y ruta | Responde |
 |---|---|
 | `GET /peliculas` | La cartelera: la lista de películas, con su `id`, su `titulo`, su duración en `minutos` y sus `sesiones` |
-| `GET /peliculas/{id}` | Una película (en el servidor de prueba, solo existe la 3) |
+| `GET /peliculas/{id}` | Una película (en el servidor de prueba, solo existe la 3). `{id}` quiere decir «aquí va el número»: `/peliculas/3` |
 | `POST /reservas` | Crea una reserva |
 
 Con el servidor en `http://localhost:8080`, escribe las órdenes de `curl` para:
@@ -976,6 +979,8 @@ Con el servidor en `http://localhost:8080`, escribe las órdenes de `curl` para:
 5. Contar cuántas películas hay en `cartelera.json`.
 
 Antes de mirar la solución, predice qué responderá cada una (el `servidor.json` de [la carpeta del ejercicio](codigo/03-la-web-http-y-apis/ejercicios/ej04-pregunta-a-la-api-del-cine/) tiene las respuestas).
+
+**En tu ordenador**, sin el servidor del cine, trabaja sobre dos respuestas ya guardadas que están en esa misma carpeta: `respuesta-pelicula-3.txt`, la respuesta entera a `GET /peliculas/3` (guardada con `curl -i` y sin los `\r`, como la del ejercicio 3), y `cartelera.json`, la cartelera tal como la deja el paso 4. Haz el paso 2 leyendo `respuesta-pelicula-3.txt` y el 5 sobre `cartelera.json`. Y para practicar en vivo el paso 3, pedir solo el código de una dirección que no existe, usa la API de GitHub, si tienes internet: `curl -s -o /dev/null -w '%{http_code}\n' https://api.github.com/users/octocat/no-existe`, que debe dar `404`.
 
 <details>
 <summary>Pista 1</summary>
@@ -1047,7 +1052,7 @@ Content-Length: 103
 $ curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/peliculas/7
 404
 $ curl -s -o cartelera.json http://localhost:8080/peliculas
-$ ls
+$ ls cartelera.json
 cartelera.json
 $ grep -c '"id"' cartelera.json
 3
@@ -1056,6 +1061,40 @@ $ grep -c '"id"' cartelera.json
 📁 **Código:** [`codigo/03-la-web-http-y-apis/ejercicios/ej04-pregunta-a-la-api-del-cine/`](codigo/03-la-web-http-y-apis/ejercicios/ej04-pregunta-a-la-api-del-cine/)
 
 **Resultado:** la cartelera tiene 3 películas; la 3 es *Campeones*, de 124 minutos, con sesiones a las 16:15 y a las 22:00; la 7 no existe (`404`); y `cartelera.json` guarda la lista, con 3 películas.
+
+**En tu ordenador**, con las respuestas guardadas:
+
+**En tu terminal** (`sesion-en-tu-ordenador.txt`):
+
+```text
+$ cat respuesta-pelicula-3.txt
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 103
+
+{
+  "id": 3,
+  "titulo": "Campeones",
+  "minutos": 124,
+  "sesiones": [
+    "16:15",
+    "22:00"
+  ]
+}
+$ grep -c '"id"' cartelera.json
+3
+```
+
+📁 **Código:** [`codigo/03-la-web-http-y-apis/ejercicios/ej04-pregunta-a-la-api-del-cine/`](codigo/03-la-web-http-y-apis/ejercicios/ej04-pregunta-a-la-api-del-cine/)
+
+Es lo mismo que escriben `curl -i` en el paso 2 y `grep -c` en el 5 con el servidor: las respuestas guardadas son las que da el servidor de prueba. Y la consulta en vivo a GitHub, con una salida **de ejemplo** del 16 de noviembre de 2026:
+
+```text
+$ curl -s -o /dev/null -w '%{http_code}\n' https://api.github.com/users/octocat/no-existe
+404
+```
+
+La cuenta `octocat` existe, pero `/users/octocat/no-existe` no es ninguna ruta de su API: `404`, como la película 7 del cine.
 
 **Errores frecuentes al resolverlo:**
 
@@ -1069,7 +1108,7 @@ $ grep -c '"id"' cartelera.json
 
 #### Ejercicio 5 · La API de un club de pádel
 
-**Situación real:** el Club de Pádel Norte (el del [ejercicio 6 de 05.01](../fase-05-git-y-github/01-git-fundamentos.md#ejercicio-6--una-contraseña-dentro-del-repositorio)) quiere una API para que sus socias reserven pista desde el móvil con su aplicación de reservas. Necesitan poder:
+**Situación real:** el Club de Pádel Norte (el del [ejercicio 6 de 05.01](../fase-05-git-y-github/01-git-fundamentos.md#ejercicio-6--una-contraseña-dentro-del-repositorio)) quiere una API para que sus socios reserven pista desde el móvil con su aplicación de reservas. Necesitan poder:
 
 1. Ver las pistas del club.
 2. Ver una pista concreta (si es cubierta o no).
@@ -1103,12 +1142,12 @@ Primero, los recursos: ¿de qué cosas habla el club? De **pistas** y de **reser
 | 1. Ver las pistas | `GET /pistas` | `200`, con la lista | No |
 | 2. Ver una pista | `GET /pistas/2` | `200`, con la pista | No |
 | 3. Las reservas de un día | `GET /reservas?fecha=2026-11-20` | `200`, con la lista | No |
-| 4. Reservar | `POST /reservas` | `201`, con `Location: /reservas/31` | Sí: pista, fecha, hora y socia, en JSON |
+| 4. Reservar | `POST /reservas` | `201`, con `Location: /reservas/31` | Sí: pista, fecha, hora y socio, en JSON |
 | 5. Anular una reserva | `DELETE /reservas/31` | `204`, sin cuerpo | No |
 
 Y `DELETE /pistas/2` respondería **`405 Method Not Allowed`**, con la cabecera `Allow` diciendo qué métodos admite esa ruta (en este diseño, `GET`).
 
-Esta API, puesta en el servidor de prueba (su `servidor.json` está en la carpeta, junto a `reserva.json`, la reserva de Elena Ruiz para la pista 2 el 20 de noviembre a las 19:30), responde así:
+Esta API, puesta en el servidor de prueba (su `servidor.json` está en la carpeta, junto a `reserva.json`, la reserva de Sofía Herrero para la pista 2 el 20 de noviembre a las 19:30), responde así:
 
 **En tu terminal** (`sesion.txt`):
 
@@ -1120,21 +1159,21 @@ $ curl 'http://localhost:8080/reservas?fecha=2026-11-20'
     "pista": 1,
     "fecha": "2026-11-20",
     "hora": "18:00",
-    "socia": "Marta Vidal"
+    "socio": "Raúl Medina"
   }
 ]
 $ curl -i -H 'Content-Type: application/json' -d @reserva.json http://localhost:8080/reservas
 HTTP/1.1 201 Created
 Content-Type: application/json
 Location: /reservas/31
-Content-Length: 98
+Content-Length: 102
 
 {
   "id": 31,
   "pista": 2,
   "fecha": "2026-11-20",
   "hora": "19:30",
-  "socia": "Elena Ruiz"
+  "socio": "Sofía Herrero"
 }
 $ curl -i -X DELETE http://localhost:8080/reservas/31
 HTTP/1.1 204 No Content
@@ -1162,10 +1201,10 @@ $ curl -s -o /dev/null -w '%{http_code}\n' -X DELETE http://localhost:8080/pista
 
 #### Ejercicio 6 · Vigila varias direcciones
 
-**Situación real:** la tienda online de Raúl ha tenido caídas y quiere un script que compruebe varias direcciones de una vez. Escribe `vigilar.sh`, que:
+**Situación real:** la tienda en línea de Raúl ha tenido caídas y quiere un script que compruebe varias direcciones de una vez. Escribe `vigilar.sh`, que:
 
 1. Reciba las direcciones como [argumentos](../fase-03-herramientas/02-terminal-sacarle-partido.md#115-argumentos-lo-que-recibe-un-script) (tantas como quieras).
-2. Si no recibe ninguna, explique cómo se usa por la salida de error y termine con el código 1.
+2. Si no recibe ninguna, explique cómo se usa por la salida de error y termine con el código 2, como los scripts de [03.02](../fase-03-herramientas/02-terminal-sacarle-partido.md#29-un-script-con-argumentos).
 3. Para cada dirección, escriba `OK` o `ALERTA`, el código de estado y la dirección. Es `OK` solo si el código es `200`.
 4. Al final, diga cuántas direcciones han dado problemas de cuántas.
 
@@ -1197,7 +1236,7 @@ Recorre los argumentos con `for direccion in "$@"` y cuenta los problemas con `$
 
 if [ $# -eq 0 ]; then
     echo "Uso: bash vigilar.sh DIRECCIÓN [DIRECCIÓN...]" >&2
-    exit 1
+    exit 2
 fi
 
 problemas=0
@@ -1234,7 +1273,7 @@ Direcciones con problemas: 2 de 2
 $ bash vigilar.sh
 Uso: bash vigilar.sh DIRECCIÓN [DIRECCIÓN...]
 $ echo $?
-1
+2
 ```
 
 📁 **Código:** [`codigo/03-la-web-http-y-apis/ejercicios/ej06-vigilar-varias-direcciones/`](codigo/03-la-web-http-y-apis/ejercicios/ej06-vigilar-varias-direcciones/)
@@ -1293,7 +1332,7 @@ Para la 4: una vez por minuto son 60 peticiones en una hora. ¿Y si además hace
 1. **`HTTP/2` y `200`**: ha ido bien. No sale `OK` porque en HTTP/2 la línea de estado no lleva texto, solo el número ([apartado 1.7](#17-los-códigos-de-estado)).
 2. **JSON en UTF-8**: lo dice `content-type: application/json; charset=utf-8`.
 3. **60 por hora** (`x-ratelimit-limit: 60`), según la documentación de GitHub a 16 de noviembre de 2026, contadas por tu IP. En la salida de ejemplo quedaban 59 (`x-ratelimit-remaining`). Entre tu primera petición y la segunda, `remaining` baja en 1 y `used` sube en 1; `reset` se queda igual, porque la hora todavía no ha terminado.
-4. **Agotaría el límite**: 60 peticiones en una hora, más cualquier otra que hagas desde tu red, y GitHub dejaría de responder con los datos hasta la hora de `reset`. Según su documentación, respondería **`403` o `429`** (`429 Too Many Requests` es el código pensado para eso). Un script así tiene que preguntar menos a menudo, o identificarse con un *token* (con más límite), guardado en un `.env`, nunca en el código ([apartado 1.15](#115-las-claves-de-una-api-fuera-del-código)).
+4. **Iría justo en el límite**: 60 peticiones por hora son exactamente las que permite GitHub sin identificarte. En cuanto hubiera **una más** desde tu red (otra a mano, la de otro equipo de casa), `remaining` llegaría a 0 y GitHub dejaría de responder con los datos hasta la hora de `reset`. Según su documentación, respondería **`403` o `429`** (`429 Too Many Requests` es el código pensado para eso). Un script así tiene que preguntar menos a menudo, o identificarse con un *token* (con más límite), guardado en un `.env`, nunca en el código ([apartado 1.15](#115-las-claves-de-una-api-fuera-del-código)).
 5. **8 repositorios públicos** en la salida de ejemplo (`public_repos`; el tuyo puede ser otro), y la cuenta se creó el **25 de enero de 2011** (`created_at`). La fecha viene como `2011-01-25T18:44:36Z`: año-mes-día, una `T` que separa la hora y una `Z` que dice que es la hora universal (UTC). Es la forma habitual de escribir fechas en las API: se ordena bien y no depende del país.
 6. Cualquiera de estas: responde con **HTTP/2** y no con HTTP/1.1; las cabeceras van **en minúsculas**; manda **muchas más cabeceras** (`date`, `server`, `cache-control` y las suyas, `x-…`); y sus datos **cambian con el tiempo**, mientras que el de prueba responde siempre lo mismo ([apartado 1.14](#114-el-servidor-de-prueba-y-los-servidores-de-verdad)).
 

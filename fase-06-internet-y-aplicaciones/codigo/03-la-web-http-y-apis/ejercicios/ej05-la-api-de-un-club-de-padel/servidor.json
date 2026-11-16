@@ -22,7 +22,7 @@
       "ruta": "/reservas?fecha=2026-11-20",
       "estado": 200,
       "cuerpo": [
-        {"id": 30, "pista": 1, "fecha": "2026-11-20", "hora": "18:00", "socia": "Marta Vidal"}
+        {"id": 30, "pista": 1, "fecha": "2026-11-20", "hora": "18:00", "socio": "Raúl Medina"}
       ]
     },
     {
@@ -30,7 +30,7 @@
       "ruta": "/reservas",
       "estado": 201,
       "cabeceras": {"Location": "/reservas/31"},
-      "cuerpo": {"id": 31, "pista": 2, "fecha": "2026-11-20", "hora": "19:30", "socia": "Elena Ruiz"}
+      "cuerpo": {"id": 31, "pista": 2, "fecha": "2026-11-20", "hora": "19:30", "socio": "Sofía Herrero"}
     },
     {
       "metodo": "DELETE",
