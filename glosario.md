@@ -513,7 +513,7 @@ Dirección de los bloques 10.x, 172.16-31.x o 192.168.x, que solo vale dentro de
 
 ### IP pública
 
-Dirección única en internet, a la que se puede llegar desde cualquier sitio; en casa, la tiene el router por fuera. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#18-ip-privada-e-ip-pública).
+Dirección única en internet, a la que se puede llegar desde cualquier sitio; en casa, normalmente la tiene el router por fuera. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#18-ip-privada-e-ip-pública).
 
 ### Issue
 

@@ -84,7 +84,7 @@ En internet hay protocolos para cada cosa, y se apoyan unos en otros como los pi
 | **HTTP** y **HTTPS** | Pedir y entregar páginas web y datos | [06.03](03-la-web-http-y-apis.md) |
 | **SSH** | Conectarse de forma segura a otro equipo | Lo usaste con GitHub en [05.03](../fase-05-git-y-github/03-github.md#15-ssh-un-par-de-claves) |
 
-Los protocolos de internet son **normas públicas**: las publica la IETF en documentos llamados [RFC](../glosario.md#rfc), los mismos que viste para JSON o CSV. Por eso un móvil de una marca, un servidor de otra y un router de una tercera se entienden sin conocerse.
+Los protocolos de internet son **normas públicas**: las publica la IETF (*Internet Engineering Task Force*, el grupo que redacta las normas técnicas de internet) en documentos llamados [RFC](../glosario.md#rfc), los mismos que viste para JSON o CSV. Por eso un móvil de una marca, un servidor de otra y un router de una tercera se entienden sin conocerse.
 
 ### 1.5. La dirección IP
 
@@ -188,14 +188,18 @@ Una **IP pública** es una dirección **única en todo internet**, a la que se p
 
 ¿Y la IP pública de tu casa es siempre la misma? Depende del proveedor: en muchas conexiones de casa **cambia de vez en cuando** (por ejemplo, al reiniciar el router), y las fijas se suelen contratar aparte. Los servidores, en cambio, tienen direcciones fijas.
 
+> **📌 Nota:** algunos proveedores, sobre todo los de datos del móvil, comparten también su dirección pública entre muchos clientes, con otro NAT en su propia red (el NAT, en el apartado siguiente). Entonces el lado de fuera de tu router no tiene una dirección pública, y la que ven las webs es la del proveedor. No cambia nada de lo que haces en este curso.
+
 ### 1.9. NAT: muchos equipos con una sola dirección pública
 
 Si los equipos de casa tienen direcciones privadas, a las que no se puede llegar desde internet, ¿cómo le llega a tu portátil la página que ha pedido? Gracias al **NAT** (*Network Address Translation*, «traducción de direcciones de red»), que en una frase es esto: **el router cambia la dirección privada de cada paquete que sale por su dirección pública, apunta quién lo mandó y, cuando llega la respuesta, se la entrega a ese equipo**.
 
 Es como la recepción de una empresa: todas las cartas salen con la dirección de la empresa, y la recepcionista sabe a qué mesa llevar cada respuesta. No necesitas saber más de NAT; lo que importa son sus dos consecuencias:
 
-- **Toda tu casa sale a internet con una sola IP pública.** Por eso sobran direcciones IPv4 para todos.
-- **Desde fuera no se puede empezar una conexión hacia tu portátil**: el router no sabría a qué equipo de casa dársela, porque nadie la pidió. Eso protege tu red (y es la razón por la que, si un día quieres que alguien de fuera entre en un programa de tu ordenador, hay que configurar el router; no lo necesitas en este curso).
+- **Toda tu casa sale a internet con una sola IP pública.** Así se gastan muchas menos direcciones IPv4: una por casa, no una por aparato.
+- **Desde fuera no se puede empezar una conexión hacia tu portátil**: el router no sabría a qué equipo de casa dársela, porque nadie la pidió. (Si un día quieres que alguien de fuera entre en un programa de tu ordenador, hay que configurar el router; no lo necesitas en este curso.)
+
+> **📌 Nota:** con **IPv6** no hace falta NAT: hay direcciones de sobra, y cada equipo de casa tiene la suya, pública. Lo que impide entonces que alguien de fuera empiece una conexión con tu portátil es el **cortafuegos del router** ([apartado 1.14](#114-el-cortafuegos)), que deja entrar solo las respuestas a lo que se pidió desde dentro. Por eso el NAT no es una medida de seguridad: quien te protege es el cortafuegos.
 
 ### 1.10. Direcciones especiales
 
@@ -204,7 +208,7 @@ Además de las privadas, hay algunas direcciones que tienen un significado fijo.
 | Dirección | Qué es |
 |---|---|
 | `127.0.0.1` (y `::1` en IPv6) | **Tu propio equipo.** Lo que mandas a esa dirección no sale a ninguna red: vuelve a tu ordenador. Tiene un nombre, `localhost`, y la vas a usar muchísimo cuando programes, porque es donde escucharán tus propios servidores de prueba. La verás a fondo en [06.02 Puertos y localhost](02-puertos-y-localhost.md#15-localhost-tu-propio-ordenador) |
-| `169.254.x.x` | Una dirección que **se pone el equipo a sí mismo cuando no ha conseguido que el router le dé una**. Si ves una así en tus ajustes de red, el problema no está en internet: tu equipo no se entiende con el router (el cable, la wifi o el propio router) |
+| `169.254.x.x` | Una dirección que **se pone el equipo a sí mismo cuando no ha conseguido que el router le dé una** (Windows y macOS; en Linux, lo normal es que se quede **sin dirección IPv4**). Si ves una así en tus ajustes de red, o ninguna, el problema no está en internet: tu equipo no se entiende con el router (el cable, la wifi o el propio router) |
 | `192.0.2.x`, `198.51.100.x`, `203.0.113.x` y `2001:db8:…` | Las **de documentación**, que no son de nadie y se usan en los ejemplos ([nota del apartado 1.5](#15-la-dirección-ip)) |
 
 ### 1.11. DNS: de nombres a números
@@ -237,7 +241,7 @@ www.tienda.example.com
 
 Y cada nivel tiene sus propios servidores DNS, que saben quién lleva el nivel de debajo:
 
-- Los **servidores raíz** saben quién lleva cada dominio de primer nivel (`.com`, `.es`…). Son 13 identidades, de la A a la M, llevadas por 12 organizaciones y copiadas en cientos de sitios del mundo (según root-servers.org, a 16 de noviembre de 2026).
+- Los **servidores raíz** saben quién lleva cada dominio de primer nivel (`.com`, `.es`…).
 - Los servidores de **`.com`** saben quién lleva `example.com`.
 - Los servidores de **`example.com`** saben la dirección de `example.com`, de `www.example.com` y de todo lo que cuelga de él. Se les llama **autoritativos**: son los que tienen la respuesta oficial.
 
@@ -258,7 +262,7 @@ IP lleva cada paquete hasta el equipo de destino, pero **no garantiza nada más*
 | ¿Llega todo? | **Sí**: lo que se pierde se vuelve a mandar solo | **No está garantizado**: una postal se puede perder sin que nadie se entere |
 | ¿En orden? | **Sí** | No necesariamente |
 | ¿Rápido? | Algo más lento: conectar y confirmar lo recibido lleva tiempo | Más rápido y ligero |
-| Se usa en | Casi todo: la web, el correo, Git, SSH, las descargas | Lo que tiene prisa: videollamadas, voz, juegos en línea, retransmisiones en directo, y la mayoría de las preguntas al DNS |
+| Se usa en | Casi todo: la web, el correo, Git, SSH, las descargas | Lo que tiene prisa: videollamadas, voz, juegos en línea y la mayoría de las preguntas al DNS |
 
 **¿Por qué alguien querría un protocolo que puede perder datos?** Porque a veces **un dato que llega tarde ya no sirve**. En una videollamada, si se pierde un trocito de imagen, es mejor seguir con el siguiente que parar a esperar el perdido: sería un salto atrás en el tiempo. En una descarga, en cambio, no puede faltar ni un byte: TCP.
 
@@ -277,13 +281,13 @@ Las reglas suelen distinguir **dos direcciones**:
 
 Y hay cortafuegos en dos sitios:
 
-- **En el router**: protege a toda la red de casa de lo que viene de internet. Junto con el NAT, hace que nadie de fuera pueda empezar una conexión con tus equipos.
+- **En el router**: protege a toda la red de casa de lo que viene de internet: deja entrar las respuestas a lo que se pidió desde dentro y para lo demás, tanto con IPv4 como con IPv6.
 - **En tu propio ordenador**: protege al equipo incluso de los demás equipos de **su misma red**. Importa sobre todo en redes que no son tuyas: la wifi de una cafetería, de un hotel o de una biblioteca, donde cualquiera conectado podría intentar entrar en tu portátil.
 
 En cada sistema (según la documentación oficial, a 16 de noviembre de 2026):
 
 - **Windows** trae su cortafuegos **activado de serie**, y usa **perfiles de red**: **público** (el que pone por defecto a las redes que no conoce, el más estricto), **privado** (para la red de casa o del trabajo, que es de confianza) y **dominio** (el de las redes de algunas empresas). Por eso, al conectarte a una wifi nueva, Windows la trata como pública hasta que digas otra cosa.
-- **macOS** trae un cortafuegos que se activa y se ajusta en **System Settings > Network > Firewall** (con el sistema en español, en los ajustes de **Red**), según la guía de Apple.
+- **macOS** trae un cortafuegos que se activa y se ajusta en **Ajustes del Sistema > Red > Firewall**, según la guía de Apple en español. Allí ves si lo tienes activado.
 - **Linux** tiene cortafuegos, y cada distribución lo trae activado o no y con su propia herramienta. En un servidor, configurarlo es parte del trabajo; en tu portátil de estudio, no necesitas tocarlo.
 
 Lo verás de cerca en [06.02](02-puertos-y-localhost.md#18-el-cortafuegos-pregunta): cuando un programa de tu ordenador quiere **recibir** conexiones (hacer de servidor), el cortafuegos del sistema suele **preguntarte** si le dejas. Ahí entenderás qué te está pidiendo.
@@ -327,6 +331,8 @@ En Linux, las salidas de `ping` suelen estar **en inglés** aunque el sistema es
 
 En los tres, lo importante es lo mismo: **si llegan respuestas, cuánto tardan y cuántas se pierden**.
 
+> **📌 Nota para Git Bash:** escribe `ping example.com` (o `ping -n 4 example.com`), **no** `ping -c 4`: en el `ping` de Windows, `-c` no es el número de paquetes, sino otra opción, y no hará lo que esperas. Tampoco copies la forma con barra de la documentación de Microsoft (`/n`): en Git Bash, una palabra que empieza por `/` puede tomarse como una ruta; usa `-n`. Su salida tiene otra forma, pero dice lo mismo: una línea por cada **respuesta** (sin numerar: cuéntalas), con su tiempo; una línea de aviso por cada paquete **perdido**, y al final un **resumen** con los paquetes enviados, recibidos y perdidos. Y es posible que las letras con tilde salgan cambiadas por `�`: `ping`, `nslookup`, `ipconfig` y `netstat` son programas de Windows y escriben en otra [codificación](../fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#110-caracteres-estropeados-mojibake) que la que espera la ventana de Git Bash. No has roto nada: lee lo que entiendas y fíjate en los números.
+
 ### 1.16. nslookup: preguntar al DNS
 
 La segunda orden es **`nslookup`** (de *name server lookup*, «consulta al servidor de nombres»): le pregunta al DNS qué dirección tiene un nombre, y te enseña la respuesta.
@@ -340,7 +346,7 @@ Su salida tiene dos partes, como verás en el [ejemplo 2.6](#26-preguntar-al-dns
 - **Arriba, `Server` y `Address`: a quién ha preguntado.** Es tu servidor DNS (a menudo, el router: `192.168.1.1`). El `#53` del final es el puerto en el que escuchan los servidores DNS ([06.02](02-puertos-y-localhost.md#11-una-dirección-ip-no-basta-el-puerto) te explicará qué es un puerto).
 - **Abajo, la respuesta**: `Name` (el nombre preguntado) y `Address` (su dirección). Puede haber varias, por ejemplo una IPv4 y una IPv6. La línea `Non-authoritative answer` («respuesta no autoritativa») quiere decir que no contesta el servidor oficial del dominio, sino tu servidor DNS, que se lo ha preguntado a él o lo tenía guardado: es lo normal.
 
-`nslookup` existe en Linux, en macOS y en Windows (y por tanto en Git Bash, donde es el de Windows, con los mensajes en el idioma de tu Windows y otro formato). Sus salidas, como las de `ping`, son **de ejemplo** en este módulo.
+`nslookup` existe en Linux, en macOS y en Windows (y por tanto en Git Bash, donde es el de Windows, con los mensajes en el idioma de tu Windows, otro formato y, a veces, las tildes cambiadas, como `ping`: mira la nota para Git Bash del [apartado 1.15](#115-ping-me-oyes)). Lo que importa es lo mismo: si **alguien contesta** con una dirección, si contesta que **el nombre no existe** o si **nadie contesta** porque se agota el tiempo. Sus salidas, como las de `ping`, son **de ejemplo** en este módulo.
 
 > **📌 Nota:** en algunos Linux, como Ubuntu, `nslookup` dice que ha preguntado a `127.0.0.53`. Es un pequeño programa de tu propio equipo que hace de intermediario y pasa la pregunta al servidor DNS de la red. Hay más órdenes para preguntar al DNS (`dig` y `host`, en Linux y macOS), con más detalle; `nslookup` es la que está en los tres sistemas.
 
@@ -389,11 +395,11 @@ Dirección IPv6 .......... 2001:db8:1:1::37
 - **La puerta de enlace** es el **router**: `192.168.1.1`.
 - **El servidor DNS** también es el router, que hace de intermediario con el del proveedor.
 - La **máscara de subred** es lo que se dejó fuera en el [apartado 1.17](#117-lo-que-verás-después): puedes ignorarla.
-- Si la dirección IPv4 empezara por **`169.254.`**, el portátil no habría conseguido dirección del router ([apartado 1.10](#110-direcciones-especiales)).
+- Si la dirección IPv4 empezara por **`169.254.`** (o, en Linux, si no hubiera ninguna), el portátil no habría conseguido dirección del router ([apartado 1.10](#110-direcciones-especiales)).
 
-> **📌 Nota:** también se puede ver desde la terminal, y lo verás en tutoriales: en Windows, `ipconfig` (que funciona también en Git Bash, porque es un programa de Windows); en Linux, `ip address`; en macOS, `ifconfig`. Sus salidas son largas y muy distintas en cada sistema, con datos de todas las conexiones del equipo; no las necesitas.
+> **📌 Nota:** también se puede ver desde la terminal, y lo verás en tutoriales: en Windows, `ipconfig` (que funciona también en Git Bash, porque es un programa de Windows, con las tildes a veces cambiadas, como `ping`); en Linux, `ip address`; en macOS, `ifconfig`. Sus salidas son largas y muy distintas en cada sistema, con datos de todas las conexiones del equipo; no las necesitas.
 
-¿Y la **IP pública**? Esa no está en tu ordenador, sino en el router (en su lado de fuera). Puedes verla en su página de configuración, y la conoce cualquier web que visites, porque es la dirección desde la que le llegan tus peticiones.
+¿Y la **IP pública**? Esa no está en tu ordenador, sino en el router (en su lado de fuera). Puedes verla en su página de configuración (salvo que tu proveedor comparta la suya, como dice la nota del [apartado 1.8](#18-ip-privada-e-ip-pública)), y la conoce cualquier web que visites, porque es la dirección desde la que le llegan tus peticiones.
 
 ### 2.2. Qué dirección lleva cada paquete
 
@@ -600,7 +606,7 @@ En texto: (1) el portátil pregunta al router qué dirección tiene `example.com
 
 **Por qué ocurre:** la wifi es solo **el tramo entre tu equipo y el router** ([apartado 1.7](#17-tu-red-de-casa-y-el-router)). Puedes estar perfectamente conectado a él y que sea el **router** el que no tiene salida a internet (una avería del proveedor, un cable de fibra suelto…). O al revés: el router tiene internet y es tu equipo el que no se entiende con él.
 
-**Cómo se arregla:** separa los tramos. Si **otros equipos** de casa tampoco tienen internet, el problema es del router o del proveedor: mira las luces del router, reinícialo y, si sigue, llama al proveedor. Si solo falla **tu equipo**, el problema está entre él y el router: mira su dirección ([ejemplo 2.1](#21-dónde-ver-tu-dirección-y-la-de-tu-router); una `169.254.x.x` lo delata) y haz `ping` al router ([ejemplo 2.3](#23-ping-al-router)).
+**Cómo se arregla:** separa los tramos. Si **otros equipos** de casa tampoco tienen internet, el problema es del router o del proveedor: mira las luces del router, reinícialo y, si sigue, llama al proveedor. Si solo falla **tu equipo**, el problema está entre él y el router: mira su dirección ([ejemplo 2.1](#21-dónde-ver-tu-dirección-y-la-de-tu-router); una `169.254.x.x`, o ninguna, lo delata) y haz `ping` al router ([ejemplo 2.3](#23-ping-al-router)).
 
 ### 3.2. Creer que si ping no responde, el servidor está caído
 
@@ -614,7 +620,7 @@ En texto: (1) el portátil pregunta al router qué dirección tiene `example.com
 
 **Qué pasa:** un amigo te pide tu dirección para conectarse a un juego que tienes en tu ordenador, le das la `192.168.1.37` que ves en tus ajustes, y no consigue nada. O, al revés, te asustas porque has visto tu dirección `192.168.1.37` en una captura de pantalla de un tutorial.
 
-**Por qué ocurre:** la dirección que ves en tu equipo es la **privada**, que solo vale dentro de tu casa y que tienen millones de personas ([apartado 1.8](#18-ip-privada-e-ip-pública)). Desde fuera, tu casa entera se ve con la **pública** del router, y aun así el NAT no deja empezar conexiones hacia dentro ([apartado 1.9](#19-nat-muchos-equipos-con-una-sola-dirección-pública)).
+**Por qué ocurre:** la dirección que ves en tu equipo es la **privada**, que solo vale dentro de tu casa y que tienen millones de personas ([apartado 1.8](#18-ip-privada-e-ip-pública)). Desde fuera, tu casa entera se ve con la **pública** del router, y aun así el router no deja empezar conexiones hacia dentro: con IPv4 no sabría a qué equipo dársela (el NAT, [apartado 1.9](#19-nat-muchos-equipos-con-una-sola-dirección-pública)), y su cortafuegos las para, también con IPv6 ([apartado 1.14](#114-el-cortafuegos)).
 
 **Cómo se arregla:** aprende a reconocer las privadas (`192.168.`, `10.`, de `172.16.` a `172.31.`): **no son de nadie en particular** y no sirven fuera de su red. Y no abras tu ordenador a internet para un juego o un programa: los servicios de verdad funcionan en servidores con dirección pública, y para probar los tuyos tienes `localhost` ([06.02](02-puertos-y-localhost.md#15-localhost-tu-propio-ordenador)).
 
@@ -957,15 +963,15 @@ Pregúntate: si se pierde un trocito, ¿se puede vivir sin él o hay que esperar
 | 3 | **TCP** | Los commits tienen que llegar enteros (Git va por HTTPS o por SSH, y los dos van sobre TCP) |
 | 4 | **UDP** | Solo importa la última posición; la de hace un instante ya está vieja |
 | 5 | **TCP** | Ni el texto ni el adjunto pueden llegar a medias |
-| 6 | **UDP** | Como la llamada: en directo, lo que llega tarde ya ha pasado |
+| 6 | **Depende** | En teoría, UDP: en directo, lo que llega tarde ya ha pasado. En la práctica, muchas plataformas lo mandan por HTTP, sobre TCP, guardando unos segundos de margen: por eso un partido por internet va unos segundos por detrás de la tele. En una llamada (caso 2) no se puede esperar así, y por eso usa UDP |
 | 7 | **UDP**, normalmente | Una pregunta pequeña y una respuesta pequeña: si se pierde, se vuelve a preguntar, como hace `nslookup` |
 
-**Lo importante:** la pregunta clave es **qué es peor, perder un trozo o esperar por él**. En casi todo lo que guarda datos (ficheros, correos, commits), perder es inaceptable: TCP. En lo que pasa en directo, esperar es peor: UDP.
+**Lo importante:** la pregunta clave es **qué es peor, perder un trozo o esperar por él**. En casi todo lo que guarda datos (ficheros, correos, commits), perder es inaceptable: TCP. En una conversación en directo, esperar es peor: UDP. Y cuando se puede guardar un poco de margen, como en el partido, se puede usar TCP sin que se note.
 
 **Errores frecuentes al resolverlo:**
 
 - Elegir UDP para el caso 1 «porque es más rápido»: un fichero estropeado no sirve, por rápido que llegue.
-- Pensar que el partido en directo (6) es como una descarga: lo es un vídeo guardado que ves cuando quieres, pero en directo manda el tiempo.
+- Contestar el caso 6 como si fuera una llamada: en una llamada no se puede ir unos segundos por detrás, y en un partido sí. Por eso muchas plataformas lo mandan con TCP, y la respuesta «UDP, en teoría» se queda corta.
 - En el caso 7, contestar TCP porque «el DNS es importante»: es importante, pero sus preguntas son tan pequeñas que, si una se pierde, se repite y ya está.
 
 </details>
@@ -1079,7 +1085,7 @@ Para cada caso, decide primero si la conexión es **saliente** (la empieza el po
 <details>
 <summary>Pista 2</summary>
 
-En el caso 2, la conexión tiene que atravesar **dos** cortafuegos y un NAT. En el caso 3, en cambio, el otro equipo está en la **misma red**: el router no está en medio.
+En el caso 2, la conexión tiene que atravesar **dos** cortafuegos (y, con IPv4, un NAT). En el caso 3, en cambio, el otro equipo está en la **misma red**: el router no está en medio.
 
 </details>
 
@@ -1091,7 +1097,7 @@ En el caso 2, la conexión tiene que atravesar **dos** cortafuegos y un NAT. En 
 | # | ¿Pasa? | Quién decide | Por qué |
 |---|---|---|---|
 | 1 | **Pasa** | Ninguno la para | Es **saliente**: la empieza el navegador. La respuesta también pasa, porque es la respuesta a algo que se pidió |
-| 2 | **No pasa** | El **router** (con su NAT y su cortafuegos) | Es **entrante** y viene de internet. El router no sabe a qué equipo de casa dársela, porque nadie la pidió; y aunque llegara, el cortafuegos del portátil la pararía |
+| 2 | **No pasa** | El **cortafuegos del router** (y, con IPv4, además el NAT) | Es **entrante** y viene de internet, y nadie la pidió: el cortafuegos del router la para. Con IPv4, además, el router no sabría a qué equipo de casa dársela. Y aunque llegara, el cortafuegos del portátil la pararía |
 | 3 | **No pasa** | El cortafuegos **del portátil** | Es **entrante**. El otro equipo está en la misma wifi, así que el router de la cafetería no está en medio: solo protege el del portátil, que en una red pública es el más estricto |
 | 4 | **Le preguntará** | El cortafuegos **del portátil** | Que un programa quiera recibir conexiones es justo lo que vigila: el sistema suele preguntar si se lo permite. Lo verás en [06.02](02-puertos-y-localhost.md#18-el-cortafuegos-pregunta) |
 | 5 | **Pasa** | Ninguno la para | Es **saliente**, como la 1, aunque la red sea pública: el perfil público es estricto con lo que **entra**, no con lo que sale |
@@ -1190,7 +1196,7 @@ Para la pregunta 4, repasa qué significan las direcciones que empiezan por `169
 | # | Prueba | Tramo que comprueba | Resultado |
 |---|---|---|---|
 | 1 | `ping` al router | Del ordenador al router | **Bien**: 4 de 4, unos 3 ms |
-| 2 | `ping` a un nombre | El DNS (y, si resolviera, el camino hasta el servidor) | **Mal**: no ha conseguido la dirección del nombre, y no ha mandado nada |
+| 2 | `ping` a un nombre | El DNS (y, si resolviera, el camino hasta el servidor) | **Mal**: no ha conseguido la dirección del nombre, y no ha mandado nada. El mensaje no es el del ejemplo 2.5 («Nombre o servicio desconocido»: el nombre no existe), sino «Fallo temporal en la resolución del nombre»: el sistema no ha obtenido respuesta del DNS. Es la misma diferencia que entre `NXDOMAIN` y `timed out` |
 | 3 | `ping` a una dirección de internet | Del ordenador a internet, sin DNS | **Bien**: 4 de 4, unos 22 ms |
 | 4 | `nslookup` | El servidor DNS (el router) | **Mal**: el router no contesta a las preguntas de DNS |
 
@@ -1203,7 +1209,7 @@ Para la pregunta 4, repasa qué significan las direcciones que empiezan por `169
 3. Si sigue igual, **comprobar si a los demás equipos les pasa lo mismo**. Si les pasa a todos, es el router o el proveedor: **llamar al proveedor** contándole exactamente lo que ha visto («llego a direcciones de internet, pero el DNS del router no contesta»), que les ahorra muchas preguntas.
 4. Si solo le pasara a ese ordenador, revisar sus **ajustes de DNS** (lo normal es tenerlos en automático, para que los dé el router).
 
-**4. El portátil de la profesora tiene otro problema.** Una dirección que empieza por `169.254.` quiere decir que **el portátil no ha conseguido dirección del router** y se ha puesto una él solo. El fallo está **antes** del DNS y antes de internet: entre el portátil y el router. Marta empezaría por ahí: comprobar que el portátil está conectado a la wifi de la academia (y no a otra con un nombre parecido), desconectarlo y volver a conectarlo, y, si sigue, reiniciar el router. Mientras tenga esa dirección, ni `ping` al router funcionará.
+**4. El portátil de la profesora tiene otro problema.** Una dirección que empieza por `169.254.` quiere decir que **el portátil no ha conseguido dirección del router** y se ha puesto una él solo (en un portátil con Linux, lo normal sería no ver ninguna dirección IPv4, y quiere decir lo mismo). El fallo está **antes** del DNS y antes de internet: entre el portátil y el router. Marta empezaría por ahí: comprobar que el portátil está conectado a la wifi de la academia (y no a otra con un nombre parecido), desconectarlo y volver a conectarlo, y, si sigue, reiniciar el router. Mientras tenga esa dirección, ni `ping` al router funcionará.
 
 **Lo importante:** cuatro pruebas sencillas, en orden, convierten un «no hay internet» en un diagnóstico preciso. Cada una descarta un tramo, y **la primera que falla te dice dónde mirar**.
 
@@ -1244,7 +1250,7 @@ Para la pregunta 4, repasa qué significan las direcciones que empiezan por `169
 | `192.168.x.x`, `10.x.x.x`, `172.16.x.x` a `172.31.x.x` | Privadas: solo valen dentro de su red |
 | Las demás | Públicas: únicas en internet |
 | `127.0.0.1`, `::1`, `localhost` | Este mismo equipo |
-| `169.254.x.x` | El equipo no ha conseguido dirección del router |
+| `169.254.x.x` (o ninguna, en Linux) | El equipo no ha conseguido dirección del router |
 | `192.0.2.x`, `198.51.100.x`, `203.0.113.x`, `2001:db8:…` | De documentación, para ejemplos |
 | `example.com`, `.invalid` | Nombres para ejemplos y para nombres que no existen |
 
@@ -1264,14 +1270,15 @@ Para la pregunta 4, repasa qué significan las direcciones que empiezan por `169
 | `4 received, 0% packet loss` | Todo ha ido y vuelto |
 | `0 received, 100% packet loss` | No ha vuelto nada: no contesta (que no es lo mismo que «está caído») |
 | `time=2.85 ms` | Lo que tarda en ir y volver |
-| `ping: …: Nombre o servicio desconocido` | No ha conseguido la dirección del nombre |
+| `ping: …: Nombre o servicio desconocido` | No ha conseguido la dirección del nombre: no existe |
+| `ping: …: Fallo temporal en la resolución del nombre` | El DNS no ha contestado |
 | `Non-authoritative answer` + `Address` | El DNS ha contestado: lo normal |
 | `NXDOMAIN` | El DNS contesta que el nombre no existe |
 | `timed out`, `no servers could be reached` | El servidor DNS no contesta |
 
 ### Diagnóstico de «no hay internet», de dentro hacia fuera
 
-1. ¿Tiene el equipo una dirección de la red (no una `169.254.x.x`)?
+1. ¿Tiene el equipo una dirección de la red (no una `169.254.x.x`, ni ninguna)?
 2. ¿Responde el router? `ping -c 4 192.168.1.1` (la tuya, en los ajustes de red).
 3. ¿Se llega a internet con una dirección, sin DNS? `ping -c 4` a una dirección conocida.
 4. ¿Contesta el DNS? `nslookup example.com`.
@@ -1347,7 +1354,7 @@ Para la pregunta 4, repasa qué significan las direcciones que empiezan por `169
    <details>
    <summary>Ver respuesta</summary>
 
-   El router cambia la dirección privada de cada paquete que sale por su dirección pública, apunta quién lo mandó y le entrega la respuesta. Desde fuera no se puede empezar una conexión hacia tu portátil, porque el router no sabría a qué equipo dársela. Lo tienes en [1.9. NAT: muchos equipos con una sola dirección pública](#19-nat-muchos-equipos-con-una-sola-dirección-pública).
+   El router cambia la dirección privada de cada paquete que sale por su dirección pública, apunta quién lo mandó y le entrega la respuesta. Desde fuera no se puede empezar una conexión hacia tu portátil, porque el router no sabría a qué equipo dársela. Con IPv6 no hay NAT, y esa protección la pone el cortafuegos del router: él es quien de verdad protege la red. Lo tienes en [1.9. NAT: muchos equipos con una sola dirección pública](#19-nat-muchos-equipos-con-una-sola-dirección-pública) y en [1.14. El cortafuegos](#114-el-cortafuegos).
 
    </details>
 
@@ -1356,7 +1363,7 @@ Para la pregunta 4, repasa qué significan las direcciones que empiezan por `169
    <details>
    <summary>Ver respuesta</summary>
 
-   `127.0.0.1` (o `localhost`) es tu propio equipo: lo que se manda ahí no sale a ninguna red. Una `169.254.x.x` es la que se pone el equipo cuando el router no le ha dado una: el problema está entre el equipo y el router. Lo tienes en [1.10. Direcciones especiales](#110-direcciones-especiales).
+   `127.0.0.1` (o `localhost`) es tu propio equipo: lo que se manda ahí no sale a ninguna red. Una `169.254.x.x` es la que se pone el equipo cuando el router no le ha dado una (en Linux, lo normal es quedarse sin ninguna): el problema está entre el equipo y el router. Lo tienes en [1.10. Direcciones especiales](#110-direcciones-especiales).
 
    </details>
 
@@ -1374,7 +1381,7 @@ Para la pregunta 4, repasa qué significan las direcciones que empiezan por `169
     <details>
     <summary>Ver respuesta</summary>
 
-    TCP cuando no puede faltar nada y tiene que llegar en orden (la web, el correo, Git, las descargas); UDP cuando un dato que llega tarde ya no sirve (voz, vídeo en directo, juegos) o los mensajes son muy pequeños (las preguntas al DNS). Lo tienes en [1.13. TCP y UDP](#113-tcp-y-udp).
+    TCP cuando no puede faltar nada y tiene que llegar en orden (la web, el correo, Git, las descargas); UDP cuando un dato que llega tarde ya no sirve (voz, videollamadas, juegos) o los mensajes son muy pequeños (las preguntas al DNS). Lo tienes en [1.13. TCP y UDP](#113-tcp-y-udp).
 
     </details>
 

@@ -1444,7 +1444,7 @@ gitGraph
 | `192.168.x.x`, `10.x.x.x`, `172.16.x.x` a `172.31.x.x` | Privadas: solo valen dentro de su red |
 | Las demás | Públicas: únicas en internet |
 | `127.0.0.1`, `::1`, `localhost` | Este mismo equipo |
-| `169.254.x.x` | El equipo no ha conseguido dirección del router |
+| `169.254.x.x` (o ninguna, en Linux) | El equipo no ha conseguido dirección del router |
 | `192.0.2.x`, `198.51.100.x`, `203.0.113.x`, `2001:db8:…` | De documentación, para ejemplos |
 | `example.com`, `.invalid` | Nombres para ejemplos y para nombres que no existen |
 
@@ -1464,14 +1464,15 @@ gitGraph
 | `4 received, 0% packet loss` | Todo ha ido y vuelto |
 | `0 received, 100% packet loss` | No ha vuelto nada: no contesta (que no es lo mismo que «está caído») |
 | `time=2.85 ms` | Lo que tarda en ir y volver |
-| `ping: …: Nombre o servicio desconocido` | No ha conseguido la dirección del nombre |
+| `ping: …: Nombre o servicio desconocido` | No ha conseguido la dirección del nombre: no existe |
+| `ping: …: Fallo temporal en la resolución del nombre` | El DNS no ha contestado |
 | `Non-authoritative answer` + `Address` | El DNS ha contestado: lo normal |
 | `NXDOMAIN` | El DNS contesta que el nombre no existe |
 | `timed out`, `no servers could be reached` | El servidor DNS no contesta |
 
 #### Diagnóstico de «no hay internet», de dentro hacia fuera
 
-1. ¿Tiene el equipo una dirección de la red (no una `169.254.x.x`)?
+1. ¿Tiene el equipo una dirección de la red (no una `169.254.x.x`, ni ninguna)?
 2. ¿Responde el router? `ping -c 4 192.168.1.1` (la tuya, en los ajustes de red).
 3. ¿Se llega a internet con una dirección, sin DNS? `ping -c 4` a una dirección conocida.
 4. ¿Contesta el DNS? `nslookup example.com`.
@@ -1610,7 +1611,7 @@ Códigos de salida de `curl`: 0, ha hablado con el servidor (aunque responda `40
 
 **Relaciones:** uno a muchos (un socio, muchas reservas) · uno a uno · muchos a muchos (con una tabla intermedia).
 
-**SQL:** el lenguaje de las bases de datos relacionales; declarativo; norma ISO/IEC 9075 (SQL:2023); cada motor, su dialecto.
+**SQL:** el lenguaje de las bases de datos relacionales; declarativo; cada motor, su dialecto.
 
 #### Diagrama entidad-relación en Mermaid
 
@@ -1722,7 +1723,9 @@ Persona → Frontend → (API) → Backend → Base de datos
 REPETIR
     probabilidades ← PredecirSiguiente(texto)
     token ← Elegir(probabilidades)        // la más probable o un sorteo
-    texto ← texto + token
+    SI token ≠ "fin" ENTONCES
+        texto ← texto + token
+    FIN SI
 HASTA QUE token = "fin"
 ```
 
@@ -1745,8 +1748,8 @@ Si se te escapa un secreto: **cámbialo**.
 
 | | Nube | Local |
 |---|---|---|
-| Calidad | La más alta | Depende del tamaño |
-| Privacidad | Los datos salen | Los datos no salen |
+| Calidad | Suele ser la más alta | Depende del tamaño |
+| Privacidad | Los datos salen | Los datos no salen (si el modelo se ejecuta en tu equipo) |
 | Necesitas | Internet y cuenta | Memoria, disco y paciencia |
 
 ---
