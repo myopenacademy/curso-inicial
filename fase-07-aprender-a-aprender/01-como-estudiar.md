@@ -160,6 +160,8 @@ Escribir siempre la misma palabra (**Duda:**) tiene premio: con `grep` encuentra
 
 > **📌 Nota:** si un día lo subes a GitHub, recuerda que un repositorio **público** lo puede leer cualquiera ([05.03, 1.3](../fase-05-git-y-github/03-github.md#13-tu-cuenta-de-github)). Un diario de estudio no suele tener nada privado, pero si lo tiene, hazlo privado.
 
+> **📌 Nota:** si lees este módulo el primer día, como propone la portada del curso, quédate de momento con la teoría (hasta aquí) y con los ejercicios 1 a 3: lo que viene después usa Markdown, Git y `grep`, que aún no conoces. El diario empiézalo ya, en un fichero de texto o en papel, con las mismas tres líneas por sesión; cuando termines la [fase 5](../fase-05-git-y-github/01-git-fundamentos.md), pásalo a Markdown y a Git, y vuelve al [ejemplo 2.1](#21-un-diario-de-lo-aprendido-en-dos-sesiones) y a los ejercicios 4 y 5.
+
 ## 2. Ejemplos de código
 
 Los ejemplos se repiten como los de la fase 5: descarga la carpeta (su enlace «📁 Código»), abre la terminal en ella y escribe las mismas órdenes. En tu pantalla cambiarán los identificadores de los commits.
@@ -221,7 +223,7 @@ $ git commit -m "Diario: repaso de 03.01"
 $ git log --oneline
 de19009 (HEAD -> main) Diario: repaso de 03.01
 9a911c1 Diario: 03.01, primera sesión
-$ grep -n "Duda" diario.md
+$ grep -n "Duda:" diario.md
 7:- **Duda:** ¿por qué `ls` no enseña los ficheros que empiezan por punto?
 13:- **Duda:** ¿hay forma de recuperar un fichero borrado con `rm`?
 ```
@@ -233,7 +235,7 @@ $ grep -n "Duda" diario.md
 - **`>>` añade** al final del diario sin borrar lo anterior ([03.02, 1.2](../fase-03-herramientas/02-terminal-sacarle-partido.md#12-mandar-la-salida-a-un-fichero--y-)). Con `>`, el lunes se habría perdido.
 - **`git diff`** enseña solo la entrada nueva, con `+`: es lo que has aprendido hoy.
 - **`git log --oneline`** es el calendario de tu estudio: un commit por sesión.
-- **`grep -n "Duda"`** encuentra las dos dudas y dice en qué línea están. La del lunes ya está resuelta (lo dice la línea 11, que `grep` no enseña porque allí pone «duda» en minúscula). Marina ya sabe qué buscar en la siguiente sesión: la segunda.
+- **`grep -n "Duda:"`** encuentra las dos dudas y dice en qué línea están. La del lunes ya está resuelta (lo apuntó en la línea 11). Marina ya sabe qué buscar en la siguiente sesión: la segunda.
 - Las entradas son **cortas**. Un diario de diez líneas por sesión se sigue escribiendo; uno de cien, se abandona.
 
 ## 3. Errores típicos

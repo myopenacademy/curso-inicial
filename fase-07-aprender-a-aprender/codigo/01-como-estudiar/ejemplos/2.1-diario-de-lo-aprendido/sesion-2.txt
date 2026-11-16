@@ -4,4 +4,4 @@ git diff
 git add diario.md
 git commit -m "Diario: repaso de 03.01"
 git log --oneline
-grep -n "Duda" diario.md
+grep -n "Duda:" diario.md
