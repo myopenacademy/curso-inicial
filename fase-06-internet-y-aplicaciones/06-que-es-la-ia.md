@@ -30,7 +30,7 @@ Hay problemas, sin embargo, en los que **nadie sabe escribir las reglas**:
 - ¿Esta reseña de un restaurante es buena o mala? «No está mal» es buena; «no está nada bien», mala.
 - Traducir un texto, resumirlo o contestar una pregunta escrita con las palabras de cada persona.
 
-La **inteligencia artificial** (IA) es la parte de la informática que construye programas capaces de hacer tareas que hasta ahora necesitaban la inteligencia de una persona: entender un texto, reconocer una imagen, decidir, conversar. No es nueva: el nombre ya aparece en el título de una propuesta de investigación de 1955 para un encuentro de verano en el Dartmouth College (Estados Unidos) en 1956 («A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence», según su edición en la revista *AI Magazine* de la AAAI, consultada el 16 de noviembre de 2026). Durante décadas se intentó hacer **con reglas escritas a mano**: miles de `SI` escritos por expertos. Funcionaba en problemas muy acotados y se rompía en cuanto la realidad se salía de las reglas.
+La **inteligencia artificial** (IA) es la parte de la informática que construye programas capaces de hacer tareas que hasta ahora necesitaban la inteligencia de una persona: entender un texto, reconocer una imagen, decidir, conversar. No es nueva: el nombre se acuñó en 1955, para un encuentro de investigación en Estados Unidos al año siguiente. Durante décadas se intentó hacer **con reglas escritas a mano**: miles de `SI` escritos por expertos. Funcionaba en problemas muy acotados y se rompía en cuanto la realidad se salía de las reglas.
 
 Lo que cambió las cosas fue otra idea: en lugar de escribir las reglas, **que el programa las aprenda de ejemplos**. Es lo que verás en el apartado siguiente, y es lo que hay debajo de casi todo lo que hoy se llama «IA».
 
@@ -132,7 +132,7 @@ Texto:   ¿Cuánto cuesta la biblioteca municipal?
 Tokens:  ¿ | Cu | ánto | cuesta | la | bibli | oteca | municipal | ?
 ```
 
-Nueve tokens para seis palabras. Fíjate en que «cuesta» y «la», muy frecuentes, salen enteras; «biblioteca» se parte en dos, y los signos van aparte.
+Nueve tokens para cinco palabras. Fíjate en que «cuesta» y «la», muy frecuentes, salen enteras; «Cuánto» y «biblioteca» se parten en dos, y los signos van aparte.
 
 Por qué te importan los tokens:
 
@@ -237,7 +237,7 @@ Es también una de las **normas sobre el uso de la IA** de la academia, que ver�
 - **Sustituye los datos reales por inventados** que tengan la misma forma: «Ana García, 12345678Z» en lugar del cliente real.
 - **Pega lo mínimo**: la línea del error, no el fichero entero.
 
-> **⚠️ Cuidado:** si has pegado por error una contraseña o una clave, **bórrala del chat no basta**: puede haberse guardado ya. Cámbiala en el servicio al que pertenece, como harías con cualquier [secreto](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#114-el-fichero-env-y-los-secretos) que se ha escapado.
+> **⚠️ Cuidado:** si has pegado por error una contraseña o una clave, **borrarla del chat no basta**: puede haberse guardado ya. Cámbiala en el servicio al que pertenece, como harías con cualquier [secreto](../fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#114-el-fichero-env-y-los-secretos) que se ha escapado.
 
 ### 1.13. En la nube o en tu ordenador
 
@@ -248,10 +248,10 @@ Hay dos formas de usar un modelo de lenguaje, según dónde se ejecute:
 | **Cómo se usa** | Desde una web, una aplicación o el chat de tu editor; la empresa ejecuta el modelo en sus ordenadores | Descargas el modelo y lo ejecutas con un programa en tu ordenador |
 | **Calidad** | Suelen estar aquí los modelos más capaces | Buenos los grandes; los pequeños, que son los que caben en un ordenador normal, se equivocan bastante más |
 | **Qué necesitas** | Internet y una cuenta; muchos tienen una parte gratuita con límites y otra de pago | Un ordenador con bastante [memoria RAM](../fase-02-tu-ordenador/01-como-funciona-un-ordenador.md#15-la-memoria-ram-rápida-y-olvidadiza) y espacio en disco; una tarjeta gráfica ayuda mucho |
-| **Privacidad** | Lo que escribes sale de tu ordenador ([apartado 1.12](#112-privacidad-lo-que-escribes-sale-de-tu-ordenador)) | Lo que escribes **no sale** de tu ordenador |
+| **Privacidad** | Lo que escribes sale de tu ordenador ([apartado 1.12](#112-privacidad-lo-que-escribes-sale-de-tu-ordenador)) | Lo que escribes **no sale** de tu ordenador, **siempre que el modelo se ejecute de verdad en él**: algunos programas ofrecen también modelos en la nube en la misma ventana |
 | **Coste** | La cuota o lo que gastes, si pagas | Gratis el uso, pero pagas el ordenador y la electricidad |
 
-Un modelo se puede ejecutar en tu ordenador cuando su creador publica sus parámetros para que cualquiera los descargue: se llaman modelos **de pesos abiertos**, cada uno con su licencia, que dice qué se puede hacer con él. Para ejecutarlos hay programas gratuitos; por ejemplo, **Ollama**, de código abierto (licencia MIT) y disponible para Windows, macOS y Linux, según su web, [ollama.com](https://ollama.com), y su repositorio oficial, [github.com/ollama/ollama](https://github.com/ollama/ollama) (consultados el 16 de noviembre de 2026); su web ofrece además usar modelos en su propia nube. Ten en cuenta que un modelo local necesita un ordenador potente: con uno normal, solo funcionan bien los modelos pequeños. Los cursos que trabajen con IA te dirán cuál usar y cómo instalarlo; en este curso no hace falta instalar nada.
+Un modelo se puede ejecutar en tu ordenador cuando su creador publica sus parámetros para que cualquiera los descargue: se llaman modelos **de pesos abiertos**, cada uno con su licencia, que dice qué se puede hacer con él. Para ejecutarlos hay programas gratuitos; por ejemplo, **Ollama**, de código abierto (licencia MIT) y disponible para Windows, macOS y Linux, según su web, [ollama.com](https://ollama.com), y su repositorio oficial, [github.com/ollama/ollama](https://github.com/ollama/ollama) (consultados el 16 de noviembre de 2026); su web ofrece además usar modelos en su propia nube: esos **no** son locales, y lo que les escribes sale de tu ordenador como con cualquier servicio en la nube. Ten en cuenta que un modelo local necesita un ordenador potente: con uno normal, solo funcionan bien los modelos pequeños. Los cursos que trabajen con IA te dirán cuál usar y cómo instalarlo; en este curso no hace falta instalar nada.
 
 > **📌 Nota:** «en local» no quiere decir «sin errores». Un modelo pequeño en tu ordenador alucina igual o más que uno grande en la nube. Lo que ganas es **privacidad**, no exactitud.
 
@@ -267,7 +267,7 @@ Con todo lo anterior, ya puedes razonar en qué es buena una IA de texto y en qu
 | **Dar ideas**: nombres, enfoques, casos de prueba que no se te habían ocurrido | **Decidir** sobre personas, dinero, salud o leyes sin que nadie revise |
 | **Revisar** algo que has hecho tú y señalar posibles fallos | **Hacerte los ejercicios**: el resultado lo tendrías, pero no lo habrías aprendido |
 
-La última fila de la derecha es la que más te afecta mientras estudias. La IA es una herramienta estupenda **como profesor**: que te explique, te dé pistas o revise tu solución. Si la usas para que haga el trabajo por ti, terminarás el curso sin saber hacerlo.
+La última fila de la derecha es la que más te afecta mientras estudias. Cómo usar la IA para aprender, y no para que haga el trabajo por ti, es la primera de las normas de la academia que verás en [07.04](../fase-07-aprender-a-aprender/04-programar-con-asistentes-de-ia.md).
 
 ### 1.15. Lo que verás más adelante
 
@@ -282,7 +282,7 @@ Este módulo explica **qué es** y **cómo funciona** la IA. Lo que viene despu�
 
 ### 2.1. Un modelo de lenguaje de juguete
 
-**Situación real:** la panadería de Rosa tiene un cartel digital que cambia el mensaje cada hora. Rosa quiere que «escriba solo». Vamos a construirle un modelo de lenguaje de juguete que aprende de los mensajes que ya ha usado.
+**Situación real:** la Panadería Sol tiene un cartel digital que cambia el mensaje cada hora. Ana quiere que «escriba solo». Vamos a construirle un modelo de lenguaje de juguete que aprende de los mensajes que ya ha usado.
 
 **Los ejemplos (lo que «lee» el modelo para entrenarse):**
 
@@ -324,7 +324,7 @@ Resultado: **«el pan está recién hecho»**.
 
 ### 2.2. El bucle que escribe una respuesta
 
-**Situación real:** Rosa quiere entender qué hace el cartel paso a paso, así que lo escribimos como algoritmo. Las reglas del juguete van en dos [subalgoritmos](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#111-subalgoritmos): `PredecirSiguiente` mira la tabla del ejemplo anterior y devuelve las probabilidades de la siguiente palabra; `Elegir` escoge una de ellas.
+**Situación real:** Ana quiere entender qué hace el cartel paso a paso, así que lo escribimos como algoritmo. Las reglas del juguete van en dos [subalgoritmos](../fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#111-subalgoritmos): `PredecirSiguiente` mira la tabla del ejemplo anterior y devuelve las probabilidades de la siguiente palabra; `Elegir` escoge una de ellas.
 
 ```text
 ALGORITMO GenerarTexto
@@ -359,7 +359,7 @@ Salida: **`la tarta está recién hecho`**. Una frase con una falta de concordan
 
 ### 2.3. Por qué el juguete se equivoca: el contexto
 
-**Situación real:** Rosa ve en el cartel «la tarta está recién hecho» y pregunta qué ha pasado, si el modelo había leído «la tarta está recién hecha».
+**Situación real:** Ana ve en el cartel «la tarta está recién hecho» y pregunta qué ha pasado, si el modelo había leído «la tarta está recién hecha».
 
 **Por qué ocurre:** nuestro `PredecirSiguiente` solo mira **la última palabra**. Al llegar a «recién», no sabe que tres palabras antes ponía «tarta»; solo sabe que detrás de «recién» suele venir «hecho» (2 de 3 veces). Para él, todo lo anterior a la última palabra **no existe**: su contexto es de una sola palabra.
 
@@ -424,7 +424,7 @@ Cómo podría haberse protegido Andrés:
 
 ### 2.6. Sortear la siguiente palabra
 
-**Situación real:** con el juguete del [ejemplo 2.1](#21-un-modelo-de-lenguaje-de-juguete), el cartel de Rosa siempre dice lo mismo, porque `Elegir` coge siempre la más probable. A Rosa le aburre. Cambiamos `Elegir` para que **sortee**, como hacen los modelos de verdad ([apartado 1.11](#111-por-qué-no-responde-siempre-igual)).
+**Situación real:** con el juguete del [ejemplo 2.1](#21-un-modelo-de-lenguaje-de-juguete), el cartel de Ana siempre dice lo mismo, porque `Elegir` coge siempre la más probable. A Rosa le aburre. Cambiamos `Elegir` para que **sortee**, como hacen los modelos de verdad ([apartado 1.11](#111-por-qué-no-responde-siempre-igual)).
 
 Con el principio «el pan», cada palabra se elige ahora por sorteo, con las probabilidades de la tabla. Estos son los textos posibles y la probabilidad de cada uno (se multiplican las probabilidades de cada paso):
 
@@ -512,7 +512,6 @@ Si el cartel cambia cada hora, a lo largo del día saldrán **mensajes distintos
 
 ## 4. Buenas prácticas
 
-- **Úsala como profesor, no como quien hace el trabajo por ti**: que te explique, te dé pistas o revise lo tuyo.
 - **Comprueba siempre lo concreto**: cifras, fechas, nombres, versiones, opciones de órdenes y enlaces, en la fuente oficial o con tus casos de prueba.
 - **Dale los datos** en lugar de pedirle que los recuerde: el texto, el error exacto, el fragmento que importa.
 - **Dale permiso para no saber**: «si no lo sabes o no está en el texto, dilo».
@@ -532,7 +531,7 @@ Si el cartel cambia cada hora, a lo largo del día saldrán **mensajes distintos
 
 Para cada tarea, di si la resolverías con un **algoritmo de reglas** escritas a mano o con un **modelo aprendido de ejemplos**, y por qué:
 
-1. Calcular los gastos de envío de una tienda online: gratis a partir de 50 €, 4,95 € si no.
+1. Calcular los gastos de envío de una tienda en línea: gratis a partir de 50 €, 4,95 € si no.
 2. Separar los correos de reclamación de los de felicitación en el buzón de atención al cliente de una tienda que recibe 3000 al día.
 3. Comprobar que la letra de un DNI es correcta.
 4. Reconocer la matrícula de un coche en la foto de la cámara de un aparcamiento.
@@ -659,7 +658,7 @@ En el punto 4, ¿el modelo ha contestado «no lo sé»? ¿Por qué no?
 
 - **Punto 3:** tras dos horas de conversación, el chat es muy largo. Lo más probable es que **no quepa entero** en el contexto y la aplicación haya recortado o resumido lo más antiguo, justo donde estaba el campo del que hablaron. Y aunque cupiera, con tanto texto de temas distintos (Markdown, diagramas, Git), al modelo le cuesta más encontrar y usar bien lo de hace dos horas. Al no tenerlo claro, **no dice «no lo sé»**: propone el campo más probable.
 
-  **Qué hacer:** decirle **otra vez el dato**: «añade al JSON el campo `fechaAlta`, con la fecha en formato año-mes-día». Y, mejor aún, abrir **un chat por tema**: uno para el JSON, otro para los errores de Git.
+  **Qué hacer:** decirle **otra vez el dato**: «añade al JSON el campo `fecha_alta`, con la fecha en formato año-mes-día». Y, mejor aún, abrir **un chat por tema**: uno para el JSON, otro para los errores de Git.
 - **Punto 4:** un chat nuevo empieza **con el contexto vacío**. El modelo no recuerda nada del chat anterior, así que no puede saber cómo se llama el club. Pero en lugar de decir que no lo sabe, **ha escrito un nombre de club probable**: es una alucinación ([apartado 1.9](#19-las-alucinaciones)).
 
   **Qué hacer:** al empezar un chat nuevo, darle el contexto que necesita («Estoy haciendo la web del club de baloncesto Los Linces; tengo `index.md` y `socios.json`…»). Una buena costumbre es tener ese párrafo guardado en un fichero del proyecto para pegarlo al principio.
@@ -765,7 +764,7 @@ En cada petición, la aplicación envía **todo lo anterior** (los mensajes de H
    | 4 | Parejas 1, 2 y 3 + mensaje 4 | 900 + 100 = 1000 | 1200 | **No** |
 
 2. **Deja de caber en la petición 4.** Quitando la pareja más antigua (la 1), quedan las parejas 2 y 3 más el mensaje 4: 600 + 100 = 700 tokens enviados, 900 con la respuesta, y ya cabe. Pero el modelo **ya no ve el primer mensaje de Hugo**.
-3. Como la explicación del proyecto estaba en el mensaje 1, que se ha recortado, el modelo **no la tiene en el contexto**. Lo mejor que puede pasar es que diga que no lo sabe; pero también puede **contestar algo creíble a partir de lo que sí ve** (si en los mensajes 2 y 3 se habló de tornillos y precios, quizá diga «una tienda online de bricolaje»): una alucinación ([apartado 1.9](#19-las-alucinaciones)). Algunas aplicaciones, en lugar de recortar, resumen lo antiguo; entonces quizá se conserve la idea, o quizá no, según cómo se haya resumido.
+3. Como la explicación del proyecto estaba en el mensaje 1, que se ha recortado, el modelo **no la tiene en el contexto**. Lo mejor que puede pasar es que diga que no lo sabe; pero también puede **contestar algo creíble a partir de lo que sí ve** (si en los mensajes 2 y 3 se habló de tornillos y precios, quizá diga «una tienda en línea de bricolaje»): una alucinación ([apartado 1.9](#19-las-alucinaciones)). Algunas aplicaciones, en lugar de recortar, resumen lo antiguo; entonces quizá se conserve la idea, o quizá no, según cómo se haya resumido.
 4. **Porque cada petición lleva toda la conversación anterior:** el modelo lee 100 tokens en la primera, 400 en la segunda, 700 en la tercera y otros 700 en la cuarta (ya recortada). En total, 1900 tokens leídos para cuatro mensajes de 100. Es una razón más para **un chat por tema** y para empezar uno nuevo cuando la conversación se alarga.
 
 **Errores frecuentes al resolverlo:**
@@ -780,7 +779,7 @@ En cada petición, la aplicación envía **todo lo anterior** (los mensajes de H
 
 #### Ejercicio 6 · Más o menos sorteo para cada tarea
 
-Una aplicación de la tienda online de Pilar usa un modelo de lenguaje para varias tareas, y Pilar puede elegir para cada una si el sorteo es **bajo** (temperatura baja) o **alto** (temperatura alta). Elige para cada tarea y explica por qué:
+Una aplicación de la tienda en línea de Pilar usa un modelo de lenguaje para varias tareas, y Pilar puede elegir para cada una si el sorteo es **bajo** (temperatura baja) o **alto** (temperatura alta). Elige para cada tarea y explica por qué:
 
 1. Sacar de cada correo de un cliente el número de pedido y la fecha.
 2. Proponer diez nombres para la nueva línea de mochilas.
@@ -866,7 +865,7 @@ Lee el error con calma: ¿hace falta la configuración o el CSV para entenderlo?
 
    | Qué | Por qué |
    |---|---|
-   | `SMTP_CONTRASENA=Prima2026!` | Es un **secreto**: con él, cualquiera puede enviar correos en nombre de Óscar |
+   | `SMTP_CONTRASENA=Prima2026!` | Es un **secreto**, la contraseña del correo (SMTP es el protocolo con el que se envía el correo): con él, cualquiera puede enviar correos en nombre de Óscar |
    | `SMTP_USUARIO=oscar.martinez@…` | Identifica a Óscar y su empresa, y junto con la contraseña da acceso a su cuenta |
    | Las líneas de `alumnos.csv` | **Datos personales de otras personas** (nombre, DNI, teléfono, correo): Óscar no tiene derecho a compartirlos, y la academia seguramente tiene normas sobre ello |
    | `/home/oscar.martinez/academia/` | Su usuario y la carpeta de su trabajo: no ayudan a resolver nada |
@@ -933,7 +932,7 @@ Repasa las tablas de los [apartados 1.13](#113-en-la-nube-o-en-tu-ordenador) y [
 | # | Consejo | Qué comprobar |
 |---|---|---|
 | 1 | **Nube**, sin problema | No lleva datos personales. Revisar el texto antes de enviarlo: que las fechas y las horas sean **las de Nuria**, no unas inventadas |
-| 2 | **En su ordenador**, o no usar IA | Son datos personales y fiscales de clientes: no deben ir a un servicio externo sin que Nuria sepa qué hace ese servicio con ellos (sus condiciones, dónde los guarda, si los usa para entrenar) y sin cumplir las leyes de protección de datos. Con un modelo local los datos no salen, pero el resumen se revisa contra la declaración: un modelo pequeño se equivoca más |
+| 2 | **En su ordenador**, o no usar IA | Son datos personales y fiscales de clientes: no deben ir a un servicio externo sin que Nuria sepa qué hace ese servicio con ellos (sus condiciones, dónde los guarda, si los usa para entrenar) y sin cumplir las leyes de protección de datos. Con un modelo que se ejecute de verdad en su ordenador (no uno «en la nube» del mismo programa) los datos no salen, pero el resumen se revisa contra la declaración: un modelo pequeño se equivoca más |
 | 3 | **No usar IA** | Es una cuenta exacta con reglas conocidas: para eso están las hojas de cálculo y los programas de la asesoría. Un modelo de lenguaje predice números, no los calcula |
 | 4 | **Nube**, sin problema | Es una tarea de ideas, sin datos personales. Lo que diga sobre impuestos (cifras, plazos, normas) se comprueba en la fuente oficial antes de publicar, y lo posterior a la fecha de corte del modelo no lo sabe |
 | 5 | **No**, tal como está planteado | Sin nadie que revise, una alucinación (un plazo o una deducción inventados) llegaría al cliente con el nombre de la asesoría. Como mucho, que proponga borradores que un empleado revisa antes de enviar |
@@ -981,7 +980,9 @@ Repasa las tablas de los [apartados 1.13](#113-en-la-nube-o-en-tu-ordenador) y [
 REPETIR
     probabilidades ← PredecirSiguiente(texto)
     token ← Elegir(probabilidades)        // la más probable o un sorteo
-    texto ← texto + token
+    SI token ≠ "fin" ENTONCES
+        texto ← texto + token
+    FIN SI
 HASTA QUE token = "fin"
 ```
 
@@ -1004,8 +1005,8 @@ Si se te escapa un secreto: **cámbialo**.
 
 | | Nube | Local |
 |---|---|---|
-| Calidad | La más alta | Depende del tamaño |
-| Privacidad | Los datos salen | Los datos no salen |
+| Calidad | Suele ser la más alta | Depende del tamaño |
+| Privacidad | Los datos salen | Los datos no salen (si el modelo se ejecuta en tu equipo) |
 | Necesitas | Internet y cuenta | Memoria, disco y paciencia |
 
 ## 7. Preguntas de repaso
@@ -1105,16 +1106,16 @@ Si se te escapa un secreto: **cámbialo**.
     <details>
     <summary>Ver respuesta</summary>
 
-    Ganas privacidad: lo que escribes no sale de tu ordenador. No ganas exactitud: los modelos que caben en un ordenador normal suelen equivocarse más, y alucinan igual. Lo tienes en [1.13. En la nube o en tu ordenador](#113-en-la-nube-o-en-tu-ordenador).
+    Ganas privacidad: lo que escribes no sale de tu ordenador, siempre que el modelo se ejecute de verdad en él (no uno «en la nube» del mismo programa). No ganas exactitud: los modelos que caben en un ordenador normal suelen equivocarse más, y alucinan igual. Lo tienes en [1.13. En la nube o en tu ordenador](#113-en-la-nube-o-en-tu-ordenador).
 
     </details>
 
-12. ¿Para qué te conviene usar la IA mientras estudias, y para qué no?
+12. ¿Por qué no conviene pedirle a un modelo de lenguaje que sume una columna de importes?
 
     <details>
     <summary>Ver respuesta</summary>
 
-    Como profesor: que te explique, te dé pistas o revise lo que has hecho. No para que haga los ejercicios por ti, porque tendrías el resultado sin haberlo aprendido. Las normas de la academia sobre la IA las verás en el módulo «Programar con asistentes de IA». Lo tienes en [1.14. Para qué sirve y para qué no](#114-para-qué-sirve-y-para-qué-no) y [1.15. Lo que verás más adelante](#115-lo-que-verás-más-adelante).
+    Porque predice texto, no calcula: escribe los números más probables, y en una cuenta larga puede equivocarse sin avisar. Las cuentas, con una herramienta que calcule. Lo tienes en [1.14. Para qué sirve y para qué no](#114-para-qué-sirve-y-para-qué-no) y en el [error típico 3.7](#37-pedirle-cuentas-exactas-y-no-revisarlas).
 
     </details>
 
