@@ -1,0 +1,41 @@
+{
+  "puerto": 8080,
+  "rutas": [
+    {
+      "metodo": "GET",
+      "ruta": "/pistas",
+      "estado": 200,
+      "cuerpo": [
+        {"id": 1, "nombre": "Central", "cubierta": true},
+        {"id": 2, "nombre": "Norte", "cubierta": true},
+        {"id": 3, "nombre": "Jardín", "cubierta": false}
+      ]
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/pistas/2",
+      "estado": 200,
+      "cuerpo": {"id": 2, "nombre": "Norte", "cubierta": true}
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/reservas?fecha=2026-11-20",
+      "estado": 200,
+      "cuerpo": [
+        {"id": 30, "pista": 1, "fecha": "2026-11-20", "hora": "18:00", "socia": "Marta Vidal"}
+      ]
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/reservas",
+      "estado": 201,
+      "cabeceras": {"Location": "/reservas/31"},
+      "cuerpo": {"id": 31, "pista": 2, "fecha": "2026-11-20", "hora": "19:30", "socia": "Elena Ruiz"}
+    },
+    {
+      "metodo": "DELETE",
+      "ruta": "/reservas/31",
+      "estado": 204
+    }
+  ]
+}

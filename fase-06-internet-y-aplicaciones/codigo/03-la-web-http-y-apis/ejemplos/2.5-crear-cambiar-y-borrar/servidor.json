@@ -1,0 +1,54 @@
+{
+  "puerto": 8080,
+  "rutas": [
+    {
+      "metodo": "GET",
+      "ruta": "/estado",
+      "estado": 200,
+      "cuerpo": "La biblioteca está abierta\n"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/libros?disponible=true",
+      "estado": 200,
+      "cuerpo": [
+        {"id": 1, "titulo": "Niebla", "autor": "Miguel de Unamuno", "disponible": true},
+        {"id": 3, "titulo": "La casa de Bernarda Alba", "autor": "Federico García Lorca", "disponible": true}
+      ]
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/libros",
+      "estado": 200,
+      "cuerpo": [
+        {"id": 1, "titulo": "Niebla", "autor": "Miguel de Unamuno", "disponible": true},
+        {"id": 2, "titulo": "Fortunata y Jacinta", "autor": "Benito Pérez Galdós", "disponible": false},
+        {"id": 3, "titulo": "La casa de Bernarda Alba", "autor": "Federico García Lorca", "disponible": true}
+      ]
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/libros",
+      "estado": 201,
+      "cabeceras": {"Location": "/libros/4"},
+      "cuerpo": {"id": 4, "titulo": "La Regenta", "autor": "Leopoldo Alas, Clarín", "disponible": true}
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/libros/1",
+      "estado": 200,
+      "cuerpo": {"id": 1, "titulo": "Niebla", "autor": "Miguel de Unamuno", "disponible": true}
+    },
+    {
+      "metodo": "PUT",
+      "ruta": "/libros/1",
+      "estado": 200,
+      "cuerpo": {"id": 1, "titulo": "Niebla", "autor": "Miguel de Unamuno", "disponible": false}
+    },
+    {
+      "metodo": "DELETE",
+      "ruta": "/libros/1",
+      "estado": 204
+    }
+  ]
+}

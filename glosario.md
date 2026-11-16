@@ -29,7 +29,7 @@ Identificador de un título que se genera a partir de su texto y permite enlazar
 
 ### API
 
-La puerta por la que un programa le pide datos o servicios a otro, por ejemplo a un servidor; se ve a fondo en la fase 6. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
+La puerta por la que un programa le pide datos o servicios a otro, por ejemplo a un servidor por HTTP (una API web). Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#111-qué-es-una-api-web).
 
 ### Área de preparación
 
@@ -95,6 +95,10 @@ Grupo de 8 bits; la unidad con la que se miden ficheros, memoria y discos. Lo ex
 
 ## C
 
+### Cabecera HTTP
+
+Dato con nombre y valor que acompaña a una petición o a una respuesta, como Content-Type. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#18-las-cabeceras-más-habituales).
+
 ### Caché
 
 Copia guardada de algo (una respuesta del DNS, una página, un dato consultado) para no tener que volver a pedirlo o calcularlo. Lo explica [06.01 Redes: IP, router, DNS y cortafuegos](fase-06-internet-y-aplicaciones/01-redes.md#112-cómo-se-resuelve-un-nombre).
@@ -119,6 +123,10 @@ Ejemplo concreto que dice qué datos se dan (entrada) y qué debe salir (salida 
 
 Caso de prueba con un valor justo en la frontera entre dos grupos de datos, o al lado de ella. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#14-qué-casos-elegir-normales-límite-y-no-válidos).
 
+### Clave de API
+
+Secreto que identifica a quien usa una API; va en una cabecera y nunca en el código ni en Git. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#115-las-claves-de-una-api-fuera-del-código).
+
 ### Clave SSH
 
 Par de ficheros (la clave pública, que se da al servidor, y la privada, que no sale de tu ordenador) para conectarse a un servidor sin contraseña. Lo explica [05.03 GitHub](fase-05-git-y-github/03-github.md#15-ssh-un-par-de-claves).
@@ -130,6 +138,10 @@ Programa que toma la iniciativa y pide algo a un servidor (el navegador, Git al 
 ### Codificación de caracteres
 
 Tabla que asocia cada letra o símbolo con un número; si un programa y la consola usan tablas distintas, las tildes salen mal. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#14-ascii-los-primeros-128-caracteres).
+
+### Código de estado
+
+Número de tres cifras de una respuesta HTTP que dice cómo ha ido: 2xx bien, 3xx a otro sitio, 4xx error del cliente, 5xx error del servidor. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#17-los-códigos-de-estado).
 
 ### Código de salida
 
@@ -186,6 +198,10 @@ Programa o aparato que decide qué conexiones pasan y cuáles no, según unas re
 ### CSV
 
 Fichero de texto con una tabla: una fila por línea y las columnas separadas por comas (o por punto y coma); la primera línea, la cabecera, suele decir qué es cada columna. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#18-csv-a-fondo-las-reglas).
+
+### curl
+
+Programa de la terminal que hace peticiones HTTP y muestra la respuesta. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#113-curl-http-desde-la-terminal).
 
 ## D
 
@@ -246,6 +262,10 @@ Poner en marcha un programa para que el ordenador siga sus instrucciones. Lo exp
 ### Elemento (XML)
 
 Una etiqueta de apertura, su contenido y su etiqueta de cierre (`<autor>…</autor>`); el elemento raíz contiene a todos los demás. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#13-las-piezas-de-un-xml).
+
+### Endpoint
+
+Cada dirección de una API con su método, como GET /libros. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#111-qué-es-una-api-web).
 
 ### Entidad (XML)
 
@@ -377,6 +397,10 @@ Servicio de GitHub que publica una web estática desde un repositorio. Lo explic
 
 Lo que dice en qué rama (o, desacoplado, en qué commit) estás; aparece como HEAD -> main en el historial. Lo explica [05.02 Ramas y conflictos](fase-05-git-y-github/02-ramas-y-conflictos.md#13-head-dónde-estás).
 
+### Herramientas del desarrollador
+
+Herramientas del navegador para ver por dentro una página; en su pestaña Red sale cada petición y su respuesta. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#110-la-pestaña-red-del-navegador).
+
 ### Hilo
 
 Cada una de las líneas de trabajo independientes que avanzan a la vez dentro de un programa. Lo explica [01.04 Paradigmas de programación](fase-01-que-es-programar/04-paradigmas-de-programacion.md#18-otros-estilos-que-oirás-nombrar).
@@ -388,6 +412,14 @@ Las órdenes que ya has escrito en la terminal, que se recuperan con las flechas
 ### HTML
 
 Lenguaje de marcas de las páginas web, con etiquetas fijas (`<p>`, `<a>`…); los navegadores arreglan sus errores al leerlo. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#17-html-el-pariente-de-xml).
+
+### HTTP
+
+Protocolo de la web: el cliente envía una petición y el servidor contesta con una respuesta. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#13-http-pedir-y-responder-con-texto).
+
+### HTTPS
+
+HTTP dentro de una conexión cifrada con TLS, en la que el servidor demuestra quién es con un certificado. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#19-https-http-con-candado).
 
 ## I
 
@@ -477,6 +509,10 @@ Pieza que guarda lo que se está usando ahora mismo; es muy rápida y se borra a
 
 Herramienta gratuita y de código abierto que dibuja diagramas a partir de un texto escrito en un bloque mermaid de Markdown; la usan GitHub, la academia y VS Code. Lo explica [04.05 Diagramas y Mermaid](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#13-dibujar-escribiendo-mermaid).
 
+### Método HTTP
+
+Lo que la petición quiere hacer: GET leer, POST crear, PUT sustituir, PATCH cambiar una parte, DELETE borrar. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#15-los-métodos-qué-quieres-hacer).
+
 ### Mínimo privilegio
 
 Principio de seguridad: cada usuario y cada programa, con los permisos justos para su tarea y ni uno más. Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#111-administrador-sudo-y-cuándo-no-usarlo).
@@ -554,6 +590,10 @@ Técnica de depuración: explicar el código línea a línea, en voz alta, para 
 ### Permisos
 
 Lo que cada usuario puede hacer con un fichero o una carpeta: leer (r), escribir (w) y ejecutar (x). Lo explica [03.02 La terminal: sacarle partido](fase-03-herramientas/02-terminal-sacarle-partido.md#110-permisos-quién-puede-leer-escribir-y-ejecutar).
+
+### Petición HTTP
+
+Lo que envía el cliente: método, ruta, versión, cabeceras y, a veces, un cuerpo. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#14-la-petición).
 
 ### PID
 
@@ -676,6 +716,14 @@ Conseguir que un error ocurra cuando uno quiere, con unos datos y unos pasos con
 ### Resaltado de sintaxis
 
 Colores que pone el editor a cada parte del código según el lenguaje del fichero. Lo explica [03.03 El editor de código](fase-03-herramientas/03-editor-de-codigo.md#19-el-resaltado-de-sintaxis).
+
+### Respuesta HTTP
+
+Lo que devuelve el servidor: línea de estado con su código, cabeceras y, a veces, un cuerpo. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#16-la-respuesta).
+
+### REST
+
+Estilo para organizar una API web: recursos con su dirección, la acción en el método y el resultado en el código de estado. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#112-rest-recursos-y-métodos).
 
 ### Revisión de código
 
@@ -810,6 +858,10 @@ Unified Modeling Language: lenguaje gráfico estándar del OMG para dibujar el d
 ### Unicode
 
 Tabla única que da un número a cada carácter de todos los idiomas (la ñ es U+00F1); UTF-8 es la forma habitual de guardarla. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#16-unicode-un-número-para-cada-carácter).
+
+### URL
+
+Dirección de algo en la web, con esquema, dominio, puerto, ruta, parámetros y fragmento. Lo explica [06.03 La web: HTTP, peticiones, respuestas y APIs](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md#12-las-partes-de-una-url).
 
 ### UTF-8
 

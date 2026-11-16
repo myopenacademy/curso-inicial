@@ -34,6 +34,7 @@
 - **Fase 06 — Internet y aplicaciones**
   - [06.01 Redes: IP, router, DNS y cortafuegos](#0601-redes-ip-router-dns-y-cortafuegos)
   - [06.02 Puertos y localhost: tu ordenador como servidor](#0602-puertos-y-localhost-tu-ordenador-como-servidor)
+  - [06.03 La web: HTTP, peticiones, respuestas y APIs](#0603-la-web-http-peticiones-respuestas-y-apis)
 
 ---
 
@@ -1519,6 +1520,64 @@ gitGraph
 2. ¿En qué puerto y en qué dirección dice que escucha?
 3. ¿Es `http` y no `https`?
 4. Desde otro aparato: ¿IP del ordenador (no `localhost`), servidor en `0.0.0.0` y cortafuegos en redes privadas?
+
+---
+
+### 06.03 La web: HTTP, peticiones, respuestas y APIs
+
+📖 Módulo completo: [fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md](fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md)
+
+#### Una URL
+
+```text
+https://tienda.example.com:8443/libros/novela?orden=precio&pagina=2#opiniones
+esquema  dominio            puerto ruta        parámetros            fragmento
+```
+
+Sin puerto: 443 con `https` y 80 con `http`. El fragmento no viaja al servidor. La ruta distingue mayúsculas.
+
+#### Métodos
+
+| Método | Para | Cambia algo |
+|---|---|---|
+| `GET` | Leer | No |
+| `POST` | Crear (o una acción) | Sí |
+| `PUT` | Sustituir entero | Sí |
+| `PATCH` | Cambiar una parte | Sí |
+| `DELETE` | Borrar | Sí |
+
+#### Códigos de estado
+
+| Familia | Quiere decir | Los más comunes |
+|---|---|---|
+| 2xx | Ha ido bien | `200` OK · `201` Created (+ `Location`) · `204` No Content |
+| 3xx | Ve a otro sitio | `301` · `302` (+ `Location`) · `304` Not Modified |
+| 4xx | Tu petición está mal | `400` mal escrita · `401` ¿quién eres? · `403` no puedes · `404` no existe · `405` método no admitido (+ `Allow`) · `429` demasiadas |
+| 5xx | Falla el servidor | `500` error interno · `503` no disponible |
+
+#### curl
+
+| Orden | Qué hace |
+|---|---|
+| `curl URL` | `GET` y escribe el cuerpo |
+| `curl -i URL` | Con la línea de estado y las cabeceras |
+| `curl -s -o fichero URL` | Guarda el cuerpo en un fichero, sin barra de progreso |
+| `curl -s -o /dev/null -w '%{http_code}\n' URL` | Solo el código de estado (`000` si no hay respuesta) |
+| `curl -X DELETE URL` | Con otro método |
+| `curl -H 'Content-Type: application/json' -d '{"a": 1}' URL` | `POST` con un cuerpo en JSON |
+| `curl -H 'Content-Type: application/json' -d @fichero.json URL` | Lo mismo, con el JSON en un fichero |
+| `curl -s -f URL` | Termina con el código 22 si la respuesta es `400` o mayor |
+| `curl -v URL` | Todo lo que envía y recibe (para investigar; cambia con la versión) |
+
+Códigos de salida de `curl`: 0, ha hablado con el servidor (aunque responda `404`); 7, no ha podido conectar; 35, ha fallado la conexión cifrada ([06.02](fase-06-internet-y-aplicaciones/02-puertos-y-localhost.md#23-http-no-es-https)); 22, con `-f`, respuesta `400` o mayor.
+
+#### Para no fallar
+
+- Direcciones con `?` o `&` y el JSON de `-d`, **entre comillas simples**.
+- `-s` siempre con `-o` o con una tubería.
+- La clave de una API, en `.env` y en una variable de entorno: nunca en el código ni en Git.
+- Pestaña **Red** del navegador: <kbd>F12</kbd> (en Firefox, también <kbd>Ctrl</kbd>+<kbd>Mayús</kbd>+<kbd>E</kbd>).
+- Para practicar con una API real: `curl -i https://api.github.com/users/octocat` (60 peticiones por hora sin identificarte, a 16 de noviembre de 2026).
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

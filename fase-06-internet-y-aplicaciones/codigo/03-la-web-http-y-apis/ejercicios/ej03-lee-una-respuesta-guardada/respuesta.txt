@@ -1,0 +1,14 @@
+HTTP/1.1 201 Created
+Content-Type: application/json
+Location: /reservas/57
+Content-Length: 92
+
+{
+  "id": 57,
+  "pelicula": 3,
+  "sesion": "22:00",
+  "butacas": [
+    "F7",
+    "F8"
+  ]
+}

@@ -1,0 +1,1 @@
+http://localhost:8080/estado http://localhost:8080/tienda http://localhost:8080/carrito http://localhost:8081/estado

@@ -1,0 +1,3 @@
+curl http://localhost:8080/libros
+curl 'http://localhost:8080/libros?disponible=true'
+curl -i http://localhost:8080/libros/9

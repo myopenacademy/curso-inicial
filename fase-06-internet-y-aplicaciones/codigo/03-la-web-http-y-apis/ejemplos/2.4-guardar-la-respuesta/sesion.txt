@@ -1,0 +1,6 @@
+curl -s -o libros.json http://localhost:8080/libros
+ls
+grep -c '"id"' libros.json
+grep titulo libros.json
+curl -s -i -o niebla.txt http://localhost:8080/libros/1
+head -n 1 niebla.txt

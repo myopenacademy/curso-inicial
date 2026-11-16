@@ -1,0 +1,28 @@
+{
+  "puerto": 8080,
+  "rutas": [
+    {
+      "metodo": "GET",
+      "ruta": "/peliculas",
+      "estado": 200,
+      "cuerpo": [
+        {"id": 1, "titulo": "El viaje de Chihiro", "minutos": 125, "sesiones": ["17:00", "19:45"]},
+        {"id": 2, "titulo": "Ocho apellidos vascos", "minutos": 98, "sesiones": ["18:30", "20:30", "22:30"]},
+        {"id": 3, "titulo": "Campeones", "minutos": 124, "sesiones": ["16:15", "22:00"]}
+      ]
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/peliculas/3",
+      "estado": 200,
+      "cuerpo": {"id": 3, "titulo": "Campeones", "minutos": 124, "sesiones": ["16:15", "22:00"]}
+    },
+    {
+      "metodo": "POST",
+      "ruta": "/reservas",
+      "estado": 201,
+      "cabeceras": {"Location": "/reservas/57"},
+      "cuerpo": {"id": 57, "pelicula": 3, "sesion": "22:00", "butacas": ["F7", "F8"]}
+    }
+  ]
+}

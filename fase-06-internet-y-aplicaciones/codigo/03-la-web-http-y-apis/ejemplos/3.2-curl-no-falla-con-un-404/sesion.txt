@@ -1,0 +1,5 @@
+curl -s -o /dev/null http://localhost:8080/libros/9
+echo $?
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/libros/9
+curl -s -f -o /dev/null http://localhost:8080/libros/9
+echo $?

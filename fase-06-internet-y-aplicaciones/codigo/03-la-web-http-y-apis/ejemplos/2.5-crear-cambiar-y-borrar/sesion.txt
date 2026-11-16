@@ -1,0 +1,5 @@
+cat regenta.json
+curl -i -H 'Content-Type: application/json' -d @regenta.json http://localhost:8080/libros
+curl -i -X PUT -H 'Content-Type: application/json' -d @niebla.json http://localhost:8080/libros/1
+curl -i -X DELETE http://localhost:8080/libros/1
+curl -i -X DELETE http://localhost:8080/libros

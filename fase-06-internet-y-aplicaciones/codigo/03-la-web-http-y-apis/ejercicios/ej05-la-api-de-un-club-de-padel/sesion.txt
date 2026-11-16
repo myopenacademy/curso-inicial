@@ -1,0 +1,4 @@
+curl 'http://localhost:8080/reservas?fecha=2026-11-20'
+curl -i -H 'Content-Type: application/json' -d @reserva.json http://localhost:8080/reservas
+curl -i -X DELETE http://localhost:8080/reservas/31
+curl -s -o /dev/null -w '%{http_code}\n' -X DELETE http://localhost:8080/pistas/2

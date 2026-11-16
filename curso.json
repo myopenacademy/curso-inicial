@@ -815,8 +815,36 @@
           "id": "inicial.la-web-http-y-apis",
           "fichero": "fase-06-internet-y-aplicaciones/03-la-web-http-y-apis.md",
           "titulo": "La web: HTTP, peticiones, respuestas y APIs",
-          "disponible": false,
-          "ejercicios": []
+          "ejercicios": [
+            {
+              "id": "inicial.la-web-http-y-apis.las-partes-de-una-url",
+              "titulo": "Las partes de una URL"
+            },
+            {
+              "id": "inicial.la-web-http-y-apis.que-ha-pasado-con-cada-peticion",
+              "titulo": "Qué ha pasado con cada petición"
+            },
+            {
+              "id": "inicial.la-web-http-y-apis.lee-una-respuesta-guardada",
+              "titulo": "Lee una respuesta guardada"
+            },
+            {
+              "id": "inicial.la-web-http-y-apis.pregunta-a-la-api-del-cine",
+              "titulo": "Pregunta a la API del cine"
+            },
+            {
+              "id": "inicial.la-web-http-y-apis.la-api-de-un-club-de-padel",
+              "titulo": "La API de un club de pádel"
+            },
+            {
+              "id": "inicial.la-web-http-y-apis.vigila-varias-direcciones",
+              "titulo": "Vigila varias direcciones"
+            },
+            {
+              "id": "inicial.la-web-http-y-apis.consulta-la-api-de-github",
+              "titulo": "Consulta la API de GitHub"
+            }
+          ]
         },
         {
           "id": "inicial.que-es-una-base-de-datos",

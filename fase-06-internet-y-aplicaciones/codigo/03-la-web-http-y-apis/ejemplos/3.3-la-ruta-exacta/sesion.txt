@@ -1,0 +1,4 @@
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/libros
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/Libros
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/libros/
+curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/libro

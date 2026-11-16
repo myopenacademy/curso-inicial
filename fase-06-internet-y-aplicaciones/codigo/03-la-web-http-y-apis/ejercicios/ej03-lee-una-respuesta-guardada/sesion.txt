@@ -1,0 +1,4 @@
+cat respuesta.txt
+head -n 1 respuesta.txt
+grep Location respuesta.txt
+grep -i content-type respuesta.txt

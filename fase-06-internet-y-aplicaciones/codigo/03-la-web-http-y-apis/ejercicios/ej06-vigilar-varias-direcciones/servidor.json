@@ -1,0 +1,17 @@
+{
+  "puerto": 8080,
+  "rutas": [
+    {
+      "metodo": "GET",
+      "ruta": "/estado",
+      "estado": 200,
+      "cuerpo": "Tienda abierta\n"
+    },
+    {
+      "metodo": "GET",
+      "ruta": "/tienda",
+      "estado": 503,
+      "cuerpo": {"error": "La tienda está en mantenimiento"}
+    }
+  ]
+}

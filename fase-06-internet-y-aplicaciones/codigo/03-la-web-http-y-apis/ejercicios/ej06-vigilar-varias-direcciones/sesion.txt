@@ -1,0 +1,4 @@
+bash vigilar.sh http://localhost:8080/estado http://localhost:8080/tienda
+bash vigilar.sh http://localhost:8080/carrito http://localhost:8081/estado
+bash vigilar.sh
+echo $?
