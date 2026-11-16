@@ -96,12 +96,13 @@ La duda de `CONFLICT` no tiene tarea propia: la resuelve la tarea 4, y se apunta
 
 | Semana | Lunes, miércoles y jueves (30 min) | Sábado (1,5 h) |
 |---|---|---|
-| 1 (23 al 28 de noviembre) | Tarea 2; tarea 3; repaso de la semana | Tarea 1 |
+| 1 (23 al 28 de noviembre) | Tarea 1: las preguntas de 05.01, de 05.02 y de 05.03, un módulo por sesión | Tareas 2 y 3 |
 | 2 (30 de noviembre al 5 de diciembre) | Tarea 4 (dos sesiones); repaso | Tarea 5 |
-| 3 (7 al 12 de diciembre) | Lo que haya fallado en la tarea 1, un apartado por sesión | Tarea 6 |
+| 3 (7 al 12 de diciembre) | Repasar lo que falló en la tarea 1 (prepara la tarea 8), un apartado por sesión | Tarea 6 |
 | 4 (14 al 19 de diciembre) | Tarea 8; repaso | Tarea 7 |
 
-- **Lo corto, entre semana; lo largo, el sábado.** Una duda cabe en 30 minutos; un reto de Git, no. Cada tarea cabe en una o dos sesiones ([07.02, apartado 1.2](02-organizar-tu-trabajo.md#12-dividir-un-problema-en-tareas)).
+- **La tarea 1 va la primera** porque dice qué hay que repasar; cabe en tres sesiones cortas, un módulo cada una.
+- **Lo corto, entre semana; lo largo, el sábado.** Una duda o las preguntas de un módulo caben en 30 minutos; un reto de Git, no. Cada tarea cabe en una o dos sesiones ([07.02, apartado 1.2](02-organizar-tu-trabajo.md#12-dividir-un-problema-en-tareas)).
 - **Cada sesión empieza con unos minutos de repaso** de la anterior y **termina con su entrada en el diario** y su commit ([07.01, apartados 1.9](01-como-estudiar.md#19-sesiones-cortas-con-descansos-y-repartidas) y [1.10](01-como-estudiar.md#110-el-diario-de-lo-aprendido)).
 - **La tarea 8 va al final a propósito:** volver a lo que falló dos o tres semanas después es el repaso repartido que lo fija.
 - **Límite de trabajo en curso: 2.** Una tarea en la que trabaja y, como mucho, otra que espera algo (una respuesta). Con sesiones de 30 minutos, tener tres cosas empezadas sería no terminar ninguna ([07.02, apartado 1.5](02-organizar-tu-trabajo.md#15-limitar-el-trabajo-en-curso)).
@@ -465,8 +466,8 @@ El `.gitignore` lo propuso un asistente de IA. Antes del primer commit se compro
 $ mkdir perseidas && cd perseidas && git init
 Inicializado repositorio Git vacío en /home/alumno/perseidas/.git/
 $ cp -r ../.github ../.env.example ../README.md .
-$ printf 'CIELO_API_URL=https://api.cielo.example/v1\nCIELO_CLAVE=clave-de-prueba-123\n' > .env
 $ printf '.env*\n!.env.example\nlogs/\n' > .gitignore
+$ printf 'CIELO_API_URL=https://api.cielo.example/v1\nCIELO_CLAVE=clave-de-prueba-123\n' > .env
 $ printf '2026-11-14 20:00 Previsión: despejado\n' > cielo.log
 $ ls -a
 .  ..  cielo.log  .env  .env.example  .git  .github  .gitignore  README.md
@@ -483,7 +484,7 @@ $ git status --short
 
 📁 **Código:** [`codigo/retos/reto-03-el-repositorio-de-la-asociacion/`](codigo/retos/reto-03-el-repositorio-de-la-asociacion/)
 
-- **La primera línea** crea la carpeta del repositorio, entra y lo inicia; la segunda copia dentro los tres ficheros de la solución, con `-r` para la carpeta `.github`. El `.env` se escribe con `printf` para que la sesión quede entera; en tu equipo lo harías con `cp .env.example .env` y escribirías tu clave con el editor. Después, el `.gitignore` del asistente, tal cual, y un `cielo.log` como el que dejará el script, para probar con él.
+- **La primera línea** crea la carpeta del repositorio, entra y lo inicia; la segunda copia dentro los tres ficheros de la solución, con `-r` para la carpeta `.github`. Después, el `.gitignore` del asistente, tal cual y **antes que el `.env`** ([07.05, ejemplo 2.4](05-seguridad-basica.md#24-un-proyecto-con-secretos-desde-el-primer-commit)). El `.env` se escribe con `printf` para que la sesión quede entera; en tu equipo lo harías con `cp .env.example .env` y escribirías tu clave con el editor. Y por último, un `cielo.log` como el que dejará el script, para probar con él.
 - **`ls -a`** enseña todo, también lo oculto: los dos `.env`, la carpeta `.github`, el `.gitignore` y el registro.
 - **`git check-ignore -v` encuentra el fallo** antes de que haga daño. Para el `.env` y el `.env.example`, todo bien: el primero lo ignora la línea 1 y el segundo lo saca de los ignorados la línea 2, la del `!`. Pero de `cielo.log` **no dice nada**: no está ignorado. `logs/` solo ignora una **carpeta** llamada `logs` ([05.01, apartado 1.12](../fase-05-git-y-github/01-git-fundamentos.md#112-lo-que-no-va-en-git-gitignore)), y el script deja su registro fuera de ella. El asistente dio por hecho dónde iban los registros, sin preguntar.
 - **`git status --short` lo confirma**: `cielo.log` aparece con `??`, y un `git add .` lo metería en el commit. Si Aitor no lo hubiera comprobado, cada noche de observación habría dejado un cambio en el repositorio.
