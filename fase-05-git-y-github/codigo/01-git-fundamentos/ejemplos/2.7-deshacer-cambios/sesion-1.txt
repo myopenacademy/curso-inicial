@@ -1,0 +1,14 @@
+mkdir recetas && cd recetas && git init
+printf 'Bizcocho de yogur\n\n- 1 yogur\n- 3 huevos\n- 3 medidas de harina\n' > bizcocho.txt
+git add bizcocho.txt && git commit -m "Añade la receta del bizcocho"
+echo "- 1 kilo de sal" >> bizcocho.txt
+git diff
+git restore bizcocho.txt
+git status
+cat bizcocho.txt
+echo "- 2 medidas de azúcar" >> bizcocho.txt
+git add bizcocho.txt
+git status --short
+git restore --staged bizcocho.txt
+git status --short
+git diff

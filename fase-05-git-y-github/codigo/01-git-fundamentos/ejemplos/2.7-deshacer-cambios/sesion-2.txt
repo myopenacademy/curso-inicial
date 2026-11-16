@@ -1,0 +1,13 @@
+cd recetas
+git add bizcocho.txt
+git commit -m "Añade el azucar"
+git log --oneline
+git commit --amend -m "Añade el azúcar al bizcocho"
+git log --oneline
+printf 'Galletas de mantequilla\n\n- 250 g de harina\n- 125 g de mantequilla\n' > galletas.txt
+git add galletas.txt && git commit -m "Añade la receta de las galletas"
+echo "- 1 huevo" >> galletas.txt
+git add galletas.txt
+git commit --amend --no-edit
+git log --oneline
+git show --stat --oneline

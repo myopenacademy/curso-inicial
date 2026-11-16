@@ -1,0 +1,11 @@
+bash preparar.sh
+cd agenda
+git status --short
+git diff
+git add README.md
+git diff --staged
+git commit -m "Corrige el teléfono de la escuela"
+git add horario.txt
+git commit -m "Añade la clase de violín de los miércoles"
+git log --oneline
+git status

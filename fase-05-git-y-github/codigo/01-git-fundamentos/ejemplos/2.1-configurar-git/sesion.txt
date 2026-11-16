@@ -1,0 +1,7 @@
+git config --global user.name "Lucía Martín"
+git config --global user.email "lucia@example.com"
+git config --global init.defaultBranch main
+git config --global core.editor "code --wait"
+git config --global --list
+git config user.name
+cat ~/.gitconfig

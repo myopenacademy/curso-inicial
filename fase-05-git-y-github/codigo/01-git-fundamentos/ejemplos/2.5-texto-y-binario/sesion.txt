@@ -1,0 +1,8 @@
+mkdir cartel && cd cartel && git init
+printf 'Fiesta de fin de curso\nSábado 20 de junio, a las 18:00\n' > cartel.txt
+printf '\x89PNG\r\n\x1a\n\x00\x01' > logo.png
+git add . && git commit -m "Primer cartel de la fiesta"
+printf 'Fiesta de fin de curso\nSábado 20 de junio, a las 19:00\n' > cartel.txt
+printf '\x89PNG\r\n\x1a\n\x00\x02' > logo.png
+git diff
+git diff --stat

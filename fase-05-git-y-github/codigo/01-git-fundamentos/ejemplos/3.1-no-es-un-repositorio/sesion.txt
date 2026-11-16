@@ -1,0 +1,3 @@
+git status
+mkdir notas && cd notas && git init
+git status

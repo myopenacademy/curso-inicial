@@ -1,0 +1,11 @@
+cd recetas
+grep -v huevos bizcocho.txt > sin-huevos.txt && mv sin-huevos.txt bizcocho.txt
+git add bizcocho.txt
+git commit -m "Quita los huevos del bizcocho"
+echo "Horno: 180 grados, 12 minutos" >> galletas.txt
+git add galletas.txt
+git commit -m "Indica el horno de las galletas"
+git log --oneline
+git revert --no-edit c8e90eb
+git log --oneline
+cat bizcocho.txt

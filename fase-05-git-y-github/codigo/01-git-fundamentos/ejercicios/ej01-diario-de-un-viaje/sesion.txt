@@ -1,0 +1,11 @@
+mkdir viaje-asturias && cd viaje-asturias && git init
+echo "Día 1: llegada a Oviedo y paseo por el casco antiguo." > diario.txt
+git status --short
+git add diario.txt
+git commit -m "Empieza el diario del viaje"
+echo "Día 2: ruta del Cares, 22 kilómetros." >> diario.txt
+git status --short
+git diff
+git add diario.txt
+git commit -m "Añade el día 2"
+git log --oneline

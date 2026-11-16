@@ -27,6 +27,8 @@
   - [04.03 JSON y YAML](#0403-json-y-yaml)
   - [04.04 XML, CSV y otros](#0404-xml-csv-y-otros)
   - [04.05 Diagramas y Mermaid](#0405-diagramas-y-mermaid)
+- **Fase 05 — Git y GitHub**
+  - [05.01 Git: fundamentos](#0501-git-fundamentos)
 
 ---
 
@@ -1201,6 +1203,78 @@ sequenceDiagram
 #### Dónde se ve
 
 GitHub (ficheros `.md` e *issues*), la academia, la vista previa de VS Code (desde la 1.121, sin extensiones) y el editor en línea `https://mermaid.live`, para probar.
+
+---
+
+## Fase 05 — Git y GitHub
+
+---
+
+### 05.01 Git: fundamentos
+
+📖 Módulo completo: [fase-05-git-y-github/01-git-fundamentos.md](fase-05-git-y-github/01-git-fundamentos.md)
+
+#### Configurar Git (una vez por ordenador)
+
+```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@correo.com"
+git config --global init.defaultBranch main
+git config --global core.editor "code --wait"
+git config --global --list
+```
+
+#### El ciclo de cada día
+
+| Orden | Qué hace |
+|---|---|
+| `git init` | Crea un repositorio en la carpeta actual |
+| `git status` · `git status --short` | El estado de cada fichero |
+| `git add fichero` · `git add .` | Prepara un fichero · todo lo cambiado |
+| `git commit -m "mensaje"` | Guarda lo preparado como un commit |
+| `git diff` | Lo cambiado **sin preparar** |
+| `git diff --staged` | Lo **preparado**: lo que irá en el commit |
+| `git log` · `git log --oneline` | La historia · resumida |
+| `git show id` · `git show --stat id` | Un commit con su cambio · con el resumen |
+| `git mv a b` · `git rm f` | Renombra · borra, y lo prepara |
+
+#### git status --short
+
+| Código | Significa |
+|---|---|
+| `??` | Sin seguimiento |
+| ` M` | Modificado, sin preparar |
+| `M ` · `A ` · `D ` · `R ` | Preparado: modificado · nuevo · borrado · renombrado |
+| `MM` | Preparado y cambiado otra vez después |
+
+#### Deshacer
+
+| Quiero… | Orden | ¿Pierdo algo? |
+|---|---|---|
+| Descartar los cambios de un fichero | `git restore f` | **Sí** |
+| Sacar un fichero del área de preparación | `git restore --staged f` | No |
+| Cambiar el mensaje del último commit | `git commit --amend -m "…"` | No (lo sustituye) |
+| Añadir algo olvidado al último commit | `git add f` y `git commit --amend --no-edit` | No (lo sustituye) |
+| Anular un commit, aunque esté compartido | `git revert --no-edit id` | No |
+| Dejar de vigilar un fichero sin borrarlo | `git rm --cached f` | No |
+
+**Regla de oro:** `--amend`, solo con lo no compartido. **`reset --hard`**, no: borra lo que no está en un commit.
+
+#### .gitignore
+
+| Patrón | Ignora |
+|---|---|
+| `.env` | Ese nombre, en cualquier carpeta |
+| `*.log` | Esa extensión, en cualquier carpeta |
+| `dist/` | Esa carpeta y todo lo que tiene |
+| `/notas.txt` | Solo el de la carpeta principal |
+| `!fichero` | Excepción: este no |
+
+`git check-ignore -v f`: qué línea lo ignora. Lo que ya está en Git no se ignora: `git rm --cached f`.
+
+#### Si se abre Vim
+
+<kbd>Esc</kbd> y `:q!` + <kbd>Intro</kbd> (salir sin guardar) · <kbd>Esc</kbd> y `:wq` + <kbd>Intro</kbd> (guardar y salir).
 
 ---
 📚 [Índice del curso](00-indice.md) · 🏠 [Portada](README.md)

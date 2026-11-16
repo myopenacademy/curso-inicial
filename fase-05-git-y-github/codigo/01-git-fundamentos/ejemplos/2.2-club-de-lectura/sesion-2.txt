@@ -1,0 +1,13 @@
+cd club-lectura
+echo "Marta Gil;2026" >> socios.csv
+printf '\nLibro de este mes: «La sombra del viento».\n' >> README.md
+git status --short
+git diff
+git add socios.csv
+git status --short
+git diff
+git diff --staged
+git commit -m "Da de alta a Marta Gil en el club"
+git add README.md
+git commit -m "Anuncia el libro de este mes"
+git log --oneline

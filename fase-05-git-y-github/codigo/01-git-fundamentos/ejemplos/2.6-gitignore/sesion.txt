@@ -1,0 +1,13 @@
+mkdir tienda && cd tienda && git init
+printf '<h1>Cerámica Olmo</h1>\n' > index.html
+echo "CLAVE_PAGO=k8Hq2Lw9Zt" > .env
+echo "2026-01-15 10:00 Servidor arrancado" > servidor.log
+mkdir salida && echo "Ventas de enero" > salida/informe.txt
+git status --short
+printf '# Secretos\n.env\n\n# Registros\n*.log\n\n# Lo que se genera solo\nsalida/\n' > .gitignore
+cat .gitignore
+git status --short
+git check-ignore -v .env servidor.log salida/informe.txt
+git add .
+git status --short
+git commit -m "Primera versión de la tienda"

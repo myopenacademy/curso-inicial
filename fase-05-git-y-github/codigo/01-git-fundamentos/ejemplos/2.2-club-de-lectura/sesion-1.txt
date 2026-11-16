@@ -1,0 +1,14 @@
+mkdir club-lectura && cd club-lectura && git init
+git status
+printf '# Club de lectura Entre Páginas\n\nNos vemos el primer jueves de cada mes.\n' > README.md
+printf 'nombre;socio_desde\nCarmen Ruiz;2024\nJavier Soto;2025\n' > socios.csv
+ls
+git status
+git status --short
+git add README.md
+git status --short
+git add socios.csv
+git status
+git commit -m "Añade el README y la lista de socios"
+git status
+git log

@@ -1,0 +1,13 @@
+bash preparar.sh
+cd web-baile
+git status --short
+printf '# Secretos (el .env.example sí se guarda)\n.env\n\n' > .gitignore
+printf '# Registros\n*.log\n\n# Lo que se genera al publicar\ndist/\n\n' >> .gitignore
+printf '# Ficheros del sistema\n.DS_Store\n' >> .gitignore
+cat .gitignore
+git status --short
+git check-ignore -v .env errores.log registros/servidor.log dist/index.html .DS_Store
+git check-ignore -v .env.example fotos/clase-de-salsa.jpg
+git add .
+git status --short
+git commit -m "Primera versión de la web"

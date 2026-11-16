@@ -1,0 +1,4 @@
+cd club-lectura
+git log --oneline
+git show 2654ef3
+git show --stat 6bd964f

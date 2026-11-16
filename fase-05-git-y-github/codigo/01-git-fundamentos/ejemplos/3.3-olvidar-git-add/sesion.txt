@@ -1,0 +1,9 @@
+mkdir horarios && cd horarios && git init
+echo "Lunes a viernes, de 9:00 a 14:00" > horario.txt
+git add horario.txt && git commit -m "Añade el horario"
+echo "Sábados, de 10:00 a 13:00" >> horario.txt
+git commit -m "Abre los sábados"
+git status --short
+git add horario.txt
+git commit -m "Abre los sábados"
+git commit -m "Abre los sábados"

@@ -31,6 +31,10 @@ Identificador de un título que se genera a partir de su texto y permite enlazar
 
 La puerta por la que un programa le pide datos o servicios a otro, por ejemplo a un servidor; se ve a fondo en la fase 6. Lo explica [04.03 JSON y YAML](fase-04-formatos-y-diagramas/03-json-y-yaml.md#11-datos-con-estructura-para-qué-sirven-los-formatos).
 
+### Área de preparación
+
+Zona intermedia de Git (también índice o staging area) donde se eligen con git add los cambios que irán en el próximo commit. Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#17-las-tres-zonas-de-git).
+
 ### Argumento
 
 Lo que se escribe detrás del nombre de una orden (o de un script) para decirle sobre qué trabajar: un fichero, una carpeta, un texto. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#12-cómo-se-escribe-una-orden).
@@ -131,6 +135,10 @@ Instrucciones en binario, las únicas que entiende directamente el procesador. L
 
 Texto dentro del código para las personas, que el ordenador ignora. Lo explica [01.01 Qué es programar](fase-01-que-es-programar/01-que-es-programar.md#21-el-mismo-algoritmo-en-tres-lenguajes).
 
+### Commit
+
+Cada versión guardada en la historia de un repositorio de Git: una foto de todos sus ficheros, con identificador, autor, fecha, mensaje y el commit anterior. Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#16-commit-una-foto-del-proyecto).
+
 ### Comodín
 
 Carácter especial (* o ?) que sirve para nombrar muchos ficheros de una vez por un patrón; bash lo cambia por la lista de nombres que encajan. Lo explica [03.01 La terminal: lo básico](fase-03-herramientas/01-terminal-lo-basico.md#114-comodines-y-comillas).
@@ -150,6 +158,10 @@ Expresión que da VERDADERO o FALSO y decide qué camino sigue un algoritmo. Lo 
 ### Constante
 
 Dato con nombre cuyo valor no cambia durante todo el algoritmo. Lo explica [01.02 Algoritmos y pseudocódigo](fase-01-que-es-programar/02-algoritmos-y-pseudocodigo.md#constantes).
+
+### Control de versiones
+
+Sistema que guarda la historia de un proyecto (qué cambió, quién, cuándo y por qué) y permite volver a cualquier versión anterior. Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#12-el-control-de-versiones).
 
 ### CSV
 
@@ -176,6 +188,10 @@ Representación gráfica de un algoritmo o un proceso: cada paso es una figura y
 ### Diagrama de secuencia
 
 Diagrama que pone a cada participante en una columna y dibuja, de arriba abajo en el orden en que ocurren, los mensajes que se mandan. Lo explica [04.05 Diagramas y Mermaid](fase-04-formatos-y-diagramas/05-diagramas-y-mermaid.md#12-tres-diagramas-para-empezar).
+
+### Diff
+
+Las diferencias entre dos versiones de un fichero de texto, línea a línea: con + lo añadido y con - lo quitado (git diff). Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#110-ver-los-cambios-diff-y-show).
 
 ### Directorio
 
@@ -253,6 +269,10 @@ Conjunto de datos guardado en el disco con un nombre (también, archivo). Lo exp
 
 Fichero oculto con las variables de entorno y los secretos de un proyecto (NOMBRE=valor); no se sube a Git, se sube un .env.example. Lo explica [04.04 XML, CSV y otros](fase-04-formatos-y-diagramas/04-xml-csv-y-otros.md#114-el-fichero-env-y-los-secretos).
 
+### Fichero .gitignore
+
+Fichero de un repositorio con los patrones de lo que Git no debe guardar (secretos, registros, lo que se genera solo). Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#112-lo-que-no-va-en-git-gitignore).
+
 ### Fichero binario
 
 Fichero cuyos bytes no son caracteres, sino datos con el formato de un programa (imagen, PDF, .docx, .zip); se abre con su programa. Lo explica [04.01 Texto, binario y codificación](fase-04-formatos-y-diagramas/01-texto-binario-y-codificacion.md#12-ficheros-de-texto-y-ficheros-binarios).
@@ -278,6 +298,10 @@ Reglas para escribir datos como texto de modo que otro programa los pueda leer: 
 ### Gestor de paquetes
 
 Programa que instala, actualiza y desinstala otros programas con una orden: winget, Homebrew, apt… Lo explica [02.03 Instalar programas, variables de entorno y PATH](fase-02-tu-ordenador/03-instalar-programas-y-path.md#12-tres-formas-de-instalar).
+
+### Git
+
+El sistema de control de versiones más usado; distribuido: cada persona tiene en su ordenador el proyecto con toda su historia. No es lo mismo que GitHub. Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#13-git-y-github-que-no-es-lo-mismo).
 
 ### Git Bash
 
@@ -536,6 +560,10 @@ Fichero de texto en el que un programa va apuntando, línea a línea y con su fe
 ### Regresión
 
 Error en algo que antes funcionaba y que se ha estropeado al cambiar otra cosa. Lo explica [01.03 ¿Cómo sé que funciona? Probar un programa](fase-01-que-es-programar/03-probar-un-programa.md#19-las-pruebas-automáticas).
+
+### Repositorio
+
+Carpeta cuya historia guarda Git, en su subcarpeta oculta .git; se crea con git init. Lo explica [05.01 Git: fundamentos](fase-05-git-y-github/01-git-fundamentos.md#15-repositorio-una-carpeta-con-memoria).
 
 ### Reproducir un error
 

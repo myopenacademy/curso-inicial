@@ -1,0 +1,16 @@
+bash preparar.sh
+cd reservas-pistas
+git ls-files
+git rm --cached config.ini
+echo "config.ini" >> .gitignore
+git add .gitignore
+git status --short
+git commit -m "Deja de guardar config.ini en Git"
+sed 's/= Padel-2026-Norte/= CAMBIAME/' config.ini > config.ejemplo.ini
+git add config.ejemplo.ini
+git commit -m "Añade un config.ini de ejemplo, sin la contraseña"
+ls
+git ls-files
+git status
+git log --oneline
+git show f6884c0:config.ini

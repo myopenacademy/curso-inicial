@@ -1,0 +1,10 @@
+bash preparar.sh
+cd presupuestos
+git log --oneline
+git status --short
+git add condiciones.txt
+git commit --amend -m "Añade el presupuesto de la calle Mayor, 12"
+git show --stat --oneline
+git revert --no-edit f1019d0
+git log --oneline
+cat precios.txt
