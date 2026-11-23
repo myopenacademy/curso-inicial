@@ -97,6 +97,8 @@ Cómo se hizo (para repetirlo): cuatro autores en paralelo con el mismo encargo;
 
 **Pendiente (cuando se publiquen):** enlazar los cursos de la academia que 06.05 (apartado 1.12 y ejercicio 7) y 06.04 nombran sin enlace.
 
+**Pendiente al publicar: el enlace a `FORMATO.md` del kit** (aviso de la raíz, 23 de noviembre de 2026). El curso enlaza a <https://github.com/myopenacademy/kit-cursos/blob/main/FORMATO.md>, que hoy da 404 porque el kit aún no está publicado. **Al publicar, el kit va antes o a la vez que el curso**, y justo después del `push` se abre ese enlace para confirmar que funciona. El resto de enlaces externos los ha comprobado la raíz (23 de noviembre de 2026, 50 direcciones; los que fallan son de ejemplo a propósito).
+
 **Prueba de importación de la fase 1: hecha** (9 de noviembre de 2026, en una copia de prueba de la academia, revisada por el autor en el navegador). El curso no cambia nada: los identificadores de `curso.json` se quedan con punto y el «Siguiente» de 01.04 a `retos.md` está bien. Es la academia la que tiene que mostrar los retos (al final de cada fase en el índice y como «Siguiente» del último módulo). El importador que lee `curso.json` ya está en la academia (H7; dato del autor, 16 de noviembre de 2026).
 
 ## Cómo se cierra una fase
@@ -162,6 +164,7 @@ Si algo bloquea, dilo al autor: él pasa la información de una sesión a otra.
 | 2026-11-09 | Fase 3: módulos 03.01 a 03.04 y retos (dos, con bash), con revisión de conjunto y verificación completa con Docker (coreutils de GNU); un commit por módulo (`31d3455`, `6738edf`, `e160b28`, `d6ea83b`). |
 | 2026-11-09 | Fase 4: módulos 04.01 a 04.05 y retos (tres), con el método escrito en `PLAN-CURSO.md` 11, revisión de conjunto y verificación con `--commit`; un commit por módulo (`df15672` a `f4b7148`) y uno de retos (`b6cfa67`). |
 | 2026-11-16 | Fase 5: módulos 05.01 a 05.03 y retos (tres), con revisión de conjunto y verificación con Docker; un commit por módulo (`69184b7`, `dd2ca6a`, `547a812`) y uno de retos. |
+| 2026-11-23 | Anotado lo pendiente al publicar: el enlace a `FORMATO.md` del kit da 404 hasta que se publique el kit (aviso de la raíz; el resto de enlaces externos, comprobados). |
 | 2026-11-16 | Segunda instalación en la academia desde `v1.0.0` (`2928b0a`): limpia. |
 | 2026-11-16 | Etiqueta `v1.0.0` (anotada, local) sobre `2928b0a`, tras la verificación final del curso entero con `--commit`. |
 | 2026-11-16 | Versión 1.0.0 preparada (`e335ce8`): versiones de las herramientas al día, `gitleaks`, `LICENSE`, `README.md`, `CONTRIBUTING.md`, pendientes cerrados y verificación final del curso entero con `--commit`. Sin etiquetar. |
